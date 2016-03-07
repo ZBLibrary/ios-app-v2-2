@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="S84-9g-Cgz" customClass="indoorAirWarn_Wireless" customModule="OZner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="178" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM2.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbS-VW-9cG">
+                    <rect key="frame" x="70" y="39" width="39" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="XnV-yA-khE"/>
+                        <constraint firstAttribute="width" constant="39" id="dUf-yN-0yj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="室内空气  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS0-aN-s3v">
+                    <rect key="frame" x="52" y="0.0" width="75" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="e6f-wa-cHu"/>
+                        <constraint firstAttribute="height" constant="21" id="oEb-Wo-n9E"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.60999999999999999" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未连接" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opl-bA-dZw">
+                    <rect key="frame" x="37" y="63" width="105" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="N73-ZW-6R8"/>
+                        <constraint firstAttribute="height" constant="43" id="RO3-2L-MeJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.88" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.42352941176470588" green="0.792156862745098" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="rbS-VW-9cG" firstAttribute="top" secondItem="hS0-aN-s3v" secondAttribute="bottom" constant="18" id="GdU-38-hUQ"/>
+                <constraint firstItem="hS0-aN-s3v" firstAttribute="top" secondItem="S84-9g-Cgz" secondAttribute="top" id="LZe-Po-Eld"/>
+                <constraint firstItem="hS0-aN-s3v" firstAttribute="centerX" secondItem="S84-9g-Cgz" secondAttribute="centerX" id="igN-u8-SeE"/>
+                <constraint firstItem="Opl-bA-dZw" firstAttribute="centerX" secondItem="S84-9g-Cgz" secondAttribute="centerX" id="lah-fW-dc8"/>
+                <constraint firstItem="Opl-bA-dZw" firstAttribute="top" secondItem="rbS-VW-9cG" secondAttribute="bottom" constant="3" id="uD6-5X-nUW"/>
+                <constraint firstItem="rbS-VW-9cG" firstAttribute="centerX" secondItem="S84-9g-Cgz" secondAttribute="centerX" id="wVv-FP-ODA"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="179" y="227.5"/>
+        </view>
+    </objects>
+</document>

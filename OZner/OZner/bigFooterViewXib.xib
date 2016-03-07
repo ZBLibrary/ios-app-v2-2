@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="bigFooterViewXib" customModule="OZner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="154"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eL5-QB-QEj">
+                    <rect key="frame" x="0.0" y="33" width="60" height="88"/>
+                    <subviews>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air22011" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-he-T6a">
+                            <rect key="frame" x="0.0" y="28" width="60" height="60"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ng-kt-i0E">
+                            <rect key="frame" x="0.0" y="28" width="60" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt6-l7-Csi">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="13"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="13" id="VFk-Ap-pEM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.33725490196078434" green="0.49803921568627452" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="8Ng-kt-i0E" firstAttribute="height" secondItem="eL5-QB-QEj" secondAttribute="width" id="26k-Ed-NCv"/>
+                        <constraint firstItem="Dt6-l7-Csi" firstAttribute="top" secondItem="eL5-QB-QEj" secondAttribute="top" id="6Yt-iu-qKX"/>
+                        <constraint firstItem="GJO-he-T6a" firstAttribute="leading" secondItem="eL5-QB-QEj" secondAttribute="leading" id="AeA-UE-MzL"/>
+                        <constraint firstAttribute="trailing" secondItem="Dt6-l7-Csi" secondAttribute="trailing" id="BU1-84-0P9"/>
+                        <constraint firstItem="GJO-he-T6a" firstAttribute="height" secondItem="eL5-QB-QEj" secondAttribute="width" id="XnR-Q9-ypF"/>
+                        <constraint firstAttribute="height" constant="88" id="cI3-G3-F6v"/>
+                        <constraint firstAttribute="bottom" secondItem="8Ng-kt-i0E" secondAttribute="bottom" id="cbA-lo-6PR"/>
+                        <constraint firstItem="8Ng-kt-i0E" firstAttribute="leading" secondItem="eL5-QB-QEj" secondAttribute="leading" id="dkQ-Gd-Rop"/>
+                        <constraint firstAttribute="trailing" secondItem="GJO-he-T6a" secondAttribute="trailing" id="iqs-Np-Ek4"/>
+                        <constraint firstAttribute="bottom" secondItem="GJO-he-T6a" secondAttribute="bottom" id="jA5-Jn-62Q"/>
+                        <constraint firstAttribute="trailing" secondItem="8Ng-kt-i0E" secondAttribute="trailing" id="rHk-ja-Ot7"/>
+                        <constraint firstItem="Dt6-l7-Csi" firstAttribute="leading" secondItem="eL5-QB-QEj" secondAttribute="leading" id="vgO-JG-dfV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eL5-QB-QEj" secondAttribute="trailing" id="DAh-D6-5WJ"/>
+                <constraint firstItem="eL5-QB-QEj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VZA-Xn-2BO"/>
+                <constraint firstItem="eL5-QB-QEj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="d4f-jt-TSs"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="switchButton" destination="8Ng-kt-i0E" id="VEe-dp-QD7"/>
+                <outlet property="switchImage" destination="GJO-he-T6a" id="6tO-4f-hyi"/>
+                <outlet property="switchName" destination="Dt6-l7-Csi" id="iml-xx-x7r"/>
+            </connections>
+            <point key="canvasLocation" x="219" y="423"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="air22011" width="43" height="30"/>
+    </resources>
+</document>

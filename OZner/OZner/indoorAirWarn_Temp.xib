@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="indoorAirWarn_Temp" customModule="OZner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="178" height="121"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温度较低，容易冻伤、风寒。请打开暖气，减少外出活动。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q05-ZP-Cj4">
+                    <rect key="frame" x="0.0" y="0.0" width="178" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="P6A-1E-8ZD"/>
+                        <constraint firstAttribute="height" constant="33" id="Pr1-z2-66a"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="P6A-1E-8ZD"/>
+                        </mask>
+                    </variation>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7G-ww-rcU">
+                    <rect key="frame" x="0.0" y="38" width="178" height="1"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="tr3-t7-Xe2"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="多喝水" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpQ-6Z-Ta1">
+                    <rect key="frame" x="0.0" y="99" width="89" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="11" id="aow-8c-y8d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.8011136968" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.31372549019607843" green="0.7686274509803922" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="i7G-ww-rcU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="D4q-7P-0sG"/>
+                <constraint firstAttribute="trailing" secondItem="i7G-ww-rcU" secondAttribute="trailing" id="HTP-Oh-sbb"/>
+                <constraint firstItem="q05-ZP-Cj4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XNj-9U-UiP"/>
+                <constraint firstItem="HpQ-6Z-Ta1" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:2" id="cPs-gC-yEL"/>
+                <constraint firstItem="HpQ-6Z-Ta1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eWf-Hc-xWQ"/>
+                <constraint firstAttribute="bottom" secondItem="HpQ-6Z-Ta1" secondAttribute="bottom" constant="11" id="gub-jd-Gnk"/>
+                <constraint firstItem="i7G-ww-rcU" firstAttribute="top" secondItem="q05-ZP-Cj4" secondAttribute="bottom" constant="5" id="lgT-bu-9jx"/>
+                <constraint firstAttribute="trailing" secondItem="q05-ZP-Cj4" secondAttribute="trailing" id="wvg-9X-2Jd"/>
+                <constraint firstItem="q05-ZP-Cj4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xlH-6i-o5a"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="moreDrink" destination="HpQ-6Z-Ta1" id="mQo-yC-a5F"/>
+                <outlet property="temp" destination="q05-ZP-Cj4" id="kBw-Qm-yNm"/>
+            </connections>
+            <point key="canvasLocation" x="236" y="41.5"/>
+        </view>
+    </objects>
+</document>

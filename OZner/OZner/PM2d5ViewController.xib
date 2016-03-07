@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PM2d5ViewController" customModule="OZner" customModuleProvider="target">
+            <connections>
+                <outlet property="descrText" destination="2H4-h7-kkr" id="iL5-zt-hd1"/>
+                <outlet property="fineMatter" destination="URQ-7S-kst" id="QAD-Zr-cms"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="细颗粒物(PM2.5)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URQ-7S-kst">
+                    <rect key="frame" x="0.0" y="80" width="375" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="Oi4-dN-1Fv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                    <color key="textColor" red="0.21176470588235294" green="0.46666666666666667" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="        PM2.5是直径小于或等于2.5微米的颗粒物，也称为细颗粒物或可入肺颗粒物，可直接进入肺部。PM2.5沉淀进肺泡后无法排除，会对呼吸系统和心血管系统造成很大伤害，引起包括支气管炎，哮喘，冠心病等疾病。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H4-h7-kkr">
+                    <rect key="frame" x="11" y="100" width="353" height="547"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.47058823529411764" green="0.47450980392156861" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="URQ-7S-kst" secondAttribute="trailing" id="4ee-rq-s3c"/>
+                <constraint firstItem="URQ-7S-kst" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="690-fd-whB"/>
+                <constraint firstItem="URQ-7S-kst" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ABo-No-7wV"/>
+                <constraint firstAttribute="trailing" secondItem="2H4-h7-kkr" secondAttribute="trailing" constant="11" id="S5I-fB-WZs"/>
+                <constraint firstItem="2H4-h7-kkr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="11" id="XMn-q5-KoL"/>
+                <constraint firstAttribute="bottom" secondItem="2H4-h7-kkr" secondAttribute="bottom" constant="20" id="c71-I2-D9p"/>
+                <constraint firstItem="2H4-h7-kkr" firstAttribute="top" secondItem="URQ-7S-kst" secondAttribute="bottom" constant="5" id="fKi-lM-ALk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="294.5" y="394.5"/>
+        </view>
+    </objects>
+</document>

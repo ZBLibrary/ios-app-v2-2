@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VOC_AirViewController" customModule="OZner" customModuleProvider="target">
+            <connections>
+                <outlet property="Volotiiecompounds" destination="lZt-rj-QWb" id="dXt-zC-HNM"/>
+                <outlet property="desriText" destination="38d-pu-iNG" id="8Rj-Yl-WQN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volatile Organic Comounds,缩写VOC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrr-Rs-hpD">
+                    <rect key="frame" x="0.0" y="102" width="375" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="BVb-x7-ezT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                    <color key="textColor" red="0.066666666669999999" green="0.40000000000000002" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38d-pu-iNG">
+                    <rect key="frame" x="11" y="126" width="353" height="521"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <string key="text">       通常指在常温下容易挥发的有机化物。较常见的苯 、甲苯、二甲苯、乙苯、苯乙烯、甲醛、TVOC(6-16个碳的烷烃）、酮类等。 这些化合物具有易挥发和亲油等特点，被广泛应用于鞋类、玩具、油漆和石墨、粘合剂、化妆品、室内和汽车装饰材料等工业领域。VOC对人体健康有巨大的影响，会伤害人的肝脏、肾脏、大脑和神经系统，造成记忆力减退等严重后果，甚至可能致癌。                </string>
+                    <color key="textColor" red="0.47058823529999999" green="0.47450980390000003" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挥发性有机化合物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZt-rj-QWb">
+                    <rect key="frame" x="0.0" y="80" width="375" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="04C-t6-k9c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                    <color key="textColor" red="0.066666666666666666" green="0.40000000000000002" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="38d-pu-iNG" firstAttribute="top" secondItem="Hrr-Rs-hpD" secondAttribute="bottom" constant="10" id="3c7-Vx-ivc"/>
+                <constraint firstAttribute="trailing" secondItem="Hrr-Rs-hpD" secondAttribute="trailing" id="9Af-vP-eCq"/>
+                <constraint firstAttribute="trailing" secondItem="lZt-rj-QWb" secondAttribute="trailing" id="CP9-jK-Udn"/>
+                <constraint firstAttribute="trailing" secondItem="38d-pu-iNG" secondAttribute="trailing" constant="11" id="De5-Ym-WBB"/>
+                <constraint firstAttribute="bottom" secondItem="38d-pu-iNG" secondAttribute="bottom" constant="20" id="JTo-SB-ENl"/>
+                <constraint firstItem="Hrr-Rs-hpD" firstAttribute="top" secondItem="lZt-rj-QWb" secondAttribute="bottom" constant="8" id="L8e-CD-pVN"/>
+                <constraint firstItem="lZt-rj-QWb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="TAb-tm-i8l"/>
+                <constraint firstItem="lZt-rj-QWb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e3q-4W-hsi"/>
+                <constraint firstItem="38d-pu-iNG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="11" id="hoM-lW-OkY"/>
+                <constraint firstItem="Hrr-Rs-hpD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vRb-b0-Xry"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="294.5" y="394.5"/>
+        </view>
+    </objects>
+</document>
