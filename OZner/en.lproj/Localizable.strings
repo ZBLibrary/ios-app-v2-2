@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  OZner
+
+  Created by test on 15/12/28.
+  Copyright © 2015年 sunlinlin. All rights reserved.
+*/
+//登陆页面
+"短信验证码"="abc";
+"倒计时"="sda";
+"秒"="as";
+"验证码不正确"="";

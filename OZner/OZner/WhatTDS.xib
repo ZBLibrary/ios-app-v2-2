@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="AtL-ev-tTG">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYp-ha-rNM">
+                    <rect key="frame" x="0.0" y="50" width="375" height="469"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="         总溶解固体" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7i-NX-iYX">
+                            <rect key="frame" x="95" y="19" width="163" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="JC0-hb-CTK"/>
+                                <constraint firstAttribute="width" constant="163" id="wMA-GG-Jlz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.30588235294117649" green="0.58431372549019611" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="       Total Dissolved Solids,缩写TDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3k-dD-Vtr">
+                            <rect key="frame" x="61" y="43" width="251" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="yZ4-NF-bAn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                            <color key="textColor" red="0.28627450980392155" green="0.53333333333333333" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      又称溶解性固体总量，测量单位为毫克/升(mg/L),它表明1升水中溶有多少毫克溶解性固体。TDS值越高,表示水中含有的溶解物越多。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beG-JH-yyD">
+                            <rect key="frame" x="8" y="72" width="359" height="52"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="R6N-ZE-7RT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <color key="textColor" red="0.51372549019607838" green="0.51764705882352935" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      在无机物中,除溶解成离子状的成分外,还可能有呈分子状的无机物。由于天然水中所含有的有机物以及呈分子状的无机物一般可以不考虑,所以一般也把含盐量称为总溶解固体。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDK-s9-dnp">
+                            <rect key="frame" x="8" y="192" width="359" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="72" id="6nR-Sh-UfQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <color key="textColor" red="0.51372549020000002" green="0.51764705879999995" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      但是在特定水中TDS并不能有效反映水质的情况。比如电解水,由于电解过的水中[OH]-等带电离子显著增多,相应的导电量就异常加大。比如原TDS在17的纯水经电解水机电解后所得碱性水的TDS值大约在300左右。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qj7-DJ-RdF">
+                            <rect key="frame" x="8" y="264" width="359" height="77"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="77" id="53V-Lt-t9B"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <color key="textColor" red="0.51372549020000002" green="0.51764705879999995" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      总溶解固体指水中全部溶质的总量,包括无机物和有机物两者的含量。一般可用电导率值大概了解溶液中的盐份,一般情况下,电导率越高,盐份越高,TDS越高。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFc-Gs-oTw">
+                            <rect key="frame" x="8" y="124" width="359" height="68"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="68" id="aD4-af-ZPn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <color key="textColor" red="0.51372549020000002" green="0.51764705879999995" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="k7i-NX-iYX" firstAttribute="centerX" secondItem="aYp-ha-rNM" secondAttribute="centerX" constant="-11" id="0kD-0H-QZZ"/>
+                        <constraint firstItem="beG-JH-yyD" firstAttribute="leading" secondItem="aYp-ha-rNM" secondAttribute="leading" constant="8" id="1N3-P4-NEk"/>
+                        <constraint firstAttribute="height" constant="469" id="5Kb-ZU-Qcz"/>
+                        <constraint firstItem="qj7-DJ-RdF" firstAttribute="top" secondItem="vDK-s9-dnp" secondAttribute="bottom" id="CgZ-VE-Sb7"/>
+                        <constraint firstItem="G3k-dD-Vtr" firstAttribute="centerX" secondItem="aYp-ha-rNM" secondAttribute="centerX" constant="-1.25" id="H3Y-3W-c9W"/>
+                        <constraint firstAttribute="trailing" secondItem="beG-JH-yyD" secondAttribute="trailing" constant="8" id="HLh-Fm-mGr"/>
+                        <constraint firstItem="k7i-NX-iYX" firstAttribute="top" secondItem="aYp-ha-rNM" secondAttribute="top" constant="19" id="LGe-6z-8lc"/>
+                        <constraint firstItem="rFc-Gs-oTw" firstAttribute="leading" secondItem="aYp-ha-rNM" secondAttribute="leading" constant="8" id="PWm-4c-kBd"/>
+                        <constraint firstItem="vDK-s9-dnp" firstAttribute="leading" secondItem="aYp-ha-rNM" secondAttribute="leading" constant="8" id="Qzn-Y1-XMd"/>
+                        <constraint firstItem="beG-JH-yyD" firstAttribute="top" secondItem="G3k-dD-Vtr" secondAttribute="bottom" constant="8" id="TE7-aL-bnR"/>
+                        <constraint firstItem="rFc-Gs-oTw" firstAttribute="top" secondItem="beG-JH-yyD" secondAttribute="bottom" id="VGW-bo-Qkj"/>
+                        <constraint firstItem="vDK-s9-dnp" firstAttribute="top" secondItem="rFc-Gs-oTw" secondAttribute="bottom" id="YHg-wU-YNi"/>
+                        <constraint firstAttribute="trailing" secondItem="qj7-DJ-RdF" secondAttribute="trailing" constant="8" id="a52-Xc-UdE"/>
+                        <constraint firstItem="qj7-DJ-RdF" firstAttribute="leading" secondItem="aYp-ha-rNM" secondAttribute="leading" constant="8" id="hfP-96-H7G"/>
+                        <constraint firstItem="G3k-dD-Vtr" firstAttribute="top" secondItem="k7i-NX-iYX" secondAttribute="bottom" constant="3" id="nGP-6i-HJP"/>
+                        <constraint firstAttribute="trailing" secondItem="rFc-Gs-oTw" secondAttribute="trailing" constant="8" id="yJc-MQ-xFF"/>
+                        <constraint firstAttribute="trailing" secondItem="vDK-s9-dnp" secondAttribute="trailing" constant="8" id="zeJ-bH-cre"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aYp-ha-rNM" secondAttribute="trailing" id="CP3-s4-2bp"/>
+                <constraint firstItem="aYp-ha-rNM" firstAttribute="leading" secondItem="AtL-ev-tTG" secondAttribute="leading" id="Hrm-tv-RWy"/>
+                <constraint firstItem="aYp-ha-rNM" firstAttribute="top" secondItem="AtL-ev-tTG" secondAttribute="top" constant="50" id="W3P-yl-QTW"/>
+                <constraint firstItem="aYp-ha-rNM" firstAttribute="centerX" secondItem="AtL-ev-tTG" secondAttribute="centerX" id="xfU-G1-JrW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="66.5" y="350.5"/>
+        </view>
+    </objects>
+</document>
