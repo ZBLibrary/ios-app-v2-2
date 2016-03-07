@@ -7,18 +7,18 @@
 //
 
 #import "TDSDetailViewController.h"
-#import "AmountOfDrinkingWaterFirstCell.h"
-#import "TDSDetailSecondCell.h"
-#import "AmountOfDrinkingThirdCell.h"
+//#import "AmountOfDrinkingWaterFirstCell.h"
+//#import "TDSDetailSecondCell.h"
+//#import "AmountOfDrinkingThirdCell.h"
 #import "DeviceWerbservice.h"
 #import "CustomTabBarView.h"
 #import "ShareManager.h"
 #import "MBProgressHUD.h"
 #import "OZner-swift.h"
 
-@interface TDSDetailViewController ()<AmountOfDrinkingThirdCellDelegate,AmountOfDrinkingWaterFirstCellDelegate>
+@interface TDSDetailViewController ()
 
-@property (nonatomic,strong) TDSDetailSecondCell* currentSecondCell;
+//@property (nonatomic,strong) TDSDetailSecondCell* currentSecondCell;
 
 @end
 
@@ -108,13 +108,13 @@
     
     [self.navigationController pushViewController:tdsState animated:YES];
 }
-#pragma mark-AmountOfDrinkingWaterFirstCellDelegate
+//#pragma mark-AmountOfDrinkingWaterFirstCellDelegate
 - (void)amountOfDrinkingWaterZiXunAction
 {
     [[CustomTabBarView sharedCustomTabBar]touchDownAction:[[[CustomTabBarView sharedCustomTabBar]btnMuArr]objectAtIndex:2]];
 }
 
-#pragma mark-AmountOfDrinkingThirdCellDelegate
+//#pragma mark-AmountOfDrinkingThirdCellDelegate
 - (void)purchaseAction
 {
     [[CustomTabBarView sharedCustomTabBar]touchDownAction:[[[CustomTabBarView sharedCustomTabBar]btnMuArr]objectAtIndex:1]];
@@ -124,8 +124,7 @@
 {
     WeiXinURLViewController* URLController=[[WeiXinURLViewController alloc] init];
     [URLController setTitle:@"健康水知道"];
-    [self presentViewController:URLController animated:true completion:nil];//  pushViewController:URLController animated:YES];
-    //[[UIApplication sharedApplication]openURL:[NSURL URLWithString:MALL_URL]];
+    [self presentViewController:URLController animated:true completion:nil];
 }
 
 
@@ -216,15 +215,7 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.row == 1)
-    {
-        m_isShowCircle = !m_isShowCircle;
-        [self.currentSecondCell showCircle:m_isShowCircle type:0];
-    }
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

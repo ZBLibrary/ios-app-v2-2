@@ -28,42 +28,41 @@ class CustomPopViewFirstCell: UITableViewCell {
     
     func layCustomPopViewFirstCell(device:OznerDevice,isSlected:Bool)
     {
-        if CupManager.isCup(device.type) == true
+        switch true
         {
-            //智能水杯
+        case CupManager.isCup(device.type) ://智能水杯
             self.deviceStateImgView.image = UIImage(named: "device_cup_normal_state.png")
             self.connectImgView.image = UIImage(named: "device_icon_blutooth.png")
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 7.5, 12.5)
-        }
-        else if TapManager.isTap(device.type) == true
-        {
-            //水探头
+            break
+        case TapManager.isTap(device.type) : //水探头
             self.deviceStateImgView.image = UIImage(named: "device_tan_tou_noamrl_state.png")
             
             self.connectImgView.image = UIImage(named: "device_icon_blutooth.png")
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 7.5, 12.5)
-        }
-        else if WaterPurifierManager.isWaterPurifier(device.type) == true
-        {
-            //净水器
-            self.deviceStateImgView.image = UIImage(named: "device_jin_shui_qi_normal.png")
+        case WaterPurifierManager.isWaterPurifier(device.type)://净水器
             self.deviceStateImgView.image = UIImage(named: "device_jin_shui_qi_normal.png")
             self.connectImgView.image = UIImage(named: "device_icon_wifi.png")
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 15.5, 11)
-        }
-        else if AirPurifierManager.isBluetoothAirPurifier(device.type)
-        {
-            //台式空气净化器
+            break
+        case AirPurifierManager.isBluetoothAirPurifier(device.type)://台式空气净化器
             self.deviceStateImgView.image = UIImage(named: "device_jin_smallair_normal.png")
             self.connectImgView.image = UIImage(named: "device_icon_blutooth.png")
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 7.5, 12.5)
-        }
-        else if AirPurifierManager.isMXChipAirPurifier(device.type)
-        {
-            //立式空气净化器
+            break
+        case AirPurifierManager.isMXChipAirPurifier(device.type)://立式空气净化器
             self.deviceStateImgView.image = UIImage(named: "device_jin_bigair_normal.png")
             self.connectImgView.image = UIImage(named: "device_icon_wifi.png")
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 15.5, 11)
+            break
+        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(device.type)://补水仪
+            self.deviceStateImgView.image = UIImage(named: "WaterReplenish2")
+            
+            self.connectImgView.image = UIImage(named: "device_icon_blutooth.png")
+            self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 7.5, 12.5)
+            break
+        default:
+            break
         }
         switch device.connectStatus()
         {

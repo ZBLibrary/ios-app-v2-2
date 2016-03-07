@@ -140,32 +140,40 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         }
         
     }
+    /**
+     设置侧滑栏选中cell
+     
+     - parameter wCell:
+     - parameter device: 
+     */
     func setSelectWhichCell(wCell:CustomPopViewFirstCell,device:OznerDevice)
     {
-        if CupManager.isCup(device.type) == true
+        switch true
         {
-            //智能水杯
+        case CupManager.isCup(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "deveice_cup_select_state.png")
-        }
-        else if TapManager.isTap(device.type) == true
-        {
-            //水探头
+            break
+        case TapManager.isTap(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
-        }
-        else if WaterPurifierManager.isWaterPurifier(device.type) == true//WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(device.type)
-        {
-            //净水器
+            break
+        case WaterPurifierManager.isWaterPurifier(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_jin_shui_qi_select.png")
-        } else if AirPurifierManager.isBluetoothAirPurifier(device.type)
-        {
-            //台式空气净化器（蓝牙）
+            break
+        case AirPurifierManager.isBluetoothAirPurifier(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_jin_smallair_select.png")
-        }
-        else if AirPurifierManager.isMXChipAirPurifier(device.type)
-        {
-            //立式空气净化器（wifi）
+            break
+        case AirPurifierManager.isMXChipAirPurifier(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_jin_bigair_select.png")
+            
+            break
+            //补水仪
+        case  WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(device.type):
+            wCell.deviceStateImgView.image = UIImage(named: "WaterReplenish1_2")
+            break
+        default:
+            break
         }
+
     }
     func receiveDeleteDevicesNotify()
     {
@@ -215,52 +223,15 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         
         if indexPath.row > 0
         {
-//            for var i = 0; i < self.myDevices?.count;i++
-//            {
-                //let path = NSIndexPath(forRow: i+1, inSection: 0)
+
             currentIndexPath=indexPath
                 let wCell = tableView.cellForRowAtIndexPath(indexPath) as! CustomPopViewFirstCell
                 let device = (self.myDevices?.objectAtIndex(indexPath.row-1))! as! OznerDevice
-//                if(i == indexPath.row-1)
-//                {
             
                     setSelectWhichCell(wCell, device: device)
                     delegate?.touchCustomPopView()
                     NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object:device)
-                    
-                //}
-//                else
-//                {
-//                    if CupManager.isCup(device.type) == true
-//                    {
-//                        //智能水杯
-//                        wCell.deviceStateImgView.image = UIImage(named: "device_cup_normal_state.png")
-//                        
-//                    }
-//                    else if TapManager.isTap(device.type) == true
-//                    {
-//                        //水探头
-//                        wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_noamrl_state.png")
-//                    }
-//                    else if WaterPurifierManager.isWaterPurifier(device.type) == true
-//                    {
-//                        //净水器
-//                        wCell.deviceStateImgView.image = UIImage(named: "device_jin_shui_qi_normal.png")
-//                    }
-//                    else if AirPurifierManager.isBluetoothAirPurifier(device.type)
-//                    {
-//                        //台式空气净化器（蓝牙）
-//                        wCell.deviceStateImgView.image = UIImage(named: "device_jin_smallair_normal.png")
-//                    }
-//                    else if AirPurifierManager.isMXChipAirPurifier(device.type)
-//                    {
-//                        //立式空气净化器（wifi）
-//                        wCell.deviceStateImgView.image = UIImage(named: "device_jin_bigair_normal.png")
-//                    }
-//                }
-                
-            //}
-        }
+         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {

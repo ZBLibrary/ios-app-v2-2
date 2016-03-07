@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34292ACC1C42917400F43587 /* TanTouErWeimaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292ACB1C42917400F43587 /* TanTouErWeimaCell.m */; };
 		3473593B1C1C4D6200F4C79C /* LoginManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 347359381C1C4D6200F4C79C /* LoginManager.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3473593C1C1C4D6200F4C79C /* LogInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 3473593A1C1C4D6200F4C79C /* LogInOut.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3473593F1C1C4DF600F4C79C /* GlobalClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3473593E1C1C4DF600F4C79C /* GlobalClass.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -47,7 +46,6 @@
 		425381411C1482E3005FF2F3 /* MPPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4253813C1C1482E3005FF2F3 /* MPPlot.m */; };
 		425381421C1482E3005FF2F3 /* MPBarsGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4253813E1C1482E3005FF2F3 /* MPBarsGraphView.m */; };
 		425381451C14A19F005FF2F3 /* MPGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425381441C14A19F005FF2F3 /* MPGraphView.m */; };
-		425381481C14C98C005FF2F3 /* AmountOfDrinkingThirdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 425381471C14C98C005FF2F3 /* AmountOfDrinkingThirdCell.m */; };
 		4253814B1C14CBBE005FF2F3 /* device_puucashe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 425381491C14CBBE005FF2F3 /* device_puucashe@2x.png */; };
 		4253814C1C14CBBE005FF2F3 /* device_konw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4253814A1C14CBBE005FF2F3 /* device_konw@2x.png */; };
 		4253814F1C14CC00005FF2F3 /* device_konw@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4253814D1C14CC00005FF2F3 /* device_konw@3x.png */; };
@@ -61,7 +59,6 @@
 		4253815E1C14D799005FF2F3 /* device_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4253815D1C14D799005FF2F3 /* device_share@2x.png */; };
 		425381601C14D7AC005FF2F3 /* device_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4253815F1C14D7AC005FF2F3 /* device_share@3x.png */; };
 		425381631C14DCFD005FF2F3 /* CustomThreeCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425381621C14DCFD005FF2F3 /* CustomThreeCircleView.m */; };
-		425F7A011C327BB900C8B2E3 /* DeviceStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425F7A001C327BB900C8B2E3 /* DeviceStateView.m */; };
 		425F7A071C328AE100C8B2E3 /* icon_state_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 425F7A061C328AE100C8B2E3 /* icon_state_circle.png */; };
 		425F7A091C328AFE00C8B2E3 /* icon_state_tanhao.png in Resources */ = {isa = PBXBuildFile; fileRef = 425F7A081C328AFE00C8B2E3 /* icon_state_tanhao.png */; };
 		425F7A0B1C32A0FD00C8B2E3 /* icon_circle_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 425F7A0A1C32A0FD00C8B2E3 /* icon_circle_gray.png */; };
@@ -76,7 +73,6 @@
 		425F7A2D1C32B0C500C8B2E3 /* new_help_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 425F7A271C32B0C500C8B2E3 /* new_help_2@3x.png */; };
 		425F7A301C32B13900C8B2E3 /* dot_guide_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 425F7A2E1C32B13900C8B2E3 /* dot_guide_1.png */; };
 		425F7A311C32B13900C8B2E3 /* dot_guide_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 425F7A2F1C32B13900C8B2E3 /* dot_guide_2.png */; };
-		426E27841C19810600BFB881 /* TDSDetailSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426E27831C19810600BFB881 /* TDSDetailSecondCell.m */; };
 		426F42701C279CF200DC39DF /* icon_agree_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 426F42631C279CF200DC39DF /* icon_agree_normal.png */; };
 		426F42711C279CF200DC39DF /* icon_agree_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 426F42641C279CF200DC39DF /* icon_agree_select.png */; };
 		426F42721C279CF200DC39DF /* icon_circle_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 426F42651C279CF200DC39DF /* icon_circle_normal.png */; };
@@ -111,11 +107,7 @@
 		427AEB441C1EC6CD003E1F50 /* icon_lvxin_service_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 427AEB351C1EC6CD003E1F50 /* icon_lvxin_service_5.png */; };
 		427AEB451C1EC6CD003E1F50 /* icon_lvxin_service_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 427AEB361C1EC6CD003E1F50 /* icon_lvxin_service_6.png */; };
 		427AEB461C1EC6CD003E1F50 /* icon_lvxin_service_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 427AEB371C1EC6CD003E1F50 /* icon_lvxin_service_8.png */; };
-		427AEB591C1F07B2003E1F50 /* TanTouFivethCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 427AEB581C1F07B2003E1F50 /* TanTouFivethCell.m */; };
-		427AEB5C1C1F07CE003E1F50 /* TantouFivthCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 427AEB5B1C1F07CE003E1F50 /* TantouFivthCellView.m */; };
-		4280BDEA1C2D064600627AFB /* MyDeviceCsutomSecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4280BDE91C2D064600627AFB /* MyDeviceCsutomSecondView.m */; };
 		4280BDED1C2D070A00627AFB /* JTListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4280BDEC1C2D070A00627AFB /* JTListView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4280BDF01C2D07E100627AFB /* MyDeviceCustomSecondCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4280BDEF1C2D07E100627AFB /* MyDeviceCustomSecondCellView.m */; };
 		4280BDF71C2D096100627AFB /* icon_jiare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4280BDF11C2D096100627AFB /* icon_jiare@2x.png */; };
 		4280BDF81C2D096100627AFB /* icon_jiare_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4280BDF21C2D096100627AFB /* icon_jiare_normal@2x.png */; };
 		4280BDFA1C2D096100627AFB /* icon_zhileng_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4280BDF41C2D096100627AFB /* icon_zhileng_normal@2x.png */; };
@@ -132,11 +124,7 @@
 		4281410F1C0B072C006FEDDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4281410D1C0B072C006FEDDE /* LaunchScreen.storyboard */; };
 		4281411A1C0B072D006FEDDE /* OZnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428141191C0B072D006FEDDE /* OZnerTests.swift */; };
 		428141251C0B072D006FEDDE /* OZnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428141241C0B072D006FEDDE /* OZnerUITests.swift */; };
-		428141371C0B0AD5006FEDDE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428141361C0B0AD5006FEDDE /* SlideMenuController.swift */; };
 		4281413F1C0B0CDA006FEDDE /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4281413D1C0B0CDA006FEDDE /* LeftViewController.xib */; };
-		428141421C0B0CFE006FEDDE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428141401C0B0CFE006FEDDE /* MainViewController.swift */; };
-		428141431C0B0CFE006FEDDE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 428141411C0B0CFE006FEDDE /* MainViewController.xib */; };
-		428141451C0B0E61006FEDDE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428141441C0B0E61006FEDDE /* UIViewControllerExtension.swift */; };
 		428141491C0B15F0006FEDDE /* ic_menu_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 428141461C0B15F0006FEDDE /* ic_menu_black_24dp.png */; };
 		4281414A1C0B15F0006FEDDE /* ic_menu_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428141471C0B15F0006FEDDE /* ic_menu_black_24dp@2x.png */; };
 		4281414B1C0B15F0006FEDDE /* ic_menu_black_24dp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428141481C0B15F0006FEDDE /* ic_menu_black_24dp@3x.png */; };
@@ -230,8 +218,6 @@
 		42DF15011C109A9B002B4C83 /* pull_down_row@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DF15001C109A9B002B4C83 /* pull_down_row@2x.png */; };
 		42E897A71C14486B00DD0228 /* OCFatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E897A51C14486B00DD0228 /* OCFatherViewController.m */; };
 		42E897A81C14486B00DD0228 /* OCFatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E897A61C14486B00DD0228 /* OCFatherViewController.xib */; };
-		42E897AC1C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E897AA1C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.m */; };
-		42E897AE1C1449F600DD0228 /* AmountOfDrinkingWaterFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E897AB1C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.xib */; };
 		42E897B11C144CBC00DD0228 /* UITool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42E897B01C144CBC00DD0228 /* UITool.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42E897B41C144CD700DD0228 /* NavigaitionTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E897B31C144CD700DD0228 /* NavigaitionTitleView.m */; };
 		42E897B71C1451D200DD0228 /* AmountOfDrinkingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E897B61C1451D200DD0228 /* AmountOfDrinkingCell.m */; };
@@ -833,6 +819,7 @@
 		8DD51FDF1C7D97F100F95695 /* JingShuiWifiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */; };
 		8DD51FE21C7DA7CD00F95695 /* DeviceMatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */; };
 		8DD51FE31C7DA7CD00F95695 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */; };
+		8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */; };
 		8DE5FD7B1C56745D0092242F /* UserInfoClasszb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */; };
 		8DEB63D61C59FA8800E4A7D5 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */; };
 		8DEDC4E91C7C397A0098BAE5 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEDC4E81C7C397A0098BAE5 /* Bugly.framework */; };
@@ -840,7 +827,6 @@
 		8DF253B31C774E6500CE2AE5 /* WaterineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B21C774E6500CE2AE5 /* WaterineChartView.m */; };
 		8DF253B61C774E8500CE2AE5 /* WaterMPGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B51C774E8500CE2AE5 /* WaterMPGraphView.m */; };
 		8DFB392D1C57248700A1641C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB392C1C57248700A1641C /* ChatViewController.m */; };
-		8DFB39301C574E2A00A1641C /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB392F1C574E2A00A1641C /* BluetoothAirPurifierSensor.m */; };
 		8DFB39331C574E4B00A1641C /* MxChipAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */; };
 		8DFB39351C57710B00A1641C /* CommonValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39341C57710B00A1641C /* CommonValue.swift */; };
 		8DFB393F1C57730300A1641C /* WhatTDShtmlString.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39361C57730300A1641C /* WhatTDShtmlString.plist */; };
@@ -870,8 +856,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		34292ACA1C42917400F43587 /* TanTouErWeimaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanTouErWeimaCell.h; sourceTree = "<group>"; };
-		34292ACB1C42917400F43587 /* TanTouErWeimaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanTouErWeimaCell.m; sourceTree = "<group>"; };
 		347359371C1C4D6200F4C79C /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
 		347359381C1C4D6200F4C79C /* LoginManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoginManager.mm; sourceTree = "<group>"; };
 		347359391C1C4D6200F4C79C /* LogInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInOut.h; sourceTree = "<group>"; };
@@ -927,8 +911,6 @@
 		4253813E1C1482E3005FF2F3 /* MPBarsGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBarsGraphView.m; sourceTree = "<group>"; };
 		425381431C14A19F005FF2F3 /* MPGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGraphView.h; sourceTree = "<group>"; };
 		425381441C14A19F005FF2F3 /* MPGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGraphView.m; sourceTree = "<group>"; };
-		425381461C14C98C005FF2F3 /* AmountOfDrinkingThirdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingThirdCell.h; sourceTree = "<group>"; };
-		425381471C14C98C005FF2F3 /* AmountOfDrinkingThirdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingThirdCell.m; sourceTree = "<group>"; };
 		425381491C14CBBE005FF2F3 /* device_puucashe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_puucashe@2x.png"; sourceTree = "<group>"; };
 		4253814A1C14CBBE005FF2F3 /* device_konw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_konw@2x.png"; sourceTree = "<group>"; };
 		4253814D1C14CC00005FF2F3 /* device_konw@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_konw@3x.png"; sourceTree = "<group>"; };
@@ -943,8 +925,6 @@
 		4253815F1C14D7AC005FF2F3 /* device_share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_share@3x.png"; sourceTree = "<group>"; };
 		425381611C14DCFD005FF2F3 /* CustomThreeCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomThreeCircleView.h; sourceTree = "<group>"; };
 		425381621C14DCFD005FF2F3 /* CustomThreeCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomThreeCircleView.m; sourceTree = "<group>"; };
-		425F79FF1C327BB900C8B2E3 /* DeviceStateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStateView.h; sourceTree = "<group>"; };
-		425F7A001C327BB900C8B2E3 /* DeviceStateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceStateView.m; sourceTree = "<group>"; };
 		425F7A061C328AE100C8B2E3 /* icon_state_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_state_circle.png; sourceTree = "<group>"; };
 		425F7A081C328AFE00C8B2E3 /* icon_state_tanhao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_state_tanhao.png; sourceTree = "<group>"; };
 		425F7A0A1C32A0FD00C8B2E3 /* icon_circle_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_circle_gray.png; sourceTree = "<group>"; };
@@ -961,8 +941,6 @@
 		425F7A271C32B0C500C8B2E3 /* new_help_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_2@3x.png"; sourceTree = "<group>"; };
 		425F7A2E1C32B13900C8B2E3 /* dot_guide_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_guide_1.png; sourceTree = "<group>"; };
 		425F7A2F1C32B13900C8B2E3 /* dot_guide_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_guide_2.png; sourceTree = "<group>"; };
-		426E27821C19810600BFB881 /* TDSDetailSecondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSDetailSecondCell.h; sourceTree = "<group>"; };
-		426E27831C19810600BFB881 /* TDSDetailSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSDetailSecondCell.m; sourceTree = "<group>"; };
 		426F42631C279CF200DC39DF /* icon_agree_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_agree_normal.png; sourceTree = "<group>"; };
 		426F42641C279CF200DC39DF /* icon_agree_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_agree_select.png; sourceTree = "<group>"; };
 		426F42651C279CF200DC39DF /* icon_circle_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_circle_normal.png; sourceTree = "<group>"; };
@@ -1001,16 +979,8 @@
 		427AEB351C1EC6CD003E1F50 /* icon_lvxin_service_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_lvxin_service_5.png; sourceTree = "<group>"; };
 		427AEB361C1EC6CD003E1F50 /* icon_lvxin_service_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_lvxin_service_6.png; sourceTree = "<group>"; };
 		427AEB371C1EC6CD003E1F50 /* icon_lvxin_service_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_lvxin_service_8.png; sourceTree = "<group>"; };
-		427AEB571C1F07B2003E1F50 /* TanTouFivethCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanTouFivethCell.h; sourceTree = "<group>"; };
-		427AEB581C1F07B2003E1F50 /* TanTouFivethCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanTouFivethCell.m; sourceTree = "<group>"; };
-		427AEB5A1C1F07CE003E1F50 /* TantouFivthCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TantouFivthCellView.h; sourceTree = "<group>"; };
-		427AEB5B1C1F07CE003E1F50 /* TantouFivthCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TantouFivthCellView.m; sourceTree = "<group>"; };
-		4280BDE81C2D064600627AFB /* MyDeviceCsutomSecondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeviceCsutomSecondView.h; sourceTree = "<group>"; };
-		4280BDE91C2D064600627AFB /* MyDeviceCsutomSecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDeviceCsutomSecondView.m; sourceTree = "<group>"; };
 		4280BDEB1C2D070A00627AFB /* JTListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTListView.h; sourceTree = "<group>"; };
 		4280BDEC1C2D070A00627AFB /* JTListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTListView.m; sourceTree = "<group>"; };
-		4280BDEE1C2D07E100627AFB /* MyDeviceCustomSecondCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeviceCustomSecondCellView.h; sourceTree = "<group>"; };
-		4280BDEF1C2D07E100627AFB /* MyDeviceCustomSecondCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDeviceCustomSecondCellView.m; sourceTree = "<group>"; };
 		4280BDF11C2D096100627AFB /* icon_jiare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_jiare@2x.png"; sourceTree = "<group>"; };
 		4280BDF21C2D096100627AFB /* icon_jiare_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_jiare_normal@2x.png"; sourceTree = "<group>"; };
 		4280BDF41C2D096100627AFB /* icon_zhileng_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_zhileng_normal@2x.png"; sourceTree = "<group>"; };
@@ -1033,11 +1003,7 @@
 		428141201C0B072D006FEDDE /* OZnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OZnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		428141241C0B072D006FEDDE /* OZnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OZnerUITests.swift; sourceTree = "<group>"; };
 		428141261C0B072D006FEDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		428141361C0B0AD5006FEDDE /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		4281413D1C0B0CDA006FEDDE /* LeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
-		428141401C0B0CFE006FEDDE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		428141411C0B0CFE006FEDDE /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		428141441C0B0E61006FEDDE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		428141461C0B15F0006FEDDE /* ic_menu_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_menu_black_24dp.png; path = OZner/ic_menu_black_24dp.png; sourceTree = "<group>"; };
 		428141471C0B15F0006FEDDE /* ic_menu_black_24dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_menu_black_24dp@2x.png"; path = "OZner/ic_menu_black_24dp@2x.png"; sourceTree = "<group>"; };
 		428141481C0B15F0006FEDDE /* ic_menu_black_24dp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_menu_black_24dp@3x.png"; path = "OZner/ic_menu_black_24dp@3x.png"; sourceTree = "<group>"; };
@@ -1168,9 +1134,6 @@
 		42E897A41C14486B00DD0228 /* OCFatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCFatherViewController.h; sourceTree = "<group>"; };
 		42E897A51C14486B00DD0228 /* OCFatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFatherViewController.m; sourceTree = "<group>"; };
 		42E897A61C14486B00DD0228 /* OCFatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCFatherViewController.xib; sourceTree = "<group>"; };
-		42E897A91C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterFirstCell.h; sourceTree = "<group>"; };
-		42E897AA1C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterFirstCell.m; sourceTree = "<group>"; };
-		42E897AB1C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterFirstCell.xib; sourceTree = "<group>"; };
 		42E897AF1C144CBC00DD0228 /* UITool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITool.h; sourceTree = "<group>"; };
 		42E897B01C144CBC00DD0228 /* UITool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UITool.mm; sourceTree = "<group>"; };
 		42E897B21C144CD700DD0228 /* NavigaitionTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigaitionTitleView.h; sourceTree = "<group>"; };
@@ -1380,7 +1343,6 @@
 		523DC3921C175EAA00595099 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		5243372C1C42A5880024133D /* OznerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OznerManager.h; sourceTree = "<group>"; };
 		5243372D1C42A5880024133D /* OznerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OznerManager.m; sourceTree = "<group>"; };
-		5243372F1C42A5960024133D /* WaterReplenishmentMeterMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterMgr.h; sourceTree = "<group>"; };
 		524337301C42A5960024133D /* WaterReplenishmentMeterMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterMgr.m; sourceTree = "<group>"; };
 		524337311C42A5960024133D /* WaterReplenishmentMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeter.h; sourceTree = "<group>"; };
 		524337321C42A5960024133D /* WaterReplenishmentMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeter.m; sourceTree = "<group>"; };
@@ -2207,6 +2169,8 @@
 		8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JingShuiWifiViewController.xib; sourceTree = "<group>"; };
 		8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMatchedViewController.swift; sourceTree = "<group>"; };
 		8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceMatchedViewController.xib; sourceTree = "<group>"; };
+		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
+		8DE2CC8C1C8D85F6002FCB42 /* WaterReplenishmentMeterMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterMgr.h; sourceTree = "<group>"; };
 		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoClasszb.swift; sourceTree = "<group>"; };
 		8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifier_MxChip.m; sourceTree = "<group>"; };
 		8DEDC4E81C7C397A0098BAE5 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
@@ -2219,7 +2183,6 @@
 		8DFB392B1C57248700A1641C /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		8DFB392C1C57248700A1641C /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		8DFB392E1C574E2A00A1641C /* BluetoothAirPurifierSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothAirPurifierSensor.h; sourceTree = "<group>"; };
-		8DFB392F1C574E2A00A1641C /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DFB39311C574E4B00A1641C /* MxChipAirPurifierSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierSensor.h; sourceTree = "<group>"; };
 		8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DFB39341C57710B00A1641C /* CommonValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonValue.swift; sourceTree = "<group>"; };
@@ -2299,7 +2262,7 @@
 				5243373B1C42A5BB0024133D /* AirPurifier_Bluetooth.h */,
 				5243373C1C42A5BB0024133D /* AirPurifier_Bluetooth.m */,
 				8DFB392E1C574E2A00A1641C /* BluetoothAirPurifierSensor.h */,
-				8DFB392F1C574E2A00A1641C /* BluetoothAirPurifierSensor.m */,
+				8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */,
 				5243373F1C42A5BB0024133D /* BluetoothAirPurifierStatus.h */,
 				524337401C42A5BB0024133D /* BluetoothAirPurifierStatus.m */,
 				524337411C42A5BB0024133D /* BluetoothAirPurifierFilterStatus.h */,
@@ -2780,9 +2743,9 @@
 			isa = PBXGroup;
 			children = (
 				428141031C0B072C006FEDDE /* OZner */,
+				42A7BB0A1C0C22FD008DB6E5 /* Common */,
 				523DC3531C175E5800595099 /* ExtralFromOther */,
 				522D66591C31058900BCA750 /* Language */,
-				42A7BB0A1C0C22FD008DB6E5 /* Common */,
 				4248B2BD1C0D832A00181CA0 /* Images */,
 				4248B2B81C0D72FC00181CA0 /* Frameworks */,
 				428141181C0B072D006FEDDE /* OZnerTests */,
@@ -3171,7 +3134,7 @@
 		521D26151C2AB59400D4DB10 /* WaterReplenishmentMeter */ = {
 			isa = PBXGroup;
 			children = (
-				5243372F1C42A5960024133D /* WaterReplenishmentMeterMgr.h */,
+				8DE2CC8C1C8D85F6002FCB42 /* WaterReplenishmentMeterMgr.h */,
 				524337301C42A5960024133D /* WaterReplenishmentMeterMgr.m */,
 				524337311C42A5960024133D /* WaterReplenishmentMeter.h */,
 				524337321C42A5960024133D /* WaterReplenishmentMeter.m */,
@@ -3201,6 +3164,7 @@
 				425F7A121C32ABD600C8B2E3 /* HelpCellView.m */,
 				52ECBE8A1C0C68D300A962E4 /* LeftViewController.h */,
 				52ECBE8B1C0C68D300A962E4 /* LeftViewController.m */,
+				4281413D1C0B0CDA006FEDDE /* LeftViewController.xib */,
 				52ECBE951C0C696100A962E4 /* IViewSwitchProtocol.h */,
 				52ECBE961C0C696100A962E4 /* FatherViewController.h */,
 				52ECBE971C0C696100A962E4 /* FatherViewController.m */,
@@ -3209,11 +3173,6 @@
 				42E897A61C14486B00DD0228 /* OCFatherViewController.xib */,
 				4288C52D1C0F01A700446D3E /* SwiftFatherViewController.swift */,
 				4288C52E1C0F01A700446D3E /* SwiftFatherViewController.xib */,
-				428141361C0B0AD5006FEDDE /* SlideMenuController.swift */,
-				4281413D1C0B0CDA006FEDDE /* LeftViewController.xib */,
-				428141401C0B0CFE006FEDDE /* MainViewController.swift */,
-				428141411C0B0CFE006FEDDE /* MainViewController.xib */,
-				428141441C0B0E61006FEDDE /* UIViewControllerExtension.swift */,
 			);
 			name = GlobalController;
 			sourceTree = "<group>";
@@ -3221,8 +3180,6 @@
 		5226BB081C47F6C000895AE4 /* CupView */ = {
 			isa = PBXGroup;
 			children = (
-				426E27821C19810600BFB881 /* TDSDetailSecondCell.h */,
-				426E27831C19810600BFB881 /* TDSDetailSecondCell.m */,
 				5226BB0B1C480E2C00895AE4 /* TDSDetailHeadView.swift */,
 				5226BB091C47F70800895AE4 /* TDSDetailHeadView.xib */,
 				521667841C48C258002068EF /* TDSDetailCellzb.swift */,
@@ -3351,11 +3308,11 @@
 		523DC3531C175E5800595099 /* ExtralFromOther */ = {
 			isa = PBXGroup;
 			children = (
+				349F0C561C15852D00E46253 /* OznerLibrary */,
 				42A7BB101C0C237C008DB6E5 /* OZner-Bridging-Header.h */,
 				8DA403501C843F7900AD5E5E /* LBXScan */,
 				42A7BB481C0C2465008DB6E5 /* Database */,
 				42A7BB471C0C2460008DB6E5 /* UserDatabase */,
-				349F0C561C15852D00E46253 /* OznerLibrary */,
 				52EF00C11C2FE3E2002484B9 /* WeChatSDK */,
 				423114521C434E650062FFFF /* Discode */,
 				5228C57A1C517B7D002C2E18 /* BaiDuPush */,
@@ -3704,7 +3661,7 @@
 				528FFF0E1C2581F400D814A1 /* AirCleaner */,
 				8D5F62161C83FC81000E0388 /* WaterReplenishmentView */,
 				8D5F62181C84009C000E0388 /* WaterReplenishmentController */,
-				892284491C21636500EE97BC /* SetDevice */,
+				892284491C21636500EE97BC /* SetOfDevice */,
 				52F1C4FF1C4D6A5B0008B8E5 /* otherViewAndController */,
 			);
 			name = MyDevice;
@@ -3724,12 +3681,6 @@
 		52F1C4FF1C4D6A5B0008B8E5 /* otherViewAndController */ = {
 			isa = PBXGroup;
 			children = (
-				425381431C14A19F005FF2F3 /* MPGraphView.h */,
-				425381441C14A19F005FF2F3 /* MPGraphView.m */,
-				4280BDE81C2D064600627AFB /* MyDeviceCsutomSecondView.h */,
-				4280BDE91C2D064600627AFB /* MyDeviceCsutomSecondView.m */,
-				4280BDEE1C2D07E100627AFB /* MyDeviceCustomSecondCellView.h */,
-				4280BDEF1C2D07E100627AFB /* MyDeviceCustomSecondCellView.m */,
 				34A659011C452336002B2F10 /* CustomNoDeviceView.h */,
 				34A659021C452336002B2F10 /* CustomNoDeviceView.m */,
 				8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */,
@@ -3744,33 +3695,22 @@
 				424C155D1C1047B70001C36E /* DeviceMatchCellView.swift */,
 				42DF14F81C109153002B4C83 /* MatchFinishedView.swift */,
 				422D914A1C1D9F10007CFB3B /* MatchTanTouFinishdView.swift */,
-				42E897A91C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.h */,
-				42E897AA1C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.m */,
-				42E897AB1C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.xib */,
 				42E897B51C1451D200DD0228 /* AmountOfDrinkingCell.h */,
 				42E897B61C1451D200DD0228 /* AmountOfDrinkingCell.m */,
-				425381461C14C98C005FF2F3 /* AmountOfDrinkingThirdCell.h */,
-				425381471C14C98C005FF2F3 /* AmountOfDrinkingThirdCell.m */,
 				425381611C14DCFD005FF2F3 /* CustomThreeCircleView.h */,
 				425381621C14DCFD005FF2F3 /* CustomThreeCircleView.m */,
-				34292ACA1C42917400F43587 /* TanTouErWeimaCell.h */,
-				34292ACB1C42917400F43587 /* TanTouErWeimaCell.m */,
-				427AEB571C1F07B2003E1F50 /* TanTouFivethCell.h */,
-				427AEB581C1F07B2003E1F50 /* TanTouFivethCell.m */,
-				427AEB5A1C1F07CE003E1F50 /* TantouFivthCellView.h */,
-				427AEB5B1C1F07CE003E1F50 /* TantouFivthCellView.m */,
 				425381371C1482E3005FF2F3 /* UIView+Frame.h */,
 				425381381C1482E3005FF2F3 /* UIView+Frame.m */,
 				425381391C1482E3005FF2F3 /* UIBezierPath+curved.h */,
 				4253813A1C1482E3005FF2F3 /* UIBezierPath+curved.m */,
 				4253813B1C1482E3005FF2F3 /* MPPlot.h */,
 				4253813C1C1482E3005FF2F3 /* MPPlot.m */,
-				4253813D1C1482E3005FF2F3 /* MPBarsGraphView.h */,
-				4253813E1C1482E3005FF2F3 /* MPBarsGraphView.m */,
 				423114581C437C640062FFFF /* DrawPathView.h */,
 				423114591C437C640062FFFF /* DrawPathView.m */,
-				425F79FF1C327BB900C8B2E3 /* DeviceStateView.h */,
-				425F7A001C327BB900C8B2E3 /* DeviceStateView.m */,
+				425381431C14A19F005FF2F3 /* MPGraphView.h */,
+				425381441C14A19F005FF2F3 /* MPGraphView.m */,
+				4253813D1C1482E3005FF2F3 /* MPBarsGraphView.h */,
+				4253813E1C1482E3005FF2F3 /* MPBarsGraphView.m */,
 			);
 			name = otherViewAndController;
 			sourceTree = "<group>";
@@ -3828,7 +3768,7 @@
 			name = setTanTou;
 			sourceTree = "<group>";
 		};
-		892284491C21636500EE97BC /* SetDevice */ = {
+		892284491C21636500EE97BC /* SetOfDevice */ = {
 			isa = PBXGroup;
 			children = (
 				528FFEE71C2444DD00D814A1 /* setCommon */,
@@ -3837,7 +3777,7 @@
 				892284471C2162F900EE97BC /* setShuiJi */,
 				528FFEF81C2462C600D814A1 /* setAirCleaner */,
 			);
-			name = SetDevice;
+			name = SetOfDevice;
 			sourceTree = "<group>";
 		};
 		8D5F62161C83FC81000E0388 /* WaterReplenishmentView */ = {
@@ -4615,7 +4555,6 @@
 				42DF15011C109A9B002B4C83 /* pull_down_row@2x.png in Resources */,
 				425381601C14D7AC005FF2F3 /* device_share@3x.png in Resources */,
 				52F1868B1C22847C00B74A05 /* SetCup.plist in Resources */,
-				428141431C0B0CFE006FEDDE /* MainViewController.xib in Resources */,
 				427AEB441C1EC6CD003E1F50 /* icon_lvxin_service_5.png in Resources */,
 				528FFF051C25778000D814A1 /* setTanTou.plist in Resources */,
 				426F42771C279CF200DC39DF /* icon_peidui_normal_jingshuiqi @2x.png in Resources */,
@@ -4715,7 +4654,6 @@
 				425F7A2D1C32B0C500C8B2E3 /* new_help_2@3x.png in Resources */,
 				425381551C14D259005FF2F3 /* device_cup@3x.png in Resources */,
 				526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */,
-				42E897AE1C1449F600DD0228 /* AmountOfDrinkingWaterFirstCell.xib in Resources */,
 				42CB9EBD1C353CD1006D95CD /* icon_bubble_shang.png in Resources */,
 				4280BE041C2D09FD00627AFB /* icon_jiare_normal@3x.png in Resources */,
 				4253815E1C14D799005FF2F3 /* device_share@2x.png in Resources */,
@@ -4883,7 +4821,6 @@
 				523DC33A1C175E1B00595099 /* XMLocationMessageCell.m in Sources */,
 				523DC3401C175E1B00595099 /* XMChatMoreItem.m in Sources */,
 				524337671C42A5F20024133D /* FirmwareTools.m in Sources */,
-				425381481C14C98C005FF2F3 /* AmountOfDrinkingThirdCell.m in Sources */,
 				526DDB3B1C4B6E2700363504 /* MyDeviceMainController.swift in Sources */,
 				42A7BB691C0C2A22008DB6E5 /* NSStringAdditions.mm in Sources */,
 				425F7A151C32ABD600C8B2E3 /* HelpCellView.m in Sources */,
@@ -4928,13 +4865,11 @@
 				8DBD54B61C567F3800D04B12 /* MySetViewController.swift in Sources */,
 				8DD51FDA1C7D8D3200F95695 /* MXChipPair.m in Sources */,
 				524337CB1C42A8E50024133D /* WaterPurifierSensor.m in Sources */,
-				427AEB591C1F07B2003E1F50 /* TanTouFivethCell.m in Sources */,
 				8D4354F91C75A410007F83DA /* WaterPurFooterCell.swift in Sources */,
 				8DA405641C8441B500AD5E5E /* ZXCGImageLuminanceSource.m in Sources */,
 				8DA405FA1C8441B500AD5E5E /* ZXRSSPair.m in Sources */,
 				426F42901C2829DE00DC39DF /* DeviceWerbservice.m in Sources */,
 				8DA405BC1C8441B500AD5E5E /* ZXPDF417DecodedBitStreamParser.m in Sources */,
-				34292ACC1C42917400F43587 /* TanTouErWeimaCell.m in Sources */,
 				8DA406021C8441B500AD5E5E /* ZXTelResultParser.m in Sources */,
 				8DA405661C8441B500AD5E5E /* ZXCodaBarReader.m in Sources */,
 				8DA4053F1C8441B500AD5E5E /* ZXAddressBookParsedResult.m in Sources */,
@@ -4956,6 +4891,7 @@
 				8DA405571C8441B500AD5E5E /* ZXBinaryBitmap.m in Sources */,
 				524337661C42A5F20024133D /* BluetoothSynchronizedObject.m in Sources */,
 				524337461C42A5BB0024133D /* BluetoothAirPurifierFilterStatus.m in Sources */,
+				8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */,
 				8DA405901C8441B500AD5E5E /* ZXExpandedProductParsedResult.m in Sources */,
 				523DC33E1C175E1B00595099 /* XMChatBar.m in Sources */,
 				8DA405781C8441B500AD5E5E /* ZXDataMatrixErrorCorrection.m in Sources */,
@@ -5009,7 +4945,6 @@
 				3473593F1C1C4DF600F4C79C /* GlobalClass.m in Sources */,
 				4296750C1C31675000F76245 /* VersionSettingDBManager.m in Sources */,
 				5243377D1C42A6320024133D /* Cup.m in Sources */,
-				428141371C0B0AD5006FEDDE /* SlideMenuController.swift in Sources */,
 				8DA4058D1C8441B500AD5E5E /* ZXEmailDoCoMoResultParser.m in Sources */,
 				8DA405C21C8441B500AD5E5E /* ZXPDF417Dimensions.m in Sources */,
 				8DA405E01C8441B500AD5E5E /* ZXQRCodeMatrixUtil.m in Sources */,
@@ -5033,7 +4968,6 @@
 				524337841C42A6320024133D /* CupRecordList.m in Sources */,
 				528D77301C26ACF100243986 /* VOC_AirViewController.swift in Sources */,
 				5243379B1C42A63F0024133D /* BaseOznerObject.m in Sources */,
-				427AEB5C1C1F07CE003E1F50 /* TantouFivthCellView.m in Sources */,
 				523DC2D51C175BE500595099 /* StarGuideViewController.swift in Sources */,
 				42A7BB371C0C23BC008DB6E5 /* ASIDownloadCache.m in Sources */,
 				8DA405F91C8441B500AD5E5E /* ZXRSSFinderPattern.m in Sources */,
@@ -5047,7 +4981,6 @@
 				8DA405A81C8441B500AD5E5E /* ZXModulusPoly.m in Sources */,
 				52080AF81C3BBC0600150B4F /* send_mosq.c in Sources */,
 				8DA405A11C8441B500AD5E5E /* ZXLuminanceSource.m in Sources */,
-				4280BDF01C2D07E100627AFB /* MyDeviceCustomSecondCellView.m in Sources */,
 				8DA405701C8441B500AD5E5E /* ZXDataMatrixC40Encoder.m in Sources */,
 				52A4EF731C28B5BC005F282D /* indoorHead_BigXib.swift in Sources */,
 				8DD51FD71C7D8D3200F95695 /* MQTTProxy.m in Sources */,
@@ -5057,7 +4990,6 @@
 				423112681C4342F00062FFFF /* ScanViewController.mm in Sources */,
 				8DA405471C8441B500AD5E5E /* ZXAI01decoder.m in Sources */,
 				8DA405C01C8441B500AD5E5E /* ZXPDF417Detector.m in Sources */,
-				4280BDEA1C2D064600627AFB /* MyDeviceCsutomSecondView.m in Sources */,
 				8DA405F51C8441B500AD5E5E /* ZXRSSExpandedGeneralAppIdDecoder.m in Sources */,
 				5243377E1C42A6320024133D /* CupFirmware.m in Sources */,
 				8DA406091C8441B500AD5E5E /* ZXUPCEANReader.m in Sources */,
@@ -5112,7 +5044,6 @@
 				8DA403681C843F8600AD5E5E /* LBXScanLineAnimation.m in Sources */,
 				8DA405931C8441B500AD5E5E /* ZXGenericGFPoly.m in Sources */,
 				52FF7E061C1A043A005635F8 /* YJHColorPickerHSWheel2.m in Sources */,
-				428141421C0B0CFE006FEDDE /* MainViewController.swift in Sources */,
 				422D915B1C1DBC19007CFB3B /* NSAttributedStringView.m in Sources */,
 				422D914B1C1D9F10007CFB3B /* MatchTanTouFinishdView.swift in Sources */,
 				8DA405421C8441B500AD5E5E /* ZXAI01392xDecoder.m in Sources */,
@@ -5199,9 +5130,7 @@
 				8DA4054B1C8441B500AD5E5E /* ZXAztecCode.m in Sources */,
 				8DA4059A1C8441B500AD5E5E /* ZXImage.m in Sources */,
 				8DA405D91C8441B500AD5E5E /* ZXQRCodeEncoder.m in Sources */,
-				428141451C0B0E61006FEDDE /* UIViewControllerExtension.swift in Sources */,
 				8DBD54D71C567F4500D04B12 /* MyRankTableViewCell.swift in Sources */,
-				8DFB39301C574E2A00A1641C /* BluetoothAirPurifierSensor.m in Sources */,
 				8DA4055C1C8441B500AD5E5E /* ZXBizcardResultParser.m in Sources */,
 				52215DE51C4E9516007C8C96 /* CenterChartCell.swift in Sources */,
 				8DA4057D1C8441B500AD5E5E /* ZXDataMatrixTextEncoder.m in Sources */,
@@ -5246,7 +5175,6 @@
 				524337851C42A6320024133D /* CupSensor.m in Sources */,
 				42A7BB181C0C237D008DB6E5 /* NetworkManager.m in Sources */,
 				8DA405DE1C8441B500AD5E5E /* ZXQRCodeFormatInformation.m in Sources */,
-				425F7A011C327BB900C8B2E3 /* DeviceStateView.m in Sources */,
 				8DA405E41C8441B500AD5E5E /* ZXQRCodeVersion.m in Sources */,
 				52080AEF1C3BBC0600150B4F /* logging_mosq.c in Sources */,
 				5226BB0C1C480E2C00895AE4 /* TDSDetailHeadView.swift in Sources */,
@@ -5282,7 +5210,6 @@
 				8DA405971C8441B500AD5E5E /* ZXGlobalHistogramBinarizer.m in Sources */,
 				42DF14F91C109153002B4C83 /* MatchFinishedView.swift in Sources */,
 				526DDB361C4AB9AB00363504 /* CupView_Footer.swift in Sources */,
-				42E897AC1C1449E700DD0228 /* AmountOfDrinkingWaterFirstCell.m in Sources */,
 				425F7A131C32ABD600C8B2E3 /* NewUserHelpViewController.m in Sources */,
 				523DC39C1C175EAA00595099 /* UIButton+WebCache.m in Sources */,
 				8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */,
@@ -5359,7 +5286,6 @@
 				8DA405561C8441B500AD5E5E /* ZXBinarizer.m in Sources */,
 				42A7BB361C0C23BC008DB6E5 /* ASIDataDecompressor.m in Sources */,
 				8DA4036E1C843F8600AD5E5E /* LBXScanViewStyle.m in Sources */,
-				426E27841C19810600BFB881 /* TDSDetailSecondCell.m in Sources */,
 				523DC3371C175E1B00595099 /* XMLocationManager.m in Sources */,
 				52080AF31C3BBC0600150B4F /* net_mosq.c in Sources */,
 				8DFB392D1C57248700A1641C /* ChatViewController.m in Sources */,

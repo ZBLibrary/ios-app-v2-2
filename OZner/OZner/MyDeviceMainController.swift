@@ -338,7 +338,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             deviceFooterView.addConstraint(NSLayoutConstraint(item: defaultFooterView, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
             
             
-            let defaultImg = UIImage(named: "defaultHeadImg")
+            let defaultImg = UIImage(named: "DeviceHeadImg")
             defaultHeadView=UIImageView(image: defaultImg)
             defaultHeadView.translatesAutoresizingMaskIntoConstraints = false
             deviceHeadView.addSubview(defaultHeadView)

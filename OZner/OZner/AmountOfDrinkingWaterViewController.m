@@ -7,13 +7,12 @@
 //
 
 #import "AmountOfDrinkingWaterViewController.h"
-#import "AmountOfDrinkingWaterFirstCell.h"
+//#import "AmountOfDrinkingWaterFirstCell.h"
 #import "AmountOfDrinkingCell.h"
-#import "AmountOfDrinkingThirdCell.h"
+//#import "AmountOfDrinkingThirdCell.h"
 #import "ShareManager.h"
 #import "OZner-swift.h"
-@interface AmountOfDrinkingWaterViewController ()<AmountOfDrinkingThirdCellDelegate,AmountOfDrinkingWaterFirstCellDelegate>
-
+@interface AmountOfDrinkingWaterViewController ()
 @property (nonatomic,strong) AmountOfDrinkingCell* currentSecondCell;
 @property (nonatomic,strong) CenterChartCell* circleCell;
 @property (nonatomic,assign) BOOL currentChartType;//YES 圆，NO 折线

@@ -13,14 +13,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     var shuttime=60
     var counttime:NSTimer!
     @IBAction func passToNextclick(sender: UIButton) {
-//        let switchController = SwitchViewController()
-//        //  self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
-//        //  self.window?.rootViewController = switchController;
-//        let application=UIApplication.sharedApplication()
-//        let app=application.delegate
-//        app!.window!!.rootViewController = switchController
-        
-        //LogInOut.loginInOutInstance().loginSuccess(self.view)
+
     }
     
     @IBOutlet var phoneTextField: UITextField!
