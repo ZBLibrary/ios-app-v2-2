@@ -144,9 +144,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             if ((self.myCurrentDevice?.isKindOfClass(Cup.classForCoder())) == true)
             {//水杯设置
-                let controller=setCUPDeviceViewController()
-                controller.myCurrentDevice = self.myCurrentDevice
+//                let controller=setCUPDeviceViewController()
+//                controller.myCurrentDevice = self.myCurrentDevice
+                //实验
+                let controller=setWaterReplenishController()
                 self.navigationController?.pushViewController(controller, animated: true)
+                
             }else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true){
                 //探头设置
                 let controller=setTanTouViewController()
@@ -206,7 +209,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     //Tap页面视图
     //净水器页面视图
     //加载哪个设备视图
-    func loadWhitchView(whitch:String)
+    func loadWhitchView(type:String)
     {
         self.currentDefeat = 0
         self.currentRank = 0
@@ -230,9 +233,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         deviceStateViewBG.hidden=false
         titleLabel.text="首页"
         isNeedDownLXDate=false
-        switch whitch
+        switch true
         {
-        case "cup":
+        case CupManager.isCup(type):
             //Cup 视图
             dianliangContainView.hidden=false
             lvxinContainView.hidden=true
@@ -256,7 +259,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
             break
-        case "tap":
+        case TapManager.isTap(type):
             //Tap 视图
             dianliangContainView.hidden=false
             lvxinContainView.hidden=false
@@ -274,7 +277,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             self.myTanTouBgView = tantouFooterView
             deviceFooterView.addSubview(self.myTanTouBgView!)
             break
-        case "water":
+        case WaterPurifierManager.isWaterPurifier(type):
             //净水器视图
             self.currentTDS=65535
             dianliangContainView.hidden=true
@@ -308,19 +311,23 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Bottom, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Bottom, multiplier: 1, constant: 0))
             waterPurFooter.waterDevice=myCurrentDevice as? WaterPurifier
             break
-        case "smallair":
+        case AirPurifierManager.isBluetoothAirPurifier(type):
             //台式空气净化器视图
             set_CurrSelectEquip(4)
             isPaoMa=0
             loadAirCleanerView()
             break
-        case "bigair":
+        case AirPurifierManager.isMXChipAirPurifier(type):
             //立式空气净化器
-            
             set_CurrSelectEquip(5)
             isPaoMa=0
             loadAirCleanerView()
             currentSpeedModel=0
+            break
+        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
+            //智能补水仪
+            set_CurrSelectEquip(6)
+            //添加补水仪视图
             break
         default://"default"
             //默认主页视图
@@ -510,9 +517,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     }
     
     //CustomNoDeviceViewDelegate
-    func customNodeviceAddDeviceAction() {
-        self.addDeviceAction()
-    }
+//    func customNodeviceAddDeviceAction() {
+//        self.addDeviceAction()
+//    }
     
     //添加设备
     func addDeviceAction()
@@ -825,33 +832,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         
         if(self.myCurrentDevice != nil)
         {
-            if(self.myCurrentDevice?.isKindOfClass(Cup.classForCoder()) == true)
-            {
-                //添加Cup视图
-                loadWhitchView("cup")
-            }
-            else if(self.myCurrentDevice?.isKindOfClass(Tap.classForCoder()) == true)
-            {
-                //添加Tap视图
-                loadWhitchView("tap")
-            }
-            else if(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true)
-            {
-                //添加净水器视图
-                loadWhitchView("water")
-            }
-            else if(AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) == true)
-            {
-                //添加净水器视图
-                loadWhitchView("smallair")
-    
-            }
-            else if(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type) == true)
-            {
-                //添加净水器视图
-                loadWhitchView("bigair")
-            }
-            //更新数据
+            loadWhitchView((self.myCurrentDevice?.type)!)
+                        //更新数据
             OznerDeviceSensorUpdate(self.myCurrentDevice)
         }
         else
