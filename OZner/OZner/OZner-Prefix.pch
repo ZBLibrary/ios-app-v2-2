@@ -1,0 +1,63 @@
+//
+//  OZner-Prefix.pch
+//  OZner
+//
+//  Created by test on 15/11/30.
+//  Copyright © 2015年 sunlinlin. All rights reserved.
+//
+
+#ifndef OZner_Prefix_pch
+#define OZner_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+
+#import "OCFatherViewController.h"
+#import "GlobalInfo.h"
+#import "GlobalSizeDef.h"
+#import "UINavgationBar+Custom.h"
+#import "TypeDef.h"
+#import "GlobalClass.h"
+#import "UITool.h"
+#import "UToolBox.h"
+#import "GlobalDef.h"
+#import "NSStringAdditions.h"
+#import "UserDatabase.h"
+#import "TapManager.h"
+#import "CupManager.h"
+
+#import "OznerManager.h"
+#import "Tap.h"
+#import "Cup.h"
+
+//多语言
+#define  loadLanguage(text)  NSLocalizedString(text, comment: "")
+//#import "OZner-swift.h"
+
+#define degreesToRadians(degrees) (M_PI * degrees / 180.0)
+
+#define CellColor [UIColor colorWithRed:247 green:247 blue:247 alpha:0.70]//cell的半透明颜色
+
+#define isIPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//Safe Release An Object
+#define SAFE_RELEASE(x)  do{if(x){[x release];x=nil;}}while(0)
+
+//#define ZN_DEBUG
+
+#ifdef ZN_DEBUG
+#define ZNLog(format,...) NSLog([NSString stringWithFormat:@"(%s-%d)%s:"format,string_reverse_position((char*)__FILE__,strlen((char*)__FILE__)),__LINE__,__FUNCTION__,##__VA_ARGS__],nil)
+#else
+#define ZNLog(format,...)
+#endif
+
+#define IOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f)
+#define IOS7_Y_DELTA(Y) if(IOS_7){Y+=20.f;}
+#define IOS7_RECT_DEALTA(RECT,X,Y,W,H) if(IOS_7) {CGRect f = RECT;f.origin.x += X;f.origin.y += Y;f.size.width +=W;f.size.height += H;RECT=f;}
+#define IOS7_Y_H_DELTA(Y,H) if(IOS_7){Y+=20.f;H-=20.f;}
+#define IOS6_7_DELTA(V,X,Y,W,H) if(IOS_7) {CGRect f = V.frame;f.origin.x += X;f.origin.y += Y;f.size.width +=W;f.size.height += H;V.frame=f;}
+
+#endif /* OZner_Prefix_pch */
