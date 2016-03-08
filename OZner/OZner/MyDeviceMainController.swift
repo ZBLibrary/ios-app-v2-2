@@ -147,7 +147,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
 //                let controller=setCUPDeviceViewController()
 //                controller.myCurrentDevice = self.myCurrentDevice
                 //实验
-                let controller=setWaterReplenishController()
+                let controller=WaterReplenishDetailTableViewController()
                 self.navigationController?.pushViewController(controller, animated: true)
                 
             }else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true){

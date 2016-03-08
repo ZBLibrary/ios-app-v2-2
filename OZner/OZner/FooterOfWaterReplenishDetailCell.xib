@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FooterOfWaterReplenishDetailCell" customModule="OZner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="312"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="311.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jf-HD-4Rm">
+                        <rect key="frame" x="0.0" y="10" width="375" height="291.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReF-Oa-kPG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="脸部" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfz-pd-f54">
+                                        <rect key="frame" x="15" y="12" width="50" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="JDA-5r-Ntf"/>
+                                            <constraint firstAttribute="width" constant="50" id="hiV-1X-g4T"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.16078431372549021" green="0.47843137254901963" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vmV-v7-nod">
+                                        <rect key="frame" x="15" y="36" width="345" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="okJ-at-VXl"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="周"/>
+                                            <segment title="月"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您本周的皮肤水分偏离正常，请及时保湿补水。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gm-uf-vQu">
+                                        <rect key="frame" x="15" y="256" width="345" height="11"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="11" id="HUQ-PO-ow5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsn-g0-u04">
+                                        <rect key="frame" x="0.0" y="58" width="375" height="198"/>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.91764705879999997" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0Gm-uf-vQu" secondAttribute="trailing" constant="15" id="AfX-xL-gg6"/>
+                                    <constraint firstItem="vmV-v7-nod" firstAttribute="leading" secondItem="ReF-Oa-kPG" secondAttribute="leading" constant="15" id="CIo-9h-WdS"/>
+                                    <constraint firstItem="0Gm-uf-vQu" firstAttribute="leading" secondItem="ReF-Oa-kPG" secondAttribute="leading" constant="15" id="DsW-Wr-xEC"/>
+                                    <constraint firstItem="gsn-g0-u04" firstAttribute="top" secondItem="vmV-v7-nod" secondAttribute="bottom" constant="2" id="Faw-0z-3MY"/>
+                                    <constraint firstItem="0Gm-uf-vQu" firstAttribute="top" secondItem="gsn-g0-u04" secondAttribute="bottom" id="HdG-zD-yar"/>
+                                    <constraint firstItem="dfz-pd-f54" firstAttribute="leading" secondItem="ReF-Oa-kPG" secondAttribute="leading" constant="15" id="IGY-Hy-Ikf"/>
+                                    <constraint firstItem="gsn-g0-u04" firstAttribute="leading" secondItem="ReF-Oa-kPG" secondAttribute="leading" id="VEe-ek-zjU"/>
+                                    <constraint firstAttribute="height" constant="292" id="VaF-6x-y7c"/>
+                                    <constraint firstItem="dfz-pd-f54" firstAttribute="top" secondItem="ReF-Oa-kPG" secondAttribute="top" constant="12" id="nj5-It-GDF"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Gm-uf-vQu" secondAttribute="bottom" constant="25" id="puY-Cn-8jH"/>
+                                    <constraint firstAttribute="trailing" secondItem="vmV-v7-nod" secondAttribute="trailing" constant="15" id="rb8-nf-apL"/>
+                                    <constraint firstItem="vmV-v7-nod" firstAttribute="top" secondItem="dfz-pd-f54" secondAttribute="bottom" constant="12" id="ukm-3U-pCW"/>
+                                    <constraint firstAttribute="trailing" secondItem="gsn-g0-u04" secondAttribute="trailing" id="vgd-GS-TXu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ReF-Oa-kPG" firstAttribute="centerY" secondItem="8jf-HD-4Rm" secondAttribute="centerY" id="3f1-bc-ZrZ"/>
+                            <constraint firstItem="ReF-Oa-kPG" firstAttribute="leading" secondItem="8jf-HD-4Rm" secondAttribute="leading" id="CNY-TJ-Hcb"/>
+                            <constraint firstAttribute="trailing" secondItem="ReF-Oa-kPG" secondAttribute="trailing" id="Z8i-eC-e9x"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="8jf-HD-4Rm" secondAttribute="trailing" id="C5r-Mg-sHa"/>
+                    <constraint firstAttribute="bottom" secondItem="8jf-HD-4Rm" secondAttribute="bottom" constant="10" id="hrN-6m-UKi"/>
+                    <constraint firstItem="8jf-HD-4Rm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kKg-JN-WqA"/>
+                    <constraint firstItem="8jf-HD-4Rm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="z8H-gF-hyC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="253.5" y="322"/>
+        </tableViewCell>
+    </objects>
+</document>

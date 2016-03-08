@@ -10,13 +10,23 @@ import UIKit
 
 class SetRemindTimeController: UIViewController,UIAlertViewDelegate {
 
-    var backClosure:((NSMutableDictionary) -> Void)?
+    var backClosure:((NSMutableDictionary) -> Void)?//回掉函数
     var dicData:NSMutableDictionary?
-    //var colorOfSelected=UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
-    //var colorOfNormal=UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+    var colorOfSelected=UIColor(red: 0, green: 124/255, blue: 251/255, alpha: 1)
+    var colorOfNormal=UIColor(red: 201/255, green: 202/255, blue: 203/255, alpha: 1)
+    var colorOfBlack=UIColor.blackColor()
     //-1没有选中，1表示选中时间一，2 。。。，3 。。。
     var currentSelected = -1{
         didSet{
+            timeTitleLabel1.textColor = currentSelected==1 ? colorOfSelected:colorOfBlack
+            timeTitleLabel2.textColor = currentSelected==2 ? colorOfSelected:colorOfBlack
+            timeTitleLabel3.textColor = currentSelected==3 ? colorOfSelected:colorOfBlack
+            timeLabel1.textColor = currentSelected==1 ? colorOfSelected:colorOfNormal
+            timeLabel2.textColor = currentSelected==2 ? colorOfSelected:colorOfNormal
+            timeLabel3.textColor = currentSelected==3 ? colorOfSelected:colorOfNormal
+            timeIcon1.hidden = !(currentSelected==1)
+            timeIcon2.hidden = !(currentSelected==2)
+            timeIcon3.hidden = !(currentSelected==3)
         }
     }
     //时间一
@@ -26,6 +36,7 @@ class SetRemindTimeController: UIViewController,UIAlertViewDelegate {
     @IBAction func timeClick1(sender: AnyObject) {
         datePicker.hidden=false
         currentSelected=1
+        datePicker.date=dateFromTimeString(timeLabel1.text!)
     }
     //时间二
     @IBOutlet weak var timeTitleLabel2: UILabel!
@@ -34,6 +45,7 @@ class SetRemindTimeController: UIViewController,UIAlertViewDelegate {
     @IBAction func timeClick2(sender: AnyObject) {
         datePicker.hidden=false
         currentSelected=2
+        datePicker.date=dateFromTimeString(timeLabel2.text!)
     }
     //时间三
     @IBOutlet weak var timeTitleLabel3: UILabel!
@@ -42,14 +54,59 @@ class SetRemindTimeController: UIViewController,UIAlertViewDelegate {
     @IBAction func timeClick3(sender: AnyObject) {
         datePicker.hidden=false
         currentSelected=3
+        datePicker.date=dateFromTimeString(timeLabel3.text!)
     }
-    
+    /**
+     "21:30"->NSDate
+     
+     - parameter timeStr: "21:30"
+     
+     - returns:NSDate
+     */
+    func dateFromTimeString(timeStr:String)->NSDate
+    {
+        let inputFormatter = NSDateFormatter()
+        inputFormatter.dateFormat="HH:mm"
+        return inputFormatter.dateFromString(timeStr)!
+    }
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
-        print(sender.date)
+        //print(sender.date)
+        let inputFormatter = NSDateFormatter()
+        inputFormatter.dateFormat="HH:mm"
+        let inputDate = inputFormatter.stringFromDate(sender.date)
+        let timeInt=IntFromTimeStr(inputDate)
+        switch currentSelected
+        {
+        case 1:
+            dicData?.setValue(timeInt, forKey: "checktime1")
+            timeLabel1.text=inputDate
+        case 2:
+            dicData?.setValue(timeInt, forKey: "checktime2")
+            timeLabel2.text=inputDate
+        case 3:
+            dicData?.setValue(timeInt, forKey: "checktime3")
+            timeLabel3.text=inputDate
+        default:
+            break
+        }
+        
+        //print(inputDate)
     }
-    private var tmpDicData:NSMutableDictionary?
+    /**
+     "01:30"->1*3600+30*60
+     
+     - parameter tempTime: "01:30"
+     
+     - returns: 1*3600+30*60
+     */
+    func IntFromTimeStr(tempTime:NSString)->Int
+    {
+        let timeArr:NSArray=tempTime.componentsSeparatedByString(":")
+        return (timeArr[0] as! NSString).integerValue*3600+(timeArr[1] as! NSString).integerValue*60
+    }
+    private var tmpDicData:NSMutableDictionary?//留作备案，最后要不要提示保存用
     override func viewDidLoad() {
         super.viewDidLoad()
         tmpDicData=dicData
@@ -61,6 +118,7 @@ class SetRemindTimeController: UIViewController,UIAlertViewDelegate {
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         datePicker.hidden=true
+        currentSelected = -1
         //初始化数据
         timeLabel1.text = StringFromDateNumber(dicData?.objectForKey("checktime1") as! Int)
         timeLabel2.text = StringFromDateNumber(dicData?.objectForKey("checktime2") as! Int)

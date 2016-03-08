@@ -539,6 +539,13 @@
 		8D88804F1C8DCC4D007391E1 /* setWaterReplenishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */; };
 		8D8880521C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */; };
 		8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */; };
+		8D9775141C8F0C5C00125CE7 /* WaterReplenishMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9775131C8F0C5C00125CE7 /* WaterReplenishMainView.swift */; };
+		8D9775161C8F0C7400125CE7 /* WaterReplenishMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9775151C8F0C7400125CE7 /* WaterReplenishMainView.xib */; };
+		8D97751D1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D97751B1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.swift */; };
+		8D97751E1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D97751C1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.xib */; };
+		8D9775211C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D97751F1C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.swift */; };
+		8D9775221C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9775201C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.xib */; };
+		8D9775241C8F120A00125CE7 /* WaterReplenishDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9775231C8F120A00125CE7 /* WaterReplenishDetailTableViewController.swift */; };
 		8DA403661C843F8600AD5E5E /* LBXZXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA403521C843F8600AD5E5E /* LBXZXCapture.m */; };
 		8DA403671C843F8600AD5E5E /* ZXingWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA403551C843F8600AD5E5E /* ZXingWrapper.m */; };
 		8DA403681C843F8600AD5E5E /* LBXScanLineAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA403571C843F8600AD5E5E /* LBXScanLineAnimation.m */; };
@@ -1637,6 +1644,13 @@
 		8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setWaterReplenishController.swift; sourceTree = "<group>"; };
 		8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell.swift; sourceTree = "<group>"; };
 		8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainOfSetWaterReplenCell.xib; sourceTree = "<group>"; };
+		8D9775131C8F0C5C00125CE7 /* WaterReplenishMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReplenishMainView.swift; sourceTree = "<group>"; };
+		8D9775151C8F0C7400125CE7 /* WaterReplenishMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterReplenishMainView.xib; sourceTree = "<group>"; };
+		8D97751B1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadOfWaterReplenishDetailCell.swift; sourceTree = "<group>"; };
+		8D97751C1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadOfWaterReplenishDetailCell.xib; sourceTree = "<group>"; };
+		8D97751F1C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterOfWaterReplenishDetailCell.swift; sourceTree = "<group>"; };
+		8D9775201C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterOfWaterReplenishDetailCell.xib; sourceTree = "<group>"; };
+		8D9775231C8F120A00125CE7 /* WaterReplenishDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReplenishDetailTableViewController.swift; sourceTree = "<group>"; };
 		8DA403511C843F8600AD5E5E /* LBXZXCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXZXCapture.h; sourceTree = "<group>"; };
 		8DA403521C843F8600AD5E5E /* LBXZXCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXZXCapture.m; sourceTree = "<group>"; };
 		8DA403531C843F8600AD5E5E /* LBXZXCaptureDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXZXCaptureDelegate.h; sourceTree = "<group>"; };
@@ -3800,6 +3814,12 @@
 		8D5F62161C83FC81000E0388 /* WaterReplenishmentView */ = {
 			isa = PBXGroup;
 			children = (
+				8D9775131C8F0C5C00125CE7 /* WaterReplenishMainView.swift */,
+				8D9775151C8F0C7400125CE7 /* WaterReplenishMainView.xib */,
+				8D97751B1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.swift */,
+				8D97751C1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.xib */,
+				8D97751F1C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.swift */,
+				8D9775201C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.xib */,
 			);
 			name = WaterReplenishmentView;
 			sourceTree = "<group>";
@@ -3824,6 +3844,7 @@
 		8D5F62181C84009C000E0388 /* WaterReplenishmentController */ = {
 			isa = PBXGroup;
 			children = (
+				8D9775231C8F120A00125CE7 /* WaterReplenishDetailTableViewController.swift */,
 			);
 			name = WaterReplenishmentController;
 			sourceTree = "<group>";
@@ -4539,9 +4560,11 @@
 				427AEB281C1EAFF7003E1F50 /* tantou_dianliang_3.png in Resources */,
 				4288C5301C0F01A700446D3E /* SwiftFatherViewController.xib in Resources */,
 				42CB9EC11C353CF3006D95CD /* icon_bubble_left.png in Resources */,
+				8D97751E1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.xib in Resources */,
 				526DDB381C4AB9BB00363504 /* CupView_Footer.xib in Resources */,
 				82BD64F91C107A1B00B02274 /* left_row@3x.png in Resources */,
 				42CF4E981C16B502000E22DC /* device_tan_tou_noamrl_state.png in Resources */,
+				8D9775221C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.xib in Resources */,
 				426F42761C279CF200DC39DF /* icon_mima.png in Resources */,
 				521667871C48C258002068EF /* TDSDetailCellzb.xib in Resources */,
 				4253815A1C14D297005FF2F3 /* device_zixun@2x.png in Resources */,
@@ -4740,6 +4763,7 @@
 				526DA5331C291F1E002755CA /* indoorAirWarn_Temp.xib in Resources */,
 				423114571C43711D0062FFFF /* scanline.png in Resources */,
 				4281414B1C0B15F0006FEDDE /* ic_menu_black_24dp@3x.png in Resources */,
+				8D9775161C8F0C7400125CE7 /* WaterReplenishMainView.xib in Resources */,
 				528D77311C26ACF100243986 /* VOC_AirViewController.xib in Resources */,
 				426F42791C279CF200DC39DF /* icon_pullDown.png in Resources */,
 				4248B2D71C0D837C00181CA0 /* 1_05.png in Resources */,
@@ -4783,6 +4807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D9775141C8F0C5C00125CE7 /* WaterReplenishMainView.swift in Sources */,
 				8DA4059D1C8441B500AD5E5E /* ZXISBNParsedResult.m in Sources */,
 				523DC3381C175E1B00595099 /* XMMessageCell.m in Sources */,
 				8DA405591C8441B500AD5E5E /* ZXBitArrayBuilder.m in Sources */,
@@ -4953,6 +4978,7 @@
 				5235E21A1C40F18100B125AE /* ShareView_zb.swift in Sources */,
 				523DC3441C175E1B00595099 /* XMFaceManager.m in Sources */,
 				523DC33D1C175E1B00595099 /* XMVoiceMessageCell.m in Sources */,
+				8D9775211C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.swift in Sources */,
 				8DA4060D1C8441B500AD5E5E /* ZXURIResultParser.m in Sources */,
 				8DFB39331C574E4B00A1641C /* MxChipAirPurifierSensor.m in Sources */,
 				523DC3A21C175EAA00595099 /* UIView+WebCacheOperation.m in Sources */,
@@ -5255,6 +5281,7 @@
 				8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */,
 				8DF253B61C774E8500CE2AE5 /* WaterMPGraphView.m in Sources */,
 				42E897B11C144CBC00DD0228 /* UITool.mm in Sources */,
+				8D9775241C8F120A00125CE7 /* WaterReplenishDetailTableViewController.swift in Sources */,
 				5243373A1C42A5AF0024133D /* AirPurifierManager.m in Sources */,
 				8DA405D51C8441B500AD5E5E /* ZXQRCodeDecodedBitStreamParser.m in Sources */,
 				523DC34C1C175E1B00595099 /* XMVoiceMessage.m in Sources */,
@@ -5325,6 +5352,7 @@
 				4288C53D1C0F06FF00446D3E /* AddDeviceCell.swift in Sources */,
 				8DA405561C8441B500AD5E5E /* ZXBinarizer.m in Sources */,
 				42A7BB361C0C23BC008DB6E5 /* ASIDataDecompressor.m in Sources */,
+				8D97751D1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.swift in Sources */,
 				8DA4036E1C843F8600AD5E5E /* LBXScanViewStyle.m in Sources */,
 				523DC3371C175E1B00595099 /* XMLocationManager.m in Sources */,
 				52080AF31C3BBC0600150B4F /* net_mosq.c in Sources */,
