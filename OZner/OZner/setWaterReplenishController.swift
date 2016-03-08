@@ -9,7 +9,9 @@
 import UIKit
 
 class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
-    var myCurrentDevice:OznerDevice?
+    var settingDic:NSMutableDictionary?=getPlistData("setWaterReplenish")
+    var myCurrentDevice:WaterReplenishmentMeter?
+    var MainViewCell:mainOfSetWaterReplenCell!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +25,28 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         tableView.backgroundColor=UIColor(red: 239.0/255.0, green: 239.0/255.0, blue: 246.0/255.0, alpha: 1)
         //去掉cell下面的黑色线条
         tableView.separatorStyle=UITableViewCellSeparatorStyle.None
+        //名称改变通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setNameChange:"), name: "setWaterReplenishName", object: nil)
+        //初始化设置数组
+        if myCurrentDevice != nil
+        {
+        settingDic?.setValue(myCurrentDevice?.settings.name, forKey: "deviceName")
+        settingDic?.setValue(myCurrentDevice?.settings.get("deviceAttrib", `default`: "办公室"), forKey: "deviceAttrib")
+        settingDic?.setValue(myCurrentDevice?.settings.get("checktime1", `default`: 30600), forKey: "checktime1")
+        settingDic?.setValue(myCurrentDevice?.settings.get("checktime2", `default`: 52200), forKey: "checktime2")
+        settingDic?.setValue(myCurrentDevice?.settings.get("checktime3", `default`: 75600), forKey: "checktime3")
+        settingDic?.setValue(myCurrentDevice?.settings.get("sex", `default`: "女"), forKey: "sex")
+        }
+    }
+    //修改设备名称通知
+    func setNameChange(text:NSNotification){
+        settingDic!.setValue(text.userInfo!["name"], forKey: "deviceName")
+        settingDic!.setValue(text.userInfo!["attr"], forKey: "deviceAttrib")
+        var tmpstring=(text.userInfo!["name"] as! String)+"("
+        tmpstring+=(text.userInfo!["attr"] as! String)+")"
+        MainViewCell.NameAndAdress.text=tmpstring
         
     }
-
     //返回
     func back(){
         let alert=UIAlertView(title: "", message: "是否保存？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "保存")
@@ -34,6 +55,15 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     //保存
     func SaveClick()
     {
+        myCurrentDevice?.settings.name=settingDic?.objectForKey("deviceName") as! String
+        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("deviceAttrib"), forKey: "deviceAttrib")
+        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime1"), forKey: "checktime1")
+        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime2"), forKey: "checktime2")
+        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime3"), forKey: "checktime3")
+        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("sex"), forKey: "sex")
+        OznerManager.instance().save(myCurrentDevice)
+        NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     //alert 点击事件
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
@@ -59,11 +89,8 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     }
     func ClearClick_OK()
     {
-        print("－－－－－－删除前－－－－－－")
-        print(OznerManager.instance().getDevices().count)
+
         OznerManager.instance().remove(myCurrentDevice)
-        print("－－－－－－删除后－－－－－－")
-        print(OznerManager.instance().getDevices().count)
         //发出通知
         NSNotificationCenter.defaultCenter().postNotificationName("removDeviceByZB", object: nil)
         self.navigationController?.popViewControllerAnimated(true)
@@ -96,7 +123,7 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let MainViewCell = NSBundle.mainBundle().loadNibNamed("mainOfSetWaterReplenCell", owner: self, options: nil).last as! mainOfSetWaterReplenCell
+        MainViewCell = NSBundle.mainBundle().loadNibNamed("mainOfSetWaterReplenCell", owner: self, options: nil).last as! mainOfSetWaterReplenCell
         MainViewCell.toSetNameAndDressButton.addTarget(self, action: Selector("toSetNameAndDressButton"), forControlEvents: .TouchUpInside)
         MainViewCell.toSetSexButton.addTarget(self, action: Selector("toSetSexButton"), forControlEvents: .TouchUpInside)
         MainViewCell.toSetTimeRemind.addTarget(self, action: Selector("toSetTimeRemind"), forControlEvents: .TouchUpInside)
@@ -104,18 +131,38 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         MainViewCell.toOperation.addTarget(self, action: Selector("toOperation"), forControlEvents: .TouchUpInside)
         MainViewCell.clearButton.addTarget(self, action: Selector("clearButton"), forControlEvents: .TouchUpInside)
         MainViewCell.selectionStyle=UITableViewCellSelectionStyle.None
-        // Configure the cell...
+        //数据初始化
+        MainViewCell.NameAndAdress.text=(settingDic?.objectForKey("deviceName") as? String)!+"("+(settingDic?.objectForKey("deviceAttrib") as? String)!+")"
+        MainViewCell.Sex.text=settingDic?.objectForKey("sex") as? String
         
+        print(settingDic)
         return MainViewCell
     }
     func toSetNameAndDressButton()
     {
+        let setnamecontroller=setDeviceNameViewController()
+        setnamecontroller.dataPlist=settingDic
+        self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
     func toSetSexButton()
     {
+        let setSexController=SetSexViewController()
+        setSexController.tmpSex=settingDic?.objectForKey("sex") as? String
+        print(settingDic?.objectForKey("sex"))
+        setSexController.backClosure={ (inputText:String) -> Void in
+            self.MainViewCell.Sex.text=inputText
+            self.settingDic?.setValue(inputText, forKey: "sex")
+        }
+        self.navigationController?.pushViewController(setSexController, animated: true)
     }
     func toSetTimeRemind()
     {
+        let setTimeController=SetRemindTimeController()
+        setTimeController.dicData=settingDic
+        setTimeController.backClosure={ (BackData:NSMutableDictionary) -> Void in
+            self.settingDic=BackData
+        }
+        self.navigationController?.pushViewController(setTimeController, animated: true)
     }
     func toInstructions()
     {

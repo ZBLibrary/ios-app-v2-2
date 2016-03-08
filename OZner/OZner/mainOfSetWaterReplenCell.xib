@@ -121,8 +121,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="gyz-8A-woi"/>
                                                 <exclude reference="Nr0-7n-VBl"/>
+                                                <exclude reference="gyz-8A-woi"/>
                                                 <exclude reference="y2E-7X-H0T"/>
                                             </mask>
                                         </variation>

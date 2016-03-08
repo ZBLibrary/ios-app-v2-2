@@ -85,6 +85,12 @@ class setDeviceNameViewController: UIViewController,UITextFieldDelegate,UIAlertV
             setAdress1.text=loadLanguage("客厅")
             setAdress2.text=loadLanguage("卧室")
             break
+        case 6:
+            noticeName="setWaterReplenishName"
+            textstring="办公室"
+            setAdress1.text="办公室"
+            setAdress2.text="家"
+            break
         default:
             break
         }

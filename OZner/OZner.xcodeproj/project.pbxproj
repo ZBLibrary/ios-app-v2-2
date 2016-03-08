@@ -529,6 +529,11 @@
 		8D4354FE1C760AC0007F83DA /* WaterPurTDSDetailCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4354FC1C760AC0007F83DA /* WaterPurTDSDetailCell1.xib */; };
 		8D4355011C760AD5007F83DA /* WaterPurTDSDetailCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354FF1C760AD5007F83DA /* WaterPurTDSDetailCell2.swift */; };
 		8D4355021C760AD5007F83DA /* WaterPurTDSDetailCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4355001C760AD5007F83DA /* WaterPurTDSDetailCell2.xib */; };
+		8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */; };
+		8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */; };
+		8D756AC71C8E91D50022CF63 /* SetSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */; };
+		8D756ACA1C8EC3950022CF63 /* SetRemindTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */; };
+		8D756ACB1C8EC3950022CF63 /* SetRemindTimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */; };
 		8D7FEC771C746DE200DD01AF /* WaterPurifierHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell.swift */; };
 		8D7FEC781C746DE200DD01AF /* WaterPurifierHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell.xib */; };
 		8D88804F1C8DCC4D007391E1 /* setWaterReplenishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */; };
@@ -1622,6 +1627,11 @@
 		8D4354FC1C760AC0007F83DA /* WaterPurTDSDetailCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurTDSDetailCell1.xib; sourceTree = "<group>"; };
 		8D4354FF1C760AD5007F83DA /* WaterPurTDSDetailCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailCell2.swift; sourceTree = "<group>"; };
 		8D4355001C760AD5007F83DA /* WaterPurTDSDetailCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurTDSDetailCell2.xib; sourceTree = "<group>"; };
+		8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish.plist; sourceTree = "<group>"; };
+		8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSexViewController.swift; sourceTree = "<group>"; };
+		8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetSexViewController.xib; sourceTree = "<group>"; };
+		8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRemindTimeController.swift; sourceTree = "<group>"; };
+		8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetRemindTimeController.xib; sourceTree = "<group>"; };
 		8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurifierHeadCell.swift; sourceTree = "<group>"; };
 		8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurifierHeadCell.xib; sourceTree = "<group>"; };
 		8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setWaterReplenishController.swift; sourceTree = "<group>"; };
@@ -3849,8 +3859,13 @@
 			isa = PBXGroup;
 			children = (
 				8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */,
+				8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */,
+				8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */,
+				8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */,
+				8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */,
 				8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */,
 				8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */,
+				8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */,
 			);
 			name = setWaterReplenish;
 			sourceTree = "<group>";
@@ -4546,6 +4561,7 @@
 				4253814F1C14CC00005FF2F3 /* device_konw@3x.png in Resources */,
 				82BD64F11C106C0300B02274 /* icon_peidui_normal_cup@2x.png in Resources */,
 				52C4FC2F1C33FA0A00994AC6 /* device_jin_smallair_select.png in Resources */,
+				8D756ACB1C8EC3950022CF63 /* SetRemindTimeController.xib in Resources */,
 				4280BDFB1C2D096100627AFB /* icon_power@2x.png in Resources */,
 				526643DC1C2A9723007D7A28 /* indoorAirWarn_shutdown.xib in Resources */,
 				528FFF091C2577AA00D814A1 /* setSmallAir.plist in Resources */,
@@ -4642,6 +4658,7 @@
 				5218AB641C392A2C004553E3 /* icon_bigair_peidui_waitting.png in Resources */,
 				427AEB3D1C1EC6CD003E1F50 /* icon_lvxin_more_2.png in Resources */,
 				425F7A291C32B0C500C8B2E3 /* new_help_0@3x.png in Resources */,
+				8D756AC71C8E91D50022CF63 /* SetSexViewController.xib in Resources */,
 				422D91481C1D958D007CFB3B /* icon_peidui_select_tan_tou@3x.png in Resources */,
 				42CF4E9A1C16B502000E22DC /* device_jin_shui_qi_select.png in Resources */,
 				523DC34D1C175E1B00595099 /* chatBar.xcassets in Resources */,
@@ -4736,6 +4753,7 @@
 				4288C5241C0ED68300446D3E /* icon_no_device_logo@3x.png in Resources */,
 				526643DA1C2A9723007D7A28 /* indoorAirWarn_Wireless.xib in Resources */,
 				52C4FC311C343CC000994AC6 /* bigautoModelView.xib in Resources */,
+				8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */,
 				52461F051C26985500834CC2 /* outAirXib.xib in Resources */,
 				4248B2DC1C0D837C00181CA0 /* dian_liang_30.png in Resources */,
 				42DF14FF1C109A81002B4C83 /* pull_down_row@3x.png in Resources */,
@@ -4906,6 +4924,7 @@
 				8DA405D71C8441B500AD5E5E /* ZXQRCodeDecoderMetaData.m in Sources */,
 				8DBD54D51C567F4500D04B12 /* AddFriendTableViewCell.swift in Sources */,
 				8DA405451C8441B500AD5E5E /* ZXAI013x0xDecoder.m in Sources */,
+				8D756ACA1C8EC3950022CF63 /* SetRemindTimeController.swift in Sources */,
 				8DA405E91C8441B500AD5E5E /* ZXResultParser.m in Sources */,
 				8DA4056A1C8441B500AD5E5E /* ZXCode39Reader.m in Sources */,
 				8DA405571C8441B500AD5E5E /* ZXBinaryBitmap.m in Sources */,
@@ -4989,6 +5008,7 @@
 				528D77301C26ACF100243986 /* VOC_AirViewController.swift in Sources */,
 				5243379B1C42A63F0024133D /* BaseOznerObject.m in Sources */,
 				523DC2D51C175BE500595099 /* StarGuideViewController.swift in Sources */,
+				8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */,
 				42A7BB371C0C23BC008DB6E5 /* ASIDownloadCache.m in Sources */,
 				8DA405F91C8441B500AD5E5E /* ZXRSSFinderPattern.m in Sources */,
 				524337B71C42A8D70024133D /* TapFirmware.m in Sources */,
