@@ -266,8 +266,8 @@ func get_MyInfoSet()->(Int,Int)
 let Url_test_Star="http://test.oznerwater.com/lktnew/wsrv/Handlcustomer.ashx?AccessToken=6201507a981afb4ZZ6ac698ed3dd86e1a76a3bb051703"
 let Screen_Width=UIScreen.mainScreen().bounds.size.width
 let Screen_Hight=UIScreen.mainScreen().bounds.size.height
-//let Screen_Width=UIScreen.mainScreen().bounds.size.width
-//let Screen_Hight=UIScreen.mainScreen().bounds.size.height
+//let K_Width=Screen_Width/375
+//let K_Hight=Screen_Hight/667
 
 func stateSwitch(state:Int)->String
 {

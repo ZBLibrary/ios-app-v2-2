@@ -43,6 +43,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             updateSpeedModel(currentSpeedModel)
         }
     }
+    //补水仪主视图界面
+    var waterReplenishMainView:WaterReplenishMainView?
     //---------------old-----------------
     var delegate:MyDeviceMainControllerDelegate?
     var tableView:UITableView = UITableView()
@@ -144,10 +146,10 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             if ((self.myCurrentDevice?.isKindOfClass(Cup.classForCoder())) == true)
             {//水杯设置
-//                let controller=setCUPDeviceViewController()
-//                controller.myCurrentDevice = self.myCurrentDevice
+                let controller=setCUPDeviceViewController()
+                controller.myCurrentDevice = self.myCurrentDevice
                 //实验
-                let controller=WaterReplenishDetailTableViewController()
+                //let controller=WaterReplenishDetailTableViewController()
                 self.navigationController?.pushViewController(controller, animated: true)
                 
             }else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true){
@@ -220,6 +222,11 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             MainScrollView.removeFromSuperview()
         }
+        //移除补水仪主界面视图
+        if(waterReplenishMainView != nil)
+        {
+            waterReplenishMainView!.removeFromSuperview()
+        }
         
         //移除其它设备界面
         for view:UIView in deviceHeadView.subviews
@@ -258,7 +265,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Bottom, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Bottom, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
-            break
+            
         case TapManager.isTap(type):
             //Tap 视图
             dianliangContainView.hidden=false
@@ -276,7 +283,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             let tantouFooterView = MyDeviceCustomFitstView.init(frame: CGRectMake(0, 0, Screen_Width, Screen_Hight*210/667))
             self.myTanTouBgView = tantouFooterView
             deviceFooterView.addSubview(self.myTanTouBgView!)
-            break
+            
         case WaterPurifierManager.isWaterPurifier(type):
             //净水器视图
             self.currentTDS=65535
@@ -310,25 +317,35 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Top, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Top, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Bottom, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Bottom, multiplier: 1, constant: 0))
             waterPurFooter.waterDevice=myCurrentDevice as? WaterPurifier
-            break
+            
         case AirPurifierManager.isBluetoothAirPurifier(type):
             //台式空气净化器视图
             set_CurrSelectEquip(4)
             isPaoMa=0
             loadAirCleanerView()
-            break
+            
         case AirPurifierManager.isMXChipAirPurifier(type):
             //立式空气净化器
             set_CurrSelectEquip(5)
             isPaoMa=0
             loadAirCleanerView()
             currentSpeedModel=0
-            break
-        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
+            //测试
+        case "default"==type://WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
             //智能补水仪
             set_CurrSelectEquip(6)
-            //添加补水仪视图
-            break
+            MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
+            waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView
+            waterReplenishMainView?.frame=CGRectMake(0, 0, Screen_Width, Screen_Hight-65)
+            waterReplenishMainView?.toLeftMenuButton.addTarget(self, action: Selector("addDeviceAction"), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.setButton.addTarget(self, action: Selector("toWaterReplenishOtherController:"), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.skinButton.addTarget(self, action: Selector("toWaterReplenishOtherController:"), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.toDetailButton.addTarget(self, action: Selector("toWaterReplenishOtherController:"), forControlEvents: .TouchUpInside)
+            MainScrollView.contentSize=CGSize(width: 0, height: Screen_Hight-65)
+            MainScrollView.addSubview(waterReplenishMainView!)
+            self.view.addSubview(MainScrollView)
+            //waterReplenishMainView?.updateView(2)
+
         default://"default"
             //默认主页视图
             myCurrentDevice=nil
@@ -407,6 +424,24 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         setBartteryImg()
    
         
+    }
+    //进入补水仪其他controller，0设置，1肤质查询，2详情
+    func toWaterReplenishOtherController(button:UIButton)
+    {
+        switch button.tag
+        {
+        case 0:
+            let setController=setWaterReplenishController()
+            self.navigationController?.pushViewController(setController, animated: true)
+        case 1:
+            let skipController=setWaterReplenishController()
+            self.navigationController?.pushViewController(skipController, animated: true)
+        case 2:
+            let detailController=WaterReplenishDetailTableViewController()
+            self.navigationController?.pushViewController(detailController, animated: true)
+        default:
+            break
+        }
     }
     //净水器开关点击事件
     //var isHaveCoolAbility=true
@@ -1549,6 +1584,10 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     let imgOn_0_5_4=["0":"air01002","5":"airdayOn","4":"airnightOn"]//0,5,4在on状态下对应的图片
     func  updateSpeedModel(tmpSpeed:UInt8)
     {
+        if myCurrentDevice==nil
+        {
+            return
+        }
         bigFooterViews[1].ison = (tmpSpeed==0||tmpSpeed==4||tmpSpeed==5) ? true :false
         
         if bigFooterViews[1].ison==true
@@ -1573,7 +1612,10 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     func initBigClickButton()
     {
         
-        
+        if myCurrentDevice==nil
+        {
+            return
+        }
         let tmpbigDevice=self.myCurrentDevice as! AirPurifier_MxChip
         
         bigFooterViews[0].ison = tmpbigDevice.status.power
