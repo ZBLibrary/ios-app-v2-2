@@ -516,6 +516,7 @@
 		82BD64F51C106CB400B02274 /* icon_peidui_normal_cup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82BD64F31C106CB400B02274 /* icon_peidui_normal_cup@3x.png */; };
 		82BD64F81C107A1B00B02274 /* left_row@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82BD64F61C107A1B00B02274 /* left_row@2x.png */; };
 		82BD64F91C107A1B00B02274 /* left_row@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82BD64F71C107A1B00B02274 /* left_row@3x.png */; };
+		8D047A6C1C91AE0400E1F930 /* SkinQueryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D047A6B1C91AE0400E1F930 /* SkinQueryTableViewController.swift */; };
 		8D09DBE01C5A698800D0432B /* loadFailedXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */; };
 		8D09DBE21C5A69D400D0432B /* LoadingXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBE11C5A69D400D0432B /* LoadingXib.swift */; };
 		8D0C3E6A1C58E78C00EFBB22 /* tantouLvXinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */; };
@@ -783,6 +784,12 @@
 		8DA406251C8446BF00AD5E5E /* MyQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA406241C8446BF00AD5E5E /* MyQRViewController.m */; };
 		8DA406291C8446FD00AD5E5E /* ScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA406271C8446FD00AD5E5E /* ScanResultViewController.m */; };
 		8DA4062A1C8446FD00AD5E5E /* ScanResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA406281C8446FD00AD5E5E /* ScanResultViewController.xib */; };
+		8DBAC48C1C91B109007CA1AC /* SkinHeadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAC48A1C91B109007CA1AC /* SkinHeadTableViewCell.swift */; };
+		8DBAC48D1C91B109007CA1AC /* SkinHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBAC48B1C91B109007CA1AC /* SkinHeadTableViewCell.xib */; };
+		8DBAC4901C91B11B007CA1AC /* SkinCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAC48E1C91B11B007CA1AC /* SkinCenterTableViewCell.swift */; };
+		8DBAC4911C91B11B007CA1AC /* SkinCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBAC48F1C91B11B007CA1AC /* SkinCenterTableViewCell.xib */; };
+		8DBAC4941C91B130007CA1AC /* SkinFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAC4921C91B130007CA1AC /* SkinFooterTableViewCell.swift */; };
+		8DBAC4951C91B130007CA1AC /* SkinFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBAC4931C91B130007CA1AC /* SkinFooterTableViewCell.xib */; };
 		8DBD54991C567E4A00D04B12 /* peiDuiOutTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */; };
 		8DBD549A1C567E4A00D04B12 /* peiDuiOutTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */; };
 		8DBD549C1C567E8900D04B12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD549B1C567E8900D04B12 /* Assets.xcassets */; };
@@ -1621,6 +1628,7 @@
 		82BD64F31C106CB400B02274 /* icon_peidui_normal_cup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_peidui_normal_cup@3x.png"; sourceTree = "<group>"; };
 		82BD64F61C107A1B00B02274 /* left_row@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_row@2x.png"; sourceTree = "<group>"; };
 		82BD64F71C107A1B00B02274 /* left_row@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_row@3x.png"; sourceTree = "<group>"; };
+		8D047A6B1C91AE0400E1F930 /* SkinQueryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinQueryTableViewController.swift; sourceTree = "<group>"; };
 		8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadFailedXib.swift; sourceTree = "<group>"; };
 		8D09DBE11C5A69D400D0432B /* LoadingXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingXib.swift; sourceTree = "<group>"; };
 		8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tantouLvXinView.swift; sourceTree = "<group>"; };
@@ -2142,6 +2150,12 @@
 		8DA406261C8446FD00AD5E5E /* ScanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanResultViewController.h; sourceTree = "<group>"; };
 		8DA406271C8446FD00AD5E5E /* ScanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanResultViewController.m; sourceTree = "<group>"; };
 		8DA406281C8446FD00AD5E5E /* ScanResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanResultViewController.xib; sourceTree = "<group>"; };
+		8DBAC48A1C91B109007CA1AC /* SkinHeadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinHeadTableViewCell.swift; sourceTree = "<group>"; };
+		8DBAC48B1C91B109007CA1AC /* SkinHeadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinHeadTableViewCell.xib; sourceTree = "<group>"; };
+		8DBAC48E1C91B11B007CA1AC /* SkinCenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCenterTableViewCell.swift; sourceTree = "<group>"; };
+		8DBAC48F1C91B11B007CA1AC /* SkinCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinCenterTableViewCell.xib; sourceTree = "<group>"; };
+		8DBAC4921C91B130007CA1AC /* SkinFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinFooterTableViewCell.swift; sourceTree = "<group>"; };
+		8DBAC4931C91B130007CA1AC /* SkinFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinFooterTableViewCell.xib; sourceTree = "<group>"; };
 		8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peiDuiOutTimeCell.swift; sourceTree = "<group>"; };
 		8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
 		8DBD549B1C567E8900D04B12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -3828,6 +3842,12 @@
 				8D97751C1C8F112000125CE7 /* HeadOfWaterReplenishDetailCell.xib */,
 				8D97751F1C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.swift */,
 				8D9775201C8F113400125CE7 /* FooterOfWaterReplenishDetailCell.xib */,
+				8DBAC48A1C91B109007CA1AC /* SkinHeadTableViewCell.swift */,
+				8DBAC48B1C91B109007CA1AC /* SkinHeadTableViewCell.xib */,
+				8DBAC48E1C91B11B007CA1AC /* SkinCenterTableViewCell.swift */,
+				8DBAC48F1C91B11B007CA1AC /* SkinCenterTableViewCell.xib */,
+				8DBAC4921C91B130007CA1AC /* SkinFooterTableViewCell.swift */,
+				8DBAC4931C91B130007CA1AC /* SkinFooterTableViewCell.xib */,
 			);
 			name = WaterReplenishmentView;
 			sourceTree = "<group>";
@@ -3853,6 +3873,7 @@
 			isa = PBXGroup;
 			children = (
 				8D9775231C8F120A00125CE7 /* WaterReplenishDetailTableViewController.swift */,
+				8D047A6B1C91AE0400E1F930 /* SkinQueryTableViewController.swift */,
 			);
 			name = WaterReplenishmentController;
 			sourceTree = "<group>";
@@ -4636,6 +4657,7 @@
 				4248B2D81C0D837C00181CA0 /* 1_08.png in Resources */,
 				427AEB3C1C1EC6CD003E1F50 /* icon_time_now.png in Resources */,
 				4248B2DF1C0D837C00181CA0 /* device_left_btn.png in Resources */,
+				8DBAC48D1C91B109007CA1AC /* SkinHeadTableViewCell.xib in Resources */,
 				42CF4E991C16B502000E22DC /* device_tan_tou_select_state.png in Resources */,
 				522D66641C31138E00BCA750 /* InfoPlist.strings in Resources */,
 				52ECBE841C0C66A000A962E4 /* SwitchViewController.xib in Resources */,
@@ -4652,6 +4674,7 @@
 				427AEB411C1EC6CD003E1F50 /* icon_lvxin_service_7.png in Resources */,
 				8D4355021C760AD5007F83DA /* WaterPurTDSDetailCell2.xib in Resources */,
 				4281B96A1C21858C00DC2C31 /* yin_shui_liang_2.png in Resources */,
+				8DBAC4951C91B130007CA1AC /* SkinFooterTableViewCell.xib in Resources */,
 				426F427B1C279CF200DC39DF /* jingshuiqi_wifi@2x.png in Resources */,
 				425F7A311C32B13900C8B2E3 /* dot_guide_2.png in Resources */,
 				528FFEE61C2403E800D814A1 /* setTanTouViewController.xib in Resources */,
@@ -4679,6 +4702,7 @@
 				427AEB3F1C1EC6CD003E1F50 /* icon_lvxin_service_1.png in Resources */,
 				5217585E1C2B159800CCCB11 /* device_jin_smallair_normal.png in Resources */,
 				8DBD54DE1C567F4500D04B12 /* FriendsNav.xib in Resources */,
+				8DBAC4911C91B11B007CA1AC /* SkinCenterTableViewCell.xib in Resources */,
 				521758551C2AEF3100CCCB11 /* icon_peidui_normal_bigair@2x.png in Resources */,
 				5217584E1C2AEC5500CCCB11 /* select_device_3zb.png in Resources */,
 				42CB9EC21C353CF3006D95CD /* icon_bubble_right.png in Resources */,
@@ -4954,6 +4978,7 @@
 				42E897B41C144CD700DD0228 /* NavigaitionTitleView.m in Sources */,
 				524337811C42A6320024133D /* CupRawRecord.m in Sources */,
 				52ECBE831C0C66A000A962E4 /* SwitchViewController.m in Sources */,
+				8D047A6C1C91AE0400E1F930 /* SkinQueryTableViewController.swift in Sources */,
 				8DA405D71C8441B500AD5E5E /* ZXQRCodeDecoderMetaData.m in Sources */,
 				8DBD54D51C567F4500D04B12 /* AddFriendTableViewCell.swift in Sources */,
 				8DA405451C8441B500AD5E5E /* ZXAI013x0xDecoder.m in Sources */,
@@ -5059,6 +5084,7 @@
 				52A4EF731C28B5BC005F282D /* indoorHead_BigXib.swift in Sources */,
 				8DD51FD71C7D8D3200F95695 /* MQTTProxy.m in Sources */,
 				8DBD54E31C567F4500D04B12 /* FriendSearch.swift in Sources */,
+				8DBAC48C1C91B109007CA1AC /* SkinHeadTableViewCell.swift in Sources */,
 				425381421C1482E3005FF2F3 /* MPBarsGraphView.m in Sources */,
 				42E897B71C1451D200DD0228 /* AmountOfDrinkingCell.m in Sources */,
 				423112681C4342F00062FFFF /* ScanViewController.mm in Sources */,
@@ -5196,6 +5222,7 @@
 				52080AF91C3BBC0600150B4F /* thread_mosq.c in Sources */,
 				52DDC18C1C4127C300CBA038 /* Main_FooterView_zb.swift in Sources */,
 				8DA4053B1C8441B500AD5E5E /* ZXAbstractExpandedDecoder.m in Sources */,
+				8DBAC4901C91B11B007CA1AC /* SkinCenterTableViewCell.swift in Sources */,
 				8DA405CA1C8441B500AD5E5E /* ZXPerspectiveTransform.m in Sources */,
 				523DC3421C175E1B00595099 /* XMProgressHUD.m in Sources */,
 				8DA405551C8441B500AD5E5E /* ZXAztecWriter.m in Sources */,
@@ -5273,6 +5300,7 @@
 				8DA405F11C8441B500AD5E5E /* ZXRSSExpandedDecodedInformation.m in Sources */,
 				52A4EF691C2871FF005F282D /* bigFooterViewXib.swift in Sources */,
 				524337DB1C42ABE50024133D /* MQTTKit.m in Sources */,
+				8DBAC4941C91B130007CA1AC /* SkinFooterTableViewCell.swift in Sources */,
 				523DC3A11C175EAA00595099 /* UIImageView+WebCache.m in Sources */,
 				523DC36F1C175E9B00595099 /* AFURLRequestSerialization.m in Sources */,
 				523DC2FB1C175DA800595099 /* NSArray+MASAdditions.m in Sources */,

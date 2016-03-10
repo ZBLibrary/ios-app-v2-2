@@ -1,17 +1,15 @@
 //
-//  HeadOfWaterReplenishDetailCell.swift
+//  SkinCenterTableViewCell.swift
 //  OZner
 //
-//  Created by 赵兵 on 16/3/8.
+//  Created by 赵兵 on 16/3/10.
 //  Copyright © 2016年 sunlinlin. All rights reserved.
 //
 
 import UIKit
 
-class HeadOfWaterReplenishDetailCell: UITableViewCell {
+class SkinCenterTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var shareButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

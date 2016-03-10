@@ -331,8 +331,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             loadAirCleanerView()
             currentSpeedModel=0
             //测试
-        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
-            //智能补水仪  Test："default"==type://
+        case "default"==type://WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
+            //智能补水仪  Test：
             set_CurrSelectEquip(6)
             MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
             waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView
@@ -434,7 +434,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             let setController=setWaterReplenishController()
             self.navigationController?.pushViewController(setController, animated: true)
         case 1:
-            let skipController=setWaterReplenishController()
+            let skipController=SkinQueryTableViewController()
             self.navigationController?.pushViewController(skipController, animated: true)
         case 2:
             let detailController=WaterReplenishDetailTableViewController()

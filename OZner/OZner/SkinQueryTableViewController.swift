@@ -1,45 +1,50 @@
 //
-//  WaterReplenishDetailTableViewController.swift
+//  SkinQueryTableViewController.swift
 //  OZner
 //
-//  Created by 赵兵 on 16/3/8.
+//  Created by 赵兵 on 16/3/10.
 //  Copyright © 2016年 sunlinlin. All rights reserved.
 //
 
 import UIKit
 
-class WaterReplenishDetailTableViewController: UITableViewController {
+class SkinQueryTableViewController: UITableViewController {
 
-    var HeadView:HeadOfWaterReplenishDetailCell!
-    var FooterView:FooterOfWaterReplenishDetailCell!
+    var headCell:SkinHeadTableViewCell!
+    var centerCell:SkinCenterTableViewCell!
+    var footerCell:SkinFooterTableViewCell!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.automaticallyAdjustsScrollViewInsets=false
-        
-        HeadView = NSBundle.mainBundle().loadNibNamed("HeadOfWaterReplenishDetailCell", owner: self, options: nil).last as!  HeadOfWaterReplenishDetailCell
-        HeadView.selectionStyle=UITableViewCellSelectionStyle.None
-        HeadView.backButton.addTarget(self, action: Selector("backClick"), forControlEvents: .TouchUpInside)
-        HeadView.shareButton.addTarget(self, action: Selector("shareClick"), forControlEvents: .TouchUpInside)
-        FooterView = NSBundle.mainBundle().loadNibNamed("FooterOfWaterReplenishDetailCell", owner: self, options: nil).last as!  FooterOfWaterReplenishDetailCell
-        FooterView.selectionStyle=UITableViewCellSelectionStyle.None
+        headCell = NSBundle.mainBundle().loadNibNamed("SkinHeadTableViewCell", owner: self, options: nil).last as!  SkinHeadTableViewCell
+        headCell.selectionStyle=UITableViewCellSelectionStyle.None
+        headCell.backButton.addTarget(self, action: Selector("backClick"), forControlEvents: .TouchUpInside)
+        centerCell = NSBundle.mainBundle().loadNibNamed("SkinCenterTableViewCell", owner: self, options: nil).last as!  SkinCenterTableViewCell
+        centerCell.selectionStyle=UITableViewCellSelectionStyle.None
+        footerCell = NSBundle.mainBundle().loadNibNamed("SkinFooterTableViewCell", owner: self, options: nil).last as!  SkinFooterTableViewCell
+        footerCell.selectionStyle=UITableViewCellSelectionStyle.None
         
     }
+
     func backClick()
     {
         self.navigationController?.popViewControllerAnimated(true)
-    }
-    func shareClick()
-    {
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+    }
     // MARK: - Table view data source
 
+    private let heightArr:[CGFloat]=[418,160,430]
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return heightArr[indexPath.row]
+    }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -47,35 +52,24 @@ class WaterReplenishDetailTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
-    }
-
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row==0
-        {
-            return 266
-        }
-        else
-        {
-            return max(Screen_Hight-266, 312)
-        }
+        return 3
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row==0
         {
-            return HeadView
-        }else
+            return headCell
+            
+        }else if indexPath.row==1
         {
-            return FooterView
+            return centerCell
         }
-        
+        else
+        {
+            return footerCell
+        }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
-    }
 
     /*
     // Override to support conditional editing of the table view.
