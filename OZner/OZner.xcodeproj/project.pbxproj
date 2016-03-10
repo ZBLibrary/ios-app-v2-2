@@ -18,7 +18,7 @@
 		422D91451C1D9573007CFB3B /* icon_peidui_normal_tan_tou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 422D91441C1D9573007CFB3B /* icon_peidui_normal_tan_tou@2x.png */; };
 		422D91481C1D958D007CFB3B /* icon_peidui_select_tan_tou@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 422D91461C1D958D007CFB3B /* icon_peidui_select_tan_tou@3x.png */; };
 		422D91491C1D958D007CFB3B /* icon_peidui_normal_tan_tou@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 422D91471C1D958D007CFB3B /* icon_peidui_normal_tan_tou@3x.png */; };
-		422D914B1C1D9F10007CFB3B /* MatchTanTouFinishdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D914A1C1D9F10007CFB3B /* MatchTanTouFinishdView.swift */; };
+		422D914B1C1D9F10007CFB3B /* OtherMatchFinishdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D914A1C1D9F10007CFB3B /* OtherMatchFinishdView.swift */; };
 		422D91501C1DB157007CFB3B /* MyDeviceCustomFitstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422D914F1C1DB157007CFB3B /* MyDeviceCustomFitstView.m */; };
 		422D915B1C1DBC19007CFB3B /* NSAttributedStringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 422D915A1C1DBC19007CFB3B /* NSAttributedStringView.m */; };
 		423112681C4342F00062FFFF /* ScanViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 423112671C4342F00062FFFF /* ScanViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -211,7 +211,7 @@
 		42CF4EA71C16F6D7000E22DC /* CustomPopViewSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CF4EA51C16F6D7000E22DC /* CustomPopViewSecondCell.swift */; };
 		42CF4EA81C16F6D7000E22DC /* CustomPopViewSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CF4EA61C16F6D7000E22DC /* CustomPopViewSecondCell.xib */; };
 		42CF4EAA1C1706E3000E22DC /* yin_shui_liang_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 42CF4EA91C1706E3000E22DC /* yin_shui_liang_0.png */; };
-		42DF14F91C109153002B4C83 /* MatchFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF14F81C109153002B4C83 /* MatchFinishedView.swift */; };
+		42DF14F91C109153002B4C83 /* CupMatchFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF14F81C109153002B4C83 /* CupMatchFinishedView.swift */; };
 		42DF14FB1C109329002B4C83 /* match_finish_sanjiao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DF14FA1C109329002B4C83 /* match_finish_sanjiao@2x.png */; };
 		42DF14FD1C109332002B4C83 /* match_finish_sanjiao@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DF14FC1C109332002B4C83 /* match_finish_sanjiao@3x.png */; };
 		42DF14FF1C109A81002B4C83 /* pull_down_row@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DF14FE1C109A81002B4C83 /* pull_down_row@3x.png */; };
@@ -887,7 +887,7 @@
 		422D91441C1D9573007CFB3B /* icon_peidui_normal_tan_tou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_peidui_normal_tan_tou@2x.png"; sourceTree = "<group>"; };
 		422D91461C1D958D007CFB3B /* icon_peidui_select_tan_tou@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_peidui_select_tan_tou@3x.png"; sourceTree = "<group>"; };
 		422D91471C1D958D007CFB3B /* icon_peidui_normal_tan_tou@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_peidui_normal_tan_tou@3x.png"; sourceTree = "<group>"; };
-		422D914A1C1D9F10007CFB3B /* MatchTanTouFinishdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTanTouFinishdView.swift; sourceTree = "<group>"; };
+		422D914A1C1D9F10007CFB3B /* OtherMatchFinishdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherMatchFinishdView.swift; sourceTree = "<group>"; };
 		422D914E1C1DB157007CFB3B /* MyDeviceCustomFitstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeviceCustomFitstView.h; sourceTree = "<group>"; };
 		422D914F1C1DB157007CFB3B /* MyDeviceCustomFitstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDeviceCustomFitstView.m; sourceTree = "<group>"; };
 		422D91591C1DBC19007CFB3B /* NSAttributedStringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAttributedStringView.h; sourceTree = "<group>"; };
@@ -1141,7 +1141,7 @@
 		42CF4EA51C16F6D7000E22DC /* CustomPopViewSecondCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopViewSecondCell.swift; sourceTree = "<group>"; };
 		42CF4EA61C16F6D7000E22DC /* CustomPopViewSecondCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopViewSecondCell.xib; sourceTree = "<group>"; };
 		42CF4EA91C1706E3000E22DC /* yin_shui_liang_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yin_shui_liang_0.png; sourceTree = "<group>"; };
-		42DF14F81C109153002B4C83 /* MatchFinishedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinishedView.swift; sourceTree = "<group>"; };
+		42DF14F81C109153002B4C83 /* CupMatchFinishedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupMatchFinishedView.swift; sourceTree = "<group>"; };
 		42DF14FA1C109329002B4C83 /* match_finish_sanjiao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "match_finish_sanjiao@2x.png"; sourceTree = "<group>"; };
 		42DF14FC1C109332002B4C83 /* match_finish_sanjiao@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "match_finish_sanjiao@3x.png"; sourceTree = "<group>"; };
 		42DF14FE1C109A81002B4C83 /* pull_down_row@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull_down_row@3x.png"; sourceTree = "<group>"; };
@@ -2798,12 +2798,12 @@
 			isa = PBXGroup;
 			children = (
 				428141041C0B072C006FEDDE /* AppDelegate.swift */,
-				52845B251C217C0700C8A090 /* Login */,
 				52ECBEA91C0C6B6000A962E4 /* MyDevice */,
 				52ECBEA81C0C6B5D00A962E4 /* MyStore */,
 				52ECBEA71C0C6B5A00A962E4 /* chat */,
 				52ECBEA61C0C6B5500A962E4 /* MyInfo */,
-				5226BB061C47E6F700895AE4 /* GlobalController */,
+				52845B251C217C0700C8A090 /* Login */,
+				5226BB061C47E6F700895AE4 /* SystemController */,
 				42A7BB561C0C24BF008DB6E5 /* GlobalFile */,
 				42A7BB551C0C24BB008DB6E5 /* ModelCenter */,
 			);
@@ -3174,7 +3174,7 @@
 			name = WaterReplenishmentMeter;
 			sourceTree = "<group>";
 		};
-		5226BB061C47E6F700895AE4 /* GlobalController */ = {
+		5226BB061C47E6F700895AE4 /* SystemController */ = {
 			isa = PBXGroup;
 			children = (
 				52ECBE801C0C66A000A962E4 /* SwitchViewController.h */,
@@ -3204,12 +3204,16 @@
 				4288C52D1C0F01A700446D3E /* SwiftFatherViewController.swift */,
 				4288C52E1C0F01A700446D3E /* SwiftFatherViewController.xib */,
 			);
-			name = GlobalController;
+			name = SystemController;
 			sourceTree = "<group>";
 		};
 		5226BB081C47F6C000895AE4 /* CupView */ = {
 			isa = PBXGroup;
 			children = (
+				425381611C14DCFD005FF2F3 /* CustomThreeCircleView.h */,
+				425381621C14DCFD005FF2F3 /* CustomThreeCircleView.m */,
+				42E897B51C1451D200DD0228 /* AmountOfDrinkingCell.h */,
+				42E897B61C1451D200DD0228 /* AmountOfDrinkingCell.m */,
 				5226BB0B1C480E2C00895AE4 /* TDSDetailHeadView.swift */,
 				5226BB091C47F70800895AE4 /* TDSDetailHeadView.xib */,
 				521667841C48C258002068EF /* TDSDetailCellzb.swift */,
@@ -3523,8 +3527,6 @@
 			children = (
 				8D09DBE11C5A69D400D0432B /* LoadingXib.swift */,
 				528D77381C26FF2B00243986 /* LoadingXib.xib */,
-				8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */,
-				8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */,
 				52215DE71C4EA390007C8C96 /* drawCircleView.swift */,
 				52215DE31C4E9516007C8C96 /* CenterChartCell.swift */,
 				52215DE41C4E9516007C8C96 /* CenterChartCell.xib */,
@@ -3682,6 +3684,7 @@
 				526DDB391C4B6E2700363504 /* MyDeviceMainController.swift */,
 				526DDB3A1C4B6E2700363504 /* MyDeviceMainController.xib */,
 				52895C051C4C02F7008D63D7 /* CommonView */,
+				8D4A818C1C916A9500B0FF89 /* MakePair */,
 				5226BB081C47F6C000895AE4 /* CupView */,
 				521667881C4909A7002068EF /* CupController */,
 				521BF7CF1C4A856A00AD1EAB /* TapView */,
@@ -3692,7 +3695,7 @@
 				8D5F62161C83FC81000E0388 /* WaterReplenishmentView */,
 				8D5F62181C84009C000E0388 /* WaterReplenishmentController */,
 				892284491C21636500EE97BC /* SetOfDevice */,
-				52F1C4FF1C4D6A5B0008B8E5 /* otherViewAndController */,
+				52F1C4FF1C4D6A5B0008B8E5 /* otherSupport */,
 			);
 			name = MyDevice;
 			sourceTree = "<group>";
@@ -3708,27 +3711,9 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		52F1C4FF1C4D6A5B0008B8E5 /* otherViewAndController */ = {
+		52F1C4FF1C4D6A5B0008B8E5 /* otherSupport */ = {
 			isa = PBXGroup;
 			children = (
-				34A659011C452336002B2F10 /* CustomNoDeviceView.h */,
-				34A659021C452336002B2F10 /* CustomNoDeviceView.m */,
-				8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */,
-				8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */,
-				8DD51FDB1C7D97F100F95695 /* JingShuiWifiViewController.h */,
-				8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */,
-				8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */,
-				4288C5251C0EEE3800446D3E /* AddDeviceViewController.swift */,
-				4288C5261C0EEE3800446D3E /* AddDeviceViewController.xib */,
-				4288C53B1C0F06FF00446D3E /* AddDeviceCell.swift */,
-				4288C53C1C0F06FF00446D3E /* AddDeviceCell.xib */,
-				424C155D1C1047B70001C36E /* DeviceMatchCellView.swift */,
-				42DF14F81C109153002B4C83 /* MatchFinishedView.swift */,
-				422D914A1C1D9F10007CFB3B /* MatchTanTouFinishdView.swift */,
-				42E897B51C1451D200DD0228 /* AmountOfDrinkingCell.h */,
-				42E897B61C1451D200DD0228 /* AmountOfDrinkingCell.m */,
-				425381611C14DCFD005FF2F3 /* CustomThreeCircleView.h */,
-				425381621C14DCFD005FF2F3 /* CustomThreeCircleView.m */,
 				425381371C1482E3005FF2F3 /* UIView+Frame.h */,
 				425381381C1482E3005FF2F3 /* UIView+Frame.m */,
 				425381391C1482E3005FF2F3 /* UIBezierPath+curved.h */,
@@ -3742,7 +3727,7 @@
 				4253813D1C1482E3005FF2F3 /* MPBarsGraphView.h */,
 				4253813E1C1482E3005FF2F3 /* MPBarsGraphView.m */,
 			);
-			name = otherViewAndController;
+			name = otherSupport;
 			sourceTree = "<group>";
 		};
 		52FF7DE81C19F921005635F8 /* extral */ = {
@@ -3809,6 +3794,29 @@
 				8D88804D1C8DC8DA007391E1 /* setWaterReplenish */,
 			);
 			name = SetOfDevice;
+			sourceTree = "<group>";
+		};
+		8D4A818C1C916A9500B0FF89 /* MakePair */ = {
+			isa = PBXGroup;
+			children = (
+				42DF14F81C109153002B4C83 /* CupMatchFinishedView.swift */,
+				422D914A1C1D9F10007CFB3B /* OtherMatchFinishdView.swift */,
+				8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */,
+				8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */,
+				34A659011C452336002B2F10 /* CustomNoDeviceView.h */,
+				34A659021C452336002B2F10 /* CustomNoDeviceView.m */,
+				8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */,
+				8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */,
+				8DD51FDB1C7D97F100F95695 /* JingShuiWifiViewController.h */,
+				8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */,
+				8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */,
+				4288C5251C0EEE3800446D3E /* AddDeviceViewController.swift */,
+				4288C5261C0EEE3800446D3E /* AddDeviceViewController.xib */,
+				4288C53B1C0F06FF00446D3E /* AddDeviceCell.swift */,
+				4288C53C1C0F06FF00446D3E /* AddDeviceCell.xib */,
+				424C155D1C1047B70001C36E /* DeviceMatchCellView.swift */,
+			);
+			name = MakePair;
 			sourceTree = "<group>";
 		};
 		8D5F62161C83FC81000E0388 /* WaterReplenishmentView */ = {
@@ -5111,7 +5119,7 @@
 				8DA405931C8441B500AD5E5E /* ZXGenericGFPoly.m in Sources */,
 				52FF7E061C1A043A005635F8 /* YJHColorPickerHSWheel2.m in Sources */,
 				422D915B1C1DBC19007CFB3B /* NSAttributedStringView.m in Sources */,
-				422D914B1C1D9F10007CFB3B /* MatchTanTouFinishdView.swift in Sources */,
+				422D914B1C1D9F10007CFB3B /* OtherMatchFinishdView.swift in Sources */,
 				8DA405421C8441B500AD5E5E /* ZXAI01392xDecoder.m in Sources */,
 				528D77461C2716BA00243986 /* setTimingViewController.swift in Sources */,
 				523DC3471C175E1B00595099 /* XMImageMessage.m in Sources */,
@@ -5274,7 +5282,7 @@
 				8DA405BB1C8441B500AD5E5E /* ZXPDF417Common.m in Sources */,
 				42A7BB631C0C29F6008DB6E5 /* AppShare.m in Sources */,
 				8DA405971C8441B500AD5E5E /* ZXGlobalHistogramBinarizer.m in Sources */,
-				42DF14F91C109153002B4C83 /* MatchFinishedView.swift in Sources */,
+				42DF14F91C109153002B4C83 /* CupMatchFinishedView.swift in Sources */,
 				526DDB361C4AB9AB00363504 /* CupView_Footer.swift in Sources */,
 				425F7A131C32ABD600C8B2E3 /* NewUserHelpViewController.m in Sources */,
 				523DC39C1C175EAA00595099 /* UIButton+WebCache.m in Sources */,

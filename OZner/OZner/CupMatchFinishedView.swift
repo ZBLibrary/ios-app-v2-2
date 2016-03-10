@@ -8,18 +8,18 @@
 
 import UIKit
 
-protocol MatchFinishedViewDelegate
+protocol CupMatchFinishedViewDelegate
 {
     
-    func finishedAction()
+    func cupFinishedAction()
 }
 
-class MatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
+class CupMatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
     
     var myCupNameTextField:UITextField?
     var myWeightTextField:UITextField?
 
-    var delegate:MatchFinishedViewDelegate?
+    var delegate:CupMatchFinishedViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +27,7 @@ class MatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
         let height = UIScreen.mainScreen().bounds.height
         
         let sanjiaoImg = UIImage(named: "match_finish_sanjiao.png")
-        let sanjiaoImgView = UIImageView(frame: CGRectMake(85*(width/375.0), 0, (sanjiaoImg?.size.width)!, (sanjiaoImg?.size.height)!))
+        let sanjiaoImgView = UIImageView(frame: CGRectMake(width/2.0, 0, (sanjiaoImg?.size.width)!, (sanjiaoImg?.size.height)!))
         sanjiaoImgView.image = UIImage(named: "match_finish_sanjiao.png")
         self .addSubview(sanjiaoImgView)
         sanjiaoImgView.backgroundColor = UIColor.clearColor()
@@ -65,13 +65,13 @@ class MatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
         label.textAlignment = NSTextAlignment.Center
         label.font = UIFont.systemFontOfSize(17*(height/667.0))
         label.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
-        scrollView .addSubview(label)
+        scrollView.addSubview(label)
         
-        let rowImg = UIImage(named: "pull_down_row.png")
+        //let rowImg = UIImage(named: "pull_down_row.png")
         
-        let pullDownImgView = UIImageView(frame: CGRectMake(label.frame.size.width+label.frame.origin.x+31*(width/375.0), (label.frame.size.height-(rowImg?.size.height)!)/2+label.frame.origin.y, (rowImg?.size.width)!, (rowImg?.size.height)!))
-        pullDownImgView.image = UIImage(named: "pull_down_row.png")
-        scrollView .addSubview(pullDownImgView)
+        //let pullDownImgView = UIImageView(frame: CGRectMake(label.frame.size.width+label.frame.origin.x+31*(width/375.0), (label.frame.size.height-(rowImg?.size.height)!)/2+label.frame.origin.y, (rowImg?.size.width)!, (rowImg?.size.height)!))
+        //pullDownImgView.image = UIImage(named: "pull_down_row.png")
+        //scrollView .addSubview(pullDownImgView)
         
         let rightSeparatorView = UIView(frame: CGRectMake(leftSeparatorView.frame.size.width+leftSeparatorView.frame.origin.x+23*(width/375.0),leftSeparatorView.frame.origin.y,150*(width/375.0),1))
         rightSeparatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -145,7 +145,7 @@ class MatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
     
     func finishedAction()
     {
-        delegate?.finishedAction()
+        delegate?.cupFinishedAction()
     }
     
     required init?(coder aDecoder: NSCoder) {

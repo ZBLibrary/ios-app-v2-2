@@ -9,6 +9,10 @@
 import UIKit
 let kWidthOfWaterReplensh=Screen_Width/375
 let kHightOfWaterReplensh=(Screen_Hight-65)/(667-65)
+enum SexType:String{
+    case Man="男"
+    case WoMan="女"
+}
 class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     //head视图控件
     @IBOutlet weak var toLeftMenuButton: UIButton!
@@ -34,53 +38,48 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     private let centerOfImg=CGPoint(x: Screen_Width/2, y: 446*kHightOfWaterReplensh/2)
     //数组以 脸 眼 手 颈 的顺序 半径30范围内
     private let locationOfImg=[
-        "女":[CGPoint(x: 142*kWidthOfWaterReplensh, y: 265*kHightOfWaterReplensh),CGPoint(x: 214*kWidthOfWaterReplensh, y: 243*kHightOfWaterReplensh),CGPoint(x: 142*kWidthOfWaterReplensh, y: 370*kHightOfWaterReplensh),CGPoint(x: 206*kWidthOfWaterReplensh, y: 328*kHightOfWaterReplensh)],
-        "男":[]
+        SexType.WoMan:[CGPoint(x: 142*kWidthOfWaterReplensh, y: 265*kHightOfWaterReplensh),CGPoint(x: 214*kWidthOfWaterReplensh, y: 243*kHightOfWaterReplensh),CGPoint(x: 142*kWidthOfWaterReplensh, y: 370*kHightOfWaterReplensh),CGPoint(x: 206*kWidthOfWaterReplensh, y: 328*kHightOfWaterReplensh)],
+        SexType.Man:[]
     ]
-    //private var currViewIsFirstView=true
+  
     func personImgTapClick(sender: UITapGestureRecognizer) {
-        //print(sender.numberOfTouches())
-        //print(sender.locationInView(personBgImgView))
         let touchPoint=sender.locationInView(personBgImgView)
-        
-        if stateOfView>0//当前页是局部器官图
+        if stateOfView>0//当前页是局部器官图二级界面
         {
-            if pow(centerOfImg.x-touchPoint.x, 2)+pow(centerOfImg.y-touchPoint.y, 2)<=100*100
-            {
-                print("点击了返回区域")
+//            if pow(centerOfImg.x-touchPoint.x, 2)+pow(centerOfImg.y-touchPoint.y, 2)<=100*100
+//            {
                 stateOfView=0
-                personBgImgView.image=UIImage(named: personImgArray[currentSex]![0])
-            }
+                print("点击了返回区域")
+            //}
         }
-        else
+        else//当前页是主视图一级界面
         {
             let locaArr=locationOfImg[currentSex]
-            //当前页是四个触电图
             switch true
             {
             case isInside(locaArr![0],touchPoint):
                 stateOfView=1
-                print("脸")
+                alertBeforeTest.text="请将补水仪放置脸部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![1])
             case isInside(locaArr![1],touchPoint):
                 stateOfView=1
-                print("眼")
+                alertBeforeTest.text="请将补水仪放置眼部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![2])
             case isInside(locaArr![2],touchPoint):
                 stateOfView=1
-                print("手")
+                alertBeforeTest.text="请将补水仪放置手部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![3])
             case isInside(locaArr![3],touchPoint):
                 stateOfView=1
-                print("颈")
+                alertBeforeTest.text="请将补水仪放置颈部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![4])
             default:
-                print("其他区域")
+                print("点击了其它区域")
                 break
             }
         }
         
-        print("===================")
+        
     }
     //返回是不是在点的30半径范围内
     private var isInside={ (point1:CGPoint,point2:CGPoint)->Bool in
@@ -102,7 +101,6 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         personBgImgView.addGestureRecognizer(tapGesture)
         setNeedsLayout()
         layoutIfNeeded()
-
     }
     
     //0初始页面,1点击某个部位进入的页面,2检测中,3检测结果出来显示的页面
@@ -123,11 +121,10 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 centerCircleView.hidden=true
                 skinButton.hidden=false
                 resultOfFooterContainView.hidden=true
-                
+                personBgImgView.image=UIImage(named: personImgArray[currentSex]![0])
             case 1:
                 alertBeforeTest.hidden=false
                 centerCircleView.backgroundColor=color_blue
-                //alertBeforeTest.text="检测中"
                 alertBeforeTest.font=UIFont.systemFontOfSize(16)
                 resultStateLabel.text=""
                 
@@ -136,6 +133,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 alertBeforeTest.text="检测中"
                 alertBeforeTest.font=UIFont.systemFontOfSize(20)
                 resultStateLabel.text=""
+                //检测转圈动画
             case 3:
                 resultValueContainView.hidden=false
             default:
@@ -144,19 +142,27 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         }
     }
     private let personImgArray=[
-        "女":["womanOfReplensh1","womanOfReplensh2","womanOfReplensh3","womanOfReplensh4","womanOfReplensh5"],
-        "男":["manOfReplensh1","manOfReplensh2","manOfReplensh3","manOfReplensh4","manOfReplensh5"]
+        SexType.WoMan:["womanOfReplensh1","womanOfReplensh2","womanOfReplensh3","womanOfReplensh4","womanOfReplensh5"],
+        SexType.Man:["manOfReplensh1","manOfReplensh2","manOfReplensh3","manOfReplensh4","manOfReplensh5"]
     ]
     
     //当前性别
-    private var currentSex="女"{
+    private var currentSex:SexType=SexType.WoMan{
         didSet{
+            stateOfView=0
         }
     }
-    //更新视图
-    func updateView(state:Int)//,deviceTitle:String,skinVlue:Float)
+    
+    func updateViewzb(Sex Sex:SexType)//,deviceTitle:String,skinVlue:Float)
     {
-        stateOfView=state
+        currentSex=Sex
+        setNeedsLayout()
+        layoutIfNeeded()
+    }
+    //更新视图
+    func updateViewzb(State State:Int)//,deviceTitle:String,skinVlue:Float)
+    {
+        stateOfView=State
         setNeedsLayout()
         layoutIfNeeded()
     }

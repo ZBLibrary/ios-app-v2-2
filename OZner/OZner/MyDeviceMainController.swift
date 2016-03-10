@@ -331,8 +331,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             loadAirCleanerView()
             currentSpeedModel=0
             //测试
-        case "default"==type://WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
-            //智能补水仪
+        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
+            //智能补水仪  Test："default"==type://
             set_CurrSelectEquip(6)
             MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
             waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView

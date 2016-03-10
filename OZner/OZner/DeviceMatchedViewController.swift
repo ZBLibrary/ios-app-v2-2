@@ -8,19 +8,19 @@
 
 import UIKit
 
-class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource,iCarouselDelegate,MatchFinishedViewDelegate,MatchTanTouFinisedViewDelegate,JinShuiqiWIFIControllerDelegate,UIAlertViewDelegate,UITextFieldDelegate,OznerManagerDelegate {
+class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource,iCarouselDelegate,CupMatchFinishedViewDelegate,OtherMatchFinisedViewDelegate,JinShuiqiWIFIControllerDelegate,UIAlertViewDelegate,UITextFieldDelegate,OznerManagerDelegate {
 
     var angle = 0.0
     var myIcarousel:iCarousel?
     var dataSourceArr:NSMutableArray?
     var mIndex = 0
-    var finishedBgView:MatchFinishedView?
+    var cupFinishedBgView:CupMatchFinishedView?
     //水探头
-    var tanTouFinishedView:MatchTanTouFinishdView?
+    var otherDeviceFinishedView:OtherMatchFinishdView?
     
     var isShowFinishedView = false
     var deveiceDataList:NSArray?
-    //20秒如果还没有配对成功提醒用户重现配对
+    //30秒如果还没有配对成功提醒用户重现配对
     var mSecond = 30//设备容许最大配对时间：蓝牙30秒，WIFI设备90秒
     var mTimer:NSTimer?
     //0 水杯 1 水探头 2 净水器 3 air蓝牙 4 air wifi,5 补水仪
@@ -85,8 +85,19 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         for var i = 0; i < arr.count;i++
         {
             let deviceIo = arr.objectAtIndex(i) as! BaseDeviceIO
+            print(deviceIo.type)
+            //临时测试用 这个if要删除
+            if (deviceCuttentType == 5&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
+                {
+                    muArr .addObject(deviceIo)
+            }
+            //
             if OznerManager.instance().checkisBindMode(deviceIo) == true
             {
+                
+                print(deviceIo.type)
+                print(deviceCuttentType)
+                
                 if(deviceCuttentType == 0&&CupManager.isCup(deviceIo.type)) ||
                 (deviceCuttentType == 1&&TapManager.isTap(deviceIo.type)) ||
                 (deviceCuttentType == 2&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
@@ -127,39 +138,39 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         self.deviceBgView.hidden = true
         
 
-        let view = MatchFinishedView(frame: CGRectMake(0,height,width,height-407*(height/667.0)))
-        self.finishedBgView = view
-        self.finishedBgView?.delegate = self;
+        let view = CupMatchFinishedView(frame: CGRectMake(0,height,width,height-407*(height/667.0)))
+        self.cupFinishedBgView = view
+        self.cupFinishedBgView?.delegate = self;
         self.view.addSubview(view)
         
-        let view1 = MatchTanTouFinishdView(frame: CGRectMake(0,height,width,height-407*(height/667.0)))
-        self.tanTouFinishedView = view1;
-        self.tanTouFinishedView?.delegate = self;
+        let view1 = OtherMatchFinishdView(frame: CGRectMake(0,height,width,height-407*(height/667.0)))
+        self.otherDeviceFinishedView = view1;
+        self.otherDeviceFinishedView?.delegate = self;
         self.view.addSubview(view1)
         
         //
-        finishedBgView?.hidden = true
-        tanTouFinishedView?.hidden = false
+        cupFinishedBgView?.hidden = true
+        otherDeviceFinishedView?.hidden = false
         switch deviceCuttentType
         {
         case 0:
             self.firstLabel.text = loadLanguage("请将智能水杯倒置")
             self.circleIconImgView.image = UIImage(named: "icon_peidui_watting.png")
             animationImgView.image=UIImage(named: "yin_shui_liang_0.png")
-            self.finishedBgView?.hidden = false
-            self.tanTouFinishedView?.hidden = true
+            self.cupFinishedBgView?.hidden = false
+            self.otherDeviceFinishedView?.hidden = true
         case 1:
             self.firstLabel.text = loadLanguage("长按下start按钮")
             self.circleIconImgView.image = UIImage(named: "icon_peidui_tantou_watting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_tan_tou.png")
-            self.tanTouFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入水探头名称")
+            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入水探头名称")
         case 2://如果是净水器弹出输入Wi-Fi密码的界面
             self.firstLabel.text = loadLanguage("请同时按下净水器加热与制冷两个按钮")
             self.secondLabel.text = loadLanguage("正在进行WIFI配对")
             self.firstLabel.font=UIFont.systemFontOfSize(15)
             self.circleIconImgView.image = UIImage(named: "icon_jingshuiqi_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_jingshuiqi.png")
-            self.tanTouFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入净水器名称")
+            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入净水器名称")
             let controller = JingShuiWifiViewController()
             controller.delegate = self
             self.presentViewController(controller, animated: true, completion: nil)
@@ -169,7 +180,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             self.circleIconImgView.image = UIImage(named: "icon_smallair_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_smallair.png")
             
-            self.tanTouFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("台式空净名称")
+            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("台式空净名称")
         case 4://如果是空气净化器，弹出输入Wi-Fi密码的界面
             self.secondLabel.hidden=false
             self.firstLabel.text = "同时按下电源和风速键，WIFI指示灯闪烁。"
@@ -177,7 +188,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             self.secondLabel.text=loadLanguage("正在进行WIFI配对")
             self.circleIconImgView.image = UIImage(named: "icon_bigair_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_bigair.png")
-            self.tanTouFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("立式空净名称")
+            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("立式空净名称")
             let controller = JingShuiWifiViewController()
             controller.delegate = self
             self.presentViewController(controller, animated: true, completion: nil)
@@ -185,8 +196,8 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             self.secondLabel.hidden=true
             self.firstLabel.text = loadLanguage("正在进行蓝牙配对")
             self.circleIconImgView.image = UIImage(named: "WaterReplenish3")
-            animationImgView.image=UIImage(named: "WaterReplenish4")
-            self.tanTouFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("补水仪名称")
+            animationImgView.image=UIImage(named: "WaterReplenishComplete")
+            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("补水仪名称")
         default: break
         }
         self.startAnimation()
@@ -390,7 +401,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     //MatchTanTouFinisedViewDelegate
 //    func saveTanTou()
 //    {
-//        if((self.tanTouFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
+//        if((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
 //        {
 //            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写探头名称"), preferredStyle: UIAlertControllerStyle.Alert)
 //            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
@@ -410,7 +421,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
 //            MBProgressHUD.hideHUDForView(self.view, animated: true)
 //            if(status.networkStatus == kSuccessStatus)
 //            {
-//                device.settings.name = self.tanTouFinishedView?.myTanTouNameTextField?.text
+//                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
 //                device.settings.put("type", value: loadLanguage("探头"))
 //                OznerManager.instance().save(device)
 //                
@@ -435,7 +446,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     
 //    func saveJingShuiqi()
 //    {
-//        if((self.tanTouFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
+//        if((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
 //        {
 //            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写净水器名称"), preferredStyle: UIAlertControllerStyle.Alert)
 //            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
@@ -455,7 +466,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
 //            MBProgressHUD.hideHUDForView(self.view, animated: true)
 //            if(status.networkStatus == kSuccessStatus)
 //            {
-//                device.settings.name = self.tanTouFinishedView?.myTanTouNameTextField?.text
+//                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
 //                device.settings.put("type", value: loadLanguage("净水器"))
 //                OznerManager.instance().save(device)
 //                
@@ -480,7 +491,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
 //    }
 //    func saveSmallAir()
 //    {
-//        if((self.tanTouFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
+//        if((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
 //        {
 //            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写台式空气净化器名称"), preferredStyle: UIAlertControllerStyle.Alert)
 //            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
@@ -499,7 +510,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
 //            MBProgressHUD.hideHUDForView(self.view, animated: true)
 //            if(status.networkStatus == kSuccessStatus)
 //            {
-//                device.settings.name = self.tanTouFinishedView?.myTanTouNameTextField?.text
+//                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
 //                device.settings.put("type", value: loadLanguage("台式空气净化器"))
 //                OznerManager.instance().save(device)
 //                
@@ -523,7 +534,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
 //    }
 //    func saveBigAir()
 //    {
-//        if((self.tanTouFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
+//        if((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
 //        {
 //            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写立式空气净化器名称"), preferredStyle: UIAlertControllerStyle.Alert)
 //            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
@@ -542,7 +553,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
 //            MBProgressHUD.hideHUDForView(self.view, animated: true)
 //            if(status.networkStatus == kSuccessStatus)
 //            {
-//                device.settings.name = self.tanTouFinishedView?.myTanTouNameTextField?.text
+//                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
 //                device.settings.put("type", value: loadLanguage("立式空气净化器"))
 //                OznerManager.instance().save(device)
 //                
@@ -565,32 +576,33 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
 //        })
 //    }
     //除了水杯的配对完成回掉事件
-    func finishedTanTouAction() {
-        saveDevice()
-//        if(self.deviceCuttentType == 1)
-//        {
-//            self.saveTanTou()
-//        }
-//        else if(self.deviceCuttentType == 2)
-//        {
-//            self.saveJingShuiqi()
-//        }
-//        else if(self.deviceCuttentType == 3)
-//        {
-//            self.saveSmallAir()
-//        }
-//        else if(self.deviceCuttentType == 4)
-//        {
-//            self.saveBigAir()
-//        }else if(deviceCuttentType == 5)
-//        {
-//            saveDevice()
-//        }
-    }
+//    func otherFinishedAction() {
+//        saveDevice()
+////        if(self.deviceCuttentType == 1)
+////        {
+////            self.saveTanTou()
+////        }
+////        else if(self.deviceCuttentType == 2)
+////        {
+////            self.saveJingShuiqi()
+////        }
+////        else if(self.deviceCuttentType == 3)
+////        {
+////            self.saveSmallAir()
+////        }
+////        else if(self.deviceCuttentType == 4)
+////        {
+////            self.saveBigAir()
+////        }else if(deviceCuttentType == 5)
+////        {
+////            saveDevice()
+////        }
+//    }
+    //除了水杯的配对完成回掉事件
     var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","智能补水仪"]
-    func saveDevice()
+    func otherFinishedAction()
     {
-        if ((self.tanTouFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
+        if ((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
         {
             let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: "请填写设备名称", preferredStyle: UIAlertControllerStyle.Alert)
             let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
@@ -605,11 +617,11 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         //添加到服务器
         let werservice = DeviceWerbservice()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:self.finishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.finishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             if(status.networkStatus == kSuccessStatus)
             {
-                device.settings.name = self.tanTouFinishedView?.myTanTouNameTextField?.text
+                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
                 device.settings.put("type", value: self.deviceNameArr[self.deviceCuttentType])
                 OznerManager.instance().save(device)
                 
@@ -632,8 +644,8 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         })
     }
     //水杯配完对后的回掉事件
-    func finishedAction() {
-        if((self.finishedBgView?.myCupNameTextField?.text?.isEmpty) == true || (self.finishedBgView?.myWeightTextField?.text?.isEmpty) == true)
+    func cupFinishedAction() {
+        if((self.cupFinishedBgView?.myCupNameTextField?.text?.isEmpty) == true || (self.cupFinishedBgView?.myWeightTextField?.text?.isEmpty) == true)
         {
             let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写智能杯名称或者体重"), preferredStyle: UIAlertControllerStyle.Alert)
             let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
@@ -648,13 +660,13 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         //添加到服务器
         let werservice = DeviceWerbservice() 
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:self.finishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的杯子",weight:self.finishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的杯子",weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             if(status.networkStatus == kSuccessStatus)
             {
-                device.settings.name = self.finishedBgView?.myCupNameTextField?.text
+                device.settings.name = self.cupFinishedBgView?.myCupNameTextField?.text
                 device.settings.put("type", value: loadLanguage("我的杯子"))
-                device.settings.put("weight", value: self.finishedBgView?.myWeightTextField?.text!)
+                device.settings.put("weight", value: self.cupFinishedBgView?.myWeightTextField?.text!)
                 
                 OznerManager.instance().save(device)
                 
@@ -891,13 +903,13 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
                 
                 if(self.deviceCuttentType == 0)//水杯
                 {
-                    self.deviceBgView.frame = CGRectMake(0, self.view.frame.size.height-self.finishedBgView!.frame.size.height-self.deviceBgView.frame.size.height, self.deviceBgView.frame.size.width, self.deviceBgView.frame.size.height)
-                    self.finishedBgView?.frame = CGRectMake(0, self.view.frame.size.height-self.finishedBgView!.frame.size.height, self.finishedBgView!.frame.size.width, self.finishedBgView!.frame.size.height)
+                    self.deviceBgView.frame = CGRectMake(0, self.view.frame.size.height-self.cupFinishedBgView!.frame.size.height-self.deviceBgView.frame.size.height, self.deviceBgView.frame.size.width, self.deviceBgView.frame.size.height)
+                    self.cupFinishedBgView?.frame = CGRectMake(0, self.view.frame.size.height-self.cupFinishedBgView!.frame.size.height, self.cupFinishedBgView!.frame.size.width, self.cupFinishedBgView!.frame.size.height)
                 }
                 else
                 {
-                    self.deviceBgView.frame = CGRectMake(0, self.view.frame.size.height-self.tanTouFinishedView!.frame.size.height-self.deviceBgView.frame.size.height, self.deviceBgView.frame.size.width, self.deviceBgView.frame.size.height)
-                    self.tanTouFinishedView?.frame = CGRectMake(0, self.view.frame.size.height-self.tanTouFinishedView!.frame.size.height, self.tanTouFinishedView!.frame.size.width, self.tanTouFinishedView!.frame.size.height)
+                    self.deviceBgView.frame = CGRectMake(0, self.view.frame.size.height-self.otherDeviceFinishedView!.frame.size.height-self.deviceBgView.frame.size.height, self.deviceBgView.frame.size.width, self.deviceBgView.frame.size.height)
+                    self.otherDeviceFinishedView?.frame = CGRectMake(0, self.view.frame.size.height-self.otherDeviceFinishedView!.frame.size.height, self.otherDeviceFinishedView!.frame.size.width, self.otherDeviceFinishedView!.frame.size.height)
                 }
                 
             

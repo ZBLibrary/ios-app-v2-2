@@ -7,16 +7,17 @@
 //
 
 import UIKit
-protocol MatchTanTouFinisedViewDelegate
+protocol OtherMatchFinisedViewDelegate
 {
-    func finishedTanTouAction()
+    func otherFinishedAction()
 }
 
-class MatchTanTouFinishdView: UIView,UITextFieldDelegate {
+class OtherMatchFinishdView: UIView,UITextFieldDelegate {
 
     var myTanTouNameTextField:UITextField?
     var myWeightTextField:UITextField?
-    var delegate:MatchTanTouFinisedViewDelegate?
+    var segmentControl:UISegmentedControl?
+    var delegate:OtherMatchFinisedViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,14 +25,14 @@ class MatchTanTouFinishdView: UIView,UITextFieldDelegate {
         let height = UIScreen.mainScreen().bounds.height
         
         let sanjiaoImg = UIImage(named: "match_finish_sanjiao.png")
-        let sanjiaoImgView = UIImageView(frame: CGRectMake(85*(width/375.0), 0, (sanjiaoImg?.size.width)!, (sanjiaoImg?.size.height)!))
+        let sanjiaoImgView = UIImageView(frame: CGRectMake((width-(sanjiaoImg?.size.width)!)/2.0, 0, (sanjiaoImg?.size.width)!, (sanjiaoImg?.size.height)!))
         sanjiaoImgView.image = UIImage(named: "match_finish_sanjiao.png")
         self .addSubview(sanjiaoImgView)
         sanjiaoImgView.backgroundColor = UIColor.clearColor()
         
         let bgView = UIView(frame: CGRectMake(0,sanjiaoImgView.frame.size.height-2,width,self.frame.size.height-sanjiaoImgView.frame.size.height+2))
         bgView.backgroundColor = UIColor.whiteColor()
-        self .addSubview(bgView)
+        self.addSubview(bgView)
         
         let scrollView = UIScrollView(frame: CGRectMake(0,sanjiaoImgView.frame.size.height,bgView.frame.size.width,bgView.frame.size.height))
         self.addSubview(scrollView)
@@ -53,21 +54,43 @@ class MatchTanTouFinishdView: UIView,UITextFieldDelegate {
         leftSeparatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         scrollView.addSubview(leftSeparatorView)
         
-        let contentStr:String = loadLanguage("办公室")
-        let contentDic = [NSFontAttributeName:UIFont.systemFontOfSize(17*(height/667.0))];
-        let contentSize = contentStr.boundingRectWithSize(CGSizeMake(width, 17*(height/667.0)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: contentDic, context: nil).size;
-        let label:UILabel = UILabel(frame: CGRectMake((width-150*(width/375.0))/2,29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y,contentSize.width,17*(height/667.0)))
+        //let contentStr:String = loadLanguage("办公室")
+        //let contentDic = [NSFontAttributeName:UIFont.systemFontOfSize(17*(height/667.0))];
+        //let contentSize = contentStr.boundingRectWithSize(CGSizeMake(width, 17*(height/667.0)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: contentDic, context: nil).size;
+        let label:UILabel = UILabel(frame: CGRectMake((width-150*(width/375.0))/2,29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y,150*(width/375.0),17*(height/667.0)))
         label.text = loadLanguage("办公室")
         label.textAlignment = NSTextAlignment.Center
         label.font = UIFont.systemFontOfSize(17*(height/667.0))
         label.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
-        scrollView .addSubview(label)
+        scrollView.addSubview(label)
         
-        let rowImg = UIImage(named: "pull_down_row.png")
+        //如果是空气净化器 1:水杯 2:探头 3:净水器 4:台式 5:立式 6:补水仪
+        switch get_CurrSelectEquip()
+        {
+        case 1,2,3,5:
+            break
+        case 4:
+            label.text=loadLanguage("客厅")
+        case 6:
+            segmentControl=UISegmentedControl(items: ["女","男"])
+            segmentControl?.frame=CGRect(x: (Screen_Width-126)/2, y: 29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y, width: 126, height: 25)
+            segmentControl?.layer.borderColor=UIColor(red: 64/255, green: 140/255, blue: 241/255, alpha: 1).CGColor
+            segmentControl?.layer.borderWidth=1
+            segmentControl?.layer.cornerRadius=12
+            segmentControl?.layer.masksToBounds=true
+            scrollView.addSubview(segmentControl!)
+            label.frame=CGRect(x: (Screen_Width-126)/2, y: segmentControl!.frame.origin.y+10, width: 126, height: 20)
+            label.text="请选择设定您的性别"
+            label.font = UIFont.systemFontOfSize(12*(height/667.0))
+        default:
+            break
+        }
         
-        let pullDownImgView = UIImageView(frame: CGRectMake(label.frame.size.width+label.frame.origin.x+31*(width/375.0), (label.frame.size.height-(rowImg?.size.height)!)/2+label.frame.origin.y, (rowImg?.size.width)!, (rowImg?.size.height)!))
-        //pullDownImgView.backgroundColor=UIColor.greenColor()
-        pullDownImgView.image = UIImage(named: "pull_down_row.png")
+        //let rowImg = UIImage(named: "pull_down_row.png")
+        
+        //let pullDownImgView = UIImageView(frame: CGRectMake(label.frame.size.width+label.frame.origin.x+31*(width/375.0), (label.frame.size.height-(rowImg?.size.height)!)/2+label.frame.origin.y, (rowImg?.size.width)!, (rowImg?.size.height)!))
+        
+        //pullDownImgView.image = UIImage(named: "pull_down_row.png")
         //scrollView .addSubview(pullDownImgView)
         
         let button = UIButton(frame: CGRectMake(16*(width/375.0),180*(height/667.0),width-16*(width/375.0)*2,40*(height/667.0)))
@@ -79,17 +102,13 @@ class MatchTanTouFinishdView: UIView,UITextFieldDelegate {
         scrollView .addSubview(button)
         
         scrollView.contentSize = CGSizeMake(width, button.frame.size.height+button.frame.origin.y+40*(height/667.0)+20)
-        //如果是空气净化器 1水杯 2探头 3:净水器 4:smallair 5:bigair
-        if get_CurrSelectEquip()==4
-        {
-            label.text=loadLanguage("客厅")
-        }
+        
     }
     
     func finishedAction()
     {
         
-        delegate?.finishedTanTouAction()
+        delegate?.otherFinishedAction()
         
     }
 
