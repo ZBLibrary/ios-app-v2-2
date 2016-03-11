@@ -101,7 +101,7 @@
                                     <constraint firstAttribute="trailing" secondItem="jch-GM-YQz" secondAttribute="trailing" id="sDd-lh-swC"/>
                                 </constraints>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="skinOfChaXun1" translatesAutoresizingMaskIntoConstraints="NO" id="v4Y-8g-k9W">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="womanSkinOfChaXun1" translatesAutoresizingMaskIntoConstraints="NO" id="v4Y-8g-k9W">
                                 <rect key="frame" x="15.5" y="171" width="344" height="154"/>
                             </imageView>
                         </subviews>
@@ -168,6 +168,6 @@
     </objects>
     <resources>
         <image name="fanhui" width="10" height="21"/>
-        <image name="skinOfChaXun1" width="344" height="154"/>
+        <image name="womanSkinOfChaXun1" width="344" height="154"/>
     </resources>
 </document>

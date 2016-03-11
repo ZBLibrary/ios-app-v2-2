@@ -61,7 +61,7 @@
 #import "ChatViewController.h"
 #import "BPush.h"
 #import "NSStringAdditions.h"
-#import "ScanViewController.h"
+//#import "ScanViewController.h"
 #import "lineChartViewzb.h"
 #import "WaterineChartView.h"
 //bug记录第三方库

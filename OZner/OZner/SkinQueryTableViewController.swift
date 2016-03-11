@@ -16,19 +16,30 @@ class SkinQueryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets=false
+        //头部视图
         headCell = NSBundle.mainBundle().loadNibNamed("SkinHeadTableViewCell", owner: self, options: nil).last as!  SkinHeadTableViewCell
         headCell.selectionStyle=UITableViewCellSelectionStyle.None
         headCell.backButton.addTarget(self, action: Selector("backClick"), forControlEvents: .TouchUpInside)
+        //中部视图
         centerCell = NSBundle.mainBundle().loadNibNamed("SkinCenterTableViewCell", owner: self, options: nil).last as!  SkinCenterTableViewCell
         centerCell.selectionStyle=UITableViewCellSelectionStyle.None
+        centerCell.updateData(45, Date: "2012.01.01-2013.02.02")
+        //尾部视图
         footerCell = NSBundle.mainBundle().loadNibNamed("SkinFooterTableViewCell", owner: self, options: nil).last as!  SkinFooterTableViewCell
+        footerCell.bugEssenceButton.addTarget(self, action: Selector("bugEssenceClick"), forControlEvents: .TouchUpInside)
+        footerCell.MyCurrentFuZhi(0)//传入我当前的肤质
         footerCell.selectionStyle=UITableViewCellSelectionStyle.None
         
     }
 
+    //返回
     func backClick()
     {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    //购买精华液
+    func bugEssenceClick()
+    {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

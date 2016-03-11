@@ -59,7 +59,7 @@
                                             <constraint firstAttribute="height" constant="37" id="Yh3-ON-gTp"/>
                                             <constraint firstAttribute="width" constant="130" id="mwg-hu-5ym"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
                                         <color key="textColor" red="0.18039215689999999" green="0.3411764706" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -108,6 +108,11 @@
                     <constraint firstItem="8tt-qt-9cj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cbC-sX-Mzo"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dateOfTest" destination="ju1-0f-1AT" id="iGL-Dy-bcS"/>
+                <outlet property="stateOfTest" destination="IBh-rN-AgQ" id="StV-uf-8qC"/>
+                <outlet property="timesOfTest" destination="a9Q-2H-KrC" id="10j-rQ-fsX"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
