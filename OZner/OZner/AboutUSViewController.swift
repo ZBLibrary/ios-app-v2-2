@@ -14,12 +14,13 @@ class AboutUSViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     @IBOutlet var ScoreLable: UILabel!
-    @IBOutlet var UpdateLable: UILabel!
+    
+
     @IBOutlet var HaozeLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
      self.title=loadLanguage("关于浩泽净水家" )
-        UpdateLable.text=loadLanguage("检查更新版本" )
+        //UpdateLable.text=loadLanguage("检查更新版本" )
         ScoreLable.text=loadLanguage("评个分吧")
       HaozeLable.text=loadLanguage("浩泽净水家")
         // Do any additional setup after loading the view.

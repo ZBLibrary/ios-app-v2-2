@@ -20,6 +20,7 @@ class SkinQueryTableViewController: UITableViewController {
         headCell = NSBundle.mainBundle().loadNibNamed("SkinHeadTableViewCell", owner: self, options: nil).last as!  SkinHeadTableViewCell
         headCell.selectionStyle=UITableViewCellSelectionStyle.None
         headCell.backButton.addTarget(self, action: Selector("backClick"), forControlEvents: .TouchUpInside)
+        headCell.updateCell(0, sexImgHeadStr: "woman")
         //中部视图
         centerCell = NSBundle.mainBundle().loadNibNamed("SkinCenterTableViewCell", owner: self, options: nil).last as!  SkinCenterTableViewCell
         centerCell.selectionStyle=UITableViewCellSelectionStyle.None

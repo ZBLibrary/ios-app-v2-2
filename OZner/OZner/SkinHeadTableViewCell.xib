@@ -162,6 +162,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="backButton" destination="gqN-EW-lSG" id="Sk1-Ea-qdk"/>
+                <outlet property="skinDescripe" destination="9kK-il-LAw" id="SXp-nO-7yq"/>
+                <outlet property="skinImg" destination="v4Y-8g-k9W" id="61l-L1-hS2"/>
+                <outlet property="skinLabel" destination="BVW-qd-wYH" id="4LX-zE-itU"/>
+                <outlet property="skinStateLabel" destination="Rjc-aI-J0S" id="adi-hd-afI"/>
             </connections>
             <point key="canvasLocation" x="321.5" y="398"/>
         </tableViewCell>

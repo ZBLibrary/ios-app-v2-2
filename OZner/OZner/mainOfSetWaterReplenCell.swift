@@ -15,6 +15,7 @@ class mainOfSetWaterReplenCell: UITableViewCell {
     @IBOutlet var toSetNameAndDressButton: UIButton!
     @IBOutlet var toSetSexButton: UIButton!
     @IBOutlet var toSetTimeRemind: UIButton!
+    @IBOutlet weak var toBugEssence: UIButton!
     @IBOutlet var toInstructions: UIButton!
     @IBOutlet var toOperation: UIButton!
     @IBOutlet var clearButton: UIButton!

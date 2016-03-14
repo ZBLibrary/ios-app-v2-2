@@ -55,6 +55,11 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     //保存
     func SaveClick()
     {
+        if myCurrentDevice==nil
+        {
+            self.navigationController?.popViewControllerAnimated(true)
+            return
+        }
         myCurrentDevice?.settings.name=settingDic?.objectForKey("deviceName") as! String
         myCurrentDevice?.settings.setValue(settingDic?.objectForKey("deviceAttrib"), forKey: "deviceAttrib")
         myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime1"), forKey: "checktime1")
@@ -119,7 +124,7 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         return 1
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 530
+        return 602
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -127,6 +132,7 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         MainViewCell.toSetNameAndDressButton.addTarget(self, action: Selector("toSetNameAndDressButton"), forControlEvents: .TouchUpInside)
         MainViewCell.toSetSexButton.addTarget(self, action: Selector("toSetSexButton"), forControlEvents: .TouchUpInside)
         MainViewCell.toSetTimeRemind.addTarget(self, action: Selector("toSetTimeRemind"), forControlEvents: .TouchUpInside)
+        MainViewCell.toBugEssence.addTarget(self, action: Selector("toBugEssence"), forControlEvents: .TouchUpInside)
         MainViewCell.toInstructions.addTarget(self, action: Selector("toInstructions"), forControlEvents: .TouchUpInside)
         MainViewCell.toOperation.addTarget(self, action: Selector("toOperation"), forControlEvents: .TouchUpInside)
         MainViewCell.clearButton.addTarget(self, action: Selector("clearButton"), forControlEvents: .TouchUpInside)
@@ -163,6 +169,9 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
             self.settingDic=BackData
         }
         self.navigationController?.pushViewController(setTimeController, animated: true)
+    }
+    func toBugEssence()
+    {
     }
     func toInstructions()
     {

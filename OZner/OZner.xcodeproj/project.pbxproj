@@ -3712,7 +3712,7 @@
 				528FFF0E1C2581F400D814A1 /* AirCleaner */,
 				8D5F62161C83FC81000E0388 /* WaterReplenishmentView */,
 				8D5F62181C84009C000E0388 /* WaterReplenishmentController */,
-				892284491C21636500EE97BC /* SetOfDevice */,
+				892284491C21636500EE97BC /* SettingOfDevices */,
 				52F1C4FF1C4D6A5B0008B8E5 /* otherSupport */,
 			);
 			name = MyDevice;
@@ -3801,7 +3801,7 @@
 			name = setTanTou;
 			sourceTree = "<group>";
 		};
-		892284491C21636500EE97BC /* SetOfDevice */ = {
+		892284491C21636500EE97BC /* SettingOfDevices */ = {
 			isa = PBXGroup;
 			children = (
 				528FFEE71C2444DD00D814A1 /* setCommon */,
@@ -3811,7 +3811,7 @@
 				528FFEF81C2462C600D814A1 /* setAirCleaner */,
 				8D88804D1C8DC8DA007391E1 /* setWaterReplenish */,
 			);
-			name = SetOfDevice;
+			name = SettingOfDevices;
 			sourceTree = "<group>";
 		};
 		8D4A818C1C916A9500B0FF89 /* MakePair */ = {

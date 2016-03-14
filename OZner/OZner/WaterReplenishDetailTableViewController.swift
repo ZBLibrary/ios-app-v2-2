@@ -53,11 +53,11 @@ class WaterReplenishDetailTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row==0
         {
-            return 266
+            return 332
         }
         else
         {
-            return max(Screen_Hight-266, 312)
+            return 470
         }
     }
 
