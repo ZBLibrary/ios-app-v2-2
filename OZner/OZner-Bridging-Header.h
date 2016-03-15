@@ -64,6 +64,8 @@
 //#import "ScanViewController.h"
 #import "lineChartViewzb.h"
 #import "WaterineChartView.h"
+#import "waterReplenishChartView.h"
+
 //bug记录第三方库
 #import "Bugly/CrashReporter.h"
 //#import <Bugly/CrashReporter.h>

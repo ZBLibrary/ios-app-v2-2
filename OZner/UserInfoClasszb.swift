@@ -135,10 +135,11 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
     func getuserOtherInfo()
     {
         let webServer=MyInfoWerbservice()
+        print(get_Phone())
         webServer.getUserNickImage([get_Phone()], returnBlock: { (data:NSMutableDictionary!, status:StatusManager!) -> Void in
             if status.networkStatus == kSuccessStatus
             {
-                
+                print(data)
                 let state=data.objectForKey("state") as! Int
                 if state>0
                 {

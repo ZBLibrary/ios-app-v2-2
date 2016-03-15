@@ -847,6 +847,8 @@
 		8DF253AA1C77233F00CE2AE5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253A91C77233F00CE2AE5 /* MBProgressHUD.m */; };
 		8DF253B31C774E6500CE2AE5 /* WaterineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B21C774E6500CE2AE5 /* WaterineChartView.m */; };
 		8DF253B61C774E8500CE2AE5 /* WaterMPGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B51C774E8500CE2AE5 /* WaterMPGraphView.m */; };
+		8DF3312E1C97063A009B3342 /* waterReplenishMPGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3312A1C97063A009B3342 /* waterReplenishMPGraphView.m */; };
+		8DF3312F1C97063A009B3342 /* waterReplenishChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3312C1C97063A009B3342 /* waterReplenishChartView.m */; };
 		8DFB392D1C57248700A1641C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB392C1C57248700A1641C /* ChatViewController.m */; };
 		8DFB39331C574E4B00A1641C /* MxChipAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */; };
 		8DFB39351C57710B00A1641C /* CommonValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39341C57710B00A1641C /* CommonValue.swift */; };
@@ -2221,6 +2223,10 @@
 		8DF253B21C774E6500CE2AE5 /* WaterineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterineChartView.m; sourceTree = "<group>"; };
 		8DF253B41C774E8500CE2AE5 /* WaterMPGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterMPGraphView.h; sourceTree = "<group>"; };
 		8DF253B51C774E8500CE2AE5 /* WaterMPGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterMPGraphView.m; sourceTree = "<group>"; };
+		8DF3312A1C97063A009B3342 /* waterReplenishMPGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waterReplenishMPGraphView.m; sourceTree = "<group>"; };
+		8DF3312B1C97063A009B3342 /* waterReplenishMPGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waterReplenishMPGraphView.h; sourceTree = "<group>"; };
+		8DF3312C1C97063A009B3342 /* waterReplenishChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waterReplenishChartView.m; sourceTree = "<group>"; };
+		8DF3312D1C97063A009B3342 /* waterReplenishChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waterReplenishChartView.h; sourceTree = "<group>"; };
 		8DFB392B1C57248700A1641C /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		8DFB392C1C57248700A1641C /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		8DFB392E1C574E2A00A1641C /* BluetoothAirPurifierSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothAirPurifierSensor.h; sourceTree = "<group>"; };
@@ -3852,6 +3858,10 @@
 				8DBAC48F1C91B11B007CA1AC /* SkinCenterTableViewCell.xib */,
 				8DBAC4921C91B130007CA1AC /* SkinFooterTableViewCell.swift */,
 				8DBAC4931C91B130007CA1AC /* SkinFooterTableViewCell.xib */,
+				8DF3312D1C97063A009B3342 /* waterReplenishChartView.h */,
+				8DF3312C1C97063A009B3342 /* waterReplenishChartView.m */,
+				8DF3312B1C97063A009B3342 /* waterReplenishMPGraphView.h */,
+				8DF3312A1C97063A009B3342 /* waterReplenishMPGraphView.m */,
 			);
 			name = WaterReplenishmentView;
 			sourceTree = "<group>";
@@ -4921,6 +4931,7 @@
 				8DA405651C8441B500AD5E5E /* ZXCharacterSetECI.m in Sources */,
 				523DC3971C175EAA00595099 /* SDWebImageDecoder.m in Sources */,
 				523DC3941C175EAA00595099 /* NSData+ImageContentType.m in Sources */,
+				8DF3312E1C97063A009B3342 /* waterReplenishMPGraphView.m in Sources */,
 				8DA405E21C8441B500AD5E5E /* ZXQRCodeMultiReader.m in Sources */,
 				8D4354F61C75A049007F83DA /* WaterPurTDSDetailController.swift in Sources */,
 				52A5E2DA1C500FE50003CC4E /* MPGraphViewzb.m in Sources */,
@@ -5035,6 +5046,7 @@
 				8DA405C21C8441B500AD5E5E /* ZXPDF417Dimensions.m in Sources */,
 				8DA405E01C8441B500AD5E5E /* ZXQRCodeMatrixUtil.m in Sources */,
 				42A7BB421C0C2410008DB6E5 /* WebAssistant.m in Sources */,
+				8DF3312F1C97063A009B3342 /* waterReplenishChartView.m in Sources */,
 				528FFEF61C24628400D814A1 /* setShuiJiViewController.swift in Sources */,
 				4248B2EE1C0D917B00181CA0 /* CustomPopView.swift in Sources */,
 				8DA405A91C8441B500AD5E5E /* ZXMonochromeRectangleDetector.m in Sources */,
