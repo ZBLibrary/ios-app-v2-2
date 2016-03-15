@@ -109,14 +109,21 @@
                                                             </mask>
                                                         </variation>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LA-v3-TLv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="16"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="sRB-b1-YOr" firstAttribute="top" secondItem="54d-dS-cbQ" secondAttribute="top" id="3XH-5c-Suc"/>
                                                     <constraint firstItem="CS3-8w-xeh" firstAttribute="leading" secondItem="sRB-b1-YOr" secondAttribute="trailing" id="4Lx-oK-oEa"/>
                                                     <constraint firstItem="CS3-8w-xeh" firstAttribute="top" secondItem="54d-dS-cbQ" secondAttribute="top" id="D5D-nn-unp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2LA-v3-TLv" secondAttribute="bottom" id="G4h-Vt-9yB"/>
+                                                    <constraint firstItem="2LA-v3-TLv" firstAttribute="top" secondItem="54d-dS-cbQ" secondAttribute="top" id="Kos-ef-NSZ"/>
                                                     <constraint firstAttribute="bottom" secondItem="CS3-8w-xeh" secondAttribute="bottom" id="L3q-OS-U3h"/>
                                                     <constraint firstItem="sRB-b1-YOr" firstAttribute="centerX" secondItem="54d-dS-cbQ" secondAttribute="centerX" id="gWM-XP-zF9"/>
+                                                    <constraint firstItem="2LA-v3-TLv" firstAttribute="leading" secondItem="54d-dS-cbQ" secondAttribute="leading" id="oil-Ht-TII"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2LA-v3-TLv" secondAttribute="trailing" id="udM-Qg-oEt"/>
                                                     <constraint firstAttribute="bottom" secondItem="sRB-b1-YOr" secondAttribute="bottom" id="vxR-5c-90k"/>
                                                 </constraints>
                                             </view>
@@ -179,14 +186,21 @@
                                                             </mask>
                                                         </variation>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s97-cb-sNs">
+                                                        <rect key="frame" x="30" y="0.0" width="63.5" height="16"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="xOk-ys-pyL" firstAttribute="centerX" secondItem="YWZ-39-faA" secondAttribute="centerX" id="0NA-k5-gWw"/>
                                                     <constraint firstItem="cNB-eW-mhu" firstAttribute="top" secondItem="YWZ-39-faA" secondAttribute="top" id="1aP-tR-arx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="s97-cb-sNs" secondAttribute="bottom" id="FUA-eK-AzB"/>
+                                                    <constraint firstItem="s97-cb-sNs" firstAttribute="top" secondItem="YWZ-39-faA" secondAttribute="top" id="FzG-uz-xQJ"/>
+                                                    <constraint firstItem="s97-cb-sNs" firstAttribute="leading" secondItem="YWZ-39-faA" secondAttribute="leading" constant="30" id="UXV-CQ-pt9"/>
                                                     <constraint firstAttribute="bottom" secondItem="cNB-eW-mhu" secondAttribute="bottom" id="XnV-ob-mAa"/>
                                                     <constraint firstAttribute="bottom" secondItem="xOk-ys-pyL" secondAttribute="bottom" id="bjK-YH-RL4"/>
                                                     <constraint firstItem="xOk-ys-pyL" firstAttribute="top" secondItem="YWZ-39-faA" secondAttribute="top" id="g0Y-CY-Jq2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="s97-cb-sNs" secondAttribute="trailing" id="yLi-X0-yO2"/>
                                                     <constraint firstItem="cNB-eW-mhu" firstAttribute="leading" secondItem="xOk-ys-pyL" secondAttribute="trailing" id="ymQ-j2-Vmg"/>
                                                 </constraints>
                                             </view>
@@ -379,8 +393,10 @@
                 <outlet property="chartContainerView" destination="gsn-g0-u04" id="jsn-at-eV4"/>
                 <outlet property="organLabel" destination="dfz-pd-f54" id="bKO-Or-o1k"/>
                 <outlet property="segmentControl" destination="vmV-v7-nod" id="hSj-1a-URa"/>
+                <outlet property="toWhatWater" destination="s97-cb-sNs" id="CLZ-2V-9LD"/>
+                <outlet property="toWhatYoufen" destination="2LA-v3-TLv" id="pH8-qe-HAD"/>
             </connections>
-            <point key="canvasLocation" x="200.5" y="317"/>
+            <point key="canvasLocation" x="127.5" y="315"/>
         </tableViewCell>
     </objects>
     <resources>

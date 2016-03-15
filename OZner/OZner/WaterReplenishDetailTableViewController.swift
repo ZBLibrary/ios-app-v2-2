@@ -23,6 +23,9 @@ class WaterReplenishDetailTableViewController: UITableViewController {
         HeadView.shareButton.addTarget(self, action: Selector("shareClick"), forControlEvents: .TouchUpInside)
         
         FooterView = NSBundle.mainBundle().loadNibNamed("FooterOfWaterReplenishDetailCell", owner: self, options: nil).last as!  FooterOfWaterReplenishDetailCell
+        FooterView.toWhatYoufen.addTarget(self, action: Selector("toWhatOfYou"), forControlEvents: .TouchUpInside)
+        FooterView.toWhatWater.addTarget(self, action: Selector("toWhatOfWater"), forControlEvents: .TouchUpInside)
+        
         HeadView.delegate=FooterView//头部视图器官切换代理
         //测试数据
         let weekArray=NSMutableDictionary()
@@ -55,6 +58,19 @@ class WaterReplenishDetailTableViewController: UITableViewController {
     func shareClick()
     {
         
+    }
+    //
+    func toWhatOfYou()
+    {
+        let toWhatControll=ToWhatViewController()
+        toWhatControll.title="油分"
+        self.navigationController?.pushViewController(toWhatControll, animated: true)
+    }
+    func toWhatOfWater()
+    {
+        let toWhatControll=ToWhatViewController()
+        toWhatControll.title="水分"
+        self.navigationController?.pushViewController(toWhatControll, animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

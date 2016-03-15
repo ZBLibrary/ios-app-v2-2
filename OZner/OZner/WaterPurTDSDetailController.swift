@@ -190,7 +190,8 @@ class WaterPurTDSDetailController: UITableViewController {
     //水质纯净值说明
     func toWhatIsTDS()
     {
-        let tdsState=TDSStateController()
+        let tdsState=ToWhatViewController()
+        tdsState.title="什么是TDS?"
         self.navigationController?.pushViewController(tdsState, animated: true)
     }
     //咨询

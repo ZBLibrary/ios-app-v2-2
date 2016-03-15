@@ -56,20 +56,26 @@ class HeadOfWaterReplenishDetailCell: UITableViewCell {
             {
                 return
             }
-            let tmpName=NSString(format: "WaterReplDetail%d", currentOrgan+1)
-            [organImg1,organImg2,organImg3,organImg4][currentOrgan].image=UIImage(named: (tmpName as String)+".1")
+            let tmpName=NSString(format: "WaterReplDetail%d", currentOrgan+1) as String
+            //print(tmpName)
+            //print(currentOrgan)
+            //print(oldValue)
+            //organImg1.image=UIImage(named: "WaterReplDetail1.1")
+            [organImg1,organImg2,organImg3,organImg4][currentOrgan].image=UIImage(named: "\(tmpName)_1")
     
             if oldValue != -1
             {
-                [organImg1,organImg2,organImg3,organImg4][oldValue].image=UIImage(named: tmpName as String)
+                let tmpNameOld=NSString(format: "WaterReplDetail%d", oldValue+1) as String
+                [organImg1,organImg2,organImg3,organImg4][oldValue].image=UIImage(named: tmpNameOld)
             }
             let tmpStru=dataDic["\(currentOrgan)"]
-            skinStateOfToday.text=NSString(format: "%d", (tmpStru?.skinValueOfToday)!) as String 
+            skinStateOfToday.text=NSString(format: "%d", (tmpStru?.skinValueOfToday)!) as String
             descOfSkinState.text="今日肌肤状态  "+["干燥","正常","水润","水润"][(tmpStru?.skinValueOfToday)!/33]
-            lastCheckValue.text="上次检测\(tmpStru?.lastSkinValue)%"
-            averageCheckValue.text="平均值\(tmpStru?.averageSkinValue)%(\(tmpStru?.checkTimes)次)"
+            lastCheckValue.text="上次检测"+(NSString(format: "%.1f", (tmpStru?.lastSkinValue)!) as String)+"%"
+            averageCheckValue.text="平均值"+(NSString(format: "%.1f", (tmpStru?.averageSkinValue)!) as String)+"%("+(NSString(format: "%d", (tmpStru?.checkTimes)!) as String)+"次)"
             delegate?.setCurrentOrgan(currentOrgan)
-            
+            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
     //key:"0"

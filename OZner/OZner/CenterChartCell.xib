@@ -138,7 +138,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOW-uy-5wm">
                                                 <rect key="frame" x="260" y="0.0" width="115" height="144"/>
                                                 <subviews>
-                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="you1.png" translatesAutoresizingMaskIntoConstraints="NO" id="rA4-Ny-8au">
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="you1.png" translatesAutoresizingMaskIntoConstraints="NO" id="rA4-Ny-8au">
                                                         <rect key="frame" x="43" y="43" width="29" height="58"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaB-Bh-kj3">

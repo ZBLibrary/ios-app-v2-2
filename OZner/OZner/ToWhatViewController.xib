@@ -5,8 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TDSStateController" customModule="OZner" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToWhatViewController" customModule="OZner" customModuleProvider="target">
             <connections>
+                <outlet property="titleLabel" destination="ccU-pS-X9x" id="na2-QB-oGz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="hIY-ky-Czj" id="Eko-hr-QpX"/>
             </connections>

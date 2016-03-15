@@ -8,17 +8,20 @@
 
 import UIKit
 
-class TDSStateController: UIViewController {
+class ToWhatViewController: UIViewController {
 
     @IBAction func Back(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let filePath = NSBundle.mainBundle().pathForResource("WhatTDShtmlString", ofType: "plist")
+        titleLabel.text=self.title
+        let filePath = NSBundle.mainBundle().pathForResource("WhatHtml", ofType: "plist")
         let tmpstr = NSDictionary(contentsOfFile: filePath!)
-        let htmlString = tmpstr?.objectForKey("htmlstr") as! String
+
+        let htmlString = tmpstr?.objectForKey((self.title)!) as! String
         webView.loadHTMLString(htmlString, baseURL: nil)
         webView.scalesPageToFit = true
         // Do any additional setup after loading the view.

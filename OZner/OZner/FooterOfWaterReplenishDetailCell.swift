@@ -16,6 +16,8 @@ class FooterOfWaterReplenishDetailCell: UITableViewCell,HeadOfWaterReplenishDeta
     @IBAction func segmentValueChanged(sender: UISegmentedControl) {
         drawChartView(sender.selectedSegmentIndex)
     }
+    @IBOutlet weak var toWhatWater: UIButton!
+    @IBOutlet weak var toWhatYoufen: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -59,14 +61,11 @@ class FooterOfWaterReplenishDetailCell: UITableViewCell,HeadOfWaterReplenishDeta
                 return
             }
             organLabel.text=["脸部","眼部","手部","颈部"][currentOrgan]
-            if segmentControl.selectedSegmentIndex != 0
-            {
-                segmentControl.selectedSegmentIndex=0
-            }
-            else
-            {
-                drawChartView(0)
-            }
+            
+            segmentControl.selectedSegmentIndex=0
+            
+            drawChartView(0)
+            
         }
     }
     //key:"0",脸，key:"1",眼，key:"2",手，key:"3",颈

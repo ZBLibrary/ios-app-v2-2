@@ -263,7 +263,6 @@
 		522D666B1C31166C00BCA750 /* languageCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D666A1C31166C00BCA750 /* languageCommon.swift */; };
 		5231EA871C51328100DCB8F8 /* CupRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5231EA861C51328100DCB8F8 /* CupRecord.m */; };
 		5235E2161C40E68600B125AE /* ShareView_zb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5235E2151C40E68600B125AE /* ShareView_zb.xib */; };
-		5235E2181C40E6C300B125AE /* WhatTDS.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5235E2171C40E6C300B125AE /* WhatTDS.xib */; };
 		5235E21A1C40F18100B125AE /* ShareView_zb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235E2191C40F18100B125AE /* ShareView_zb.swift */; };
 		523DC2D61C175BE500595099 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523DC2D41C175BE500595099 /* LoginViewController.swift */; };
 		523DC2F51C175DA800595099 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC2DD1C175DA800595099 /* MASCompositeConstraint.m */; };
@@ -852,9 +851,9 @@
 		8DFB392D1C57248700A1641C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB392C1C57248700A1641C /* ChatViewController.m */; };
 		8DFB39331C574E4B00A1641C /* MxChipAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */; };
 		8DFB39351C57710B00A1641C /* CommonValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39341C57710B00A1641C /* CommonValue.swift */; };
-		8DFB393F1C57730300A1641C /* WhatTDShtmlString.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39361C57730300A1641C /* WhatTDShtmlString.plist */; };
-		8DFB39401C57730300A1641C /* TDSStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39371C57730300A1641C /* TDSStateController.swift */; };
-		8DFB39411C57730300A1641C /* TDSStateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39381C57730300A1641C /* TDSStateController.xib */; };
+		8DFB393F1C57730300A1641C /* WhatHtml.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39361C57730300A1641C /* WhatHtml.plist */; };
+		8DFB39401C57730300A1641C /* ToWhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39371C57730300A1641C /* ToWhatViewController.swift */; };
+		8DFB39411C57730300A1641C /* ToWhatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39381C57730300A1641C /* ToWhatViewController.xib */; };
 		8DFB39421C57730300A1641C /* TDSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393A1C57730300A1641C /* TDSDetailViewController.m */; };
 		8DFB39431C57730300A1641C /* TDSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */; };
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
@@ -1229,7 +1228,6 @@
 		5231EA851C51328100DCB8F8 /* CupRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CupRecord.h; sourceTree = "<group>"; };
 		5231EA861C51328100DCB8F8 /* CupRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CupRecord.m; sourceTree = "<group>"; };
 		5235E2151C40E68600B125AE /* ShareView_zb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareView_zb.xib; sourceTree = "<group>"; };
-		5235E2171C40E6C300B125AE /* WhatTDS.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhatTDS.xib; sourceTree = "<group>"; };
 		5235E2191C40F18100B125AE /* ShareView_zb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView_zb.swift; sourceTree = "<group>"; };
 		523DC2D41C175BE500595099 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		523DC2DC1C175DA800595099 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -2233,9 +2231,9 @@
 		8DFB39311C574E4B00A1641C /* MxChipAirPurifierSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierSensor.h; sourceTree = "<group>"; };
 		8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DFB39341C57710B00A1641C /* CommonValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonValue.swift; path = ../CommonValue.swift; sourceTree = "<group>"; };
-		8DFB39361C57730300A1641C /* WhatTDShtmlString.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WhatTDShtmlString.plist; sourceTree = "<group>"; };
-		8DFB39371C57730300A1641C /* TDSStateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSStateController.swift; sourceTree = "<group>"; };
-		8DFB39381C57730300A1641C /* TDSStateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSStateController.xib; sourceTree = "<group>"; };
+		8DFB39361C57730300A1641C /* WhatHtml.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WhatHtml.plist; sourceTree = "<group>"; };
+		8DFB39371C57730300A1641C /* ToWhatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToWhatViewController.swift; sourceTree = "<group>"; };
+		8DFB39381C57730300A1641C /* ToWhatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToWhatViewController.xib; sourceTree = "<group>"; };
 		8DFB39391C57730300A1641C /* TDSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSDetailViewController.h; sourceTree = "<group>"; };
 		8DFB393A1C57730300A1641C /* TDSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSDetailViewController.m; sourceTree = "<group>"; };
 		8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSDetailViewController.xib; sourceTree = "<group>"; };
@@ -3146,9 +3144,6 @@
 		521667881C4909A7002068EF /* CupController */ = {
 			isa = PBXGroup;
 			children = (
-				8DFB39361C57730300A1641C /* WhatTDShtmlString.plist */,
-				8DFB39371C57730300A1641C /* TDSStateController.swift */,
-				8DFB39381C57730300A1641C /* TDSStateController.xib */,
 				8DFB39391C57730300A1641C /* TDSDetailViewController.h */,
 				8DFB393A1C57730300A1641C /* TDSDetailViewController.m */,
 				8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */,
@@ -3544,6 +3539,9 @@
 		52895C051C4C02F7008D63D7 /* deviceCommon */ = {
 			isa = PBXGroup;
 			children = (
+				8DFB39361C57730300A1641C /* WhatHtml.plist */,
+				8DFB39371C57730300A1641C /* ToWhatViewController.swift */,
+				8DFB39381C57730300A1641C /* ToWhatViewController.xib */,
 				8D09DBE11C5A69D400D0432B /* LoadingXib.swift */,
 				528D77381C26FF2B00243986 /* LoadingXib.xib */,
 				52215DE71C4EA390007C8C96 /* drawCircleView.swift */,
@@ -3557,7 +3555,6 @@
 				52A5E2D61C4FEFA40003CC4E /* lineChartViewzb.m */,
 				52A5E2D81C500FE50003CC4E /* MPGraphViewzb.h */,
 				52A5E2D91C500FE50003CC4E /* MPGraphViewzb.m */,
-				5235E2171C40E6C300B125AE /* WhatTDS.xib */,
 				5235E2191C40F18100B125AE /* ShareView_zb.swift */,
 				5235E2151C40E68600B125AE /* ShareView_zb.xib */,
 				52FEC0411C35A99200B6D0F1 /* WeiXinURLViewController.swift */,
@@ -4559,7 +4556,6 @@
 				4281B96B1C21858C00DC2C31 /* yin_shui_liang_3.png in Resources */,
 				428FC6D11C2ECFF2001D4ACF /* db_ozner_pub.db in Resources */,
 				425381541C14D259005FF2F3 /* device_zixun@3x.png in Resources */,
-				5235E2181C40E6C300B125AE /* WhatTDS.xib in Resources */,
 				4280BE061C2D09FD00627AFB /* icon_zhileng_normal@3x.png in Resources */,
 				5274B0691C293BB5004EDC0D /* setSmallAirViewXib.xib in Resources */,
 				528D773F1C270D2800243986 /* indoorHead_BigXib.xib in Resources */,
@@ -4676,7 +4672,7 @@
 				425F7A311C32B13900C8B2E3 /* dot_guide_2.png in Resources */,
 				528FFEE61C2403E800D814A1 /* setTanTouViewController.xib in Resources */,
 				4288C5481C0F239500446D3E /* icon_circle_watting.png in Resources */,
-				8DFB393F1C57730300A1641C /* WhatTDShtmlString.plist in Resources */,
+				8DFB393F1C57730300A1641C /* WhatHtml.plist in Resources */,
 				428FC6D01C2ECFEA001D4ACF /* db_ozner_uid.db in Resources */,
 				526DDB3C1C4B6E2700363504 /* MyDeviceMainController.xib in Resources */,
 				8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */,
@@ -4735,7 +4731,7 @@
 				8DBD549F1C567E9200D04B12 /* kindly_notice_iconzb.png in Resources */,
 				521BF7CC1C4A370000AD1EAB /* drinKWaterCell.xib in Resources */,
 				52461F071C2699AD00834CC2 /* indoorAirXib.xib in Resources */,
-				8DFB39411C57730300A1641C /* TDSStateController.xib in Resources */,
+				8DFB39411C57730300A1641C /* ToWhatViewController.xib in Resources */,
 				427AEB451C1EC6CD003E1F50 /* icon_lvxin_service_6.png in Resources */,
 				4280BE051C2D09FD00627AFB /* icon_zhileng@2x.png in Resources */,
 				425F7A2D1C32B0C500C8B2E3 /* new_help_2@3x.png in Resources */,
@@ -4947,7 +4943,7 @@
 				426F428C1C281F5900DC39DF /* CustomCommFunction.m in Sources */,
 				523DC36B1C175E9B00595099 /* AFHTTPSessionManager.m in Sources */,
 				523DC3481C175E1B00595099 /* XMLocationMessage.m in Sources */,
-				8DFB39401C57730300A1641C /* TDSStateController.swift in Sources */,
+				8DFB39401C57730300A1641C /* ToWhatViewController.swift in Sources */,
 				8DA405741C8441B500AD5E5E /* ZXDataMatrixDefaultPlacement.m in Sources */,
 				42A7BB1F1C0C23A4008DB6E5 /* NSData+NSDictionary+JSON.m in Sources */,
 				52791B991C18849A00C098B2 /* setDev_CupView.swift in Sources */,

@@ -7,9 +7,7 @@
 //
 
 #import "TDSDetailViewController.h"
-//#import "AmountOfDrinkingWaterFirstCell.h"
-//#import "TDSDetailSecondCell.h"
-//#import "AmountOfDrinkingThirdCell.h"
+
 #import "DeviceWerbservice.h"
 #import "CustomTabBarView.h"
 #import "ShareManager.h"
@@ -104,8 +102,8 @@
 }
 - (void)toWhatTDS
 {
-    TDSStateController* tdsState=[[TDSStateController alloc] init];
-    
+    ToWhatViewController* tdsState=[[ToWhatViewController alloc] init];
+    [tdsState setTitle:@"什么是TDS?"];
     [self.navigationController pushViewController:tdsState animated:YES];
 }
 //#pragma mark-AmountOfDrinkingWaterFirstCellDelegate
