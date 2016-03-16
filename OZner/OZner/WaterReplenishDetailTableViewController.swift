@@ -25,7 +25,8 @@ class WaterReplenishDetailTableViewController: UITableViewController {
         FooterView = NSBundle.mainBundle().loadNibNamed("FooterOfWaterReplenishDetailCell", owner: self, options: nil).last as!  FooterOfWaterReplenishDetailCell
         FooterView.toWhatYoufen.addTarget(self, action: Selector("toWhatOfYou"), forControlEvents: .TouchUpInside)
         FooterView.toWhatWater.addTarget(self, action: Selector("toWhatOfWater"), forControlEvents: .TouchUpInside)
-        
+        FooterView.toChatButton.addTarget(self, action: Selector("toChatButton"), forControlEvents: .TouchUpInside)
+        FooterView.toBuyEssence.addTarget(self, action: Selector("toBuyEssence"), forControlEvents: .TouchUpInside)
         HeadView.delegate=FooterView//头部视图器官切换代理
         //测试数据
         let weekArray=NSMutableDictionary()
@@ -71,6 +72,14 @@ class WaterReplenishDetailTableViewController: UITableViewController {
         let toWhatControll=ToWhatViewController()
         toWhatControll.title="水分"
         self.navigationController?.pushViewController(toWhatControll, animated: true)
+    }
+    func toChatButton()
+    {
+        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(2) as! UIButton)
+    }
+    func toBuyEssence()
+    {
+        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(1) as! UIButton)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

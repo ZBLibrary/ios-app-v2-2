@@ -398,6 +398,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="BugLvXinbutton" destination="dZg-bJ-58O" id="CvD-7N-Z8S"/>
+                <outlet property="Image0Width" destination="eD6-Z7-ura" id="gIW-jL-NhO"/>
                 <outlet property="Tips" destination="n6E-Zz-SCd" id="4Dg-AW-1b9"/>
                 <outlet property="airTotal" destination="on6-mK-ccC" id="GaL-Fb-zae"/>
                 <outlet property="airpuifiler" destination="2xE-Tb-TcX" id="4Kc-m8-Ich"/>
@@ -405,6 +406,7 @@
                 <outlet property="curDate" destination="kh9-WK-3ua" id="Akn-eT-7z5"/>
                 <outlet property="curDateViewtoLeft" destination="JFT-nc-3fW" id="MUg-MT-nKb"/>
                 <outlet property="curYear" destination="noZ-Pd-sm8" id="iRI-tp-wME"/>
+                <outlet property="downImgLeft" destination="3YT-Vx-OB7" id="pdz-3y-PnO"/>
                 <outlet property="endDate" destination="S66-5y-9Kg" id="tg7-sU-jb9"/>
                 <outlet property="endYear" destination="yBC-Ld-YCs" id="pHK-40-eFt"/>
                 <outlet property="filter" destination="pcq-Pu-eya" id="dJ9-dQ-nam"/>
@@ -414,8 +416,6 @@
                 <outlet property="smallairHidenView" destination="y1I-mW-ldH" id="iEC-BR-Mat"/>
                 <outlet property="starDate" destination="Jk8-5W-Emr" id="JIc-dP-7OC"/>
                 <outlet property="starYear" destination="WAO-fi-2WL" id="39f-Ka-owq"/>
-                <outlet property="stateImage_0" destination="aRj-Ej-CJE" id="ops-LS-j4M"/>
-                <outlet property="state_down" destination="urj-3i-o4T" id="28i-Ls-BwL"/>
                 <outlet property="toChat" destination="XN1-dA-rlx" id="Phb-FZ-K7k"/>
             </connections>
             <point key="canvasLocation" x="208.5" y="356"/>

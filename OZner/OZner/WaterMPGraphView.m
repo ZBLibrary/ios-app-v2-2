@@ -40,7 +40,7 @@
         UIView* separator = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height-23-44, self.frame.size.width, 2)];
         [self addSubview:separator];
         separator.backgroundColor = [UIColor colorWithRed:232.0/255 green:242.0/255 blue:254.0/255 alpha:1.0];
-        float leftDistance = 14*(SCREEN_WIDTH/375.0);
+        //float leftDistance = 14*(SCREEN_WIDTH/375.0);
         
         
         UIView* circleView = [[UIView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH-30)/2-80, separator.frame.origin.y+separator.frame.size.height+23+15*(SCREEN_HEIGHT/667.0), 11, 11)];
@@ -85,7 +85,7 @@
         
         [self createLine];
         
-        leftDistance = 35;
+        float leftDistance = 35;
         CGFloat rightDistance = 15;
         int nCount = 0;
         if(self.mCurrentType == 0)

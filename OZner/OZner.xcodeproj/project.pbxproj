@@ -385,13 +385,8 @@
 		52461F071C2699AD00834CC2 /* indoorAirXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F061C2699AD00834CC2 /* indoorAirXib.xib */; };
 		5264661F1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */; };
 		526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */; };
-		526643DA1C2A9723007D7A28 /* indoorAirWarn_Wireless.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526643D61C2A9723007D7A28 /* indoorAirWarn_Wireless.xib */; };
 		526643DB1C2A9723007D7A28 /* indoorAirWarn_Air.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */; };
-		526643DC1C2A9723007D7A28 /* indoorAirWarn_shutdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526643D81C2A9723007D7A28 /* indoorAirWarn_shutdown.xib */; };
-		526643DD1C2A9723007D7A28 /* indoorAirWar_VOC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526643D91C2A9723007D7A28 /* indoorAirWar_VOC.xib */; };
 		526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */; };
-		526DA5331C291F1E002755CA /* indoorAirWarn_Temp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526DA5321C291F1E002755CA /* indoorAirWarn_Temp.xib */; };
-		526DA5351C2926EB002755CA /* indoorAirWarn_Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DA5341C2926EB002755CA /* indoorAirWarn_Temp.swift */; };
 		526DDB361C4AB9AB00363504 /* CupView_Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DDB351C4AB9AB00363504 /* CupView_Footer.swift */; };
 		526DDB381C4AB9BB00363504 /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526DDB371C4AB9BB00363504 /* CupView_Footer.xib */; };
 		526DDB3B1C4B6E2700363504 /* MyDeviceMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DDB391C4B6E2700363504 /* MyDeviceMainController.swift */; };
@@ -1474,13 +1469,8 @@
 		5264661C1C43D9C7006C86D3 /* MxChipAirPurifierStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierStatus.h; sourceTree = "<group>"; };
 		5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierStatus.m; sourceTree = "<group>"; };
 		526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Airgif_blue.gif; sourceTree = "<group>"; };
-		526643D61C2A9723007D7A28 /* indoorAirWarn_Wireless.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirWarn_Wireless.xib; sourceTree = "<group>"; };
 		526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirWarn_Air.xib; sourceTree = "<group>"; };
-		526643D81C2A9723007D7A28 /* indoorAirWarn_shutdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirWarn_shutdown.xib; sourceTree = "<group>"; };
-		526643D91C2A9723007D7A28 /* indoorAirWar_VOC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirWar_VOC.xib; sourceTree = "<group>"; };
 		526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indoorAirWarn_Air.swift; sourceTree = "<group>"; };
-		526DA5321C291F1E002755CA /* indoorAirWarn_Temp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirWarn_Temp.xib; sourceTree = "<group>"; };
-		526DA5341C2926EB002755CA /* indoorAirWarn_Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indoorAirWarn_Temp.swift; sourceTree = "<group>"; };
 		526DDB351C4AB9AB00363504 /* CupView_Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupView_Footer.swift; sourceTree = "<group>"; };
 		526DDB371C4AB9BB00363504 /* CupView_Footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CupView_Footer.xib; sourceTree = "<group>"; };
 		526DDB391C4B6E2700363504 /* MyDeviceMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDeviceMainController.swift; sourceTree = "<group>"; };
@@ -3492,8 +3482,8 @@
 		52461EFD1C26839300834CC2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				526DA5311C291E7E002755CA /* indoorAirWarn */,
 				52A4EF5B1C27F7FF005F282D /* gifImage */,
+				526DA5311C291E7E002755CA /* indoorAirWarn */,
 				52A4EF591C27F34C005F282D /* headViewView.swift */,
 				52461EFE1C26847200834CC2 /* headViewView.xib */,
 				52461F041C26985500834CC2 /* outAirXib.xib */,
@@ -3515,13 +3505,8 @@
 		526DA5311C291E7E002755CA /* indoorAirWarn */ = {
 			isa = PBXGroup;
 			children = (
-				526643D61C2A9723007D7A28 /* indoorAirWarn_Wireless.xib */,
 				526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */,
 				526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */,
-				526643D81C2A9723007D7A28 /* indoorAirWarn_shutdown.xib */,
-				526643D91C2A9723007D7A28 /* indoorAirWar_VOC.xib */,
-				526DA5321C291F1E002755CA /* indoorAirWarn_Temp.xib */,
-				526DA5341C2926EB002755CA /* indoorAirWarn_Temp.swift */,
 			);
 			name = indoorAirWarn;
 			sourceTree = "<group>";
@@ -4514,10 +4499,12 @@
 					};
 					428141141C0B072D006FEDDE = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = UZZG6NM74T;
 						TestTargetID = 428141001C0B072C006FEDDE;
 					};
 					4281411F1C0B072D006FEDDE = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = UZZG6NM74T;
 						TestTargetID = 428141001C0B072C006FEDDE;
 					};
 				};
@@ -4608,7 +4595,6 @@
 				52C4FC2F1C33FA0A00994AC6 /* device_jin_smallair_select.png in Resources */,
 				8D756ACB1C8EC3950022CF63 /* SetRemindTimeController.xib in Resources */,
 				4280BDFB1C2D096100627AFB /* icon_power@2x.png in Resources */,
-				526643DC1C2A9723007D7A28 /* indoorAirWarn_shutdown.xib in Resources */,
 				528FFF091C2577AA00D814A1 /* setSmallAir.plist in Resources */,
 				42CB9EC31C353CF3006D95CD /* zhong_03.png in Resources */,
 				4280BE081C2D09FD00627AFB /* icon_power_normal@3x.png in Resources */,
@@ -4741,7 +4727,6 @@
 				4280BE041C2D09FD00627AFB /* icon_jiare_normal@3x.png in Resources */,
 				4253815E1C14D799005FF2F3 /* device_share@2x.png in Resources */,
 				52215DE61C4E9516007C8C96 /* CenterChartCell.xib in Resources */,
-				526643DD1C2A9723007D7A28 /* indoorAirWar_VOC.xib in Resources */,
 				4280BDFA1C2D096100627AFB /* icon_zhileng_normal@2x.png in Resources */,
 				426F42781C279CF200DC39DF /* icon_peidui_select_jingshuiqi@2x.png in Resources */,
 				52DDC18A1C4127A000CBA038 /* Main_FooterView_zb.xib in Resources */,
@@ -4785,7 +4770,6 @@
 				426F42721C279CF200DC39DF /* icon_circle_normal.png in Resources */,
 				4281F4311C0DBF0800E1CF48 /* mydevice_bg@3x.png in Resources */,
 				423114551C4370E80062FFFF /* scanboarder.png in Resources */,
-				526DA5331C291F1E002755CA /* indoorAirWarn_Temp.xib in Resources */,
 				423114571C43711D0062FFFF /* scanline.png in Resources */,
 				4281414B1C0B15F0006FEDDE /* ic_menu_black_24dp@3x.png in Resources */,
 				8D9775161C8F0C7400125CE7 /* WaterReplenishMainView.xib in Resources */,
@@ -4800,7 +4784,6 @@
 				52461F011C26960A00834CC2 /* smallFooterViewXib.xib in Resources */,
 				521758541C2AEF3100CCCB11 /* icon_peidui_normal_smallair@2x.png in Resources */,
 				4288C5241C0ED68300446D3E /* icon_no_device_logo@3x.png in Resources */,
-				526643DA1C2A9723007D7A28 /* indoorAirWarn_Wireless.xib in Resources */,
 				52C4FC311C343CC000994AC6 /* bigautoModelView.xib in Resources */,
 				8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */,
 				52461F051C26985500834CC2 /* outAirXib.xib in Resources */,
@@ -5233,7 +5216,6 @@
 				8DA405FE1C8441B500AD5E5E /* ZXSMSTOMMSTOResultParser.m in Sources */,
 				523DC39B1C175EAA00595099 /* SDWebImagePrefetcher.m in Sources */,
 				8DA406131C8441B500AD5E5E /* ZXWhiteRectangleDetector.m in Sources */,
-				526DA5351C2926EB002755CA /* indoorAirWarn_Temp.swift in Sources */,
 				5231EA871C51328100DCB8F8 /* CupRecord.m in Sources */,
 				8DA405A71C8441B500AD5E5E /* ZXModulusGF.m in Sources */,
 				8DA405C61C8441B500AD5E5E /* ZXPDF417Reader.m in Sources */,
@@ -5616,10 +5598,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OZnerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zbzb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OZner.app/OZner";
 			};
 			name = Debug;
@@ -5628,10 +5613,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OZnerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zbzb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OZner.app/OZner";
 			};
 			name = Release;
@@ -5639,10 +5627,13 @@
 		428141301C0B072D006FEDDE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OZnerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zbzb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_TARGET_NAME = OZner;
 				USES_XCTRUNNER = YES;
 			};
@@ -5651,10 +5642,13 @@
 		428141311C0B072D006FEDDE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OZnerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zbzb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_TARGET_NAME = OZner;
 				USES_XCTRUNNER = YES;
 			};

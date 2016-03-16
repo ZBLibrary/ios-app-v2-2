@@ -393,10 +393,12 @@
                 <outlet property="chartContainerView" destination="gsn-g0-u04" id="jsn-at-eV4"/>
                 <outlet property="organLabel" destination="dfz-pd-f54" id="bKO-Or-o1k"/>
                 <outlet property="segmentControl" destination="vmV-v7-nod" id="hSj-1a-URa"/>
+                <outlet property="toBuyEssence" destination="gvy-Ns-Ld4" id="PDr-m5-V3c"/>
+                <outlet property="toChatButton" destination="bLe-Fm-Jcd" id="5f7-bN-HOn"/>
                 <outlet property="toWhatWater" destination="s97-cb-sNs" id="CLZ-2V-9LD"/>
                 <outlet property="toWhatYoufen" destination="2LA-v3-TLv" id="pH8-qe-HAD"/>
             </connections>
-            <point key="canvasLocation" x="127.5" y="315"/>
+            <point key="canvasLocation" x="222.5" y="314"/>
         </tableViewCell>
     </objects>
     <resources>

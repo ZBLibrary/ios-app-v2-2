@@ -25,8 +25,10 @@ class indoorAirXib: UIView {
     @IBOutlet var airTotal: UILabel!
     @IBOutlet var lvxinState: UILabel!
     
-    @IBOutlet var stateImage_0: UIImageView!
+    
+    @IBOutlet weak var downImgLeft: NSLayoutConstraint!
     @IBOutlet var curDateViewtoLeft: NSLayoutConstraint!//20
+    @IBOutlet weak var Image0Width: NSLayoutConstraint!
     //starDate
     @IBOutlet var starYear: UILabel!
     @IBOutlet var starDate: UILabel!
@@ -40,7 +42,6 @@ class indoorAirXib: UIView {
     @IBOutlet var curDate: UILabel!
     
     
-    @IBOutlet var state_down: UIImageView!
     
     @IBOutlet var BugLvXinbutton: UIButton!
     
@@ -75,11 +76,11 @@ class indoorAirXib: UIView {
         didSet{
             lvxinState.text="\(state)"
             print(state)
-            let tmpframe=stateImage_0.frame
-            stateImage_0.frame=CGRect(x: tmpframe.origin.x, y: tmpframe.origin.y, width: (Screen_Width-80)*CGFloat(100-state)/100, height: tmpframe.size.height)
-            print(stateImage_0.frame.width)
-            state_down.frame=CGRect(x: 36+(Screen_Width-80)*CGFloat(100-state)/100, y: state_down.frame.origin.y, width: state_down.frame.size.width, height: state_down.frame.size.height)
+            Image0Width.constant=(Screen_Width-80)*CGFloat(100-state)/100
+            downImgLeft.constant=36+(Screen_Width-80)*CGFloat(100-state)/100
+            
             curDateViewtoLeft.constant=(Screen_Width-80)*CGFloat(100-state)/100+20
+            
         }
     } //0-100
     @IBOutlet var smallairHidenView: UIView!

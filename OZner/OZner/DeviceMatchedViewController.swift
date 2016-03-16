@@ -144,8 +144,9 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         self.view.addSubview(view)
         
         let view1 = OtherMatchFinishdView(frame: CGRectMake(0,height,width,height-407*(height/667.0)))
-        self.otherDeviceFinishedView = view1;
-        self.otherDeviceFinishedView?.delegate = self;
+        view1.deviceType=deviceCuttentType
+        self.otherDeviceFinishedView = view1
+        self.otherDeviceFinishedView?.delegate = self
         self.view.addSubview(view1)
         
         //
@@ -198,7 +199,8 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             self.circleIconImgView.image = UIImage(named: "WaterReplenish3")
             animationImgView.image=UIImage(named: "WaterReplenishComplete")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("补水仪名称")
-        default: break
+        default:
+            break
         }
         self.startAnimation()
     }

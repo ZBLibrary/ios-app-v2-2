@@ -1044,7 +1044,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 //跑马效果 0没有跑过，1正在跑马，2跑过马了
                 if airPurifier_Bluetooth.status.power==true&&airPurifier_Bluetooth.sensor.PM25 != 65535
                 {
-                    
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 60)
                     if isPaoMa != 1
                     {
                         if isPaoMa == 0
@@ -1073,44 +1073,48 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                     setAirStandart(Int(airPurifier_Bluetooth.sensor.PM25))
                     //滤芯状态
                     //当前时间
-                    
-                    let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                    //let starTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
-                    if airPurifier_Bluetooth.status.filterStatus.stopTime != .None
+                    if(isNeedDownLXDate == false)
                     {
-                        let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.stopTime.timeIntervalSince1970
-                        headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int((stopTime-nowTime)/(365*24*3600)*100))%":"0%"
-                        switch Int((stopTime-nowTime)/(365*24*3600)*100)
+                        isNeedDownLXDate = true
+                        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+                        if airPurifier_Bluetooth.status.filterStatus.stopTime != .None
                         {
-                        case 0..<15:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
-                            break
-                        case 15..<40:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
-                            break
-                        case 40..<60:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
-                            break
-                        case 60..<85:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
-                            break
-                        default:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
-                            break
+                            let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.stopTime.timeIntervalSince1970
+                            headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int((stopTime-nowTime)/(365*24*3600)*100))%":"0%"
+                            switch Int((stopTime-nowTime)/(365*24*3600)*100)
+                            {
+                            case 0..<15:
+                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
+                                break
+                            case 15..<40:
+                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
+                                break
+                            case 40..<60:
+                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
+                                break
+                            case 60..<85:
+                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
+                                break
+                            default:
+                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
+                                break
+                            }
+                            if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
+                            {
+                                isNeedDownLXDate=true
+                                let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
+                                alert.show()
+                            }
+                            NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
                         }
-                        if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
-                        {
-                            isNeedDownLXDate=true
-                            let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
-                            alert.show()
-                        }
-                        NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
-                    }
 
+                    }
+                    
                 }
                 else
                 {
                     IAW_TempView.PM25.text=loadLanguage("已关机")
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
                 }
                 
                 
@@ -1123,6 +1127,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 let airPurifier_MxChip = self.myCurrentDevice as! AirPurifier_MxChip
                 if airPurifier_MxChip.status.power==true&&airPurifier_MxChip.sensor.PM25 != 65535
                 {
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 60)
                     //跑马效果 0没有跑过，1正在跑马，2跑过马了
                     if isPaoMa != 1
                     {
@@ -1152,45 +1157,52 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                     bigStateView.teampre.text = "\(airPurifier_MxChip.sensor.Temperature)"
                     bigStateView.himida.text = "\(airPurifier_MxChip.sensor.Humidity)%"
                     setAirStandart(Int(airPurifier_MxChip.sensor.PM25))
-                    //滤芯状态
-                    let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+                    
                     
                     
                     if airPurifier_MxChip.status.filterStatus == nil
                     {
                         return
                     }
-                    let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.stopTime.timeIntervalSince1970
-                    headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int((stopTime-nowTime)/(365*24*3600)*100))%":"0%"
-                    switch Int((stopTime-nowTime)/(365*24*3600)*100)
+                    if(isNeedDownLXDate == false)
                     {
-                    case 0:
-                        headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
-                        break
-                    case 1..<40:
-                        headView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
-                        break
-                    case 40..<60:
-                        headView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
-                        break
-                    case 60..<100:
-                        headView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
-                        break
-                    default:
-                        headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
-                        break
+                        isNeedDownLXDate = true
+                        //滤芯状态
+                        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+                        let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.stopTime.timeIntervalSince1970
+                        headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int((stopTime-nowTime)/(365*24*3600)*100))%":"0%"
+                        switch Int((stopTime-nowTime)/(365*24*3600)*100)
+                        {
+                        case 0:
+                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
+                            break
+                        case 1..<40:
+                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
+                            break
+                        case 40..<60:
+                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
+                            break
+                        case 60..<100:
+                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
+                            break
+                        default:
+                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
+                            break
+                        }
+                        if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
+                        {
+                            isNeedDownLXDate=true
+                            let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
+                            alert.show()
+                        }
+                        NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
                     }
-                    if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
-                    {
-                        isNeedDownLXDate=true
-                        let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
-                        alert.show()
-                    }
-                    NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
+                    
                     
                 }else
                 {
                     IAW_TempView.PM25.text=loadLanguage("已关机")
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
                 }
 
             }
@@ -1209,8 +1221,6 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     
     func StarPaoMazb()
     {
-        print(IAW_TempView.PM25.text)
-        //IAW_TempView.PM25.text.
         if let _ = Int(IAW_TempView.PM25.text!)
         {
             if IAW_TempView.PM25.tag <= Int(IAW_TempView.PM25.text!)!
@@ -1622,7 +1632,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         print(tmpbigDevice.status.power)
         if bigFooterViews[0].ison==false
         {
+            print(IAW_TempView.PM25.font)
             IAW_TempView.PM25.text=loadLanguage("已关机")
+            IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
             bigFooterViews[1].ison=false
             bigFooterViews[2].ison=false
             //bigFooterViews[3].ison=false
@@ -1634,6 +1646,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }else
         {
             IAW_TempView.PM25.text="\(tmpbigDevice.sensor.PM25)"
+            IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 60)
             if currentSpeedModel != tmpbigDevice.status.speed
             {
                 currentSpeedModel=tmpbigDevice.status.speed

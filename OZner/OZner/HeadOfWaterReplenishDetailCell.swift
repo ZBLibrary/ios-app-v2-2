@@ -57,10 +57,7 @@ class HeadOfWaterReplenishDetailCell: UITableViewCell {
                 return
             }
             let tmpName=NSString(format: "WaterReplDetail%d", currentOrgan+1) as String
-            //print(tmpName)
-            //print(currentOrgan)
-            //print(oldValue)
-            //organImg1.image=UIImage(named: "WaterReplDetail1.1")
+            
             [organImg1,organImg2,organImg3,organImg4][currentOrgan].image=UIImage(named: "\(tmpName)_1")
     
             if oldValue != -1

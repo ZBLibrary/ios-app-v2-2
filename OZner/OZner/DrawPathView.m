@@ -81,7 +81,7 @@
         label = [[UILabel alloc]initWithFrame:CGRectMake(circleView.frame.size.width+circleView.frame.origin.x+5, circleView.frame.origin.y-(size.height-circleView.frame.size.height)/2, size.width+20, size.height)];
         label.text = content;
         self.thirdLabel = label;
-        orignX = size.width+label.frame.origin.x+middleDiatance;
+        //orignX = size.width+label.frame.origin.x+middleDiatance;
         label.textColor = [UIColor colorWithRed:242.0/255 green:98.0/255 blue:100.0/255 alpha:1.0];
         label.font = [UIFont systemFontOfSize:14*(SCREEN_HEIGHT/667.0)];
         [self addSubview:label];

@@ -18,7 +18,7 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
     var myWeightTextField:UITextField?
     var segmentControl:UISegmentedControl?
     var delegate:OtherMatchFinisedViewDelegate?
-    
+    var deviceType:Int=0//0水杯，1，2，3，4，5补水仪
     override init(frame: CGRect) {
         super.init(frame: frame)
         let width = UIScreen.mainScreen().bounds.width
@@ -54,9 +54,7 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
         leftSeparatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         scrollView.addSubview(leftSeparatorView)
         
-        //let contentStr:String = loadLanguage("办公室")
-        //let contentDic = [NSFontAttributeName:UIFont.systemFontOfSize(17*(height/667.0))];
-        //let contentSize = contentStr.boundingRectWithSize(CGSizeMake(width, 17*(height/667.0)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: contentDic, context: nil).size;
+
         let label:UILabel = UILabel(frame: CGRectMake((width-150*(width/375.0))/2,29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y,150*(width/375.0),17*(height/667.0)))
         label.text = loadLanguage("办公室")
         label.textAlignment = NSTextAlignment.Center
@@ -65,21 +63,22 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
         scrollView.addSubview(label)
         
         //如果是空气净化器 1:水杯 2:探头 3:净水器 4:台式 5:立式 6:补水仪
-        switch get_CurrSelectEquip()
+        switch deviceType
         {
-        case 1,2,3,5:
+        case 0,1,2,4:
             break
-        case 4:
+        case 3:
             label.text=loadLanguage("客厅")
-        case 6:
+        case 5:
             segmentControl=UISegmentedControl(items: ["女","男"])
             segmentControl?.frame=CGRect(x: (Screen_Width-126)/2, y: 29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y, width: 126, height: 25)
             segmentControl?.layer.borderColor=UIColor(red: 64/255, green: 140/255, blue: 241/255, alpha: 1).CGColor
             segmentControl?.layer.borderWidth=1
             segmentControl?.layer.cornerRadius=12
             segmentControl?.layer.masksToBounds=true
+            segmentControl?.selectedSegmentIndex=0
             scrollView.addSubview(segmentControl!)
-            label.frame=CGRect(x: (Screen_Width-126)/2, y: segmentControl!.frame.origin.y+10, width: 126, height: 20)
+            label.frame=CGRect(x: (Screen_Width-126)/2, y: segmentControl!.frame.origin.y+30, width: 126, height: 20)
             label.text="请选择设定您的性别"
             label.font = UIFont.systemFontOfSize(12*(height/667.0))
         default:

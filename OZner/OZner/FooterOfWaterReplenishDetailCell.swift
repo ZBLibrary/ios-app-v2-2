@@ -18,6 +18,10 @@ class FooterOfWaterReplenishDetailCell: UITableViewCell,HeadOfWaterReplenishDeta
     }
     @IBOutlet weak var toWhatWater: UIButton!
     @IBOutlet weak var toWhatYoufen: UIButton!
+    
+    @IBOutlet weak var toChatButton: UIButton!
+    @IBOutlet weak var toBuyEssence: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

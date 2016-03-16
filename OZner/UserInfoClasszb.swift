@@ -77,46 +77,46 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
             {
             
                 let state=userdata.objectForKey("state") as! Int
-                    if state>0
-                    {
-                        let data1=userdata.objectForKey("userinfo") as! NSDictionary
-                        let tmpdic=NSMutableDictionary()
-                        print(data1)
-                        print(data1.allValues)
-                        print(data1.objectForKey("NickName"))
-                        var tmpTmp=((data1.objectForKey("NickName")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("NickName")
-                        tmpdic.setValue(tmpTmp, forKey: "NickName")
-                        tmpTmp=((data1.objectForKey("ImgPath")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("ImgPath")
-                        tmpdic.setValue(tmpTmp, forKey: "ImgPath")
-                        tmpTmp=((data1.objectForKey("UserTalkCode")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("UserTalkCode")
-                        tmpdic.setValue(tmpTmp, forKey: "UserTalkCode")
-                        tmpTmp=((data1.objectForKey("Language")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("Language")
-                        tmpdic.setValue(tmpTmp, forKey: "Language")
-                        tmpTmp=((data1.objectForKey("Area")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("Area")
-                        tmpdic.setValue(tmpTmp, forKey: "Area")
-                        tmpTmp=((data1.objectForKey("UserId")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("UserId")
-                        tmpdic.setValue(tmpTmp, forKey: "UserId")
-                        setPlistData(tmpdic, fileName: "userinfoURL")
-                        //判空
-                        if (self.myClosure != nil){
-                            //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-                            self.myClosure!(string: true)
-                            //后台下载用户信息
-                            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
-                                self.getuserOtherInfo()
-                            })
-                            
-                            
-                        }
-                       
+                if state>0
+                {
+                    let data1=userdata.objectForKey("userinfo") as! NSDictionary
+                    let tmpdic=NSMutableDictionary()
+                    print(data1)
+                    print(data1.allValues)
+                    print(data1.objectForKey("NickName"))
+                    var tmpTmp=((data1.objectForKey("NickName")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("NickName")
+                    tmpdic.setValue(tmpTmp, forKey: "NickName")
+                    tmpTmp=((data1.objectForKey("ImgPath")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("ImgPath")
+                    tmpdic.setValue(tmpTmp, forKey: "ImgPath")
+                    tmpTmp=((data1.objectForKey("UserTalkCode")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("UserTalkCode")
+                    tmpdic.setValue(tmpTmp, forKey: "UserTalkCode")
+                    tmpTmp=((data1.objectForKey("Language")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("Language")
+                    tmpdic.setValue(tmpTmp, forKey: "Language")
+                    tmpTmp=((data1.objectForKey("Area")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("Area")
+                    tmpdic.setValue(tmpTmp, forKey: "Area")
+                    tmpTmp=((data1.objectForKey("UserId")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("UserId")
+                    tmpdic.setValue(tmpTmp, forKey: "UserId")
+                    setPlistData(tmpdic, fileName: "userinfoURL")
+                    //判空
+                    if (self.myClosure != nil){
+                        //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
+                        self.myClosure!(string: true)
+                        //后台下载用户信息
+                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                            self.getuserOtherInfo()
+                        })
+                        
+                        
                     }
-                    else
-                    {
-                        //判空
-                        if (self.myClosure != nil){
-                            //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-                            self.myClosure!(string: false)
-                        }
+                    
+                }
+                else
+                {
+                    //判空
+                    if (self.myClosure != nil){
+                        //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
+                        self.myClosure!(string: false)
+                    }
                 }
                 
                 

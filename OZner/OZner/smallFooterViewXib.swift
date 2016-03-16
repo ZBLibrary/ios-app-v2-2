@@ -17,6 +17,8 @@ class smallFooterViewXib: UIView {
     @IBOutlet var targertView: UIView!
     @IBOutlet var speedValue: UILabel!
     @IBOutlet var speedText: UILabel!
+    @IBOutlet weak var slideLeft: NSLayoutConstraint!
+    @IBOutlet weak var img0Width: NSLayoutConstraint!
     
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -46,8 +48,7 @@ class smallFooterViewXib: UIView {
         if blueTooth != nil
         {
             let initpoint:CGFloat=CGFloat(blueTooth.status.RPM)/100.0*targertView.bounds.size.width
-            print(blueTooth.status.RPM)
-            print("起始风速：\(initpoint)")
+
             upDateFrame(initpoint)
         }
         
@@ -60,11 +61,10 @@ class smallFooterViewXib: UIView {
                 return;
             }
             let tapPoint:CGPoint = gesture.locationOfTouch(0, inView: targertView)
-            if tapPoint.x>targertView.frame.size.width||tapPoint.x<0
-            {
-                return
-            }
-            upDateFrame(tapPoint.x)
+            var tmpX = min(tapPoint.x, targertView.frame.size.width)
+            tmpX=max(tmpX, 0)
+
+            upDateFrame(tmpX)
         }
         
     }
@@ -82,11 +82,9 @@ class smallFooterViewXib: UIView {
     
     func upDateFrame(x:CGFloat)
     {
-        let tmpwidth=targertView.bounds.size.width-x
-        let tmpFrame=targertView.frame
-        JinDuImage_0.frame=CGRect(x: tmpFrame.origin.x+x, y:JinDuImage_0.frame.origin.y, width: tmpwidth, height: JinDuImage_0.frame.size.height)
-        SlideView.frame=CGRect(x: tmpFrame.origin.x+x-30, y:SlideView.frame.origin.y, width: 60, height: 60)
-        //
+        
+        img0Width.constant = -x
+        
         speedValue.text="\(Int(x/targertView.bounds.size.width*100))"
         if (x/targertView.bounds.size.width)<1/3
         {
@@ -99,23 +97,23 @@ class smallFooterViewXib: UIView {
         else{
             speedText.text="中速"
         }
-        //开机
-        blueTooth.status.setPower(true, callback: {
-            (error:NSError!) in
-            if error != nil
-            {
-                print(error)
-            }
-        })
-
         blueTooth.status.setRPM(Int32(x/targertView.bounds.size.width*100), callback: {
             (error:NSError!) in
-          if error != nil
-          {
-            print(error)
-            }
         })
-//        setNeedsLayout()
-//        layoutIfNeeded()
+        if x==0
+        {
+            blueTooth.status.setPower(false, callback: {
+                (error:NSError!) in
+                
+            })
+        }
+        else
+        {
+            blueTooth.status.setPower(true, callback: {
+                (error:NSError!) in
+                
+            })
+        }
+
     }
 }
