@@ -39,18 +39,16 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     //数组以 脸 眼 手 颈 的顺序 半径30范围内
     private let locationOfImg=[
         SexType.WoMan:[CGPoint(x: 142*kWidthOfWaterReplensh, y: 265*kHightOfWaterReplensh),CGPoint(x: 214*kWidthOfWaterReplensh, y: 243*kHightOfWaterReplensh),CGPoint(x: 142*kWidthOfWaterReplensh, y: 370*kHightOfWaterReplensh),CGPoint(x: 206*kWidthOfWaterReplensh, y: 328*kHightOfWaterReplensh)],
-        SexType.Man:[]
+        SexType.Man:[CGPoint(x: 142*kWidthOfWaterReplensh, y: 265*kHightOfWaterReplensh),CGPoint(x: 214*kWidthOfWaterReplensh, y: 243*kHightOfWaterReplensh),CGPoint(x: 142*kWidthOfWaterReplensh, y: 370*kHightOfWaterReplensh),CGPoint(x: 206*kWidthOfWaterReplensh, y: 328*kHightOfWaterReplensh)]
     ]
-  
+    //设备
+    private var WaterReplenishDevice:WaterReplenishmentMeter?
     func personImgTapClick(sender: UITapGestureRecognizer) {
         let touchPoint=sender.locationInView(personBgImgView)
         if stateOfView>0//当前页是局部器官图二级界面
         {
-//            if pow(centerOfImg.x-touchPoint.x, 2)+pow(centerOfImg.y-touchPoint.y, 2)<=100*100
-//            {
                 stateOfView=0
                 print("点击了返回区域")
-            //}
         }
         else//当前页是主视图一级界面
         {
@@ -166,5 +164,60 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         setNeedsLayout()
         layoutIfNeeded()
     }
-
+    //初始化视图
+    func initView(currentDevice:OznerDevice,View:UIView)
+    {
+        WaterReplenishDevice=currentDevice as? WaterReplenishmentMeter
+        //设置电量
+        self.TitleOfReplensh.text = removeAdressOfDeviceName(WaterReplenishDevice!.settings.name)
+        var dianliang = Double((WaterReplenishDevice?.status.battery)!)
+        print(dianliang)
+        if(dianliang == 65535)
+        {
+            dianliang = 0
+        }
+        if(dianliang == 0)
+        {
+            dianLiangImg.image = UIImage(named: "dian_liang_0.png")
+        }
+        else if(dianliang <= 0.3)
+        {
+            dianLiangImg.image = UIImage(named: "dian_liang_30.png")
+        }
+        else if(dianliang <= 0.7)
+        {
+            dianLiangImg.image = UIImage(named: "dian_liang_70.png")
+        }
+        else
+        {
+            dianLiangImg.image = UIImage(named: "dian_liang_100.png")
+        }
+        dianliang = dianliang * 100
+        dianLiangValueLabel.text = String(Int(dianliang)) + "%"
+    
+        //设置性别
+        let tmpSex=WaterReplenishDevice?.settings.get("sex", `default`: "女") as! String
+        updateViewzb(Sex: tmpSex=="女" ? SexType.WoMan:SexType.Man)
+        //下载皮肤类型
+        DownSkinType(View)
+    }
+    private func DownSkinType(View:UIView)
+    {
+        MBProgressHUD.showHUDAddedTo(View, animated: true)
+        //下载
+        skinButton.titleLabel?.text="您的肤质  无"
+        
+    }
+    private func removeAdressOfDeviceName(tmpName:String)->String
+    {
+        if tmpName.characters.contains("(")==false
+        {
+            return tmpName
+        }
+        else
+        {
+            let NameStr:NSArray = tmpName.componentsSeparatedByString("(")
+            return (NameStr.objectAtIndex(0) as! String)
+        }
+    }
 }

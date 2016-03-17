@@ -12,20 +12,25 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM2.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qg-k6-aYk">
-                    <rect key="frame" x="0.0" y="33" width="178" height="11"/>
+                    <rect key="frame" x="0.0" y="15" width="178" height="34"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="11" id="ADz-ZN-kR1"/>
+                        <constraint firstAttribute="height" constant="14" id="ADz-ZN-kR1"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ADz-ZN-kR1"/>
+                        </mask>
+                    </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="95" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLU-bM-4vB">
                     <rect key="frame" x="0.0" y="49" width="178" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="5Zb-Lg-DQR"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="65"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="0.88" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -70,7 +75,8 @@
                 <constraint firstItem="0J2-gG-3HQ" firstAttribute="centerX" secondItem="szl-RC-Y9O" secondAttribute="centerX" id="5VR-2G-BpD"/>
                 <constraint firstAttribute="bottom" secondItem="mLU-bM-4vB" secondAttribute="bottom" id="Bar-I2-l1L"/>
                 <constraint firstAttribute="trailing" secondItem="5Qg-k6-aYk" secondAttribute="trailing" id="NO2-4W-GE6"/>
-                <constraint firstItem="mLU-bM-4vB" firstAttribute="top" secondItem="5Qg-k6-aYk" secondAttribute="bottom" constant="5" id="b3h-0H-xdV"/>
+                <constraint firstItem="mLU-bM-4vB" firstAttribute="top" secondItem="5Qg-k6-aYk" secondAttribute="bottom" id="b3h-0H-xdV"/>
+                <constraint firstItem="5Qg-k6-aYk" firstAttribute="top" secondItem="0J2-gG-3HQ" secondAttribute="bottom" id="qno-ac-JTD"/>
                 <constraint firstItem="0J2-gG-3HQ" firstAttribute="top" secondItem="szl-RC-Y9O" secondAttribute="top" id="rHr-c1-cLe"/>
                 <constraint firstItem="mLU-bM-4vB" firstAttribute="leading" secondItem="szl-RC-Y9O" secondAttribute="leading" id="viV-jg-q2v"/>
                 <constraint firstAttribute="trailing" secondItem="mLU-bM-4vB" secondAttribute="trailing" id="wnz-xK-SB3"/>

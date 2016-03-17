@@ -330,9 +330,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             isPaoMa=0
             loadAirCleanerView()
             currentSpeedModel=0
-            //测试
-        case "default"==type://WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
-            //智能补水仪  Test：
+
+        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
             set_CurrSelectEquip(6)
             MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
             waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView
@@ -344,7 +343,11 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             MainScrollView.contentSize=CGSize(width: 0, height: Screen_Hight-65)
             MainScrollView.addSubview(waterReplenishMainView!)
             self.view.addSubview(MainScrollView)
-            //waterReplenishMainView?.updateView(2)
+           //
+            if myCurrentDevice != nil
+            {
+                waterReplenishMainView?.initView(myCurrentDevice!, View: self.view)
+            }
 
         default://"default"
             //默认主页视图
@@ -432,6 +435,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
         case 0:
             let setController=setWaterReplenishController()
+            setController.myCurrentDevice=myCurrentDevice as? WaterReplenishmentMeter
             self.navigationController?.pushViewController(setController, animated: true)
         case 1:
             let skipController=SkinQueryTableViewController()
@@ -1044,7 +1048,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 //跑马效果 0没有跑过，1正在跑马，2跑过马了
                 if airPurifier_Bluetooth.status.power==true&&airPurifier_Bluetooth.sensor.PM25 != 65535
                 {
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 60)
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 65)
                     if isPaoMa != 1
                     {
                         if isPaoMa == 0
@@ -1127,7 +1131,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 let airPurifier_MxChip = self.myCurrentDevice as! AirPurifier_MxChip
                 if airPurifier_MxChip.status.power==true&&airPurifier_MxChip.sensor.PM25 != 65535
                 {
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 60)
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 65)
                     //跑马效果 0没有跑过，1正在跑马，2跑过马了
                     if isPaoMa != 1
                     {
@@ -1646,7 +1650,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }else
         {
             IAW_TempView.PM25.text="\(tmpbigDevice.sensor.PM25)"
-            IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 60)
+            IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 65)
             if currentSpeedModel != tmpbigDevice.status.speed
             {
                 currentSpeedModel=tmpbigDevice.status.speed

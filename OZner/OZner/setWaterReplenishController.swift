@@ -95,7 +95,11 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     func ClearClick_OK()
     {
 
+        print("－－－－－－删除前－－－－－－")
+        print(OznerManager.instance().getDevices().count)
         OznerManager.instance().remove(myCurrentDevice)
+        print("－－－－－－删除后－－－－－－")
+        print(OznerManager.instance().getDevices().count)
         //发出通知
         NSNotificationCenter.defaultCenter().postNotificationName("removDeviceByZB", object: nil)
         self.navigationController?.popViewControllerAnimated(true)

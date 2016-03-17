@@ -85,19 +85,8 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         for var i = 0; i < arr.count;i++
         {
             let deviceIo = arr.objectAtIndex(i) as! BaseDeviceIO
-            print(deviceIo.type)
-            //临时测试用 这个if要删除
-            if (deviceCuttentType == 5&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
-                {
-                    muArr .addObject(deviceIo)
-            }
-            //
             if OznerManager.instance().checkisBindMode(deviceIo) == true
             {
-                
-                print(deviceIo.type)
-                print(deviceCuttentType)
-                
                 if(deviceCuttentType == 0&&CupManager.isCup(deviceIo.type)) ||
                 (deviceCuttentType == 1&&TapManager.isTap(deviceIo.type)) ||
                 (deviceCuttentType == 2&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
@@ -143,8 +132,8 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         self.cupFinishedBgView?.delegate = self;
         self.view.addSubview(view)
         
-        let view1 = OtherMatchFinishdView(frame: CGRectMake(0,height,width,height-407*(height/667.0)))
-        view1.deviceType=deviceCuttentType
+        let view1 = OtherMatchFinishdView()
+        view1.initView(CGRectMake(0,height,width,height-407*(height/667.0)), deviceType: deviceCuttentType)
         self.otherDeviceFinishedView = view1
         self.otherDeviceFinishedView?.delegate = self
         self.view.addSubview(view1)
@@ -399,207 +388,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         self.circleBottomBgView.alpha = 1.0
         UIView.commitAnimations()
     }
-    //OznerManagerDelegate
-    //MatchTanTouFinisedViewDelegate
-//    func saveTanTou()
-//    {
-//        if((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
-//        {
-//            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写探头名称"), preferredStyle: UIAlertControllerStyle.Alert)
-//            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
-//            alertControl.addAction(cancelAction)
-//            self.presentViewController(alertControl, animated: true, completion: nil)
-//            
-//            return
-//        }
-//        
-//        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
-//        let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
-//        
-//        //添加到服务器
-//        let werservice = DeviceWerbservice()
-//        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//        werservice.addDevice(device.identifier, name:self.finishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:loadLanguage("我的探头"),weight:self.finishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-//            MBProgressHUD.hideHUDForView(self.view, animated: true)
-//            if(status.networkStatus == kSuccessStatus)
-//            {
-//                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
-//                device.settings.put("type", value: loadLanguage("探头"))
-//                OznerManager.instance().save(device)
-//                
-//                NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-//                
-//                self.navigationController!.view .removeFromSuperview()
-//            }
-//            else
-//            {
-//                let str:NSString = status.errDesc
-//                if(str.length > 0)
-//                {
-//                    UITool.showSampleMsg("错误", message: str as String)
-//                }
-//                else
-//                {
-//                    UITool.showSampleMsg("错误", message: loadLanguage("添加设备失败"))
-//                }
-//            }
-//        })
-//    }
-    
-//    func saveJingShuiqi()
-//    {
-//        if((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
-//        {
-//            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写净水器名称"), preferredStyle: UIAlertControllerStyle.Alert)
-//            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
-//            alertControl.addAction(cancelAction)
-//            self.presentViewController(alertControl, animated: true, completion: nil)
-//            
-//            return
-//        }
-//        
-//        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! MXChipIO
-//        let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
-//        
-//        //添加到服务器
-//        let werservice = DeviceWerbservice()
-//        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//        werservice.addDevice(device.identifier, name:self.finishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的净水器",weight:self.finishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-//            MBProgressHUD.hideHUDForView(self.view, animated: true)
-//            if(status.networkStatus == kSuccessStatus)
-//            {
-//                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
-//                device.settings.put("type", value: loadLanguage("净水器"))
-//                OznerManager.instance().save(device)
-//                
-//                NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-//                
-//                self.navigationController!.view .removeFromSuperview()
-//            }
-//            else
-//            {
-//                let str:NSString = status.errDesc
-//                if(str.length > 0)
-//                {
-//                    UITool.showSampleMsg("错误", message: str as String)
-//                }
-//                else
-//                {
-//                    UITool.showSampleMsg("错误", message: "添加设备失败")
-//                }
-//            }
-//        })
-//
-//    }
-//    func saveSmallAir()
-//    {
-//        if((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
-//        {
-//            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写台式空气净化器名称"), preferredStyle: UIAlertControllerStyle.Alert)
-//            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
-//            alertControl.addAction(cancelAction)
-//            self.presentViewController(alertControl, animated: true, completion: nil)
-//            
-//            return
-//        }
-//        
-//        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
-//        let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
-//        //添加到服务器
-//        let werservice = DeviceWerbservice()
-//        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//        werservice.addDevice(device.identifier, name:self.finishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的净水器",weight:self.finishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-//            MBProgressHUD.hideHUDForView(self.view, animated: true)
-//            if(status.networkStatus == kSuccessStatus)
-//            {
-//                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
-//                device.settings.put("type", value: loadLanguage("台式空气净化器"))
-//                OznerManager.instance().save(device)
-//                
-//                NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-//                
-//                self.navigationController!.view .removeFromSuperview()
-//            }
-//            else
-//            {
-//                let str:NSString = status.errDesc
-//                if(str.length > 0)
-//                {
-//                    UITool.showSampleMsg("错误", message: str as String)
-//                }
-//                else
-//                {
-//                    UITool.showSampleMsg("错误", message: "添加设备失败")
-//                }
-//            }
-//        })
-//    }
-//    func saveBigAir()
-//    {
-//        if((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
-//        {
-//            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写立式空气净化器名称"), preferredStyle: UIAlertControllerStyle.Alert)
-//            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
-//            alertControl.addAction(cancelAction)
-//            self.presentViewController(alertControl, animated: true, completion: nil)
-//            
-//            return
-//        }
-//        
-//        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! MXChipIO
-//        let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
-//        //添加到服务器
-//        let werservice = DeviceWerbservice()
-//        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//        werservice.addDevice(device.identifier, name:self.finishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的立式空气净化器",weight:self.finishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-//            MBProgressHUD.hideHUDForView(self.view, animated: true)
-//            if(status.networkStatus == kSuccessStatus)
-//            {
-//                device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
-//                device.settings.put("type", value: loadLanguage("立式空气净化器"))
-//                OznerManager.instance().save(device)
-//                
-//                NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-//                
-//                self.navigationController!.view .removeFromSuperview()
-//            }
-//            else
-//            {
-//                let str:NSString = status.errDesc
-//                if(str.length > 0)
-//                {
-//                    UITool.showSampleMsg("错误", message: str as String)
-//                }
-//                else
-//                {
-//                    UITool.showSampleMsg("错误", message: "添加设备失败")
-//                }
-//            }
-//        })
-//    }
-    //除了水杯的配对完成回掉事件
-//    func otherFinishedAction() {
-//        saveDevice()
-////        if(self.deviceCuttentType == 1)
-////        {
-////            self.saveTanTou()
-////        }
-////        else if(self.deviceCuttentType == 2)
-////        {
-////            self.saveJingShuiqi()
-////        }
-////        else if(self.deviceCuttentType == 3)
-////        {
-////            self.saveSmallAir()
-////        }
-////        else if(self.deviceCuttentType == 4)
-////        {
-////            self.saveBigAir()
-////        }else if(deviceCuttentType == 5)
-////        {
-////            saveDevice()
-////        }
-//    }
+
     //除了水杯的配对完成回掉事件
     var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","智能补水仪"]
     func otherFinishedAction()
@@ -619,12 +408,19 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         //添加到服务器
         let werservice = DeviceWerbservice()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+        werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             if(status.networkStatus == kSuccessStatus)
             {
                 device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
                 device.settings.put("type", value: self.deviceNameArr[self.deviceCuttentType])
+                switch self.deviceCuttentType
+                {
+                case 5://补水仪
+                    device.settings.put("sex", value: self.otherDeviceFinishedView?.segmentControl?.selectedSegmentIndex==0 ? "女":"男")
+                default:
+                    break
+                }
                 OznerManager.instance().save(device)
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)

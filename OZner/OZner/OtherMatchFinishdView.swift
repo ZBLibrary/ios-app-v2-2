@@ -18,9 +18,10 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
     var myWeightTextField:UITextField?
     var segmentControl:UISegmentedControl?
     var delegate:OtherMatchFinisedViewDelegate?
-    var deviceType:Int=0//0水杯，1，2，3，4，5补水仪
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    //var deviceType:Int=0//0水杯，1，2，3，4，5补水仪
+    func initView(frame: CGRect,deviceType:Int) {
+        //super.init(frame: frame)
+        self.frame=frame
         let width = UIScreen.mainScreen().bounds.width
         let height = UIScreen.mainScreen().bounds.height
         
@@ -62,7 +63,8 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
         label.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
         scrollView.addSubview(label)
         
-        //如果是空气净化器 1:水杯 2:探头 3:净水器 4:台式 5:立式 6:补水仪
+        //如果是空气净化器 0:水杯 1:探头 2:净水器 3:台式 4:立式 5:补水仪
+        print(deviceType)
         switch deviceType
         {
         case 0,1,2,4:
@@ -118,8 +120,8 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
         return true
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 
 }
