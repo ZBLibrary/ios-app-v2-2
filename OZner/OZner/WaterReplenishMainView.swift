@@ -217,7 +217,13 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 print(dicData)
             }
         })
-    
+        deviceService.GetTimesCountBuShui(WaterReplenishDevice?.identifier, action: "Face") { (Times, status) -> Void in
+            if(status.networkStatus == kSuccessStatus)
+            {
+                print(Times)
+            }
+        }
+        
     }
     private func removeAdressOfDeviceName(tmpName:String)->String
     {

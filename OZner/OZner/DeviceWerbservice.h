@@ -46,5 +46,6 @@
 
 //获取周月补水仪器数值分布  /OznerServer/GetBuShuiFenBu Face ，Eyes ,Hands, Neck
 - (ASIFormDataRequest*)GetBuShuiFenBu:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(NSDictionary * Attr, StatusManager* status))handle;
-
+//GetPost/OznerDevice/GetTimesCountBuShui获取补水仪检测次数
+- (ASIFormDataRequest*)GetTimesCountBuShui:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(NSString * Times, StatusManager* status))handle;
 @end

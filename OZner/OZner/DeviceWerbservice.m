@@ -317,4 +317,18 @@
         handle(nil,status);
     }];
 }
+//GetPost/OznerDevice/GetTimesCountBuShui获取补水仪检测次数
+- (ASIFormDataRequest*)GetTimesCountBuShui:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(NSString * Times, StatusManager* status))handle{
+    NetworkEntrance* entrance = [[NetworkEntrance alloc]init];
+    [entrance addObject:mac forKey:@"mac"];
+    [entrance addObject:action forKey:@"action"];
+    [entrance addURLString:Get_TimesCount_BuShui];
+    
+    return [WebAssistant execNormalkRequest:entrance bodyBlock:^(NSDictionary *dicBody, StatusManager *status) {
+        NSLog(@"%@",dicBody);
+        handle(nil,status);
+    } failedBlock:^(StatusManager *status) {
+        handle(nil,status);
+    }];
+}
 @end

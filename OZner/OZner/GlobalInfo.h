@@ -83,6 +83,8 @@
 #define Update_BuShuiYi_Number                  @"/OznerDevice/UpdateBuShuiYiNumber"
 //获取周月补水仪器数值分布
 #define Get_BuShui_FenBu                        @"/OznerServer/GetBuShuiFenBu"
+////GetPost/OznerDevice/GetTimesCountBuShui获取补水仪检测次数
+#define Get_TimesCount_BuShui                        @"/OznerDevice/GetTimesCountBuShui"
 
 //商城
 #define MALL_URL                                @"http://www.oznerwater.com/lktnew/wap/mall/mallHomePage.aspx"
