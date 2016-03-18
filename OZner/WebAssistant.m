@@ -28,6 +28,12 @@
                     NSLog(@"post body:%@",[entrance postStringFromEntrance]);
                     
                 }
+                else if (([[dic objectForKey:@"state"] intValue] == -10007)||([[dic objectForKey:@"state"] intValue] == -10006))
+                {
+                    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"账号登录异常，请重新登录" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                    [alert show];
+                    [[LogInOut loginInOutInstance] loginOutUser];
+                }
                 else
                 {
                     NSLog(@"webservice error!");
@@ -85,6 +91,7 @@
                         NSLog(@"post body:%@",[entrance postStringFromEntrance]);
                         
                     }
+                    
                     else
                     {
                         NSLog(@"webservice error!");
@@ -142,14 +149,15 @@
                     NSLog(@"url:%@",[entrance urlStringFromEntrance]);
                     NSLog(@"post body:%@",[entrance postStringFromEntrance]);
                     
-                }else if ([[dic objectForKey:@"state"] intValue] == -10007)
+                }else if (([[dic objectForKey:@"state"] intValue] == -10007)||([[dic objectForKey:@"state"] intValue] == -10006))
                 {
                     UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"账号已被登录，请重新登录" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
                     [alert show];
-                    [[LogInOut loginInOutInstance] loginOutUser];//.loginOutUser()
+                    [[LogInOut loginInOutInstance] loginOutUser];
                 }
                 else
                 {
+                    NSLog(@"error code:%d",[[dic objectForKey:@"state"] intValue]);
                     NSLog(@"webservice error!");
                     NSLog(@"st error msg:%@",[dic objectForKey:@"msg"]);
                     NSLog(@"url:%@",[entrance urlStringFromEntrance]);

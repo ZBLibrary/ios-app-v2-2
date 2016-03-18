@@ -286,4 +286,35 @@
         handle(nil,nil,status);
     }];
 }
+//更新补水仪的数值  /OznerDevice/UpdateBuShuiYiNumber Face ，Eyes ,Hands, Neck
+- (ASIFormDataRequest*)UpdateBuShuiYiNumber:(NSString*)mac ynumber:(NSString*)ynumber snumber:(NSString*)snumber action:(NSString*)action returnBlock:(void(^)(StatusManager* status))handle{
+    NetworkEntrance* entrance = [[NetworkEntrance alloc]init];
+    [entrance addObject:mac forKey:@"mac"];
+    [entrance addObject:ynumber forKey:@"ynumber"];
+    [entrance addObject:snumber forKey:@"snumber"];
+    [entrance addObject:action forKey:@"action"];
+    [entrance addURLString:Update_BuShuiYi_Number];
+    
+    return [WebAssistant execNormalkRequest:entrance bodyBlock:^(NSDictionary *dicBody, StatusManager *status) {
+        NSLog(@"%@",dicBody);
+        handle(status);
+    } failedBlock:^(StatusManager *status) {
+        handle(status);
+    }];
+}
+
+//获取周月补水仪器数值分布  /OznerServer/GetBuShuiFenBu Face ，Eyes ,Hands, Neck
+- (ASIFormDataRequest*)GetBuShuiFenBu:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(NSDictionary *Attr, StatusManager* status))handle{
+    NetworkEntrance* entrance = [[NetworkEntrance alloc]init];
+    [entrance addObject:mac forKey:@"mac"];
+    [entrance addObject:action forKey:@"action"];
+    [entrance addURLString:Get_BuShui_FenBu];
+    
+    return [WebAssistant execNormalkRequest:entrance bodyBlock:^(NSDictionary *dicBody, StatusManager *status) {
+        NSLog(@"%@",dicBody);
+        handle(dicBody,status);
+    } failedBlock:^(StatusManager *status) {
+        handle(nil,status);
+    }];
+}
 @end

@@ -41,10 +41,10 @@
 //检查水机的功能种类
 - (ASIFormDataRequest*)GetMachineType:(NSString*)type returnBlock:(void(^)(NSString* MachineType,NSString* Attr, StatusManager* status))handle;
 
-//更新补水仪的数值  /OznerDevice/UpdateBuShuiYiNumber
-- (ASIFormDataRequest*)UpdateBuShuiYiNumber:(NSString*)mac ynumber:(NSString*)ynumber snumber:(NSString*)snumber action:(NSString*)action returnBlock:(void(^)(NSString* MachineType,NSString* Attr, StatusManager* status))handle;
+//更新补水仪的数值  /OznerDevice/UpdateBuShuiYiNumber Face ，Eyes ,Hands, Neck
+- (ASIFormDataRequest*)UpdateBuShuiYiNumber:(NSString*)mac ynumber:(NSString*)ynumber snumber:(NSString*)snumber action:(NSString*)action returnBlock:(void(^)(StatusManager* status))handle;
 
-//获取周月补水仪器数值分布  /OznerServer/GetBuShuiFenBu
-- (ASIFormDataRequest*)GetBuShuiFenBu:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(NSString* MachineType,NSString* Attr, StatusManager* status))handle;
+//获取周月补水仪器数值分布  /OznerServer/GetBuShuiFenBu Face ，Eyes ,Hands, Neck
+- (ASIFormDataRequest*)GetBuShuiFenBu:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(NSDictionary * Attr, StatusManager* status))handle;
 
 @end

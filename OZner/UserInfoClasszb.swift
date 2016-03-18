@@ -19,17 +19,8 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
         //将函数指针赋值给myClosure闭包，该闭包中涵盖了someFunctionThatTakesAClosure函数中的局部变量等的引用
         myClosure = closure
         BPush.bindChannelWithCompleteHandler { (result:AnyObject!, error:NSError!) -> Void in
-            print(BPush.getChannelId())
-            print("Method: \(BPushRequestMethodBind)\n\(result)")
             self.updateUserInfozb()
         }
-    }
-    func unbindBaiDu() {
-        BPush.unbindChannelWithCompleteHandler { (result:AnyObject!, error:NSError!) -> Void in
-            print("Method: \(BPushRequestMethodUnbind)\n\(result)")
-        }
-        
-        
     }
 
     //更新用户信息
@@ -44,7 +35,13 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
                 let state=data.objectForKey("state") as! Int
                 if state>0
                 {
-                    self.getWXUserInfo()
+                    self.myClosure!(string: true)
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                        self.getWXUserInfo()
+                        self.getuserOtherInfo()
+                    })
+                    
+                   
                 }
                 else
                 {
@@ -97,37 +94,37 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
                     tmpTmp=((data1.objectForKey("UserId")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("UserId")
                     tmpdic.setValue(tmpTmp, forKey: "UserId")
                     setPlistData(tmpdic, fileName: "userinfoURL")
-                    //判空
-                    if (self.myClosure != nil){
-                        //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-                        self.myClosure!(string: true)
-                        //后台下载用户信息
-                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
-                            self.getuserOtherInfo()
-                        })
-                        
-                        
-                    }
+//                    //判空
+//                    if (self.myClosure != nil){
+//                        //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
+//                        self.myClosure!(string: true)
+//                        //后台下载用户信息
+//                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+//                            self.getuserOtherInfo()
+//                        })
+//                        
+//                        
+//                    }
                     
                 }
                 else
                 {
-                    //判空
-                    if (self.myClosure != nil){
-                        //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-                        self.myClosure!(string: false)
-                    }
+//                    //判空
+//                    if (self.myClosure != nil){
+//                        //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
+//                        self.myClosure!(string: false)
+//                    }
                 }
                 
                 
             }
             else
             {
-                //判空
-                if (self.myClosure != nil){
-                    //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-                    self.myClosure!(string: false)
-                }
+//                //判空
+//                if (self.myClosure != nil){
+//                    //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
+//                    self.myClosure!(string: false)
+//                }
             }
             
         }

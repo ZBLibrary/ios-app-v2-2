@@ -201,12 +201,23 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         //下载皮肤类型
         DownSkinType(View)
     }
+    //服务器部位字段 action:  Face ，Eyes ,Hands, Neck
     private func DownSkinType(View:UIView)
     {
         MBProgressHUD.showHUDAddedTo(View, animated: true)
-        //下载
-        skinButton.titleLabel?.text="您的肤质  无"
         
+        skinButton.titleLabel?.text="您的肤质        无"
+        
+        //下载周月数据
+        let deviceService=DeviceWerbservice()
+        deviceService.GetBuShuiFenBu(WaterReplenishDevice?.identifier, action: "Face", returnBlock: {(dicData, status) -> Void in
+            MBProgressHUD.hideHUDForView(View, animated: true)
+            if(status.networkStatus == kSuccessStatus)
+            {
+                print(dicData)
+            }
+        })
+    
     }
     private func removeAdressOfDeviceName(tmpName:String)->String
     {

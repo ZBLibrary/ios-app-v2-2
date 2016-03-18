@@ -79,6 +79,10 @@
 #define Get_Machine_LifeOut_Time                @"OznerDevice/GetMachineLifeOutTime"
 //检查水机的功能种类
 #define Get_Machine_Type                        @"OznerServer/GetMachineType"
+//更新补水仪的数值
+#define Update_BuShuiYi_Number                  @"/OznerDevice/UpdateBuShuiYiNumber"
+//获取周月补水仪器数值分布
+#define Get_BuShui_FenBu                        @"/OznerServer/GetBuShuiFenBu"
 
 //商城
 #define MALL_URL                                @"http://www.oznerwater.com/lktnew/wap/mall/mallHomePage.aspx"
