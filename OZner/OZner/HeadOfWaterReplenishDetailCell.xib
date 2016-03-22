@@ -75,7 +75,7 @@
                                                 <color key="textColor" red="0.18823529410000001" green="0.42352941179999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="WaterReplDetail1_1" translatesAutoresizingMaskIntoConstraints="NO" id="DBJ-qY-RL2">
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="WaterReplDetail1" translatesAutoresizingMaskIntoConstraints="NO" id="DBJ-qY-RL2">
                                                 <rect key="frame" x="0.0" y="23" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="taf-Xl-NyQ"/>
@@ -417,7 +417,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="WaterReplDetail1_1" width="51" height="51"/>
+        <image name="WaterReplDetail1" width="51" height="51"/>
         <image name="WaterReplDetail2" width="51" height="51"/>
         <image name="WaterReplDetail3" width="51" height="51"/>
         <image name="WaterReplDetail4" width="51" height="51"/>

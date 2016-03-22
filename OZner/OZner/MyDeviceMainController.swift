@@ -1289,6 +1289,14 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 LoadingView.state=1
                 
             }
+            //补水仪设备检测中，检测完成回掉
+            if WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(myCurrentDevice?.type)
+            {
+                if waterReplenishMainView != nil
+                {
+                    waterReplenishMainView?.updateViewState()
+                }
+            }
         }
     }
     

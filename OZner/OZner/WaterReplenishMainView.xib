@@ -246,6 +246,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUe-zE-cc9">
                     <rect key="frame" x="127" y="386" width="120" height="120"/>
                     <subviews>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="WaterReplenishTesting" translatesAutoresizingMaskIntoConstraints="NO" id="s9Z-ES-hsY">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请将补水仪放置脸部" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciS-VF-ehq">
                             <rect key="frame" x="15" y="35" width="90" height="50"/>
                             <constraints>
@@ -318,9 +321,13 @@
                     <color key="backgroundColor" red="0.16862745098039217" green="0.38823529411764707" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="2tv-Yg-ftE"/>
+                        <constraint firstItem="s9Z-ES-hsY" firstAttribute="top" secondItem="HUe-zE-cc9" secondAttribute="top" id="AMs-UI-cY5"/>
+                        <constraint firstAttribute="bottom" secondItem="s9Z-ES-hsY" secondAttribute="bottom" id="KuR-DL-Z4A"/>
                         <constraint firstItem="KiJ-ls-PVS" firstAttribute="height" secondItem="HUe-zE-cc9" secondAttribute="height" multiplier="84:120" id="bdo-1s-uPz"/>
+                        <constraint firstItem="s9Z-ES-hsY" firstAttribute="leading" secondItem="HUe-zE-cc9" secondAttribute="leading" id="boC-bS-PJ0"/>
                         <constraint firstAttribute="width" secondItem="HUe-zE-cc9" secondAttribute="height" multiplier="1:1" id="esC-ja-M9d"/>
                         <constraint firstAttribute="width" secondItem="HUe-zE-cc9" secondAttribute="height" multiplier="115:83" id="fSQ-Nk-NvY"/>
+                        <constraint firstAttribute="trailing" secondItem="s9Z-ES-hsY" secondAttribute="trailing" id="g0a-rB-cj1"/>
                         <constraint firstItem="KiJ-ls-PVS" firstAttribute="centerX" secondItem="HUe-zE-cc9" secondAttribute="centerX" id="h5K-Ld-MbD"/>
                         <constraint firstItem="ciS-VF-ehq" firstAttribute="centerY" secondItem="HUe-zE-cc9" secondAttribute="centerY" id="oYj-SL-rss"/>
                         <constraint firstItem="KiJ-ls-PVS" firstAttribute="width" secondItem="HUe-zE-cc9" secondAttribute="width" multiplier="80:120" id="rz0-OL-VUD"/>
@@ -355,6 +362,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="ClickAlertLabel" destination="UtW-UP-D68" id="YEa-bx-l21"/>
+                <outlet property="TestingIcon" destination="s9Z-ES-hsY" id="2iG-m4-ctl"/>
                 <outlet property="TitleOfReplensh" destination="Qvz-k0-34e" id="Rfz-ui-lCK"/>
                 <outlet property="alertBeforeTest" destination="ciS-VF-ehq" id="rNa-O3-vwg"/>
                 <outlet property="centerCircleView" destination="HUe-zE-cc9" id="sZR-LI-JRh"/>
@@ -377,6 +385,7 @@
     </objects>
     <resources>
         <image name="DeviceSetting" width="20" height="20"/>
+        <image name="WaterReplenishTesting" width="120" height="120"/>
         <image name="dian_liang_0" width="20" height="10"/>
         <image name="toLeftMenu" width="20" height="18"/>
         <image name="womanOfReplensh1" width="375" height="390"/>

@@ -13,6 +13,12 @@ enum SexType:String{
     case Man="男"
     case WoMan="女"
 }
+enum BodyParts:String{
+    case Face="Face"
+    case Eyes="Eyes"
+    case Hands="Hands"
+    case Neck="Neck"
+}//Face ，Eyes ,Hands, Neck
 class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     //head视图控件
     @IBOutlet weak var toLeftMenuButton: UIButton!
@@ -28,6 +34,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     @IBOutlet weak var resultValueContainView: UIView!
     @IBOutlet weak var stateOfTestLabel: UILabel!
     @IBOutlet weak var valueOfTestLabel: UILabel!
+    @IBOutlet weak var TestingIcon: UIImageView!
     //footer容器里的视图
     @IBOutlet weak var skinButton: UIButton!
     @IBOutlet weak var resultOfFooterContainView: UIView!
@@ -43,6 +50,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     ]
     //设备
     private var WaterReplenishDevice:WaterReplenishmentMeter?
+    private var currentPart=""
     func personImgTapClick(sender: UITapGestureRecognizer) {
         let touchPoint=sender.locationInView(personBgImgView)
         if stateOfView>0//当前页是局部器官图二级界面
@@ -104,6 +112,8 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     //0初始页面,1点击某个部位进入的页面,2检测中,3检测结果出来显示的页面
     private let color_blue=UIColor(red: 61/255.0, green: 127/255.0, blue: 250/255.0, alpha: 1)
     private let color_yellow=UIColor(red: 251/255.0, green: 125/255.0, blue: 67/255.0, alpha: 1)
+    //当前选中部位
+    private var currentBodyPart=BodyParts.Face
     private var stateOfView = -1{
         didSet{
             ClickAlertLabel.hidden=true
@@ -112,12 +122,15 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
             resultValueContainView.hidden=true
             resultOfFooterContainView.hidden=false
             skinButton.hidden=true
+            TestingIcon.hidden=true
+            isStopAnimation=true
             switch stateOfView
             {
             case 0:
                 ClickAlertLabel.hidden=false
                 centerCircleView.hidden=true
                 skinButton.hidden=false
+                
                 resultOfFooterContainView.hidden=true
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![0])
             case 1:
@@ -128,16 +141,42 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 
             case 2:
                 alertBeforeTest.hidden=false
+                TestingIcon.hidden=false
                 alertBeforeTest.text="检测中"
                 alertBeforeTest.font=UIFont.systemFontOfSize(20)
                 resultStateLabel.text=""
                 //检测转圈动画
+                isStopAnimation=false
+                startAnimation(0)
             case 3:
                 resultValueContainView.hidden=false
+                print(WaterReplenishDevice!.status.oil)
+                print(WaterReplenishDevice!.status.moisture)
+                _=100*WaterReplenishDevice!.status.oil/1200
+                
             default:
                 break
             }
         }
+    }
+    //private getStateOf
+    //检测中动画效果
+    private var isStopAnimation=false
+    private func startAnimation(var angle:CGFloat)
+    {
+        let endAngle:CGAffineTransform = CGAffineTransformMakeRotation(angle*CGFloat(M_PI/180.0))
+        UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            self.TestingIcon.transform = endAngle
+            
+            }, completion: {(finished:Bool) in
+                angle += 30
+                
+                if self.isStopAnimation==false
+                {
+                    self.startAnimation(angle)
+                }
+        })
+        
     }
     private let personImgArray=[
         SexType.WoMan:["womanOfReplensh1","womanOfReplensh2","womanOfReplensh3","womanOfReplensh4","womanOfReplensh5"],
@@ -157,10 +196,23 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         setNeedsLayout()
         layoutIfNeeded()
     }
-    //更新视图
-    func updateViewzb(State State:Int)//,deviceTitle:String,skinVlue:Float)
+    //皮肤检测回掉方法
+    func updateViewState()
     {
-        stateOfView=State
+        
+        if ((WaterReplenishDevice?.status.testing) == true)&&(stateOfView==1||stateOfView==3)
+        {
+            stateOfView=2//检测中
+            
+        }else if stateOfView==2&&WaterReplenishDevice!.status.oil>0&&WaterReplenishDevice!.status.moisture>0
+        {
+            //检测完成
+            stateOfView=3
+        }
+        else
+        {
+            return
+        }
         setNeedsLayout()
         layoutIfNeeded()
     }

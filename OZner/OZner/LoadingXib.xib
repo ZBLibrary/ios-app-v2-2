@@ -62,6 +62,7 @@
                 <outlet property="loadIcon" destination="LX1-vB-fqs" id="Nj0-7a-dpP"/>
                 <outlet property="loadText" destination="94x-Ue-02g" id="XPs-Qo-ewf"/>
             </connections>
+            <point key="canvasLocation" x="257.5" y="192.5"/>
         </view>
     </objects>
     <resources>
