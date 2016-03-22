@@ -296,7 +296,7 @@
             break;
     }
     label.text = str;
-    label.frame = CGRectMake(leftDistance+(distance)*index-size.width/2, self.frame.size.height-size.height, size.width, size.height);
+    label.frame = CGRectMake(leftDistance+(distance)*index-size.width/2.0, self.frame.size.height-size.height, size.width, size.height);
     label.font = [UIFont systemFontOfSize:14.0];
     [self addSubview:label];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];

@@ -228,25 +228,24 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }
         
         //移除其它设备界面
-        if deviceHeadView != nil{
+        
         for view:UIView in deviceHeadView.subviews
         {
             view.removeFromSuperview()
         }
-        }
-        if deviceFooterView != nil{
+        
+        
         for view:UIView in deviceFooterView.subviews
         {
             view.removeFromSuperview()
         }
-        }
-        if deviceStateViewBG != nil{
+        
+        
         deviceStateViewBG.hidden=false
-        }
-        if titleLabel != nil
-        {
-           titleLabel.text="首页"
-        }
+        
+        
+        titleLabel.text="首页"
+        
         isNeedDownLXDate=false
         switch true
         {
@@ -361,13 +360,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             //默认主页视图
             myCurrentDevice=nil
              set_CurrSelectEquip(0)
-            if deviceStateViewBG != nil
-            {
-            deviceStateViewBG.hidden=true
-            }
-            if Height_DeviceFooter != nil
             
-            {
+            deviceStateViewBG.hidden=true
+            
             Height_DeviceFooter.constant=Screen_Hight*212/667
             defaultFooterView=NSBundle.mainBundle().loadNibNamed("Main_FooterView_zb", owner: self, options: nil).last as! Main_FooterView_zb
             defaultFooterView.toAddDeviceButton.addTarget(self, action: Selector("addDeviceAction"), forControlEvents: .TouchUpInside)
@@ -378,7 +373,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             deviceFooterView.addConstraint(NSLayoutConstraint(item: defaultFooterView, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: defaultFooterView, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
             
-            }
+            
             
             let defaultImg = UIImage(named: "DeviceHeadImg")
             defaultHeadView=UIImageView(image: defaultImg)

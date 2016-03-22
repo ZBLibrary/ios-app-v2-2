@@ -1,6 +1,6 @@
 //
 //  CrashReporter.h
-//  Version: 1.4.7(2)
+//  Version: 1.4.8(1)
 //
 //  Copyright (c) 2015年 Tencent. All rights reserved.
 //
@@ -80,7 +80,7 @@ extern exp_callback exp_call_back_func;
 #pragma mark -
 
 /**
- *    @brief 初始化SDK，初始化的AppID从Info.plist中读取BuglyAppIDString字段的值
+ *    @brief 初始化SDK，初始化的AppID从Info.plist中读取BuglyAppIDString、BuglyAppChannelString、BuglyAppVersionString、BuglyDebugEnable字段的值
  *
  *    @return 初始化是否成功
  */
@@ -128,6 +128,13 @@ extern exp_callback exp_call_back_func;
 - (void)setSceneTag:(NSUInteger) tag;
 
 /**
+ *    @brief 获取当前标签的值
+ *
+ *    @return
+ */
+- (NSUInteger)currentSceneTag;
+
+/**
  *    @brief  添加场景关键数据
  *
  *    @param value 内容, 最大长度限定为512字符
@@ -135,13 +142,33 @@ extern exp_callback exp_call_back_func;
  */
 - (void)setSceneValue:(NSString *) value forKey:(NSString *) key;
 
-- (void)removeSceneValueForKey:(NSString *) key;
-
-- (void)removeAllSceneValues;
-
+/**
+ *    @brief 获取指定Key对应的值
+ *
+ *    @param key
+ *
+ *    @return
+ */
 - (NSString *)sceneValueForKey:(NSString *) key;
 
+/**
+ *    @brief 获取所有的自定义键值对数据
+ *
+ *    @return
+ */
 - (NSDictionary *)allSceneValues;
+
+/**
+ *    @brief 删除指定的数据
+ *
+ *    @param key
+ */
+- (void)removeSceneValueForKey:(NSString *) key;
+
+/**
+ *    @brief 清空自定义键值对数据
+ */
+- (void)removeAllSceneValues;
 
 /**
  *    @brief  上报已捕获的异常信息

@@ -36,9 +36,9 @@ class AddDeviceViewController: SwiftFatherViewController,UITableViewDataSource,U
     {
         self.navigationController!.view .removeFromSuperview()
     }
-    
+    //测试设备数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 6
+        return 5
     }
     
     

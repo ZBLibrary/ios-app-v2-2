@@ -500,6 +500,7 @@
 		82BD64F81C107A1B00B02274 /* left_row@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82BD64F61C107A1B00B02274 /* left_row@2x.png */; };
 		82BD64F91C107A1B00B02274 /* left_row@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82BD64F71C107A1B00B02274 /* left_row@3x.png */; };
 		8D047A6C1C91AE0400E1F930 /* SkinQueryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D047A6B1C91AE0400E1F930 /* SkinQueryTableViewController.swift */; };
+		8D05EEC91CA10FB70095CF32 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D05EEC81CA10FB70095CF32 /* Bugly.framework */; };
 		8D09DBE01C5A698800D0432B /* loadFailedXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */; };
 		8D09DBE21C5A69D400D0432B /* LoadingXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBE11C5A69D400D0432B /* LoadingXib.swift */; };
 		8D0C3E6A1C58E78C00EFBB22 /* tantouLvXinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */; };
@@ -837,7 +838,6 @@
 		8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */; };
 		8DE5FD7B1C56745D0092242F /* UserInfoClasszb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */; };
 		8DEB63D61C59FA8800E4A7D5 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */; };
-		8DEDC4E91C7C397A0098BAE5 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEDC4E81C7C397A0098BAE5 /* Bugly.framework */; };
 		8DF253AA1C77233F00CE2AE5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253A91C77233F00CE2AE5 /* MBProgressHUD.m */; };
 		8DF253B31C774E6500CE2AE5 /* WaterineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B21C774E6500CE2AE5 /* WaterineChartView.m */; };
 		8DF253B61C774E8500CE2AE5 /* WaterMPGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B51C774E8500CE2AE5 /* WaterMPGraphView.m */; };
@@ -1598,6 +1598,7 @@
 		82BD64F61C107A1B00B02274 /* left_row@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_row@2x.png"; sourceTree = "<group>"; };
 		82BD64F71C107A1B00B02274 /* left_row@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_row@3x.png"; sourceTree = "<group>"; };
 		8D047A6B1C91AE0400E1F930 /* SkinQueryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinQueryTableViewController.swift; sourceTree = "<group>"; };
+		8D05EEC81CA10FB70095CF32 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadFailedXib.swift; sourceTree = "<group>"; };
 		8D09DBE11C5A69D400D0432B /* LoadingXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingXib.swift; sourceTree = "<group>"; };
 		8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tantouLvXinView.swift; sourceTree = "<group>"; };
@@ -2204,7 +2205,6 @@
 		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoClasszb.swift; path = ../UserInfoClasszb.swift; sourceTree = "<group>"; };
 		8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifier_MxChip.m; sourceTree = "<group>"; };
-		8DEDC4E81C7C397A0098BAE5 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		8DF253A81C77233F00CE2AE5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8DF253A91C77233F00CE2AE5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8DF253B11C774E6500CE2AE5 /* WaterineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterineChartView.h; sourceTree = "<group>"; };
@@ -2239,6 +2239,7 @@
 			files = (
 				8D2B50E11C7C43840019DE11 /* JavaScriptCore.framework in Frameworks */,
 				52EF00C71C2FE530002484B9 /* libc++.tbd in Frameworks */,
+				8D05EEC91CA10FB70095CF32 /* Bugly.framework in Frameworks */,
 				52ECBE7F1C0C643100A962E4 /* libz.tbd in Frameworks */,
 				52ECBE501C0C608A00A962E4 /* Security.framework in Frameworks */,
 				52ECBE581C0C60DF00A962E4 /* SystemConfiguration.framework in Frameworks */,
@@ -2266,7 +2267,6 @@
 				52ECBE5B1C0C62F200A962E4 /* libxml2.tbd in Frameworks */,
 				52ECBE561C0C60CA00A962E4 /* CFNetwork.framework in Frameworks */,
 				52ECBE4A1C0C605B00A962E4 /* CoreFoundation.framework in Frameworks */,
-				8DEDC4E91C7C397A0098BAE5 /* Bugly.framework in Frameworks */,
 				52ECBE541C0C60AB00A962E4 /* CoreData.framework in Frameworks */,
 				52ECBE521C0C60A100A962E4 /* QuartzCore.framework in Frameworks */,
 				52ECBE4E1C0C607A00A962E4 /* AVFoundation.framework in Frameworks */,
@@ -3348,7 +3348,7 @@
 				52EF00C11C2FE3E2002484B9 /* WeChatSDK */,
 				423114521C434E650062FFFF /* Discode */,
 				5228C57A1C517B7D002C2E18 /* BaiDuPush */,
-				8DEDC4E71C7C394A0098BAE5 /* BugRecord */,
+				8DEDC4E71C7C394A0098BAE5 /* Bugly */,
 				523DC3551C175E8100595099 /* AFNetworking */,
 				523DC3541C175E6C00595099 /* SDWebImageManager */,
 			);
@@ -4407,12 +4407,12 @@
 			name = LBXAlertAction;
 			sourceTree = "<group>";
 		};
-		8DEDC4E71C7C394A0098BAE5 /* BugRecord */ = {
+		8DEDC4E71C7C394A0098BAE5 /* Bugly */ = {
 			isa = PBXGroup;
 			children = (
-				8DEDC4E81C7C397A0098BAE5 /* Bugly.framework */,
+				8D05EEC81CA10FB70095CF32 /* Bugly.framework */,
 			);
-			name = BugRecord;
+			name = Bugly;
 			path = ..;
 			sourceTree = "<group>";
 		};

@@ -313,11 +313,11 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
                     for var index = 0; index < self.deveiceDataList?.count; ++index
                     {
                         let io = self.deveiceDataList?.objectAtIndex(index) as! BaseDeviceIO
-                        var isEqual = false;
+                        var isEqual = false
                         for var index = 0; index < muArr.count; ++index
                         {
                             let io1 = muArr.objectAtIndex(index) as! BaseDeviceIO
-                            if(io == io1)
+                            if(io.identifier == io1.identifier)
                             {
                                 isEqual = true;
                                 break;
@@ -686,6 +686,10 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     
     func carouselDidEndScrollingAnimation(carousel: iCarousel!) {
         self.mIndex = carousel.currentItemIndex
+        print(self.deveiceDataList?.count)
+        print(mIndex)
+        print(carousel.numberOfItems)
+      
         for var i = 0;i < self.deveiceDataList?.count;i++
         {
             if carousel==nil
