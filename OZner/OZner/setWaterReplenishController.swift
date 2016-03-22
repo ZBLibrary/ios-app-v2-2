@@ -54,16 +54,17 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         //去掉cell下面的黑色线条
         tableView.separatorStyle=UITableViewCellSeparatorStyle.None
         //名称改变通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setNameChange:"), name: "setWaterReplenishName", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:
+            Selector("setNameChange:"), name: "setWaterReplenishName", object: nil)
         //初始化设置数组
         if myCurrentDevice != nil
         {
         settingDic?.setValue(myCurrentDevice?.settings.name, forKey: "deviceName")
-        settingDic?.setValue(myCurrentDevice?.settings.get("deviceAttrib", `default`: "办公室"), forKey: "deviceAttrib")
-        settingDic?.setValue(myCurrentDevice?.settings.get("checktime1", `default`: 30600), forKey: "checktime1")
-        settingDic?.setValue(myCurrentDevice?.settings.get("checktime2", `default`: 52200), forKey: "checktime2")
-        settingDic?.setValue(myCurrentDevice?.settings.get("checktime3", `default`: 75600), forKey: "checktime3")
-        settingDic?.setValue(myCurrentDevice?.settings.get("sex", `default`: "女"), forKey: "sex")
+        settingDic?.setValue(myCurrentDevice?.settings.get("deviceAttrib", default: "办公室"), forKey: "deviceAttrib")
+        settingDic?.setValue(myCurrentDevice?.settings.get("checktime1", default: 30600), forKey: "checktime1")
+        settingDic?.setValue(myCurrentDevice?.settings.get("checktime2", default: 52200), forKey: "checktime2")
+        settingDic?.setValue(myCurrentDevice?.settings.get("checktime3", default: 75600), forKey: "checktime3")
+        settingDic?.setValue(myCurrentDevice?.settings.get("sex", default: "女"), forKey: "sex")
         }
     }
     //修改设备名称通知

@@ -178,13 +178,13 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         //加载默认主视图
         loadWhitchView("default")
         //设备切换通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateCurrentDeviceData:", name: "currentSelectedDevice", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateCurrentDeviceData), name: "currentSelectedDevice", object: nil)
         //删除设备通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receiveDeleteDevicesNotify", name: "removDeviceByZB", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(receiveDeleteDevicesNotify), name: "removDeviceByZB", object: nil)
         //侧滑事件通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("leftMenuShouqiClick"), name: "leftMenuShouqi_zb", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(leftMenuShouqiClick), name: "leftMenuShouqi_zb", object: nil)
         //滤芯更换通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("downLoadLvXinState"), name: "updateLVXinTimeByScan", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(downLoadLvXinState), name: "updateLVXinTimeByScan", object: nil)
         
         
         //查询是否有设备
@@ -264,8 +264,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             //尾部视图
             Height_DeviceFooter.constant=Screen_Hight*160/667
             cupFooterView=NSBundle.mainBundle().loadNibNamed("CupView_Footer", owner: self, options: nil).last as! CupView_Footer
-            cupFooterView.drinkButton.addTarget(self, action: Selector("amoutOfWaterAction"), forControlEvents: .TouchUpInside)
-            cupFooterView.tempButton.addTarget(self, action: Selector("temperatureAction"), forControlEvents: .TouchUpInside)
+            cupFooterView.drinkButton.addTarget(self, action: #selector(amoutOfWaterAction), forControlEvents: .TouchUpInside)
+            cupFooterView.tempButton.addTarget(self, action: #selector(temperatureAction), forControlEvents: .TouchUpInside)
             cupFooterView.translatesAutoresizingMaskIntoConstraints = false
             deviceFooterView.addSubview(cupFooterView)
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Top, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Top, multiplier: 1, constant: 0))
@@ -300,7 +300,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             //头部视图
             WaterPurfHeadView=NSBundle.mainBundle().loadNibNamed("WaterPurifierHeadCell", owner: self, options: nil).last as? WaterPurifierHeadCell
             WaterPurfHeadView!.translatesAutoresizingMaskIntoConstraints = false
-            WaterPurfHeadView?.toTDSDetailButton.addTarget(self, action: Selector("TDSDetailOfWaterPurf"), forControlEvents: .TouchUpInside)
+            WaterPurfHeadView?.toTDSDetailButton.addTarget(self, action: #selector(TDSDetailOfWaterPurf), forControlEvents: .TouchUpInside)
            
             deviceHeadView.addSubview(WaterPurfHeadView!)
             
@@ -314,9 +314,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             Height_DeviceFooter.constant=Screen_Hight*160/667
             waterPurFooter=NSBundle.mainBundle().loadNibNamed("WaterPurFooterCell", owner: self, options: nil).last as! WaterPurFooterCell
             waterPurFooter!.translatesAutoresizingMaskIntoConstraints = false
-            waterPurFooter.powerButton.addTarget(self, action: Selector("WaterPurSwitchClick:"), forControlEvents: .TouchUpInside)//tag:0
-            waterPurFooter.coolButton.addTarget(self, action: Selector("WaterPurSwitchClick:"), forControlEvents: .TouchUpInside)//tag:1
-            waterPurFooter.hotButton.addTarget(self, action: Selector("WaterPurSwitchClick:"), forControlEvents: .TouchUpInside)//tag:2
+            waterPurFooter.powerButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:0
+            waterPurFooter.coolButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:1
+            waterPurFooter.hotButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:2
             deviceFooterView.addSubview(waterPurFooter)
             deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
@@ -343,10 +343,10 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
             waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView
             waterReplenishMainView?.frame=CGRectMake(0, 0, Screen_Width, Screen_Hight-65)
-            waterReplenishMainView?.toLeftMenuButton.addTarget(self, action: Selector("addDeviceAction"), forControlEvents: .TouchUpInside)
-            waterReplenishMainView?.setButton.addTarget(self, action: Selector("toWaterReplenishOtherController:"), forControlEvents: .TouchUpInside)
-            waterReplenishMainView?.skinButton.addTarget(self, action: Selector("toWaterReplenishOtherController:"), forControlEvents: .TouchUpInside)
-            waterReplenishMainView?.toDetailButton.addTarget(self, action: Selector("toWaterReplenishOtherController:"), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.toLeftMenuButton.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.setButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.skinButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.toDetailButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
             MainScrollView.contentSize=CGSize(width: 0, height: Screen_Hight-65)
             MainScrollView.addSubview(waterReplenishMainView!)
             self.view.addSubview(MainScrollView)
@@ -365,7 +365,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             
             Height_DeviceFooter.constant=Screen_Hight*212/667
             defaultFooterView=NSBundle.mainBundle().loadNibNamed("Main_FooterView_zb", owner: self, options: nil).last as! Main_FooterView_zb
-            defaultFooterView.toAddDeviceButton.addTarget(self, action: Selector("addDeviceAction"), forControlEvents: .TouchUpInside)
+            defaultFooterView.toAddDeviceButton.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
             defaultFooterView.translatesAutoresizingMaskIntoConstraints = false
             deviceFooterView.addSubview(defaultFooterView)
             deviceFooterView.addConstraint(NSLayoutConstraint(item: deviceFooterView, attribute: .Top, relatedBy: .Equal, toItem: defaultFooterView, attribute: .Top, multiplier: 1, constant: 0))
@@ -419,7 +419,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             leftSlideView.removeFromSuperview()
         }
-        let swipeGesture = UIPanGestureRecognizer(target: self, action: Selector("handleSwipeGesture:"))
+        let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
         
         leftSlideView=UIView(frame: CGRect(x: 0, y: 64, width: 30, height: Screen_Hight-65-64))
         //leftSlideView.backgroundColor=UIColor.redColor()
@@ -480,7 +480,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         case 0://电源
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             waterPur.status.setPower(!waterPur.status.power, callback: { (error:NSError!) -> Void in
-                self.performSelector(Selector("StopLoadAnimal"), withObject: nil, afterDelay: 3);
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
                 //MBProgressHUD.hideHUDForView(self.view, animated: true)
             })
             break
@@ -498,7 +498,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             waterPur.status.setCool(!waterPur.status.cool, callback: { (error:NSError!) -> Void in
                 //MBProgressHUD.hideHUDForView(self.view, animated: true)
-                self.performSelector(Selector("StopLoadAnimal"), withObject: nil, afterDelay: 3);
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
             })
             break
         case 2://加热
@@ -515,7 +515,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             waterPur.status.setHot(!waterPur.status.hot, callback: { (error:NSError!) -> Void in
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
-                self.performSelector(Selector("StopLoadAnimal"), withObject: nil, afterDelay: 3);
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
             })
             break
         default:
@@ -861,6 +861,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
      //收到删除设备的通知
     func receiveDeleteDevicesNotify()
     {
+        //print(nt)
         let muArr = NSMutableArray(array: OznerManager.instance().getDevices()) as NSMutableArray;
         if muArr.count > 0
         {
@@ -985,7 +986,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                     }
                     
                 }
-                let goal:String? = cup.settings.get("my_drinkwater", `default`: nil) as? String
+                let goal:String? = cup.settings.get("my_drinkwater", default: nil) as? String
                 if goal?.isEmpty == false
                 {
                     cupFooterView.drinkMuBiao.text=loadLanguage( "饮水目标:" ) + goal!+"ml"
@@ -1077,7 +1078,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                             else
                             {
                                 isPaoMa=1
-                                tmpPaoMa=NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("StarPaoMazb"), userInfo: nil, repeats: true)
+                                tmpPaoMa=NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(StarPaoMazb), userInfo: nil, repeats: true)
                             }
                             
                         }
@@ -1160,7 +1161,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                             else
                             {
                                 isPaoMa=1
-                                tmpPaoMa=NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("StarPaoMazb"), userInfo: nil, repeats: true)
+                                tmpPaoMa=NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(StarPaoMazb), userInfo: nil, repeats: true)
                                 //self.StarPaoMazb()
                                 
                             }
@@ -1426,14 +1427,14 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         headView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: headView.bounds.size.height*(Screen_Hight/667))
         headView.initView()
         headView.bgColorIndex=1
-        headView.toLeftMenu.addTarget(self, action: Selector("addDeviceAction"), forControlEvents: .TouchUpInside)
+        headView.toLeftMenu.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
         //查看室内空气质量
-        let tapGesture=UITapGestureRecognizer(target: self, action: Selector("toSeeIndoor"))
-        headView.LvXinState.addTarget(self, action: Selector("toSeeIndoor"), forControlEvents: .TouchUpInside)
+        let tapGesture=UITapGestureRecognizer(target: self, action: #selector(toSeeIndoor))
+        headView.LvXinState.addTarget(self, action: #selector(toSeeIndoor), forControlEvents: .TouchUpInside)
         tapGesture.numberOfTapsRequired=1//设置点按次数
         headView.seeIndoorAir.addGestureRecognizer(tapGesture)
-        headView.toSetting.addTarget(self, action: Selector("toSettingClick"), forControlEvents: .TouchUpInside)
-        headView.seeOutAir.addTarget(self, action: Selector("seeOutAirClick"), forControlEvents: .TouchUpInside)
+        headView.toSetting.addTarget(self, action: #selector(toSettingClick), forControlEvents: .TouchUpInside)
+        headView.seeOutAir.addTarget(self, action: #selector(seeOutAirClick), forControlEvents: .TouchUpInside)
         MainScrollView.addSubview(headView)
         updateOutAirData()
         //室内空气提醒
@@ -1484,9 +1485,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             let tmpOrigin_y=154-33+headView.bounds.size.height-tmpbigmodel.frame.height
             let tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2
             tmpbigmodel.frame=CGRect(x: tmpOrigin_x, y: tmpOrigin_y, width: tmpbigmodel.frame.width, height: tmpbigmodel.frame.height)
-            tmpbigmodel.leftButton.addTarget(self, action: Selector("selectWhichModelbig:"), forControlEvents: .TouchUpInside)
-            tmpbigmodel.rightButton.addTarget(self, action: Selector("selectWhichModelbig:"), forControlEvents: .TouchUpInside)
-            tmpbigmodel.bottomButton.addTarget(self, action: Selector("selectWhichModelbig:"), forControlEvents: .TouchUpInside)
+            tmpbigmodel.leftButton.addTarget(self, action: #selector(selectWhichModelbig), forControlEvents: .TouchUpInside)
+            tmpbigmodel.rightButton.addTarget(self, action: #selector(selectWhichModelbig), forControlEvents: .TouchUpInside)
+            tmpbigmodel.bottomButton.addTarget(self, action: #selector(selectWhichModelbig), forControlEvents: .TouchUpInside)
             bigModelBgView.addSubview(tmpbigmodel)
             bigFooterViews.removeAll()
             for i in 1...3 //7
@@ -1502,7 +1503,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 //
                 //                }
                 tmpbigFooter.switchButton.tag=i
-                tmpbigFooter.switchButton.addTarget(self, action: Selector("switchButtonClick:"), forControlEvents: .TouchUpInside)
+                tmpbigFooter.switchButton.addTarget(self, action: #selector(switchButtonClick), forControlEvents: .TouchUpInside)
                 tmpbigFooter.index=i
                 
                 tmpbigFooter.ison=false
@@ -1576,10 +1577,10 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         outAirView=NSBundle.mainBundle().loadNibNamed("outAirXib", owner: nil, options: nil).last as! outAirXib
         outAirView.frame=CGRect(x: 0, y: Screen_Hight-outAirView.bounds.size.height, width: Screen_Width, height: outAirView.bounds.size.height)
         outAirView.initView()
-        outAirView.IKnowButton.addTarget(self, action: Selector("IKnow"), forControlEvents: .TouchUpInside)
+        outAirView.IKnowButton.addTarget(self, action: #selector(IKnow), forControlEvents: .TouchUpInside)
         bgairView.addSubview(outAirView)
         //添加点击手势
-        let tapGesture=UITapGestureRecognizer(target: self, action: Selector("IKnow"))
+        let tapGesture=UITapGestureRecognizer(target: self, action: #selector(IKnow))
         tapGesture.numberOfTapsRequired=1//设置点按次数
         bgairView.addGestureRecognizer(tapGesture)
         
@@ -1636,7 +1637,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             (error:NSError!) in
             if error==nil
             {
-                self.performSelector(Selector("StopLoadAnimal"), withObject: nil, afterDelay: 3);
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
             }
             else
             {
@@ -1703,7 +1704,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             airPurifier_MxChip.status.setPower(!bigFooterViews[0].ison, callback: { (error:NSError!) -> Void in
                 if error==nil
                 {
-               self.performSelector(Selector("StopLoadAnimal"), withObject: nil, afterDelay: 3);
+               self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
                 }
                 else
                 {
@@ -1748,7 +1749,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 if error==nil
                 {
                     
-                    self.performSelector(Selector("StopLoadAnimal"), withObject: nil, afterDelay: 3);
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
                     
                 }
                 else

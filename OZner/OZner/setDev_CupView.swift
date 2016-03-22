@@ -163,7 +163,7 @@ class setDev_CupView: UIView,UITextFieldDelegate {
         loadData()
         updateData()
         //cup_color.text=setCupStructdata["cup_color"] as? String
-        color_explan.addTarget(self, action: Selector("color_explanclick"), forControlEvents: UIControlEvents.ValueChanged)
+        color_explan.addTarget(self, action: #selector(color_explanclick), forControlEvents: UIControlEvents.ValueChanged)
         ClearButton.layer.cornerRadius=20
         ClearButton.layer.masksToBounds=true
         ClearButton.layer.borderWidth=1
@@ -233,16 +233,16 @@ class setDev_CupView: UIView,UITextFieldDelegate {
         let nameStr2=(nameStr as NSString).substringWithRange(NSMakeRange(setCupStructdata["cup_name"]!.length+1, nameStr.characters.count-setCupStructdata["cup_name"]!.length-2))
         print(nameStr2)
         setCupStructdata["cup_Attrib"]=nameStr2
-        setCupStructdata["my_weight"]=cup.settings.get("weight", `default`: 56) as? String
-        let tmpInt:String=(cup.settings.get("my_drinkwater", `default`: "2000") as! String)=="" ? "2000":(cup.settings.get("my_drinkwater", `default`: "2000") as! String)
+        setCupStructdata["my_weight"]=cup.settings.get("weight", default: 56) as? String
+        let tmpInt:String=(cup.settings.get("my_drinkwater", default: "2000") as! String)=="" ? "2000":(cup.settings.get("my_drinkwater", default: "2000") as! String)
         
         setCupStructdata["my_drinkwater"]=tmpInt
        
         //今日状态
-        setCupStructdata["my_state1"] = cup.settings.get("todayState1", `default`: false)
-        setCupStructdata["my_state2"] = cup.settings.get("todayState2", `default`: false)
-        setCupStructdata["my_state3"] = cup.settings.get("todayState3", `default`: false)
-        setCupStructdata["my_state4"] = cup.settings.get("todayState4", `default`: false)
+        setCupStructdata["my_state1"] = cup.settings.get("todayState1", default: false)
+        setCupStructdata["my_state2"] = cup.settings.get("todayState2", default: false)
+        setCupStructdata["my_state3"] = cup.settings.get("todayState3", default: false)
+        setCupStructdata["my_state4"] = cup.settings.get("todayState4", default: false)
         print(setCupStructdata["my_state1"])
         //setCupStructdata["remindStart"] = cup.settings.remindStart as? AnyObject
         //print(setCupStructdata["remindStart"])
@@ -285,7 +285,7 @@ class setDev_CupView: UIView,UITextFieldDelegate {
        
         //是否提醒
         setCupStructdata["cup_voice"]=cup.settings.remindEnable
-        setCupStructdata["phone_voice"]=cup.settings.get("phoneVoice", `default`: false)
+        setCupStructdata["phone_voice"]=cup.settings.get("phoneVoice", default: false)
         
     }
     

@@ -94,7 +94,7 @@ class headViewView: UIView {
         layoutIfNeeded()
     }
     
-    func startAnimation(var angle:CGFloat,var angle1:CGFloat)
+    func startAnimation(angle:CGFloat,angle1:CGFloat)
     {
         let endAngle:CGAffineTransform = CGAffineTransformMakeRotation(angle*CGFloat(M_PI/180.0))
         let endAngle1:CGAffineTransform = CGAffineTransformMakeRotation(angle1*CGFloat(M_PI/180.0))
@@ -102,9 +102,7 @@ class headViewView: UIView {
             self.guangHuanBgImage.transform = endAngle
             self.guanghuanInImage.transform = endAngle1
             }, completion: {(finished:Bool) in
-                angle += 10
-                angle1 += 340
-                self.startAnimation(angle,angle1: angle1)
+                self.startAnimation(angle+10,angle1: angle1+340)
         })
         
     }

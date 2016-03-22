@@ -101,7 +101,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         skinButton.layer.borderColor=UIColor(red: 91/255, green: 152/255, blue: 240/255, alpha: 1).CGColor
         stateOfView=0
         //图片添加触摸事件
-        let tapGesture=UITapGestureRecognizer(target: self, action: Selector("personImgTapClick:"))
+        let tapGesture=UITapGestureRecognizer(target: self, action: #selector(personImgTapClick))
         tapGesture.numberOfTapsRequired=1
         tapGesture.numberOfTouchesRequired=1
         personBgImgView.addGestureRecognizer(tapGesture)
@@ -162,18 +162,16 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     //private getStateOf
     //检测中动画效果
     private var isStopAnimation=false
-    private func startAnimation(var angle:CGFloat)
+    private func startAnimation(angle:CGFloat)
     {
         let endAngle:CGAffineTransform = CGAffineTransformMakeRotation(angle*CGFloat(M_PI/180.0))
         UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
             self.TestingIcon.transform = endAngle
             
             }, completion: {(finished:Bool) in
-                angle += 30
-                
                 if self.isStopAnimation==false
                 {
-                    self.startAnimation(angle)
+                    self.startAnimation(angle+30)
                 }
         })
         
@@ -248,7 +246,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         dianLiangValueLabel.text = String(Int(dianliang)) + "%"
     
         //设置性别
-        let tmpSex=WaterReplenishDevice?.settings.get("sex", `default`: "女") as! String
+        let tmpSex=WaterReplenishDevice?.settings.get("sex", default: "女") as! String
         updateViewzb(Sex: tmpSex=="女" ? SexType.WoMan:SexType.Man)
         //下载皮肤类型
         DownSkinType(View)

@@ -72,8 +72,8 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         super.viewDidLoad()
         PeiduiFailed=NSBundle.mainBundle().loadNibNamed("peiDuiOutTimeCell", owner: self, options: nil).last as! peiDuiOutTimeCell
         PeiduiFailed.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight)
-        PeiduiFailed.Back.addTarget(self, action: Selector("BackAfterPeiDuiFailed"), forControlEvents: .TouchUpInside)
-        PeiduiFailed.ReSetPeiDuiButton.addTarget(self, action: Selector("RePeiDuiAfterPeiDuiFailed"), forControlEvents: .TouchUpInside)
+        PeiduiFailed.Back.addTarget(self, action: #selector(BackAfterPeiDuiFailed), forControlEvents: .TouchUpInside)
+        PeiduiFailed.ReSetPeiDuiButton.addTarget(self, action: #selector(RePeiDuiAfterPeiDuiFailed), forControlEvents: .TouchUpInside)
         PeiduiFailed.isBlueToothDevice=true
         // Do any additional setup after loading the view.
         self.createTimer()
@@ -110,7 +110,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     {
         let arr = OznerManager.instance().getNotBindDevices() as NSArray
         let muArr = NSMutableArray()
-        for var i = 0; i < arr.count;i++
+        for i in 0 ..< arr.count
         {
             let deviceIo = arr.objectAtIndex(i) as! BaseDeviceIO
             if OznerManager.instance().checkisBindMode(deviceIo) == true
@@ -226,7 +226,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     {
         if(self.mTimer == nil)
         {
-            self.mTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "onTimer", userInfo: nil, repeats: true)
+            self.mTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
         }
         mSecond = 30//蓝牙设备容许最大配对时间
         if deviceCuttentType==2||deviceCuttentType==4
@@ -248,7 +248,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.03)
         UIView.setAnimationDelegate(self)
-        UIView.setAnimationDidStopSelector("endAnimation")
+        UIView.setAnimationDidStopSelector(#selector(endAnimation))
         let roleAngle = self.angle * (M_PI/180.0)
         self.circleImgView.transform = CGAffineTransformMakeRotation(CGFloat(roleAngle))
         UIView.commitAnimations()
@@ -256,7 +256,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     
     func onTimer()
     {
-        mSecond--
+        mSecond -= 1
         if mSecond == 0
         {
             switch deviceCuttentType
@@ -316,11 +316,11 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
                 let muArr1:NSMutableArray = NSMutableArray(array: self.deveiceDataList!)
                 if(muArr.count > 0)
                 {
-                    for var index = 0; index < self.deveiceDataList?.count; ++index
+                    for var index = 0; index < self.deveiceDataList?.count; index += 1
                     {
                         let io = self.deveiceDataList?.objectAtIndex(index) as! BaseDeviceIO
                         var isEqual = false
-                        for var index = 0; index < muArr.count; ++index
+                        for index in 0 ..< muArr.count
                         {
                             let io1 = muArr.objectAtIndex(index) as! BaseDeviceIO
                             if(io.identifier == io1.identifier)
@@ -415,7 +415,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         UIView.beginAnimations("ImageViewBlg", context: nil)
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationDelegate(self)
-        UIView.setAnimationDidStopSelector("transfromEndAnimation")
+        UIView.setAnimationDidStopSelector(#selector(transfromEndAnimation))
         let newTransForm = CGAffineTransformMakeScale(0.1, 0.1);
         self.circleBgVIew.transform = newTransForm
         self.circleBgVIew.alpha = 0;
@@ -527,7 +527,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         UIView.beginAnimations("animationImageViewBlg", context: nil)
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationDelegate(self)
-        UIView.setAnimationDidStopSelector("animationEndCreateIcarouseView")
+        UIView.setAnimationDidStopSelector(#selector(animationEndCreateIcarouseView))
         let newTransForm = CGAffineTransformMakeScale(1.0, 1.0);
         self.animationImgView.transform = newTransForm
         UIView.commitAnimations()
@@ -561,7 +561,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     
     func createLeftAndRight()
     {
-        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "leftMethod")
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(leftMethod))
         self.navigationItem.leftBarButtonItem = leftButton;
         self.navigationItem.title = loadLanguage("设备配对")
     }
@@ -693,11 +693,8 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     
     func carouselDidEndScrollingAnimation(carousel: iCarousel!) {
         self.mIndex = carousel.currentItemIndex
-        print(self.deveiceDataList?.count)
-        print(mIndex)
-        print(carousel.numberOfItems)
-      
-        for var i = 0;i < self.deveiceDataList?.count;i++
+
+        for var i = 0;i < self.deveiceDataList?.count;i += 1
         {
             if carousel==nil
             {
