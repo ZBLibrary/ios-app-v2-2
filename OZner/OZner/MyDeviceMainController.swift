@@ -1450,7 +1450,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             //stateView
             smallStateView=NSBundle.mainBundle().loadNibNamed("smallStateXib", owner: nil, options: nil).last as! smallStateXib
-            smallStateView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: smallStateView.bounds.size.height)
+            smallStateView.frame=CGRect(x: 0, y: 10, width: Screen_Width, height: smallStateView.bounds.size.height)
             
             headView.centerViewzb.addSubview(smallStateView)
             //footerView
@@ -1466,7 +1466,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         else
         {
             bigStateView=NSBundle.mainBundle().loadNibNamed("bigStateXib", owner: nil, options: nil).last as! bigStateXib
-            bigStateView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: bigStateView.bounds.size.height)
+            bigStateView.frame=CGRect(x: 0, y: 10, width: Screen_Width, height: bigStateView.bounds.size.height)
             headView.centerViewzb.addSubview(bigStateView)
             //滚动视图
             let footerScroll=UIScrollView(frame: CGRect(x: 0, y: headView.bounds.size.height, width: Screen_Width, height: Screen_Hight-65-headView.height))

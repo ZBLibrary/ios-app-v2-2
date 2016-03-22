@@ -87,6 +87,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         OznerManager.instance().delegate = self
         //获取周围可配对的设备
         self.deveiceDataList = self.canMatchDevices()
+        print(deveiceDataList)
     }
     
     func BackAfterPeiDuiFailed()
@@ -301,6 +302,11 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     
     func update()
     {
+        if deveiceDataList?.count>0
+        {
+            return
+        }
+        
         if(self.deviceCuttentType != 2 && self.deviceCuttentType != 4)
         {
             let muArr = self.canMatchDevices()
@@ -365,6 +371,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             }
 
         }
+        
     }
     
     func OznerManagerDidAddDevice(device: OznerDevice!) {

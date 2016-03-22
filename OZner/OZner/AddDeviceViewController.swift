@@ -38,7 +38,7 @@ class AddDeviceViewController: SwiftFatherViewController,UITableViewDataSource,U
     }
     //测试设备数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
+        return 6
     }
     
     
@@ -69,7 +69,7 @@ class AddDeviceViewController: SwiftFatherViewController,UITableViewDataSource,U
         case 5:
             
             cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-        default :
+        default : 
             break
         }
 
