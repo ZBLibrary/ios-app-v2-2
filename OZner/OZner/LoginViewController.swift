@@ -128,7 +128,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func agreeTextClick(sender: UIButton) {
-        let agreeMentController=userAgreeMentsController()
+        let agreeMentController=userAgreeMentsController(nibName: "userAgreeMentsController", bundle: nil)
         self.presentViewController(agreeMentController, animated: true, completion: nil)
     }
     

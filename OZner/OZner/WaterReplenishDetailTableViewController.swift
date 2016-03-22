@@ -63,13 +63,13 @@ class WaterReplenishDetailTableViewController: UITableViewController {
     //
     func toWhatOfYou()
     {
-        let toWhatControll=ToWhatViewController()
+        let toWhatControll=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
         toWhatControll.title="油分"
         self.navigationController?.pushViewController(toWhatControll, animated: true)
     }
     func toWhatOfWater()
     {
-        let toWhatControll=ToWhatViewController()
+        let toWhatControll=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
         toWhatControll.title="水分"
         self.navigationController?.pushViewController(toWhatControll, animated: true)
     }

@@ -73,7 +73,7 @@ class indoorAirViewController: UIViewController {
     func bugLvXin()
     {
         let weiXinUrl=weiXinUrlNamezb()
-        let tmpURLController=WeiXinURLViewController()
+        let tmpURLController=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
         
         tmpURLController.title=weiXinUrl.byAirLX
         self.presentViewController(tmpURLController, animated: true, completion: nil)
@@ -85,12 +85,12 @@ class indoorAirViewController: UIViewController {
     
     func toPM2d5()
     {
-        let pm2d5controler=PM2d5ViewController()
+        let pm2d5controler=PM2d5ViewController(nibName: "PM2d5ViewController", bundle: nil)
         self.navigationController?.pushViewController(pm2d5controler, animated: true)
     }
     func toVOC()
     {
-        let voccontroler=VOC_AirViewController()
+        let voccontroler=VOC_AirViewController(nibName: "VOC_AirViewController", bundle: nil)
         self.navigationController?.pushViewController(voccontroler, animated: true)
     }
     func upDateData()

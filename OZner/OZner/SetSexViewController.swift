@@ -10,6 +10,33 @@ import UIKit
 //typealias InputClosureType = (String) -> Void   //定义闭包类型（特定的函数类型函数类型）
 class SetSexViewController: UIViewController,UIAlertViewDelegate {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    convenience  init() {
+        
+        var nibNameOrNil = String?("RootViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     var backClosure:((String) -> Void)?           //接收上个页面穿过来的闭包块
     @IBOutlet weak var womenImg: UIImageView!
     @IBOutlet weak var manImg: UIImageView!

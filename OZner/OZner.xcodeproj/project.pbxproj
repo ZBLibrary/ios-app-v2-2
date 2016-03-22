@@ -3181,21 +3181,15 @@
 		5226BB061C47E6F700895AE4 /* SystemController */ = {
 			isa = PBXGroup;
 			children = (
+				8DF99B581CA0F360008DB222 /* View */,
 				52ECBE801C0C66A000A962E4 /* SwitchViewController.h */,
 				52ECBE811C0C66A000A962E4 /* SwitchViewController.m */,
 				52ECBE821C0C66A000A962E4 /* SwitchViewController.xib */,
 				52ECBE921C0C695000A962E4 /* HomeViewController.h */,
 				52ECBE931C0C695000A962E4 /* HomeViewController.m */,
-				4248B2ED1C0D917A00181CA0 /* CustomPopView.swift */,
-				349F0CCE1C158EB900E46253 /* CustomPopViewFirstCell.swift */,
-				349F0CCF1C158EB900E46253 /* CustomPopViewFirstCell.xib */,
-				42CF4EA51C16F6D7000E22DC /* CustomPopViewSecondCell.swift */,
-				42CF4EA61C16F6D7000E22DC /* CustomPopViewSecondCell.xib */,
 				425F7A0E1C32ABD600C8B2E3 /* NewUserHelpViewController.h */,
 				425F7A0F1C32ABD600C8B2E3 /* NewUserHelpViewController.m */,
 				425F7A101C32ABD600C8B2E3 /* NewUserHelpViewController.xib */,
-				425F7A111C32ABD600C8B2E3 /* HelpCellView.h */,
-				425F7A121C32ABD600C8B2E3 /* HelpCellView.m */,
 				52ECBE8A1C0C68D300A962E4 /* LeftViewController.h */,
 				52ECBE8B1C0C68D300A962E4 /* LeftViewController.m */,
 				4281413D1C0B0CDA006FEDDE /* LeftViewController.xib */,
@@ -4420,6 +4414,20 @@
 			);
 			name = BugRecord;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		8DF99B581CA0F360008DB222 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				425F7A111C32ABD600C8B2E3 /* HelpCellView.h */,
+				425F7A121C32ABD600C8B2E3 /* HelpCellView.m */,
+				4248B2ED1C0D917A00181CA0 /* CustomPopView.swift */,
+				349F0CCE1C158EB900E46253 /* CustomPopViewFirstCell.swift */,
+				349F0CCF1C158EB900E46253 /* CustomPopViewFirstCell.xib */,
+				42CF4EA51C16F6D7000E22DC /* CustomPopViewSecondCell.swift */,
+				42CF4EA61C16F6D7000E22DC /* CustomPopViewSecondCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,6 +10,33 @@ import UIKit
 
 class setTimingViewController: UIViewController {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    convenience  init() {
+        
+        var nibNameOrNil = String?("RootViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     var myCurrentDevice:OznerDevice?
     
     @IBOutlet var star_hour: UILabel!

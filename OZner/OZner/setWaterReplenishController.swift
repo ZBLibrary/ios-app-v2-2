@@ -9,6 +9,34 @@
 import UIKit
 
 class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    convenience  init() {
+        
+        var nibNameOrNil = String?("RootViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     var settingDic:NSMutableDictionary?=getPlistData("setWaterReplenish")
     var myCurrentDevice:WaterReplenishmentMeter?
     var MainViewCell:mainOfSetWaterReplenCell!
@@ -150,13 +178,13 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     }
     func toSetNameAndDressButton()
     {
-        let setnamecontroller=setDeviceNameViewController()
+        let setnamecontroller=setDeviceNameViewController(nibName: "setDeviceNameViewController", bundle: nil)
         setnamecontroller.dataPlist=settingDic
         self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
     func toSetSexButton()
     {
-        let setSexController=SetSexViewController()
+        let setSexController=SetSexViewController(nibName: "SetSexViewController", bundle: nil)
         setSexController.tmpSex=settingDic?.objectForKey("sex") as? String
         print(settingDic?.objectForKey("sex"))
         setSexController.backClosure={ (inputText:String) -> Void in
@@ -167,7 +195,7 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     }
     func toSetTimeRemind()
     {
-        let setTimeController=SetRemindTimeController()
+        let setTimeController=SetRemindTimeController(nibName: "SetRemindTimeController", bundle: nil)
         setTimeController.dicData=settingDic
         setTimeController.backClosure={ (BackData:NSMutableDictionary) -> Void in
             self.settingDic=BackData

@@ -62,7 +62,7 @@ class TantouLXController: UIViewController {
     func MoreDeviceClick(button:UIButton)
     {
         let weiXinUrl=weiXinUrlNamezb()
-        let UrlControl=WeiXinURLViewController()
+        let UrlControl=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
         switch button.tag
         {
         case 1:
@@ -89,7 +89,7 @@ class TantouLXController: UIViewController {
     }
     func buyLX()
     {
-        let buyLX=WeiXinURLViewController()
+        let buyLX=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
         let witchUrl=weiXinUrlNamezb()
         buyLX.title=witchUrl.byTapLX
         if myCurrentDevice != nil

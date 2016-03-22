@@ -133,7 +133,7 @@ class setAirViewController: UIViewController,UIAlertViewDelegate {
 
 
     func toSetDvName(){
-        let setnamecontroller=setDeviceNameViewController()
+        let setnamecontroller=setDeviceNameViewController(nibName: "setDeviceNameViewController", bundle: nil)
         setnamecontroller.dataPlist=plistData
         self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
@@ -171,7 +171,7 @@ class setAirViewController: UIViewController,UIAlertViewDelegate {
     
     func toOperatingIntroduc()
     {
-        let lonImage=LongImageViewController()
+        let lonImage=LongImageViewController(nibName: "LongImageViewController", bundle: nil)
         lonImage.iswhitch=0
         self.navigationController?.pushViewController(lonImage, animated: true)
     }
@@ -182,7 +182,7 @@ class setAirViewController: UIViewController,UIAlertViewDelegate {
 //    }
     func tocommonQestion()
     {
-        let lonImage=LongImageViewController()
+        let lonImage=LongImageViewController(nibName: "LongImageViewController", bundle: nil)
         lonImage.iswhitch=1
         self.navigationController?.pushViewController(lonImage, animated: true)
     }

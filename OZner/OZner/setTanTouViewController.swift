@@ -10,6 +10,33 @@ import UIKit
 
 class setTanTouViewController: UIViewController ,UIAlertViewDelegate{
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    convenience  init() {
+        
+        var nibNameOrNil = String?("RootViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     var plistData:NSMutableDictionary=getPlistData("setTanTou")
     var datePickerView:uiDatePickerView!
     let currentWindow = UIApplication.sharedApplication().keyWindow
@@ -17,7 +44,7 @@ class setTanTouViewController: UIViewController ,UIAlertViewDelegate{
     var myCurrentDevice:OznerDevice?
     @IBOutlet var DeviceName: UILabel!
     @IBAction func setTanTouName(sender: AnyObject) {
-       let setnamecontroller=setDeviceNameViewController()
+       let setnamecontroller=setDeviceNameViewController(nibName: "setDeviceNameViewController", bundle: nil)
         setnamecontroller.dataPlist=plistData
        self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
@@ -40,7 +67,7 @@ class setTanTouViewController: UIViewController ,UIAlertViewDelegate{
         datePickerView.datePicker.date=curLabelTime(checkValue2.text!)
     }
     @IBAction func toAboutDevice(sender: AnyObject) {
-        let aboutDevice=AboutDeviceViewController()
+        let aboutDevice=AboutDeviceViewController(nibName: "AboutDeviceViewController", bundle: nil)
         aboutDevice.title=loadLanguage("关于水探头")
         aboutDevice.urlstring="http://cup.ozner.net/app/gystt/gystt.html"
         self.navigationController?.pushViewController(aboutDevice, animated: true)

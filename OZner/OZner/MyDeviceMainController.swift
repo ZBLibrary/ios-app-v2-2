@@ -148,19 +148,18 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             {//水杯设置
                 let controller=setCUPDeviceViewController()
                 controller.myCurrentDevice = self.myCurrentDevice
-                //实验
-                //let controller=WaterReplenishDetailTableViewController()
+                
                 self.navigationController?.pushViewController(controller, animated: true)
                 
             }else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true){
                 //探头设置
-                let controller=setTanTouViewController()
+                let controller=setTanTouViewController(nibName: "setTanTouViewController", bundle: nil)
                 controller.myCurrentDevice = self.myCurrentDevice
                 self.navigationController?.pushViewController(controller, animated: true)
             }
             else if ( WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true){
                 //净水器设置
-                let controller=setShuiJiViewController()
+                let controller=setShuiJiViewController(nibName: "setShuiJiViewController", bundle: nil)
                 controller.myCurrentDevice = self.myCurrentDevice
                 self.navigationController?.pushViewController(controller, animated: true)
             }
@@ -229,16 +228,25 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }
         
         //移除其它设备界面
+        if deviceHeadView != nil{
         for view:UIView in deviceHeadView.subviews
         {
             view.removeFromSuperview()
         }
+        }
+        if deviceFooterView != nil{
         for view:UIView in deviceFooterView.subviews
         {
             view.removeFromSuperview()
         }
+        }
+        if deviceStateViewBG != nil{
         deviceStateViewBG.hidden=false
-        titleLabel.text="首页"
+        }
+        if titleLabel != nil
+        {
+           titleLabel.text="首页"
+        }
         isNeedDownLXDate=false
         switch true
         {
@@ -353,7 +361,13 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             //默认主页视图
             myCurrentDevice=nil
              set_CurrSelectEquip(0)
+            if deviceStateViewBG != nil
+            {
             deviceStateViewBG.hidden=true
+            }
+            if Height_DeviceFooter != nil
+            
+            {
             Height_DeviceFooter.constant=Screen_Hight*212/667
             defaultFooterView=NSBundle.mainBundle().loadNibNamed("Main_FooterView_zb", owner: self, options: nil).last as! Main_FooterView_zb
             defaultFooterView.toAddDeviceButton.addTarget(self, action: Selector("addDeviceAction"), forControlEvents: .TouchUpInside)
@@ -364,6 +378,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             deviceFooterView.addConstraint(NSLayoutConstraint(item: defaultFooterView, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: defaultFooterView, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
             
+            }
             
             let defaultImg = UIImage(named: "DeviceHeadImg")
             defaultHeadView=UIImageView(image: defaultImg)
@@ -431,6 +446,10 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     //进入补水仪其他controller，0设置，1肤质查询，2详情
     func toWaterReplenishOtherController(button:UIButton)
     {
+        if myCurrentDevice == nil
+        {
+            return
+        }
         switch button.tag
         {
         case 0:
@@ -1304,7 +1323,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     func temperatureAction()
     {
         self.m_bIsHideTableBar = true
-        let controller = AmountOfDrinkingWaterViewController()
+        let controller = AmountOfDrinkingWaterViewController(nibName: "AmountOfDrinkingWaterViewController", bundle: nil)
         controller.currentType = 1
         controller.myCurrentDevice = self.myCurrentDevice as! Cup
         controller.defeatValue = Int32(self.currentDefeat!)
@@ -1316,7 +1335,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     {
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         self.m_bIsHideTableBar = true
-        let controller = AmountOfDrinkingWaterViewController()
+        let controller = AmountOfDrinkingWaterViewController(nibName: "AmountOfDrinkingWaterViewController", bundle: nil)
         controller.currentType = 0
         controller.myCurrentDevice = self.myCurrentDevice as! Cup
         let cup = self.myCurrentDevice as! Cup
@@ -1374,7 +1393,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         self.m_bIsHideTableBar = true
         if((self.myCurrentDevice?.isKindOfClass(Cup.classForCoder())) == true)
         {
-            let controller = TDSDetailViewController()
+            let controller = TDSDetailViewController(nibName: "TDSDetailViewController", bundle: nil)
             controller.myCurrentDevice = self.myCurrentDevice
             let cup = self.myCurrentDevice as! Cup
             controller.tdsValue = cup.sensor.TDS

@@ -10,6 +10,33 @@ import UIKit
 
 class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource,iCarouselDelegate,CupMatchFinishedViewDelegate,OtherMatchFinisedViewDelegate,JinShuiqiWIFIControllerDelegate,UIAlertViewDelegate,UITextFieldDelegate,OznerManagerDelegate {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    convenience  init() {
+        
+        var nibNameOrNil = String?("DeviceMatchedViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     var angle = 0.0
     var myIcarousel:iCarousel?
     var dataSourceArr:NSMutableArray?
@@ -161,7 +188,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             self.circleIconImgView.image = UIImage(named: "icon_jingshuiqi_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_jingshuiqi.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入净水器名称")
-            let controller = JingShuiWifiViewController()
+            let controller = JingShuiWifiViewController(nibName: "JingShuiWifiViewController", bundle: nil)
             controller.delegate = self
             self.presentViewController(controller, animated: true, completion: nil)
         case 3:
@@ -179,7 +206,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             self.circleIconImgView.image = UIImage(named: "icon_bigair_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_bigair.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("立式空净名称")
-            let controller = JingShuiWifiViewController()
+            let controller = JingShuiWifiViewController(nibName: "JingShuiWifiViewController", bundle: nil)
             controller.delegate = self
             self.presentViewController(controller, animated: true, completion: nil)
         case 5:

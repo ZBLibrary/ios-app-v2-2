@@ -10,6 +10,33 @@ import UIKit
 
 class SetRemindTimeController: UIViewController,UIAlertViewDelegate {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    convenience  init() {
+        
+        var nibNameOrNil = String?("RootViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     var backClosure:((NSMutableDictionary) -> Void)?//回掉函数
     var dicData:NSMutableDictionary?
     var colorOfSelected=UIColor(red: 0, green: 124/255, blue: 251/255, alpha: 1)

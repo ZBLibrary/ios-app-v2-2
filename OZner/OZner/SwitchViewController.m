@@ -49,7 +49,7 @@
 {
     
     //设备
-    MyDeviceMainController* deviceController = [[MyDeviceMainController alloc]init];
+    MyDeviceMainController* deviceController = [[MyDeviceMainController alloc] initWithNibName:@"MyDeviceMainController" bundle:nil];//[[MyDeviceMainController alloc]init];
     UINavigationController* nav0 = [[UINavigationController alloc]initWithRootViewController:deviceController];
     [nav0.navigationBar loadNavigationBar];
     
@@ -82,7 +82,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    mLeftController = [[LeftViewController alloc] init];
+    mLeftController = [[LeftViewController alloc] initWithNibName:@"LeftViewController" bundle:nil];
+
     mLeftController.iDelegate = mHomeController;
     mLeftController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:mLeftController.view];
@@ -113,7 +114,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:version forKey:key];
         [[NSUserDefaults standardUserDefaults]synchronize];
         
-        mNewUserHelpController = [[NewUserHelpViewController alloc] init];
+        mNewUserHelpController = [[NewUserHelpViewController alloc] initWithNibName:@"NewUserHelpViewController" bundle:nil];
         mNewUserHelpController.userHelpViewDelegate = self;
         mNewUserHelpNavController = [[UINavigationController alloc] initWithRootViewController:mNewUserHelpController];
         mNewUserHelpNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -170,7 +171,7 @@
 #pragma mark-HomeControllerDelegate
 - (void)customViewAddCallBack
 {
-    mAddDeviceViewController = [[AddDeviceViewController alloc] init];
+    mAddDeviceViewController = [[AddDeviceViewController alloc] initWithNibName:@"AddDeviceViewController" bundle:nil];//[[AddDeviceViewController alloc] init];
     mAddDeviceNavController = [[UINavigationController alloc] initWithRootViewController:mAddDeviceViewController];
     mAddDeviceNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     

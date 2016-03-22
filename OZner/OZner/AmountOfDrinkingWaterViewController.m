@@ -112,7 +112,7 @@
 
 - (void)jianKangShuiAction
 {
-    WeiXinURLViewController* URLController=[[WeiXinURLViewController alloc] init];
+    WeiXinURLViewController* URLController=[[WeiXinURLViewController alloc] initWithNibName:@"WeiXinURLViewController" bundle:nil];
     [URLController setTitle:@"健康水知道"];
     [self presentViewController:URLController animated:true completion:nil];
 }

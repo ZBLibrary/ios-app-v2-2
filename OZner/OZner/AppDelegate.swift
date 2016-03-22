@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         // Override point for customization after application launch.
         
         NetworkManager.sharedInstance().startWithAid(nil, sesToken: nil, httpAdress: HTTP_ADDRESS) 
-        let switchController = SwitchViewController()
+        let switchController = SwitchViewController(nibName: "SwitchViewController", bundle: nil)
         self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
         self.window?.rootViewController = switchController;
         self.window?.makeKeyAndVisible()

@@ -102,7 +102,7 @@
 }
 - (void)toWhatTDS
 {
-    ToWhatViewController* tdsState=[[ToWhatViewController alloc] init];
+    ToWhatViewController* tdsState=[[ToWhatViewController alloc] initWithNibName:@"ToWhatViewController" bundle:nil];
     [tdsState setTitle:@"什么是TDS?"];
     [self.navigationController pushViewController:tdsState animated:YES];
 }
@@ -120,7 +120,7 @@
 
 - (void)jianKangShuiAction
 {
-    WeiXinURLViewController* URLController=[[WeiXinURLViewController alloc] init];
+    WeiXinURLViewController* URLController=[[WeiXinURLViewController alloc] initWithNibName:@"WeiXinURLViewController" bundle:nil];
     [URLController setTitle:@"健康水知道"];
     [self presentViewController:URLController animated:true completion:nil];
 }

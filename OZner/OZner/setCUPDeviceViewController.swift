@@ -204,19 +204,19 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
     }
     func ToAboutCup()
     {
-        let aboutcup=AboutDeviceViewController()
+        let aboutcup=AboutDeviceViewController(nibName: "AboutDeviceViewController", bundle: nil)
         aboutcup.title=loadLanguage("关于智能杯")
         aboutcup.urlstring="http://cup.ozner.net/app/gyznb/gyznb.html"
         self.navigationController?.pushViewController(aboutcup, animated: true)
     }
     func ToSetCupName()
     {
-        let setCupName=setCupNameViewController()
+        let setCupName=setCupNameViewController(nibName: "setCupNameViewController", bundle: nil)
         self.navigationController?.pushViewController(setCupName, animated: true)
     }
     func ToSetCupTime()
     {
-        let setCupTime=setCuoTimeViewController()
+        let setCupTime=setCuoTimeViewController(nibName: "setCuoTimeViewController", bundle: nil)
         self.navigationController?.pushViewController(setCupTime, animated: true)
     }
     func SetCupTimeSpace()

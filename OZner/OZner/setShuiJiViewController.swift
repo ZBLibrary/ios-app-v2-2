@@ -10,6 +10,33 @@ import UIKit
 
 class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    convenience  init() {
+        
+        var nibNameOrNil = String?("RootViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     var plistData:NSMutableDictionary=getPlistData("setShuiJi")
    
     var myCurrentDevice:OznerDevice?
@@ -17,12 +44,12 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
     @IBOutlet var DeviceName: UILabel!
  
     @IBAction func toSetDvName(sender: AnyObject) {
-        let setnamecontroller=setDeviceNameViewController()
+        let setnamecontroller=setDeviceNameViewController(nibName: "setDeviceNameViewController", bundle: nil)
         setnamecontroller.dataPlist=plistData
         self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
     @IBAction func toAboutDevice(sender: AnyObject) {
-        let aboutDevice=AboutDeviceViewController()
+        let aboutDevice=AboutDeviceViewController(nibName: "AboutDeviceViewController", bundle: nil)
         aboutDevice.title=loadLanguage("关于净水器")
         aboutDevice.urlstring="http://cup.ozner.net/app/gyysj/gyysj.html"
         self.navigationController?.pushViewController(aboutDevice, animated: true)

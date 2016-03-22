@@ -190,7 +190,7 @@ class WaterPurTDSDetailController: UITableViewController {
     //水质纯净值说明
     func toWhatIsTDS()
     {
-        let tdsState=ToWhatViewController()
+        let tdsState=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
         tdsState.title="什么是TDS?"
         self.navigationController?.pushViewController(tdsState, animated: true)
     }
@@ -202,7 +202,7 @@ class WaterPurTDSDetailController: UITableViewController {
     //健康水知道
     func toWaterKnow()
     {
-        let URLController=WeiXinURLViewController()
+        let URLController=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
         URLController.title="健康水知道"
         self.presentViewController(URLController, animated: true, completion: nil)
     }

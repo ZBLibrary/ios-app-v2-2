@@ -10,6 +10,7 @@ import UIKit
 
 class SwiftFatherViewController: UIViewController {
 
+    
     var heightValue:CGFloat = 0.0;
     
     override func viewWillAppear(animated: Bool) {

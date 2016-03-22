@@ -77,7 +77,7 @@ class AddDeviceViewController: SwiftFatherViewController,UITableViewDataSource,U
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let deviceMatchController = DeviceMatchedViewController()
+        let deviceMatchController = DeviceMatchedViewController(nibName: "DeviceMatchedViewController", bundle: nil)
         print(indexPath.row)
         deviceMatchController.deviceCuttentType = indexPath.row
         self.navigationController!.pushViewController(deviceMatchController, animated: true)
