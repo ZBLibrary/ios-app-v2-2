@@ -26,6 +26,8 @@ struct weiXinUrlNamezb {
     let WaterLvXinUrl1="净水器滤芯1"
     let WaterLvXinUrl2="净水器滤芯2"
     let WaterLvXinUrl3="净水器滤芯3"
+    //补水仪
+    let WaterReplenishOperation="补水仪使用说明"
     
 }
 class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
@@ -75,7 +77,7 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
         
         //重新加载按钮
         button=UIButton(frame: CGRect(x: 0, y: Screen_Hight/2-40, width: SCREEN_WIDTH, height: 40))
-        button.addTarget(self, action: Selector("loadAgain:"), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(loadAgain), forControlEvents: .TouchUpInside)
         button.setTitleColor(UIColor.grayColor(), forState: .Normal)
         button.setTitle("加载失败点击继续加载！", forState: .Normal)
         button.hidden=true
@@ -147,6 +149,11 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
             titleOfURL.text="净水器滤芯"
             tmpURL = GoUrlBefore("http://www.oznerwater.com/lktnew/wap/shopping/confirmOrderFromQrcode.aspx?gid=69")
             break
+        case weiXinUrl.WaterReplenishOperation://补水仪使用说明
+            titleOfURL.text="补水仪使用说明"
+            tmpURL = "http://app.ozner.net:888//Public/Index"
+            break
+            
         default:
             break
         }
@@ -167,7 +174,7 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
     func webViewDidStartLoad(webView: UIWebView) {
         button.hidden=true
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        self.performSelector(Selector("hideMbProgressHUD"), withObject: nil, afterDelay: 3);
+        self.performSelector(#selector(hideMbProgressHUD), withObject: nil, afterDelay: 3);
     }
     func hideMbProgressHUD()
     {

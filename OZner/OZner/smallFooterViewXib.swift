@@ -39,10 +39,10 @@ class smallFooterViewXib: UIView {
         SlideView.layer.shadowOpacity=0.6//透明度
         SlideView.layer.shadowColor=UIColor(red: 0, green: 104/255, blue: 246/255, alpha: 1).CGColor
         //添加拖动手势
-        let panGesture=UIPanGestureRecognizer(target: self, action: Selector("panImage:"))
+        let panGesture=UIPanGestureRecognizer(target: self, action: #selector(panImage))
         targertView.addGestureRecognizer(panGesture)
         //添加点击手势
-        let tapGesture=UITapGestureRecognizer(target: self, action: Selector("tapImage:"))
+        let tapGesture=UITapGestureRecognizer(target: self, action: #selector(tapImage))
         tapGesture.numberOfTapsRequired=1//设置点按次数
         targertView.addGestureRecognizer(tapGesture)
         if blueTooth != nil

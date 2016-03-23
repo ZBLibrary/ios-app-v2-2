@@ -19,20 +19,20 @@ class TantouLXController: UIViewController {
         self.title="当前滤芯状态"
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         let ScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
         ScrollView.backgroundColor=UIColor.whiteColor()
         mainView=NSBundle.mainBundle().loadNibNamed("tantouLvXinView", owner: nil, options: nil).last as! tantouLvXinView
         mainView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: mainView.bounds.size.height)
         //
-        mainView.zixunButton.addTarget(self, action: Selector("zixun"), forControlEvents: .TouchUpInside)
-        mainView.buyLXButton.addTarget(self, action: Selector("buyLX"), forControlEvents: .TouchUpInside)
-        mainView.saoMaButton.addTarget(self, action: Selector("saoMa"), forControlEvents: .TouchUpInside)
+        mainView.zixunButton.addTarget(self, action: #selector(zixun), forControlEvents: .TouchUpInside)
+        mainView.buyLXButton.addTarget(self, action: #selector(buyLX), forControlEvents: .TouchUpInside)
+        mainView.saoMaButton.addTarget(self, action: #selector(saoMa), forControlEvents: .TouchUpInside)
         //更多产品
-        mainView.MoreDeviceButton1.addTarget(self, action: Selector("MoreDeviceClick:"), forControlEvents: .TouchUpInside)
-        mainView.MoreDeviceButton2.addTarget(self, action: Selector("MoreDeviceClick:"), forControlEvents: .TouchUpInside)
-        mainView.MoreDeviceButton3.addTarget(self, action: Selector("MoreDeviceClick:"), forControlEvents: .TouchUpInside)
+        mainView.MoreDeviceButton1.addTarget(self, action: #selector(MoreDeviceClick), forControlEvents: .TouchUpInside)
+        mainView.MoreDeviceButton2.addTarget(self, action: #selector(MoreDeviceClick), forControlEvents: .TouchUpInside)
+        mainView.MoreDeviceButton3.addTarget(self, action: #selector(MoreDeviceClick), forControlEvents: .TouchUpInside)
         //设置滤芯状态
         setLvXinState()
         if WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true
@@ -55,7 +55,7 @@ class TantouLXController: UIViewController {
         
         ScrollView.addSubview(mainView)
         self.view.addSubview(ScrollView)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setLvXinState"), name: "updateLVXinTimeByScan", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setLvXinState), name: "updateLVXinTimeByScan", object: nil)
         // Do any additional setup after loading the view.
     }
 

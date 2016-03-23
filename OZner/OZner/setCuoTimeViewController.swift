@@ -102,13 +102,13 @@ class setCuoTimeViewController: UIViewController {
         super.viewDidLoad()
         starTime.text=loadLanguage("开启时间")
         endtime.text=loadLanguage("结束时间")
-        let savebutton=UIBarButtonItem(title:loadLanguage("保存") , style: .Plain, target: self, action: Selector("SaveClick"))
+        let savebutton=UIBarButtonItem(title:loadLanguage("保存") , style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
-        datePicker.addTarget(self, action: Selector("dateValueChanged"), forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.addTarget(self, action: #selector(dateValueChanged), forControlEvents: UIControlEvents.ValueChanged)
         let tmpstar=setCupStructdata["remindStart"] as! Int
         let tmpend=setCupStructdata["remindEnd"] as! Int
         startimelabel.text=(tmpstar/3600<10 ? "0\(tmpstar/3600)":"\(tmpstar/3600)")+":"+(tmpstar%3600/60<10 ? "0\(tmpstar%3600/60)":"\(tmpstar%3600/60)")

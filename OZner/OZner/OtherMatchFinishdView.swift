@@ -97,7 +97,7 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
         let button = UIButton(frame: CGRectMake(16*(width/375.0),180*(height/667.0),width-16*(width/375.0)*2,40*(height/667.0)))
         button.backgroundColor = UIColor(red: 60.0/255, green: 137.0/255, blue: 242.0/255, alpha: 1.0)
         button.setTitle(loadLanguage("完成"), forState: UIControlState.Normal)
-        button.addTarget(self, action: "finishedAction", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: #selector(finishedAction), forControlEvents: UIControlEvents.TouchUpInside)
         button.layer.masksToBounds = true;
         button.layer.cornerRadius = 20;
         scrollView .addSubview(button)

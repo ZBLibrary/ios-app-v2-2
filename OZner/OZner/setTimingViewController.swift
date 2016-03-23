@@ -231,7 +231,7 @@ class setTimingViewController: UIViewController {
         selecttime.text = loadLanguage("选择周重复时间");
         
         
-        let savebutton=UIBarButtonItem(title: "保存", style: .Plain, target: self, action: Selector("SaveClick"))
+        let savebutton=UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(SaveClick))
         self.navigationItem.rightBarButtonItem=savebutton
         var viewwidth:CGFloat=Screen_Width*36/375
         if viewwidth>36
@@ -250,7 +250,7 @@ class setTimingViewController: UIViewController {
             
             tmpbutton.tag=0//0未选中 1选中
             tmpbutton.layer.borderColor=color_select.CGColor
-            tmpbutton.addTarget(self, action: Selector("weakClick:"), forControlEvents: .TouchUpInside)
+            tmpbutton.addTarget(self, action: #selector(weakClick), forControlEvents: .TouchUpInside)
             weakView.addSubview(tmpbutton)
             weakbuttons.append(tmpbutton)
         }

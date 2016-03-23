@@ -44,10 +44,10 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         super.viewDidLoad()
 
         self.title="智能补水仪"
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: Selector("SaveClick"))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         tableView.backgroundColor=UIColor(red: 239.0/255.0, green: 239.0/255.0, blue: 246.0/255.0, alpha: 1)
@@ -55,7 +55,7 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         tableView.separatorStyle=UITableViewCellSeparatorStyle.None
         //名称改变通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector:
-            Selector("setNameChange:"), name: "setWaterReplenishName", object: nil)
+            #selector(setNameChange), name: "setWaterReplenishName", object: nil)
         //初始化设置数组
         if myCurrentDevice != nil
         {
@@ -162,13 +162,13 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         MainViewCell = NSBundle.mainBundle().loadNibNamed("mainOfSetWaterReplenCell", owner: self, options: nil).last as! mainOfSetWaterReplenCell
-        MainViewCell.toSetNameAndDressButton.addTarget(self, action: Selector("toSetNameAndDressButton"), forControlEvents: .TouchUpInside)
-        MainViewCell.toSetSexButton.addTarget(self, action: Selector("toSetSexButton"), forControlEvents: .TouchUpInside)
-        MainViewCell.toSetTimeRemind.addTarget(self, action: Selector("toSetTimeRemind"), forControlEvents: .TouchUpInside)
-        MainViewCell.toBugEssence.addTarget(self, action: Selector("toBugEssence"), forControlEvents: .TouchUpInside)
-        MainViewCell.toInstructions.addTarget(self, action: Selector("toInstructions"), forControlEvents: .TouchUpInside)
-        MainViewCell.toOperation.addTarget(self, action: Selector("toOperation"), forControlEvents: .TouchUpInside)
-        MainViewCell.clearButton.addTarget(self, action: Selector("clearButton"), forControlEvents: .TouchUpInside)
+        MainViewCell.toSetNameAndDressButton.addTarget(self, action: #selector(toSetNameAndDressButton), forControlEvents: .TouchUpInside)
+        MainViewCell.toSetSexButton.addTarget(self, action: #selector(toSetSexButton), forControlEvents: .TouchUpInside)
+        MainViewCell.toSetTimeRemind.addTarget(self, action: #selector(toSetTimeRemind), forControlEvents: .TouchUpInside)
+        MainViewCell.toBugEssence.addTarget(self, action: #selector(toBugEssence), forControlEvents: .TouchUpInside)
+        MainViewCell.toInstructions.addTarget(self, action: #selector(toInstructions), forControlEvents: .TouchUpInside)
+        MainViewCell.toOperation.addTarget(self, action: #selector(toOperation), forControlEvents: .TouchUpInside)
+        MainViewCell.clearButton.addTarget(self, action: #selector(clearButton), forControlEvents: .TouchUpInside)
         MainViewCell.selectionStyle=UITableViewCellSelectionStyle.None
         //数据初始化
         MainViewCell.NameAndAdress.text=(settingDic?.objectForKey("deviceName") as? String)!+"("+(settingDic?.objectForKey("deviceAttrib") as? String)!+")"
@@ -208,6 +208,11 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     }
     func toInstructions()
     {
+        let weiXinUrl=weiXinUrlNamezb()
+        let tmpURLController=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
+        tmpURLController.title=weiXinUrl.WaterReplenishOperation
+        self.presentViewController(tmpURLController, animated: true, completion: nil)
+        
     }
     func toOperation()
     {

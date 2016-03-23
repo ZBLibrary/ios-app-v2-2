@@ -29,7 +29,7 @@ class My_TDSTableViewController: UITableViewController {
        
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.tableView.rowHeight = 82
         // Uncomment the following line to preserve selection between presentations
@@ -77,7 +77,7 @@ class My_TDSTableViewController: UITableViewController {
         cell.jinduImage.frame=CGRect(x: 0, y: tmpframe.origin.y, width: tmpwidth, height: tmpframe.size.height)
         cell.zancount.text=tdsarray[indexPath.row].zanCount
         cell.zanimg.image=UIImage(named: tdsarray[indexPath.row].iszan==true ? "Rank_Zaned":"Rank_Zan")
-        cell.zanButton.addTarget(self, action: Selector("zanClick:"), forControlEvents: .TouchUpInside)
+        cell.zanButton.addTarget(self, action: #selector(zanClick), forControlEvents: .TouchUpInside)
         cell.zanButton.enabled = !tdsarray[indexPath.row].iszan
         cell.zanButton.tag=indexPath.row
         cell.selectionStyle=UITableViewCellSelectionStyle.None

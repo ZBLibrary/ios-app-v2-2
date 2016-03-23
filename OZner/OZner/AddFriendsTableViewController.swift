@@ -32,17 +32,17 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         self.title=loadLanguage("添加好友")
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.tableView.rowHeight = 44
         //headerview
         //self.tableView.sectionHeaderHeight=49
         
         tabelHeaderView = NSBundle.mainBundle().loadNibNamed("FriendSearch", owner: self, options: nil).last as! FriendSearch
-        tabelHeaderView.searchButton.addTarget(self, action: Selector("SearchPhone"), forControlEvents: .TouchUpInside)
+        tabelHeaderView.searchButton.addTarget(self, action: #selector(SearchPhone), forControlEvents: .TouchUpInside)
         tabelHeaderView.SearchTextFD.delegate=self
         self.tableView.tableHeaderView=tabelHeaderView
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("addfriendSuccess"), name: "sendAddFriendMesSuccess", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addfriendSuccess), name: "sendAddFriendMesSuccess", object: nil)
         
         Tongxunlu()
     }
@@ -120,7 +120,7 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = NSBundle.mainBundle().loadNibNamed("AddFriendTableViewCell", owner: self, options: nil).last as! AddFriendTableViewCell
-        cell.AddFriendButton.addTarget(self, action: Selector("toAddFriend:"), forControlEvents: .TouchUpInside)
+        cell.AddFriendButton.addTarget(self, action: #selector(toAddFriend), forControlEvents: .TouchUpInside)
         // Configure the cell...
         cell.selectionStyle=UITableViewCellSelectionStyle.None
         cell.AddFriendButton.tag=indexPath.section+indexPath.row

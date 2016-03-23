@@ -18,13 +18,13 @@ class setAirViewController: UIViewController,UIAlertViewDelegate {
         super.viewDidLoad()
 
         //self.title="台式空气净化器"
-        let savebutton=UIBarButtonItem(title: "保存", style: .Plain, target: self, action: Selector("SaveClick"))
+        let savebutton=UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setNameChange:"), name: plistName+"Name", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: plistName+"Name", object: nil)
         initMainView()
         // Do any additional setup after loading the view.
     }
@@ -41,11 +41,11 @@ class setAirViewController: UIViewController,UIAlertViewDelegate {
         //loadDeviceData加载设备里面数据
         loadDeviceData()
         mainView.nameValue.text=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
-        mainView.toSetNameButton.addTarget(self, action: Selector("toSetDvName"), forControlEvents: .TouchUpInside)
-        mainView.operatingIntroducButton.addTarget(self, action: Selector("toOperatingIntroduc"), forControlEvents: .TouchUpInside)
-        //mainView.operatingDemoButton.addTarget(self, action: Selector("toOperatingDemo"), forControlEvents: .TouchUpInside)
-        mainView.commonQestion.addTarget(self, action: Selector("tocommonQestion"), forControlEvents: .TouchUpInside)
-        mainView.clearButton.addTarget(self, action: Selector("ClearClick"), forControlEvents: .TouchUpInside)
+        mainView.toSetNameButton.addTarget(self, action: #selector(toSetDvName), forControlEvents: .TouchUpInside)
+        mainView.operatingIntroducButton.addTarget(self, action: #selector(toOperatingIntroduc), forControlEvents: .TouchUpInside)
+        //mainView.operatingDemoButton.addTarget(self, action: #selector(toOperatingDemo"), forControlEvents: .TouchUpInside)
+        mainView.commonQestion.addTarget(self, action: #selector(tocommonQestion), forControlEvents: .TouchUpInside)
+        mainView.clearButton.addTarget(self, action: #selector(ClearClick), forControlEvents: .TouchUpInside)
         mainView.clearButton.layer.borderWidth=1
         mainView.clearButton.layer.cornerRadius=20
         mainView.clearButton.layer.masksToBounds=true

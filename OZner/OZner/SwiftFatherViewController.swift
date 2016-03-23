@@ -27,10 +27,10 @@ class SwiftFatherViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        if self.respondsToSelector("setEdgesForExtendedLayout:")
-        {
-            self.edgesForExtendedLayout = UIRectEdge.None
-        }
+//        if self.respondsToSelector("setEdgesForExtendedLayout")
+//        {
+//            self.edgesForExtendedLayout = UIRectEdge.None
+//        }
         
         if(UIScreen.mainScreen().bounds.height <= 568)
         {
@@ -45,8 +45,8 @@ class SwiftFatherViewController: UIViewController {
     
     func addkeyBoardNotification()
     {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillShow:", name:UIKeyboardWillShowNotification, object:nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow), name:UIKeyboardWillShowNotification, object:nil);
     }
     
     func keyboardWillHide(note:NSNotification)

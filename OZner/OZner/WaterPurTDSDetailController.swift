@@ -60,10 +60,10 @@ class WaterPurTDSDetailController: UITableViewController {
         {
         case 0:
             fristCell = NSBundle.mainBundle().loadNibNamed("WaterPurTDSDetailCell1", owner: self, options: nil).last as! WaterPurTDSDetailCell1
-            fristCell.backButton.addTarget(self, action: Selector("toBack"), forControlEvents: .TouchUpInside)
-            fristCell.shareButton.addTarget(self, action: Selector("toShare"), forControlEvents: .TouchUpInside)
-            fristCell.toWhatTDS.addTarget(self, action: Selector("toWhatIsTDS"), forControlEvents: .TouchUpInside)
-            fristCell.toChat.addTarget(self, action: Selector("toChat"), forControlEvents: .TouchUpInside)
+            fristCell.backButton.addTarget(self, action: #selector(toBack), forControlEvents: .TouchUpInside)
+            fristCell.shareButton.addTarget(self, action: #selector(toShare), forControlEvents: .TouchUpInside)
+            fristCell.toWhatTDS.addTarget(self, action: #selector(toWhatIsTDS), forControlEvents: .TouchUpInside)
+            fristCell.toChat.addTarget(self, action: #selector(toChat), forControlEvents: .TouchUpInside)
             getFriendTdsRank()
             fristCell.selectionStyle=UITableViewCellSelectionStyle.None
             return fristCell
@@ -74,8 +74,8 @@ class WaterPurTDSDetailController: UITableViewController {
             return secondCell
         default:
             let wCell = NSBundle.mainBundle().loadNibNamed("TDSFooterCellzb", owner: self, options: nil).last as! TDSFooterCellzb
-            wCell.waterKnowButton.addTarget(self, action: Selector("toWaterKnow"), forControlEvents: .TouchUpInside)
-            wCell.toStoreButton.addTarget(self, action: Selector("toBuyClick"), forControlEvents: .TouchUpInside)
+            wCell.waterKnowButton.addTarget(self, action: #selector(toWaterKnow), forControlEvents: .TouchUpInside)
+            wCell.toStoreButton.addTarget(self, action: #selector(toBuyClick), forControlEvents: .TouchUpInside)
             wCell.selectionStyle=UITableViewCellSelectionStyle.None
             return wCell
         }

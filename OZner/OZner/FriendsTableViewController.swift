@@ -76,21 +76,21 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         NavTitleView.bottomRight.hidden=false
         NavTitleView.MyRankButton.setTitleColor(NavTitleView.color_normol, forState: .Normal)
         NavTitleView.MyFriendsButton.setTitleColor(NavTitleView.color_select, forState: .Normal)
-        NavTitleView.MyRankButton.addTarget(self, action: Selector("RankAndFriendclick:"), forControlEvents: .TouchUpInside)
-        NavTitleView.MyFriendsButton.addTarget(self, action: Selector("RankAndFriendclick:"), forControlEvents: .TouchUpInside)
+        NavTitleView.MyRankButton.addTarget(self, action: #selector(RankAndFriendclick), forControlEvents: .TouchUpInside)
+        NavTitleView.MyFriendsButton.addTarget(self, action: #selector(RankAndFriendclick), forControlEvents: .TouchUpInside)
         //验证消息
         
         //showYZNews
         
        rightBarButton=NSBundle.mainBundle().loadNibNamed("FriendsNavRight", owner: nil, options: nil).last as! FriendsNavRight
-        rightBarButton.TongzhiButton.addTarget(self, action: Selector("toYZNews"), forControlEvents: .TouchUpInside)
-        rightBarButton.AddFriend.addTarget(self, action: Selector("toAddFriends"), forControlEvents: .TouchUpInside)
+        rightBarButton.TongzhiButton.addTarget(self, action: #selector(toYZNews), forControlEvents: .TouchUpInside)
+        rightBarButton.AddFriend.addTarget(self, action: #selector(toAddFriends), forControlEvents: .TouchUpInside)
         
        // FriendsNavRight.
         self.navigationItem.titleView=NavTitleView
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.rightBarButtonItem=UIBarButtonItem(customView: rightBarButton)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationController?.navigationBarHidden=false
@@ -102,15 +102,15 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         chatBarView.sendButton.layer.borderColor=UIColor(red: 220/255, green: 220/255, blue: 225/255, alpha: 1).CGColor
         chatBarView.sendButton.layer.borderWidth=1
         chatBarView.sendButton.layer.cornerRadius=8
-        chatBarView.sendButton.addTarget(self, action: Selector("SendMess"), forControlEvents: .TouchUpInside)
+        chatBarView.sendButton.addTarget(self, action: #selector(SendMess), forControlEvents: .TouchUpInside)
         chatBarView.frame=CGRect(x: 0, y: Screen_Hight-48, width: Screen_Width, height: 48)
 
         /*-------------键盘监听事件---------------------*/
         //使用NSNotificationCenter 鍵盤出現時
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWasShown), name: UIKeyboardDidShowNotification, object: nil)
         
         //使用NSNotificationCenter 鍵盤隐藏時
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillBeHidden:"), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIKeyboardWillHideNotification, object: nil)
         //加载数据
         let userinfo_local=getPlistData("userinfoURL")
         if userinfo_local.count != 0
@@ -120,9 +120,9 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         }
         //使用NSNotificationCenter 验证消息通知
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateFriendList"), name: "OtherAcceptMeNews", object: nil)
-       NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateYZNewsRedDOt"), name: "OtherRequestNews", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("MyCenterNewMessageNotice"), name: "MyCenterNewMessageNotice", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateFriendList), name: "OtherAcceptMeNews", object: nil)
+       NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateYZNewsRedDOt), name: "OtherRequestNews", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MyCenterNewMessageNotice), name: "MyCenterNewMessageNotice", object: nil)
         //更新小红点状态
         updateYZNewsRedDOt()
  
@@ -573,8 +573,8 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
     {
         let TdsRankcell=NSBundle.mainBundle().loadNibNamed("MyRankTableViewCell", owner: nil, options: nil).last as! MyRankTableViewCell
         
-        TdsRankcell.ToTDSButton.addTarget(self, action: Selector("ToTDS:"), forControlEvents: .TouchUpInside)
-        TdsRankcell.LookZanMeButton.addTarget(self, action: Selector("LookZanMe:"), forControlEvents: .TouchUpInside)
+        TdsRankcell.ToTDSButton.addTarget(self, action: #selector(ToTDS), forControlEvents: .TouchUpInside)
+        TdsRankcell.LookZanMeButton.addTarget(self, action: #selector(LookZanMe), forControlEvents: .TouchUpInside)
         TdsRankcell.ToTDSButton.tag=index
         TdsRankcell.LookZanMeButton.tag=index
         //数据加载

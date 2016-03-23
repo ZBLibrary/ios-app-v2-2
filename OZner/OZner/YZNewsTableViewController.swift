@@ -27,7 +27,7 @@ class YZNewsTableViewController: UITableViewController {
         YZMess()
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.tableView.rowHeight = 102
         // Uncomment the following line to preserve selection between presentations
@@ -65,7 +65,7 @@ class YZNewsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = NSBundle.mainBundle().loadNibNamed("YanZhengCell", owner: self, options: nil).last as! YanZhengCell
 
-        cell.AddButton.addTarget(self, action: Selector("AddClick:"), forControlEvents: .TouchUpInside)
+        cell.AddButton.addTarget(self, action: #selector(AddClick), forControlEvents: .TouchUpInside)
         cell.AddButton.tag=indexPath.row
         cell.headimage.image=YZNews[indexPath.row].FriendimgUrl=="" ? UIImage(named: "DefaultHeadImage") : UIImage(data: NSData(contentsOfURL: NSURL(string: YZNews[indexPath.row].FriendimgUrl)!)!)
         cell.name.text=YZNews[indexPath.row].FriendName=="" ? YZNews[indexPath.row].FriendMobile : YZNews[indexPath.row].FriendName

@@ -75,7 +75,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         print(width)
         let addBtn:UIButton = UIButton(frame: CGRectMake(20*(width/375.0),bubbleImgView.frame.origin.y+bubbleImgView.frame.size.height-5-16,71*(width/375.0),71*(width/375.0)))
         addBtn.setBackgroundImage(UIImage(named: "icon_add_device_btn.png"), forState: UIControlState.Normal)
-        addBtn.addTarget(self, action:"addDeviceAction", forControlEvents:UIControlEvents.TouchUpInside)
+        addBtn.addTarget(self, action:#selector(addDeviceAction), forControlEvents:UIControlEvents.TouchUpInside)
         self.myView.addSubview(addBtn)
         let tmpframezb=addBtn.frame
         addLabel=UILabel(frame: CGRect(x: tmpframezb.origin.x+tmpframezb.size.width+5, y: tmpframezb.origin.y, width: 100, height: tmpframezb.size.height))
@@ -94,8 +94,8 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         table.hidden = true
         self.myView .addSubview(table)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receiveDeleteDevicesNotify", name: "removDeviceByZB", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receiveDeleteDevicesNotify", name: "updateDeviceInfo", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(receiveDeleteDevicesNotify), name: "removDeviceByZB", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(receiveDeleteDevicesNotify), name: "updateDeviceInfo", object: nil)
      }
 
      required init?(coder aDecoder: NSCoder) {

@@ -14,15 +14,13 @@ class SkinFooterTableViewCell: UITableViewCell {
     @IBOutlet weak var widthOfButtonBG1: NSLayoutConstraint!
     @IBOutlet weak var widthOfButtonBG2: NSLayoutConstraint!
     @IBOutlet weak var widthOfButtonBG3: NSLayoutConstraint!
-    @IBOutlet weak var widthOfButtonBG4: NSLayoutConstraint!
-    @IBOutlet weak var widthOfButtonBG5: NSLayoutConstraint!
-    private let buttonContainWidth=(375-24)*Screen_Width/375
+
+    private let buttonContainWidth=(375-50)*Screen_Width/375
     //五个按钮
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
+ 
     //肤质图片及说明
     @IBOutlet weak var skinImg: UIImageView!
     @IBOutlet weak var skinState: UITextView!
@@ -31,14 +29,13 @@ class SkinFooterTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        widthOfButtonBG1.constant=buttonContainWidth/5
-        widthOfButtonBG2.constant=buttonContainWidth/5
-        widthOfButtonBG3.constant=buttonContainWidth/5
-        widthOfButtonBG4.constant=buttonContainWidth/5
-        widthOfButtonBG5.constant=buttonContainWidth/5
-        for button in [button1,button2,button3,button4,button5]
+        widthOfButtonBG1.constant=buttonContainWidth/3
+        widthOfButtonBG2.constant=buttonContainWidth/3
+        widthOfButtonBG3.constant=buttonContainWidth/3
+
+        for button in [button1,button2,button3]
         {
-            button.addTarget(self, action: Selector("skinButtonClick:"), forControlEvents: .TouchUpInside)
+            button.addTarget(self, action: #selector(skinButtonClick), forControlEvents: .TouchUpInside)
         }
     }
     private let selectColor=UIColor(red: 64/255.0, green: 140/255.0, blue: 241/255.0, alpha: 1)
@@ -46,14 +43,12 @@ class SkinFooterTableViewCell: UITableViewCell {
     private var skinStateArr=[
         "干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱，定期使用适量精华补水也能改善您的干性特质哦！",
         "皮肤通道是先吸收水，再吸收油。当肌底极度缺水干燥的时候，为保护皮肤，油脂才会分泌过盛。水油已严重失衡啦，请注意控油补水！",
-        "干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱！",
-        "干性肌需要进行深层补水，水油已严重失衡啦，请注意控油补水！",
-        "干性肌需要进行深层补水！"
+        "干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱！"
     ]
     func skinButtonClick(button:UIButton)
     {
         //设置按钮背景色
-        for tmpButton in [button1,button2,button3,button4,button5]
+        for tmpButton in [button1,button2,button3]
         {
             tmpButton.backgroundColor=UIColor.clearColor()
         }
@@ -71,15 +66,14 @@ class SkinFooterTableViewCell: UITableViewCell {
      */
     func MyCurrentFuZhi(myFuZhi:Int)
     {
-        let tmpwidth = myFuZhi==0 ? buttonContainWidth/5:buttonContainWidth/4
+        let tmpwidth = myFuZhi==0 ? buttonContainWidth/3:buttonContainWidth/2
         widthOfButtonBG1.constant=tmpwidth
         widthOfButtonBG2.constant=tmpwidth
         widthOfButtonBG3.constant=tmpwidth
-        widthOfButtonBG4.constant=tmpwidth
-        widthOfButtonBG5.constant=tmpwidth
+        
         if myFuZhi != 0
         {
-            [widthOfButtonBG1,widthOfButtonBG2,widthOfButtonBG3,widthOfButtonBG4,widthOfButtonBG5][myFuZhi-1].constant=0
+            [widthOfButtonBG1,widthOfButtonBG2,widthOfButtonBG3][myFuZhi-1].constant=0
             
         }
         //设置首次进入选中

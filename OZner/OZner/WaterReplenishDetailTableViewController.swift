@@ -19,14 +19,14 @@ class WaterReplenishDetailTableViewController: UITableViewController {
         
         HeadView = NSBundle.mainBundle().loadNibNamed("HeadOfWaterReplenishDetailCell", owner: self, options: nil).last as!  HeadOfWaterReplenishDetailCell
         HeadView.selectionStyle=UITableViewCellSelectionStyle.None
-        HeadView.backButton.addTarget(self, action: Selector("backClick"), forControlEvents: .TouchUpInside)
-        HeadView.shareButton.addTarget(self, action: Selector("shareClick"), forControlEvents: .TouchUpInside)
+        HeadView.backButton.addTarget(self, action: #selector(backClick), forControlEvents: .TouchUpInside)
+        HeadView.shareButton.addTarget(self, action: #selector(shareClick), forControlEvents: .TouchUpInside)
         
         FooterView = NSBundle.mainBundle().loadNibNamed("FooterOfWaterReplenishDetailCell", owner: self, options: nil).last as!  FooterOfWaterReplenishDetailCell
-        FooterView.toWhatYoufen.addTarget(self, action: Selector("toWhatOfYou"), forControlEvents: .TouchUpInside)
-        FooterView.toWhatWater.addTarget(self, action: Selector("toWhatOfWater"), forControlEvents: .TouchUpInside)
-        FooterView.toChatButton.addTarget(self, action: Selector("toChatButton"), forControlEvents: .TouchUpInside)
-        FooterView.toBuyEssence.addTarget(self, action: Selector("toBuyEssence"), forControlEvents: .TouchUpInside)
+        FooterView.toWhatYoufen.addTarget(self, action: #selector(toWhatOfYou), forControlEvents: .TouchUpInside)
+        FooterView.toWhatWater.addTarget(self, action: #selector(toWhatOfWater), forControlEvents: .TouchUpInside)
+        FooterView.toChatButton.addTarget(self, action: #selector(toChatButton), forControlEvents: .TouchUpInside)
+        FooterView.toBuyEssence.addTarget(self, action: #selector(toBuyEssence), forControlEvents: .TouchUpInside)
         HeadView.delegate=FooterView//头部视图器官切换代理
         //测试数据
         let weekArray=NSMutableDictionary()

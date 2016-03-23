@@ -23,7 +23,7 @@ class EquidsCollectionViewController: UICollectionViewController {
          self.title=loadLanguage("已有设备")
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.view.backgroundColor=UIColor.whiteColor()
         // Register cell classes
@@ -123,7 +123,7 @@ class EquidsCollectionViewController: UICollectionViewController {
         cell.equipNameLabel.text=arraydata[indexPath.row+indexPath.section*3].Name
         print(indexPath.row+indexPath.section*3)
         cell.cellClick.tag=indexPath.row+indexPath.section*3
-        cell.cellClick.addTarget(self, action: Selector("cellClickFun:"), forControlEvents: .TouchUpInside)
+        cell.cellClick.addTarget(self, action: #selector(cellClickFun), forControlEvents: .TouchUpInside)
         var imgwhich=""
         switch(arraydata[indexPath.row+indexPath.section*3].Type)
         {

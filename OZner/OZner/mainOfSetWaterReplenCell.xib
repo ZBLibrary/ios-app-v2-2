@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -176,7 +176,7 @@
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ja3-T4-hyY">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ja3-T4-hyY">
                                         <rect key="frame" x="350" y="17" width="10" height="13"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmM-HA-A4h">
@@ -234,7 +234,7 @@
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="tV1-Gx-nAS">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="tV1-Gx-nAS">
                                         <rect key="frame" x="350" y="17" width="10" height="13"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZl-ln-GZG">
@@ -298,7 +298,7 @@
                                             <constraint firstAttribute="height" constant="47" id="XQu-48-bDw"/>
                                         </constraints>
                                     </button>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-Hs-LCF">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-Hs-LCF">
                                         <rect key="frame" x="350" y="17" width="10" height="13"/>
                                     </imageView>
                                 </subviews>
@@ -314,11 +314,11 @@
                                     <constraint firstAttribute="height" constant="47" id="zej-Z5-X4y"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gND-as-3Zu">
-                                <rect key="frame" x="0.0" y="397.5" width="375" height="47"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gND-as-3Zu">
+                                <rect key="frame" x="0.0" y="397.5" width="375" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="补水仪使用演示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeB-Gd-6ks">
-                                        <rect key="frame" x="15" y="14" width="110" height="19"/>
+                                        <rect key="frame" x="15" y="-9.5" width="110" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="JrN-xs-LPj"/>
                                             <constraint firstAttribute="width" constant="110" id="ffL-Br-bui"/>
@@ -341,7 +341,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="LIy-rH-iJU" secondAttribute="trailing" id="37e-kS-vTW"/>
                                     <constraint firstItem="ZeB-Gd-6ks" firstAttribute="centerY" secondItem="gND-as-3Zu" secondAttribute="centerY" id="4UH-hG-3LZ"/>
-                                    <constraint firstAttribute="height" constant="47" id="NTu-FC-POo"/>
+                                    <constraint firstAttribute="height" id="NTu-FC-POo"/>
                                     <constraint firstItem="ZeB-Gd-6ks" firstAttribute="leading" secondItem="gND-as-3Zu" secondAttribute="leading" constant="15" id="cVO-xv-b7n"/>
                                     <constraint firstItem="uNn-mq-pRp" firstAttribute="centerY" secondItem="gND-as-3Zu" secondAttribute="centerY" id="hQp-F3-JOX"/>
                                     <constraint firstItem="LIy-rH-iJU" firstAttribute="top" secondItem="gND-as-3Zu" secondAttribute="top" id="nXe-UJ-saS"/>
@@ -350,14 +350,14 @@
                                 </constraints>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="setmystate5" translatesAutoresizingMaskIntoConstraints="NO" id="ldY-Jb-iao">
-                                <rect key="frame" x="20" y="454.5" width="16" height="16"/>
+                                <rect key="frame" x="20" y="407.5" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="C2j-B9-eMP"/>
                                     <constraint firstAttribute="width" constant="16" id="GTh-qX-5jo"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当电量低于15%时，app会进行提示！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPn-Y8-kLX">
-                                <rect key="frame" x="41" y="454.5" width="200" height="16"/>
+                                <rect key="frame" x="41" y="407.5" width="200" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="2Yt-nE-Z9t"/>
                                     <constraint firstAttribute="width" constant="200" id="3je-TM-p5u"/>
@@ -373,7 +373,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3is-9U-0or">
-                                <rect key="frame" x="67" y="492.5" width="240" height="40"/>
+                                <rect key="frame" x="67" y="445.5" width="240" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bbP-rx-shD"/>

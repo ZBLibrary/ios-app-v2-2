@@ -68,10 +68,10 @@ class setDeviceNameViewController: UIViewController,UITextFieldDelegate,UIAlertV
         initCustomView()
         NameText.text=dataPlist.objectForKey("deviceName") as? String
         NameText.delegate=self
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: Selector("SaveClick"))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         // Do any additional setup after loading the view.

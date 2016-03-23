@@ -32,17 +32,17 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
         mainView.myCurrentDevice=self.myCurrentDevice
         mainView.initload()
         
-        mainView.AboutCupbutton.addTarget(self, action: Selector("ToAboutCup"), forControlEvents: .TouchUpInside)
-        mainView.CupNamebutton.addTarget(self, action: Selector("ToSetCupName"), forControlEvents: .TouchUpInside)
-        mainView.setCupTime.addTarget(self, action: Selector("ToSetCupTime"), forControlEvents: .TouchUpInside)
-        mainView.aetCuptimeSpace.addTarget(self, action: Selector("SetCupTimeSpace"), forControlEvents: .TouchUpInside)
+        mainView.AboutCupbutton.addTarget(self, action: #selector(ToAboutCup), forControlEvents: .TouchUpInside)
+        mainView.CupNamebutton.addTarget(self, action: #selector(ToSetCupName), forControlEvents: .TouchUpInside)
+        mainView.setCupTime.addTarget(self, action: #selector(ToSetCupTime), forControlEvents: .TouchUpInside)
+        mainView.aetCuptimeSpace.addTarget(self, action: #selector(SetCupTimeSpace), forControlEvents: .TouchUpInside)
         ScrollView.contentSize=CGSize(width: 0, height: mainView.bounds.size.height)
         ScrollView.addSubview(mainView)
         self.view.addSubview(ScrollView)
-        let savebutton=UIBarButtonItem(title:loadLanguage("保存") , style: .Plain, target: self, action: Selector("SaveClick"))
+        let savebutton=UIBarButtonItem(title:loadLanguage("保存") , style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         //pickerview
@@ -51,13 +51,13 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
         //pickercancel
         let cancelbutton=UIButton(frame: CGRect(x: 0, y: Screen_Hight-230, width: 60, height: 30))
         cancelbutton.setTitle(loadLanguage("取消"), forState: .Normal)
-        cancelbutton.addTarget(self, action: Selector("PickerCancel"), forControlEvents: .TouchUpInside)
+        cancelbutton.addTarget(self, action: #selector(PickerCancel), forControlEvents: .TouchUpInside)
         //cancelbutton.backgroundColor=UIColor.whiteColor()
         grayview.addSubview(cancelbutton)
         //pickerok
         let okbutton=UIButton(frame: CGRect(x: Screen_Width-60, y: Screen_Hight-230, width: 60, height: 30))
         okbutton.setTitle(loadLanguage("确定"), forState: .Normal)
-        okbutton.addTarget(self, action: Selector("PickerOK"), forControlEvents: .TouchUpInside)
+        okbutton.addTarget(self, action: #selector(PickerOK), forControlEvents: .TouchUpInside)
         //okbutton.backgroundColor=UIColor.whiteColor()
         grayview.addSubview(okbutton)
         //picker
@@ -97,7 +97,7 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
         wheel2.addSubview(_colorCenterView)
         mainView.getColorBoard.addSubview(wheel2)
         //删除操作
-        mainView.ClearButton.addTarget(self, action: Selector("clearDeviceClick"), forControlEvents: .TouchUpInside)
+        mainView.ClearButton.addTarget(self, action: #selector(clearDeviceClick), forControlEvents: .TouchUpInside)
         
         //色环颜色初始化
         let tmpCgcolor=setCupStructdata["haloColor"] as! UInt

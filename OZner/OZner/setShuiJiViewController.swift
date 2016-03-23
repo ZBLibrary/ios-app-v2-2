@@ -77,10 +77,10 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
         DeviceNameLable.text=loadLanguage("我的净水器" )
        deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
         self.title=loadLanguage("净水器")
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: Selector("SaveClick"))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         
@@ -92,7 +92,7 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
         loadDeviceData()
         DeviceName.text=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
         //
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setNameChange:"), name: "setShuiJiName", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: "setShuiJiName", object: nil)
         // Do any additional setup after loading the view.
     }
 

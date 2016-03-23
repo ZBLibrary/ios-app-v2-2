@@ -24,7 +24,7 @@ class MyStoreViewController: UIViewController,UIWebViewDelegate {
         urlstr = GoUrlBefore("http://www.oznerwater.com/lktnew/wap/mall/mallHomePage.aspx")
         //加载失败
         button=UIButton(frame: CGRect(x: 0, y: Screen_Hight/2-40, width: SCREEN_WIDTH, height: 40))
-        button.addTarget(self, action: Selector("loadAgain:"), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(loadAgain), forControlEvents: .TouchUpInside)
         button.setTitleColor(UIColor.grayColor(), forState: .Normal)
         button.setTitle("加载失败点击继续加载！", forState: .Normal)
         button.hidden=true

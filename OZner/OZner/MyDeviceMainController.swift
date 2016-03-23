@@ -1063,7 +1063,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 //跑马效果 0没有跑过，1正在跑马，2跑过马了
                 if airPurifier_Bluetooth.status.power==true&&airPurifier_Bluetooth.sensor.PM25 != 65535
                 {
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 65)
+//                    if #available(iOS 8.2, *) {
+//                        IAW_TempView.PM25.font=UIFont.systemFontOfSize(60, weight: 0.5)
+//                    } else {
+//                        IAW_TempView.PM25.font=UIFont.systemFontOfSize(50)
+//                        // Fallback on earlier versions
+//                    }// (name: ".SFUIDisplay-Thin", size: 60)
                     if isPaoMa != 1
                     {
                         if isPaoMa == 0
@@ -1133,7 +1138,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 else
                 {
                     IAW_TempView.PM25.text=loadLanguage("已关机")
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
+                    //IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
                 }
                 
                 
@@ -1146,7 +1151,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 let airPurifier_MxChip = self.myCurrentDevice as! AirPurifier_MxChip
                 if airPurifier_MxChip.status.power==true&&airPurifier_MxChip.sensor.PM25 != 65535
                 {
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 65)
+//                    if #available(iOS 8.2, *) {
+//                        IAW_TempView.PM25.font=UIFont.systemFontOfSize(60, weight: 0.5)
+//                    } else {
+//                        IAW_TempView.PM25.font=UIFont.systemFontOfSize(50)
+//                        // Fallback on earlier versions
+//                    }
                     //跑马效果 0没有跑过，1正在跑马，2跑过马了
                     if isPaoMa != 1
                     {
@@ -1221,7 +1231,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 }else
                 {
                     IAW_TempView.PM25.text=loadLanguage("已关机")
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
+                    //IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
                 }
 
             }
@@ -1661,7 +1671,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             print(IAW_TempView.PM25.font)
             IAW_TempView.PM25.text=loadLanguage("已关机")
-            IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
+            //IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
             bigFooterViews[1].ison=false
             bigFooterViews[2].ison=false
             //bigFooterViews[3].ison=false
@@ -1673,7 +1683,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }else
         {
             IAW_TempView.PM25.text="\(tmpbigDevice.sensor.PM25)"
-            IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 65)
+//            if #available(iOS 8.2, *) {
+//                IAW_TempView.PM25.font=UIFont.systemFontOfSize(60, weight: 0.5)
+//            } else {
+//                IAW_TempView.PM25.font=UIFont.systemFontOfSize(50)
+//                // Fallback on earlier versions
+//            }
             if currentSpeedModel != tmpbigDevice.status.speed
             {
                 currentSpeedModel=tmpbigDevice.status.speed

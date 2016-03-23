@@ -23,10 +23,10 @@ class indoorAirViewController: UIViewController {
         ScrollView.backgroundColor=UIColor(red: 238/255, green: 239/255, blue: 240/255, alpha: 1)
         self.view.addSubview(ScrollView)
         mainview=NSBundle.mainBundle().loadNibNamed("indoorAirXib", owner: nil, options: nil).last as! indoorAirXib
-        mainview.backButton.addTarget(self, action: Selector("Back"), forControlEvents: .TouchUpInside)
+        mainview.backButton.addTarget(self, action: #selector(Back), forControlEvents: .TouchUpInside)
         mainview.frame=CGRect(x: 0, y:0, width: Screen_Width, height: 590)
-        mainview.toChat.addTarget(self, action: Selector("toChat"), forControlEvents: .TouchUpInside)
-        mainview.BugLvXinbutton.addTarget(self, action: Selector("bugLvXin"), forControlEvents: .TouchUpInside)
+        mainview.toChat.addTarget(self, action: #selector(toChat), forControlEvents: .TouchUpInside)
+        mainview.BugLvXinbutton.addTarget(self, action: #selector(bugLvXin), forControlEvents: .TouchUpInside)
         ScrollView.backgroundColor=mainview.backgroundColor
         ScrollView.addSubview(mainview)
  
@@ -34,7 +34,7 @@ class indoorAirViewController: UIViewController {
         {
             //小空气净化器
             smallHeadView=NSBundle.mainBundle().loadNibNamed("indoorHead_SmallXib", owner: nil, options: nil).last as! indoorHead_SmallXib
-            smallHeadView.toPM2d5View.addTarget(self, action: Selector("toPM2d5"), forControlEvents: .TouchUpInside)
+            smallHeadView.toPM2d5View.addTarget(self, action: #selector(toPM2d5), forControlEvents: .TouchUpInside)
             smallHeadView.Pm2d5Value.text="30"
             mainview.headView.addSubview(smallHeadView)
             smallHeadView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,8 +46,8 @@ class indoorAirViewController: UIViewController {
         else
         {
             bigHeadView=NSBundle.mainBundle().loadNibNamed("indoorHead_BigXib", owner: nil, options: nil).last as! indoorHead_BigXib
-            bigHeadView.toPM2d5.addTarget(self, action: Selector("toPM2d5"), forControlEvents: .TouchUpInside)
-            bigHeadView.toVOC.addTarget(self, action: Selector("toVOC"), forControlEvents: .TouchUpInside)
+            bigHeadView.toPM2d5.addTarget(self, action: #selector(toPM2d5), forControlEvents: .TouchUpInside)
+            bigHeadView.toVOC.addTarget(self, action: #selector(toVOC), forControlEvents: .TouchUpInside)
             mainview.headView.addSubview(bigHeadView)
             bigHeadView.translatesAutoresizingMaskIntoConstraints = false
             mainview.headView.addConstraint(NSLayoutConstraint(item: bigHeadView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: mainview.headView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
@@ -59,7 +59,7 @@ class indoorAirViewController: UIViewController {
         ScrollView.contentSize=CGSize(width: 0, height: 590)
         
         upDateData()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("upDateData"), name: "updateAirLvXinData", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(upDateData), name: "updateAirLvXinData", object: nil)
         
         // Do any additional setup after loading the view.
     }

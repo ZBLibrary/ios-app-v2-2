@@ -92,10 +92,10 @@ class setTanTouViewController: UIViewController ,UIAlertViewDelegate{
         deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
         
         self.title=loadLanguage("水探头")
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: Selector("SaveClick"))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: Selector("back"), forControlEvents: .TouchUpInside)
+        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         deleteDeviceButton.layer.borderWidth=1
@@ -124,15 +124,15 @@ class setTanTouViewController: UIViewController ,UIAlertViewDelegate{
             checkValue2.text="18:00"
         }
         //名称改变通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setNameChange:"), name: "setTanTouName", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: "setTanTouName", object: nil)
         //
         //pickerview
        datePickerView=NSBundle.mainBundle().loadNibNamed("uiDatePickerView", owner: nil, options: nil).last as! uiDatePickerView
         //取消
         datePickerView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight)
-        datePickerView.cancelButton.addTarget(self, action: Selector("PickerCancel"), forControlEvents: .TouchUpInside)
+        datePickerView.cancelButton.addTarget(self, action: #selector(PickerCancel), forControlEvents: .TouchUpInside)
         //确定
-        datePickerView.OKButton.addTarget(self, action: Selector("PickerOK"), forControlEvents: .TouchUpInside)
+        datePickerView.OKButton.addTarget(self, action: #selector(PickerOK), forControlEvents: .TouchUpInside)
         
         // Do any additional setup after loading the view.
     }

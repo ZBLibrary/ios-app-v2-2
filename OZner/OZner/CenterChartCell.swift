@@ -134,7 +134,7 @@ class CenterChartCell: UITableViewCell {
         
         
         //折线图点击事件
-        let tapGest=UITapGestureRecognizer(target: self, action: Selector("lineChartClick"))
+        let tapGest=UITapGestureRecognizer(target: self, action: #selector(lineChartClick))
         lineChartView=UIView(frame: CGRect(x: 0, y: (chartContainBG.height-150)/2, width: Screen_Width, height: 150))
         //lineChartView.backgroundColor=UIColor.redColor()
         lineChartView.addGestureRecognizer(tapGest)

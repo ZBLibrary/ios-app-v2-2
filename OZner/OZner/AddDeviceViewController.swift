@@ -27,7 +27,7 @@ class AddDeviceViewController: SwiftFatherViewController,UITableViewDataSource,U
     }
     func createLeftAndRight()
     {
-        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "leftMethod")
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(leftMethod))
         self.navigationItem.leftBarButtonItem = leftButton;
         self.navigationItem.title = loadLanguage("我的设备")
     }

@@ -33,7 +33,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             
             YZMTextLabel.textColor=color_black
             shuttime=60
-            counttime=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("rushtime"), userInfo: nil, repeats: true)
+            counttime=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(rushtime), userInfo: nil, repeats: true)
             yanzhengfunc()
         }
         else
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             YZMTextLabel.text=loadLanguage("倒计时\(shuttime)秒")
         }
         
-        shuttime--
+        shuttime -= 1
     }
     
     func yanzhengfunc(){
@@ -214,7 +214,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("loginFailed:"), name: "networkFailedInfoNotice", object: nil)
+       NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginFailed), name: "networkFailedInfoNotice", object: nil)
        loginButton.setTitle(loadLanguage("登录"), forState: .Normal)
         getYYbutton.setTitle(loadLanguage("获取语音验证码"), forState: .Normal)
         agreeButton.setTitle(loadLanguage("我已阅读并同意《浩泽净水家免责条款》"), forState: .Normal)

@@ -19,7 +19,7 @@ class SkinQueryTableViewController: UITableViewController {
         //头部视图
         headCell = NSBundle.mainBundle().loadNibNamed("SkinHeadTableViewCell", owner: self, options: nil).last as!  SkinHeadTableViewCell
         headCell.selectionStyle=UITableViewCellSelectionStyle.None
-        headCell.backButton.addTarget(self, action: Selector("backClick"), forControlEvents: .TouchUpInside)
+        headCell.backButton.addTarget(self, action: #selector(backClick), forControlEvents: .TouchUpInside)
         headCell.updateCell(0, sexImgHeadStr: "woman")
         //中部视图
         centerCell = NSBundle.mainBundle().loadNibNamed("SkinCenterTableViewCell", owner: self, options: nil).last as!  SkinCenterTableViewCell
@@ -27,7 +27,7 @@ class SkinQueryTableViewController: UITableViewController {
         centerCell.updateData(45, Date: "2012.01.01-2013.02.02")
         //尾部视图
         footerCell = NSBundle.mainBundle().loadNibNamed("SkinFooterTableViewCell", owner: self, options: nil).last as!  SkinFooterTableViewCell
-        footerCell.bugEssenceButton.addTarget(self, action: Selector("bugEssenceClick"), forControlEvents: .TouchUpInside)
+        footerCell.bugEssenceButton.addTarget(self, action: #selector(bugEssenceClick), forControlEvents: .TouchUpInside)
         footerCell.MyCurrentFuZhi(0)//传入我当前的肤质
         footerCell.selectionStyle=UITableViewCellSelectionStyle.None
         

@@ -23,35 +23,35 @@ class MyInfoViewController: UIViewController {
         
         mainView=NSBundle.mainBundle().loadNibNamed("My_MainView", owner: nil, options: nil).last as! My_MainView
         //添加数据和事件
-        mainView.My_Equids_button.addTarget(self, action: Selector("EquidsClick"), forControlEvents: .TouchUpInside)
-        mainView.My_Friends.addTarget(self, action: Selector("My_FriendsClick"), forControlEvents: .TouchUpInside)
-        mainView.SuggestButton.addTarget(self, action: Selector("Suggest"), forControlEvents: .TouchUpInside)
-        mainView.Set.addTarget(self, action: Selector("SetApp"), forControlEvents: .TouchUpInside)
+        mainView.My_Equids_button.addTarget(self, action: #selector(EquidsClick), forControlEvents: .TouchUpInside)
+        mainView.My_Friends.addTarget(self, action: #selector(My_FriendsClick), forControlEvents: .TouchUpInside)
+        mainView.SuggestButton.addTarget(self, action: #selector(Suggest), forControlEvents: .TouchUpInside)
+        mainView.Set.addTarget(self, action: #selector(SetApp), forControlEvents: .TouchUpInside)
         
         //我的小金库
-        mainView.My_Money_button.addTarget(self, action: Selector("toURL:"), forControlEvents: .TouchUpInside)
+        mainView.My_Money_button.addTarget(self, action: #selector(toURL), forControlEvents: .TouchUpInside)
         mainView.My_Money_button.tag=0
         //我的订单
-        mainView.ShareButton.addTarget(self, action: Selector("toURL:"), forControlEvents: .TouchUpInside)
+        mainView.ShareButton.addTarget(self, action: #selector(toURL), forControlEvents: .TouchUpInside)
         mainView.ShareButton.tag=1
         //红包
-        mainView.AgentButton.addTarget(self, action: Selector("toURL:"), forControlEvents: .TouchUpInside)
+        mainView.AgentButton.addTarget(self, action: #selector(toURL), forControlEvents: .TouchUpInside)
         mainView.AgentButton.tag=2
         //我的礼卷
-        mainView.AwardButton.addTarget(self, action: Selector("toURL:"), forControlEvents: .TouchUpInside)
+        mainView.AwardButton.addTarget(self, action: #selector(toURL), forControlEvents: .TouchUpInside)
         mainView.AwardButton.tag=3
         //查看水质报告
-        mainView.BaogaoButton.addTarget(self, action: Selector("toURL:"), forControlEvents: .TouchUpInside)
+        mainView.BaogaoButton.addTarget(self, action: #selector(toURL), forControlEvents: .TouchUpInside)
         mainView.BaogaoButton.tag=4
         
-        mainView.My_login.addTarget(self, action: Selector("toLogin"), forControlEvents: .TouchUpInside)
+        mainView.My_login.addTarget(self, action: #selector(toLogin), forControlEvents: .TouchUpInside)
         //mainView.My_job.hidden=true
         mainView.NewsCount.hidden=true
         mainView.frame=CGRect(x: 0, y: -20, width: Screen_Width, height: 602)
         ScrollView.contentSize=CGSize(width: 0, height: 602)
         ScrollView.addSubview(mainView)
         self.view.addSubview(ScrollView)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateFriendCount"), name: "OtherAcceptMeNews", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateFriendCount), name: "OtherAcceptMeNews", object: nil)
         //初始化加载数据
         loadMyInfo()
         //更新朋友数量
