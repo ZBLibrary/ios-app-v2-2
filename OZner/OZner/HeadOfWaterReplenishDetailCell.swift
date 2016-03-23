@@ -49,7 +49,8 @@ class HeadOfWaterReplenishDetailCell: UITableViewCell {
     // delege
     var delegate:HeadOfWaterReplenishDetailCellDelegate?
     //当前选中器官
-    private var currentOrgan = -1{
+    private var isFistLoad=true
+    var currentOrgan = -1{
         didSet{
             
             if currentOrgan==oldValue
@@ -65,12 +66,19 @@ class HeadOfWaterReplenishDetailCell: UITableViewCell {
                 let tmpNameOld=NSString(format: "WaterReplDetail%d", oldValue+1) as String
                 [organImg1,organImg2,organImg3,organImg4][oldValue].image=UIImage(named: tmpNameOld)
             }
+            if dataDic.count==0
+            {
+                return
+            }
             let tmpStru=dataDic["\(currentOrgan)"]
             skinStateOfToday.text=NSString(format: "%d", (tmpStru?.skinValueOfToday)!) as String
             descOfSkinState.text="今日肌肤状态  "+["干燥","正常","水润","水润"][(tmpStru?.skinValueOfToday)!/33]
             lastCheckValue.text="上次检测"+(NSString(format: "%.1f", (tmpStru?.lastSkinValue)!) as String)+"%"
             averageCheckValue.text="平均值"+(NSString(format: "%.1f", (tmpStru?.averageSkinValue)!) as String)+"%("+(NSString(format: "%d", (tmpStru?.checkTimes)!) as String)+"次)"
-            delegate?.setCurrentOrgan(currentOrgan)
+            if isFistLoad==false{
+                delegate?.setCurrentOrgan(currentOrgan)
+            }
+            
             setNeedsLayout()
             layoutIfNeeded()
         }
@@ -79,14 +87,7 @@ class HeadOfWaterReplenishDetailCell: UITableViewCell {
     var dataDic=[String:HeadOfWaterReplenishStruct]()
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        //测试数据
-        for i in 0...3
-        {
-            let tmpStru=HeadOfWaterReplenishStruct(skinValueOfToday: 30*i, lastSkinValue: Double(71*i*i*i%100), averageSkinValue: Double(71*i*i*i%100), checkTimes: i*i*12+i*5)
-            dataDic["\(i)"]=tmpStru
-        }
-        print(dataDic.count)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

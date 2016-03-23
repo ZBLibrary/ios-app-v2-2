@@ -13,6 +13,8 @@ class SkinQueryTableViewController: UITableViewController {
     var headCell:SkinHeadTableViewCell!
     var centerCell:SkinCenterTableViewCell!
     var footerCell:SkinFooterTableViewCell!
+    var currentSkinTypeIndex=0//0：无，1油，2干,3中
+    var currentSex=SexType.WoMan
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets=false
@@ -20,7 +22,7 @@ class SkinQueryTableViewController: UITableViewController {
         headCell = NSBundle.mainBundle().loadNibNamed("SkinHeadTableViewCell", owner: self, options: nil).last as!  SkinHeadTableViewCell
         headCell.selectionStyle=UITableViewCellSelectionStyle.None
         headCell.backButton.addTarget(self, action: #selector(backClick), forControlEvents: .TouchUpInside)
-        headCell.updateCell(0, sexImgHeadStr: "woman")
+        headCell.updateCell(currentSkinTypeIndex, sex: currentSex)
         //中部视图
         centerCell = NSBundle.mainBundle().loadNibNamed("SkinCenterTableViewCell", owner: self, options: nil).last as!  SkinCenterTableViewCell
         centerCell.selectionStyle=UITableViewCellSelectionStyle.None
@@ -28,7 +30,8 @@ class SkinQueryTableViewController: UITableViewController {
         //尾部视图
         footerCell = NSBundle.mainBundle().loadNibNamed("SkinFooterTableViewCell", owner: self, options: nil).last as!  SkinFooterTableViewCell
         footerCell.bugEssenceButton.addTarget(self, action: #selector(bugEssenceClick), forControlEvents: .TouchUpInside)
-        footerCell.MyCurrentFuZhi(0)//传入我当前的肤质
+        footerCell.MyCurrentFuZhi(currentSkinTypeIndex, sex: currentSex)
+        //传入我当前的肤质
         footerCell.selectionStyle=UITableViewCellSelectionStyle.None
         
     }

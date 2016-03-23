@@ -112,7 +112,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     private let color_blue=UIColor(red: 61/255.0, green: 127/255.0, blue: 250/255.0, alpha: 1)
     private let color_yellow=UIColor(red: 251/255.0, green: 125/255.0, blue: 67/255.0, alpha: 1)
     //当前选中部位
-    private var currentBodyPart:BodyParts=BodyParts.Face
+    var currentBodyPart:BodyParts=BodyParts.Face
     private var stateOfView = -1{
         didSet{
             ClickAlertLabel.hidden=true

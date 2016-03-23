@@ -64,8 +64,9 @@ class SkinFooterTableViewCell: UITableViewCell {
      
      - parameter myFuZhi: 0：无，1油，2干，3中，4混合，5敏感
      */
-    func MyCurrentFuZhi(myFuZhi:Int)
+    func MyCurrentFuZhi(myFuZhi:Int,sex:SexType)
     {
+        sexImgHeadStr=sex==SexType.Man ? "man":"woman"
         let tmpwidth = myFuZhi==0 ? buttonContainWidth/3:buttonContainWidth/2
         widthOfButtonBG1.constant=tmpwidth
         widthOfButtonBG2.constant=tmpwidth

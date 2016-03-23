@@ -453,9 +453,25 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             self.navigationController?.pushViewController(setController, animated: true)
         case 1:
             let skipController=SkinQueryTableViewController()
+            let tmpDevice=myCurrentDevice as! WaterReplenishmentMeter
+            let tmpSex=tmpDevice.settings.get("sex", default: "女")
+            skipController.currentSex=(tmpSex as! String)=="女" ? SexType.WoMan:SexType.Man
+            let tmpStr=button.titleLabel?.text!
+            print(tmpStr)
+            if ((tmpStr?.containsString("无")) != false)
+            {skipController.currentSkinTypeIndex=0}
+            else if ((tmpStr?.containsString("油性")) != false)
+            {skipController.currentSkinTypeIndex=1}
+            if ((tmpStr?.containsString("干性")) != false)
+            {skipController.currentSkinTypeIndex=2}
+            else
+            {skipController.currentSkinTypeIndex=3}
+            //检测次数和检测时间穿进去
             self.navigationController?.pushViewController(skipController, animated: true)
         case 2:
             let detailController=WaterReplenishDetailTableViewController()
+            detailController.currentBodyPart=(waterReplenishMainView?.currentBodyPart)!
+            
             self.navigationController?.pushViewController(detailController, animated: true)
         default:
             break

@@ -40,11 +40,11 @@ class SkinHeadTableViewCell: UITableViewCell {
      
      - parameter currentSkin: 0 无类型，1 干，2 油，3 中     - parameter sexImgHeadStr:"man" 或"woman"
      */
-    func updateCell(currentSkin:Int,sexImgHeadStr:String)
+    func updateCell(currentSkin:Int,sex:SexType)
     {
         skinLabel.text=skinTextArr[currentSkin]
         skinStateLabel.text = currentSkin==0 ? "您还从未检测过哦":"通过数据累计统计，仅供参考。"
-        skinImg.image=UIImage(named: sexImgHeadStr+"SkinOfChaXun\(currentSkin)")
+        skinImg.image=UIImage(named: (sex==SexType.Man ? "man":"woman")+"SkinOfChaXun\(currentSkin)")
         skinDescripe.text=skinDescripeText[currentSkin]
         
     }
