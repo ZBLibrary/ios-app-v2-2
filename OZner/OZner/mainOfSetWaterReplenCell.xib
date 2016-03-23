@@ -333,8 +333,8 @@
                                             <constraint firstAttribute="height" constant="47" id="6Kh-KX-r7G"/>
                                         </constraints>
                                     </button>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="uNn-mq-pRp">
-                                        <rect key="frame" x="350" y="17" width="10" height="13"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="uNn-mq-pRp">
+                                        <rect key="frame" x="350" y="-6.5" width="10" height="13"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

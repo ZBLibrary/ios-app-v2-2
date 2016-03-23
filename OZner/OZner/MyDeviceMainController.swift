@@ -353,7 +353,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
            //
             if myCurrentDevice != nil
             {
-                waterReplenishMainView?.initView(myCurrentDevice!, View: self.view)
+                waterReplenishMainView?.initView(myCurrentDevice!)
             }
 
         default://"default"

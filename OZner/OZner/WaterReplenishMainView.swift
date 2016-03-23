@@ -50,7 +50,6 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     ]
     //设备
     private var WaterReplenishDevice:WaterReplenishmentMeter?
-    private var currentPart=""
     func personImgTapClick(sender: UITapGestureRecognizer) {
         let touchPoint=sender.locationInView(personBgImgView)
         if stateOfView>0//当前页是局部器官图二级界面
@@ -113,7 +112,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     private let color_blue=UIColor(red: 61/255.0, green: 127/255.0, blue: 250/255.0, alpha: 1)
     private let color_yellow=UIColor(red: 251/255.0, green: 125/255.0, blue: 67/255.0, alpha: 1)
     //当前选中部位
-    private var currentBodyPart=BodyParts.Face
+    private var currentBodyPart:BodyParts=BodyParts.Face
     private var stateOfView = -1{
         didSet{
             ClickAlertLabel.hidden=true
@@ -140,6 +139,8 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 resultStateLabel.text=""
                 
             case 2:
+                //下载水分数据
+                downWaterTypeData()
                 alertBeforeTest.hidden=false
                 TestingIcon.hidden=false
                 alertBeforeTest.text="检测中"
@@ -147,22 +148,125 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 resultStateLabel.text=""
                 //检测转圈动画
                 isStopAnimation=false
-                startAnimation(0)
+                startAnimations(0)
             case 3:
                 resultValueContainView.hidden=false
-                print(WaterReplenishDevice!.status.oil)
-                print(WaterReplenishDevice!.status.moisture)
-                _=100*WaterReplenishDevice!.status.oil/1200
+                print(WaterReplenishDevice!.status.oil)//油分
+                print(WaterReplenishDevice!.status.moisture)//水分
+                let testResult=getNeedOilAndWaterValue(WaterReplenishDevice!.status.oil)
+                stateOfTestLabel.text=testResult.moistureValue
+                valueOfTestLabel.text=WaterType[testResult.TypeIndex]
+                resultStateLabel.text=WaterStateArr[currentBodyPart]![testResult.TypeIndex]
+                skinButton.titleLabel?.text="您的肤质   "+SkinType[testResult.skinTypeIndex]
+                uploadSKinData(testResult.oilValue, snumber: testResult.moistureValue)
                 
             default:
                 break
             }
         }
     }
+    //服务器部位字段 action:  Face ，Eyes ,Hands, Neck
+    private func downWaterTypeData()
+    {
+        
+        //下载周月数据
+        MBProgressHUD.showHUDAddedTo(self, animated: true)
+        let deviceService=DeviceWerbservice()
+        deviceService.GetTimesCountBuShui(WaterReplenishDevice?.identifier, action: currentBodyPart.rawValue) { (Times, status) -> Void in
+            MBProgressHUD.hideHUDForView(self, animated: true)
+            if(status.networkStatus == kSuccessStatus)
+            {
+                print(Times)
+                //更新数据
+                self.resultValueLabel.text="上一次检测 40%  |  平均值 33.3%（3次）"
+                
+                print(Times)
+            }
+        }
+        
+    }
+    //水分类型描述
+    private let WaterStateArr=[
+        BodyParts.Face:["脸颊两边皮肤干燥起皮  T区油腻毛孔粗大痘痘横行 脸部亟需补水哦","皮肤不油也不干 脸部缺水问题暂时得到缓解","脸部细腻红润有光泽 补水到位 面色也不一样哦"],
+        BodyParts.Eyes:["眼部肌肤干燥，易出现皱纹及水肿。此处皮肤一旦松弛较难恢复原状态。补水是延缓衰老的根本保障","眼部现在的皮肤水分属于正常水平，但是略显疲惫，请注意保湿！","眼部现在的肌肤已经喝饱了水分！要继续保持哦！"],
+        BodyParts.Hands:["手部干燥细纹也跑出来啦 手指的肉刺也变多 需要赶快补充水分哦","手部现在的肌肤水份得到补充 果然光滑许多","手部润滑有弹性 喝饱水的肌肤果然让人爱不释手呢 "],
+        BodyParts.Neck:["颈部组织薄弱，油脂分泌少，水分难以保持，皱纹容易产生，补水显得格外重要","颈部水份已达标，别让颈纹泄露了你的年龄","颈部现在很水润，但不要松懈哦"]
+    ]
+    //通过adc数据得到油分，水分，和肤质类型
+    private let oilArr=[0.036,
+        0.036,
+        0.0355,
+        0.035,
+        0.0345,
+        0.034,
+        0.0335,
+        0.033,
+        0.0325,
+        0.032,
+        0.0315,
+        0.031,
+        0.0305,
+        0.03,
+        0.0295,
+        0.029]
+    private let moistureArr=[0.082,
+        0.082,
+        0.081,
+        0.08,
+        0.079,
+        0.079,
+        0.078,
+        0.078,
+        0.078,
+        0.076,
+        0.0755,
+        0.075,
+        0.0745,
+        0.074,
+        0.0735,
+        0.073]
+    private let SkinType=["干性","中性","油性"]
+    private let WaterType=["干燥","正常","水润"]
+    private let WaterTypeValue=[BodyParts.Face:[32,42],
+                           BodyParts.Eyes:[35,45],
+                           BodyParts.Hands:[30,38],
+                           BodyParts.Neck:[35,45]
+    ]
+    private func getNeedOilAndWaterValue(adc:Float)->(oilValue:String,moistureValue:String,TypeIndex:Int,skinTypeIndex:Int)
+    {
+        var tmpIndex=Int(adc-1)/50-3
+        tmpIndex=tmpIndex<0 ? 0:tmpIndex
+        tmpIndex=tmpIndex>15 ? 15:tmpIndex
+        var tmpOil=Int(Float(oilArr[tmpIndex])*adc)
+        tmpOil=tmpOil>=100 ? 99:tmpOil
+        var tmpmoisture=Int(Float(moistureArr[tmpIndex])*adc)
+        tmpmoisture=tmpmoisture>=100 ? 99:tmpmoisture
+        //肤质类型
+        var tmpTypeindex=1
+        
+        if tmpmoisture<WaterTypeValue[currentBodyPart]![0]
+        {
+            tmpTypeindex=0
+        }
+        else if tmpmoisture>WaterTypeValue[currentBodyPart]![1]
+        {
+            tmpTypeindex=2
+        }
+        var tmpskinTypeIndex=1
+        if tmpOil<12
+        {
+            tmpskinTypeIndex=0
+        }
+        else if tmpOil>20
+        {
+            tmpskinTypeIndex=2
+        }
+        return ("\(Int(tmpOil))","\(Int(tmpmoisture))",tmpTypeindex,tmpskinTypeIndex)
+    }
     //private getStateOf
     //检测中动画效果
     private var isStopAnimation=false
-    private func startAnimation(angle:CGFloat)
+    private func startAnimations(angle:CGFloat)
     {
         let endAngle:CGAffineTransform = CGAffineTransformMakeRotation(angle*CGFloat(M_PI/180.0))
         UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
@@ -171,11 +275,11 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
             }, completion: {(finished:Bool) in
                 if self.isStopAnimation==false
                 {
-                    self.startAnimation(angle+30)
+                    self.startAnimations(angle+30)
                 }
         })
-        
     }
+
     private let personImgArray=[
         SexType.WoMan:["womanOfReplensh1","womanOfReplensh2","womanOfReplensh3","womanOfReplensh4","womanOfReplensh5"],
         SexType.Man:["manOfReplensh1","manOfReplensh2","manOfReplensh3","manOfReplensh4","manOfReplensh5"]
@@ -187,8 +291,8 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
             stateOfView=0
         }
     }
-    
-    func updateViewzb(Sex Sex:SexType)//,deviceTitle:String,skinVlue:Float)
+    //更新性别
+    func updateViewzb(Sex Sex:SexType)
     {
         currentSex=Sex
         setNeedsLayout()
@@ -215,7 +319,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         layoutIfNeeded()
     }
     //初始化视图
-    func initView(currentDevice:OznerDevice,View:UIView)
+    func initView(currentDevice:OznerDevice)
     {
         WaterReplenishDevice=currentDevice as? WaterReplenishmentMeter
         //设置电量
@@ -248,32 +352,21 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         //设置性别
         let tmpSex=WaterReplenishDevice?.settings.get("sex", default: "女") as! String
         updateViewzb(Sex: tmpSex=="女" ? SexType.WoMan:SexType.Man)
-        //下载皮肤类型
-        DownSkinType(View)
+       
     }
-    //服务器部位字段 action:  Face ，Eyes ,Hands, Neck
-    private func DownSkinType(View:UIView)
+    
+    
+    
+    //上传检测数据
+    private func uploadSKinData(ynumber:String,snumber:String)
     {
-        MBProgressHUD.showHUDAddedTo(View, animated: true)
-        
-        skinButton.titleLabel?.text="您的肤质        无"
-        
-        //下载周月数据
         let deviceService=DeviceWerbservice()
-        deviceService.GetBuShuiFenBu(WaterReplenishDevice?.identifier, action: "Face", returnBlock: {(dicData, status) -> Void in
-            MBProgressHUD.hideHUDForView(View, animated: true)
+        deviceService.UpdateBuShuiYiNumber(WaterReplenishDevice?.identifier, ynumber: ynumber, snumber: snumber, action: currentBodyPart.rawValue, returnBlock: { (status) in
             if(status.networkStatus == kSuccessStatus)
             {
-                print(dicData)
+                print("上传检测肤质成功")
             }
         })
-        deviceService.GetTimesCountBuShui(WaterReplenishDevice?.identifier, action: "Face") { (Times, status) -> Void in
-            if(status.networkStatus == kSuccessStatus)
-            {
-                print(Times)
-            }
-        }
-        
     }
     private func removeAdressOfDeviceName(tmpName:String)->String
     {
