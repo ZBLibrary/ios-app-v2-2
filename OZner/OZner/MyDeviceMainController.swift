@@ -496,7 +496,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         case 0://电源
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             waterPur.status.setPower(!waterPur.status.power, callback: { (error:NSError!) -> Void in
-                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
                 //MBProgressHUD.hideHUDForView(self.view, animated: true)
             })
             break
@@ -514,7 +514,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             waterPur.status.setCool(!waterPur.status.cool, callback: { (error:NSError!) -> Void in
                 //MBProgressHUD.hideHUDForView(self.view, animated: true)
-                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
             })
             break
         case 2://加热
@@ -530,8 +530,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             }
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             waterPur.status.setHot(!waterPur.status.hot, callback: { (error:NSError!) -> Void in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
-                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
             })
             break
         default:
@@ -1304,7 +1303,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 if headView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
                 {
                     initBigClickButton()
-                    StopLoadAnimal()
+                    //StopLoadAnimal()
                 }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
                 {
                     waterPurFooter.updateSwitchState()
@@ -1318,7 +1317,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                         
                         
                     }
-                    StopLoadAnimal()
+                    //StopLoadAnimal()
                 }
             }
             else if (device.connectStatus() == Connecting)
@@ -1733,14 +1732,14 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             print(!bigFooterViews[0].ison)
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             airPurifier_MxChip.status.setPower(!bigFooterViews[0].ison, callback: { (error:NSError!) -> Void in
-                if error==nil
-                {
-               self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
-                }
-                else
-                {
-                    MBProgressHUD.hideHUDForView(self.view, animated: true)
-                }
+//                if error==nil
+//                {
+               self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
+//                }
+//                else
+//                {
+//                    MBProgressHUD.hideHUDForView(self.view, animated: true)
+//                }
             })
             
             
@@ -1773,20 +1772,20 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             //            break
         case 3:
             //童锁
-            
+            print(!bigFooterViews[2].ison)
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             airPurifier_MxChip.status.setLock(!bigFooterViews[2].ison, callback: {
                 (error:NSError!) in
-                if error==nil
-                {
+//                if error==nil
+//                {
+                
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
                     
-                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
-                    
-                }
-                else
-                {
-                    MBProgressHUD.hideHUDForView(self.view, animated: true)
-                }
+//                }
+//                else
+//                {
+//                    MBProgressHUD.hideHUDForView(self.view, animated: true)
+//                }
             })
             //bigFooterViews[2].ison = !bigFooterViews[2].ison
             break
@@ -1810,7 +1809,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     }
     func StopLoadAnimal()
     {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        MBProgressHUD.hideHUDForView(self.view, animated: false)
     }
     //风速模式选择函数
     func selectWhichModelbig(button:UIButton)
