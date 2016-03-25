@@ -42,11 +42,11 @@ class WaterReplenishDetailTableViewController: UITableViewController {
         let tmpIndex=[BodyParts.Face:0,BodyParts.Eyes:1,BodyParts.Hands:2,BodyParts.Neck:3][currentBodyPart]!
         var dataDic=[String:HeadOfWaterReplenishStruct]()
         
-//        for i in 0...3
-//        {
-//            let tmpStru=HeadOfWaterReplenishStruct(skinValueOfToday: 30*i, lastSkinValue: Double(71*i*i*i%100), averageSkinValue: Double(71*i*i*i%100), checkTimes: i*i*12+i*5)
-//            dataDic["\(i)"]=tmpStru
-//        }
+        for i in 0...3
+        {
+            let tmpStru=HeadOfWaterReplenishStruct(skinValueOfToday: 30*i, lastSkinValue: Double(71*i*i*i%100), averageSkinValue: Double(71*i*i*i%100), checkTimes: i*i*12+i*5)
+            dataDic["\(i)"]=tmpStru
+        }
         //初始化传入数据
         HeadView.dataDic=dataDic
         HeadView.currentOrgan=tmpIndex
@@ -54,21 +54,21 @@ class WaterReplenishDetailTableViewController: UITableViewController {
         let weekArray=NSMutableDictionary()
         let monthArray=NSMutableDictionary()
         
-//        for j in 0...3
-//        {
-//            let tmpArr=NSMutableArray()
-//            for i in 0...30
-//            {
-//                let record=CupRecord()
-//                record.TDS_Bad=Int32((i*21+j*i*i*8+13*j+37)%50+50)
-//                record.TDS_Good=Int32((i*11+j*i*i*13+7*j+31)%50+0)
-//                record.start=NSDate(timeIntervalSince1970: (NSDate().timeIntervalSince1970+NSTimeInterval(3600*24*i)))
-//                tmpArr.addObject(record)
-//                
-//            }
-//            weekArray.setValue(tmpArr, forKey: "\(j)")
-//            monthArray.setValue(tmpArr, forKey: "\(j)")
-//        }
+        for j in 0...3
+        {
+            let tmpArr=NSMutableArray()
+            for i in 0...30
+            {
+                let record=CupRecord()
+                record.TDS_Bad=Int32((i*21+j*i*i*8+13*j+37)%50+50)
+                record.TDS_Good=Int32((i*11+j*i*i*13+7*j+31)%50+0)
+                record.start=NSDate(timeIntervalSince1970: (NSDate().timeIntervalSince1970+NSTimeInterval(3600*24*i)))
+                tmpArr.addObject(record)
+                
+            }
+            weekArray.setValue(tmpArr, forKey: "\(j)")
+            monthArray.setValue(tmpArr, forKey: "\(j)")
+        }
         //初始化传入数据
         FooterView.updateCellData(weekArray, monthArr: monthArray, Organ: tmpIndex)
     }

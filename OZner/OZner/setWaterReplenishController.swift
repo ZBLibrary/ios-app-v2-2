@@ -63,7 +63,9 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
             self.navigationController?.popViewControllerAnimated(true)
             return
         }
+        //airMx.settings.name=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
         myCurrentDevice?.settings.name=settingDic?.objectForKey("deviceName") as! String
+        print(settingDic?.objectForKey("deviceAttrib"))
         myCurrentDevice?.settings.setValue(settingDic?.objectForKey("deviceAttrib"), forKey: "deviceAttrib")
         myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime1"), forKey: "checktime1")
         myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime2"), forKey: "checktime2")

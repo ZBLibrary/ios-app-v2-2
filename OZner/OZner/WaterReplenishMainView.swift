@@ -66,18 +66,22 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 stateOfView=1
                 alertBeforeTest.text="请将补水仪放置脸部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![1])
+                currentBodyPart=BodyParts.Face
             case isInside(locaArr![1],touchPoint):
                 stateOfView=1
                 alertBeforeTest.text="请将补水仪放置眼部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![2])
+                currentBodyPart=BodyParts.Eyes
             case isInside(locaArr![2],touchPoint):
                 stateOfView=1
                 alertBeforeTest.text="请将补水仪放置手部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![3])
+                currentBodyPart=BodyParts.Hands
             case isInside(locaArr![3],touchPoint):
                 stateOfView=1
                 alertBeforeTest.text="请将补水仪放置颈部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![4])
+                currentBodyPart=BodyParts.Neck
             default:
                 print("点击了其它区域")
                 break
@@ -154,8 +158,8 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 print(WaterReplenishDevice!.status.oil)//油分
                 print(WaterReplenishDevice!.status.moisture)//水分
                 let testResult=getNeedOilAndWaterValue(WaterReplenishDevice!.status.oil)
-                stateOfTestLabel.text=testResult.moistureValue
-                valueOfTestLabel.text=WaterType[testResult.TypeIndex]
+                valueOfTestLabel.text=testResult.moistureValue
+                stateOfTestLabel.text=WaterType[testResult.TypeIndex]
                 resultStateLabel.text=WaterStateArr[currentBodyPart]![testResult.TypeIndex]
                 skinButton.titleLabel?.text="您的肤质   "+SkinType[testResult.skinTypeIndex]
                 uploadSKinData(testResult.oilValue, snumber: testResult.moistureValue)
@@ -227,6 +231,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         0.073]
     private let SkinType=["干性","中性","油性"]
     private let WaterType=["干燥","正常","水润"]
+    //water,取值范围
     private let WaterTypeValue=[BodyParts.Face:[32,42],
                            BodyParts.Eyes:[35,45],
                            BodyParts.Hands:[30,38],
@@ -360,6 +365,8 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     //上传检测数据
     private func uploadSKinData(ynumber:String,snumber:String)
     {
+        print(ynumber)
+        print(snumber)
         let deviceService=DeviceWerbservice()
         deviceService.UpdateBuShuiYiNumber(WaterReplenishDevice?.identifier, ynumber: ynumber, snumber: snumber, action: currentBodyPart.rawValue, returnBlock: { (status) in
             if(status.networkStatus == kSuccessStatus)

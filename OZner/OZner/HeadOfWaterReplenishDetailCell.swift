@@ -78,6 +78,9 @@ class HeadOfWaterReplenishDetailCell: UITableViewCell {
             if isFistLoad==false{
                 delegate?.setCurrentOrgan(currentOrgan)
             }
+            else{
+                isFistLoad=false
+            }
             
             setNeedsLayout()
             layoutIfNeeded()

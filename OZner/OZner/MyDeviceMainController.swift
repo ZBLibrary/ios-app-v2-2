@@ -1303,7 +1303,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 if headView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
                 {
                     initBigClickButton()
-                    //StopLoadAnimal()
+                    StopLoadAnimal()
                 }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
                 {
                     waterPurFooter.updateSwitchState()
@@ -1317,7 +1317,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                         
                         
                     }
-                    //StopLoadAnimal()
+                    StopLoadAnimal()
                 }
             }
             else if (device.connectStatus() == Connecting)

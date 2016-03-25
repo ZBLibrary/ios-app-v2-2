@@ -326,7 +326,7 @@
     
     return [WebAssistant execNormalkRequest:entrance bodyBlock:^(NSDictionary *dicBody, StatusManager *status) {
         NSLog(@"%@",dicBody);
-        handle(nil,status);
+        handle(@"",status);
     } failedBlock:^(StatusManager *status) {
         handle(nil,status);
     }];
