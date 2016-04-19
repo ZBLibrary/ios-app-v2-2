@@ -39,7 +39,7 @@
 //获取水机滤芯服务到期时间
 - (ASIFormDataRequest*)GetMachineLifeOutTime:(NSString*)mac  returnBlock:(void(^)(NSString* endTime,NSString* nowTime, StatusManager* status))handle;
 //检查水机的功能种类
-- (ASIFormDataRequest*)GetMachineType:(NSString*)type returnBlock:(void(^)(NSString* MachineType,NSString* Attr, StatusManager* status))handle;
+- (ASIFormDataRequest*)GetMachineType:(NSString*)type returnBlock:(void(^)(NSString* MachineType,NSString* Attr,NSString* BuyUrl, StatusManager* status))handle;
 
 //更新补水仪的数值  /OznerDevice/UpdateBuShuiYiNumber Face ，Eyes ,Hands, Neck
 - (ASIFormDataRequest*)UpdateBuShuiYiNumber:(NSString*)mac ynumber:(NSString*)ynumber snumber:(NSString*)snumber action:(NSString*)action returnBlock:(void(^)(StatusManager* status))handle;

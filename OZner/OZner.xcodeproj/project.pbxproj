@@ -490,6 +490,7 @@
 		8D0C3E6D1C58EE4000EFBB22 /* MyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */; };
 		8D2B50E11C7C43840019DE11 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */; };
 		8D320BD01CC5D02D00DAC59A /* BluetoothIOMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */; };
+		8D320BD41CC61AD000DAC59A /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */; };
 		8D3B60E71C929C0F007857E9 /* CALayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */; };
 		8D4354F61C75A049007F83DA /* WaterPurTDSDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354F51C75A049007F83DA /* WaterPurTDSDetailController.swift */; };
 		8D4354F91C75A410007F83DA /* WaterPurFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354F71C75A410007F83DA /* WaterPurFooterCell.swift */; };
@@ -1555,6 +1556,7 @@
 		8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		8D320BCE1CC5D02D00DAC59A /* BluetoothIOMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIOMgr.h; sourceTree = "<group>"; };
 		8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIOMgr.m; sourceTree = "<group>"; };
+		8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+extension.swift"; sourceTree = "<group>"; };
 		8D4354F51C75A049007F83DA /* WaterPurTDSDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailController.swift; sourceTree = "<group>"; };
 		8D4354F71C75A410007F83DA /* WaterPurFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurFooterCell.swift; sourceTree = "<group>"; };
@@ -2946,6 +2948,7 @@
 		42A7BB561C0C24BF008DB6E5 /* CustomFile */ = {
 			isa = PBXGroup;
 			children = (
+				8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */,
 				8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */,
 				8DFB39341C57710B00A1641C /* CommonValue.swift */,
 				8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */,
@@ -5115,6 +5118,7 @@
 				8DBAC4901C91B11B007CA1AC /* SkinCenterTableViewCell.swift in Sources */,
 				8DA405CA1C8441B500AD5E5E /* ZXPerspectiveTransform.m in Sources */,
 				523DC3421C175E1B00595099 /* XMProgressHUD.m in Sources */,
+				8D320BD41CC61AD000DAC59A /* SCLAlertView.swift in Sources */,
 				8DA405551C8441B500AD5E5E /* ZXAztecWriter.m in Sources */,
 				8D438E971C9AB44F0060896D /* WaterReplenishmentMeter.m in Sources */,
 				8DA405821C8441B500AD5E5E /* ZXDecoderResult.m in Sources */,

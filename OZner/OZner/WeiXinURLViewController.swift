@@ -37,7 +37,18 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
     }
+    var goUrlOfOut:String?
     
+    convenience  init(goUrl:String) {
+        
+        var nibNameOrNil = String?("WeiXinURLViewController")
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+        {
+            nibNameOrNil = nil
+        }
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        self.goUrlOfOut=goUrl
+    }
     required init(coder aDecoder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
@@ -123,15 +134,27 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
  
         case weiXinUrl.WaterLvXinUrl1://365安心服务
             titleOfURL.text="净水器滤芯"
-            tmpURL = GoUrlBefore("http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=9")
+            var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=9"
+            let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
+            tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
+            tmpURL = GoUrlBefore(tmpUrl)
+            
+            
             break
         case weiXinUrl.WaterLvXinUrl2://迷你净水器滤芯购买链接
             titleOfURL.text="净水器滤芯"
-            tmpURL = GoUrlBefore("http://www.oznerwater.com/lktnew/wap/shopping/confirmOrderFromQrcode.aspx?gid=68")
+            var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=68"
+            let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
+            tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
+            tmpURL = GoUrlBefore(tmpUrl)
+           
             break
         case weiXinUrl.WaterLvXinUrl3://台式净水器滤芯购买链接
             titleOfURL.text="净水器滤芯"
-            tmpURL = GoUrlBefore("http://www.oznerwater.com/lktnew/wap/shopping/confirmOrderFromQrcode.aspx?gid=69")
+            var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=69"
+            let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
+            tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
+            tmpURL = GoUrlBefore(tmpUrl)
             break
         case weiXinUrl.WaterReplenishOperation://补水仪使用说明
             titleOfURL.text="补水仪使用说明"

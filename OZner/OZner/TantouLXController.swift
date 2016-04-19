@@ -13,6 +13,8 @@ class TantouLXController: UIViewController {
     //当前选中的device
     var myCurrentDevice:OznerDevice?
     var mainView:tantouLvXinView!
+    var buyWaterLVXinUrl:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,7 +91,8 @@ class TantouLXController: UIViewController {
     }
     func buyLX()
     {
-        let buyLX=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
+    
+        let buyLX=WeiXinURLViewController(goUrl: buyWaterLVXinUrl!)
         let witchUrl=weiXinUrlNamezb()
         buyLX.title=witchUrl.byTapLX
         if myCurrentDevice != nil

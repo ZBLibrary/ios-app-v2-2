@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+let TDS_Good_zb:Int = 50
+let TDS_Middle_zb:Int = 200
+
 //主要颜色
 let color_main=UIColor(red: 74/255, green: 180/255, blue: 233/255, alpha: 1)
 let color_gray=UIColor(red: 149/255, green: 149/255, blue: 149/255, alpha: 1)
@@ -67,13 +70,13 @@ class getshareImageClass:NSObject
         {
             switch value
             {
-            case 0..<50:
+            case 0..<TDS_Good_zb:
                 shareView.share_stateImage.image=UIImage(named: "share_TDS3")
                 break
-            case 50..<200:
+            case TDS_Good_zb..<TDS_Middle_zb:
                 shareView.share_stateImage.image=UIImage(named: "share_TDS2")
                 break
-            case 200..<100000000:
+            case TDS_Middle_zb..<100000000:
                 shareView.share_stateImage.image=UIImage(named: "share_TDS1")
                 break
             default:

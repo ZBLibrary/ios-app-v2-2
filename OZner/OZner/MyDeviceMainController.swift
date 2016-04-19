@@ -85,7 +85,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     var isNeedDownLXDate:Bool = false
     //水机设备类型
     var WaterTypeOfService:String = ""
-    
+    //水机设备购买地址
+    var BuyWaterUrlString:String = ""
     
     //-------------------new-------------
     //设备名称
@@ -116,6 +117,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         else if ( WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true){
             //净水器滤芯详情页
             let controller=TantouLXController()
+            controller.buyWaterLVXinUrl=BuyWaterUrlString
             controller.myCurrentDevice = self.myCurrentDevice as! WaterPurifier
             self.navigationController?.pushViewController(controller, animated: true)
         }
@@ -494,6 +496,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         switch button.tag
         {
         case 0://电源
+            
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             waterPur.status.setPower(!waterPur.status.power, callback: { (error:NSError!) -> Void in
                 self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
@@ -705,10 +708,26 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                                 break
                             }
                             self.lvxinState.text=value<=30 ? "请及时更换滤芯":"滤芯状态"
+                            
                             self.lvxinValue.text = "\(value<0 ? 0:value)%"
                             if self.lvxinValue.text=="0%"&&(endTime-nowTime)>0
                             {
                                 self.lvxinValue.text="1%"
+                            }
+                            if value<=30
+                            {
+                                let alertView=SCLAlertView()
+                                alertView.addButton("现在去购买滤芯", action: {
+                                    //提到购买滤芯的页面
+                                    let buyLX=WeiXinURLViewController(goUrl: self.BuyWaterUrlString)
+                                    let witchUrl=weiXinUrlNamezb()
+                                    
+                                    buyLX.title=witchUrl.WaterLvXinUrl1//1,2,3
+                                    
+                                    self.presentViewController(buyLX, animated: true, completion: nil)
+                                })
+                                alertView.addButton("我知道了", action:{})
+                                alertView.showNotice("温馨提示", subTitle: "你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用")
                             }
                         }
                         else
@@ -730,11 +749,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             })
             
             //获取水机设备制冷是否可用和设备类型
-            werbservice.GetMachineType(myCurrentDevice?.identifier, returnBlock: { (waterType:String!, hotandcoll:String!, status:StatusManager!) -> Void in
+            werbservice.GetMachineType(myCurrentDevice?.identifier, returnBlock: { (waterType:String!, hotandcoll:String!,buyUrl:String!, status:StatusManager!) -> Void in
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
                 if(status.networkStatus == kSuccessStatus)
                 {
                     self.WaterTypeOfService=waterType
+                    self.BuyWaterUrlString=buyUrl
                     self.waterPurFooter.ishaveCoolAblity=hotandcoll.containsString("cool:true")
                     self.waterPurFooter.ishaveHotAblity=hotandcoll.containsString("hot:true")
                    

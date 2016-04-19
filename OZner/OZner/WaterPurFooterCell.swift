@@ -10,18 +10,21 @@ import UIKit
 
 class WaterPurFooterCell: UITableViewCell {
 
-    //电源 0,3 ：0关，3开
-    @IBOutlet var powerLabel: UILabel!
-    @IBOutlet var powerImg: UIImageView!
-    @IBOutlet var powerButton: UIButton!
-    //制冷 1,4
-    @IBOutlet var coolLabel: UILabel!
-    @IBOutlet var coolImg: UIImageView!
-    @IBOutlet var coolButton: UIButton!
+    //制冷 1,4 ：
+    @IBOutlet weak var coolLabel: UILabel!
+    @IBOutlet weak var coolImg: UIImageView!
+    @IBOutlet weak var coolButton: UIButton!
+
     //加热 2,5
-    @IBOutlet var hotLabel: UILabel!
-    @IBOutlet var hotImg: UIImageView!
-    @IBOutlet var hotButton: UIButton!
+    @IBOutlet weak var hotLabel: UILabel!
+    @IBOutlet weak var hotImg: UIImageView!
+    @IBOutlet weak var hotButton: UIButton!
+
+    //电源 0,3 ：0关，3开
+    @IBOutlet weak var powerLabel: UILabel!
+    @IBOutlet weak var powerImg: UIImageView!
+    @IBOutlet weak var powerButton: UIButton!
+
     
     let color_normol=UIColor(red: 177.0/255.0, green: 178.0/255.0, blue: 179.0/255.0, alpha: 1)
     let color_select=UIColor(red: 63.0/255.0, green: 135.0/255.0, blue: 237.0/255.0, alpha: 1)

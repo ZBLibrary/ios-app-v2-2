@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -32,13 +32,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVC-w4-WjP">
                                         <rect key="frame" x="0.0" y="36" width="60" height="88"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_power_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="jTF-ua-2YI">
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_zhileng_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="jTF-ua-2YI">
                                                 <rect key="frame" x="0.0" y="28" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="NgJ-t8-LJk"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电源" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F91-Xr-8lW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="制冷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F91-Xr-8lW">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="13"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="13" id="cR0-h9-2SF"/>
@@ -81,13 +81,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCq-f2-smo">
                                         <rect key="frame" x="0.0" y="36" width="60" height="88"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_jiare_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-lv-EZb">
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_power_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-lv-EZb">
                                                 <rect key="frame" x="0.0" y="28" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="8XU-iB-9qe"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加热" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KG-8f-qna">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电源" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KG-8f-qna">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="13"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="13" id="3Zq-Xd-zGP"/>
@@ -130,13 +130,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5s1-7N-LXh">
                                         <rect key="frame" x="0.0" y="36" width="60" height="88"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_zhileng_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="F9B-Mk-YMz">
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_jiare_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="F9B-Mk-YMz">
                                                 <rect key="frame" x="0.0" y="28" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="WYj-zU-lpm"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="制冷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-Vn-AqE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加热" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-Vn-AqE">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="13"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="13" id="YCf-qT-tAT"/>
@@ -204,17 +204,17 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="coolButton" destination="tbC-LW-PAL" id="6Mv-23-6RU"/>
-                <outlet property="coolImg" destination="F9B-Mk-YMz" id="W1I-9D-ax9"/>
-                <outlet property="coolLabel" destination="eaH-Vn-AqE" id="53h-ri-5hy"/>
-                <outlet property="hotButton" destination="B4n-Td-7L6" id="GyI-N4-egh"/>
-                <outlet property="hotImg" destination="fcB-lv-EZb" id="gNs-17-63N"/>
-                <outlet property="hotLabel" destination="5KG-8f-qna" id="ZHY-SS-dBM"/>
-                <outlet property="powerButton" destination="ghh-mc-Jew" id="jqX-T8-han"/>
-                <outlet property="powerImg" destination="jTF-ua-2YI" id="mgQ-uY-pzM"/>
-                <outlet property="powerLabel" destination="F91-Xr-8lW" id="YtG-to-2bW"/>
+                <outlet property="coolButton" destination="ghh-mc-Jew" id="MNR-sk-5nc"/>
+                <outlet property="coolImg" destination="jTF-ua-2YI" id="X2E-ka-2hu"/>
+                <outlet property="coolLabel" destination="F91-Xr-8lW" id="KTW-Dh-4hW"/>
+                <outlet property="hotButton" destination="tbC-LW-PAL" id="DR8-0a-LGy"/>
+                <outlet property="hotImg" destination="F9B-Mk-YMz" id="i3T-AA-Mr6"/>
+                <outlet property="hotLabel" destination="eaH-Vn-AqE" id="Fbz-0Z-ekd"/>
+                <outlet property="powerButton" destination="B4n-Td-7L6" id="Elk-CP-7F0"/>
+                <outlet property="powerImg" destination="fcB-lv-EZb" id="G2s-m8-hqv"/>
+                <outlet property="powerLabel" destination="5KG-8f-qna" id="8cZ-OR-mZs"/>
             </connections>
-            <point key="canvasLocation" x="835.5" y="275"/>
+            <point key="canvasLocation" x="670.5" y="271"/>
         </tableViewCell>
     </objects>
     <resources>
