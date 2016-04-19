@@ -56,7 +56,7 @@
 #import "ShareManager.h"
 #import "WXApi.h"
 #import "AFNetworking.h"
-#import "UIImageView+WebCache.h"
+//#import "UIImageView+WebCache.h"
 #import "Masonry.h"
 #import "ChatViewController.h"
 #import "BPush.h"

@@ -331,34 +331,37 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         let werbservice = MyInfoWerbservice()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        werbservice.getUserNickImage([TXLfriends], returnBlock: { (responseObject:NSMutableDictionary!,statusManager: StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if statusManager.networkStatus==kSuccessStatus
-            {
-                print(responseObject)
-                let state=responseObject.objectForKey("state") as! Int
-                if state>0
+        werbservice.getUserNickImage([TXLfriends], returnBlock: { [weak self](responseObject:NSMutableDictionary!,statusManager: StatusManager!) -> Void in
+            
+            if let strongSelf=self{
+                MBProgressHUD.hideHUDForView(strongSelf.view, animated: true)
+                if statusManager.networkStatus==kSuccessStatus
                 {
-                    
-                    let friends=responseObject.objectForKey("data") as! NSMutableArray
-                    for i in 0...(friends.count-1)
+                    let state=responseObject.objectForKey("state") as! Int
+                    if state>0
                     {
-                        var friendtmp=myFriend()
-                        friendtmp.isExist=true
-                        friendtmp.status=friends[i].objectForKey("Status") as! Int
-                        if (friendtmp.status+10014)==0
+                        
+                        let friends=responseObject.objectForKey("data") as! NSMutableArray
+                        for i in 0...(friends.count-1)
                         {
-                            continue
+                            var friendtmp=myFriend()
+                            friendtmp.isExist=true
+                            friendtmp.status=friends[i].objectForKey("Status") as! Int
+                            if (friendtmp.status+10014)==0
+                            {
+                                continue
+                            }
+                            friendtmp.imgUrl=friends[i].objectForKey("headimg") as! String
+                            friendtmp.Name=friends[i].objectForKey("nickname") as! String
+                            friendtmp.phone=friends[i].objectForKey("mobile") as! String
+                            
+                            friendtmp.Name=friendtmp.Name.characters.count==0 ? friendtmp.phone: friendtmp.Name
+                            
+                            strongSelf.bookPhone.append(friendtmp)
                         }
-                        friendtmp.imgUrl=friends[i].objectForKey("headimg") as! String
-                        friendtmp.Name=friends[i].objectForKey("nickname") as! String
-                        friendtmp.phone=friends[i].objectForKey("mobile") as! String
-                        
-                        friendtmp.Name=friendtmp.Name.characters.count==0 ? friendtmp.phone: friendtmp.Name
-                        
-                        self.bookPhone.append(friendtmp)
+                        strongSelf.tableView.reloadData()
                     }
-                    self.tableView.reloadData()
+                    
                 }
                 
             }

@@ -40,6 +40,7 @@ class SkinQueryTableViewController: UITableViewController {
     func backClick()
     {
         self.navigationController?.popViewControllerAnimated(true)
+        
     }
     //购买精华液
     func bugEssenceClick()

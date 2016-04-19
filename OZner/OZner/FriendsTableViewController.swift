@@ -602,10 +602,11 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         }
         if tmpRank.Icon != ""
         {
-           
-            TdsRankcell.rankHead.sd_setImageWithURL(NSURL(string: tmpRank.Icon), placeholderImage: UIImage(named: "DefaultHeadImage"), completed: { (img:UIImage!, err:NSError!, sd:SDImageCacheType, url:NSURL!) -> Void in
-                TdsRankcell.rankHead.image=img
-            })         }
+           TdsRankcell.rankHead.image=UIImage(data: NSData(contentsOfURL: NSURL(string: tmpRank.Icon)!)!)
+//            TdsRankcell.rankHead.sd_setImageWithURL(NSURL(string: tmpRank.Icon), placeholderImage: UIImage(named: "DefaultHeadImage"), completed: { (img:UIImage!, err:NSError!, sd:SDImageCacheType, url:NSURL!) -> Void in
+//                TdsRankcell.rankHead.image=img
+//            })         
+        }
         
         TdsRankcell.selectionStyle=UITableViewCellSelectionStyle.None
         return TdsRankcell

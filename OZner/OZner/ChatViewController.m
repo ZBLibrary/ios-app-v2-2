@@ -21,7 +21,7 @@
 #import "BPush.h"
 #import "AFNetworking.h"
 #import "NSStringAdditions.h"
-#import "UIImageView+WebCache.h"
+//#import "UIImageView+WebCache.h"
 
 //UITabBar *NewTabBar;
 @interface ChatViewController ()<XMMessageDelegate,XMChatBarDelegate,XMAVAudioPlayerDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -107,12 +107,12 @@ NSString * kSelfThumb  ;//会员头像
         if ([[responseObject objectForKey:@"result"] objectForKey:@"count"]==0) {
             [MBProgressHUD hideHUDForView:self.view animated:true];
         }
-        else
+        else if ([(NSArray*)[[responseObject objectForKey:@"result"] objectForKey:@"list"] count]>0)
         {
-        NSDictionary* asd = [[[responseObject objectForKey:@"result"] objectForKey:@"list"] objectAtIndex:0];
-        customerid_News=[[asd objectForKey:@"customer_id"] intValue];
-        kSelfName=[asd objectForKey:@"customer_name"];
-        [self userLoginFunc];
+            NSDictionary* asd = [[[responseObject objectForKey:@"result"] objectForKey:@"list"] objectAtIndex:0];
+            customerid_News=[[asd objectForKey:@"customer_id"] intValue];
+            kSelfName=[asd objectForKey:@"customer_name"];
+            [self userLoginFunc];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

@@ -80,48 +80,51 @@ class MyInfoViewController: UIViewController {
         //get_Phone()
         let werbservice = MyInfoWerbservice()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werbservice.getUserNickImage([get_Phone()]){ (userinfo:NSMutableDictionary!, state:StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if state.networkStatus != kSuccessStatus
+        werbservice.getUserNickImage([get_Phone()]){ [weak self](userinfo:NSMutableDictionary!, state:StatusManager!) -> Void in
+            if let StrongSelf=self
             {
-                return
-            }
-            if userinfo==nil||userinfo.count==0
-            {
-                return
-            }
-            print(userinfo)
-            let state=userinfo.objectForKey("state") as! Int
+                MBProgressHUD.hideHUDForView(StrongSelf.view, animated: true)
+                if state.networkStatus != kSuccessStatus
+                {
+                    return
+                }
+                if userinfo==nil||userinfo.count==0
+                {
+                    return
+                }
+                print(userinfo)
+                let state=userinfo.objectForKey("state") as! Int
                 if state >= 0
                 {
                     let data=userinfo.objectForKey("data")?.objectAtIndex(0)
                     print(data)
                     let mobile=data?.objectForKey("mobile") as! String
                     var name=data!.objectForKey("nickname") as! String
+                    
                     name=name=="" ? mobile : name
                     
-                    self.mainView.My_login.setTitle(name, forState: .Normal)
+                    StrongSelf.mainView.My_login.setTitle(name, forState: .Normal)
                     var Score=data!.objectForKey("Score") as! String
                     Score=Score=="" ? "0" : Score
-                    self.mainView.My_Money.text=Score
+                    StrongSelf.mainView.My_Money.text=Score
                     let headimg=data!.objectForKey("headimg") as! String
                     let gradeName=(data!.objectForKey("GradeName") as! String)=="" ? "":((data!.objectForKey("GradeName") as! String))
                     
                     let tmpName=gradeName.stringByReplacingOccurrencesOfString("会员", withString: "代理会员")
-                    self.mainView.My_job.text=tmpName
+                    StrongSelf.mainView.My_job.text=tmpName
                     if headimg == ""
                     {
-                        self.mainView.My_head.image=UIImage(named: "DefaultHeadImage")
+                        StrongSelf.mainView.My_head.image=UIImage(named: "DefaultHeadImage")
                     }
                     else{
-                        self.mainView.My_head.image=UIImage(data: NSData(contentsOfURL: NSURL(string: headimg)!)!)
+                        StrongSelf.mainView.My_head.image=UIImage(data: NSData(contentsOfURL: NSURL(string: headimg)!)!)
                     }
                     
-                    self.mainView.My_login.enabled=false
+                    StrongSelf.mainView.My_login.enabled=false
                     //self.loadDevices()
                     //self.getYZcount()
                 }
-                
+            }
         }
         
     }

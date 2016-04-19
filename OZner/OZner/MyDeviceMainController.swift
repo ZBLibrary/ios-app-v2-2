@@ -338,23 +338,23 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             loadAirCleanerView()
             currentSpeedModel=0
 
-        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
-            set_CurrSelectEquip(6)
-            MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
-            waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView
-            waterReplenishMainView?.frame=CGRectMake(0, 0, Screen_Width, Screen_Hight-65)
-            waterReplenishMainView?.toLeftMenuButton.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
-            waterReplenishMainView?.setButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
-            waterReplenishMainView?.skinButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
-            waterReplenishMainView?.toDetailButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
-            MainScrollView.contentSize=CGSize(width: 0, height: Screen_Hight-65)
-            MainScrollView.addSubview(waterReplenishMainView!)
-            self.view.addSubview(MainScrollView)
-           //
-            if myCurrentDevice != nil
-            {
-                waterReplenishMainView?.initView(myCurrentDevice!)
-            }
+//        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
+//            set_CurrSelectEquip(6)
+//            MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
+//            waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView
+//            waterReplenishMainView?.frame=CGRectMake(0, 0, Screen_Width, Screen_Hight-65)
+//            waterReplenishMainView?.toLeftMenuButton.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
+//            waterReplenishMainView?.setButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
+//            waterReplenishMainView?.skinButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
+//            waterReplenishMainView?.toDetailButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
+//            MainScrollView.contentSize=CGSize(width: 0, height: Screen_Hight-65)
+//            MainScrollView.addSubview(waterReplenishMainView!)
+//            self.view.addSubview(MainScrollView)
+//           //
+//            if myCurrentDevice != nil
+//            {
+//                waterReplenishMainView?.initView(myCurrentDevice!)
+//            }
 
         default://"default"
             //默认主页视图
@@ -1617,21 +1617,24 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     {
         
         let werbservice = DeviceWerbservice()
-        werbservice.getWeather(""){(pollution:String!,cityname:String!,PM25:String!,AQI:String!,temperature:String!,humidity:String!,dataFrom:String!,status:StatusManager!) -> Void in
+        werbservice.getWeather(""){[weak self](pollution:String!,cityname:String!,PM25:String!,AQI:String!,temperature:String!,humidity:String!,dataFrom:String!,status:StatusManager!) -> Void in
             if(status.networkStatus == kSuccessStatus)
             {
-                if self.outAirView != nil
+                if let StrongSelf=self
                 {
-                    self.outAirView.cityname.text=cityname
-                    self.outAirView.PM25.text=PM25+"ug/m3"
-                    self.outAirView.AQI.text=AQI
-                    self.outAirView.teampret.text=temperature+"℃"
-                    self.outAirView.hubit.text=humidity+"%"
-                    self.outAirView.datafrom.text="数据来源:"+dataFrom
+                    if StrongSelf.outAirView != nil
+                    {
+                        StrongSelf.outAirView.cityname.text=cityname
+                        StrongSelf.outAirView.PM25.text=PM25+"ug/m3"
+                        StrongSelf.outAirView.AQI.text=AQI
+                        StrongSelf.outAirView.teampret.text=temperature+"℃"
+                        StrongSelf.outAirView.hubit.text=humidity+"%"
+                        StrongSelf.outAirView.datafrom.text="数据来源:"+dataFrom
+                    }
+                    StrongSelf.headView.cityName.text=cityname
+                    StrongSelf.headView.polution.text=pollution
+                    StrongSelf.headView.PM25.text=PM25
                 }
-                self.headView.cityName.text=cityname
-                self.headView.polution.text=pollution
-                self.headView.PM25.text=PM25
             }
         }
     }

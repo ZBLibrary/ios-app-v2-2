@@ -23,7 +23,7 @@ class YZNewsTableViewController: UITableViewController {
     var YZNews=[myYZNews]()
     override func viewDidLoad() {
         super.viewDidLoad()
-    self.title=loadLanguage("验证消息")
+        self.title=loadLanguage("验证消息")
         YZMess()
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
@@ -38,6 +38,7 @@ class YZNewsTableViewController: UITableViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden=true
     }
     func back()

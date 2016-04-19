@@ -323,24 +323,26 @@
 
 - (IBAction)OnNextAction:(id)sender
 {
-    
-    if(self.accountTF.text.length == 0 )//|| self.pswTF.text.length == 0
+    NSString* tmpName=[NSString stringWithFormat:@"%@",self.accountTF.text];
+    NSString* tmpPass=[NSString stringWithFormat:@"%@",self.pswTF.text];
+    if(tmpName.length == 0 )//|| self.pswTF.text.length == 0
     {
-        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"请输入网络名称和密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"请输入网络名称" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alert show];
         
     }
     else
     {
+        
         //记住密码
         if (m_bIsAgree==true) {
             NSUserDefaults *user=[NSUserDefaults standardUserDefaults];
-            [user setObject:self.pswTF.text forKey:self.accountTF.text];
+            [user setObject:tmpPass forKey:tmpName];
         }
         m_bIsShow = !m_bIsShow;
         [self setCircle];
         [self startTimer];
-        [self.currentPair start:self.accountTF.text Password:self.pswTF.text];
+        [self.currentPair start:tmpName Password:tmpPass];
     }
 }
 

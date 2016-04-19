@@ -311,22 +311,6 @@
 		523DC36F1C175E9B00595099 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3641C175E9B00595099 /* AFURLRequestSerialization.m */; };
 		523DC3701C175E9B00595099 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3661C175E9B00595099 /* AFURLResponseSerialization.m */; };
 		523DC3711C175E9B00595099 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3681C175E9B00595099 /* AFURLSessionManager.m */; };
-		523DC3931C175EAA00595099 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3731C175EAA00595099 /* MKAnnotationView+WebCache.m */; };
-		523DC3941C175EAA00595099 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3751C175EAA00595099 /* NSData+ImageContentType.m */; };
-		523DC3951C175EAA00595099 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3771C175EAA00595099 /* SDImageCache.m */; };
-		523DC3961C175EAA00595099 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3791C175EAA00595099 /* SDWebImageCompat.m */; };
-		523DC3971C175EAA00595099 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC37B1C175EAA00595099 /* SDWebImageDecoder.m */; };
-		523DC3981C175EAA00595099 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC37D1C175EAA00595099 /* SDWebImageDownloader.m */; };
-		523DC3991C175EAA00595099 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC37F1C175EAA00595099 /* SDWebImageDownloaderOperation.m */; };
-		523DC39A1C175EAA00595099 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3811C175EAA00595099 /* SDWebImageManager.m */; };
-		523DC39B1C175EAA00595099 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3841C175EAA00595099 /* SDWebImagePrefetcher.m */; };
-		523DC39C1C175EAA00595099 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3861C175EAA00595099 /* UIButton+WebCache.m */; };
-		523DC39D1C175EAA00595099 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3881C175EAA00595099 /* UIImage+GIF.m */; };
-		523DC39E1C175EAA00595099 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC38A1C175EAA00595099 /* UIImage+MultiFormat.m */; };
-		523DC39F1C175EAA00595099 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC38C1C175EAA00595099 /* UIImage+WebP.m */; };
-		523DC3A01C175EAA00595099 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC38E1C175EAA00595099 /* UIImageView+HighlightedWebCache.m */; };
-		523DC3A11C175EAA00595099 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3901C175EAA00595099 /* UIImageView+WebCache.m */; };
-		523DC3A21C175EAA00595099 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3921C175EAA00595099 /* UIView+WebCacheOperation.m */; };
 		5243373A1C42A5AF0024133D /* AirPurifierManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337391C42A5AF0024133D /* AirPurifierManager.m */; };
 		524337431C42A5BB0024133D /* AirPurifier_Bluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243373C1C42A5BB0024133D /* AirPurifier_Bluetooth.m */; };
 		524337451C42A5BB0024133D /* BluetoothAirPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337401C42A5BB0024133D /* BluetoothAirPurifierStatus.m */; };
@@ -505,6 +489,7 @@
 		8D0C3E6B1C58E78C00EFBB22 /* tantouLvXinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */; };
 		8D0C3E6D1C58EE4000EFBB22 /* MyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */; };
 		8D2B50E11C7C43840019DE11 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */; };
+		8D320BD01CC5D02D00DAC59A /* BluetoothIOMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */; };
 		8D3B60E71C929C0F007857E9 /* CALayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */; };
 		8D4354F61C75A049007F83DA /* WaterPurTDSDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354F51C75A049007F83DA /* WaterPurTDSDetailController.swift */; };
 		8D4354F91C75A410007F83DA /* WaterPurFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354F71C75A410007F83DA /* WaterPurFooterCell.swift */; };
@@ -518,7 +503,6 @@
 		8D438E971C9AB44F0060896D /* WaterReplenishmentMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E931C9AB44F0060896D /* WaterReplenishmentMeter.m */; };
 		8D438E981C9AB44F0060896D /* WaterReplenishmentMeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E951C9AB44F0060896D /* WaterReplenishmentMeterStatus.m */; };
 		8D438EA31C9AB4690060896D /* BluetoothIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E9A1C9AB4690060896D /* BluetoothIO.m */; };
-		8D438EA41C9AB4690060896D /* BluetoothIOMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E9C1C9AB4690060896D /* BluetoothIOMgr.m */; };
 		8D438EA51C9AB4690060896D /* BluetoothSynchronizedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E9E1C9AB4690060896D /* BluetoothSynchronizedObject.m */; };
 		8D438EA61C9AB4690060896D /* FirmwareTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438EA01C9AB4690060896D /* FirmwareTools.m */; };
 		8D438EA71C9AB4690060896D /* ScanData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438EA21C9AB4690060896D /* ScanData.m */; };
@@ -1321,39 +1305,6 @@
 		523DC3661C175E9B00595099 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		523DC3671C175E9B00595099 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		523DC3681C175E9B00595099 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		523DC3721C175EAA00595099 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
-		523DC3731C175EAA00595099 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
-		523DC3741C175EAA00595099 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		523DC3751C175EAA00595099 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
-		523DC3761C175EAA00595099 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
-		523DC3771C175EAA00595099 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
-		523DC3781C175EAA00595099 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
-		523DC3791C175EAA00595099 /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
-		523DC37A1C175EAA00595099 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
-		523DC37B1C175EAA00595099 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
-		523DC37C1C175EAA00595099 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
-		523DC37D1C175EAA00595099 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
-		523DC37E1C175EAA00595099 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
-		523DC37F1C175EAA00595099 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
-		523DC3801C175EAA00595099 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
-		523DC3811C175EAA00595099 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
-		523DC3821C175EAA00595099 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
-		523DC3831C175EAA00595099 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
-		523DC3841C175EAA00595099 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
-		523DC3851C175EAA00595099 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
-		523DC3861C175EAA00595099 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
-		523DC3871C175EAA00595099 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
-		523DC3881C175EAA00595099 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
-		523DC3891C175EAA00595099 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
-		523DC38A1C175EAA00595099 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
-		523DC38B1C175EAA00595099 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
-		523DC38C1C175EAA00595099 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
-		523DC38D1C175EAA00595099 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
-		523DC38E1C175EAA00595099 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		523DC38F1C175EAA00595099 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
-		523DC3901C175EAA00595099 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		523DC3911C175EAA00595099 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
-		523DC3921C175EAA00595099 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		524337381C42A5AF0024133D /* AirPurifierManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifierManager.h; sourceTree = "<group>"; };
 		524337391C42A5AF0024133D /* AirPurifierManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifierManager.m; sourceTree = "<group>"; };
 		5243373B1C42A5BB0024133D /* AirPurifier_Bluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifier_Bluetooth.h; sourceTree = "<group>"; };
@@ -1602,6 +1553,8 @@
 		8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tantouLvXinView.xib; sourceTree = "<group>"; };
 		8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStoreViewController.swift; sourceTree = "<group>"; };
 		8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		8D320BCE1CC5D02D00DAC59A /* BluetoothIOMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIOMgr.h; sourceTree = "<group>"; };
+		8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIOMgr.m; sourceTree = "<group>"; };
 		8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+extension.swift"; sourceTree = "<group>"; };
 		8D4354F51C75A049007F83DA /* WaterPurTDSDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailController.swift; sourceTree = "<group>"; };
 		8D4354F71C75A410007F83DA /* WaterPurFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurFooterCell.swift; sourceTree = "<group>"; };
@@ -1620,8 +1573,6 @@
 		8D438E951C9AB44F0060896D /* WaterReplenishmentMeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterStatus.m; sourceTree = "<group>"; };
 		8D438E991C9AB4690060896D /* BluetoothIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIO.h; sourceTree = "<group>"; };
 		8D438E9A1C9AB4690060896D /* BluetoothIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIO.m; sourceTree = "<group>"; };
-		8D438E9B1C9AB4690060896D /* BluetoothIOMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIOMgr.h; sourceTree = "<group>"; };
-		8D438E9C1C9AB4690060896D /* BluetoothIOMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIOMgr.m; sourceTree = "<group>"; };
 		8D438E9D1C9AB4690060896D /* BluetoothSynchronizedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothSynchronizedObject.h; sourceTree = "<group>"; };
 		8D438E9E1C9AB4690060896D /* BluetoothSynchronizedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothSynchronizedObject.m; sourceTree = "<group>"; };
 		8D438E9F1C9AB4690060896D /* FirmwareTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirmwareTools.h; sourceTree = "<group>"; };
@@ -2407,8 +2358,8 @@
 			children = (
 				8D438E991C9AB4690060896D /* BluetoothIO.h */,
 				8D438E9A1C9AB4690060896D /* BluetoothIO.m */,
-				8D438E9B1C9AB4690060896D /* BluetoothIOMgr.h */,
-				8D438E9C1C9AB4690060896D /* BluetoothIOMgr.m */,
+				8D320BCE1CC5D02D00DAC59A /* BluetoothIOMgr.h */,
+				8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */,
 				8D438E9D1C9AB4690060896D /* BluetoothSynchronizedObject.h */,
 				8D438E9E1C9AB4690060896D /* BluetoothSynchronizedObject.m */,
 				8D438E9F1C9AB4690060896D /* FirmwareTools.h */,
@@ -3350,50 +3301,9 @@
 				5228C57A1C517B7D002C2E18 /* BaiDuPush */,
 				8DEDC4E71C7C394A0098BAE5 /* Bugly */,
 				523DC3551C175E8100595099 /* AFNetworking */,
-				523DC3541C175E6C00595099 /* SDWebImageManager */,
 			);
 			name = ExtralLibarary;
 			path = OZner;
-			sourceTree = "<group>";
-		};
-		523DC3541C175E6C00595099 /* SDWebImageManager */ = {
-			isa = PBXGroup;
-			children = (
-				523DC3721C175EAA00595099 /* MKAnnotationView+WebCache.h */,
-				523DC3731C175EAA00595099 /* MKAnnotationView+WebCache.m */,
-				523DC3741C175EAA00595099 /* NSData+ImageContentType.h */,
-				523DC3751C175EAA00595099 /* NSData+ImageContentType.m */,
-				523DC3761C175EAA00595099 /* SDImageCache.h */,
-				523DC3771C175EAA00595099 /* SDImageCache.m */,
-				523DC3781C175EAA00595099 /* SDWebImageCompat.h */,
-				523DC3791C175EAA00595099 /* SDWebImageCompat.m */,
-				523DC37A1C175EAA00595099 /* SDWebImageDecoder.h */,
-				523DC37B1C175EAA00595099 /* SDWebImageDecoder.m */,
-				523DC37C1C175EAA00595099 /* SDWebImageDownloader.h */,
-				523DC37D1C175EAA00595099 /* SDWebImageDownloader.m */,
-				523DC37E1C175EAA00595099 /* SDWebImageDownloaderOperation.h */,
-				523DC37F1C175EAA00595099 /* SDWebImageDownloaderOperation.m */,
-				523DC3801C175EAA00595099 /* SDWebImageManager.h */,
-				523DC3811C175EAA00595099 /* SDWebImageManager.m */,
-				523DC3821C175EAA00595099 /* SDWebImageOperation.h */,
-				523DC3831C175EAA00595099 /* SDWebImagePrefetcher.h */,
-				523DC3841C175EAA00595099 /* SDWebImagePrefetcher.m */,
-				523DC3851C175EAA00595099 /* UIButton+WebCache.h */,
-				523DC3861C175EAA00595099 /* UIButton+WebCache.m */,
-				523DC3871C175EAA00595099 /* UIImage+GIF.h */,
-				523DC3881C175EAA00595099 /* UIImage+GIF.m */,
-				523DC3891C175EAA00595099 /* UIImage+MultiFormat.h */,
-				523DC38A1C175EAA00595099 /* UIImage+MultiFormat.m */,
-				523DC38B1C175EAA00595099 /* UIImage+WebP.h */,
-				523DC38C1C175EAA00595099 /* UIImage+WebP.m */,
-				523DC38D1C175EAA00595099 /* UIImageView+HighlightedWebCache.h */,
-				523DC38E1C175EAA00595099 /* UIImageView+HighlightedWebCache.m */,
-				523DC38F1C175EAA00595099 /* UIImageView+WebCache.h */,
-				523DC3901C175EAA00595099 /* UIImageView+WebCache.m */,
-				523DC3911C175EAA00595099 /* UIView+WebCacheOperation.h */,
-				523DC3921C175EAA00595099 /* UIView+WebCacheOperation.m */,
-			);
-			name = SDWebImageManager;
 			sourceTree = "<group>";
 		};
 		523DC3551C175E8100595099 /* AFNetworking */ = {
@@ -4915,9 +4825,7 @@
 				8D438EA51C9AB4690060896D /* BluetoothSynchronizedObject.m in Sources */,
 				8D438E961C9AB44F0060896D /* WaterReplenishmentMeterMgr.m in Sources */,
 				8DA405651C8441B500AD5E5E /* ZXCharacterSetECI.m in Sources */,
-				523DC3971C175EAA00595099 /* SDWebImageDecoder.m in Sources */,
 				8D438EA31C9AB4690060896D /* BluetoothIO.m in Sources */,
-				523DC3941C175EAA00595099 /* NSData+ImageContentType.m in Sources */,
 				8DF3312E1C97063A009B3342 /* waterReplenishMPGraphView.m in Sources */,
 				8DA405E21C8441B500AD5E5E /* ZXQRCodeMultiReader.m in Sources */,
 				8D4354F61C75A049007F83DA /* WaterPurTDSDetailController.swift in Sources */,
@@ -4932,6 +4840,7 @@
 				8DA405601C8441B500AD5E5E /* ZXByteArray.m in Sources */,
 				524337A51C42A64B0024133D /* SqlLiteDB.m in Sources */,
 				426F428C1C281F5900DC39DF /* CustomCommFunction.m in Sources */,
+				8D320BD01CC5D02D00DAC59A /* BluetoothIOMgr.m in Sources */,
 				523DC36B1C175E9B00595099 /* AFHTTPSessionManager.m in Sources */,
 				523DC3481C175E1B00595099 /* XMLocationMessage.m in Sources */,
 				8DFB39401C57730300A1641C /* ToWhatViewController.swift in Sources */,
@@ -4999,7 +4908,6 @@
 				8D438EA61C9AB4690060896D /* FirmwareTools.m in Sources */,
 				8DA4060D1C8441B500AD5E5E /* ZXURIResultParser.m in Sources */,
 				8DFB39331C574E4B00A1641C /* MxChipAirPurifierSensor.m in Sources */,
-				523DC3A21C175EAA00595099 /* UIView+WebCacheOperation.m in Sources */,
 				52080AF71C3BBC0600150B4F /* send_client_mosq.c in Sources */,
 				8DFB39351C57710B00A1641C /* CommonValue.swift in Sources */,
 				523DC3451C175E1B00595099 /* UITableView+FDTemplateLayoutCell.m in Sources */,
@@ -5080,7 +4988,6 @@
 				8DA405F71C8441B500AD5E5E /* ZXRSSExpandedReader.m in Sources */,
 				8DA406251C8446BF00AD5E5E /* MyQRViewController.m in Sources */,
 				34A659031C452336002B2F10 /* CustomNoDeviceView.m in Sources */,
-				523DC3951C175EAA00595099 /* SDImageCache.m in Sources */,
 				424C155C1C103C6F0001C36E /* iCarousel.m in Sources */,
 				52791BA71C18CDD300C098B2 /* setCuoTimeViewController.swift in Sources */,
 				528FFEFB1C24705400D814A1 /* setAirViewController.swift in Sources */,
@@ -5100,7 +5007,6 @@
 				8DA405751C8441B500AD5E5E /* ZXDataMatrixDetector.m in Sources */,
 				523DC2F81C175DA800595099 /* MASLayoutConstraint.m in Sources */,
 				8DA4053A1C8441B500AD5E5E /* ZXAbstractDoCoMoResultParser.m in Sources */,
-				523DC3981C175EAA00595099 /* SDWebImageDownloader.m in Sources */,
 				8DA405B01C8441B500AD5E5E /* ZXOneDimensionalCodeWriter.m in Sources */,
 				8DA405D31C8441B500AD5E5E /* ZXQRCodeDataBlock.m in Sources */,
 				42A7BB531C0C248C008DB6E5 /* PubDatabase.m in Sources */,
@@ -5191,7 +5097,6 @@
 				8D9C63561CA2456200543353 /* MXChipPair.m in Sources */,
 				8DA406031C8441B500AD5E5E /* ZXTextParsedResult.m in Sources */,
 				521BF7CB1C4A370000AD1EAB /* drinKWaterCell.swift in Sources */,
-				523DC39A1C175EAA00595099 /* SDWebImageManager.m in Sources */,
 				8DA405E81C8441B500AD5E5E /* ZXResult.m in Sources */,
 				8DA4059B1C8441B500AD5E5E /* ZXIntArray.m in Sources */,
 				523DC3411C175E1B00595099 /* XMChatMoreView.m in Sources */,
@@ -5223,7 +5128,6 @@
 				8DA4057D1C8441B500AD5E5E /* ZXDataMatrixTextEncoder.m in Sources */,
 				52080AF61C3BBC0600150B4F /* read_handle_shared.c in Sources */,
 				8DA405FE1C8441B500AD5E5E /* ZXSMSTOMMSTOResultParser.m in Sources */,
-				523DC39B1C175EAA00595099 /* SDWebImagePrefetcher.m in Sources */,
 				8DA406131C8441B500AD5E5E /* ZXWhiteRectangleDetector.m in Sources */,
 				5231EA871C51328100DCB8F8 /* CupRecord.m in Sources */,
 				8DA405A71C8441B500AD5E5E /* ZXModulusGF.m in Sources */,
@@ -5266,8 +5170,6 @@
 				5226BB0C1C480E2C00895AE4 /* TDSDetailHeadView.swift in Sources */,
 				52080AF11C3BBC0600150B4F /* messages_mosq.c in Sources */,
 				8DA4053D1C8441B500AD5E5E /* ZXAddressBookAUResultParser.m in Sources */,
-				523DC3931C175EAA00595099 /* MKAnnotationView+WebCache.m in Sources */,
-				523DC39D1C175EAA00595099 /* UIImage+GIF.m in Sources */,
 				8DA405731C8441B500AD5E5E /* ZXDataMatrixDecoder.m in Sources */,
 				8DA405501C8441B500AD5E5E /* ZXAztecHighLevelEncoder.m in Sources */,
 				8DA405B51C8441B500AD5E5E /* ZXPDF417BarcodeMetadata.m in Sources */,
@@ -5279,14 +5181,11 @@
 				8DA4058C1C8441B500AD5E5E /* ZXEmailAddressResultParser.m in Sources */,
 				428141051C0B072C006FEDDE /* AppDelegate.swift in Sources */,
 				8DA405861C8441B500AD5E5E /* ZXEAN13Reader.m in Sources */,
-				523DC3961C175EAA00595099 /* SDWebImageCompat.m in Sources */,
 				8DA4036C1C843F8600AD5E5E /* LBXScanView.m in Sources */,
 				8DA405F11C8441B500AD5E5E /* ZXRSSExpandedDecodedInformation.m in Sources */,
-				8D438EA41C9AB4690060896D /* BluetoothIOMgr.m in Sources */,
 				52A4EF691C2871FF005F282D /* bigFooterViewXib.swift in Sources */,
 				524337DB1C42ABE50024133D /* MQTTKit.m in Sources */,
 				8DBAC4941C91B130007CA1AC /* SkinFooterTableViewCell.swift in Sources */,
-				523DC3A11C175EAA00595099 /* UIImageView+WebCache.m in Sources */,
 				523DC36F1C175E9B00595099 /* AFURLRequestSerialization.m in Sources */,
 				523DC2FB1C175DA800595099 /* NSArray+MASAdditions.m in Sources */,
 				8DA4055D1C8441B500AD5E5E /* ZXBookmarkDoCoMoResultParser.m in Sources */,
@@ -5297,7 +5196,6 @@
 				42DF14F91C109153002B4C83 /* CupMatchFinishedView.swift in Sources */,
 				526DDB361C4AB9AB00363504 /* CupView_Footer.swift in Sources */,
 				425F7A131C32ABD600C8B2E3 /* NewUserHelpViewController.m in Sources */,
-				523DC39C1C175EAA00595099 /* UIButton+WebCache.m in Sources */,
 				8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */,
 				8DF253B61C774E8500CE2AE5 /* WaterMPGraphView.m in Sources */,
 				42E897B11C144CBC00DD0228 /* UITool.mm in Sources */,
@@ -5305,10 +5203,8 @@
 				5243373A1C42A5AF0024133D /* AirPurifierManager.m in Sources */,
 				8DA405D51C8441B500AD5E5E /* ZXQRCodeDecodedBitStreamParser.m in Sources */,
 				523DC34C1C175E1B00595099 /* XMVoiceMessage.m in Sources */,
-				523DC3991C175EAA00595099 /* SDWebImageDownloaderOperation.m in Sources */,
 				8DA405C71C8441B500AD5E5E /* ZXPDF417ResultMetadata.m in Sources */,
 				8DA405F21C8441B500AD5E5E /* ZXRSSExpandedDecodedNumeric.m in Sources */,
-				523DC39F1C175EAA00595099 /* UIImage+WebP.m in Sources */,
 				523DC34A1C175E1B00595099 /* XMSystemMessage.m in Sources */,
 				8DBD54D31C567F4500D04B12 /* My_Rank_TDSCell.swift in Sources */,
 				8DA406061C8441B500AD5E5E /* ZXUPCEANExtension2Support.m in Sources */,
@@ -5333,8 +5229,6 @@
 				8DA405841C8441B500AD5E5E /* ZXDetectorResult.m in Sources */,
 				8D09DBE01C5A698800D0432B /* loadFailedXib.swift in Sources */,
 				8DBD54E71C567F4500D04B12 /* My_MainView.swift in Sources */,
-				523DC3A01C175EAA00595099 /* UIImageView+HighlightedWebCache.m in Sources */,
-				523DC39E1C175EAA00595099 /* UIImage+MultiFormat.m in Sources */,
 				349F0CD01C158EB900E46253 /* CustomPopViewFirstCell.swift in Sources */,
 				8DF253AA1C77233F00CE2AE5 /* MBProgressHUD.m in Sources */,
 				8DA405DD1C8441B500AD5E5E /* ZXQRCodeFinderPatternInfo.m in Sources */,
@@ -5466,8 +5360,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5489,7 +5383,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
+				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5514,8 +5408,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -5530,7 +5424,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
+				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5543,8 +5437,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5566,7 +5460,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
+				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -5578,8 +5472,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5601,7 +5495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
+				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 			};
 			name = Release;

@@ -61,6 +61,9 @@ class setCuoTimeViewController: UIViewController {
     }
     func curLabelTime(timeStr:String)->NSDate
     {
+        if timeStr.characters.count != 5{
+            return NSDate()
+        }
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat="YYYY-MM-DD"
         var nowStr=dateFormatter.stringFromDate(NSDate())
