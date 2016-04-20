@@ -305,7 +305,7 @@
 }
 
 //获取周月补水仪器数值分布  /OznerServer/GetBuShuiFenBu Face ，Eyes ,Hands, Neck
-- (ASIFormDataRequest*)GetBuShuiFenBu:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(NSDictionary *Attr, StatusManager* status))handle{
+- (ASIFormDataRequest*)GetBuShuiFenBu:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(id Attr, StatusManager* status))handle{
     NetworkEntrance* entrance = [[NetworkEntrance alloc]init];
     [entrance addObject:mac forKey:@"mac"];
     [entrance addObject:action forKey:@"action"];
@@ -319,15 +319,14 @@
     }];
 }
 //GetPost/OznerDevice/GetTimesCountBuShui获取补水仪检测次数
-- (ASIFormDataRequest*)GetTimesCountBuShui:(NSString*)mac action:(NSString*)action returnBlock:(void(^)(NSString * Times, StatusManager* status))handle{
+- (ASIFormDataRequest*)GetTimesCountBuShui:(NSString*)mac returnBlock:(void(^)(NSDictionary * dataArr, StatusManager* status))handle{
     NetworkEntrance* entrance = [[NetworkEntrance alloc]init];
     [entrance addObject:mac forKey:@"mac"];
-    [entrance addObject:action forKey:@"action"];
+    
     [entrance addURLString:Get_TimesCount_BuShui];
     
     return [WebAssistant execNormalkRequest:entrance bodyBlock:^(NSDictionary *dicBody, StatusManager *status) {
-        NSLog(@"%@",dicBody);
-        handle(@"",status);
+        handle(dicBody,status);
     } failedBlock:^(StatusManager *status) {
         handle(nil,status);
     }];

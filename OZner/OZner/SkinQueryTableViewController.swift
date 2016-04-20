@@ -9,11 +9,15 @@
 import UIKit
 
 class SkinQueryTableViewController: UITableViewController {
+ 
 
     var headCell:SkinHeadTableViewCell!
     var centerCell:SkinCenterTableViewCell!
     var footerCell:SkinFooterTableViewCell!
     var currentSkinTypeIndex=0//0：无，1油，2干,3中
+    var totalTimes = 0
+    var TimeString = ""
+    
     var currentSex=SexType.WoMan
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,7 @@ class SkinQueryTableViewController: UITableViewController {
         //中部视图
         centerCell = NSBundle.mainBundle().loadNibNamed("SkinCenterTableViewCell", owner: self, options: nil).last as!  SkinCenterTableViewCell
         centerCell.selectionStyle=UITableViewCellSelectionStyle.None
-        centerCell.updateData(45, Date: "2012.01.01-2013.02.02")
+        centerCell.updateData(totalTimes, Date: TimeString)
         //尾部视图
         footerCell = NSBundle.mainBundle().loadNibNamed("SkinFooterTableViewCell", owner: self, options: nil).last as!  SkinFooterTableViewCell
         footerCell.bugEssenceButton.addTarget(self, action: #selector(bugEssenceClick), forControlEvents: .TouchUpInside)

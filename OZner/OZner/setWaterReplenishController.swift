@@ -63,14 +63,13 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
             self.navigationController?.popViewControllerAnimated(true)
             return
         }
-        //airMx.settings.name=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
-        myCurrentDevice?.settings.name=settingDic?.objectForKey("deviceName") as! String
-        print(settingDic?.objectForKey("deviceAttrib"))
-        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("deviceAttrib"), forKey: "deviceAttrib")
-        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime1"), forKey: "checktime1")
-        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime2"), forKey: "checktime2")
-        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("checktime3"), forKey: "checktime3")
-        myCurrentDevice?.settings.setValue(settingDic?.objectForKey("sex"), forKey: "sex")
+
+       myCurrentDevice?.settings.name=settingDic?.objectForKey("deviceName") as! String
+        myCurrentDevice?.settings.put("deviceAttrib", value: settingDic?.objectForKey("deviceAttrib"))
+        myCurrentDevice?.settings.put("checktime1", value: settingDic?.objectForKey("checktime1"))
+        myCurrentDevice?.settings.put("checktime2", value: settingDic?.objectForKey("checktime2"))
+        myCurrentDevice?.settings.put("checktime3", value: settingDic?.objectForKey("checktime3"))
+        myCurrentDevice?.settings.put("sex", value: settingDic?.objectForKey("sex"))
         OznerManager.instance().save(myCurrentDevice)
         NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
         self.navigationController?.popViewControllerAnimated(true)

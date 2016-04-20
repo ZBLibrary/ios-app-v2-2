@@ -13,6 +13,7 @@ class WaterReplenishDetailTableViewController: UITableViewController {
     var HeadView:HeadOfWaterReplenishDetailCell!
     var FooterView:FooterOfWaterReplenishDetailCell!
     var currentBodyPart=BodyParts.Face
+    var WaterReplenishDevice:WaterReplenishmentMeter?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,41 +37,88 @@ class WaterReplenishDetailTableViewController: UITableViewController {
         FooterView.selectionStyle=UITableViewCellSelectionStyle.None
         
     }
+   
     func getAllWeakAndMonthData()
     {
         //测试数据
         let tmpIndex=[BodyParts.Face:0,BodyParts.Eyes:1,BodyParts.Hands:2,BodyParts.Neck:3][currentBodyPart]!
         var dataDic=[String:HeadOfWaterReplenishStruct]()
-        
-        for i in 0...3
-        {
-            let tmpStru=HeadOfWaterReplenishStruct(skinValueOfToday: 30*i, lastSkinValue: Double(71*i*i*i%100), averageSkinValue: Double(71*i*i*i%100), checkTimes: i*i*12+i*5)
-            dataDic["\(i)"]=tmpStru
-        }
-        //初始化传入数据
-        HeadView.dataDic=dataDic
-        HeadView.currentOrgan=tmpIndex
-        //测试数据
-        let weekArray=NSMutableDictionary()
-        let monthArray=NSMutableDictionary()
-        
-        for j in 0...3
-        {
-            let tmpArr=NSMutableArray()
-            for i in 0...30
+        //下载周月数据
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let deviceService=DeviceWerbservice()
+        deviceService.GetBuShuiFenBu(WaterReplenishDevice?.identifier, action: currentBodyPart.rawValue) { [weak self](dataArr, Status) in
+            MBProgressHUD.hideHUDForView(self!.view, animated: true)
+            if Status.networkStatus==kSuccessStatus
             {
-                let record=CupRecord()
-                record.TDS_Bad=Int32((i*21+j*i*i*8+13*j+37)%50+50)
-                record.TDS_Good=Int32((i*11+j*i*i*13+7*j+31)%50+0)
-                record.start=NSDate(timeIntervalSince1970: (NSDate().timeIntervalSince1970+NSTimeInterval(3600*24*i)))
-                tmpArr.addObject(record)
                 
+                let tmpKeyArr=["FaceSkinValue","EyesSkinValue","HandSkinValue","NeckSkinValue"]
+                let tmpData=dataArr.objectForKey("data")
+                let weekArray=NSMutableDictionary()
+                let monthArray=NSMutableDictionary()
+                for i in 0...3
+                {
+                    let tmpWeek=NSMutableArray()
+                    let tmpMonth=NSMutableArray()
+                    let tempBody=tmpData?.objectForKey(tmpKeyArr[i])
+                    
+                    
+                    
+                    //周数据
+                    for item in (tempBody?.objectForKey("week") as! NSArray)
+                    {
+                        let record=CupRecord()
+                        record.TDS_Bad=(item.objectForKey("ynumber") as! NSNumber).intValue//油分
+                        record.TDS_Good=(item.objectForKey("snumber") as! NSNumber).intValue//水分
+                        let dateStr=dateStampToString((item.objectForKey("updatetime") as! String), format: "yyyy-MM-dd")
+                        record.start=dateFromString(dateStr, format: "yyyy-MM-dd")
+                        tmpWeek.addObject(record)
+                        //item.objectForKey("times")
+                    }
+                    //月数据
+                    var maxTimes=0
+                    var todayValue:Double=0
+                    var lastValue:Double=0
+                    var totolValue:Double=0
+                    for item in (tempBody?.objectForKey("monty") as! NSArray)
+                    {
+                        let record=CupRecord()
+                        record.TDS_Bad=(item.objectForKey("ynumber") as! NSNumber).intValue//油分
+                        record.TDS_Good=(item.objectForKey("snumber") as! NSNumber).intValue//水分
+                        totolValue+=Double(record.TDS_Good)
+                        let dateStr=dateStampToString((item.objectForKey("updatetime") as! String), format: "yyyy-MM-dd")
+                        record.start=dateFromString(dateStr, format: "yyyy-MM-dd")
+                        tmpMonth.addObject(record)
+                        print(stringFromDate(NSDate(), format: "yyyy-MM-dd"))
+                        if stringFromDate(record.start, format: "yyyy-MM-dd")==stringFromDate(NSDate(), format: "yyyy-MM-dd")
+                        {
+                            todayValue=Double(record.TDS_Good)
+                        }
+                        maxTimes=max(maxTimes,item.objectForKey("times") as! Int)
+                    }
+                    
+                    let tmpCount=(tempBody?.objectForKey("monty") as! NSArray).count
+                    if tmpCount<=1
+                    {
+                        lastValue=todayValue
+                    }
+                    else{
+                        let LastData=tempBody?.objectForKey("monty")?.objectAtIndex(tmpCount-2)
+                        lastValue=LastData?.objectForKey("snumber") as! Double
+                    }
+                    let tmpAveValue=tmpCount==0 ? 0:(totolValue/Double(tmpCount))
+                    let tmpStru=HeadOfWaterReplenishStruct(skinValueOfToday: todayValue, lastSkinValue: lastValue, averageSkinValue:tmpAveValue, checkTimes: maxTimes)
+                    dataDic["\(i)"]=tmpStru
+                    weekArray.setValue(tmpWeek, forKey: "\(i)")
+                    monthArray.setValue(tmpMonth, forKey: "\(i)")
+                }
+                //初始化传入数据
+                self!.HeadView.dataDic=dataDic
+                self!.HeadView.currentOrgan=tmpIndex
+                //初始化传入数据
+                self!.FooterView.updateCellData(weekArray, monthArr: monthArray, Organ: tmpIndex)
+            
             }
-            weekArray.setValue(tmpArr, forKey: "\(j)")
-            monthArray.setValue(tmpArr, forKey: "\(j)")
         }
-        //初始化传入数据
-        FooterView.updateCellData(weekArray, monthArr: monthArray, Organ: tmpIndex)
     }
     func backClick()
     {

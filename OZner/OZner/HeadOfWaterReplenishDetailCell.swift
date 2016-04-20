@@ -12,7 +12,7 @@ protocol HeadOfWaterReplenishDetailCellDelegate
     func setCurrentOrgan(organ:Int)
 }
 struct HeadOfWaterReplenishStruct {
-    var skinValueOfToday:Int=0
+    var skinValueOfToday:Double=0
     var lastSkinValue:Double=0
     var averageSkinValue:Double=0
     var checkTimes=0
@@ -71,8 +71,21 @@ class HeadOfWaterReplenishDetailCell: UITableViewCell {
                 return
             }
             let tmpStru=dataDic["\(currentOrgan)"]
-            skinStateOfToday.text=NSString(format: "%d", (tmpStru?.skinValueOfToday)!) as String
-            descOfSkinState.text="今日肌肤状态  "+["干燥","正常","水润","水润"][(tmpStru?.skinValueOfToday)!/33]
+            print((tmpStru?.skinValueOfToday))
+            skinStateOfToday.text = "\(Int((tmpStru?.skinValueOfToday)!))"
+            
+            if Int((tmpStru?.skinValueOfToday)!)<WaterTypeValue[[.Face,.Eyes,.Hands,.Neck][currentOrgan]]![0]
+            {
+                descOfSkinState.text="今日肌肤状态  干燥"
+            }
+            else if Int((tmpStru?.skinValueOfToday)!)>WaterTypeValue[[.Face,.Eyes,.Hands,.Neck][currentOrgan]]![1]{
+                descOfSkinState.text="今日肌肤状态  水润"
+            }
+            else
+            {
+                descOfSkinState.text="今日肌肤状态  正常"
+            }
+            
             lastCheckValue.text="上次检测"+(NSString(format: "%.1f", (tmpStru?.lastSkinValue)!) as String)+"%"
             averageCheckValue.text="平均值"+(NSString(format: "%.1f", (tmpStru?.averageSkinValue)!) as String)+"%("+(NSString(format: "%d", (tmpStru?.checkTimes)!) as String)+"次)"
             if isFistLoad==false{
@@ -92,7 +105,11 @@ class HeadOfWaterReplenishDetailCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-
+    private let WaterTypeValue=[BodyParts.Face:[32,42],
+                                BodyParts.Eyes:[35,45],
+                                BodyParts.Hands:[30,38],
+                                BodyParts.Neck:[35,45]
+    ]
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

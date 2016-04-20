@@ -38,7 +38,7 @@ class AddDeviceViewController: SwiftFatherViewController,UITableViewDataSource,U
     }
     //测试设备数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
+        return 6
     }
     
     

@@ -340,23 +340,23 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             loadAirCleanerView()
             currentSpeedModel=0
 
-//        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
-//            set_CurrSelectEquip(6)
-//            MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
-//            waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView
-//            waterReplenishMainView?.frame=CGRectMake(0, 0, Screen_Width, Screen_Hight-65)
-//            waterReplenishMainView?.toLeftMenuButton.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
-//            waterReplenishMainView?.setButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
-//            waterReplenishMainView?.skinButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
-//            waterReplenishMainView?.toDetailButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
-//            MainScrollView.contentSize=CGSize(width: 0, height: Screen_Hight-65)
-//            MainScrollView.addSubview(waterReplenishMainView!)
-//            self.view.addSubview(MainScrollView)
-//           //
-//            if myCurrentDevice != nil
-//            {
-//                waterReplenishMainView?.initView(myCurrentDevice!)
-//            }
+        case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
+            set_CurrSelectEquip(6)
+            MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
+            waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView", owner: nil, options: nil).last as? WaterReplenishMainView
+            waterReplenishMainView?.frame=CGRectMake(0, 0, Screen_Width, Screen_Hight-65)
+            waterReplenishMainView?.toLeftMenuButton.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.setButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.skinButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
+            waterReplenishMainView?.toDetailButton.addTarget(self, action: #selector(toWaterReplenishOtherController), forControlEvents: .TouchUpInside)
+            MainScrollView.contentSize=CGSize(width: 0, height: Screen_Hight-65)
+            MainScrollView.addSubview(waterReplenishMainView!)
+            self.view.addSubview(MainScrollView)
+           //
+            if myCurrentDevice != nil
+            {
+                waterReplenishMainView?.initView(myCurrentDevice!)
+            }
 
         default://"default"
             //默认主页视图
@@ -458,6 +458,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             let tmpDevice=myCurrentDevice as! WaterReplenishmentMeter
             let tmpSex=tmpDevice.settings.get("sex", default: "女")
             skipController.currentSex=(tmpSex as! String)=="女" ? SexType.WoMan:SexType.Man
+            if waterReplenishMainView?.avgAndTimesArr.count>0 {
+                let tmpArr:[String:HeadOfWaterReplenishStruct]=(waterReplenishMainView?.avgAndTimesArr)!
+                let tmpTimes=(tmpArr["0"]?.checkTimes)!+(tmpArr["1"]?.checkTimes)!+(tmpArr["2"]?.checkTimes)!+(tmpArr["3"]?.checkTimes)!
+                skipController.totalTimes=tmpTimes
+            }
+            skipController.TimeString=(stringFromDate(NSDate(), format: "yyyy-MM") as String)+"-01  "+(stringFromDate(NSDate(), format: "yyyy-MM-dd") as String)
             let tmpStr=button.titleLabel?.text!
             print(tmpStr)
             if ((tmpStr?.containsString("无")) != false)
@@ -472,6 +478,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             self.navigationController?.pushViewController(skipController, animated: true)
         case 2:
             let detailController=WaterReplenishDetailTableViewController()
+            detailController.WaterReplenishDevice=myCurrentDevice as? WaterReplenishmentMeter
             detailController.currentBodyPart=(waterReplenishMainView?.currentBodyPart)!
             
             self.navigationController?.pushViewController(detailController, animated: true)

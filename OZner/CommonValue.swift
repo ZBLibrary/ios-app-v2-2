@@ -130,13 +130,23 @@ func dateStampToString(timeStamp:NSString,format:String)->NSString {
     //print(timeStamp)
     var tmpstr1=(timeStamp).substringFromIndex(6) as NSString
     tmpstr1=NSString(string: tmpstr1.substringToIndex(tmpstr1.length-2))
-    let date = NSDate(timeIntervalSince1970: tmpstr1.doubleValue/1000)
+    let date:NSDate = NSDate(timeIntervalSince1970: tmpstr1.doubleValue/1000)
     //print(date)
     let dfmatter = NSDateFormatter()
     //let timeZone = NSTimeZone.localTimeZone() //timeZoneWithName:@"Asia/Shanghai"];
     dfmatter.dateFormat=format
     //dfmatter.timeZone=timeZone
     print(dfmatter.stringFromDate(date))
+    return dfmatter.stringFromDate(date)
+}
+func dateFromString(dateStr:NSString,format:String)->NSDate {
+    let dfmatter = NSDateFormatter()
+    dfmatter.dateFormat=format
+    return dfmatter.dateFromString(dateStr as String)!
+}
+func stringFromDate(date:NSDate,format:String)->NSString {
+    let dfmatter = NSDateFormatter()
+    dfmatter.dateFormat=format
     return dfmatter.stringFromDate(date)
 }
 //---------------------读取文件--------------------------
