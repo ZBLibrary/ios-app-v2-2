@@ -63,29 +63,30 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
             switch true
             {
             case isInside(locaArr![0],touchPoint):
-                stateOfView=1
+                currentBodyPart=BodyParts.Face
                 alertBeforeTest.text="请将补水仪放置脸部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![1])
-                currentBodyPart=BodyParts.Face
-            case isInside(locaArr![1],touchPoint):
                 stateOfView=1
+            case isInside(locaArr![1],touchPoint):
+                currentBodyPart=BodyParts.Eyes
                 alertBeforeTest.text="请将补水仪放置眼部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![2])
-                currentBodyPart=BodyParts.Eyes
-            case isInside(locaArr![2],touchPoint):
                 stateOfView=1
+            case isInside(locaArr![2],touchPoint):
+                currentBodyPart=BodyParts.Hands
                 alertBeforeTest.text="请将补水仪放置手部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![3])
-                currentBodyPart=BodyParts.Hands
-            case isInside(locaArr![3],touchPoint):
                 stateOfView=1
+            case isInside(locaArr![3],touchPoint):
+                currentBodyPart=BodyParts.Neck
                 alertBeforeTest.text="请将补水仪放置颈部"
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![4])
-                currentBodyPart=BodyParts.Neck
+                stateOfView=1
             default:
                 print("点击了其它区域")
                 break
             }
+            
         }
         
         
@@ -144,7 +145,10 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 resultStateLabel.text=""
                 let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
                 resultValueLabel.text = "上一次检测 \(tmpStruct.lastSkinValue)  |  平均值 \(tmpStruct.averageSkinValue)（\(tmpStruct.checkTimes)次）"
-                
+                print(currentBodyPart.hashValue)
+                print(avgAndTimesArr)
+                print(tmpStruct)
+                print("===============")
             case 2:
                 
                 alertBeforeTest.hidden=false
@@ -156,6 +160,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 isStopAnimation=false
                 startAnimations(0)
                 let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
+                
                 resultValueLabel.text = "上一次检测 \(tmpStruct.lastSkinValue)  |  平均值 \(tmpStruct.averageSkinValue)（\(tmpStruct.checkTimes)次）"
             case 3:
                 resultValueContainView.hidden=false
@@ -424,7 +429,8 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                         totolValue+=Double(record.TDS_Good)
                         let dateStr=dateStampToString((item.objectForKey("updatetime") as! String), format: "yyyy-MM-dd")
                         record.start=dateFromString(dateStr, format: "yyyy-MM-dd")
-                        
+                        print(item.objectForKey("updatetime"))
+                        print(record.start)
                         if stringFromDate(record.start, format: "yyyy-MM-dd")==stringFromDate(NSDate(), format: "yyyy-MM-dd")
                         {
                             todayValue=Double(record.TDS_Good)

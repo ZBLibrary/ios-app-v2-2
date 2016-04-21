@@ -142,7 +142,10 @@ func dateStampToString(timeStamp:NSString,format:String)->NSString {
 func dateFromString(dateStr:NSString,format:String)->NSDate {
     let dfmatter = NSDateFormatter()
     dfmatter.dateFormat=format
-    return dfmatter.dateFromString(dateStr as String)!
+    var tmpDate=dfmatter.dateFromString(dateStr as String)!
+    tmpDate=NSDate(timeIntervalSince1970: tmpDate.timeIntervalSince1970+8*3600)
+    print(tmpDate)
+    return tmpDate
 }
 func stringFromDate(date:NSDate,format:String)->NSString {
     let dfmatter = NSDateFormatter()

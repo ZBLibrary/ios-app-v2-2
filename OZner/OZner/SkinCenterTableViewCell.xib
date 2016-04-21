@@ -59,7 +59,7 @@
                                             <constraint firstAttribute="height" constant="37" id="Yh3-ON-gTp"/>
                                             <constraint firstAttribute="width" constant="130" id="mwg-hu-5ym"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="textColor" red="0.18039215689999999" green="0.3411764706" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>

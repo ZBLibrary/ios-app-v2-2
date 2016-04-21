@@ -461,6 +461,11 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             if waterReplenishMainView?.avgAndTimesArr.count>0 {
                 let tmpArr:[String:HeadOfWaterReplenishStruct]=(waterReplenishMainView?.avgAndTimesArr)!
                 let tmpTimes=(tmpArr["0"]?.checkTimes)!+(tmpArr["1"]?.checkTimes)!+(tmpArr["2"]?.checkTimes)!+(tmpArr["3"]?.checkTimes)!
+                print(tmpArr["0"]?.checkTimes)
+                 print(tmpArr["1"]?.checkTimes)
+                 print(tmpArr["2"]?.checkTimes)
+                 print(tmpArr["3"]?.checkTimes)
+                print(tmpTimes)
                 skipController.totalTimes=tmpTimes
             }
             skipController.TimeString=(stringFromDate(NSDate(), format: "yyyy-MM") as String)+"-01  "+(stringFromDate(NSDate(), format: "yyyy-MM-dd") as String)

@@ -31,6 +31,7 @@ class SkinCenterTableViewCell: UITableViewCell {
      */
     func updateData(times:Int,Date:String)
     {
+        print(times)
         timesOfTest.text = times<45 ? "\(times)/45":"\(times)"
         stateOfTest.text = times<45 ? "检测次数累计达45次才能给您相对精准的数据":""
         dateOfTest.text="统计时间:"+Date
