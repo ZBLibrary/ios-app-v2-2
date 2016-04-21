@@ -7,14 +7,16 @@
 //
 
 import UIKit
-// var appDelegate: AppDelegate {
-//    return UIApplication.sharedApplication().delegate as! AppDelegate
-// }
+var appDelegate: AppDelegate {
+    return UIApplication.sharedApplication().delegate as! AppDelegate
+}
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertViewDelegate {
 
     var window: UIWindow?
 
+    /// 网络状态
+    var reachOfNetwork:Reachability?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -60,10 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         UIApplication.sharedApplication().applicationIconBadgeNumber=0
         //设置启动页面时间
         NSThread.sleepForTimeInterval(2)
+        //检查网络状况，无网络，wifi，普通网络三种情况实时变化通知
+        reachOfNetwork = Reachability(hostName: "www.baidu.com")
+        reachOfNetwork!.startNotifier()
         
         return true
     }
- 
+    
+
 
     //微信 star
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {

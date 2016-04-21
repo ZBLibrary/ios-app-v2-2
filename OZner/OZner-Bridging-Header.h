@@ -73,7 +73,7 @@
 #import "YJHColorPickerHSWheel2.h"
 #import "YJHColorPickerHSWheel.h"
 #import "DeviceSetting.h"
-
+#import "Reachability.h"
 //扫码
 #import "LBXScanResult.h"
 #import "LBXScanWrapper.h"

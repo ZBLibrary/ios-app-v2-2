@@ -32,7 +32,14 @@ class LoadingXib: UIView {
                 loadText.text="设备已断开"
                 isEnd=true
                 break
-            default:
+            case 2:
+                loadIcon.hidden=false
+                loadText.hidden=false
+                loadIcon.image=UIImage(named: "air007")
+                loadText.text="手机网络不可用，请检查网络"
+                isEnd=true
+                break
+            default://-1已连接
                 isEnd=true
                 loadIcon.hidden=true
                 loadText.hidden=true

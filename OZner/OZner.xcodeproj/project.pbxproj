@@ -826,6 +826,18 @@
 		8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */; };
 		8DE5FD7B1C56745D0092242F /* UserInfoClasszb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */; };
 		8DEB63D61C59FA8800E4A7D5 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */; };
+		8DF060A51CC90F6100EC05D9 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060981CC90F6100EC05D9 /* Constraint.swift */; };
+		8DF060A61CC90F6100EC05D9 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */; };
+		8DF060A71CC90F6100EC05D9 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */; };
+		8DF060A81CC90F6100EC05D9 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609B1CC90F6100EC05D9 /* ConstraintItem.swift */; };
+		8DF060A91CC90F6100EC05D9 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609C1CC90F6100EC05D9 /* ConstraintMaker.swift */; };
+		8DF060AA1CC90F6100EC05D9 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609D1CC90F6100EC05D9 /* ConstraintRelation.swift */; };
+		8DF060AB1CC90F6100EC05D9 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609E1CC90F6100EC05D9 /* Debugging.swift */; };
+		8DF060AC1CC90F6100EC05D9 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609F1CC90F6100EC05D9 /* EdgeInsets.swift */; };
+		8DF060AD1CC90F6100EC05D9 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060A01CC90F6100EC05D9 /* LayoutConstraint.swift */; };
+		8DF060AE1CC90F6100EC05D9 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060A21CC90F6100EC05D9 /* SnapKit.swift */; };
+		8DF060AF1CC90F6100EC05D9 /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060A31CC90F6100EC05D9 /* View+SnapKit.swift */; };
+		8DF060B01CC90F6100EC05D9 /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060A41CC90F6100EC05D9 /* ViewController+SnapKit.swift */; };
 		8DF253AA1C77233F00CE2AE5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253A91C77233F00CE2AE5 /* MBProgressHUD.m */; };
 		8DF253B31C774E6500CE2AE5 /* WaterineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B21C774E6500CE2AE5 /* WaterineChartView.m */; };
 		8DF253B61C774E8500CE2AE5 /* WaterMPGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B51C774E8500CE2AE5 /* WaterMPGraphView.m */; };
@@ -2163,6 +2175,19 @@
 		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoClasszb.swift; path = ../UserInfoClasszb.swift; sourceTree = "<group>"; };
 		8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifier_MxChip.m; sourceTree = "<group>"; };
+		8DF060981CC90F6100EC05D9 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
+		8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
+		8DF0609B1CC90F6100EC05D9 /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
+		8DF0609C1CC90F6100EC05D9 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		8DF0609D1CC90F6100EC05D9 /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
+		8DF0609E1CC90F6100EC05D9 /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
+		8DF0609F1CC90F6100EC05D9 /* EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		8DF060A01CC90F6100EC05D9 /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		8DF060A11CC90F6100EC05D9 /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
+		8DF060A21CC90F6100EC05D9 /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
+		8DF060A31CC90F6100EC05D9 /* View+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+SnapKit.swift"; sourceTree = "<group>"; };
+		8DF060A41CC90F6100EC05D9 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SnapKit.swift"; sourceTree = "<group>"; };
 		8DF253A81C77233F00CE2AE5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8DF253A91C77233F00CE2AE5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8DF253B11C774E6500CE2AE5 /* WaterineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterineChartView.h; sourceTree = "<group>"; };
@@ -3294,6 +3319,7 @@
 		523DC3531C175E5800595099 /* ExtralLibarary */ = {
 			isa = PBXGroup;
 			children = (
+				8DF060971CC90F1300EC05D9 /* SnapKit */,
 				42A7BB101C0C237C008DB6E5 /* OZner-Bridging-Header.h */,
 				349F0C561C15852D00E46253 /* OznerLibrary */,
 				8DA403501C843F7900AD5E5E /* LBXScan */,
@@ -4329,6 +4355,26 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		8DF060971CC90F1300EC05D9 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				8DF060981CC90F6100EC05D9 /* Constraint.swift */,
+				8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */,
+				8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */,
+				8DF0609B1CC90F6100EC05D9 /* ConstraintItem.swift */,
+				8DF0609C1CC90F6100EC05D9 /* ConstraintMaker.swift */,
+				8DF0609D1CC90F6100EC05D9 /* ConstraintRelation.swift */,
+				8DF0609E1CC90F6100EC05D9 /* Debugging.swift */,
+				8DF0609F1CC90F6100EC05D9 /* EdgeInsets.swift */,
+				8DF060A01CC90F6100EC05D9 /* LayoutConstraint.swift */,
+				8DF060A11CC90F6100EC05D9 /* SnapKit.h */,
+				8DF060A21CC90F6100EC05D9 /* SnapKit.swift */,
+				8DF060A31CC90F6100EC05D9 /* View+SnapKit.swift */,
+				8DF060A41CC90F6100EC05D9 /* ViewController+SnapKit.swift */,
+			);
+			name = SnapKit;
+			sourceTree = "<group>";
+		};
 		8DF99B581CA0F360008DB222 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -4739,6 +4785,7 @@
 				8DA4059D1C8441B500AD5E5E /* ZXISBNParsedResult.m in Sources */,
 				523DC3381C175E1B00595099 /* XMMessageCell.m in Sources */,
 				8DA405591C8441B500AD5E5E /* ZXBitArrayBuilder.m in Sources */,
+				8DF060A81CC90F6100EC05D9 /* ConstraintItem.swift in Sources */,
 				8DA405581C8441B500AD5E5E /* ZXBitArray.m in Sources */,
 				524337B81C42A8D70024133D /* TapManager.m in Sources */,
 				8DA405CD1C8441B500AD5E5E /* ZXProductResultParser.m in Sources */,
@@ -4784,6 +4831,7 @@
 				8DA405671C8441B500AD5E5E /* ZXCodaBarWriter.m in Sources */,
 				8DBD54D91C567F4500D04B12 /* YanZhengCell.swift in Sources */,
 				8DA405EC1C8441B500AD5E5E /* ZXRSS14Reader.m in Sources */,
+				8DF060AF1CC90F6100EC05D9 /* View+SnapKit.swift in Sources */,
 				527E918D1C3BDCCF00828A1B /* LongImageViewController.swift in Sources */,
 				5243379C1C42A63F0024133D /* DeviceSetting.m in Sources */,
 				528FFEF21C24625600D814A1 /* AboutDeviceViewController.swift in Sources */,
@@ -4799,6 +4847,7 @@
 				8DA4055B1C8441B500AD5E5E /* ZXBitSource.m in Sources */,
 				526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air.swift in Sources */,
 				8DA406141C8441B500AD5E5E /* ZXWifiParsedResult.m in Sources */,
+				8DF060A61CC90F6100EC05D9 /* ConstraintAttributes.swift in Sources */,
 				5243379E1C42A63F0024133D /* IOManagerList.m in Sources */,
 				424C155E1C1047B70001C36E /* DeviceMatchCellView.swift in Sources */,
 				523DC3491C175E1B00595099 /* XMMessage.m in Sources */,
@@ -4985,6 +5034,7 @@
 				8DA406091C8441B500AD5E5E /* ZXUPCEANReader.m in Sources */,
 				8DA405B91C8441B500AD5E5E /* ZXPDF417Codeword.m in Sources */,
 				8DA405F71C8441B500AD5E5E /* ZXRSSExpandedReader.m in Sources */,
+				8DF060A91CC90F6100EC05D9 /* ConstraintMaker.swift in Sources */,
 				8DA406251C8446BF00AD5E5E /* MyQRViewController.m in Sources */,
 				34A659031C452336002B2F10 /* CustomNoDeviceView.m in Sources */,
 				424C155C1C103C6F0001C36E /* iCarousel.m in Sources */,
@@ -5008,6 +5058,7 @@
 				523DC2F81C175DA800595099 /* MASLayoutConstraint.m in Sources */,
 				8DA4053A1C8441B500AD5E5E /* ZXAbstractDoCoMoResultParser.m in Sources */,
 				8DA405B01C8441B500AD5E5E /* ZXOneDimensionalCodeWriter.m in Sources */,
+				8DF060AD1CC90F6100EC05D9 /* LayoutConstraint.swift in Sources */,
 				8DA405D31C8441B500AD5E5E /* ZXQRCodeDataBlock.m in Sources */,
 				42A7BB531C0C248C008DB6E5 /* PubDatabase.m in Sources */,
 				8DA4056D1C8441B500AD5E5E /* ZXDataMatrixASCIIEncoder.m in Sources */,
@@ -5028,11 +5079,13 @@
 				523DC2F91C175DA800595099 /* MASViewAttribute.m in Sources */,
 				8DA405431C8441B500AD5E5E /* ZXAI01393xDecoder.m in Sources */,
 				8DA406111C8441B500AD5E5E /* ZXVINParsedResult.m in Sources */,
+				8DF060A71CC90F6100EC05D9 /* ConstraintDescription.swift in Sources */,
 				8DA406071C8441B500AD5E5E /* ZXUPCEANExtension5Support.m in Sources */,
 				523DC36E1C175E9B00595099 /* AFURLConnectionOperation.m in Sources */,
 				52080AFB1C3BBC0600150B4F /* tls_mosq.c in Sources */,
 				425381631C14DCFD005FF2F3 /* CustomThreeCircleView.m in Sources */,
 				8DA403681C843F8600AD5E5E /* LBXScanLineAnimation.m in Sources */,
+				8DF060AE1CC90F6100EC05D9 /* SnapKit.swift in Sources */,
 				8DA405931C8441B500AD5E5E /* ZXGenericGFPoly.m in Sources */,
 				52FF7E061C1A043A005635F8 /* YJHColorPickerHSWheel2.m in Sources */,
 				422D915B1C1DBC19007CFB3B /* NSAttributedStringView.m in Sources */,
@@ -5088,6 +5141,7 @@
 				8DA4057C1C8441B500AD5E5E /* ZXDataMatrixSymbolInfo144.m in Sources */,
 				523DC33B1C175E1B00595099 /* XMSystemMessageCell.m in Sources */,
 				8DA4058B1C8441B500AD5E5E /* ZXEmailAddressParsedResult.m in Sources */,
+				8DF060A51CC90F6100EC05D9 /* Constraint.swift in Sources */,
 				5264661F1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m in Sources */,
 				8DA4059C1C8441B500AD5E5E /* ZXInvertedLuminanceSource.m in Sources */,
 				8DA405FB1C8441B500AD5E5E /* ZXRSSUtils.m in Sources */,
@@ -5119,6 +5173,7 @@
 				523DC3421C175E1B00595099 /* XMProgressHUD.m in Sources */,
 				8D320BD41CC61AD000DAC59A /* SCLAlertView.swift in Sources */,
 				8DA405551C8441B500AD5E5E /* ZXAztecWriter.m in Sources */,
+				8DF060AA1CC90F6100EC05D9 /* ConstraintRelation.swift in Sources */,
 				8D438E971C9AB44F0060896D /* WaterReplenishmentMeter.m in Sources */,
 				8DB044D61CC8CDB500B60DAB /* SkinCenterTableViewCell.swift in Sources */,
 				8DA405821C8441B500AD5E5E /* ZXDecoderResult.m in Sources */,
@@ -5136,6 +5191,7 @@
 				5231EA871C51328100DCB8F8 /* CupRecord.m in Sources */,
 				8DA405A71C8441B500AD5E5E /* ZXModulusGF.m in Sources */,
 				8DA405C61C8441B500AD5E5E /* ZXPDF417Reader.m in Sources */,
+				8DF060AC1CC90F6100EC05D9 /* EdgeInsets.swift in Sources */,
 				8DA405621C8441B500AD5E5E /* ZXCalendarParsedResult.m in Sources */,
 				523DC3701C175E9B00595099 /* AFURLResponseSerialization.m in Sources */,
 				42A7BB661C0C2A0A008DB6E5 /* UIImageAdditions.mm in Sources */,
@@ -5153,6 +5209,7 @@
 				42A7BB171C0C237D008DB6E5 /* NetworkEntrance.m in Sources */,
 				425381411C1482E3005FF2F3 /* MPPlot.m in Sources */,
 				8DA405D81C8441B500AD5E5E /* ZXQRCodeDetector.m in Sources */,
+				8DF060B01CC90F6100EC05D9 /* ViewController+SnapKit.swift in Sources */,
 				523DC33F1C175E1B00595099 /* XMChatFaceView.m in Sources */,
 				8DA4057F1C8441B500AD5E5E /* ZXDataMatrixWriter.m in Sources */,
 				523DC34B1C175E1B00595099 /* XMTextMessage.m in Sources */,
@@ -5249,6 +5306,7 @@
 				523DC2F61C175DA800595099 /* MASConstraint.m in Sources */,
 				8DB044DF1CC8CDC600B60DAB /* SkinQueryTableViewController.swift in Sources */,
 				8DA405531C8441B500AD5E5E /* ZXAztecState.m in Sources */,
+				8DF060AB1CC90F6100EC05D9 /* Debugging.swift in Sources */,
 				425381401C1482E3005FF2F3 /* UIBezierPath+curved.m in Sources */,
 				52080AFD1C3BBC0600150B4F /* will_mosq.c in Sources */,
 				8DBD54DF1C567F4500D04B12 /* FriendsNavRight.swift in Sources */,

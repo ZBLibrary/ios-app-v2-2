@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -22,6 +22,11 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="7Uq-6T-OPM"/>
+                                </mask>
+                            </variation>
                         </label>
                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="airloding" translatesAutoresizingMaskIntoConstraints="NO" id="LX1-vB-fqs">
                             <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
@@ -35,17 +40,25 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="94x-Ue-02g" secondAttribute="trailing" id="JIm-Us-K8Q"/>
                         <constraint firstAttribute="bottom" secondItem="94x-Ue-02g" secondAttribute="bottom" id="Ome-2U-s4Z"/>
+                        <constraint firstItem="94x-Ue-02g" firstAttribute="leading" secondItem="LX1-vB-fqs" secondAttribute="trailing" constant="6" id="PV2-cJ-Buz"/>
                         <constraint firstAttribute="width" constant="90" id="Y5J-yG-oBS"/>
                         <constraint firstAttribute="height" constant="15" id="ZSQ-1s-WkY"/>
                         <constraint firstItem="LX1-vB-fqs" firstAttribute="centerY" secondItem="Eij-6H-Qbz" secondAttribute="centerY" id="sv8-p3-F0f"/>
                         <constraint firstItem="LX1-vB-fqs" firstAttribute="leading" secondItem="Eij-6H-Qbz" secondAttribute="leading" id="tsq-3l-plh"/>
                         <constraint firstItem="94x-Ue-02g" firstAttribute="top" secondItem="Eij-6H-Qbz" secondAttribute="top" id="vO7-nh-ylK"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Y5J-yG-oBS"/>
+                            <exclude reference="ZSQ-1s-WkY"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Eij-6H-Qbz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5HG-a8-1vO"/>
+                <constraint firstAttribute="bottom" secondItem="Eij-6H-Qbz" secondAttribute="bottom" id="EHH-j8-Lka"/>
                 <constraint firstItem="Eij-6H-Qbz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xuc-jr-oNm"/>
                 <constraint firstAttribute="bottom" secondItem="Eij-6H-Qbz" secondAttribute="bottom" id="uUH-oI-u6t"/>
             </constraints>

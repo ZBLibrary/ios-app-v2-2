@@ -187,8 +187,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(leftMenuShouqiClick), name: "leftMenuShouqi_zb", object: nil)
         //滤芯更换通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(downLoadLvXinState), name: "updateLVXinTimeByScan", object: nil)
-        
-        
+        //网络变化通知，在需要知道的地方加上此通知即可
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityChanged), name: kReachabilityChangedNotification, object: nil)
         //查询是否有设备
         let muArr = NSMutableArray(array: OznerManager.instance().getDevices()) as NSMutableArray;
         if muArr.count > 0
@@ -200,6 +200,19 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
        NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: self.myCurrentDevice)
         }
     
+    }
+    //接收到网络变化后处理事件
+    func reachabilityChanged(){
+        //wifi设备
+        if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)||WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) {
+            //手机网络状况
+            if appDelegate.reachOfNetwork?.currentReachabilityStatus().hashValue==0&&LoadingView != nil {
+                LoadingView.state=2//手机网络不可用
+            }
+            else{
+                LoadingView.state = -1//手机网络可用
+            }
+        }
     }
     //侧边滑动识别区视图
     var leftSlideView:UIView!
@@ -392,18 +405,18 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }
         LoadingView=NSBundle.mainBundle().loadNibNamed("LoadingXib", owner: self, options: nil).last as! LoadingXib
         //LoadingView.backgroundColor=UIColor.redColor()
-        LoadingView.frame = CGRectMake(0,68,Screen_Width,15)
+       // LoadingView.frame = CGRectMake(0,68,Screen_Width,15)
         //0正在连接,1断开,2已连接
         if self.myCurrentDevice==nil
         {
-            LoadingView.state=2
+            LoadingView.state = -1
         }
         else
         {
             switch self.myCurrentDevice!.connectStatus()
             {
             case Connected:
-                 LoadingView.state=2
+                 LoadingView.state = -1
                 break
             case Connecting:
                  LoadingView.state=0
@@ -416,6 +429,14 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }
         
         self.view.addSubview(LoadingView)
+        LoadingView.snp_makeConstraints { (make) in
+            make.top.equalTo(LoadingView.superview!).offset(68)
+            make.left.equalTo(LoadingView.superview!).offset(0)
+            make.height.equalTo(15)
+            make.right.equalTo(LoadingView.superview!).offset(0)
+        
+        }
+        reachabilityChanged()//初始化网络状态
         //侧滑感应区视图
         if leftSlideView != nil
         {
@@ -1322,35 +1343,40 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     
     //跑马end  赵兵
     func OznerDeviceStatusUpdate(device: OznerDevice!) {
-        if myCurrentDevice==nil||device==nil
+        if myCurrentDevice==nil||device==nil||device.identifier != myCurrentDevice?.identifier
         {
             return
         }
-        if device.identifier==myCurrentDevice?.identifier
-        {
+        //wifi设备
+        if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)||WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) {
+            //空净
+            if headView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
+            {
+                initBigClickButton()
+                StopLoadAnimal()
+            }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
+            {
+                waterPurFooter.updateSwitchState()
+                if self.myCurrentDevice != nil
+                {
+                    if (self.myCurrentDevice as! WaterPurifier).status.power==false
+                    {
+                        WaterPurfHeadView?.TdsBefore=0
+                        WaterPurfHeadView?.TdsAfter=0
+                    }
+                    
+                    
+                }
+                StopLoadAnimal()
+            }
+            
+            //设备网络状况
+            
+        }else{ //蓝牙设备
             if(device.connectStatus() == Connected)
             {
-                LoadingView.state=2
-                //空净
-                if headView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
-                {
-                    initBigClickButton()
-                    StopLoadAnimal()
-                }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
-                {
-                    waterPurFooter.updateSwitchState()
-                    if self.myCurrentDevice != nil
-                    {
-                        if (self.myCurrentDevice as! WaterPurifier).status.power==false
-                        {
-                            WaterPurfHeadView?.TdsBefore=0
-                            WaterPurfHeadView?.TdsAfter=0
-                        }
-                        
-                        
-                    }
-                    StopLoadAnimal()
-                }
+                LoadingView.state = -1//已连接
+                
             }
             else if (device.connectStatus() == Connecting)
             {
@@ -1370,6 +1396,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 }
             }
         }
+        
     }
     
     //Cup点击温度
