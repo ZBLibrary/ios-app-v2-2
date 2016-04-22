@@ -274,7 +274,7 @@
     }];
 }
 //检查水机的功能种类
-- (ASIFormDataRequest*)GetMachineType:(NSString*)type returnBlock:(void(^)(NSString* MachineType,NSString* Attr,NSString* BuyUrl, StatusManager* status))handle{
+- (ASIFormDataRequest*)GetMachineType:(NSString*)type returnBlock:(void(^)(NSString* MachineType,NSString* Attr,NSString* BuyUrl,NSString* days, StatusManager* status))handle{
     NetworkEntrance* entrance = [[NetworkEntrance alloc]init];
     [entrance addObject:type forKey:@"type"];
     [entrance addURLString:Get_Machine_Type];
@@ -282,9 +282,9 @@
     return [WebAssistant execNormalkRequest:entrance bodyBlock:^(NSDictionary *dicBody, StatusManager *status) {
         NSLog(@"%@",dicBody);
         id tmpdic=[dicBody objectForKey:@"data"];
-        handle([tmpdic objectForKey:@"MachineType"],[tmpdic objectForKey:@"Attr"],[tmpdic objectForKey:@"buylinkurl"],status);
+        handle([tmpdic objectForKey:@"MachineType"],[tmpdic objectForKey:@"Attr"],[tmpdic objectForKey:@"buylinkurl"],[tmpdic objectForKey:@"days"],status);
     } failedBlock:^(StatusManager *status) {
-        handle(nil,nil,nil,status);
+        handle(nil,nil,nil,nil,status);
     }];
 }
 //更新补水仪的数值  /OznerDevice/UpdateBuShuiYiNumber Face ，Eyes ,Hands, Neck

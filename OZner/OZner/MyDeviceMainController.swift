@@ -694,105 +694,115 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             }
         }else if WaterPurifierManager.isWaterPurifier(myCurrentDevice?.type)==true
         {
-            //获取滤芯服务时间
-            let manager = AFHTTPRequestOperationManager()
-            let url = StarURL_New+"/OznerDevice/GetMachineLifeOutTime"
-            let params:NSDictionary = ["usertoken":get_UserToken(),"mac":(myCurrentDevice?.identifier)!]
-           
-            manager.POST(url,
-                parameters: params,
-                success: { (operation: AFHTTPRequestOperation!,
-                    responseObject: AnyObject!) in
-                    print(responseObject)
-                    let state=responseObject.objectForKey("state") as! Int
-                    if(state>=0)
+            var AlertDaysOfWater=30
+            
+            let queue = dispatch_queue_create ("净水机队列",DISPATCH_QUEUE_CONCURRENT)
+            dispatch_async(queue, {
+                //获取水机设备制冷是否可用和设备类型
+                werbservice.GetMachineType(self.myCurrentDevice?.identifier, returnBlock: { (waterType, hotandcoll,buyUrl,alertDaysOfWater, status:StatusManager!) -> Void in
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    if(status.networkStatus == kSuccessStatus)
                     {
+                        self.WaterTypeOfService=waterType
+                        self.BuyWaterUrlString=buyUrl
                         
+                        AlertDaysOfWater =  alertDaysOfWater==nil ? AlertDaysOfWater:Int(alertDaysOfWater)!
+                        self.waterPurFooter.ishaveCoolAblity=hotandcoll.containsString("cool:true")
+                        self.waterPurFooter.ishaveHotAblity=hotandcoll.containsString("hot:true")
                         
-                        if (responseObject.objectForKey("time")!.isKindOfClass(NSNull) == false)&&(responseObject.objectForKey("nowtime")!.isKindOfClass(NSNull) == false)
+                    }
+                })
+            })
+            dispatch_barrier_async(queue, {
+                
+                //获取滤芯服务时间
+                let manager = AFHTTPRequestOperationManager()
+                let url = StarURL_New+"/OznerDevice/GetMachineLifeOutTime"
+                let params:NSDictionary = ["usertoken":get_UserToken(),"mac":(self.myCurrentDevice?.identifier)!]
+                manager.POST(url,
+                    parameters: params,
+                    success: { (operation: AFHTTPRequestOperation!,
+                        responseObject: AnyObject!) in
+                        print(responseObject)
+                        let state=responseObject.objectForKey("state") as! Int
+                        if(state>=0)
                         {
-                            self.lvxinContainView.hidden=false
-                            let format=NSDateFormatter()
-                            format.dateFormat="yyyy/MM/dd HH:mm:ss"
                             
-                            let endDate=responseObject.objectForKey("time") as! String
-                            let nowDate=responseObject.objectForKey("nowtime") as! String
-                            let endTime=format.dateFromString(endDate)!.timeIntervalSince1970
-                            let nowTime=format.dateFromString(nowDate)!.timeIntervalSince1970
-                            print(endTime)
-                            print(nowTime)
-                            let value =  Int(ceil(100.0*(endTime-nowTime)/(365*24*3600.0)))
-                            switch value
-                            {
-                            case 0:
-                                self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
-                                break
-                            case 1...49:
-                                self.lvxinImg.image=UIImage(named: "tantou_dianliang_1")
-                                break
-                            case 50..<100:
-                                self.lvxinImg.image=UIImage(named: "tantou_dianliang_2")
-                                break
-                            case 100:
-                                self.lvxinImg.image=UIImage(named: "tantou_dianliang_2")
-                                break
-                            default:
-                                self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
-                                break
-                            }
-                            self.lvxinState.text=value<=30 ? "请及时更换滤芯":"滤芯状态"
                             
-                            self.lvxinValue.text = "\(value<0 ? 0:value)%"
-                            if self.lvxinValue.text=="0%"&&(endTime-nowTime)>0
+                            if (responseObject.objectForKey("time")!.isKindOfClass(NSNull) == false)&&(responseObject.objectForKey("nowtime")!.isKindOfClass(NSNull) == false)
                             {
-                                self.lvxinValue.text="1%"
+                                self.lvxinContainView.hidden=false
+                                let format=NSDateFormatter()
+                                format.dateFormat="yyyy/MM/dd HH:mm:ss"
+                                
+                                let endDate=responseObject.objectForKey("time") as! String
+                                let nowDate=responseObject.objectForKey("nowtime") as! String
+                                let endTime=format.dateFromString(endDate)!.timeIntervalSince1970
+                                let nowTime=format.dateFromString(nowDate)!.timeIntervalSince1970
+                                print(endTime)
+                                print(nowTime)
+                                let value =  Int(ceil(100.0*(endTime-nowTime)/(365*24*3600.0)))
+                                switch value
+                                {
+                                case 0:
+                                    self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
+                                    break
+                                case 1...49:
+                                    self.lvxinImg.image=UIImage(named: "tantou_dianliang_1")
+                                    break
+                                case 50..<100:
+                                    self.lvxinImg.image=UIImage(named: "tantou_dianliang_2")
+                                    break
+                                case 100:
+                                    self.lvxinImg.image=UIImage(named: "tantou_dianliang_2")
+                                    break
+                                default:
+                                    self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
+                                    break
+                                }
+                                self.lvxinState.text=value<=AlertDaysOfWater ? "请及时更换滤芯":"滤芯状态"
+                                
+                                self.lvxinValue.text = "\(value<0 ? 0:value)%"
+                                if self.lvxinValue.text=="0%"&&(endTime-nowTime)>0
+                                {
+                                    self.lvxinValue.text="1%"
+                                }
+                                if value<=AlertDaysOfWater
+                                {
+                                    let alertView=SCLAlertView()
+                                    alertView.addButton("现在去购买滤芯", action: {
+                                        //提到购买滤芯的页面
+                                        let buyLX=WeiXinURLViewController(goUrl: self.BuyWaterUrlString)
+                                        let witchUrl=weiXinUrlNamezb()
+                                        
+                                        buyLX.title=witchUrl.WaterLvXinUrl1//1,2,3
+                                        
+                                        self.presentViewController(buyLX, animated: true, completion: nil)
+                                    })
+                                    alertView.addButton("我知道了", action:{})
+                                    alertView.showNotice("温馨提示", subTitle: "你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用")
+                                }
                             }
-                            if value<=30
+                            else
                             {
-                                let alertView=SCLAlertView()
-                                alertView.addButton("现在去购买滤芯", action: {
-                                    //提到购买滤芯的页面
-                                    let buyLX=WeiXinURLViewController(goUrl: self.BuyWaterUrlString)
-                                    let witchUrl=weiXinUrlNamezb()
-                                    
-                                    buyLX.title=witchUrl.WaterLvXinUrl1//1,2,3
-                                    
-                                    self.presentViewController(buyLX, animated: true, completion: nil)
-                                })
-                                alertView.addButton("我知道了", action:{})
-                                alertView.showNotice("温馨提示", subTitle: "你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用")
+                                self.lvxinValue.text = "--%";
+                                
                             }
+                            
                         }
                         else
                         {
-                            self.lvxinValue.text = "--%";
-                           
+                            self.lvxinValue.text = "--%"
                         }
                         
-                    }
-                    else
-                    {
-                        self.lvxinValue.text = "--%"
-                    }
-                    
-                },
-                failure: { (operation: AFHTTPRequestOperation!,
-                    error: NSError!) in
-                    print("Error: " + error.localizedDescription)
+                    },
+                    failure: { (operation: AFHTTPRequestOperation!,
+                        error: NSError!) in
+                        print("Error: " + error.localizedDescription)
+                })
             })
             
-            //获取水机设备制冷是否可用和设备类型
-            werbservice.GetMachineType(myCurrentDevice?.identifier, returnBlock: { (waterType:String!, hotandcoll:String!,buyUrl:String!, status:StatusManager!) -> Void in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
-                if(status.networkStatus == kSuccessStatus)
-                {
-                    self.WaterTypeOfService=waterType
-                    self.BuyWaterUrlString=buyUrl
-                    self.waterPurFooter.ishaveCoolAblity=hotandcoll.containsString("cool:true")
-                    self.waterPurFooter.ishaveHotAblity=hotandcoll.containsString("hot:true")
-                   
-                }
-            })
+            
         }
     }
     
