@@ -39,7 +39,8 @@ NSString *appid_News=@"hzapi"; /**< app 的ID */
 NSString *appsecret_News =@"8af0134asdffe12";
 /**idsecret*/
 NSString *appidandsecret=@"&appid=hzapi&appsecret=8af0134asdffe12";
-NSString *NEWS_URL=@"http://dkf.ozner.net/api";//接口头地址
+NSString *NEWS_URL=@"http://dkf.ozner.net/api";//测试地址@"http://192.168.172.21/api";//接口头地址
+
 NSString *acsstoken_News;// 接口 token
 NSString *sign_News;// 签名
 
@@ -330,12 +331,13 @@ NSString * kSelfThumb  ;//会员头像
     self.navigationController.navigationBar.barTintColor=[UIColor colorWithRed:248/255.0 green:249/255.0 blue:250/255.0 alpha:1];
     [[CustomTabBarView sharedCustomTabBar] showAllMyTabBar];
     [self.chatBar endInputing];
-    //[[[[CustomTabBarView sharedCustomTabBar] btnMuArr] objectAtIndex:2] setBadgeValue:@"1"];
+    UILabel* badgeLabel=(UILabel*)[[[CustomTabBarView sharedCustomTabBar] badgeMuArr] objectAtIndex:2];
+    badgeLabel.text=@"0";
+    badgeLabel.hidden=YES;
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[XMAVAudioPlayer sharedInstance] stopSound];
-    //[[[[CustomTabBarView sharedCustomTabBar] btnMuArr] objectAtIndex:2] setBadgeValue:@"2"];
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource

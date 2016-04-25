@@ -1429,8 +1429,8 @@
 		8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		8D320BCE1CC5D02D00DAC59A /* BluetoothIOMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIOMgr.h; sourceTree = "<group>"; };
 		8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIOMgr.m; sourceTree = "<group>"; };
-		8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
-		8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+extension.swift"; sourceTree = "<group>"; };
+		8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = OZner/SCLAlertView.swift; sourceTree = "<group>"; };
+		8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CALayer+extension.swift"; path = "OZner/CALayer+extension.swift"; sourceTree = "<group>"; };
 		8D4354F51C75A049007F83DA /* WaterPurTDSDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailController.swift; sourceTree = "<group>"; };
 		8D4354F71C75A410007F83DA /* WaterPurFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurFooterCell.swift; sourceTree = "<group>"; };
 		8D4354F81C75A410007F83DA /* WaterPurFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurFooterCell.xib; sourceTree = "<group>"; };
@@ -2117,7 +2117,7 @@
 		8DB044CD1CC8CDB500B60DAB /* waterReplenishMPGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waterReplenishMPGraphView.m; sourceTree = "<group>"; };
 		8DB044DC1CC8CDC600B60DAB /* WaterReplenishDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReplenishDetailTableViewController.swift; sourceTree = "<group>"; };
 		8DB044DD1CC8CDC600B60DAB /* SkinQueryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinQueryTableViewController.swift; sourceTree = "<group>"; };
-		8DB044E01CC8CE0600B60DAB /* CommonValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonValue.swift; sourceTree = "<group>"; };
+		8DB044E01CC8CE0600B60DAB /* CommonValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonValue.swift; path = OZner/CommonValue.swift; sourceTree = "<group>"; };
 		8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peiDuiOutTimeCell.swift; sourceTree = "<group>"; };
 		8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
 		8DBD549D1C567E9200D04B12 /* kindly_notice_iconzb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kindly_notice_iconzb.png; sourceTree = "<group>"; };
@@ -2173,7 +2173,7 @@
 		8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMatchedViewController.swift; sourceTree = "<group>"; };
 		8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceMatchedViewController.xib; sourceTree = "<group>"; };
 		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
-		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoClasszb.swift; path = ../UserInfoClasszb.swift; sourceTree = "<group>"; };
+		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoClasszb.swift; sourceTree = "<group>"; };
 		8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifier_MxChip.m; sourceTree = "<group>"; };
 		8DF060981CC90F6100EC05D9 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
@@ -2787,7 +2787,6 @@
 				52ECBEA61C0C6B5500A962E4 /* MyInfo */,
 				52845B251C217C0700C8A090 /* Login */,
 				5226BB061C47E6F700895AE4 /* SystemController */,
-				42A7BB561C0C24BF008DB6E5 /* CustomFile */,
 				42A7BB551C0C24BB008DB6E5 /* ModelCenter */,
 			);
 			path = OZner;
@@ -2834,6 +2833,11 @@
 		42A7BB0A1C0C22FD008DB6E5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8DB044E01CC8CE0600B60DAB /* CommonValue.swift */,
+				8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */,
+				8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */,
+				8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */,
+				42A7BB561C0C24BF008DB6E5 /* Other */,
 				424C15591C103C510001C36E /* InfiniteScrollPicker */,
 				52ECBE9C1C0C6AB700A962E4 /* CustomBarController */,
 				42A7BB601C0C29CB008DB6E5 /* Tools */,
@@ -2970,13 +2974,9 @@
 			name = ModelCenter;
 			sourceTree = "<group>";
 		};
-		42A7BB561C0C24BF008DB6E5 /* CustomFile */ = {
+		42A7BB561C0C24BF008DB6E5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */,
-				8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */,
-				8DB044E01CC8CE0600B60DAB /* CommonValue.swift */,
-				8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */,
 				4281410D1C0B072C006FEDDE /* LaunchScreen.storyboard */,
 				428141101C0B072C006FEDDE /* Info.plist */,
 				3473593D1C1C4DF600F4C79C /* GlobalClass.h */,
@@ -2987,7 +2987,8 @@
 				42A7BB5F1C0C279C008DB6E5 /* TypeDef.h */,
 				52ECBE591C0C61EC00A962E4 /* OZner-Prefix.pch */,
 			);
-			name = CustomFile;
+			name = Other;
+			path = OZner;
 			sourceTree = "<group>";
 		};
 		42A7BB601C0C29CB008DB6E5 /* Tools */ = {

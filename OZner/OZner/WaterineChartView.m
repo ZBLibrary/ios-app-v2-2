@@ -113,9 +113,9 @@
                 [originArr replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:length]];
                 double tmpInt=0.0;
                 double tmpRCD= beforeOrAfter==0 ? record.TDS_Bad:record.TDS_Good;
-                double statevalue1= 50;
-                double statevalue2=200;
-                double statevalue3=250;
+                double statevalue1 = tds_good;
+                double statevalue2 = tds_bad;
+                double statevalue3 = 250;
                 if (tmpRCD>=0&&tmpRCD<=statevalue1) {
                     tmpInt=tmpRCD/statevalue1/3.0;
                 } else if(tmpRCD>statevalue1&&tmpRCD<=statevalue2){
@@ -191,8 +191,8 @@
                 [originArr replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:length]];
                 double tmpInt=0.0;
                 double tmpRCD=beforeOrAfter==0 ? record.TDS_Bad:record.TDS_Good;
-                double statevalue1=50;
-                double statevalue2=200;
+                double statevalue1=tds_good;
+                double statevalue2=tds_bad;
                 double statevalue3=250;
                 if (tmpRCD>=0&&tmpRCD<=statevalue1) {
                     tmpInt=tmpRCD/statevalue1/3.0;

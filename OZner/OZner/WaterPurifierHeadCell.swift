@@ -70,12 +70,12 @@ class WaterPurifierHeadCell: UITableViewCell {
             faceImgView.hidden=false
             switch TdsAfter
             {
-            case 0...50:
+            case 0..<TDS_Good_Int:
                 faceImgView.image=UIImage(named: "waterState1")
                 faceTextLabel.text="健康"
                 drinkingSuggest.text="经过净化后的水质健康，适合您直饮"
                 break
-            case 51...200:
+            case TDS_Good_Int..<TDS_Bad_Int:
                 faceImgView.image=UIImage(named: "waterState2")
                 faceTextLabel.text="一般"
                 drinkingSuggest.text="经过净化后的水质健康，适合您直饮"
@@ -139,14 +139,14 @@ class WaterPurifierHeadCell: UITableViewCell {
         var tmpAng:CGFloat!
         switch TDS
         {
-        case 0...50:
-            tmpAng=CGFloat(CGFloat(TDS)/50.0*0.3333-1)*CGFloat(M_PI)
+        case 0..<TDS_Good_Int:
+            tmpAng=CGFloat(CGFloat(TDS)/CGFloat(TDS_Good_Int)*0.3333-1)*CGFloat(M_PI)
             break
-        case 51...200:
-            tmpAng=CGFloat(CGFloat(TDS-50)/150.0*0.3333-0.6666)*CGFloat(M_PI)
+        case TDS_Good_Int..<TDS_Bad_Int:
+            tmpAng=CGFloat(CGFloat(TDS-TDS_Good_Int)/CGFloat(TDS_Bad_Int-TDS_Good_Int)*0.3333-0.6666)*CGFloat(M_PI)
             break
-        case 201...250:
-            tmpAng=CGFloat(CGFloat(TDS-200)/50.0*0.3333-0.3333)*CGFloat(M_PI)
+        case TDS_Bad_Int...250:
+            tmpAng=CGFloat(CGFloat(TDS-TDS_Bad_Int)/50.0*0.3333-0.3333)*CGFloat(M_PI)
             break
         default:
             tmpAng=0

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         
         NetworkManager.sharedInstance().startWithAid(nil, sesToken: nil, httpAdress: HTTP_ADDRESS) 
         let switchController = SwitchViewController(nibName: "SwitchViewController", bundle: nil)
+        // myTabController
         self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
         self.window?.rootViewController = switchController;
         self.window?.makeKeyAndVisible()
@@ -130,15 +131,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     
     func onResp(resp: BaseResp!) {
     
-//         if(resp.isKindOfClass(SendMessageToWXResp.classForCoder()))
-//         {
-//              let strTitle = "发送媒体消息结果"
-//               let strMsg = "errcode:\(resp.errCode)"
-//    
-//            let alert = UIAlertView(title: strTitle, message: strMsg, delegate: self, cancelButtonTitle: "ok")
-//            
-//            alert.show()
-//         }
     }
     //微信 end
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
@@ -181,16 +173,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
                 data_baidu=v.isKindOfClass(NSNull)==true ? "":(v as! String)
             }
         }
+        UIApplication.sharedApplication().applicationIconBadgeNumber=0
         // 应用在前台 或者后台开启状态下
         if application.applicationState == UIApplicationState.Background || application.applicationState == UIApplicationState.Active
         {
             print("acitve or background")
-            UIApplication.sharedApplication().applicationIconBadgeNumber=0
+            let tmpIndex=CustomTabBarView.sharedCustomTabBar().currentSelectEdIndex_ZB
+            if action_baidu=="chat"&&(tmpIndex != 2)
+            {
+                let badgeLabel=(CustomTabBarView.sharedCustomTabBar().badgeMuArr as NSMutableArray).objectAtIndex(2) as! UILabel
+                let tmpstr=Int(badgeLabel.text! as String)
+                badgeLabel.text="\(tmpstr!+1)"
+                badgeLabel.hidden=false
+            }
+            
         }
         else//杀死状态下，直接跳转到跳转页面。
         {
             //跳转到聊天界面
-            UIApplication.sharedApplication().applicationIconBadgeNumber=0
+            if action_baidu=="chat"
+            {
+                let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
+                let button=array.objectAtIndex(2) as! UIButton
+                CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+            }
         }
         if action_baidu=="chat"
         {

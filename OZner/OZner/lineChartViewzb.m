@@ -96,8 +96,8 @@
                 [originArr replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:length]];
                 double tmpInt=0.0;
                 double tmpRCD=self.CellType==0 ? record.TDS_High:record.Temperature_MAX;
-                double statevalue1=self.CellType==0 ? 50:25;
-                double statevalue2=self.CellType==0 ? 200:50;
+                double statevalue1=self.CellType==0 ? tds_good:25;
+                double statevalue2=self.CellType==0 ? tds_bad:50;
                 double statevalue3=self.CellType==0 ? 250:100;
                 if (tmpRCD>=0&&tmpRCD<=statevalue1) {
                     tmpInt=tmpRCD/statevalue1/3.0;
@@ -238,8 +238,8 @@
                 [originArr replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:length]];
                 double tmpInt=0.0;
                 double tmpRCD=self.CellType==0 ? record.TDS_High:record.Temperature_MAX;
-                double statevalue1=self.CellType==0 ? 50:25;
-                double statevalue2=self.CellType==0 ? 200:50;
+                double statevalue1=self.CellType==0 ? tds_good:25;
+                double statevalue2=self.CellType==0 ? tds_bad:50;
                 double statevalue3=self.CellType==0 ? 250:100;
                 if (tmpRCD>=0&&tmpRCD<=statevalue1) {
                     tmpInt=tmpRCD/statevalue1/3.0;
@@ -361,8 +361,8 @@
                 [originArr replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:length]];
                 double tmpInt=0.0;
                 double tmpRCD=self.CellType==0 ? record.TDS_High:record.Temperature_MAX;
-                double statevalue1=self.CellType==0 ? 50:25;
-                double statevalue2=self.CellType==0 ? 200:50;
+                double statevalue1=self.CellType==0 ? tds_good:25;
+                double statevalue2=self.CellType==0 ? tds_bad:50;
                 double statevalue3=self.CellType==0 ? 250:100;
                 if (tmpRCD>=0&&tmpRCD<=statevalue1) {
                     tmpInt=tmpRCD/statevalue1/3.0;

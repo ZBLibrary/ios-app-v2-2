@@ -102,14 +102,14 @@
             {
                 [originArr replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:length]];
                 double tmpInt=0.0;
-                if (tmprecord.TDS>=0&&tmprecord.TDS<=50) {
-                    tmpInt=tmprecord.TDS/50.0/3.0;
-                } else if(tmprecord.TDS>50&&tmprecord.TDS<=200){
-                    tmpInt=(tmprecord.TDS-50)/150.0/3.0+1/3.0;
+                if (tmprecord.TDS>=0&&tmprecord.TDS<=tds_good) {
+                    tmpInt=tmprecord.TDS/tds_good/3.0;
+                } else if(tmprecord.TDS>tds_good&&tmprecord.TDS<=tds_bad){
+                    tmpInt=(tmprecord.TDS-tds_good)/(tds_bad-tds_good)/3.0+1/3.0;
                 }
-                else if (tmprecord.TDS>200&&tmprecord.TDS<=250)
+                else if (tmprecord.TDS>tds_bad&&tmprecord.TDS<=250)
                 {
-                    tmpInt=(tmprecord.TDS-200)/50.0/3.0+2/3.0;
+                    tmpInt=(tmprecord.TDS-tds_bad)/50.0/3.0+2/3.0;
                 }
                 else if (tmprecord.TDS>250)
                 {

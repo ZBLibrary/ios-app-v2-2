@@ -12,7 +12,7 @@
 #define temperature_high    50
 #define temperature_low     25
 #define tds_bad             200
-#define tds_good            50
+#define tds_good            100
 
 @interface CupRecord : NSObject
 //!@brief 数据周期起始时间

@@ -727,7 +727,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                         let state=responseObject.objectForKey("state") as! Int
                         if(state>=0)
                         {
-                            
+                           
                             
                             if (responseObject.objectForKey("time")!.isKindOfClass(NSNull) == false)&&(responseObject.objectForKey("nowtime")!.isKindOfClass(NSNull) == false)
                             {

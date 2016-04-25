@@ -60,9 +60,9 @@ class WaterPurTDSDetailCell1: UITableViewCell {
             TDS_After.text="\(tdsAfter)"
             switch tdsAfter
             {
-            case 0...50:
+            case 0..<TDS_Good_Int:
                 break
-            case 51...200:
+            case TDS_Good_Int..<TDS_Bad_Int:
                 break
                 
             default:

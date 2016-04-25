@@ -42,12 +42,12 @@
         if( self.currentTDSValue > 0)
         {
             stateImgView.hidden = false;
-            if (self.currentTDSValue <= 50)
+            if (self.currentTDSValue <= tds_good)
             {
                 stateImgView.image = [UIImage imageNamed:@"baobiao.png"];
                 title = @"好";
             }
-            else if (self.currentTDSValue <= 200)
+            else if (self.currentTDSValue <= tds_bad)
             {
                 stateImgView.image = [UIImage imageNamed:@"yiban.png"];
                 title = @"一般";
@@ -146,12 +146,12 @@
         
         self.tdsStateImgIview.hidden = false;
         self.tdsStateValueLabel.hidden=false;
-        if(self.currentTDSValue <= 50)
+        if(self.currentTDSValue <= tds_good)
         {
             self.tdsStateImgIview.image = [UIImage imageNamed:@"baobiao.png"];
             title = @"健康";
         }
-        else if (self.currentTDSValue <= 200)
+        else if (self.currentTDSValue <= tds_bad)
         {
             self.tdsStateImgIview.image = [UIImage imageNamed:@"yiban.png"];
             title = @"一般";

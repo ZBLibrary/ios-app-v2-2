@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-let TDS_Good_zb:Int = 50
-let TDS_Middle_zb:Int = 200
+let TDS_Good_Int = Int(tds_good)//Tds
+let TDS_Bad_Int = Int(tds_bad)
 
 //主要颜色
 let color_main=UIColor(red: 74/255, green: 180/255, blue: 233/255, alpha: 1)
@@ -70,13 +70,13 @@ class getshareImageClass:NSObject
         {
             switch value
             {
-            case 0..<TDS_Good_zb:
+            case 0..<TDS_Good_Int:
                 shareView.share_stateImage.image=UIImage(named: "share_TDS3")
                 break
-            case TDS_Good_zb..<TDS_Middle_zb:
+            case TDS_Good_Int..<TDS_Bad_Int:
                 shareView.share_stateImage.image=UIImage(named: "share_TDS2")
                 break
-            case TDS_Middle_zb..<100000000:
+            case TDS_Bad_Int..<100000000:
                 shareView.share_stateImage.image=UIImage(named: "share_TDS1")
                 break
             default:
@@ -279,7 +279,6 @@ func get_MyInfoSet()->(Int,Int)
     return ((Temperature as! Int),(WaterMeter as! Int))
 }
 
-let Url_test_Star="http://test.oznerwater.com/lktnew/wsrv/Handlcustomer.ashx?AccessToken=6201507a981afb4ZZ6ac698ed3dd86e1a76a3bb051703"
 let Screen_Width=UIScreen.mainScreen().bounds.size.width
 let Screen_Hight=UIScreen.mainScreen().bounds.size.height
 //let K_Width=Screen_Width/375

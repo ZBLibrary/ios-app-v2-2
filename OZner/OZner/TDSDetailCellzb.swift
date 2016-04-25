@@ -34,15 +34,15 @@ class TDSDetailCellzb: UITableViewCell {
             }
             switch TDSValueChange
             {
-            case 0..<50:
+            case 0..<TDS_Good_Int:
                 faceIcon.image=UIImage(named: "waterState1")
                 faceState.text="完美水质，体内每个细胞都说好！"
                 break
-            case 50..<200:
+            case TDS_Good_Int..<TDS_Bad_Int:
                 faceIcon.image=UIImage(named: "waterState2")
                 faceState.text="饮水安全需谨慎，你值得拥有更好的。"
                 break
-            case 200..<65535:
+            case TDS_Bad_Int..<65535:
                 faceIcon.image=UIImage(named: "waterState3")
                 faceState.text="当前杂质较多，请放心给对手饮用"
                 break

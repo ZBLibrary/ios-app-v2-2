@@ -19,6 +19,7 @@ static CustomTabBarView*    g_CustomTabBar;
 {
     id <CustomTabDelegate> ndelegate;
     NSMutableArray* buttons;
+    NSMutableArray* badgeLabels;
     int currentIndex;
     
     float lastHideOffset;
@@ -32,6 +33,8 @@ static CustomTabBarView*    g_CustomTabBar;
 
 @implementation CustomTabBarView
 @synthesize btnMuArr = buttons;
+@synthesize currentSelectEdIndex_ZB;
+@synthesize badgeMuArr = badgeLabels;
 @synthesize notifyViewArr;
 
 - (id)initWithFrame:(CGRect)frame
@@ -56,7 +59,7 @@ static CustomTabBarView*    g_CustomTabBar;
         IOS6_7_DELTA(self, 0, 20, 0, 0);
         
         buttons = [[NSMutableArray alloc] initWithCapacity:count];
-        
+        badgeLabels=[[NSMutableArray alloc] initWithCapacity:count];
         CGFloat width =SCREEN_WIDTH/[itemArray count];
         CGFloat horizontalOffset = 0;
         NSMutableArray* muArr = [[NSMutableArray alloc] init];
@@ -87,6 +90,19 @@ static CustomTabBarView*    g_CustomTabBar;
             button.frame = CGRectMake(0, 0, width, view.frame.size.height);
             [button addTarget:self action:@selector(touchDownAction:) forControlEvents:UIControlEventTouchDown];
             [view addSubview:button];
+            //badge
+            UILabel *badgeLabel = [[UILabel alloc] initWithFrame:CGRectMake((width/2 + imgView.frame.size.width/4),4, 20, 20)];
+            badgeLabel.textAlignment = NSTextAlignmentCenter;
+            badgeLabel.textColor = [UIColor whiteColor];
+            badgeLabel.backgroundColor = [UIColor redColor];
+            badgeLabel.font = [UIFont systemFontOfSize:14.0];
+            badgeLabel.text = @"0";
+            [badgeLabel layer].cornerRadius=10;
+            [badgeLabel layer].masksToBounds=YES;
+            badgeLabel.hidden=YES;
+            [view addSubview:badgeLabel];
+            [badgeLabels addObject:badgeLabel];
+            [badgeLabel release];
             [buttons addObject:button];
             horizontalOffset += width;
         }
@@ -99,6 +115,7 @@ static CustomTabBarView*    g_CustomTabBar;
         self.backgroundColor = [UIColor whiteColor];
         // 默认第一个
         [self selectItemAtIndex:0];
+        
     }
     //tabBar的顶部线的颜色
     UIView * barToplineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 0.5)];
@@ -185,7 +202,7 @@ static CustomTabBarView*    g_CustomTabBar;
 - (void) selectItemAtIndex:(NSInteger)index
 {
     currentIndex = (int)index;
-    
+    currentSelectEdIndex_ZB =  (int)index;
     UIButton* button = [buttons objectAtIndex:index];
     [self dimAllButtonsExcept:button];
 }
@@ -261,6 +278,7 @@ static CustomTabBarView*    g_CustomTabBar;
     [[NSNotificationCenter defaultCenter]postNotificationName:@"hideCustomViewFrame" object:nil];
     
     currentIndex=selectedIndex;
+    currentSelectEdIndex_ZB=selectedIndex;
     [self dimAllButtonsExcept:button];
     
     if ([ndelegate respondsToSelector:@selector(mainTabBar:touchDownAtItemAtIndex:)])

@@ -18,6 +18,8 @@
 @interface CustomTabBarView : UIView
 
 @property (nonatomic,retain) NSMutableArray* btnMuArr;
+@property (nonatomic,retain) NSMutableArray* badgeMuArr;
+@property (nonatomic,assign) int currentSelectEdIndex_ZB;
 //通知view
 @property (nonatomic,retain) NSMutableArray* notifyViewArr;
 
