@@ -363,7 +363,6 @@
 		8D438E8F1C9AB42A0060896D /* OznerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E8E1C9AB42A0060896D /* OznerManager.m */; };
 		8D438E961C9AB44F0060896D /* WaterReplenishmentMeterMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E911C9AB44F0060896D /* WaterReplenishmentMeterMgr.m */; };
 		8D438E971C9AB44F0060896D /* WaterReplenishmentMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E931C9AB44F0060896D /* WaterReplenishmentMeter.m */; };
-		8D438E981C9AB44F0060896D /* WaterReplenishmentMeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E951C9AB44F0060896D /* WaterReplenishmentMeterStatus.m */; };
 		8D438EA31C9AB4690060896D /* BluetoothIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E9A1C9AB4690060896D /* BluetoothIO.m */; };
 		8D438EA51C9AB4690060896D /* BluetoothSynchronizedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E9E1C9AB4690060896D /* BluetoothSynchronizedObject.m */; };
 		8D438EA61C9AB4690060896D /* FirmwareTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438EA01C9AB4690060896D /* FirmwareTools.m */; };
@@ -378,6 +377,7 @@
 		8D88804F1C8DCC4D007391E1 /* setWaterReplenishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */; };
 		8D8880521C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */; };
 		8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */; };
+		8D8B6F421CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B6F411CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.m */; };
 		8D9C63561CA2456200543353 /* MXChipPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63551CA2456200543353 /* MXChipPair.m */; };
 		8D9C635A1CA245B700543353 /* HttpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63581CA245B700543353 /* HttpServer.m */; };
 		8D9C635B1CA245B700543353 /* EasyLinkSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63591CA245B700543353 /* EasyLinkSender.m */; };
@@ -1444,8 +1444,6 @@
 		8D438E911C9AB44F0060896D /* WaterReplenishmentMeterMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterMgr.m; sourceTree = "<group>"; };
 		8D438E921C9AB44F0060896D /* WaterReplenishmentMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeter.h; sourceTree = "<group>"; };
 		8D438E931C9AB44F0060896D /* WaterReplenishmentMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeter.m; sourceTree = "<group>"; };
-		8D438E941C9AB44F0060896D /* WaterReplenishmentMeterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterStatus.h; sourceTree = "<group>"; };
-		8D438E951C9AB44F0060896D /* WaterReplenishmentMeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterStatus.m; sourceTree = "<group>"; };
 		8D438E991C9AB4690060896D /* BluetoothIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIO.h; sourceTree = "<group>"; };
 		8D438E9A1C9AB4690060896D /* BluetoothIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIO.m; sourceTree = "<group>"; };
 		8D438E9D1C9AB4690060896D /* BluetoothSynchronizedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothSynchronizedObject.h; sourceTree = "<group>"; };
@@ -1464,6 +1462,8 @@
 		8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setWaterReplenishController.swift; sourceTree = "<group>"; };
 		8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell.swift; sourceTree = "<group>"; };
 		8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainOfSetWaterReplenCell.xib; sourceTree = "<group>"; };
+		8D8B6F401CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterStatus.h; sourceTree = "<group>"; };
+		8D8B6F411CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterStatus.m; sourceTree = "<group>"; };
 		8D9C63541CA2456200543353 /* MXChipPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXChipPair.h; sourceTree = "<group>"; };
 		8D9C63551CA2456200543353 /* MXChipPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXChipPair.m; sourceTree = "<group>"; };
 		8D9C63571CA245B700543353 /* HttpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpServer.h; sourceTree = "<group>"; };
@@ -3152,8 +3152,8 @@
 				8D438E911C9AB44F0060896D /* WaterReplenishmentMeterMgr.m */,
 				8D438E921C9AB44F0060896D /* WaterReplenishmentMeter.h */,
 				8D438E931C9AB44F0060896D /* WaterReplenishmentMeter.m */,
-				8D438E941C9AB44F0060896D /* WaterReplenishmentMeterStatus.h */,
-				8D438E951C9AB44F0060896D /* WaterReplenishmentMeterStatus.m */,
+				8D8B6F401CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.h */,
+				8D8B6F411CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.m */,
 			);
 			name = WaterReplenishmentMeter;
 			sourceTree = "<group>";
@@ -3320,8 +3320,8 @@
 		523DC3531C175E5800595099 /* ExtralLibarary */ = {
 			isa = PBXGroup;
 			children = (
-				8DF060971CC90F1300EC05D9 /* SnapKit */,
 				42A7BB101C0C237C008DB6E5 /* OZner-Bridging-Header.h */,
+				8DF060971CC90F1300EC05D9 /* SnapKit */,
 				349F0C561C15852D00E46253 /* OznerLibrary */,
 				8DA403501C843F7900AD5E5E /* LBXScan */,
 				42A7BB481C0C2465008DB6E5 /* Database */,
@@ -4947,6 +4947,7 @@
 				524337821C42A6320024133D /* CupDBRecord.m in Sources */,
 				524337BB1C42A8D70024133D /* TapRecordList.m in Sources */,
 				8DA405E31C8441B500AD5E5E /* ZXQRCodeReader.m in Sources */,
+				8D8B6F421CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.m in Sources */,
 				52ECBE9A1C0C696100A962E4 /* FatherViewController.m in Sources */,
 				8DA405C81C8441B500AD5E5E /* ZXPDF417ScanningDecoder.m in Sources */,
 				8DA406011C8441B500AD5E5E /* ZXTelParsedResult.m in Sources */,
@@ -5117,7 +5118,6 @@
 				524337991C42A63F0024133D /* BaseDeviceIO.m in Sources */,
 				52AED7841C2F0C690068F2FF /* chatMessageCommon.swift in Sources */,
 				8DA4056B1C8441B500AD5E5E /* ZXCode39Writer.m in Sources */,
-				8D438E981C9AB44F0060896D /* WaterReplenishmentMeterStatus.m in Sources */,
 				8DA4054E1C8441B500AD5E5E /* ZXAztecDetectorResult.m in Sources */,
 				8DA405631C8441B500AD5E5E /* ZXCapture.m in Sources */,
 				8DA405511C8441B500AD5E5E /* ZXAztecReader.m in Sources */,
@@ -5423,8 +5423,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5446,7 +5446,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
+				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5471,8 +5471,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -5487,7 +5487,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
+				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";

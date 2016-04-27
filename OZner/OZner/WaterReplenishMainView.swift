@@ -128,6 +128,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
             skinButton.hidden=true
             TestingIcon.hidden=true
             isStopAnimation=true
+            runTimeOfAnimations=0.0
             switch stateOfView
             {
             case 0:
@@ -143,12 +144,12 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 centerCircleView.backgroundColor=color_blue
                 alertBeforeTest.font=UIFont.systemFontOfSize(16)
                 resultStateLabel.text=""
-                let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
-                resultValueLabel.text = "上一次检测 \(tmpStruct.lastSkinValue)  |  平均值 \(tmpStruct.averageSkinValue)（\(tmpStruct.checkTimes)次）"
-                print(currentBodyPart.hashValue)
-                print(avgAndTimesArr)
-                print(tmpStruct)
-                print("===============")
+                
+                if avgAndTimesArr.count>0
+                {
+                    let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
+                    resultValueLabel.text = "上一次检测 \(Int(tmpStruct.lastSkinValue))%  |  平均值 \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)次）"
+                }
             case 2:
                 
                 alertBeforeTest.hidden=false
@@ -158,10 +159,13 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 resultStateLabel.text=""
                 //检测转圈动画
                 isStopAnimation=false
+                runTimeOfAnimations=0.0
                 startAnimations(0)
-                let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
-                
-                resultValueLabel.text = "上一次检测 \(tmpStruct.lastSkinValue)  |  平均值 \(tmpStruct.averageSkinValue)（\(tmpStruct.checkTimes)次）"
+                if avgAndTimesArr.count>0
+                {
+                    let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
+                    resultValueLabel.text = "上一次检测 \(Int(tmpStruct.lastSkinValue))%  |  平均值 \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)次）"
+                }
             case 3:
                 resultValueContainView.hidden=false
                 print(WaterReplenishDevice!.status.oil)//油分
@@ -169,19 +173,27 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 let testResult=getNeedOilAndWaterValue(WaterReplenishDevice!.status.moisture)
                 valueOfTestLabel.text=testResult.moistureValue
                 stateOfTestLabel.text=WaterType[testResult.TypeIndex]
+                centerCircleView.backgroundColor=ColorType[testResult.TypeIndex]
                 resultStateLabel.text=WaterStateArr[currentBodyPart]![testResult.TypeIndex]
                 if currentBodyPart==BodyParts.Face {
                     currentSkinTypeIndex=testResult.skinTypeIndex
                 }
                 uploadSKinData(testResult.oilValue, snumber: testResult.moistureValue)
+
                 let tmpTimes=avgAndTimesArr["\(currentBodyPart.hashValue)"]?.checkTimes
                 avgAndTimesArr["\(currentBodyPart.hashValue)"]?.checkTimes+=1
                
                 avgAndTimesArr["\(currentBodyPart.hashValue)"]?.lastSkinValue=Double(testResult.moistureValue as String)!
-                var tmpAvg=Double(testResult.moistureValue as String)!+(avgAndTimesArr["\(currentBodyPart.hashValue)"]?.averageSkinValue)!*Double(tmpTimes!)
+                var tmpAvg=Double(testResult.moistureValue as String)!
+                
+                tmpAvg=tmpAvg+(avgAndTimesArr["\(currentBodyPart.hashValue)"]?.averageSkinValue)!*Double(tmpTimes!)
                 tmpAvg=tmpAvg/Double(tmpTimes!+1)
                 avgAndTimesArr["\(currentBodyPart.hashValue)"]?.averageSkinValue=Double(String(format: "%.1f",tmpAvg))!
-               
+                if avgAndTimesArr.count>0
+                {
+                    let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
+                    resultValueLabel.text = "上一次检测 \(Int(tmpStruct.lastSkinValue))%  |  平均值 \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)次）"
+                }
             default:
                 break
             }
@@ -228,8 +240,11 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         0.074,
         0.0735,
         0.073]
+
     private let SkinType=["干性","中性","油性"]
     private let WaterType=["干燥","正常","水润"]
+    private let ColorType=[UIColor(red: 252/255, green: 128/255, blue: 65/255, alpha: 1),UIColor(red: 64/255, green: 125/255, blue: 250/255, alpha: 1),UIColor(red: 64/255, green: 125/255, blue: 250/255, alpha: 1)]
+    
     //water,取值范围
     private let WaterTypeValue=[BodyParts.Face:[32,42],
                            BodyParts.Eyes:[35,45],
@@ -238,6 +253,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     ]
     private func getNeedOilAndWaterValue(adc:Float)->(oilValue:String,moistureValue:String,TypeIndex:Int,skinTypeIndex:Int)
     {
+        
         var tmpIndex=Int(adc-1)/50-3
         tmpIndex=tmpIndex<0 ? 0:tmpIndex
         tmpIndex=tmpIndex>15 ? 15:tmpIndex
@@ -270,17 +286,32 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     //private getStateOf
     //检测中动画效果
     private var isStopAnimation=false
+    private var runTimeOfAnimations:Double=0.0
     private func startAnimations(angle:CGFloat)
     {
+        runTimeOfAnimations+=0.1
         let endAngle:CGAffineTransform = CGAffineTransformMakeRotation(angle*CGFloat(M_PI/180.0))
         UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
             self.TestingIcon.transform = endAngle
-            
-            }, completion: {(finished:Bool) in
-                if self.isStopAnimation==false
+            }, completion: {[weak self](finished:Bool) in
+                
+                if self!.isStopAnimation==false&&self!.runTimeOfAnimations<=10.0
                 {
-                    self.startAnimations(angle+30)
+                    self!.startAnimations(angle+30)
+                }else
+                {
+                    if self!.runTimeOfAnimations>=10.0
+                    {
+                        let alertView=SCLAlertView()
+                        alertView.showTitle("", subTitle: "您的检测时间未满5秒...", duration: 2.0, completeText: "完成", style: SCLAlertViewStyle.Notice)
+                        self!.stateOfView=1
+                    }
+                    self!.runTimeOfAnimations=0.0
+                    self!.isStopAnimation=true
+                    
                 }
+                
+                
         })
     }
 
@@ -399,6 +430,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     var avgAndTimesArr=[String:HeadOfWaterReplenishStruct]()
     func getAllWeakAndMonthData()
     {
+        print(get_UserToken())
         //下载周月数据
         MBProgressHUD.showHUDAddedTo(self, animated: true)
         let deviceService=DeviceWerbservice()

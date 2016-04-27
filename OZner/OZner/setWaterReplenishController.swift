@@ -39,6 +39,7 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         settingDic?.setValue(myCurrentDevice?.settings.get("checktime2", default: 52200), forKey: "checktime2")
         settingDic?.setValue(myCurrentDevice?.settings.get("checktime3", default: 75600), forKey: "checktime3")
         settingDic?.setValue(myCurrentDevice?.settings.get("sex", default: "女"), forKey: "sex")
+            
         }
     }
     //修改设备名称通知
@@ -148,8 +149,7 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         //数据初始化
         MainViewCell.NameAndAdress.text=(settingDic?.objectForKey("deviceName") as? String)!+"("+(settingDic?.objectForKey("deviceAttrib") as? String)!+")"
         MainViewCell.Sex.text=settingDic?.objectForKey("sex") as? String
-        
-        print(settingDic)
+
         return MainViewCell
     }
     func toSetNameAndDressButton()

@@ -919,6 +919,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 {
                     headView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
                 }
+            }else if WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(self.myCurrentDevice?.type) == true
+            {
+                if waterReplenishMainView != nil
+                {
+                    waterReplenishMainView?.TitleOfReplensh.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                }
             }
         }
     }
@@ -1141,12 +1147,6 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 //跑马效果 0没有跑过，1正在跑马，2跑过马了
                 if airPurifier_Bluetooth.status.power==true&&airPurifier_Bluetooth.sensor.PM25 != 65535
                 {
-//                    if #available(iOS 8.2, *) {
-//                        IAW_TempView.PM25.font=UIFont.systemFontOfSize(60, weight: 0.5)
-//                    } else {
-//                        IAW_TempView.PM25.font=UIFont.systemFontOfSize(50)
-//                        // Fallback on earlier versions
-//                    }// (name: ".SFUIDisplay-Thin", size: 60)
                     if isPaoMa != 1
                     {
                         if isPaoMa == 0

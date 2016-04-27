@@ -133,6 +133,7 @@
         if(bISsuccess)
         {
             NSDictionary* dic = [data JSONObject];
+            NSLog(@"%@",dic);
             if(dic != nil)
             {
                 if([[dic objectForKey:@"state"] intValue] > 0)

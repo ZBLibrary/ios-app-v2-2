@@ -65,10 +65,8 @@ class FooterOfWaterReplenishDetailCell: UITableViewCell,HeadOfWaterReplenishDeta
                 return
             }
             organLabel.text=["脸部","眼部","手部","颈部"][currentOrgan]
-            
-            segmentControl.selectedSegmentIndex=0
-            
-            drawChartView(0)
+   
+            drawChartView(segmentControl.selectedSegmentIndex)
             
         }
     }
