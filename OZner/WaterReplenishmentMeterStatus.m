@@ -55,10 +55,9 @@ static double testValueTable[][8]=
 -(void)load:(NSData *)data
 {
     BytePtr bytes=(BytePtr)[data bytes];
-    _power=bytes[1];
-    _battery=bytes[2]/100.0f;
+    _power=bytes[0];
+    _battery=(float)bytes[1]/100.0f;
 }
-
 -(void)reset
 {
     _power=false;

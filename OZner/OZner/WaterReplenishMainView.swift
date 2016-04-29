@@ -305,6 +305,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                         let alertView=SCLAlertView()
                         alertView.showTitle("", subTitle: "您的检测时间未满5秒...", duration: 2.0, completeText: "完成", style: SCLAlertViewStyle.Notice)
                         self!.stateOfView=1
+                        self!.alertBeforeTest.text="检测失败,请重试"
                     }
                     self!.runTimeOfAnimations=0.0
                     self!.isStopAnimation=true

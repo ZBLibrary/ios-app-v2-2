@@ -128,23 +128,21 @@ class EquidsCollectionViewController: UICollectionViewController {
         switch(arraydata[indexPath.row+indexPath.section*3].Type)
         {
             
-            case "CP001":
-                imgwhich+="My_cup"
-            break
-            case "MXCHIP_HAOZE_Water":
-                imgwhich+="My_shuiji"
-            break
-            case "SC001":
-                imgwhich+="My_tantou"
-            break
-            case "FLT001"://蓝牙空境
+        case "CP001":
+            imgwhich+="My_cup"
+        case "MXCHIP_HAOZE_Water":
+            imgwhich+="My_shuiji"
+        case "SC001":
+            imgwhich+="My_tantou"
+        case "FLT001"://空净
             imgwhich+="My_kongjing_small"
-            break
-            case "FOG_HAOZE_AIR"://wifi空境
-                imgwhich+="My_kongjing_big"
-            break
-            default:
-                //cell.equipImage.image=UIImage(named: "My_cup")
+        case "FOG_HAOZE_AIR"://wifi空净
+            imgwhich+="My_kongjing_big"
+        case "BSY001"://补水仪
+            imgwhich+="My_bsy"
+            
+        default:
+            //cell.equipImage.image=UIImage(named: "My_cup")
             break
         }
         cell.right_up.hidden=true
