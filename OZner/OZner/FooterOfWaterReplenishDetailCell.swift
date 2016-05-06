@@ -98,10 +98,12 @@ class FooterOfWaterReplenishDetailCell: UITableViewCell,HeadOfWaterReplenishDeta
         {
             view.removeFromSuperview()
         }
+        let tmpWeek = weekArray.objectForKey("\(currentOrgan)") ?? [AnyObject]()
+        let tmpMonth = monthArray.objectForKey("\(currentOrgan)") ?? [AnyObject]()
+        let tmpArr =  dateType==0 ? tmpWeek:tmpMonth
         
-        let tmpArr=(dateType==0 ? weekArray.objectForKey("\(currentOrgan)"):monthArray.objectForKey("\(currentOrgan)")) as! [AnyObject]
         let lineView=waterReplenishChartView()
-        lineView.drawLineView(Int32(dateType), dataArr: tmpArr)
+        lineView.drawLineView(Int32(dateType), dataArr: tmpArr as! [AnyObject])
         chartContainerView.addSubview(lineView)
         setNeedsLayout()
         layoutIfNeeded()

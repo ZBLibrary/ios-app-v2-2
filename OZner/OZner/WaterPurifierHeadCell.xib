@@ -86,12 +86,21 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TH-af-aXe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="60"/>
                                                             </button>
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备已断开" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohs-zz-8Ci">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="42"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="34"/>
+                                                                <color key="textColor" red="0.78823529411764703" green="0.0" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="0yl-Y1-4mA" firstAttribute="top" secondItem="ohs-zz-8Ci" secondAttribute="bottom" id="3ic-k3-a95"/>
                                                             <constraint firstItem="fxo-G9-H8F" firstAttribute="leading" secondItem="cfM-c9-v0Q" secondAttribute="leading" id="4V7-6y-SMm"/>
+                                                            <constraint firstItem="ohs-zz-8Ci" firstAttribute="top" secondItem="cfM-c9-v0Q" secondAttribute="top" id="HbV-L4-Ikj"/>
                                                             <constraint firstAttribute="width" secondItem="cfM-c9-v0Q" secondAttribute="height" multiplier="4:1" id="IkT-Ph-ZLy"/>
                                                             <constraint firstItem="fxo-G9-H8F" firstAttribute="top" secondItem="t9j-Ng-9Vg" secondAttribute="bottom" id="LIY-m3-Nzf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ohs-zz-8Ci" secondAttribute="trailing" id="Qja-Oe-cPd"/>
                                                             <constraint firstAttribute="bottom" secondItem="fxo-G9-H8F" secondAttribute="bottom" id="RCq-5x-FK8"/>
                                                             <constraint firstAttribute="bottom" secondItem="0yl-Y1-4mA" secondAttribute="bottom" id="RG2-ji-jdq"/>
                                                             <constraint firstItem="t9j-Ng-9Vg" firstAttribute="top" secondItem="cfM-c9-v0Q" secondAttribute="top" id="WT5-5k-Ofr"/>
@@ -100,6 +109,7 @@
                                                             <constraint firstItem="0yl-Y1-4mA" firstAttribute="top" secondItem="t9j-Ng-9Vg" secondAttribute="bottom" id="bkm-7U-nnc"/>
                                                             <constraint firstItem="8TH-af-aXe" firstAttribute="leading" secondItem="cfM-c9-v0Q" secondAttribute="leading" id="gMo-Zj-p2N"/>
                                                             <constraint firstItem="t9j-Ng-9Vg" firstAttribute="height" secondItem="cfM-c9-v0Q" secondAttribute="height" multiplier="42:60" id="hOd-2g-692"/>
+                                                            <constraint firstItem="ohs-zz-8Ci" firstAttribute="leading" secondItem="cfM-c9-v0Q" secondAttribute="leading" id="k9m-rz-omc"/>
                                                             <constraint firstAttribute="bottom" secondItem="8TH-af-aXe" secondAttribute="bottom" id="koY-S2-5vS"/>
                                                             <constraint firstItem="8TH-af-aXe" firstAttribute="top" secondItem="cfM-c9-v0Q" secondAttribute="top" id="m4H-Lp-AbY"/>
                                                             <constraint firstItem="t9j-Ng-9Vg" firstAttribute="leading" secondItem="cfM-c9-v0Q" secondAttribute="leading" id="n7d-an-eDB"/>
@@ -272,6 +282,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="cicleContainerView" destination="Fee-bU-h7r" id="gZg-TU-9l3"/>
+                <outlet property="deviceStateLabel" destination="ohs-zz-8Ci" id="3n8-Os-XF3"/>
+                <outlet property="deviceValueContainer" destination="t9j-Ng-9Vg" id="MGh-lD-T9t"/>
                 <outlet property="drinkingSuggest" destination="J1Z-aH-uHn" id="NFR-Je-Jb9"/>
                 <outlet property="faceImgView" destination="GWK-HI-jFM" id="LKe-F2-JVb"/>
                 <outlet property="faceTextLabel" destination="8UP-Ex-0Ns" id="Cot-7u-Eno"/>
@@ -279,7 +291,7 @@
                 <outlet property="purifiedBefore" destination="YTD-18-pau" id="wpA-Ek-Y3e"/>
                 <outlet property="toTDSDetailButton" destination="8TH-af-aXe" id="QeC-eP-adM"/>
             </connections>
-            <point key="canvasLocation" x="664.5" y="317"/>
+            <point key="canvasLocation" x="571.5" y="279"/>
         </tableViewCell>
     </objects>
     <resources>

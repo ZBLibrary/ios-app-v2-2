@@ -20,8 +20,9 @@ class WaterPurifierHeadCell: UITableViewCell {
     @IBOutlet var purifiedBefore: UILabel!//有数据字体 54，无数据字体 40
     @IBOutlet var purifiedAfter: UILabel!
     @IBOutlet var drinkingSuggest: UILabel!
-    //为了解决一个bug
-    //var firstLoadTwo=3
+    //设备断网
+    @IBOutlet weak var deviceStateLabel: UILabel!
+    @IBOutlet weak var deviceValueContainer: UIView!
     //净化前数据
     var TdsBefore:Int = 0{
         didSet{

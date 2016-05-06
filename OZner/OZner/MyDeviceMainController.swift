@@ -942,7 +942,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             return (NameStr.objectAtIndex(0) as! String)
         }
     }
-     //收到删除设备的通知
+    //收到删除设备的通知
     func receiveDeleteDevicesNotify()
     {
         //print(nt)
@@ -956,9 +956,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         else
         {
             self.myCurrentDevice = nil
-           
+            
         }
-    NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: self.myCurrentDevice)
+        NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: self.myCurrentDevice)
     }
 
     
@@ -1360,24 +1360,36 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         //wifi设备
         if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)||WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) {
             //空净
+             StopLoadAnimal()
             if headView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
             {
-                initBigClickButton()
-                StopLoadAnimal()
+                let airPurifier = self.myCurrentDevice as! AirPurifier_MxChip
+                if airPurifier.isOffline==true{
+                    IAW_TempView.PM25.text="设备已断开"
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 20)
+                    print(IAW_TempView.PM25.font)
+                }
+                else{
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 45)
+                    initBigClickButton()
+                    
+                }
+               
             }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
             {
-                waterPurFooter.updateSwitchState()
-                if self.myCurrentDevice != nil
-                {
+                let waterPurifier = self.myCurrentDevice as! WaterPurifier
+                WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurifier.isOffline
+                WaterPurfHeadView?.deviceValueContainer.hidden=waterPurifier.isOffline
+                if waterPurifier.isOffline==false {
+                    waterPurFooter.updateSwitchState()
                     if (self.myCurrentDevice as! WaterPurifier).status.power==false
                     {
                         WaterPurfHeadView?.TdsBefore=0
                         WaterPurfHeadView?.TdsAfter=0
                     }
                     
-                    
                 }
-                StopLoadAnimal()
+                
             }
             
             //设备网络状况
@@ -1386,7 +1398,6 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             if(device.connectStatus() == Connected)
             {
                 LoadingView.state = -1//已连接
-                
             }
             else if (device.connectStatus() == Connecting)
             {
@@ -1395,7 +1406,6 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             else
             {
                 LoadingView.state=1
-                
             }
             //补水仪设备检测中，检测完成回掉
             if WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(myCurrentDevice?.type)
@@ -1723,6 +1733,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             return
         }
         bigFooterViews[1].ison = (tmpSpeed==0||tmpSpeed==4||tmpSpeed==5) ? true :false
+        bigFooterViews[1].ison = bigFooterViews[0].ison==true ? bigFooterViews[1].ison:false
         
         if bigFooterViews[1].ison==true
         {

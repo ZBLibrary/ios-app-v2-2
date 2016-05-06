@@ -219,7 +219,6 @@
 		524337BB1C42A8D70024133D /* TapRecordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337B11C42A8D70024133D /* TapRecordList.m */; };
 		524337BC1C42A8D70024133D /* TapSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337B31C42A8D70024133D /* TapSensor.m */; };
 		524337BD1C42A8D70024133D /* TapSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337B51C42A8D70024133D /* TapSettings.m */; };
-		524337C81C42A8E50024133D /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337BF1C42A8E50024133D /* WaterPurifier.m */; };
 		524337C91C42A8E50024133D /* WaterPurifierInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C11C42A8E50024133D /* WaterPurifierInfo.m */; };
 		524337CA1C42A8E50024133D /* WaterPurifierManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C31C42A8E50024133D /* WaterPurifierManager.m */; };
 		524337CB1C42A8E50024133D /* WaterPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C51C42A8E50024133D /* WaterPurifierSensor.m */; };
@@ -367,6 +366,8 @@
 		8D438EA51C9AB4690060896D /* BluetoothSynchronizedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E9E1C9AB4690060896D /* BluetoothSynchronizedObject.m */; };
 		8D438EA61C9AB4690060896D /* FirmwareTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438EA01C9AB4690060896D /* FirmwareTools.m */; };
 		8D438EA71C9AB4690060896D /* ScanData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438EA21C9AB4690060896D /* ScanData.m */; };
+		8D4F4E821CDADD6D00BE1E77 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */; };
+		8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */; };
 		8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */; };
 		8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */; };
 		8D756AC71C8E91D50022CF63 /* SetSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */; };
@@ -825,7 +826,6 @@
 		8DD51FE31C7DA7CD00F95695 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */; };
 		8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */; };
 		8DE5FD7B1C56745D0092242F /* UserInfoClasszb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */; };
-		8DEB63D61C59FA8800E4A7D5 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */; };
 		8DF060A51CC90F6100EC05D9 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060981CC90F6100EC05D9 /* Constraint.swift */; };
 		8DF060A61CC90F6100EC05D9 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */; };
 		8DF060A71CC90F6100EC05D9 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */; };
@@ -1201,7 +1201,6 @@
 		524337401C42A5BB0024133D /* BluetoothAirPurifierStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierStatus.m; sourceTree = "<group>"; };
 		524337411C42A5BB0024133D /* BluetoothAirPurifierFilterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothAirPurifierFilterStatus.h; sourceTree = "<group>"; };
 		524337421C42A5BB0024133D /* BluetoothAirPurifierFilterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierFilterStatus.m; sourceTree = "<group>"; };
-		524337471C42A5C30024133D /* AirPurifier_MxChip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifier_MxChip.h; sourceTree = "<group>"; };
 		5243374A1C42A5C30024133D /* AirPurifierInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifierInfo.h; sourceTree = "<group>"; };
 		5243374B1C42A5C30024133D /* AirPurifierInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifierInfo.m; sourceTree = "<group>"; };
 		524337501C42A5C30024133D /* MxChipAirPurifierFilterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierFilterStatus.h; sourceTree = "<group>"; };
@@ -1264,8 +1263,6 @@
 		524337B31C42A8D70024133D /* TapSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapSensor.m; sourceTree = "<group>"; };
 		524337B41C42A8D70024133D /* TapSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapSettings.h; sourceTree = "<group>"; };
 		524337B51C42A8D70024133D /* TapSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapSettings.m; sourceTree = "<group>"; };
-		524337BE1C42A8E50024133D /* WaterPurifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier.h; sourceTree = "<group>"; };
-		524337BF1C42A8E50024133D /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
 		524337C01C42A8E50024133D /* WaterPurifierInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifierInfo.h; sourceTree = "<group>"; };
 		524337C11C42A8E50024133D /* WaterPurifierInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifierInfo.m; sourceTree = "<group>"; };
 		524337C21C42A8E50024133D /* WaterPurifierManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifierManager.h; sourceTree = "<group>"; };
@@ -1452,6 +1449,10 @@
 		8D438EA01C9AB4690060896D /* FirmwareTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirmwareTools.m; sourceTree = "<group>"; };
 		8D438EA11C9AB4690060896D /* ScanData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanData.h; sourceTree = "<group>"; };
 		8D438EA21C9AB4690060896D /* ScanData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanData.m; sourceTree = "<group>"; };
+		8D4F4E801CDADD6D00BE1E77 /* AirPurifier_MxChip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifier_MxChip.h; sourceTree = "<group>"; };
+		8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifier_MxChip.m; sourceTree = "<group>"; };
+		8D4F4E831CDADD9900BE1E77 /* WaterPurifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier.h; sourceTree = "<group>"; };
+		8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
 		8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish.plist; sourceTree = "<group>"; };
 		8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSexViewController.swift; sourceTree = "<group>"; };
 		8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetSexViewController.xib; sourceTree = "<group>"; };
@@ -2174,7 +2175,6 @@
 		8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceMatchedViewController.xib; sourceTree = "<group>"; };
 		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoClasszb.swift; sourceTree = "<group>"; };
-		8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifier_MxChip.m; sourceTree = "<group>"; };
 		8DF060981CC90F6100EC05D9 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
 		8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -2287,8 +2287,8 @@
 		3473591F1C1C06EA00F4C79C /* MXChip */ = {
 			isa = PBXGroup;
 			children = (
-				524337471C42A5C30024133D /* AirPurifier_MxChip.h */,
-				8DEB63D51C59FA8800E4A7D5 /* AirPurifier_MxChip.m */,
+				8D4F4E801CDADD6D00BE1E77 /* AirPurifier_MxChip.h */,
+				8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */,
 				526466191C43D9C7006C86D3 /* AirPurifierConsts.h */,
 				8DFB39311C574E4B00A1641C /* MxChipAirPurifierSensor.h */,
 				8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */,
@@ -3036,8 +3036,8 @@
 		42C9A9D51C18211700EAB8CF /* WaterPurifier */ = {
 			isa = PBXGroup;
 			children = (
-				524337BE1C42A8E50024133D /* WaterPurifier.h */,
-				524337BF1C42A8E50024133D /* WaterPurifier.m */,
+				8D4F4E831CDADD9900BE1E77 /* WaterPurifier.h */,
+				8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */,
 				524337C01C42A8E50024133D /* WaterPurifierInfo.h */,
 				524337C11C42A8E50024133D /* WaterPurifierInfo.m */,
 				524337C21C42A8E50024133D /* WaterPurifierManager.h */,
@@ -4856,6 +4856,7 @@
 				8DA406181C84451900AD5E5E /* SubLBXScanViewController.m in Sources */,
 				8DA405481C8441B500AD5E5E /* ZXAI01weightDecoder.m in Sources */,
 				52A4EF6D1C28B0F2005F282D /* indoorAirViewController.swift in Sources */,
+				8D4F4E821CDADD6D00BE1E77 /* AirPurifier_MxChip.m in Sources */,
 				8DA405541C8441B500AD5E5E /* ZXAztecToken.m in Sources */,
 				524337451C42A5BB0024133D /* BluetoothAirPurifierStatus.m in Sources */,
 				523DC33A1C175E1B00595099 /* XMLocationMessageCell.m in Sources */,
@@ -5073,6 +5074,7 @@
 				8DA405CE1C8441B500AD5E5E /* ZXQRCode.m in Sources */,
 				52A4EF711C28B59F005F282D /* indoorHead_SmallXib.swift in Sources */,
 				8DA403661C843F8600AD5E5E /* LBXZXCapture.m in Sources */,
+				8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */,
 				8DB044DE1CC8CDC600B60DAB /* WaterReplenishDetailTableViewController.swift in Sources */,
 				8DBD54E91C567F4500D04B12 /* chatBarViewLiuyan.swift in Sources */,
 				52F1C5011C4D6BA80008B8E5 /* TantouLXController.swift in Sources */,
@@ -5137,7 +5139,6 @@
 				8DA405AC1C8441B500AD5E5E /* ZXMultiFormatOneDReader.m in Sources */,
 				8DBD54B41C567F3800D04B12 /* EquidsCollectionViewController.swift in Sources */,
 				52791BA31C18C2F500C098B2 /* setCupNameViewController.swift in Sources */,
-				8DEB63D61C59FA8800E4A7D5 /* AirPurifier_MxChip.m in Sources */,
 				8DA405E61C8441B500AD5E5E /* ZXReedSolomonDecoder.m in Sources */,
 				8DA4057C1C8441B500AD5E5E /* ZXDataMatrixSymbolInfo144.m in Sources */,
 				523DC33B1C175E1B00595099 /* XMSystemMessageCell.m in Sources */,
@@ -5325,7 +5326,6 @@
 				8DA4053E1C8441B500AD5E5E /* ZXAddressBookDoCoMoResultParser.m in Sources */,
 				8DA405681C8441B500AD5E5E /* ZXCode128Reader.m in Sources */,
 				8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */,
-				524337C81C42A8E50024133D /* WaterPurifier.m in Sources */,
 				52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */,
 				4288C53D1C0F06FF00446D3E /* AddDeviceCell.swift in Sources */,
 				8DA405561C8441B500AD5E5E /* ZXBinarizer.m in Sources */,
@@ -5423,8 +5423,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5446,7 +5446,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
+				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5471,8 +5471,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -5487,7 +5487,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
+				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5500,8 +5500,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5523,7 +5523,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
+				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -5535,8 +5535,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5558,7 +5558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "d569f0f4-b0eb-4877-a7cb-2120f11e03e9";
+				PROVISIONING_PROFILE = "007cd7d3-9416-4062-b937-07f4af087312";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 			};
 			name = Release;

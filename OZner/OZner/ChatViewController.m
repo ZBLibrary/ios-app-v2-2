@@ -39,7 +39,7 @@ NSString *appid_News=@"hzapi"; /**< app 的ID */
 NSString *appsecret_News =@"8af0134asdffe12";
 /**idsecret*/
 NSString *appidandsecret=@"&appid=hzapi&appsecret=8af0134asdffe12";
-NSString *NEWS_URL=@"http://192.168.172.21/api";//接口头地址@"http://dkf.ozner.net/api";//测试地址
+NSString *NEWS_URL=@"http://dkf.ozner.net/api";//测试地址@"http://192.168.172.21/api";//接口头地址
 
 NSString *acsstoken_News;// 接口 token
 NSString *sign_News;// 签名
@@ -63,6 +63,8 @@ NSString * kSelfThumb  ;//会员头像
     }
     return self;
 }
+
+
 //获取聊天token
 -(void) GetAccesstoken{
     [MBProgressHUD showHUDAddedTo:self.view animated:true];

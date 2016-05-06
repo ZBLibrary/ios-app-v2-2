@@ -180,14 +180,14 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 }
                 uploadSKinData(testResult.oilValue, snumber: testResult.moistureValue)
 
-                let tmpTimes=avgAndTimesArr["\(currentBodyPart.hashValue)"]?.checkTimes
+                let tmpTimes=avgAndTimesArr["\(currentBodyPart.hashValue)"]?.checkTimes ?? 0
                 avgAndTimesArr["\(currentBodyPart.hashValue)"]?.checkTimes+=1
                
                 avgAndTimesArr["\(currentBodyPart.hashValue)"]?.lastSkinValue=Double(testResult.moistureValue as String)!
                 var tmpAvg=Double(testResult.moistureValue as String)!
                 
-                tmpAvg=tmpAvg+(avgAndTimesArr["\(currentBodyPart.hashValue)"]?.averageSkinValue)!*Double(tmpTimes!)
-                tmpAvg=tmpAvg/Double(tmpTimes!+1)
+                tmpAvg=tmpAvg+(avgAndTimesArr["\(currentBodyPart.hashValue)"]?.averageSkinValue ?? 0)!*Double(tmpTimes)
+                tmpAvg=tmpAvg/Double(tmpTimes+1)
                 avgAndTimesArr["\(currentBodyPart.hashValue)"]?.averageSkinValue=Double(String(format: "%.1f",tmpAvg))!
                 if avgAndTimesArr.count>0
                 {

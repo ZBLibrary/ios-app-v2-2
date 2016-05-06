@@ -12,7 +12,14 @@
 #import "Helper.h"
 #import "OznerDevice.h"
 #import "OznerDevice.hpp"
+@interface AirPurifier_MxChip()
+{
+    NSMutableDictionary* propertys;
+    NSTimer* updateTimer;
+    int _requestCount;
+}
 
+@end
 @implementation AirPurifier_MxChip
 #define Timeout 5
 #define SecureCode @"580c2783"
@@ -34,6 +41,7 @@
         _sensor=[[MxChipAirPurifierSensor alloc]init:propertys];
         _powerTimer=[[PowerTimer alloc] init];
         NSString* json=[self.settings get:@"powerTimer" Default:@""];
+        _isOffline=true;
         [_powerTimer loadByJSON:json];
     }
     return self;
@@ -132,6 +140,12 @@
 }
 -(void)DeviceIO:(BaseDeviceIO *)io recv:(NSData *)data
 {
+    _requestCount=0;
+    if (_isOffline)
+    {
+        _isOffline=false;
+        [self doStatusUpdate];
+    }
     if (!data) return;
     if (data.length<=0) return;
     BytePtr bytes=(BytePtr)[data bytes];
@@ -225,6 +239,17 @@
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_CONTROL_BOARD]];
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_MAIN_BOARD]];
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_VERSION]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_FILTER]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_PM25]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_LIGHT_SENSOR]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_TEMPERATURE]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_VOC]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_HUMIDITY]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_POWER]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_SPEED]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_LIGHT]];
+    [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_LOCK]];
+    
     [self reqesutProperty:set];
     [self wait:Timeout];
     return true;
@@ -260,10 +285,7 @@
 {
     NSMutableSet* set=[[NSMutableSet alloc] init];
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_FILTER]];
-    
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_PM25]];
-    
-    
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_LIGHT_SENSOR]];
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_TEMPERATURE]];
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_VOC]];
@@ -273,6 +295,12 @@
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_LIGHT]];
     [set addObject:[NSString stringWithFormat:@"%d",PROPERTY_LOCK]];
     [self reqesutProperty:set];
+    _requestCount++;
+    if (_requestCount>=3)
+    {
+        _isOffline=true;
+        [self doStatusUpdate];
+    }
 }
 
 @end
