@@ -368,6 +368,8 @@
 		8D438EA71C9AB4690060896D /* ScanData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438EA21C9AB4690060896D /* ScanData.m */; };
 		8D4F4E821CDADD6D00BE1E77 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */; };
 		8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */; };
+		8D5110751CDC6B2A00B809FA /* OffLineSuggestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */; };
+		8D5110771CDC6DD000B809FA /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */; };
 		8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */; };
 		8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */; };
 		8D756AC71C8E91D50022CF63 /* SetSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */; };
@@ -1453,6 +1455,8 @@
 		8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifier_MxChip.m; sourceTree = "<group>"; };
 		8D4F4E831CDADD9900BE1E77 /* WaterPurifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier.h; sourceTree = "<group>"; };
 		8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
+		8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffLineSuggestView.swift; sourceTree = "<group>"; };
+		8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffLineSuggestView.xib; sourceTree = "<group>"; };
 		8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish.plist; sourceTree = "<group>"; };
 		8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSexViewController.swift; sourceTree = "<group>"; };
 		8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetSexViewController.xib; sourceTree = "<group>"; };
@@ -3478,6 +3482,8 @@
 				5235E2151C40E68600B125AE /* ShareView_zb.xib */,
 				52FEC0411C35A99200B6D0F1 /* WeiXinURLViewController.swift */,
 				52FEC0421C35A99200B6D0F1 /* WeiXinURLViewController.xib */,
+				8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */,
+				8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */,
 			);
 			name = deviceCommon;
 			sourceTree = "<group>";
@@ -4671,6 +4677,7 @@
 				8DB044001CC8CCE200B60DAB /* device_share@3x.png in Resources */,
 				4281414A1C0B15F0006FEDDE /* ic_menu_black_24dp@2x.png in Resources */,
 				425F7A291C32B0C500C8B2E3 /* new_help_0@3x.png in Resources */,
+				8D5110771CDC6DD000B809FA /* OffLineSuggestView.xib in Resources */,
 				8DB044051CC8CCE200B60DAB /* device_konw@3x.png in Resources */,
 				8DB044B61CC8CD5500B60DAB /* device_jin_shui_qi_normal.png in Resources */,
 				8DB043EA1CC8CCE200B60DAB /* wen_du_3.png in Resources */,
@@ -5052,6 +5059,7 @@
 				8DA406101C8441B500AD5E5E /* ZXVEventResultParser.m in Sources */,
 				8DA4055F1C8441B500AD5E5E /* ZXByQuadrantReader.m in Sources */,
 				42A7BB3A1C0C23BC008DB6E5 /* ASIInputStream.m in Sources */,
+				8D5110751CDC6B2A00B809FA /* OffLineSuggestView.swift in Sources */,
 				42C610631C46256200CA0EE9 /* CustomOCCircleView.m in Sources */,
 				8DA406221C84456B00AD5E5E /* LBXAlertAction.m in Sources */,
 				8DBD54DD1C567F4500D04B12 /* FriendsNav.swift in Sources */,

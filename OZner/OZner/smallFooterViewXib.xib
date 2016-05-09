@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,10 +14,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6h-Ak-by3">
                     <rect key="frame" x="0.0" y="0.0" width="54" height="156"/>
                     <subviews>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="air0013" translatesAutoresizingMaskIntoConstraints="NO" id="dDj-Qd-Kiy">
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air0013" translatesAutoresizingMaskIntoConstraints="NO" id="dDj-Qd-Kiy">
                             <rect key="frame" x="18" y="76" width="18" height="4"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="低风速" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZd-uu-jHF">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="低风速" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZd-uu-jHF">
                             <rect key="frame" x="0.0" y="95" width="54" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="kH5-FF-L91"/>
@@ -131,7 +131,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vti-jx-PeU">
-                    <rect key="frame" x="54" y="49" width="267" height="60"/>
+                    <rect key="frame" x="24" y="49" width="327" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="E9E-sd-HoI"/>
@@ -140,8 +140,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="vti-jx-PeU" secondAttribute="trailing" constant="24" id="0bY-u2-8v3"/>
+                <constraint firstItem="vti-jx-PeU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="2Vu-DD-L7N"/>
                 <constraint firstAttribute="bottom" secondItem="V6h-Ak-by3" secondAttribute="bottom" id="40R-eL-bz6"/>
-                <constraint firstItem="vti-jx-PeU" firstAttribute="leading" secondItem="1mH-4z-UhK" secondAttribute="leading" id="AHy-cc-1Ie"/>
+                <constraint firstItem="vti-jx-PeU" firstAttribute="leading" secondItem="1mH-4z-UhK" secondAttribute="leading" constant="-30" id="AHy-cc-1Ie"/>
                 <constraint firstItem="he8-7D-Qtp" firstAttribute="leading" secondItem="hYN-uZ-eZx" secondAttribute="trailing" constant="100" id="C6r-am-9Y2"/>
                 <constraint firstItem="V6h-Ak-by3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CLg-mW-WPM"/>
                 <constraint firstItem="hYN-uZ-eZx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Eoh-4l-XEf"/>
@@ -150,6 +152,7 @@
                 <constraint firstItem="vti-jx-PeU" firstAttribute="height" secondItem="1mH-4z-UhK" secondAttribute="height" id="Um7-ZN-6QE"/>
                 <constraint firstItem="qzh-AH-80l" firstAttribute="width" secondItem="1mH-4z-UhK" secondAttribute="width" id="WfQ-8A-Hyu"/>
                 <constraint firstItem="he8-7D-Qtp" firstAttribute="leading" secondItem="qzh-AH-80l" secondAttribute="trailing" id="YJB-ZT-8Vt"/>
+                <constraint firstItem="vti-jx-PeU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dI6-h5-gAr"/>
                 <constraint firstItem="he8-7D-Qtp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gFs-2x-Wtn"/>
                 <constraint firstItem="qzh-AH-80l" firstAttribute="top" secondItem="1mH-4z-UhK" secondAttribute="top" id="jsM-dr-T6b"/>
                 <constraint firstItem="vti-jx-PeU" firstAttribute="centerY" secondItem="1mH-4z-UhK" secondAttribute="centerY" id="l4q-ZH-RMZ"/>
@@ -160,7 +163,7 @@
                 <constraint firstItem="V6h-Ak-by3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sYq-ZW-fSr"/>
                 <constraint firstAttribute="bottom" secondItem="he8-7D-Qtp" secondAttribute="bottom" id="x6R-rp-N3R"/>
                 <constraint firstItem="1mH-4z-UhK" firstAttribute="leading" secondItem="V6h-Ak-by3" secondAttribute="trailing" id="y4H-W0-dJf"/>
-                <constraint firstItem="vti-jx-PeU" firstAttribute="width" secondItem="1mH-4z-UhK" secondAttribute="width" id="zf7-Ch-Sji"/>
+                <constraint firstItem="vti-jx-PeU" firstAttribute="width" secondItem="1mH-4z-UhK" secondAttribute="width" constant="60" id="zf7-Ch-Sji"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -168,8 +171,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="AHy-cc-1Ie"/>
                     <exclude reference="LEf-Vg-iGd"/>
                     <exclude reference="Um7-ZN-6QE"/>
+                    <exclude reference="dI6-h5-gAr"/>
+                    <exclude reference="zf7-Ch-Sji"/>
                     <exclude reference="C6r-am-9Y2"/>
                 </mask>
             </variation>

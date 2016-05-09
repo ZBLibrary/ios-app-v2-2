@@ -291,7 +291,7 @@
                 <outlet property="purifiedBefore" destination="YTD-18-pau" id="wpA-Ek-Y3e"/>
                 <outlet property="toTDSDetailButton" destination="8TH-af-aXe" id="QeC-eP-adM"/>
             </connections>
-            <point key="canvasLocation" x="571.5" y="279"/>
+            <point key="canvasLocation" x="600.5" y="277"/>
         </tableViewCell>
     </objects>
     <resources>

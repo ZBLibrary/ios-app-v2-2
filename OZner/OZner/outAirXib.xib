@@ -288,6 +288,7 @@
                 <outlet property="teampret" destination="PY0-cJ-uhM" id="wkD-tL-W18"/>
                 <outlet property="temp" destination="7C0-Qb-5mO" id="Y2y-y7-OEG"/>
             </connections>
+            <point key="canvasLocation" x="259.5" y="342"/>
         </view>
     </objects>
 </document>

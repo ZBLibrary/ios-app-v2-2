@@ -47,9 +47,11 @@ class smallFooterViewXib: UIView {
         targertView.addGestureRecognizer(tapGesture)
         if blueTooth != nil
         {
-            let initpoint:CGFloat=CGFloat(blueTooth.status.RPM)/100.0*targertView.bounds.size.width
-
-            upDateFrame(initpoint)
+            print(blueTooth.status.RPM)
+            let initpoint:CGFloat=CGFloat(blueTooth.status.RPM)/100.0*(SCREEN_WIDTH-108)
+            
+            
+            upDateFrame(min(initpoint, SCREEN_WIDTH-108))
         }
         
     }
@@ -61,10 +63,10 @@ class smallFooterViewXib: UIView {
                 return;
             }
             let tapPoint:CGPoint = gesture.locationOfTouch(0, inView: targertView)
-            var tmpX = min(tapPoint.x, targertView.frame.size.width)
-            tmpX=max(tmpX, 0)
-
-            upDateFrame(tmpX)
+            if tapPoint.x<30||tapPoint.x>(SCREEN_WIDTH-78) {
+                return
+            }
+            upDateFrame((tapPoint.x-30))
         }
         
     }
@@ -75,8 +77,12 @@ class smallFooterViewXib: UIView {
                 return
             }
             let tapPoint:CGPoint = gesture.locationOfTouch(0, inView: targertView)
+            print(tapPoint.x)
             //设置视图
-            upDateFrame(tapPoint.x)
+            if tapPoint.x<30||tapPoint.x>(SCREEN_WIDTH-108) {
+                return
+            }
+            upDateFrame(tapPoint.x-30)
         }
     }
     
@@ -84,20 +90,21 @@ class smallFooterViewXib: UIView {
     {
         
         img0Width.constant = -x
+        let tmpValue = x/(SCREEN_WIDTH-108)
         
-        speedValue.text="\(Int(x/targertView.bounds.size.width*100))"
-        if (x/targertView.bounds.size.width)<1/3
+        speedValue.text="\(Int(tmpValue*100))"
+        if tmpValue<1/3
         {
             speedText.text="低速"
         }
-        else if (x/targertView.bounds.size.width)>2/3
+        else if tmpValue>2/3
         {
             speedText.text="高速"
         }
         else{
             speedText.text="中速"
         }
-        blueTooth.status.setRPM(Int32(x/targertView.bounds.size.width*100), callback: {
+        blueTooth.status.setRPM(Int32(tmpValue*100), callback: {
             (error:NSError!) in
         })
         if x==0

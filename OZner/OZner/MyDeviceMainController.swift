@@ -15,6 +15,8 @@ import UIKit
 
 class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,CustomOCCircleViewDelegate,OznerDeviceDelegate,UIScrollViewDelegate,UIAlertViewDelegate{
     
+    
+    
     //---------------airCleaner------------
     //主滚动视图
     var MainScrollView: UIScrollView!
@@ -22,6 +24,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     //公共部分
     var headView:headViewView!
     var outAirView:outAirXib!
+    //单机设备断网弹出的提示框
+    lazy var offLineSuggestView: OffLineSuggestView = {
+        let tmpOffLine = NSBundle.mainBundle().loadNibNamed("OffLineSuggestView", owner: nil, options: nil).last as? OffLineSuggestView
+        tmpOffLine?.IKnowButton.addTarget(self, action: #selector(IKnow), forControlEvents: .TouchUpInside)
+        return tmpOffLine!
+        }()
     
     var IAW_TempView:indoorAirWarn_Air!
     //是否开启跑马效果
@@ -576,9 +584,14 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     // 跳转到净水器TDS详情页
     func TDSDetailOfWaterPurf()
     {
-        let tdsController=WaterPurTDSDetailController()
-        tdsController.myCurrentDevice = myCurrentDevice as? WaterPurifier
-        self.navigationController?.pushViewController(tdsController, animated: true)
+        if (myCurrentDevice as? WaterPurifier)?.isOffline==true {
+            DeviceOffLineClick()
+        }
+        else{
+            let tdsController=WaterPurTDSDetailController()
+            tdsController.myCurrentDevice = myCurrentDevice as? WaterPurifier
+            self.navigationController?.pushViewController(tdsController, animated: true)
+        }
     }
 
     func leftMenuShouqiClick()
@@ -1366,7 +1379,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 let airPurifier = self.myCurrentDevice as! AirPurifier_MxChip
                 if airPurifier.isOffline==true{
                     IAW_TempView.PM25.text="设备已断开"
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 20)
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 24)
                     print(IAW_TempView.PM25.font)
                 }
                 else{
@@ -1653,9 +1666,17 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     //室内空气
     func toSeeIndoor()
     {
+        
+        if AirPurifierManager.isMXChipAirPurifier((myCurrentDevice! as OznerDevice).type)==true {
+            if (self.myCurrentDevice as! AirPurifier_MxChip).isOffline==true {
+                DeviceOffLineClick()
+                return
+            }
+        }
         let indoorAir=indoorAirViewController()
         indoorAir.myCurrentDevice=self.myCurrentDevice
         self.navigationController?.pushViewController(indoorAir, animated: true)
+        
     }
     //air设置
     func toSettingClick()
@@ -1723,7 +1744,27 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
     }
     
-    
+    //设备未联网信息显示
+    func DeviceOffLineClick()
+    {
+        bgairView=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight))
+        bgairView.backgroundColor=UIColor(white: 0, alpha: 0.3)    
+        offLineSuggestView.frame=CGRect(x: 0, y: Screen_Hight-330, width: Screen_Width, height: 330)
+        if  AirPurifierManager.isMXChipAirPurifier(myCurrentDevice?.type)==true {
+            offLineSuggestView.isAir=true
+        }
+        if  WaterPurifierManager.isWaterPurifier(myCurrentDevice?.type)==true {
+            offLineSuggestView.isAir=false
+        }
+        bgairView.addSubview(offLineSuggestView)
+        //添加点击手势
+        let tapGesture=UITapGestureRecognizer(target: self, action: #selector(IKnow))
+        tapGesture.numberOfTapsRequired=1//设置点按次数
+        bgairView.addGestureRecognizer(tapGesture)
+        self.view.addSubview(bgairView)
+        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        
+    }
     //0 auto ,1 三级,2 二级,3一级，4 night，5 day
     let imgOn_0_5_4=["0":"air01002","5":"airdayOn","4":"airnightOn"]//0,5,4在on状态下对应的图片
     func  updateSpeedModel(tmpSpeed:UInt8)

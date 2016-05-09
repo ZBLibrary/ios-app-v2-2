@@ -153,21 +153,14 @@ class WaterPurTDSDetailController: UITableViewController {
     }
     func toDate(timestr:String)->NSDate
     {
-        var str:NSString = timestr//"/Date(1455465600000)/"
+        var str:NSString = timestr
         str=str.substringFromIndex(6)
         str=str.substringToIndex(str.length-2)
-        let num:NSTimeInterval =  NSTimeInterval(Int(str as String)!/1000)+28800
-        //let inputFormatter = NSDateFormatter()
-        //inputFormatter.dateStyle=NSDateFormatterStyle.MediumStyle
+        let tmpLong = (str as NSString).longLongValue/1000+28800
         
-        //inputFormatter.timeStyle=NSDateFormatterStyle.ShortStyle
-        //inputFormatter.locale = NSLocale.currentLocale()
         
-        //inputFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
-        return NSDate(timeIntervalSince1970: num)
-        
-        //return inputFormatter.stringFromDate(confromTimesp)
-        
+        return NSDate(timeIntervalSince1970: NSTimeInterval(tmpLong))
+  
     }
     //返回
     func toBack()
