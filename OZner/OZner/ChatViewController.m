@@ -107,10 +107,14 @@ NSString * kSelfThumb  ;//会员头像
     manager.requestSerializer=[AFJSONRequestSerializer serializer];
     [manager POST:getUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"UserInfo: %@", responseObject);
-        if ([[responseObject objectForKey:@"result"] objectForKey:@"count"]==0) {
+        
+        if ([[responseObject objectForKey:@"result"] isEqual:[NSNull null]]) {
             [MBProgressHUD hideHUDForView:self.view animated:true];
-        }
-        else if ([(NSArray*)[[responseObject objectForKey:@"result"] objectForKey:@"list"] count]>0)
+        }else if ([[[responseObject objectForKey:@"result"] objectForKey:@"list"] isEqual:[NSNull null]])
+        {
+            [MBProgressHUD hideHUDForView:self.view animated:true];
+        }   
+        else
         {
             NSDictionary* asd = [[[responseObject objectForKey:@"result"] objectForKey:@"list"] objectAtIndex:0];
             customerid_News=[[asd objectForKey:@"customer_id"] intValue];

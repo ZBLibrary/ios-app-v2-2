@@ -700,32 +700,37 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             {
                 continue
             }
-            let cellView = carousel.itemViewAtIndex(i) as! DeviceMatchCellView
-            var imageName=""
-            switch deviceCuttentType
-            {
-            case 0:
-                imageName = mIndex == i ? "icon_peidui_select_cup.png":"icon_peidui_normal_cup.png"
-                break
-            case 1:
-                imageName = mIndex == i ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
-                break
-            case 2:
-                imageName = mIndex == i ? "icon_peidui_select_jingshuiqi.png":"icon_peidui_normal_jingshuiqi.png"
-                break
-            case 3:
-                imageName = mIndex == i ? "icon_peidui_select_smallair.png":"icon_peidui_normal_smallair.png"
-                break
-            case 4:
-                imageName = mIndex == i ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
-                break
-            case 5:
-                imageName = mIndex == i ? "WaterReplenish4":"WaterReplenish5"
-                break
-            default:
-                break
+            
+            if let cellView1 = carousel.itemViewAtIndex(i) {
+                let cellView = cellView1 as! DeviceMatchCellView
+                var imageName=""
+                switch deviceCuttentType
+                {
+                case 0:
+                    imageName = mIndex == i ? "icon_peidui_select_cup.png":"icon_peidui_normal_cup.png"
+                    break
+                case 1:
+                    imageName = mIndex == i ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
+                    break
+                case 2:
+                    imageName = mIndex == i ? "icon_peidui_select_jingshuiqi.png":"icon_peidui_normal_jingshuiqi.png"
+                    break
+                case 3:
+                    imageName = mIndex == i ? "icon_peidui_select_smallair.png":"icon_peidui_normal_smallair.png"
+                    break
+                case 4:
+                    imageName = mIndex == i ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
+                    break
+                case 5:
+                    imageName = mIndex == i ? "WaterReplenish4":"WaterReplenish5"
+                    break
+                default:
+                    break
+                }
+                cellView.iconImgView?.image = UIImage(named: imageName)
             }
-            cellView.iconImgView?.image = UIImage(named: imageName)
+            
+            
             
         }
         if self.isShowFinishedView == false
