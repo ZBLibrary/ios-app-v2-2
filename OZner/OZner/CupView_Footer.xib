@@ -193,7 +193,7 @@
                 <outlet property="tempState" destination="JGt-Pt-8eQ" id="kvc-ZS-gPZ"/>
                 <outlet property="tempValue" destination="42h-ZI-ltz" id="6BN-Sd-c7T"/>
             </connections>
-            <point key="canvasLocation" x="280.5" y="228"/>
+            <point key="canvasLocation" x="354.5" y="348"/>
         </view>
     </objects>
     <resources>

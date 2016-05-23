@@ -95,7 +95,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     var WaterTypeOfService:String = ""
     //水机设备购买地址
     var BuyWaterUrlString:String = ""
-    
+    //水机是否显示扫码功能
+    var IsShowScanOfWater:Bool = false
     //-------------------new-------------
     //设备名称
     @IBOutlet var titleLabel: UILabel!
@@ -127,6 +128,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             let controller=TantouLXController()
             controller.buyWaterLVXinUrl=BuyWaterUrlString
             controller.myCurrentDevice = self.myCurrentDevice as! WaterPurifier
+            controller.IsShowScanOfWater=IsShowScanOfWater
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
@@ -712,12 +714,13 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             let queue = dispatch_queue_create ("净水机队列",DISPATCH_QUEUE_CONCURRENT)
             dispatch_async(queue, {
                 //获取水机设备制冷是否可用和设备类型
-                werbservice.GetMachineType(self.myCurrentDevice?.identifier, returnBlock: { (waterType, hotandcoll,buyUrl,alertDaysOfWater, status:StatusManager!) -> Void in
+                werbservice.GetMachineType(self.myCurrentDevice?.identifier, returnBlock: { (isshowscan,waterType, hotandcoll,buyUrl,alertDaysOfWater, status:StatusManager!) -> Void in
                     MBProgressHUD.hideHUDForView(self.view, animated: true)
                     if(status.networkStatus == kSuccessStatus)
                     {
                         self.WaterTypeOfService=waterType
                         self.BuyWaterUrlString=buyUrl
+                        self.IsShowScanOfWater=isshowscan=="1"
                         
                         AlertDaysOfWater =  alertDaysOfWater==nil ? AlertDaysOfWater:Int(alertDaysOfWater)!
                         self.waterPurFooter.ishaveCoolAblity=hotandcoll.containsString("cool:true")

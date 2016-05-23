@@ -14,7 +14,7 @@ class TantouLXController: UIViewController {
     var myCurrentDevice:OznerDevice?
     var mainView:tantouLvXinView!
     var buyWaterLVXinUrl:String?
-    
+    var IsShowScanOfWater=false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,8 +46,9 @@ class TantouLXController: UIViewController {
             ScrollView.addSubview(serviceImg)
             
             mainView.maxUserDay=365
-            mainView.ErWeiMaContainView.hidden=true
-            mainView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: mainView.bounds.size.height-140)
+            
+            mainView.ErWeiMaContainView.hidden = !IsShowScanOfWater
+            mainView.frame = CGRect(x: 0, y: 0, width: Screen_Width, height: IsShowScanOfWater ? mainView.bounds.size.height:(mainView.bounds.size.height-140))
             ScrollView.contentSize=CGSize(width: 0, height: mainView.bounds.size.height+(tmpImg?.size.height)!*Screen_Width/(tmpImg?.size.width)!)
         }else
         {
@@ -91,7 +92,10 @@ class TantouLXController: UIViewController {
     }
     func buyLX()
     {
-    
+        if buyWaterLVXinUrl==nil {
+            return
+        }
+        
         let buyLX=WeiXinURLViewController(goUrl: buyWaterLVXinUrl!)
         let witchUrl=weiXinUrlNamezb()
         buyLX.title=witchUrl.byTapLX
