@@ -72,8 +72,49 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
         myCurrentDevice?.settings.put("checktime3", value: settingDic?.objectForKey("checktime3"))
         myCurrentDevice?.settings.put("sex", value: settingDic?.objectForKey("sex"))
         OznerManager.instance().save(myCurrentDevice)
+        //设置手机补水提醒通知
+        setPhoneVoice([(settingDic?.objectForKey("checktime1"))!, (settingDic?.objectForKey("checktime2"))!,(settingDic?.objectForKey("checktime3"))!])
         NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func setPhoneVoice(checkTime:NSArray)
+    {
+   
+        for itemTime in checkTime
+        {
+            let tmpCheckTime = (itemTime as! NSNumber).unsignedIntValue
+            
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "HH:mm"
+            let tmptime=tmpCheckTime/60
+            var timeStr=(tmptime/60<10 ? "0\(tmptime/60)":"\(tmptime/60)")
+            timeStr+=(":"+(tmptime%60<10 ? "0\(tmptime%60)":"\(tmptime%60)"))
+            let date = formatter.dateFromString(timeStr) //触发通知的时间
+            let noti = UILocalNotification()
+            if (noti.isKindOfClass(NSNull)==false)
+            {
+                //设置推送时间
+                
+                noti.fireDate = date//=now
+                //设置时区
+                noti.timeZone = NSTimeZone.defaultTimeZone()
+                //设置重复间隔
+                noti.repeatInterval = NSCalendarUnit.Day
+                //推送声音
+                noti.soundName = UILocalNotificationDefaultSoundName
+                //内容
+                noti.alertBody = "该补水了,亲";
+                //显示在icon上的红色圈中的数子
+                noti.applicationIconBadgeNumber = 1;
+                UIApplication.sharedApplication().scheduleLocalNotification(noti)
+            }
+        }
+        
+    }
+    func cancelPhoneVoice()
+    {
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
     //alert 点击事件
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {

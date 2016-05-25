@@ -151,7 +151,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                     resultValueLabel.text = "上一次检测 \(Int(tmpStruct.lastSkinValue))%  |  平均值 \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)次）"
                 }
             case 2:
-                
+                centerCircleView.backgroundColor=color_blue
                 alertBeforeTest.hidden=false
                 TestingIcon.hidden=false
                 alertBeforeTest.text="检测中"
@@ -168,9 +168,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                 }
             case 3:
                 resultValueContainView.hidden=false
-                print(WaterReplenishDevice!.status.oil)//油分
-                print(WaterReplenishDevice!.status.moisture)//水分
-                let testResult=getNeedOilAndWaterValue(WaterReplenishDevice!.status.moisture)
+                let testResult=getNeedOilAndWaterValue(WaterReplenishDevice!.status.oil,moisture: WaterReplenishDevice!.status.moisture)
                 valueOfTestLabel.text=testResult.moistureValue
                 stateOfTestLabel.text=WaterType[testResult.TypeIndex]
                 centerCircleView.backgroundColor=ColorType[testResult.TypeIndex]
@@ -207,39 +205,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         BodyParts.Hands:["手部干燥细纹也跑出来啦 手指的肉刺也变多 需要赶快补充水分哦","手部现在的肌肤水份得到补充 果然光滑许多","手部润滑有弹性 喝饱水的肌肤果然让人爱不释手呢 "],
         BodyParts.Neck:["颈部组织薄弱，油脂分泌少，水分难以保持，皱纹容易产生，补水显得格外重要","颈部水份已达标，别让颈纹泄露了你的年龄","颈部现在很水润，但不要松懈哦"]
     ]
-    //通过adc数据得到油分，水分，和肤质类型
-    private let oilArr=[0.036,
-        0.036,
-        0.0355,
-        0.035,
-        0.0345,
-        0.034,
-        0.0335,
-        0.033,
-        0.0325,
-        0.032,
-        0.0315,
-        0.031,
-        0.0305,
-        0.03,
-        0.0295,
-        0.029]
-    private let moistureArr=[0.082,
-        0.082,
-        0.081,
-        0.08,
-        0.079,
-        0.079,
-        0.078,
-        0.078,
-        0.078,
-        0.076,
-        0.0755,
-        0.075,
-        0.0745,
-        0.074,
-        0.0735,
-        0.073]
+
 
     private let SkinType=["干性","中性","油性"]
     private let WaterType=["干燥","正常","水润"]
@@ -251,15 +217,12 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
                            BodyParts.Hands:[30,38],
                            BodyParts.Neck:[35,45]
     ]
-    private func getNeedOilAndWaterValue(adc:Float)->(oilValue:String,moistureValue:String,TypeIndex:Int,skinTypeIndex:Int)
+    private func getNeedOilAndWaterValue(oil:Float,moisture:Float)->(oilValue:String,moistureValue:String,TypeIndex:Int,skinTypeIndex:Int)
     {
         
-        var tmpIndex=Int(adc-1)/50-3
-        tmpIndex=tmpIndex<0 ? 0:tmpIndex
-        tmpIndex=tmpIndex>15 ? 15:tmpIndex
-        var tmpOil=Int(Float(oilArr[tmpIndex])*adc)
+        var tmpOil=Int(oil)
         tmpOil=tmpOil>=100 ? 99:tmpOil
-        var tmpmoisture=Int(Float(moistureArr[tmpIndex])*adc)
+        var tmpmoisture=Int(moisture)
         tmpmoisture=tmpmoisture>=100 ? 99:tmpmoisture
         //肤质类型
         var tmpTypeindex=1
@@ -281,7 +244,7 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
         {
             tmpskinTypeIndex=2
         }
-        return ("\(Int(tmpOil))","\(Int(tmpmoisture))",tmpTypeindex,tmpskinTypeIndex)
+        return ("\(tmpOil)","\(tmpmoisture)",tmpTypeindex,tmpskinTypeIndex)
     }
     //private getStateOf
     //检测中动画效果
@@ -337,20 +300,48 @@ class WaterReplenishMainView: UIView,UIAlertViewDelegate {
     //皮肤检测回掉方法
     func updateViewState()
     {
-        
-        if ((WaterReplenishDevice?.status.testing) == true)&&(stateOfView==1||stateOfView==3)
-        {
-            stateOfView=2//检测中
-            
-        }else if stateOfView==2&&WaterReplenishDevice!.status.oil>0&&WaterReplenishDevice!.status.moisture>0
-        {
-            //检测完成
-            stateOfView=3
-        }
-        else
-        {
+        switch stateOfView {
+        case 1:
+            if WaterReplenishDevice?.status.testing==true {
+                stateOfView=2//检测中
+            }
+        case 2:
+            if WaterReplenishDevice?.status.testing==false {
+                let weakSelf=self
+                if WaterReplenishDevice!.status.oil==0 {
+                    let alertView=SCLAlertView()
+                    alertView.showTitle("", subTitle: "您的检测时间未满5秒...", duration: 2.0, completeText: "完成", style: SCLAlertViewStyle.Notice)
+                    weakSelf.stateOfView=1
+                    weakSelf.alertBeforeTest.text="检测失败,请重试"
+                }
+                else if (WaterReplenishDevice!.status.oil < 0)||(WaterReplenishDevice!.status.moisture < 0){
+                    weakSelf.alertBeforeTest.text="水分太低"
+                    weakSelf.stateOfView=1
+                }else{
+                    stateOfView=3//检测完成
+                }
+    
+            }
+        case 3:
+            if WaterReplenishDevice?.status.testing==true {
+                stateOfView=2//检测中
+            }
+        default:
             return
         }
+//        if ((WaterReplenishDevice?.status.testing) == true)&&(stateOfView==1||stateOfView==3)
+//        {
+//            stateOfView=2//检测中
+//            
+//        }else if stateOfView==2&&WaterReplenishDevice!.status.oil>0&&WaterReplenishDevice!.status.moisture>0
+//        {
+//            //检测完成
+//            stateOfView=3
+//        }
+//        else
+//        {
+//            return
+//        }
         setNeedsLayout()
         layoutIfNeeded()
     }

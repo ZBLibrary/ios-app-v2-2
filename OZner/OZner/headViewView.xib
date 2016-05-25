@@ -182,7 +182,7 @@
                                         </mask>
                                     </variation>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sau-CH-C9a">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sau-CH-C9a">
                                     <rect key="frame" x="27" y="0.0" width="73" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="56" id="3Ac-Rn-hk3"/>
@@ -235,12 +235,24 @@
                                 <constraint firstAttribute="height" constant="40" id="lQV-Kc-sGC"/>
                             </constraints>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="负离子释放中" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpB-ZP-SgP">
+                            <rect key="frame" x="112.5" y="20" width="150" height="63"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="ULJ-ee-sn3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="0.082550719719999999" blue="0.15048423990000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Xkd-Yt-UUk" firstAttribute="centerX" secondItem="mYc-Kb-MaL" secondAttribute="centerX" id="4D0-8N-oXh"/>
                         <constraint firstAttribute="height" constant="136" id="638-sX-7tt"/>
+                        <constraint firstItem="xpB-ZP-SgP" firstAttribute="centerX" secondItem="zQv-N0-Aev" secondAttribute="centerX" id="9sJ-jT-bFE"/>
                         <constraint firstItem="dRX-zi-oRn" firstAttribute="centerX" secondItem="zQv-N0-Aev" secondAttribute="centerX" id="Lyp-Kq-7Je"/>
+                        <constraint firstItem="dRX-zi-oRn" firstAttribute="top" secondItem="xpB-ZP-SgP" secondAttribute="bottom" id="OdS-fc-h44"/>
+                        <constraint firstItem="xpB-ZP-SgP" firstAttribute="top" secondItem="zQv-N0-Aev" secondAttribute="top" constant="20" id="Utk-lk-U2Z"/>
                         <constraint firstAttribute="bottom" secondItem="Xkd-Yt-UUk" secondAttribute="bottom" constant="16" id="eZi-Vs-FG1"/>
                         <constraint firstAttribute="trailing" secondItem="Xkd-Yt-UUk" secondAttribute="trailing" constant="26" id="fdG-5O-HvP"/>
                         <constraint firstItem="Xkd-Yt-UUk" firstAttribute="centerY" secondItem="mYc-Kb-MaL" secondAttribute="centerY" id="y1c-4h-zD7"/>
@@ -370,6 +382,7 @@
             </variation>
             <connections>
                 <outlet property="Airpulifer" destination="E3o-x2-irl" id="Or2-Xs-CfY"/>
+                <outlet property="FuLiZiOfSmallAir" destination="xpB-ZP-SgP" id="Q3H-tK-A17"/>
                 <outlet property="LvXinState" destination="J8q-cy-emD" id="E2m-5j-XSR"/>
                 <outlet property="LvXinStateImage" destination="oOU-ma-hVb" id="sz3-7h-JVo"/>
                 <outlet property="PM25" destination="dFE-Ay-Ylb" id="gl3-sO-Wva"/>

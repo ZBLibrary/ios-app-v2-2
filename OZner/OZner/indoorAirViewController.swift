@@ -106,7 +106,7 @@ class indoorAirViewController: UIViewController {
             mainview.smallairHidenView.addConstraint(NSLayoutConstraint(item: mainview.smallairHidenView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 0, constant: 0))
             mainview.airTotal.text = "无"
             mainview.smallairHidenView.hidden=true
-            
+            mainview.airPurifier_Bluetooth=airPurifier_Bluetooth
             //滤芯状态
             if airPurifier_Bluetooth.status.filterStatus.lastTime != nil
             {
@@ -117,7 +117,7 @@ class indoorAirViewController: UIViewController {
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
                 let starDateStr=dateFormatter.stringFromDate(airPurifier_Bluetooth.status.filterStatus.lastTime)
                 mainview.starDatazb=starDateStr
-                mainview.state=(stopTime-nowTime)>=0 ? Int((stopTime-nowTime)/(365*24*3600)*100):0
+                mainview.state=(stopTime-nowTime)>=0 ? Int(ceil((stopTime-nowTime)/(365*24*3600)*100)) : 0
             }
         }
         else
@@ -126,7 +126,7 @@ class indoorAirViewController: UIViewController {
             bigHeadView.PM2d5Value.text="\(airPurifier_MxChip.sensor.PM25)"
             bigHeadView.VOCValue.text=VOCStantdart(airPurifier_MxChip.sensor.VOC)
             mainview.airTotal.text = "\(airPurifier_MxChip.sensor.TotalClean/1000)"
-            
+            mainview.reSetLvXinButton.hidden=true
             //滤芯状态
             if airPurifier_MxChip.status.filterStatus != nil
             {
@@ -137,7 +137,7 @@ class indoorAirViewController: UIViewController {
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
                 let starDateStr=dateFormatter.stringFromDate(airPurifier_MxChip.status.filterStatus.lastTime)
                 mainview.starDatazb=starDateStr
-                mainview.state=(stopTime-nowTime)>=0 ? Int((stopTime-nowTime)/(365*24*3600)*100):0
+                mainview.state=(stopTime-nowTime)>=0 ? Int(ceil((stopTime-nowTime)/(365*24*3600)*100)):0
             }
             else
             {

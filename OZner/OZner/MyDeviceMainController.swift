@@ -197,6 +197,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(leftMenuShouqiClick), name: "leftMenuShouqi_zb", object: nil)
         //滤芯更换通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(downLoadLvXinState), name: "updateLVXinTimeByScan", object: nil)
+        //台式空净重置滤芯通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UpDateLvXinOfSmallAir), name: "UpDateLvXinOfSmallAir", object: nil)
         //网络变化通知，在需要知道的地方加上此通知即可
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityChanged), name: kReachabilityChangedNotification, object: nil)
         //查询是否有设备
@@ -492,11 +494,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             if waterReplenishMainView?.avgAndTimesArr.count>0 {
                 let tmpArr:[String:HeadOfWaterReplenishStruct]=(waterReplenishMainView?.avgAndTimesArr)!
                 let tmpTimes=(tmpArr["0"]?.checkTimes)!+(tmpArr["1"]?.checkTimes)!+(tmpArr["2"]?.checkTimes)!+(tmpArr["3"]?.checkTimes)!
-                print(tmpArr["0"]?.checkTimes)
-                 print(tmpArr["1"]?.checkTimes)
-                 print(tmpArr["2"]?.checkTimes)
-                 print(tmpArr["3"]?.checkTimes)
-                print(tmpTimes)
+                
                 skipController.totalTimes=tmpTimes
             }
             skipController.TimeString=(stringFromDate(NSDate(), format: "yyyy-MM") as String)+"-01  "+(stringFromDate(NSDate(), format: "yyyy-MM-dd") as String)
@@ -1194,38 +1192,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                     if(isNeedDownLXDate == false)
                     {
                         isNeedDownLXDate = true
-                        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                        if airPurifier_Bluetooth.status.filterStatus.stopTime != .None
-                        {
-                            let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.stopTime.timeIntervalSince1970
-                            headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int((stopTime-nowTime)/(365*24*3600)*100))%":"0%"
-                            switch Int((stopTime-nowTime)/(365*24*3600)*100)
-                            {
-                            case 0..<15:
-                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
-                                break
-                            case 15..<40:
-                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
-                                break
-                            case 40..<60:
-                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
-                                break
-                            case 60..<85:
-                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
-                                break
-                            default:
-                                headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
-                                break
-                            }
-                            if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
-                            {
-                                isNeedDownLXDate=true
-                                let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
-                                alert.show()
-                            }
-                            NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
-                        }
-
+                        UpDateLvXinOfSmallAir()
                     }
                     
                 }
@@ -1293,8 +1260,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                         //滤芯状态
                         let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
                         let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.stopTime.timeIntervalSince1970
-                        headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int((stopTime-nowTime)/(365*24*3600)*100))%":"0%"
-                        switch Int((stopTime-nowTime)/(365*24*3600)*100)
+                        headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(365*24*3600)*100)))%":"0%"
+                        switch ceil((stopTime-nowTime)/(365*24*3600)*100)
                         {
                         case 0:
                             headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
@@ -1337,11 +1304,47 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         
         self.setBartteryImg()
     }
+    func UpDateLvXinOfSmallAir()  {
+        if myCurrentDevice == nil{
+            return
+        }
+        let airPurifier_Bluetooth = self.myCurrentDevice as! AirPurifier_Bluetooth
+        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+        if airPurifier_Bluetooth.status.filterStatus.stopTime != .None
+        {
+            let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.stopTime.timeIntervalSince1970
+            
+            headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(365*24*3600)*100)))%":"0%"
+            switch ceil((stopTime-nowTime)/(365*24*3600)*100)
+            {
+            case 0..<15:
+                headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
+                break
+            case 15..<40:
+                headView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
+                break
+            case 40..<60:
+                headView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
+                break
+            case 60..<85:
+                headView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
+                break
+            default:
+                headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
+                break
+            }
+            if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
+            {
+                isNeedDownLXDate=true
+                let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
+                alert.show()
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
+        }
+    }
     //跑马star  赵兵
     var tmpPaoMa:NSTimer!
     //判断是否为整形：
-    
-    
     func StarPaoMazb()
     {
         if let _ = Int(IAW_TempView.PM25.text!)
@@ -1574,7 +1577,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             smallStateView.frame=CGRect(x: 0, y: 10, width: Screen_Width, height: smallStateView.bounds.size.height)
             
             headView.centerViewzb.addSubview(smallStateView)
+            
             //footerView
+            
             smallFooterView=NSBundle.mainBundle().loadNibNamed("smallFooterViewXib", owner: nil, options: nil).last as! smallFooterViewXib
             smallFooterView.frame=CGRect(x: 0, y: headView.bounds.size.height, width: Screen_Width, height: smallFooterView.bounds.size.height*(Screen_Hight/667))
             smallFooterView.blueTooth = self.myCurrentDevice as! AirPurifier_Bluetooth
@@ -1589,6 +1594,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             bigStateView=NSBundle.mainBundle().loadNibNamed("bigStateXib", owner: nil, options: nil).last as! bigStateXib
             bigStateView.frame=CGRect(x: 0, y: 10, width: Screen_Width, height: bigStateView.bounds.size.height)
             headView.centerViewzb.addSubview(bigStateView)
+            headView.FuLiZiOfSmallAir.hidden=true
             //滚动视图
             let footerScroll=UIScrollView(frame: CGRect(x: 0, y: headView.bounds.size.height, width: Screen_Width, height: Screen_Hight-65-headView.height))
             footerScroll.pagingEnabled = true

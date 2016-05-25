@@ -41,6 +41,31 @@ class indoorAirXib: UIView {
     @IBOutlet var curYear: UILabel!
     @IBOutlet var curDate: UILabel!
     
+    //台式空净需要的
+    var airPurifier_Bluetooth:AirPurifier_Bluetooth?
+    
+    @IBOutlet weak var reSetLvXinButton: UIButton!
+    @IBAction func reSetLvXinClick(sender: AnyObject) {
+        if state>=99 {
+            return
+        }
+        let alertview=SCLAlertView()
+        alertview.addButton("取消") {
+        }
+        let weakSelf=self
+        alertview.addButton("确定") {
+            if weakSelf.airPurifier_Bluetooth != nil {
+                weakSelf.airPurifier_Bluetooth?.status.resetFilterStatus({ (error) in
+                    if error==nil{//成功
+                        NSNotificationCenter.defaultCenter().postNotificationName("UpDateLvXinOfSmallAir", object: nil)
+                    }
+                })
+            }
+        }
+        alertview.showInfo("", subTitle: "重置后将对滤芯使用时间重新计时，这将会影响到空气净化效果。缺人是否重置？")
+        
+        
+    }
     
     
     @IBOutlet var BugLvXinbutton: UIButton!

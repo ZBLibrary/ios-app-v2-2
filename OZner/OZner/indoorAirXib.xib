@@ -299,9 +299,34 @@
                                 </mask>
                             </variation>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Als-pQ-HMs">
+                            <rect key="frame" x="280" y="15" width="80" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="6dH-jm-EgY"/>
+                                <constraint firstAttribute="width" constant="80" id="Jtr-qY-Rf7"/>
+                            </constraints>
+                            <state key="normal" title="重置滤芯"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
+                                    <color key="value" red="0.062745098039215685" green="0.29803921568627451" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="reSetLvXinClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="7Eb-uA-e5E"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="Als-pQ-HMs" firstAttribute="top" secondItem="5Rj-4r-blB" secondAttribute="top" constant="15" id="0yu-05-osL"/>
                         <constraint firstItem="urj-3i-o4T" firstAttribute="leading" secondItem="5Rj-4r-blB" secondAttribute="leading" constant="40" id="3YT-Vx-OB7"/>
                         <constraint firstItem="YlG-yn-hDz" firstAttribute="centerX" secondItem="5Rj-4r-blB" secondAttribute="centerX" id="9gq-Im-heW"/>
                         <constraint firstItem="UNy-r8-1U3" firstAttribute="bottom" secondItem="aRj-Ej-CJE" secondAttribute="bottom" id="D0q-ok-5eT"/>
@@ -321,6 +346,7 @@
                         <constraint firstItem="UNy-r8-1U3" firstAttribute="top" secondItem="K71-TA-f3a" secondAttribute="bottom" constant="2" id="hxd-hB-wC5"/>
                         <constraint firstAttribute="height" constant="162" id="l7r-OA-FPo"/>
                         <constraint firstItem="pcq-Pu-eya" firstAttribute="leading" secondItem="5Rj-4r-blB" secondAttribute="leading" constant="14" id="m1s-i0-bVm"/>
+                        <constraint firstAttribute="trailing" secondItem="Als-pQ-HMs" secondAttribute="trailing" constant="15" id="s4i-Qo-GKo"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0se-wZ-LVp">
@@ -413,12 +439,13 @@
                 <outlet property="headView" destination="TTM-0b-wiz" id="8ub-X8-3Kt"/>
                 <outlet property="indoorAir" destination="IMM-B6-zRJ" id="epW-km-hKZ"/>
                 <outlet property="lvxinState" destination="piS-On-2rq" id="YFp-Qe-e07"/>
+                <outlet property="reSetLvXinButton" destination="Als-pQ-HMs" id="qlL-Ze-kcn"/>
                 <outlet property="smallairHidenView" destination="y1I-mW-ldH" id="iEC-BR-Mat"/>
                 <outlet property="starDate" destination="Jk8-5W-Emr" id="JIc-dP-7OC"/>
                 <outlet property="starYear" destination="WAO-fi-2WL" id="39f-Ka-owq"/>
                 <outlet property="toChat" destination="XN1-dA-rlx" id="Phb-FZ-K7k"/>
             </connections>
-            <point key="canvasLocation" x="208.5" y="356"/>
+            <point key="canvasLocation" x="-63.5" y="348"/>
         </view>
     </objects>
     <resources>

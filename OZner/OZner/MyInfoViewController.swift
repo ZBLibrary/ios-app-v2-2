@@ -103,7 +103,7 @@ class MyInfoViewController: UIViewController {
                     
                     name=name=="" ? mobile : name
                     
-                    StrongSelf.mainView.My_login.setTitle((name ?? ""), forState: .Normal)
+                    StrongSelf.mainView.My_login.setTitle((name ?? "无名"), forState: .Normal)
                     var Score=data!.objectForKey("Score") as! String
                     Score=Score=="" ? "0" : Score
                     StrongSelf.mainView.My_Money.text=Score

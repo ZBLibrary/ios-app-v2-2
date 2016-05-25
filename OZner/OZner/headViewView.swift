@@ -42,6 +42,8 @@ class headViewView: UIView {
             updateState(bgColorIndex)
         }
     }
+    //负离子，台式空净
+    @IBOutlet weak var FuLiZiOfSmallAir: UILabel!
     
    
     // Only override drawRect: if you perform custom drawing.
