@@ -1259,7 +1259,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                         isNeedDownLXDate = true
                         //滤芯状态
                         let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                        let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.stopTime.timeIntervalSince1970
+                        let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
                         headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(365*24*3600)*100)))%":"0%"
                         switch ceil((stopTime-nowTime)/(365*24*3600)*100)
                         {
@@ -1310,9 +1310,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }
         let airPurifier_Bluetooth = self.myCurrentDevice as! AirPurifier_Bluetooth
         let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-        if airPurifier_Bluetooth.status.filterStatus.stopTime != .None
+        if airPurifier_Bluetooth.status.filterStatus.lastTime != .None
         {
-            let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.stopTime.timeIntervalSince1970
+            let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
             
             headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(365*24*3600)*100)))%":"0%"
             switch ceil((stopTime-nowTime)/(365*24*3600)*100)
@@ -1333,13 +1333,14 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
                 break
             }
-            if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
+            if ((stopTime-nowTime)<=0)
             {
-                isNeedDownLXDate=true
                 let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
                 alert.show()
             }
+
             NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
+            
         }
     }
     //跑马star  赵兵

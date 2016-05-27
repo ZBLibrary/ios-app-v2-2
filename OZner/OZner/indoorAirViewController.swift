@@ -112,7 +112,8 @@ class indoorAirViewController: UIViewController {
             {
                 
                 let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.stopTime.timeIntervalSince1970
+                let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
+               
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
                 let starDateStr=dateFormatter.stringFromDate(airPurifier_Bluetooth.status.filterStatus.lastTime)
@@ -132,7 +133,7 @@ class indoorAirViewController: UIViewController {
             {
                 
                 let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.stopTime.timeIntervalSince1970
+                let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
                 let starDateStr=dateFormatter.stringFromDate(airPurifier_MxChip.status.filterStatus.lastTime)

@@ -46,7 +46,7 @@ class indoorAirXib: UIView {
     
     @IBOutlet weak var reSetLvXinButton: UIButton!
     @IBAction func reSetLvXinClick(sender: AnyObject) {
-        if state>=99 {
+        if airPurifier_Bluetooth == nil {
             return
         }
         let alertview=SCLAlertView()
@@ -55,6 +55,10 @@ class indoorAirXib: UIView {
         let weakSelf=self
         alertview.addButton("确定") {
             if weakSelf.airPurifier_Bluetooth != nil {
+             
+                
+                
+                
                 weakSelf.airPurifier_Bluetooth?.status.resetFilterStatus({ (error) in
                     if error==nil{//成功
                         NSNotificationCenter.defaultCenter().postNotificationName("UpDateLvXinOfSmallAir", object: nil)
@@ -62,7 +66,7 @@ class indoorAirXib: UIView {
                 })
             }
         }
-        alertview.showInfo("", subTitle: "重置后将对滤芯使用时间重新计时，这将会影响到空气净化效果。缺人是否重置？")
+        alertview.showInfo("", subTitle: "重置后将对滤芯使用时间重新计时，这将会影响到空气净化效果。确认是否重置？")
         
         
     }
@@ -91,6 +95,8 @@ class indoorAirXib: UIView {
                 tmparray = endDateStr.componentsSeparatedByString("-") as NSArray
                 endYear.text=tmparray.objectAtIndex(0) as? String
                 endDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
+                setNeedsLayout()
+                layoutIfNeeded()
                 
             }
         }
@@ -105,7 +111,8 @@ class indoorAirXib: UIView {
             downImgLeft.constant=36+(Screen_Width-80)*CGFloat(100-state)/100
             
             curDateViewtoLeft.constant=(Screen_Width-80)*CGFloat(100-state)/100+20
-            
+            setNeedsLayout()
+            layoutIfNeeded()
         }
     } //0-100
     @IBOutlet var smallairHidenView: UIView!
