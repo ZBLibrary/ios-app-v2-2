@@ -236,7 +236,6 @@
 		526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */; };
 		526DDB361C4AB9AB00363504 /* CupView_Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DDB351C4AB9AB00363504 /* CupView_Footer.swift */; };
 		526DDB381C4AB9BB00363504 /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526DDB371C4AB9BB00363504 /* CupView_Footer.xib */; };
-		526DDB3C1C4B6E2700363504 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526DDB3A1C4B6E2700363504 /* MyDeviceMainController.xib */; };
 		5273D7D11C25CD2500A8ACF2 /* setSmallAirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */; };
 		5274B0691C293BB5004EDC0D /* setSmallAirViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */; };
 		52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */; };
@@ -860,6 +859,7 @@
 		8DFB39431C57730300A1641C /* TDSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */; };
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
+		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1299,7 +1299,6 @@
 		526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indoorAirWarn_Air.swift; sourceTree = "<group>"; };
 		526DDB351C4AB9AB00363504 /* CupView_Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupView_Footer.swift; sourceTree = "<group>"; };
 		526DDB371C4AB9BB00363504 /* CupView_Footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CupView_Footer.xib; sourceTree = "<group>"; };
-		526DDB3A1C4B6E2700363504 /* MyDeviceMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDeviceMainController.xib; sourceTree = "<group>"; };
 		5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView.swift; sourceTree = "<group>"; };
 		5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setSmallAirViewXib.xib; sourceTree = "<group>"; };
 		52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCUPDeviceViewController.swift; sourceTree = "<group>"; };
@@ -2228,6 +2227,8 @@
 		8DFB393C1C57730300A1641C /* AmountOfDrinkingWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterViewController.h; sourceTree = "<group>"; };
 		8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
+		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController.xib; sourceTree = "<group>"; };
+		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3645,7 +3646,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB044BC1CC8CD8D00B60DAB /* MyDeviceMainController.swift */,
-				526DDB3A1C4B6E2700363504 /* MyDeviceMainController.xib */,
+				E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */,
 				52895C051C4C02F7008D63D7 /* deviceCommon */,
 				8D4A818C1C916A9500B0FF89 /* MakePair */,
 				5226BB081C47F6C000895AE4 /* CupView */,
@@ -4496,7 +4497,7 @@
 				TargetAttributes = {
 					428141001C0B072C006FEDDE = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = UZZG6NM74T;
+						DevelopmentTeam = BQE6636VJ7;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -4677,7 +4678,7 @@
 				8DB043F21CC8CCE200B60DAB /* select_device_0.png in Resources */,
 				8DFB393F1C57730300A1641C /* WhatHtml.plist in Resources */,
 				428FC6D01C2ECFEA001D4ACF /* db_ozner_uid.db in Resources */,
-				526DDB3C1C4B6E2700363504 /* MyDeviceMainController.xib in Resources */,
+				E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */,
 				8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */,
 				8DB043FD1CC8CCE200B60DAB /* left_row@2x.png in Resources */,
 				8DB044841CC8CD4200B60DAB /* icon_peidui_select_tan_tou@2x.png in Resources */,
@@ -5450,6 +5451,15 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEDA1D05576400E43C20 /* Base */,
+				E0EFFEDE1D0558D500E43C20 /* en */,
+			);
+			name = MyDeviceMainController.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -5568,7 +5578,7 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhengwenxiang.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
@@ -5603,7 +5613,7 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhengwenxiang.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";

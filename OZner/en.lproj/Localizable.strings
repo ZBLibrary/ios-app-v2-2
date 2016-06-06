@@ -10,3 +10,42 @@
 "倒计时"="sda";
 "秒"="as";
 "验证码不正确"="";
+
+// MyDeviceMainController
+
+"滤芯状态" = "Filter cartridge status" ;
+"首页" = "Home" ;
+"女" = "female" ;
+"男" = "male" ;
+"净水机队列" = "Water Purifier Queue" ;
+"饮水目标:" = "Goal:" ;
+"饮水目标:2000ml" = "Goal:2000ml" ;
+"数据来源:" = "The data source:" ;
+"检测" = "check" ;
+
+"无" = "Normal skin" ; //皮肤
+"油性" = "Oily skin" ;
+"干性" = "Dry skin" ;
+
+"提示" = "Tips" ; // 提示报错
+"请连接设备" = "Please connect the device" ;
+"抱歉，该净水器型号没有提供此项功能！" = "Sorry, the function is unavailable for this water purifier!" ;
+"确定" = "OK" ;
+"温馨提示" = "Warm tips" ;
+"你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用" = "Your filter cartridge is about to be expired. Please replace it timely" ;
+"请及时更换滤芯" = "Please replace the filter timely" ;
+"现在去购买滤芯" = "Buy filter cartridge now" ;
+"我知道了" = "I see" ;
+
+"已关机" = "Power-off" ; // 机器连接状态
+"设备已断开" = "Device disconnected" ;
+"设备已连接" = "Device connected" ;
+"设备连接中..." = "Device being connected..." ;
+"设备没有连接上" = "Device connection fails" ;
+
+"优" = "Excellent" ; // 空气状况
+"良" = "Good" ;
+"一般" = "General" ;
+"差" = "Bad" ;
+
+
