@@ -69,15 +69,18 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="0.50429410460992907" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="室外空气:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpg-WY-bPg">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outdoor air:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpg-WY-bPg">
                     <rect key="frame" x="59" y="403" width="80" height="43"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="1JL-T6-7yb"/>
                         <constraint firstAttribute="width" constant="30" id="2V6-ts-Jcn"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="0.50429410460992907" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="2V6-ts-Jcn"/>
@@ -101,7 +104,7 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="检测中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgv-ZR-9fS">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ckecking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgv-ZR-9fS">
                     <rect key="frame" x="139" y="403" width="101" height="43"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="f6b-Hf-Iiq"/>
@@ -159,7 +162,7 @@
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRX-zi-oRn">
-                            <rect key="frame" x="137.5" y="83" width="100" height="37"/>
+                            <rect key="frame" x="137" y="83" width="100" height="37"/>
                             <subviews>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="airLvxinState0" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-ma-hVb">
                                     <rect key="frame" x="0.0" y="0.0" width="17" height="37"/>
@@ -167,7 +170,7 @@
                                         <constraint firstAttribute="width" constant="17" id="UO5-O4-c11"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滤芯状态" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTr-n0-MCq">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTr-n0-MCq">
                                     <rect key="frame" x="27" y="22" width="73" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="56" id="vpS-Um-A0w"/>
@@ -235,14 +238,17 @@
                                 <constraint firstAttribute="height" constant="40" id="lQV-Kc-sGC"/>
                             </constraints>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="负离子释放中" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpB-ZP-SgP">
-                            <rect key="frame" x="112.5" y="20" width="150" height="63"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Negative ion release" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpB-ZP-SgP">
+                            <rect key="frame" x="112" y="20" width="150" height="63"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="150" id="ULJ-ee-sn3"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

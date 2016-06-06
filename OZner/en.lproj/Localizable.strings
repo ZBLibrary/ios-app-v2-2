@@ -22,6 +22,9 @@
 "饮水目标:2000ml" = "Goal:2000ml" ;
 "数据来源:" = "The data source:" ;
 "检测" = "check" ;
+"检测中" = "checking" ;
+"室外空气:" = "Outdoor air:" ;
+"负离子释放中" = "Negative ion release" ;
 
 "无" = "Normal skin" ; //皮肤
 "油性" = "Oily skin" ;
@@ -49,3 +52,13 @@
 "差" = "Bad" ;
 
 
+"微信请求App提供内容" = "Provide content WeChat request App" ; //微信
+"微信请求App提供内容，App要调用sendResp:GetMessageFromWXResp返回给微信" = "WeChat provide content request App, the App to invoke 'sendResp: GetMessageFromWXResp' returned to WeChat" ;
+"标题:" = "Title:" ;
+"内容:" = "content:" ;
+"附带信息:" = "Supplementary information:" ;
+"缩略图:" = "Thumbnail:" ;
+"从微信启动" = "From WeChat start" ;
+"这是从微信启动的消息" = "This is from WeChat start message" ;
+
+"账号在另一台设备上登录了，请重新登录" = "Login account on another device, please login again" ; //登陆
