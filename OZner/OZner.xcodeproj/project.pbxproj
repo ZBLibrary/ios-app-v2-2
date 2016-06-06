@@ -225,7 +225,6 @@
 		524337CC1C42A8E50024133D /* WaterPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C71C42A8E50024133D /* WaterPurifierStatus.m */; };
 		524337DB1C42ABE50024133D /* MQTTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DA1C42ABE50024133D /* MQTTKit.m */; };
 		524337E21C42ABF20024133D /* ConfigurationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DD1C42ABF20024133D /* ConfigurationDevice.m */; };
-		52461EFF1C26847200834CC2 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461EFE1C26847200834CC2 /* headViewView.xib */; };
 		52461F011C26960A00834CC2 /* smallFooterViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F001C26960A00834CC2 /* smallFooterViewXib.xib */; };
 		52461F031C26970B00834CC2 /* bigFooterViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F021C26970B00834CC2 /* bigFooterViewXib.xib */; };
 		52461F051C26985500834CC2 /* outAirXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F041C26985500834CC2 /* outAirXib.xib */; };
@@ -860,6 +859,7 @@
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */; };
+		E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1286,7 +1286,6 @@
 		524337DC1C42ABF20024133D /* ConfigurationDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationDevice.h; sourceTree = "<group>"; };
 		524337DD1C42ABF20024133D /* ConfigurationDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationDevice.m; sourceTree = "<group>"; };
 		524337DE1C42ABF20024133D /* EasyLinkSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyLinkSender.h; sourceTree = "<group>"; };
-		52461EFE1C26847200834CC2 /* headViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = headViewView.xib; sourceTree = "<group>"; };
 		52461F001C26960A00834CC2 /* smallFooterViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = smallFooterViewXib.xib; sourceTree = "<group>"; };
 		52461F021C26970B00834CC2 /* bigFooterViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bigFooterViewXib.xib; sourceTree = "<group>"; };
 		52461F041C26985500834CC2 /* outAirXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = outAirXib.xib; sourceTree = "<group>"; };
@@ -2229,6 +2228,8 @@
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController.xib; sourceTree = "<group>"; };
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController.strings; sourceTree = "<group>"; };
+		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView.xib; sourceTree = "<group>"; };
+		E0EFFEE41D0570E500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/headViewView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3441,7 +3442,7 @@
 				52A4EF5B1C27F7FF005F282D /* gifImage */,
 				526DA5311C291E7E002755CA /* indoorAirWarn */,
 				52A4EF591C27F34C005F282D /* headViewView.swift */,
-				52461EFE1C26847200834CC2 /* headViewView.xib */,
+				E0EFFEE11D056CAE00E43C20 /* headViewView.xib */,
 				52461F041C26985500834CC2 /* outAirXib.xib */,
 				52A4EF6A1C28A749005F282D /* outAirXib.swift */,
 				52461F061C2699AD00834CC2 /* indoorAirXib.xib */,
@@ -4634,7 +4635,7 @@
 				42935B821C490D1100BCE76A /* zuo1.png in Resources */,
 				8DB044851CC8CD4200B60DAB /* icon_peidui_normal_tan_tou@2x.png in Resources */,
 				8DB044691CC8CD2C00B60DAB /* icon_lvxin_service_8.png in Resources */,
-				52461EFF1C26847200834CC2 /* headViewView.xib in Resources */,
+				E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */,
 				425F7A141C32ABD600C8B2E3 /* NewUserHelpViewController.xib in Resources */,
 				8DBD549A1C567E4A00D04B12 /* peiDuiOutTimeCell.xib in Resources */,
 				8DBD54D41C567F4500D04B12 /* My_Rank_TDSCell.xib in Resources */,
@@ -5458,6 +5459,15 @@
 				E0EFFEDE1D0558D500E43C20 /* en */,
 			);
 			name = MyDeviceMainController.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEE11D056CAE00E43C20 /* headViewView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEE21D056D1F00E43C20 /* Base */,
+				E0EFFEE41D0570E500E43C20 /* en */,
+			);
+			name = headViewView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
