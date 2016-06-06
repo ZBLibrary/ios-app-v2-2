@@ -1,12 +1,29 @@
 /* 
-  Localizable.strings
-  OZner
-
-  Created by test on 15/12/28.
-  Copyright © 2015年 sunlinlin. All rights reserved.
-*/
+ Localizable.strings
+ OZner
+ 
+ Created by test on 15/12/28.
+ Copyright © 2015年 sunlinlin. All rights reserved.
+ */
 //登陆页面
 "短信验证码"="abc";
 "倒计时"="sda";
 "秒"="as";
 "验证码不正确"="";
+
+
+//CustomTabBarView.h 自定义tabbar界面
+"我的设备" = "My device";
+"商城" = "Mall";
+"咨询" = "Consult";
+"我" = "Me";
+
+//商城
+//MyStoreViewController
+"加载失败点击继续加载！" = "Loading failure, click to reload!";
+
+//咨询界面
+//XMChatBar.h
+"拍摄" = "Photograph";
+"照片" = "Photo album";
+"发送" = "Send";
