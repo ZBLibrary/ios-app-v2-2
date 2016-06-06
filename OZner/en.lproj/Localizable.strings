@@ -51,3 +51,20 @@
 "关于浩泽净水家" = "About OZNER IFAMILY";
 "退出登录" = "Log out ";
 
+//计量单位
+"温度" = "Temperature";
+"摄氏度" = "Degree centigrade";
+"华氏度" = "Fahrenheit degree";
+"水量" = "Water";
+"毫升" = "ML";
+"分升" = "DL";
+"盅司" = "OZ";
+
+//关于浩泽净水家
+"浩泽净水家" = "OZNER IFAMILY";
+"当前版本" = "Current version";
+"评个分吧" = "For marking";
+"是否退出登录？" = "To log out?";
+"否" = "Cancle";
+"是" = "Logout";
+

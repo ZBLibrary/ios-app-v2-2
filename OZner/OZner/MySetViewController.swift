@@ -22,7 +22,7 @@ class MySetViewController: UIViewController,UIAlertViewDelegate {
         self.performSegueWithIdentifier("showaboutus", sender: self)
     }
     @IBAction func loginOut(sender: AnyObject) {
-        let alert=UIAlertView(title: "", message: "是否退出登录？", delegate: self, cancelButtonTitle: "否", otherButtonTitles: "是")
+        let alert=UIAlertView(title: "", message:loadLanguage("是否退出登录？"), delegate: self, cancelButtonTitle:loadLanguage( "否"), otherButtonTitles: loadLanguage("是"))
         alert.show()
         
     }

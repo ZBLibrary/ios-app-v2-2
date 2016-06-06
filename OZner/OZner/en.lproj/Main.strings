@@ -66,7 +66,7 @@
 "Wrz-9e-bje.text" = "温度";
 
 /* Class = "UILabel"; text = "当前版本"; ObjectID = "ZTm-00-QUR"; */
-"ZTm-00-QUR.text" = "当前版本";
+"ZTm-00-QUR.text" = "Current version";
 
 /* Class = "UILabel"; text = "允许推送消息"; ObjectID = "a3U-SX-l34"; */
 "a3U-SX-l34.text" = "允许推送消息";
@@ -117,7 +117,7 @@
 "rey-T0-Yo3.text" = "请输入十一位手机号";
 
 /* Class = "UIBarButtonItem"; title = "保存"; ObjectID = "tiD-bR-ilp"; */
-"tiD-bR-ilp.title" = "保存";
+"tiD-bR-ilp.title" = "Save";
 
 /* Class = "UILabel"; text = "短信验证码"; ObjectID = "vbr-2z-VJ8"; */
 "vbr-2z-VJ8.text" = "短信验证码";
