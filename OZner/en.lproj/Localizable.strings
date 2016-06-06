@@ -81,3 +81,23 @@
 "今日饮水水温分布" = "Temperature distribution of drinking water today" ;
 "本周饮水水温分布" = "Temperature distribution of drinking water this week" ;
 "本月饮水水温分布" = "Temperature distribution of drinking water this month" ;
+
+"水质纯净值TDS" = "TDS" ;
+"暂无" = "Not available" ;
+"击败了0%的用户" = "Beat the 0% of users" ;
+"击败了" = "Beat the" ;
+"的用户" = "of users" ;
+
+"周一" = "Monday" ;
+"周二" = "Tuesday" ;
+"周三" = "Wednesday" ;
+"周四" = "Thursday" ;
+"周五" = "Friday" ;
+"周六" = "Saturday" ;
+"周日" = "Sunday" ;
+
+"排名" = "Rank" ;
+"当前饮水量为" = "Current water intake" ;
+"当前水质纯净值为" = "Current DTS" ;
+"浩小泽" = "Ozner" ;
+
