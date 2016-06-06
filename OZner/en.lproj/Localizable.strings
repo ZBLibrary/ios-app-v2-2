@@ -75,9 +75,9 @@
 
 "手机网络不可用，请检查网络" = "Network is not available, please check the network" ; //网络
 
-"今日饮水纯净指数分布" = "Drink pure exponential distribution toady" ;
-"本周饮水纯净指数分布" = "Drink pure exponential distribution this week" ;
-"本月饮水纯净指数分布" = "Drink pure exponential distribution this month" ;
-"今日饮水水温分布" = "Water temperature distribution today" ;
-"本周饮水水温分布" = "Water temperature distribution this week" ;
-"本月饮水水温分布" = "Water temperature distribution this month" ;
+"今日饮水纯净指数分布" = "Pure exponential distribution of drinking water toady" ;
+"本周饮水纯净指数分布" = "Pure exponential distribution of drinking water this week" ;
+"本月饮水纯净指数分布" = "Pure exponential distribution of drinking water this month" ;
+"今日饮水水温分布" = "Temperature distribution of drinking water today" ;
+"本周饮水水温分布" = "Temperature distribution of drinking water this week" ;
+"本月饮水水温分布" = "Temperature distribution of drinking water this month" ;

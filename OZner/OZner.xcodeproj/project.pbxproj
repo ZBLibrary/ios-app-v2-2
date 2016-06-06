@@ -128,7 +128,6 @@
 		521BF7CB1C4A370000AD1EAB /* drinKWaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BF7C91C4A370000AD1EAB /* drinKWaterCell.swift */; };
 		521BF7CC1C4A370000AD1EAB /* drinKWaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BF7CA1C4A370000AD1EAB /* drinKWaterCell.xib */; };
 		52215DE51C4E9516007C8C96 /* CenterChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52215DE31C4E9516007C8C96 /* CenterChartCell.swift */; };
-		52215DE61C4E9516007C8C96 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52215DE41C4E9516007C8C96 /* CenterChartCell.xib */; };
 		52215DE81C4EA391007C8C96 /* drawCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52215DE71C4EA390007C8C96 /* drawCircleView.swift */; };
 		5226BB0A1C47F70800895AE4 /* TDSDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5226BB091C47F70800895AE4 /* TDSDetailHeadView.xib */; };
 		5226BB0C1C480E2C00895AE4 /* TDSDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5226BB0B1C480E2C00895AE4 /* TDSDetailHeadView.swift */; };
@@ -860,6 +859,7 @@
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */; };
 		E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView.xib */; };
+		E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1085,7 +1085,6 @@
 		521BF7C91C4A370000AD1EAB /* drinKWaterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinKWaterCell.swift; sourceTree = "<group>"; };
 		521BF7CA1C4A370000AD1EAB /* drinKWaterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = drinKWaterCell.xib; sourceTree = "<group>"; };
 		52215DE31C4E9516007C8C96 /* CenterChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterChartCell.swift; sourceTree = "<group>"; };
-		52215DE41C4E9516007C8C96 /* CenterChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenterChartCell.xib; sourceTree = "<group>"; };
 		52215DE71C4EA390007C8C96 /* drawCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawCircleView.swift; sourceTree = "<group>"; };
 		5226BB091C47F70800895AE4 /* TDSDetailHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSDetailHeadView.xib; sourceTree = "<group>"; };
 		5226BB0B1C480E2C00895AE4 /* TDSDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSDetailHeadView.swift; sourceTree = "<group>"; };
@@ -2230,6 +2229,8 @@
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView.xib; sourceTree = "<group>"; };
 		E0EFFEE41D0570E500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/headViewView.xib; sourceTree = "<group>"; };
+		E0EFFEE61D05944E00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CenterChartCell.xib; sourceTree = "<group>"; };
+		E0EFFEE81D05945200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CenterChartCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3488,7 +3489,7 @@
 				528D77381C26FF2B00243986 /* LoadingXib.xib */,
 				52215DE71C4EA390007C8C96 /* drawCircleView.swift */,
 				52215DE31C4E9516007C8C96 /* CenterChartCell.swift */,
-				52215DE41C4E9516007C8C96 /* CenterChartCell.xib */,
+				E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */,
 				52DDC18B1C4127C300CBA038 /* Main_FooterView_zb.swift */,
 				52DDC1891C4127A000CBA038 /* Main_FooterView_zb.xib */,
 				42C610611C46256200CA0EE9 /* CustomOCCircleView.h */,
@@ -4751,7 +4752,7 @@
 				42CB9EBD1C353CD1006D95CD /* icon_bubble_shang.png in Resources */,
 				8DB0440D1CC8CCE200B60DAB /* tantou_dianliang_1.png in Resources */,
 				8DB0441B1CC8CCE200B60DAB /* device_setting_icon.png in Resources */,
-				52215DE61C4E9516007C8C96 /* CenterChartCell.xib in Resources */,
+				E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */,
 				52DDC18A1C4127A000CBA038 /* Main_FooterView_zb.xib in Resources */,
 				8DB044491CC8CD1700B60DAB /* icon_power_normal@2x.png in Resources */,
 				8DB043F41CC8CCE200B60DAB /* select_device_2.png in Resources */,
@@ -5468,6 +5469,15 @@
 				E0EFFEE41D0570E500E43C20 /* en */,
 			);
 			name = headViewView.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEE61D05944E00E43C20 /* en */,
+				E0EFFEE81D05945200E43C20 /* Base */,
+			);
+			name = CenterChartCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
