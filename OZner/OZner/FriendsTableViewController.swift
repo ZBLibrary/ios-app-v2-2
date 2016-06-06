@@ -342,7 +342,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                 {
                     
                     let friendcount=data.objectForKey("friendlist") as! NSMutableArray
-                    print(friendcount)
+                    
                     for i in 0...(friendcount.count-1)
                     {
                         var friendstrut=myFriend()
@@ -353,6 +353,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                             friendstrut.phone=friendcount[i].objectForKey("Mobile")?.isKindOfClass(NSNull)==true ? "" : (friendcount[i].objectForKey("Mobile") as! String)
                         }
                         friendstrut.imgUrl=friendcount[i].objectForKey("Icon")?.isKindOfClass(NSNull)==true ? "" : (friendcount[i].objectForKey("Icon") as! String)
+                        
                         friendstrut.Name=friendcount[i].objectForKey("Nickname")?.isKindOfClass(NSNull)==true ? friendstrut.phone : (friendcount[i].objectForKey("Nickname") as! String)
                         let tmpmess=friendcount[i].objectForKey("MessageCount") as! Int
                         friendstrut.messageCount=tmpmess
@@ -362,7 +363,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                         let cell = NSBundle.mainBundle().loadNibNamed("FriendsCell", owner: self, options: nil).last as! FriendsCell
                         cell.LiuyanLabel.text="\(friendstrut.messageCount)"+loadLanguage("条留言")
                         cell.Name.text=friendstrut.Name
-                        if friendstrut.imgUrl != ""
+                        if friendstrut.imgUrl != "" && friendstrut.imgUrl.containsString("http://")
                         {
                             cell.headImg.image=UIImage(data: NSData(contentsOfURL: NSURL(string: friendstrut.imgUrl)!)!)
                         }

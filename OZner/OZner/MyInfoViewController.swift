@@ -92,7 +92,7 @@ class MyInfoViewController: UIViewController {
                 {
                     return
                 }
-                print(userinfo)
+                
                 let state=userinfo.objectForKey("state") as! Int
                 if state >= 0
                 {

@@ -348,6 +348,14 @@
 		8D0C3E6A1C58E78C00EFBB22 /* tantouLvXinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */; };
 		8D0C3E6B1C58E78C00EFBB22 /* tantouLvXinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */; };
 		8D0C3E6D1C58EE4000EFBB22 /* MyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */; };
+		8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */; };
+		8D26136A1CFD3DF3002ADB0E /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613621CFD3DF3002ADB0E /* Duration.swift */; };
+		8D26136B1CFD3DF3002ADB0E /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613631CFD3DF3002ADB0E /* Int+Timepiece.swift */; };
+		8D26136C1CFD3DF3002ADB0E /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613641CFD3DF3002ADB0E /* NSDate+Timepiece.swift */; };
+		8D26136D1CFD3DF3002ADB0E /* NSTimeInterval+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613651CFD3DF3002ADB0E /* NSTimeInterval+Timepiece.swift */; };
+		8D26136E1CFD3DF3002ADB0E /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613661CFD3DF3002ADB0E /* String+Timepiece.swift */; };
+		8D26136F1CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613671CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift */; };
+		8D2613701CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613681CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift */; };
 		8D2B50E11C7C43840019DE11 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */; };
 		8D320BD01CC5D02D00DAC59A /* BluetoothIOMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */; };
 		8D320BD41CC61AD000DAC59A /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */; };
@@ -1425,6 +1433,14 @@
 		8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tantouLvXinView.swift; sourceTree = "<group>"; };
 		8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tantouLvXinView.xib; sourceTree = "<group>"; };
 		8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStoreViewController.swift; sourceTree = "<group>"; };
+		8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
+		8D2613621CFD3DF3002ADB0E /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		8D2613631CFD3DF3002ADB0E /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
+		8D2613641CFD3DF3002ADB0E /* NSDate+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timepiece.swift"; sourceTree = "<group>"; };
+		8D2613651CFD3DF3002ADB0E /* NSTimeInterval+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+Timepiece.swift"; sourceTree = "<group>"; };
+		8D2613661CFD3DF3002ADB0E /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
+		8D2613671CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
+		8D2613681CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendarUnit+Timepiece.swift"; sourceTree = "<group>"; };
 		8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		8D320BCE1CC5D02D00DAC59A /* BluetoothIOMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIOMgr.h; sourceTree = "<group>"; };
 		8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIOMgr.m; sourceTree = "<group>"; };
@@ -3325,6 +3341,7 @@
 			children = (
 				42A7BB101C0C237C008DB6E5 /* OZner-Bridging-Header.h */,
 				8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */,
+				8D2613601CFD3DC6002ADB0E /* NSDate+Expand */,
 				8DF060971CC90F1300EC05D9 /* SnapKit */,
 				349F0C561C15852D00E46253 /* OznerLibrary */,
 				8DA403501C843F7900AD5E5E /* LBXScan */,
@@ -3740,6 +3757,21 @@
 				8D88804D1C8DC8DA007391E1 /* setWaterReplenish */,
 			);
 			name = SettingOfDevices;
+			sourceTree = "<group>";
+		};
+		8D2613601CFD3DC6002ADB0E /* NSDate+Expand */ = {
+			isa = PBXGroup;
+			children = (
+				8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */,
+				8D2613621CFD3DF3002ADB0E /* Duration.swift */,
+				8D2613631CFD3DF3002ADB0E /* Int+Timepiece.swift */,
+				8D2613641CFD3DF3002ADB0E /* NSDate+Timepiece.swift */,
+				8D2613651CFD3DF3002ADB0E /* NSTimeInterval+Timepiece.swift */,
+				8D2613661CFD3DF3002ADB0E /* String+Timepiece.swift */,
+				8D2613671CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift */,
+				8D2613681CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift */,
+			);
+			name = "NSDate+Expand";
 			sourceTree = "<group>";
 		};
 		8D4A818C1C916A9500B0FF89 /* MakePair */ = {
@@ -4805,6 +4837,7 @@
 				5273D7D11C25CD2500A8ACF2 /* setSmallAirView.swift in Sources */,
 				8DA4056F1C8441B500AD5E5E /* ZXDataMatrixBitMatrixParser.m in Sources */,
 				8DA405C41C8441B500AD5E5E /* ZXPDF417ErrorCorrection.m in Sources */,
+				8D26136A1CFD3DF3002ADB0E /* Duration.swift in Sources */,
 				8DA405A21C8441B500AD5E5E /* ZXMathUtils.m in Sources */,
 				523DC2FC1C175DA800595099 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				8D09DBE21C5A69D400D0432B /* LoadingXib.swift in Sources */,
@@ -4839,6 +4872,7 @@
 				8DA405671C8441B500AD5E5E /* ZXCodaBarWriter.m in Sources */,
 				8DBD54D91C567F4500D04B12 /* YanZhengCell.swift in Sources */,
 				8DA405EC1C8441B500AD5E5E /* ZXRSS14Reader.m in Sources */,
+				8D26136C1CFD3DF3002ADB0E /* NSDate+Timepiece.swift in Sources */,
 				8DF060AF1CC90F6100EC05D9 /* View+SnapKit.swift in Sources */,
 				527E918D1C3BDCCF00828A1B /* LongImageViewController.swift in Sources */,
 				5243379C1C42A63F0024133D /* DeviceSetting.m in Sources */,
@@ -4970,6 +5004,7 @@
 				8DFB39331C574E4B00A1641C /* MxChipAirPurifierSensor.m in Sources */,
 				52080AF71C3BBC0600150B4F /* send_client_mosq.c in Sources */,
 				523DC3451C175E1B00595099 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				8D26136D1CFD3DF3002ADB0E /* NSTimeInterval+Timepiece.swift in Sources */,
 				52ECBEC31C0C6EED00A962E4 /* ImageUtil.m in Sources */,
 				8DA405871C8441B500AD5E5E /* ZXEAN13Writer.m in Sources */,
 				52080AFC1C3BBC0600150B4F /* util_mosq.c in Sources */,
@@ -5123,6 +5158,7 @@
 				8DA405BE1C8441B500AD5E5E /* ZXPDF417DetectionResultColumn.m in Sources */,
 				52ECBEC01C0C6D4300A962E4 /* UINavgationBar+Custom.mm in Sources */,
 				52A4EF671C2871A0005F282D /* smallFooterViewXib.swift in Sources */,
+				8D26136F1CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift in Sources */,
 				8DA405CC1C8441B500AD5E5E /* ZXProductParsedResult.m in Sources */,
 				8DD51FD81C7D8D3200F95695 /* MXChipIO.m in Sources */,
 				524337991C42A63F0024133D /* BaseDeviceIO.m in Sources */,
@@ -5194,6 +5230,7 @@
 				8DBD54D71C567F4500D04B12 /* MyRankTableViewCell.swift in Sources */,
 				8DA4055C1C8441B500AD5E5E /* ZXBizcardResultParser.m in Sources */,
 				52215DE51C4E9516007C8C96 /* CenterChartCell.swift in Sources */,
+				8D26136B1CFD3DF3002ADB0E /* Int+Timepiece.swift in Sources */,
 				8DA4057D1C8441B500AD5E5E /* ZXDataMatrixTextEncoder.m in Sources */,
 				52080AF61C3BBC0600150B4F /* read_handle_shared.c in Sources */,
 				8DA405FE1C8441B500AD5E5E /* ZXSMSTOMMSTOResultParser.m in Sources */,
@@ -5329,6 +5366,7 @@
 				521BF7C71C4A256300AD1EAB /* TDSFooterCellzb.swift in Sources */,
 				4231145A1C437C640062FFFF /* DrawPathView.m in Sources */,
 				8DBD54BA1C567F3800D04B12 /* ZanMeTableViewController.swift in Sources */,
+				8D2613701CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift in Sources */,
 				8DA405EA1C8441B500AD5E5E /* ZXResultPoint.m in Sources */,
 				8DA406081C8441B500AD5E5E /* ZXUPCEANExtensionSupport.m in Sources */,
 				8DA4053E1C8441B500AD5E5E /* ZXAddressBookDoCoMoResultParser.m in Sources */,
@@ -5336,11 +5374,13 @@
 				8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */,
 				52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */,
 				4288C53D1C0F06FF00446D3E /* AddDeviceCell.swift in Sources */,
+				8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */,
 				8DA405561C8441B500AD5E5E /* ZXBinarizer.m in Sources */,
 				42A7BB361C0C23BC008DB6E5 /* ASIDataDecompressor.m in Sources */,
 				8DA4036E1C843F8600AD5E5E /* LBXScanViewStyle.m in Sources */,
 				523DC3371C175E1B00595099 /* XMLocationManager.m in Sources */,
 				52080AF31C3BBC0600150B4F /* net_mosq.c in Sources */,
+				8D26136E1CFD3DF3002ADB0E /* String+Timepiece.swift in Sources */,
 				8DFB392D1C57248700A1641C /* ChatViewController.m in Sources */,
 				3473593B1C1C4D6200F4C79C /* LoginManager.mm in Sources */,
 			);
@@ -5431,8 +5471,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5479,8 +5519,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

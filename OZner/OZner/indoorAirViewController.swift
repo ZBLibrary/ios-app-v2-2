@@ -27,6 +27,7 @@ class indoorAirViewController: UIViewController {
         mainview.frame=CGRect(x: 0, y:0, width: Screen_Width, height: 590)
         mainview.toChat.addTarget(self, action: #selector(toChat), forControlEvents: .TouchUpInside)
         mainview.BugLvXinbutton.addTarget(self, action: #selector(bugLvXin), forControlEvents: .TouchUpInside)
+        mainview.reSetLvXinButton.addTarget(self, action: #selector(reSetLvXinClick), forControlEvents: .TouchUpInside)
         ScrollView.backgroundColor=mainview.backgroundColor
         ScrollView.addSubview(mainview)
  
@@ -59,11 +60,36 @@ class indoorAirViewController: UIViewController {
         ScrollView.contentSize=CGSize(width: 0, height: 590)
         
         upDateData()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(upDateData), name: "updateAirLvXinData", object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(upDateData), name: "updateAirLvXinData", object: nil)
         
         // Do any additional setup after loading the view.
     }
 
+    func reSetLvXinClick()  {
+        let airPurifier_Bluetooth = self.myCurrentDevice as? AirPurifier_Bluetooth
+        let weakSelf = self
+        
+        let alertview=SCLAlertView()
+        
+        alertview.addButton("确定") {
+            if airPurifier_Bluetooth != nil {
+                MBProgressHUD.showHUDAddedTo(weakSelf.view, animated: true)
+                airPurifier_Bluetooth?.status.resetFilterStatus({ (error) in
+                    print(error==nil)
+                })
+                
+                weakSelf.performSelector(#selector(weakSelf.UpDateDataAndNotice), withObject: nil, afterDelay: 6);
+            }
+        }
+        alertview.addButton("取消") {
+        }
+        alertview.showInfo("", subTitle: "重置后将对滤芯使用时间重新计时，这将会影响到空气净化效果。确认是否重置？")
+    }
+    func UpDateDataAndNotice()  {
+        upDateData()
+        NSNotificationCenter.defaultCenter().postNotificationName("UpDateLvXinOfSmallAir", object: nil)
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
+    }
     func toChat()
     {
         let bttons=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
@@ -97,7 +123,7 @@ class indoorAirViewController: UIViewController {
     {
         if self.myCurrentDevice == nil
         {return}
-        
+       
         if get_CurrSelectEquip()==4
         {
             let airPurifier_Bluetooth = self.myCurrentDevice as! AirPurifier_Bluetooth
@@ -106,19 +132,21 @@ class indoorAirViewController: UIViewController {
             mainview.smallairHidenView.addConstraint(NSLayoutConstraint(item: mainview.smallairHidenView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 0, constant: 0))
             mainview.airTotal.text = "无"
             mainview.smallairHidenView.hidden=true
-            mainview.airPurifier_Bluetooth=airPurifier_Bluetooth
+            //mainview.airPurifier_Bluetooth=airPurifier_Bluetooth
             //滤芯状态
             if airPurifier_Bluetooth.status.filterStatus.lastTime != nil
             {
                 
                 let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
-               
+                let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
+                let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
+                
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
                 let starDateStr=dateFormatter.stringFromDate(airPurifier_Bluetooth.status.filterStatus.lastTime)
                 mainview.starDatazb=starDateStr
-                mainview.state=(stopTime-nowTime)>=0 ? Int(ceil((stopTime-nowTime)/(365*24*3600)*100)) : 0
+                print(starDateStr)
+                mainview.state=(stopTime-nowTime)>=0 ? Int(ceil((stopTime-nowTime)/(stopTime-starTime)*100)) : 0
             }
         }
         else

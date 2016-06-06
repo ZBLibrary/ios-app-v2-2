@@ -1285,7 +1285,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                             let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
                             alert.show()
                         }
-                        NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
+                        //NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
                     }
                     
                     
@@ -1312,10 +1312,11 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
         if airPurifier_Bluetooth.status.filterStatus.lastTime != .None
         {
-            let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
-            
-            headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(365*24*3600)*100)))%":"0%"
-            switch ceil((stopTime-nowTime)/(365*24*3600)*100)
+            //let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970+90*24*3600
+            let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
+            let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
+            headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(stopTime-starTime)*100)))%":"0%"
+            switch ceil((stopTime-nowTime)/(stopTime-starTime)*100)
             {
             case 0..<15:
                 headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
@@ -1339,7 +1340,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 alert.show()
             }
 
-            NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
+            //NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
             
         }
     }
@@ -1676,13 +1677,19 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     //室内空气
     func toSeeIndoor()
     {
-        
+        if myCurrentDevice==nil {
+            return
+        }
         if AirPurifierManager.isMXChipAirPurifier((myCurrentDevice! as OznerDevice).type)==true {
             if (self.myCurrentDevice as! AirPurifier_MxChip).isOffline==true {
                 DeviceOffLineClick()
                 return
             }
+        }else if AirPurifierManager.isBluetoothAirPurifier(myCurrentDevice?.type)==true&&(myCurrentDevice as! AirPurifier_Bluetooth).status.power==false
+        {
+            return
         }
+        
         let indoorAir=indoorAirViewController()
         indoorAir.myCurrentDevice=self.myCurrentDevice
         self.navigationController?.pushViewController(indoorAir, animated: true)

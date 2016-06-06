@@ -42,34 +42,9 @@ class indoorAirXib: UIView {
     @IBOutlet var curDate: UILabel!
     
     //台式空净需要的
-    var airPurifier_Bluetooth:AirPurifier_Bluetooth?
+    //var airPurifier_Bluetooth:AirPurifier_Bluetooth?
     
     @IBOutlet weak var reSetLvXinButton: UIButton!
-    @IBAction func reSetLvXinClick(sender: AnyObject) {
-        if airPurifier_Bluetooth == nil {
-            return
-        }
-        let alertview=SCLAlertView()
-        alertview.addButton("取消") {
-        }
-        let weakSelf=self
-        alertview.addButton("确定") {
-            if weakSelf.airPurifier_Bluetooth != nil {
-             
-                
-                
-                
-                weakSelf.airPurifier_Bluetooth?.status.resetFilterStatus({ (error) in
-                    if error==nil{//成功
-                        NSNotificationCenter.defaultCenter().postNotificationName("UpDateLvXinOfSmallAir", object: nil)
-                    }
-                })
-            }
-        }
-        alertview.showInfo("", subTitle: "重置后将对滤芯使用时间重新计时，这将会影响到空气净化效果。确认是否重置？")
-        
-        
-    }
     
     
     @IBOutlet var BugLvXinbutton: UIButton!
@@ -82,8 +57,8 @@ class indoorAirXib: UIView {
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
                 let date = dateFormatter.dateFromString(starDatazb)! as NSDate
-                let tmpTime=date.timeIntervalSince1970+3600*24*365
-                let endDateTime = NSDate(timeIntervalSince1970: tmpTime)
+                //let tmpTime=date.timeIntervalSince1970+3600*24*90
+                let endDateTime = date+3.months//NSDate(timeIntervalSince1970: tmpTime)
                 dateFormatter.dateFormat="yyyy-MM-dd"
                 
                 let starStr=dateFormatter.stringFromDate(date)
