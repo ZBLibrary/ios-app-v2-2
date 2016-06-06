@@ -27,3 +27,27 @@
 "拍摄" = "Photograph";
 "照片" = "Photo album";
 "发送" = "Send";
+
+//我
+//My_MainView
+"银卡代理会员" = "Silver card agent member";
+"我的小金库" = "My private coffer ";
+"我的设备" = "My device";
+"我的订单" = "My order";
+"领红包" = "Receiving bonus";
+"我的券" = "My ticket ";
+"我的好友" = "My friend";
+"查看水质检测报告" = "Checking water quality examining report";
+"我要提意见" = "My proposal";
+"设置" = "Set";
+
+"已有设备" = "Existing device";
+"提交" = "Submit";
+"意见提交成功" = "Comments submitted successfully";
+"意见提交失败" = "Failure to submit comments";
+
+"允许推送消息" = "Allow message pushing";
+"计量单位" = "Measurement unit ";
+"关于浩泽净水家" = "About OZNER IFAMILY";
+"退出登录" = "Log out ";
+

@@ -789,7 +789,6 @@
 		8DBD549A1C567E4A00D04B12 /* peiDuiOutTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */; };
 		8DBD549F1C567E9200D04B12 /* kindly_notice_iconzb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD549D1C567E9200D04B12 /* kindly_notice_iconzb.png */; };
 		8DBD54A01C567E9200D04B12 /* match_device_failedzb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD549E1C567E9200D04B12 /* match_device_failedzb.png */; };
-		8DBD54AE1C567F3800D04B12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54A11C567F3800D04B12 /* Main.storyboard */; };
 		8DBD54AF1C567F3800D04B12 /* AddFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54A21C567F3800D04B12 /* AddFriendsTableViewController.swift */; };
 		8DBD54B01C567F3800D04B12 /* SendYanZHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54A31C567F3800D04B12 /* SendYanZHViewController.swift */; };
 		8DBD54B11C567F3800D04B12 /* YZNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */; };
@@ -823,7 +822,6 @@
 		8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */; };
 		8DBD54E61C567F4500D04B12 /* FriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */; };
 		8DBD54E71C567F4500D04B12 /* My_MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54CF1C567F4500D04B12 /* My_MainView.swift */; };
-		8DBD54E81C567F4500D04B12 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54D01C567F4500D04B12 /* My_MainView.xib */; };
 		8DBD54E91C567F4500D04B12 /* chatBarViewLiuyan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54D11C567F4500D04B12 /* chatBarViewLiuyan.swift */; };
 		8DBD54EA1C567F4500D04B12 /* chatBarViewLiuyan.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */; };
 		8DBD54ED1C567F8800D04B12 /* UserInfoActionWerbService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54EC1C567F8800D04B12 /* UserInfoActionWerbService.m */; };
@@ -860,6 +858,8 @@
 		8DFB39431C57730300A1641C /* TDSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */; };
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
+		B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */; };
+		B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70CC6481D057E3B002AE9A3 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2143,7 +2143,6 @@
 		8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
 		8DBD549D1C567E9200D04B12 /* kindly_notice_iconzb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kindly_notice_iconzb.png; sourceTree = "<group>"; };
 		8DBD549E1C567E9200D04B12 /* match_device_failedzb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = match_device_failedzb.png; sourceTree = "<group>"; };
-		8DBD54A11C567F3800D04B12 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8DBD54A21C567F3800D04B12 /* AddFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsTableViewController.swift; sourceTree = "<group>"; };
 		8DBD54A31C567F3800D04B12 /* SendYanZHViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendYanZHViewController.swift; sourceTree = "<group>"; };
 		8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNewsTableViewController.swift; sourceTree = "<group>"; };
@@ -2177,7 +2176,6 @@
 		8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsCell.xib; sourceTree = "<group>"; };
 		8DBD54CF1C567F4500D04B12 /* My_MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_MainView.swift; sourceTree = "<group>"; };
-		8DBD54D01C567F4500D04B12 /* My_MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = My_MainView.xib; sourceTree = "<group>"; };
 		8DBD54D11C567F4500D04B12 /* chatBarViewLiuyan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatBarViewLiuyan.swift; sourceTree = "<group>"; };
 		8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatBarViewLiuyan.xib; sourceTree = "<group>"; };
 		8DBD54EB1C567F8800D04B12 /* UserInfoActionWerbService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoActionWerbService.h; sourceTree = "<group>"; };
@@ -2228,6 +2226,14 @@
 		8DFB393C1C57730300A1641C /* AmountOfDrinkingWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterViewController.h; sourceTree = "<group>"; };
 		8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
+		B70CC63E1D0574BD002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/My_MainView.xib; sourceTree = "<group>"; };
+		B70CC6411D0574C0002AE9A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/My_MainView.strings; sourceTree = "<group>"; };
+		B70CC6431D0574C3002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/My_MainView.strings"; sourceTree = "<group>"; };
+		B70CC6451D0574C5002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/My_MainView.strings"; sourceTree = "<group>"; };
+		B70CC6471D057E3B002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B70CC64A1D057E42002AE9A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B70CC64C1D057E44002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B70CC64E1D057E48002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3407,7 +3413,7 @@
 				8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */,
 				8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */,
 				8DBD54CF1C567F4500D04B12 /* My_MainView.swift */,
-				8DBD54D01C567F4500D04B12 /* My_MainView.xib */,
+				B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */,
 				8DBD54D11C567F4500D04B12 /* chatBarViewLiuyan.swift */,
 				8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */,
 			);
@@ -3417,7 +3423,7 @@
 		523DC3A41C175FC400595099 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				8DBD54A11C567F3800D04B12 /* Main.storyboard */,
+				B70CC6481D057E3B002AE9A3 /* Main.storyboard */,
 				8DBD54A21C567F3800D04B12 /* AddFriendsTableViewController.swift */,
 				8DBD54A31C567F3800D04B12 /* SendYanZHViewController.swift */,
 				8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */,
@@ -4681,7 +4687,7 @@
 				8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */,
 				8DB043FD1CC8CCE200B60DAB /* left_row@2x.png in Resources */,
 				8DB044841CC8CD4200B60DAB /* icon_peidui_select_tan_tou@2x.png in Resources */,
-				8DBD54AE1C567F3800D04B12 /* Main.storyboard in Resources */,
+				B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */,
 				8DB044011CC8CCE200B60DAB /* pull_down_row@2x.png in Resources */,
 				528FFEF31C24625600D814A1 /* AboutDeviceViewController.xib in Resources */,
 				5235E2161C40E68600B125AE /* ShareView_zb.xib in Resources */,
@@ -4758,7 +4764,7 @@
 				8DB044951CC8CD4200B60DAB /* icon_peidui_select_smallair@2x.png in Resources */,
 				52791B971C18849100C098B2 /* setDev_CupView.xib in Resources */,
 				425F7A2B1C32B0C500C8B2E3 /* new_help_1@3x.png in Resources */,
-				8DBD54E81C567F4500D04B12 /* My_MainView.xib in Resources */,
+				B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */,
 				8DB044111CC8CCE200B60DAB /* 1_03.png in Resources */,
 				42E897A81C14486B00DD0228 /* OCFatherViewController.xib in Resources */,
 				425F7A281C32B0C500C8B2E3 /* new_help_0@2x.png in Resources */,
@@ -5448,6 +5454,28 @@
 				522D66691C31139300BCA750 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B70CC63E1D0574BD002AE9A3 /* Base */,
+				B70CC6411D0574C0002AE9A3 /* en */,
+				B70CC6431D0574C3002AE9A3 /* zh-Hans */,
+				B70CC6451D0574C5002AE9A3 /* zh-Hant */,
+			);
+			name = My_MainView.xib;
+			sourceTree = "<group>";
+		};
+		B70CC6481D057E3B002AE9A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B70CC6471D057E3B002AE9A3 /* Base */,
+				B70CC64A1D057E42002AE9A3 /* en */,
+				B70CC64C1D057E44002AE9A3 /* zh-Hans */,
+				B70CC64E1D057E48002AE9A3 /* zh-Hant */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
