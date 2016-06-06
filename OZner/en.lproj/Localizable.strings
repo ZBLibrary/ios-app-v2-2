@@ -43,13 +43,23 @@
 "已关机" = "Power-off" ; // 机器连接状态
 "设备已断开" = "Device disconnected" ;
 "设备已连接" = "Device connected" ;
-"设备连接中..." = "Device being connected..." ;
+"设备连接中" = "Device being connected" ;
 "设备没有连接上" = "Device connection fails" ;
+
 
 "优" = "Excellent" ; // 空气状况
 "良" = "Good" ;
 "一般" = "General" ;
 "差" = "Bad" ;
+
+"适中" = "Moderate" ; //水温
+"较差" = "Bad" ;
+"一般" = "So-so" ;
+"健康" = "Healthy" ;
+"偏烫" = "Partial hot" ;
+"偏凉" = "Slants cool" ;
+"适中" = "Moderate" ;
+
 
 
 "微信请求App提供内容" = "Provide content WeChat request App" ; //微信
@@ -62,3 +72,12 @@
 "这是从微信启动的消息" = "This is from WeChat start message" ;
 
 "账号在另一台设备上登录了，请重新登录" = "Login account on another device, please login again" ; //登陆
+
+"手机网络不可用，请检查网络" = "Network is not available, please check the network" ; //网络
+
+"今日饮水纯净指数分布" = "Drink pure exponential distribution toady" ;
+"本周饮水纯净指数分布" = "Drink pure exponential distribution this week" ;
+"本月饮水纯净指数分布" = "Drink pure exponential distribution this month" ;
+"今日饮水水温分布" = "Water temperature distribution today" ;
+"本周饮水水温分布" = "Water temperature distribution this week" ;
+"本月饮水水温分布" = "Water temperature distribution this month" ;

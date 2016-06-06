@@ -21,7 +21,7 @@ class LoadingXib: UIView {
                 loadIcon.hidden=false
                 loadText.hidden=false
                 loadIcon.image=UIImage(named: "airloding")
-                loadText.text="正在连接中"
+                loadText.text=loadLanguage("设备连接中")
                 isEnd=false
                 starAnima()
                 break
@@ -29,14 +29,14 @@ class LoadingXib: UIView {
                 loadIcon.hidden=false
                 loadText.hidden=false
                 loadIcon.image=UIImage(named: "air007")
-                loadText.text="设备已断开"
+                loadText.text=loadLanguage("设备已断开")
                 isEnd=true
                 break
             case 2:
                 loadIcon.hidden=false
                 loadText.hidden=false
                 loadIcon.image=UIImage(named: "air007")
-                loadText.text="手机网络不可用，请检查网络"
+                loadText.text=loadLanguage("手机网络不可用，请检查网络")
                 isEnd=true
                 break
             default://-1已连接
