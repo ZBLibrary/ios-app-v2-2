@@ -229,7 +229,6 @@
 		52461F071C2699AD00834CC2 /* indoorAirXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F061C2699AD00834CC2 /* indoorAirXib.xib */; };
 		5264661F1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */; };
 		526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */; };
-		526643DB1C2A9723007D7A28 /* indoorAirWarn_Air.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */; };
 		526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */; };
 		526DDB361C4AB9AB00363504 /* CupView_Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DDB351C4AB9AB00363504 /* CupView_Footer.swift */; };
 		526DDB381C4AB9BB00363504 /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526DDB371C4AB9BB00363504 /* CupView_Footer.xib */; };
@@ -860,6 +859,7 @@
 		E0EFFEED1D059BB800E43C20 /* ShareView_zb.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEEF1D059BB800E43C20 /* ShareView_zb.xib */; };
 		E0EFFEF11D06604000E43C20 /* WeiXinURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF31D06604000E43C20 /* WeiXinURLViewController.xib */; };
 		E0EFFEF51D06607E00E43C20 /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF71D06607E00E43C20 /* OffLineSuggestView.xib */; };
+		E0EFFEF91D0666FF00E43C20 /* indoorAirWarn_Air.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1292,7 +1292,6 @@
 		5264661C1C43D9C7006C86D3 /* MxChipAirPurifierStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierStatus.h; sourceTree = "<group>"; };
 		5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierStatus.m; sourceTree = "<group>"; };
 		526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Airgif_blue.gif; sourceTree = "<group>"; };
-		526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirWarn_Air.xib; sourceTree = "<group>"; };
 		526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indoorAirWarn_Air.swift; sourceTree = "<group>"; };
 		526DDB351C4AB9AB00363504 /* CupView_Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupView_Footer.swift; sourceTree = "<group>"; };
 		526DDB371C4AB9BB00363504 /* CupView_Footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CupView_Footer.xib; sourceTree = "<group>"; };
@@ -2235,6 +2234,8 @@
 		E0EFFEF41D06604200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WeiXinURLViewController.xib; sourceTree = "<group>"; };
 		E0EFFEF61D06607E00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OffLineSuggestView.xib; sourceTree = "<group>"; };
 		E0EFFEF81D06608000E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OffLineSuggestView.xib; sourceTree = "<group>"; };
+		E0EFFEFA1D0666FF00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/indoorAirWarn_Air.xib; sourceTree = "<group>"; };
+		E0EFFEFC1D06670100E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/indoorAirWarn_Air.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3468,7 +3469,7 @@
 			isa = PBXGroup;
 			children = (
 				526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */,
-				526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */,
+				E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air.xib */,
 			);
 			name = indoorAirWarn;
 			sourceTree = "<group>";
@@ -4596,7 +4597,7 @@
 				8DBD54DA1C567F4500D04B12 /* YanZhengCell.xib in Resources */,
 				8DB043E51CC8CCE200B60DAB /* yin_shui_liang_0.png in Resources */,
 				528D77471C2716BA00243986 /* setTimingViewController.xib in Resources */,
-				526643DB1C2A9723007D7A28 /* indoorAirWarn_Air.xib in Resources */,
+				E0EFFEF91D0666FF00E43C20 /* indoorAirWarn_Air.xib in Resources */,
 				8DB0444E1CC8CD1700B60DAB /* icon_power@3x.png in Resources */,
 				8DB044381CC8CD1700B60DAB /* icon_circle_normal.png in Resources */,
 				8DB043F31CC8CCE200B60DAB /* select_device_1.png in Resources */,
@@ -5518,6 +5519,15 @@
 				E0EFFEF81D06608000E43C20 /* Base */,
 			);
 			name = OffLineSuggestView.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEFA1D0666FF00E43C20 /* en */,
+				E0EFFEFC1D06670100E43C20 /* Base */,
+			);
+			name = indoorAirWarn_Air.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
