@@ -112,6 +112,7 @@ class MyInfoViewController: UIViewController {
                     
                     let tmpName=gradeName.stringByReplacingOccurrencesOfString("会员", withString: "代理会员")
                     StrongSelf.mainView.My_job.text = loadLanguage(tmpName)
+                    print(StrongSelf.mainView.My_job.text)
                     if headimg == ""
                     {
                         StrongSelf.mainView.My_head.image=UIImage(named: "DefaultHeadImage")

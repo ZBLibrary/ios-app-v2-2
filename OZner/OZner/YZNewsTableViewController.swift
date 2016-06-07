@@ -120,13 +120,13 @@ class YZNewsTableViewController: UITableViewController {
                 }
                 else
                 {
-                    let alert=UIAlertView(title: "", message: "添加失败，请重试！", delegate: self, cancelButtonTitle: "ok")
+                    let alert=UIAlertView(title: "", message:loadLanguage("添加失败，请重试！"), delegate: self, cancelButtonTitle: "ok")
                     alert.show()
                 }
             }
             else
             {
-                let alert=UIAlertView(title: "", message: "网络请求失败", delegate: self, cancelButtonTitle: "ok")
+                let alert=UIAlertView(title: "", message:loadLanguage("网络请求失败"), delegate: self, cancelButtonTitle: "ok")
                 alert.show()
             }
         }

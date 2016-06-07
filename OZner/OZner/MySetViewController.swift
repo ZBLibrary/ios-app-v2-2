@@ -27,7 +27,7 @@ class MySetViewController: UIViewController,UIAlertViewDelegate {
         
     }
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if alertView.message=="是否退出登录？"&&buttonIndex==1
+        if alertView.message==loadLanguage("是否退出登录？")&&buttonIndex==1
         {
             LogInOut.loginInOutInstance().loginOutUser()
         }

@@ -24,13 +24,14 @@
 
 //咨询界面
 //XMChatBar.h
-"拍摄" = "Photograph";
-"照片" = "Photo album";
+"拍摄" = "Camera";
+"照片" = "Photos";
 "发送" = "Send";
 
 //我
 //My_MainView
 "银卡代理会员" = "Silver card agent member";
+"金卡代理会员" = "Gold card agent member";
 "我的小金库" = "My private coffer ";
 "我的设备" = "My device";
 "我的订单" = "My order";
@@ -39,7 +40,7 @@
 "我的好友" = "My friend";
 "查看水质检测报告" = "Checking water quality examining report";
 "我要提意见" = "My proposal";
-"设置" = "Set";
+"设置" = "Settings";
 
 "已有设备" = "Existing device";
 "提交" = "Submit";
@@ -69,8 +70,35 @@
 "是" = "Logout";
 
 //我的好友
+"获得点赞" = "Likes";
 "我的排名" = "My Ranking";
 "条留言" = "Message";
-"回复" = "Reply";
-
+"回复" = "Reply:";
+"添加好友" = "Add Friend";
+"验证消息" = "Validation Message";
+"已添加" = "Added";
+"添加" = "Add";
+"通讯录好友" = "Moblie Contacts";
+"我 说: " = "Me Say: ";
+" 说: " = " Say:";
+"搜索结果" = "Result";
+"发送成功" = "Sent successfully";
+"已发送" = "Sented";//
+"对不起，网络异常！" = "Sorry, network anomalies";//
+"对不起，没有找到！" = "Sorry,NotFound";//
+"输入信息不能为空！" = "Enter the information can not be empty!";//
+"对方不是浩泽用户" = "The other is not Ozner user";//
+"添加失败，请重试！" = "Add failed, please try again!";//
+"网络请求失败" = "Network requests fail";//
+"夺得" = "Capture";//
+"月排行榜冠军" = "Month charts";//
+"智能杯水质纯净值TDS" = "Smart cup pure water value TDS";//
+"水探头水质纯净值TDS" = "Smart water tester TDS rank";
+"净水器水质纯净值TDS" = "Water purifier TDS rank";
+"网络不稳定，点赞失败" = "Network instability, thumbs fail";//
+"水探头水质纯净值" = "Pure water quality sensor value";//
+"排名" = "Ranking";
+"您今日最佳" = "Today you are the best";
+"我是你好友,加我,谢谢" = "I am your friend , add me , thank you";
+"智能水杯" = "Smart cup";
 

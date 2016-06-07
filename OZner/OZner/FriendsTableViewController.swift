@@ -26,12 +26,12 @@ struct deviceTypezb {
 }
 
 class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITextViewDelegate {
-
+    
     let NavTitleView=NSBundle.mainBundle().loadNibNamed("FriendsNav", owner: nil, options: nil).last as! FriendsNav
     var currentTabel=1 as Int{
         didSet{
             
-                chatBarView.removeFromSuperview()
+            chatBarView.removeFromSuperview()
             
         }
     }//0表示选中我的排名，1表示选中我的好友
@@ -46,12 +46,12 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
             {
                 chatBarView.removeFromSuperview()
                 self.tableView.superview!.addSubview(chatBarView)
-   
+                
             }
             else
             {
-                 chatBarView.removeFromSuperview()
-               self.tableView.reloadData()
+                chatBarView.removeFromSuperview()
+                self.tableView.reloadData()
             }
         }
     }
@@ -82,11 +82,11 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         
         //showYZNews
         
-       rightBarButton=NSBundle.mainBundle().loadNibNamed("FriendsNavRight", owner: nil, options: nil).last as! FriendsNavRight
+        rightBarButton=NSBundle.mainBundle().loadNibNamed("FriendsNavRight", owner: nil, options: nil).last as! FriendsNavRight
         rightBarButton.TongzhiButton.addTarget(self, action: #selector(toYZNews), forControlEvents: .TouchUpInside)
         rightBarButton.AddFriend.addTarget(self, action: #selector(toAddFriends), forControlEvents: .TouchUpInside)
         
-       // FriendsNavRight.
+        // FriendsNavRight.
         self.navigationItem.titleView=NavTitleView
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
@@ -104,7 +104,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         chatBarView.sendButton.layer.cornerRadius=8
         chatBarView.sendButton.addTarget(self, action: #selector(SendMess), forControlEvents: .TouchUpInside)
         chatBarView.frame=CGRect(x: 0, y: Screen_Hight-48, width: Screen_Width, height: 48)
-
+        
         /*-------------键盘监听事件---------------------*/
         //使用NSNotificationCenter 鍵盤出現時
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWasShown), name: UIKeyboardDidShowNotification, object: nil)
@@ -121,11 +121,11 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         //使用NSNotificationCenter 验证消息通知
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateFriendList), name: "OtherAcceptMeNews", object: nil)
-       NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateYZNewsRedDOt), name: "OtherRequestNews", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateYZNewsRedDOt), name: "OtherRequestNews", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MyCenterNewMessageNotice), name: "MyCenterNewMessageNotice", object: nil)
         //更新小红点状态
         updateYZNewsRedDOt()
- 
+        
         //加载Rank视图
         //let rankControlView=MyRankViewController()
         //RankView=rankControlView.view
@@ -183,7 +183,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
             self.myfriendarray[self.currentliuyanAtIndex].messageCount=self.myfriendarray[self.currentliuyanAtIndex].messageCount+1
             
             self.myfriendCellArray["\(self.currentliuyanAtIndex)"]?.LiuyanLabel.text="\(self.myfriendarray[self.currentliuyanAtIndex].messageCount)" + loadLanguage("条留言")
-           // MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            // MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         }
         
     }
@@ -196,7 +196,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         print("hight_hitht:\(kbSize.height)")
         print(Screen_Hight-48-kbSize.height)
         chatBarView.frame=CGRect(x: 0, y: Screen_Hight-48-kbSize.height, width: Screen_Width, height: 48)
-
+        
     }
     //当键盘隐藏的时候
     func keyboardWillBeHidden(aNotification:NSNotification)
@@ -259,7 +259,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         super.viewDidAppear(animated)
         let liuyanCount=(NSUserDefaults.standardUserDefaults().objectForKey("NewMessageCount") != nil) ? NSUserDefaults.standardUserDefaults().objectForKey("NewMessageCount"):0
         NavTitleView.friendBadge.hidden=(liuyanCount as! Int)>0 ? false:true
-    
+        
         currentTabel==1
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }
@@ -271,19 +271,19 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return 65
-            
+        
         
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return myfriendCellArray.count
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //好友列表
         return myfriendCellArray["\(indexPath.section)"]!
@@ -327,7 +327,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return liuyanCellViews[self.friendId[section]]! as UIView
     }
-
+    
     
     //取数据
     func getTXFriends(){
@@ -371,13 +371,13 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                         {
                             cell.headImg.image=UIImage(named: "DefaultHeadImage")
                         }
-            
+                        
                         //---------------留言-------------
                         let tmpid=friendcount[i].objectForKey("CreateBy") as! String
-            
+                        
                         if tmpid==self.myUserId
                         {
-                          self.friendId.append(friendcount[i].objectForKey("ModifyBy") as! String)
+                            self.friendId.append(friendcount[i].objectForKey("ModifyBy") as! String)
                         }
                         else
                         {
@@ -391,10 +391,10 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                         self.liuyanCellViews[self.friendId[i]]=tmpliuyanView
                         cell.selectionStyle=UITableViewCellSelectionStyle.None
                         self.myfriendCellArray["\(i)"]=cell
-                       
+                        
                     }
                     self.tableView.reloadData()
-
+                    
                 }
             }
             
@@ -421,7 +421,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         //messtextLabel.backgroundColor=UIColor.redColor()
         messcellView.addSubview(messtextLabel)
         messtextLabel.sizeToFit()
-
+        
         let tmpsize=messtextLabel.sizeThatFits(CGSizeZero)
         let lineCount=Int(tmpsize.width)/Int(Screen_Width-110)+((Int(tmpsize.width)%Int(Screen_Width-110))>0 ? 1:0)
         let tmpHeight=CGFloat(lineCount*20)>100 ? 100:CGFloat(lineCount*20)
@@ -465,7 +465,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                         var sendNameCount=0
                         if sendid==self.myUserId
                         {
-                            sendNameCount="我 说: ".characters.count
+                            sendNameCount=loadLanguage("我 说: ").characters.count
                             messstring=loadLanguage("我 说: ")+messstring
                         }
                         else
@@ -479,8 +479,8 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                         let messtime=liuyanData.objectForKey("stime") as! NSString
                         let needtime=dateStampToString(messtime, format: "dd日hh:mm")
                         //formatter.dateFormat="HHMM"
-                        
 
+                        
                         let messcell=self.getMessCellView(sendNameCount,messcontent: messstring, messtime: needtime as String)
                         messcell.frame=CGRect(x: 0, y: tmpMess_y, width: Screen_Width, height: messcell.frame.height)
                         
@@ -496,7 +496,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
             }
             
             //MBProgressHUD.hideHUDForView(self.view, animated: true)
-        
+            
         }
     }
     
@@ -521,49 +521,49 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         print(url)
         let params:NSDictionary = ["usertoken":get_UserToken()]
         manager.POST(url,
-            parameters: params,
-            success: { (operation: AFHTTPRequestOperation!,
-                responseObject: AnyObject!) in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
-                print(responseObject)
-                let state=responseObject.objectForKey("state") as! Int
-                //var rankcount:NSMutableArray!
-                if state>0
-                {
-                    let rankcount=responseObject.objectForKey("data") as! NSMutableArray
-                    for i in 0..<rankcount.count
-                    {
-                        var rankstrut=myRankstruct()
-                        let tmprankData=rankcount.objectAtIndex(i) as! NSDictionary
-                        rankstrut.rank="\(tmprankData.objectForKey("rank") as! Int)"
-                        rankstrut.max="\(tmprankData.objectForKey("max") as! Int)"
-                        rankstrut.zanCount="\(tmprankData.objectForKey("likenumaber") as! Int)"
-                        rankstrut.type=tmprankData.objectForKey("type") as! String
+                     parameters: params,
+                     success: { (operation: AFHTTPRequestOperation!,
+                        responseObject: AnyObject!) in
+                        MBProgressHUD.hideHUDForView(self.view, animated: true)
+                        print(responseObject)
+                        let state=responseObject.objectForKey("state") as! Int
+                        //var rankcount:NSMutableArray!
+                        if state>0
+                        {
+                            let rankcount=responseObject.objectForKey("data") as! NSMutableArray
+                            for i in 0..<rankcount.count
+                            {
+                                var rankstrut=myRankstruct()
+                                let tmprankData=rankcount.objectAtIndex(i) as! NSDictionary
+                                rankstrut.rank="\(tmprankData.objectForKey("rank") as! Int)"
+                                rankstrut.max="\(tmprankData.objectForKey("max") as! Int)"
+                                rankstrut.zanCount="\(tmprankData.objectForKey("likenumaber") as! Int)"
+                                rankstrut.type=tmprankData.objectForKey("type") as! String
+                                
+                                let tmptime=tmprankData.objectForKey("notime") as! NSString
+                                
+                                let tmptime1=dateStampToString(tmptime, format: "MM月dd日")
+                                
+                                rankstrut.time=tmptime1 as String
+                                rankstrut.Nickname=tmprankData.objectForKey("Nickname")?.isKindOfClass(NSNull)==true ? "" : (tmprankData.objectForKey("Nickname") as! String)
+                                rankstrut.Icon=tmprankData.objectForKey("Icon")?.isKindOfClass(NSNull)==true ? "" : (tmprankData.objectForKey("Icon") as! String)
+                                print(rankstrut.Icon)
+                                self.myrankarray.append(rankstrut)
+                                let tableCell=self.getTdsRankCell(rankstrut,index: i)
+                                tableCell.frame=CGRect(x: 0, y: CGFloat(i*200), width: Screen_Width, height: 200)
+                                self.RankView.addSubview(tableCell)
+                                
+                                
+                                
+                            }
+                            
+                            self.RankView.contentSize=CGSize(width: 0, height: (CGFloat(rankcount.count*200)<(Screen_Hight-64) ? (Screen_Hight-64): CGFloat(rankcount.count*200)))
+                        }
                         
-                        let tmptime=tmprankData.objectForKey("notime") as! NSString
-                        
-                        let tmptime1=dateStampToString(tmptime, format: "MM月dd日")
-                        
-                        rankstrut.time=tmptime1 as String
-                        rankstrut.Nickname=tmprankData.objectForKey("Nickname")?.isKindOfClass(NSNull)==true ? "" : (tmprankData.objectForKey("Nickname") as! String)
-                        rankstrut.Icon=tmprankData.objectForKey("Icon")?.isKindOfClass(NSNull)==true ? "" : (tmprankData.objectForKey("Icon") as! String)
-                        print(rankstrut.Icon)
-                        self.myrankarray.append(rankstrut)
-                        let tableCell=self.getTdsRankCell(rankstrut,index: i)
-                        tableCell.frame=CGRect(x: 0, y: CGFloat(i*200), width: Screen_Width, height: 200)
-                        self.RankView.addSubview(tableCell)
-                        
-                        
-                        
-                    }
-                    
-                    self.RankView.contentSize=CGSize(width: 0, height: (CGFloat(rankcount.count*200)<(Screen_Hight-64) ? (Screen_Hight-64): CGFloat(rankcount.count*200)))
-                }
-                
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                     failure: { (operation: AFHTTPRequestOperation!,
+                        error: NSError!) in
+                        MBProgressHUD.hideHUDForView(self.view, animated: true)
         })
         
         
@@ -603,18 +603,18 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         }
         if tmpRank.Icon != ""
         {
-           TdsRankcell.rankHead.image=UIImage(data: NSData(contentsOfURL: NSURL(string: tmpRank.Icon)!)!)
-//            TdsRankcell.rankHead.sd_setImageWithURL(NSURL(string: tmpRank.Icon), placeholderImage: UIImage(named: "DefaultHeadImage"), completed: { (img:UIImage!, err:NSError!, sd:SDImageCacheType, url:NSURL!) -> Void in
-//                TdsRankcell.rankHead.image=img
-//            })         
+            TdsRankcell.rankHead.image=UIImage(data: NSData(contentsOfURL: NSURL(string: tmpRank.Icon)!)!)
+            //            TdsRankcell.rankHead.sd_setImageWithURL(NSURL(string: tmpRank.Icon), placeholderImage: UIImage(named: "DefaultHeadImage"), completed: { (img:UIImage!, err:NSError!, sd:SDImageCacheType, url:NSURL!) -> Void in
+            //                TdsRankcell.rankHead.image=img
+            //            })         
         }
         
         TdsRankcell.selectionStyle=UITableViewCellSelectionStyle.None
         return TdsRankcell
     }
-
     
-   
+    
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -630,9 +630,9 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
             let page=segue.destinationViewController as! ZanMeTableViewController
             page.deviceType=RankDeviceType
         }
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-
+    
     
 }

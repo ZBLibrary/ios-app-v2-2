@@ -808,7 +808,6 @@
 		8DBD54D71C567F4500D04B12 /* MyRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54BF1C567F4500D04B12 /* MyRankTableViewCell.swift */; };
 		8DBD54D81C567F4500D04B12 /* MyRankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C01C567F4500D04B12 /* MyRankTableViewCell.xib */; };
 		8DBD54D91C567F4500D04B12 /* YanZhengCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C11C567F4500D04B12 /* YanZhengCell.swift */; };
-		8DBD54DA1C567F4500D04B12 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C21C567F4500D04B12 /* YanZhengCell.xib */; };
 		8DBD54DB1C567F4500D04B12 /* ZanMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */; };
 		8DBD54DC1C567F4500D04B12 /* ZanMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */; };
 		8DBD54DD1C567F4500D04B12 /* FriendsNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C51C567F4500D04B12 /* FriendsNav.swift */; };
@@ -817,7 +816,6 @@
 		8DBD54E11C567F4500D04B12 /* EquidsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */; };
 		8DBD54E21C567F4500D04B12 /* EquidsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54CA1C567F4500D04B12 /* EquidsCollectionViewCell.xib */; };
 		8DBD54E31C567F4500D04B12 /* FriendSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54CB1C567F4500D04B12 /* FriendSearch.swift */; };
-		8DBD54E41C567F4500D04B12 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54CC1C567F4500D04B12 /* FriendSearch.xib */; };
 		8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */; };
 		8DBD54E61C567F4500D04B12 /* FriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */; };
 		8DBD54E71C567F4500D04B12 /* My_MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54CF1C567F4500D04B12 /* My_MainView.swift */; };
@@ -860,6 +858,8 @@
 		B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */; };
 		B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70CC6481D057E3B002AE9A3 /* Main.storyboard */; };
 		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
+		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
+		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2162,7 +2162,6 @@
 		8DBD54BF1C567F4500D04B12 /* MyRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRankTableViewCell.swift; sourceTree = "<group>"; };
 		8DBD54C01C567F4500D04B12 /* MyRankTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRankTableViewCell.xib; sourceTree = "<group>"; };
 		8DBD54C11C567F4500D04B12 /* YanZhengCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YanZhengCell.swift; sourceTree = "<group>"; };
-		8DBD54C21C567F4500D04B12 /* YanZhengCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YanZhengCell.xib; sourceTree = "<group>"; };
 		8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZanMeTableViewCell.swift; sourceTree = "<group>"; };
 		8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZanMeTableViewCell.xib; sourceTree = "<group>"; };
 		8DBD54C51C567F4500D04B12 /* FriendsNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsNav.swift; sourceTree = "<group>"; };
@@ -2171,7 +2170,6 @@
 		8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquidsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DBD54CA1C567F4500D04B12 /* EquidsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EquidsCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DBD54CB1C567F4500D04B12 /* FriendSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearch.swift; sourceTree = "<group>"; };
-		8DBD54CC1C567F4500D04B12 /* FriendSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendSearch.xib; sourceTree = "<group>"; };
 		8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsCell.xib; sourceTree = "<group>"; };
 		8DBD54CF1C567F4500D04B12 /* My_MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_MainView.swift; sourceTree = "<group>"; };
@@ -2230,11 +2228,15 @@
 		B70CC6431D0574C3002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/My_MainView.strings"; sourceTree = "<group>"; };
 		B70CC6451D0574C5002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/My_MainView.strings"; sourceTree = "<group>"; };
 		B70CC6471D057E3B002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B70CC64A1D057E42002AE9A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B70CC64C1D057E44002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		B70CC64E1D057E48002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
 		B76E77891D066BE3008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FriendsNav.xib; sourceTree = "<group>"; };
+		B76E778A1D066E94008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B76E778C1D069B1F008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
+		B76E77901D069B3F008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
+		B76E77921D06A236008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendSearch.xib; sourceTree = "<group>"; };
+		B76E77951D06A23A008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FriendSearch.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3400,7 +3402,7 @@
 				8DBD54BF1C567F4500D04B12 /* MyRankTableViewCell.swift */,
 				8DBD54C01C567F4500D04B12 /* MyRankTableViewCell.xib */,
 				8DBD54C11C567F4500D04B12 /* YanZhengCell.swift */,
-				8DBD54C21C567F4500D04B12 /* YanZhengCell.xib */,
+				B76E778D1D069B1F008476A6 /* YanZhengCell.xib */,
 				8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */,
 				8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */,
 				8DBD54C51C567F4500D04B12 /* FriendsNav.swift */,
@@ -3410,7 +3412,7 @@
 				8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */,
 				8DBD54CA1C567F4500D04B12 /* EquidsCollectionViewCell.xib */,
 				8DBD54CB1C567F4500D04B12 /* FriendSearch.swift */,
-				8DBD54CC1C567F4500D04B12 /* FriendSearch.xib */,
+				B76E77931D06A236008476A6 /* FriendSearch.xib */,
 				8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */,
 				8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */,
 				8DBD54CF1C567F4500D04B12 /* My_MainView.swift */,
@@ -4593,7 +4595,7 @@
 				521667871C48C258002068EF /* TDSDetailCellzb.xib in Resources */,
 				8DB0444B1CC8CD1700B60DAB /* icon_jiare_normal@3x.png in Resources */,
 				528FFF011C247B1D00D814A1 /* uiDatePickerView.xib in Resources */,
-				8DBD54DA1C567F4500D04B12 /* YanZhengCell.xib in Resources */,
+				B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */,
 				8DB043E51CC8CCE200B60DAB /* yin_shui_liang_0.png in Resources */,
 				528D77471C2716BA00243986 /* setTimingViewController.xib in Resources */,
 				526643DB1C2A9723007D7A28 /* indoorAirWarn_Air.xib in Resources */,
@@ -4696,7 +4698,7 @@
 				8DB044171CC8CCE200B60DAB /* dian_liang_70.png in Resources */,
 				8DB043E71CC8CCE200B60DAB /* icon_state_tanhao.png in Resources */,
 				8DB0443E1CC8CD1700B60DAB /* icon_peidui_normal_jingshuiqi @2x.png in Resources */,
-				8DBD54E41C567F4500D04B12 /* FriendSearch.xib in Resources */,
+				B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */,
 				8DBD54DC1C567F4500D04B12 /* ZanMeTableViewCell.xib in Resources */,
 				8DB044B41CC8CD5500B60DAB /* device_tan_tou_select_state.png in Resources */,
 				8DB0444F1CC8CD1700B60DAB /* icon_power_normal@3x.png in Resources */,
@@ -5472,9 +5474,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				B70CC6471D057E3B002AE9A3 /* Base */,
-				B70CC64A1D057E42002AE9A3 /* en */,
 				B70CC64C1D057E44002AE9A3 /* zh-Hans */,
 				B70CC64E1D057E48002AE9A3 /* zh-Hant */,
+				B76E778A1D066E94008476A6 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -5486,6 +5488,24 @@
 				B76E77891D066BE3008476A6 /* en */,
 			);
 			name = FriendsNav.xib;
+			sourceTree = "<group>";
+		};
+		B76E778D1D069B1F008476A6 /* YanZhengCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E778C1D069B1F008476A6 /* Base */,
+				B76E77901D069B3F008476A6 /* en */,
+			);
+			name = YanZhengCell.xib;
+			sourceTree = "<group>";
+		};
+		B76E77931D06A236008476A6 /* FriendSearch.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E77921D06A236008476A6 /* Base */,
+				B76E77951D06A23A008476A6 /* en */,
+			);
+			name = FriendSearch.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
