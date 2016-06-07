@@ -331,7 +331,6 @@
 		52FEC03F1C35961B00B6D0F1 /* userAgreeMentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEC03D1C35961B00B6D0F1 /* userAgreeMentsController.swift */; };
 		52FEC0401C35961B00B6D0F1 /* userAgreeMentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FEC03E1C35961B00B6D0F1 /* userAgreeMentsController.xib */; };
 		52FEC0431C35A99200B6D0F1 /* WeiXinURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEC0411C35A99200B6D0F1 /* WeiXinURLViewController.swift */; };
-		52FEC0441C35A99200B6D0F1 /* WeiXinURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FEC0421C35A99200B6D0F1 /* WeiXinURLViewController.xib */; };
 		52FF7DFC1C1A041B005635F8 /* HSVZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7DFB1C1A041B005635F8 /* HSVZB.m */; };
 		52FF7E051C1A043A005635F8 /* YJHColorPickerHSWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7DFE1C1A043A005635F8 /* YJHColorPickerHSWheel.m */; };
 		52FF7E061C1A043A005635F8 /* YJHColorPickerHSWheel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7E001C1A043A005635F8 /* YJHColorPickerHSWheel2.m */; };
@@ -372,7 +371,6 @@
 		8D4F4E821CDADD6D00BE1E77 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */; };
 		8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */; };
 		8D5110751CDC6B2A00B809FA /* OffLineSuggestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */; };
-		8D5110771CDC6DD000B809FA /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */; };
 		8D7234A71CF5450E0008B134 /* WaterReplenishmentMeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7234A61CF5450E0008B134 /* WaterReplenishmentMeterStatus.m */; };
 		8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */; };
 		8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */; };
@@ -860,6 +858,8 @@
 		E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */; };
 		E0EFFEE91D05954700E43C20 /* Main_FooterView_zb.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEEB1D05954700E43C20 /* Main_FooterView_zb.xib */; };
 		E0EFFEED1D059BB800E43C20 /* ShareView_zb.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEEF1D059BB800E43C20 /* ShareView_zb.xib */; };
+		E0EFFEF11D06604000E43C20 /* WeiXinURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF31D06604000E43C20 /* WeiXinURLViewController.xib */; };
+		E0EFFEF51D06607E00E43C20 /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF71D06607E00E43C20 /* OffLineSuggestView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1410,7 +1410,6 @@
 		52FEC03D1C35961B00B6D0F1 /* userAgreeMentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userAgreeMentsController.swift; sourceTree = "<group>"; };
 		52FEC03E1C35961B00B6D0F1 /* userAgreeMentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userAgreeMentsController.xib; sourceTree = "<group>"; };
 		52FEC0411C35A99200B6D0F1 /* WeiXinURLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiXinURLViewController.swift; sourceTree = "<group>"; };
-		52FEC0421C35A99200B6D0F1 /* WeiXinURLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeiXinURLViewController.xib; sourceTree = "<group>"; };
 		52FF7DEC1C19F9E1005635F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52FF7DFA1C1A041B005635F8 /* HSVZB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSVZB.h; sourceTree = "<group>"; };
 		52FF7DFB1C1A041B005635F8 /* HSVZB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSVZB.m; sourceTree = "<group>"; };
@@ -1467,7 +1466,6 @@
 		8D4F4E831CDADD9900BE1E77 /* WaterPurifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier.h; sourceTree = "<group>"; };
 		8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
 		8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffLineSuggestView.swift; sourceTree = "<group>"; };
-		8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffLineSuggestView.xib; sourceTree = "<group>"; };
 		8D7234A61CF5450E0008B134 /* WaterReplenishmentMeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterStatus.m; sourceTree = "<group>"; };
 		8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish.plist; sourceTree = "<group>"; };
 		8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSexViewController.swift; sourceTree = "<group>"; };
@@ -2233,6 +2231,10 @@
 		E0EFFEEC1D05954A00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Main_FooterView_zb.xib; sourceTree = "<group>"; };
 		E0EFFEEE1D059BB800E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ShareView_zb.xib; sourceTree = "<group>"; };
 		E0EFFEF01D059BBA00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareView_zb.xib; sourceTree = "<group>"; };
+		E0EFFEF21D06604000E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WeiXinURLViewController.xib; sourceTree = "<group>"; };
+		E0EFFEF41D06604200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WeiXinURLViewController.xib; sourceTree = "<group>"; };
+		E0EFFEF61D06607E00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OffLineSuggestView.xib; sourceTree = "<group>"; };
+		E0EFFEF81D06608000E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OffLineSuggestView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3503,9 +3505,9 @@
 				5235E2191C40F18100B125AE /* ShareView_zb.swift */,
 				E0EFFEEF1D059BB800E43C20 /* ShareView_zb.xib */,
 				52FEC0411C35A99200B6D0F1 /* WeiXinURLViewController.swift */,
-				52FEC0421C35A99200B6D0F1 /* WeiXinURLViewController.xib */,
+				E0EFFEF31D06604000E43C20 /* WeiXinURLViewController.xib */,
 				8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */,
-				8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */,
+				E0EFFEF71D06607E00E43C20 /* OffLineSuggestView.xib */,
 			);
 			name = deviceCommon;
 			sourceTree = "<group>";
@@ -4622,7 +4624,7 @@
 				523DC34F1C175E1B00595099 /* face.plist in Resources */,
 				4281410F1C0B072C006FEDDE /* LaunchScreen.storyboard in Resources */,
 				8DBD54E61C567F4500D04B12 /* FriendsCell.xib in Resources */,
-				52FEC0441C35A99200B6D0F1 /* WeiXinURLViewController.xib in Resources */,
+				E0EFFEF11D06604000E43C20 /* WeiXinURLViewController.xib in Resources */,
 				8DB043FB1CC8CCE200B60DAB /* right_row@2x.png in Resources */,
 				528FFEEF1C244EED00D814A1 /* setDeviceNameViewController.xib in Resources */,
 				8DB043FC1CC8CCE200B60DAB /* right_row@3x.png in Resources */,
@@ -4714,7 +4716,7 @@
 				8DB044001CC8CCE200B60DAB /* device_share@3x.png in Resources */,
 				4281414A1C0B15F0006FEDDE /* ic_menu_black_24dp@2x.png in Resources */,
 				425F7A291C32B0C500C8B2E3 /* new_help_0@3x.png in Resources */,
-				8D5110771CDC6DD000B809FA /* OffLineSuggestView.xib in Resources */,
+				E0EFFEF51D06607E00E43C20 /* OffLineSuggestView.xib in Resources */,
 				8DB044051CC8CCE200B60DAB /* device_konw@3x.png in Resources */,
 				8DB044B61CC8CD5500B60DAB /* device_jin_shui_qi_normal.png in Resources */,
 				8DB043EA1CC8CCE200B60DAB /* wen_du_3.png in Resources */,
@@ -5498,6 +5500,24 @@
 				E0EFFEF01D059BBA00E43C20 /* Base */,
 			);
 			name = ShareView_zb.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEF31D06604000E43C20 /* WeiXinURLViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEF21D06604000E43C20 /* en */,
+				E0EFFEF41D06604200E43C20 /* Base */,
+			);
+			name = WeiXinURLViewController.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEF71D06607E00E43C20 /* OffLineSuggestView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEF61D06607E00E43C20 /* en */,
+				E0EFFEF81D06608000E43C20 /* Base */,
+			);
+			name = OffLineSuggestView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

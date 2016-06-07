@@ -25,6 +25,25 @@
 "检测中" = "checking" ;
 "室外空气:" = "Outdoor air:" ;
 "负离子释放中" = "Negative ion release" ;
+"健康水知道" = "Knowledge of healthy water" ;
+
+"我的设备" = "My Devices" ; // 仪器
+"补水仪使用说明" = "Instruction for moisturizing device " ;
+"浩泽智能水探头" = "OZNER Smart Water Tester" ;
+"金色依泉系列" = "Golden Novowater Series" ;
+"浩泽智能杯" = "OZNER Cup" ;
+"净水器滤芯" = "Water Purifier" ;
+"净水器滤芯1" = "Water Purifier one" ;
+"净水器滤芯2" = "Water Purifier two" ;
+"净水器滤芯3" = "Water Purifier three" ;
+"智能水杯" = "OZNER Cup" ;
+"水探头" = "Water Tester" ;
+"净水器" = "Water Purifier" ;
+"台式空净" = "Desk-top Air Purifier" ;
+"立式空净" = "Vertical Style Air Purifier" ;
+
+"蓝牙连接" = "Bluetooth connection" ; // 连接
+"Wifi连接" = "Wifi connection" ;
 
 "无" = "Normal skin" ; //皮肤
 "油性" = "Oily skin" ;
@@ -39,6 +58,7 @@
 "请及时更换滤芯" = "Please replace the filter timely" ;
 "现在去购买滤芯" = "Buy filter cartridge now" ;
 "我知道了" = "I see" ;
+"请尝试以下方式：" = "Please try the following ways:" ;
 
 "已关机" = "Power-off" ; // 机器连接状态
 "设备已断开" = "Device disconnected" ;
@@ -88,7 +108,7 @@
 "击败了" = "Beat the" ;
 "的用户" = "of users" ;
 
-"周一" = "Monday" ;
+"周一" = "Monday" ; // 星期
 "周二" = "Tuesday" ;
 "周三" = "Wednesday" ;
 "周四" = "Thursday" ;
@@ -100,4 +120,19 @@
 "当前饮水量为" = "Current water intake" ;
 "当前水质纯净值为" = "Current DTS" ;
 "浩小泽" = "Ozner" ;
+
+"我的小金库" = "" ; // 个人中心
+"我的订单" = "My order" ;
+"领红包" = "Receiving bonus" ;
+"我的券" = "My ticket" ;
+"查看水质检测报告" = "Checking water quality examining report" ;
+
+"加载失败点击继续加载！" = "Loading failure, click to reload!" ; //刷新加载
+
+"1.请检查您的设备是否通电" = "1.Please Check whether your equipment have electricity" ; // 故障检查
+"2.请检测您的网络是否通畅" = "2.Please check whether your network unobstructed" ;
+"3.同时按下电源和风速，WIFI指示灯闪烁，重新配对" = "3.Press the power and wind speed at the same time, the WIFI light flashing, match again" ;
+"4.如仍无法连接设备，请在设置中删除此设备，重新配对" = "4.If still unable to connect equipment, please delete this device in the set, match again" ;
+"3.如仍无法连接设备，请在设置中删除此设备，重新配对" = "3.If still unable to connect equipment, please delete this device in the set, match again" ;
+
 

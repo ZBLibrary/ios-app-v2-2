@@ -8,26 +8,26 @@
 
 import UIKit
 struct weiXinUrlNamezb {
-    let myMoney="我的小金库"
-    let shareLiKa="我的订单"
-    let callFriend="领红包"
-    let awardInfo="我的券"
-    let waterReport="查看水质检测报告"
+    let myMoney=loadLanguage("我的小金库")
+    let shareLiKa=loadLanguage("我的订单")
+    let callFriend=loadLanguage("领红包")
+    let awardInfo=loadLanguage("我的券")
+    let waterReport=loadLanguage("查看水质检测报告")
     
-    let WaterKnow="健康水知道"
+    let WaterKnow=loadLanguage("健康水知道")
     
-    let byTapLX="水探头滤芯"
-    let byAirLX="空气净化器滤芯"
+    let byTapLX=loadLanguage("水探头滤芯")
+    let byAirLX=loadLanguage("空气净化器滤芯")
     //水探头--更多产品
-    let moreDevice_Tap="浩泽智能水探头"
-    let moreDevice_Water="金色依泉系列"
-    let moreDevice_Cup="浩泽智能杯"
+    let moreDevice_Tap=loadLanguage("浩泽智能水探头")
+    let moreDevice_Water=loadLanguage("金色依泉系列")
+    let moreDevice_Cup=loadLanguage("浩泽智能杯")
     //净水器滤芯
-    let WaterLvXinUrl1="净水器滤芯1"
-    let WaterLvXinUrl2="净水器滤芯2"
-    let WaterLvXinUrl3="净水器滤芯3"
+    let WaterLvXinUrl1=loadLanguage("净水器滤芯1")
+    let WaterLvXinUrl2=loadLanguage("净水器滤芯2")
+    let WaterLvXinUrl3=loadLanguage("净水器滤芯3")
     //补水仪
-    let WaterReplenishOperation="补水仪使用说明"
+    let WaterReplenishOperation=loadLanguage("补水仪使用说明")
     
 }
 class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
@@ -74,7 +74,7 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
         button=UIButton(frame: CGRect(x: 0, y: Screen_Hight/2-40, width: SCREEN_WIDTH, height: 40))
         button.addTarget(self, action: #selector(loadAgain), forControlEvents: .TouchUpInside)
         button.setTitleColor(UIColor.grayColor(), forState: .Normal)
-        button.setTitle("加载失败点击继续加载！", forState: .Normal)
+        button.setTitle(loadLanguage("加载失败点击继续加载！"), forState: .Normal)
         button.hidden=true
         webView.addSubview(button)
         
@@ -133,7 +133,7 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
             break
  
         case weiXinUrl.WaterLvXinUrl1://365安心服务
-            titleOfURL.text="净水器滤芯"
+            titleOfURL.text=loadLanguage("净水器滤芯")
             var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=9"
             let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
             tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
@@ -142,7 +142,7 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
             
             break
         case weiXinUrl.WaterLvXinUrl2://迷你净水器滤芯购买链接
-            titleOfURL.text="净水器滤芯"
+            titleOfURL.text=loadLanguage("净水器滤芯")
             var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=68"
             let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
             tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
@@ -150,14 +150,14 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
            
             break
         case weiXinUrl.WaterLvXinUrl3://台式净水器滤芯购买链接
-            titleOfURL.text="净水器滤芯"
+            titleOfURL.text=loadLanguage("净水器滤芯")
             var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=69"
             let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
             tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
             tmpURL = GoUrlBefore(tmpUrl)
             break
         case weiXinUrl.WaterReplenishOperation://补水仪使用说明
-            titleOfURL.text="补水仪使用说明"
+            titleOfURL.text=loadLanguage("补水仪使用说明")
             tmpURL = "http://app.ozner.net:888//Public/Index"
             break
             
