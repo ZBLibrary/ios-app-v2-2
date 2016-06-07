@@ -182,7 +182,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
             self.getLiuYan(self.friendId[self.currentliuyanAtIndex])
             self.myfriendarray[self.currentliuyanAtIndex].messageCount=self.myfriendarray[self.currentliuyanAtIndex].messageCount+1
             
-            self.myfriendCellArray["\(self.currentliuyanAtIndex)"]?.LiuyanLabel.text="\(self.myfriendarray[self.currentliuyanAtIndex].messageCount)条留言"
+            self.myfriendCellArray["\(self.currentliuyanAtIndex)"]?.LiuyanLabel.text="\(self.myfriendarray[self.currentliuyanAtIndex].messageCount)" + loadLanguage("条留言")
            // MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         }
         
@@ -217,11 +217,11 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         self.performSegueWithIdentifier("showAddFriends", sender: self)
     }
     func RankAndFriendclick(button:UIButton){
-        if currentTabel==(button.titleLabel?.text=="我的排名" ? 0 : 1)
+        if currentTabel==(button.titleLabel?.text ==  loadLanguage("我的排名") ? 0 : 1)
         {
             return
         }
-        currentTabel=button.titleLabel?.text=="我的排名" ? 0 : 1
+        currentTabel=button.titleLabel?.text==loadLanguage("我的排名") ? 0 : 1
         if currentTabel==0
         {
             //self.tableView.rowHeight = 200

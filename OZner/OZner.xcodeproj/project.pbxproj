@@ -812,7 +812,6 @@
 		8DBD54DB1C567F4500D04B12 /* ZanMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */; };
 		8DBD54DC1C567F4500D04B12 /* ZanMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */; };
 		8DBD54DD1C567F4500D04B12 /* FriendsNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C51C567F4500D04B12 /* FriendsNav.swift */; };
-		8DBD54DE1C567F4500D04B12 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C61C567F4500D04B12 /* FriendsNav.xib */; };
 		8DBD54DF1C567F4500D04B12 /* FriendsNavRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C71C567F4500D04B12 /* FriendsNavRight.swift */; };
 		8DBD54E01C567F4500D04B12 /* FriendsNavRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C81C567F4500D04B12 /* FriendsNavRight.xib */; };
 		8DBD54E11C567F4500D04B12 /* EquidsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */; };
@@ -860,6 +859,7 @@
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
 		B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */; };
 		B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70CC6481D057E3B002AE9A3 /* Main.storyboard */; };
+		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2166,7 +2166,6 @@
 		8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZanMeTableViewCell.swift; sourceTree = "<group>"; };
 		8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZanMeTableViewCell.xib; sourceTree = "<group>"; };
 		8DBD54C51C567F4500D04B12 /* FriendsNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsNav.swift; sourceTree = "<group>"; };
-		8DBD54C61C567F4500D04B12 /* FriendsNav.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsNav.xib; sourceTree = "<group>"; };
 		8DBD54C71C567F4500D04B12 /* FriendsNavRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsNavRight.swift; sourceTree = "<group>"; };
 		8DBD54C81C567F4500D04B12 /* FriendsNavRight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsNavRight.xib; sourceTree = "<group>"; };
 		8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquidsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -2234,6 +2233,8 @@
 		B70CC64A1D057E42002AE9A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B70CC64C1D057E44002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		B70CC64E1D057E48002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
+		B76E77891D066BE3008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FriendsNav.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3403,7 +3404,7 @@
 				8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */,
 				8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */,
 				8DBD54C51C567F4500D04B12 /* FriendsNav.swift */,
-				8DBD54C61C567F4500D04B12 /* FriendsNav.xib */,
+				B76E77841D066BC7008476A6 /* FriendsNav.xib */,
 				8DBD54C71C567F4500D04B12 /* FriendsNavRight.swift */,
 				8DBD54C81C567F4500D04B12 /* FriendsNavRight.xib */,
 				8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */,
@@ -4709,7 +4710,7 @@
 				8DB044861CC8CD4200B60DAB /* icon_peidui_select_tan_tou@3x.png in Resources */,
 				8DB043F01CC8CCE200B60DAB /* icon_add_device_btn@3x.png in Resources */,
 				8DB044911CC8CD4200B60DAB /* match_finish_sanjiao@3x.png in Resources */,
-				8DBD54DE1C567F4500D04B12 /* FriendsNav.xib in Resources */,
+				B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */,
 				42CB9EC21C353CF3006D95CD /* icon_bubble_right.png in Resources */,
 				52A4EF631C285E58005F282D /* smallStateXib.xib in Resources */,
 				8DB044001CC8CCE200B60DAB /* device_share@3x.png in Resources */,
@@ -5476,6 +5477,15 @@
 				B70CC64E1D057E48002AE9A3 /* zh-Hant */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B76E77841D066BC7008476A6 /* FriendsNav.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E77831D066BC7008476A6 /* Base */,
+				B76E77891D066BE3008476A6 /* en */,
+			);
+			name = FriendsNav.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
