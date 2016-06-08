@@ -201,7 +201,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("台式空净名称")
         case 4://如果是空气净化器，弹出输入Wi-Fi密码的界面
             self.secondLabel.hidden=false
-            self.firstLabel.text = "同时按下电源和风速键，WIFI指示灯闪烁。"
+            self.firstLabel.text = loadLanguage("同时按下电源和风速键，WIFI指示灯闪烁。")
             self.firstLabel.font=UIFont.systemFontOfSize(15)
             self.secondLabel.text=loadLanguage("正在进行WIFI配对")
             self.circleIconImgView.image = UIImage(named: "icon_bigair_peidui_waitting.png")
@@ -424,12 +424,12 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     }
 
     //除了水杯的配对完成回掉事件
-    var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","智能补水仪"]
+    var deviceNameArr=[loadLanguage("智能水杯"),loadLanguage("水探头"),loadLanguage("净水器"),loadLanguage("台式空气净化器"),loadLanguage("立式空气净化器"),loadLanguage("智能补水仪")]
     func otherFinishedAction()
     {
         if ((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
         {
-            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: "请填写设备名称", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写设备名称"), preferredStyle: UIAlertControllerStyle.Alert)
             let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
             alertControl.addAction(cancelAction)
             self.presentViewController(alertControl, animated: true, completion: nil)
@@ -442,7 +442,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         //添加到服务器
         let werservice = DeviceWerbservice()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+        werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:loadLanguage("我的")+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             if(status.networkStatus == kSuccessStatus)
             {
@@ -451,7 +451,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
                 switch self.deviceCuttentType
                 {
                 case 5://补水仪
-                    device.settings.put("sex", value: self.otherDeviceFinishedView?.segmentControl?.selectedSegmentIndex==0 ? "女":"男")
+                    device.settings.put("sex", value: self.otherDeviceFinishedView?.segmentControl?.selectedSegmentIndex==0 ? loadLanguage("女"):loadLanguage("男"))
                 default:
                     break
                 }
@@ -466,11 +466,11 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
                 let str:NSString = status.errDesc
                 if(str.length > 0)
                 {
-                    UITool.showSampleMsg("错误", message: str as String)
+                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
                 }
                 else
                 {
-                    UITool.showSampleMsg("错误", message: "添加设备失败")
+                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
                 }
             }
         })
@@ -492,7 +492,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         //添加到服务器
         let werservice = DeviceWerbservice() 
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的杯子",weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:loadLanguage("我的杯子"),weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             if(status.networkStatus == kSuccessStatus)
             {
@@ -511,11 +511,11 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
                 let str:NSString = status.errDesc
                 if(str.length > 0)
                 {
-                    UITool.showSampleMsg("错误", message: str as String)
+                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
                 }
                 else
                 {
-                    UITool.showSampleMsg("错误", message: "添加设备失败")
+                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
                 }
             }
         })

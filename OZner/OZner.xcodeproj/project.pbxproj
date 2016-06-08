@@ -778,7 +778,6 @@
 		8DB044DF1CC8CDC600B60DAB /* SkinQueryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044DD1CC8CDC600B60DAB /* SkinQueryTableViewController.swift */; };
 		8DB044E11CC8CE0600B60DAB /* CommonValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044E01CC8CE0600B60DAB /* CommonValue.swift */; };
 		8DBD54991C567E4A00D04B12 /* peiDuiOutTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */; };
-		8DBD549A1C567E4A00D04B12 /* peiDuiOutTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */; };
 		8DBD549F1C567E9200D04B12 /* kindly_notice_iconzb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD549D1C567E9200D04B12 /* kindly_notice_iconzb.png */; };
 		8DBD54A01C567E9200D04B12 /* match_device_failedzb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD549E1C567E9200D04B12 /* match_device_failedzb.png */; };
 		8DBD54AE1C567F3800D04B12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54A11C567F3800D04B12 /* Main.storyboard */; };
@@ -825,7 +824,6 @@
 		8DD51FDE1C7D97F100F95695 /* JingShuiWifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */; };
 		8DD51FDF1C7D97F100F95695 /* JingShuiWifiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */; };
 		8DD51FE21C7DA7CD00F95695 /* DeviceMatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */; };
-		8DD51FE31C7DA7CD00F95695 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */; };
 		8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */; };
 		8DE5FD7B1C56745D0092242F /* UserInfoClasszb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */; };
 		8DF060A51CC90F6100EC05D9 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060981CC90F6100EC05D9 /* Constraint.swift */; };
@@ -852,6 +850,8 @@
 		8DFB39431C57730300A1641C /* TDSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */; };
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
+		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */; };
+		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */; };
 		E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView.xib */; };
 		E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */; };
@@ -2132,7 +2132,6 @@
 		8DB044DD1CC8CDC600B60DAB /* SkinQueryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinQueryTableViewController.swift; sourceTree = "<group>"; };
 		8DB044E01CC8CE0600B60DAB /* CommonValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonValue.swift; path = OZner/CommonValue.swift; sourceTree = "<group>"; };
 		8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peiDuiOutTimeCell.swift; sourceTree = "<group>"; };
-		8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
 		8DBD549D1C567E9200D04B12 /* kindly_notice_iconzb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kindly_notice_iconzb.png; sourceTree = "<group>"; };
 		8DBD549E1C567E9200D04B12 /* match_device_failedzb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = match_device_failedzb.png; sourceTree = "<group>"; };
 		8DBD54A11C567F3800D04B12 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -2184,7 +2183,6 @@
 		8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JingShuiWifiViewController.m; sourceTree = "<group>"; };
 		8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JingShuiWifiViewController.xib; sourceTree = "<group>"; };
 		8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMatchedViewController.swift; sourceTree = "<group>"; };
-		8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceMatchedViewController.xib; sourceTree = "<group>"; };
 		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoClasszb.swift; sourceTree = "<group>"; };
 		8DF060981CC90F6100EC05D9 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -2220,6 +2218,10 @@
 		8DFB393C1C57730300A1641C /* AmountOfDrinkingWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterViewController.h; sourceTree = "<group>"; };
 		8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
+		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
+		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
+		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController.xib; sourceTree = "<group>"; };
+		E00264FF1D07F34900E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DeviceMatchedViewController.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController.xib; sourceTree = "<group>"; };
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView.xib; sourceTree = "<group>"; };
@@ -3788,11 +3790,11 @@
 				42DF14F81C109153002B4C83 /* CupMatchFinishedView.swift */,
 				422D914A1C1D9F10007CFB3B /* OtherMatchFinishdView.swift */,
 				8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */,
-				8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */,
+				E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */,
 				34A659011C452336002B2F10 /* CustomNoDeviceView.h */,
 				34A659021C452336002B2F10 /* CustomNoDeviceView.m */,
 				8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */,
-				8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */,
+				E00264FE1D07F34600E31C79 /* DeviceMatchedViewController.xib */,
 				8DD51FDB1C7D97F100F95695 /* JingShuiWifiViewController.h */,
 				8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */,
 				8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */,
@@ -4579,7 +4581,7 @@
 				8DB043ED1CC8CCE200B60DAB /* yin_shui_liang_3.png in Resources */,
 				8DB043F81CC8CCE200B60DAB /* select_device_4.png in Resources */,
 				528D77391C26FF2B00243986 /* LoadingXib.xib in Resources */,
-				8DD51FE31C7DA7CD00F95695 /* DeviceMatchedViewController.xib in Resources */,
+				E00264FC1D07F34600E31C79 /* DeviceMatchedViewController.xib in Resources */,
 				8DB0440F1CC8CCE200B60DAB /* tantou_dianliang_2.png in Resources */,
 				4288C5301C0F01A700446D3E /* SwiftFatherViewController.xib in Resources */,
 				8DB0444A1CC8CD1700B60DAB /* icon_jiare@3x.png in Resources */,
@@ -4643,7 +4645,7 @@
 				8DB044691CC8CD2C00B60DAB /* icon_lvxin_service_8.png in Resources */,
 				E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */,
 				425F7A141C32ABD600C8B2E3 /* NewUserHelpViewController.xib in Resources */,
-				8DBD549A1C567E4A00D04B12 /* peiDuiOutTimeCell.xib in Resources */,
+				E00264F81D07E82600E31C79 /* peiDuiOutTimeCell.xib in Resources */,
 				8DBD54D41C567F4500D04B12 /* My_Rank_TDSCell.xib in Resources */,
 				8DBD54D81C567F4500D04B12 /* MyRankTableViewCell.xib in Resources */,
 				8DA4062A1C8446FD00AD5E5E /* ScanResultViewController.xib in Resources */,
@@ -5456,6 +5458,24 @@
 				522D66691C31139300BCA750 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00264F91D07E82600E31C79 /* en */,
+				E00264FB1D07E82800E31C79 /* Base */,
+			);
+			name = peiDuiOutTimeCell.xib;
+			sourceTree = "<group>";
+		};
+		E00264FE1D07F34600E31C79 /* DeviceMatchedViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00264FD1D07F34600E31C79 /* en */,
+				E00264FF1D07F34900E31C79 /* Base */,
+			);
+			name = DeviceMatchedViewController.xib;
 			sourceTree = "<group>";
 		};
 		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */ = {

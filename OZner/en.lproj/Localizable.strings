@@ -66,7 +66,6 @@
 "设备连接中" = "Device being connected" ;
 "设备没有连接上" = "Device connection fails" ;
 
-
 "优" = "Excellent" ; // 空气状况
 "良" = "Good" ;
 "一般" = "General" ;
@@ -79,8 +78,6 @@
 "偏烫" = "Partial hot" ;
 "偏凉" = "Slants cool" ;
 "适中" = "Moderate" ;
-
-
 
 "微信请求App提供内容" = "Provide content WeChat request App" ; //微信
 "微信请求App提供内容，App要调用sendResp:GetMessageFromWXResp返回给微信" = "WeChat provide content request App, the App to invoke 'sendResp: GetMessageFromWXResp' returned to WeChat" ;
@@ -144,4 +141,35 @@
 "办公室" = "Office" ;
 "客厅" = "Living room" ;
 "请选择设定您的性别" = "Please select your gender" ;
+
+"您可以检查WIFI连接状态后再进行配对" = "You can check the WiFi connection and try again" ;
+"您可以检查蓝牙连接状态后再进行配对" = "You can check the bluetooth connection and try again" ;
+"请添加设备" = "Please add device"
+"开启浩泽智能生活" = "Start OZNER smart life" ;
+"添加设备" = "Add device" ;
+
+"设备配对" = "Device pairing" ; // 配对
+"长按下start按钮" = "Long-press 'Start'" ;
+"正在进行蓝牙配对" = "Bluetooth pairing" ;
+"正在进行WIFI配对" = "WiFi pairing" ;
+"请将智能水杯倒置" = "Inverse Ozner Cup" ;
+"设备正在尝试与云端建立联系" = "The device is trying to connect the cloud" ;
+"请同时按下净水器加热与制冷两个按钮" = "Please press the two buttons 'Heat' and 'Cool' at the same time" ;
+"输入水探头名称" = "Enter its name" ;
+"输入净水器名称" = "Enter its name" ;
+"台式空净名称" = "Enter its name" ;
+"立式空净名称" = "Enter its name" ;
+"补水仪名称" = "Enter its name" ;
+"同时按下电源和风速键，WIFI指示灯闪烁。" = "Press the buttons of power and wind speed simultaneously, so that the WIFI indicator light will flash." ;
+"请填写设备名称" = "Please input its name" ;
+"我的" = "My" ;
+
+"错误" = "error" ;
+"添加设备失败" = "Add device fails" ;
+"请填写智能杯名称或者体重" = "Please input Cup's name or your weight" ;
+"我的杯子" = "My cup" ;
+"已搜索到设备" = "Device searched" ;
+
+
+
 
