@@ -339,7 +339,6 @@
 		8D09DBE01C5A698800D0432B /* loadFailedXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */; };
 		8D09DBE21C5A69D400D0432B /* LoadingXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBE11C5A69D400D0432B /* LoadingXib.swift */; };
 		8D0C3E6A1C58E78C00EFBB22 /* tantouLvXinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */; };
-		8D0C3E6B1C58E78C00EFBB22 /* tantouLvXinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */; };
 		8D0C3E6D1C58EE4000EFBB22 /* MyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */; };
 		8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */; };
 		8D26136A1CFD3DF3002ADB0E /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613621CFD3DF3002ADB0E /* Duration.swift */; };
@@ -852,6 +851,7 @@
 		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */; };
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController.xib */; };
+		E00265041D08098500E31C79 /* tantouLvXinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265061D08098500E31C79 /* tantouLvXinView.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */; };
 		E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView.xib */; };
 		E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */; };
@@ -1424,7 +1424,6 @@
 		8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadFailedXib.swift; sourceTree = "<group>"; };
 		8D09DBE11C5A69D400D0432B /* LoadingXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingXib.swift; sourceTree = "<group>"; };
 		8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tantouLvXinView.swift; sourceTree = "<group>"; };
-		8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tantouLvXinView.xib; sourceTree = "<group>"; };
 		8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStoreViewController.swift; sourceTree = "<group>"; };
 		8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
 		8D2613621CFD3DF3002ADB0E /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
@@ -2223,6 +2222,8 @@
 		E00264FF1D07F34900E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DeviceMatchedViewController.xib; sourceTree = "<group>"; };
 		E00265011D07F97900E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JingShuiWifiViewController.xib; sourceTree = "<group>"; };
 		E00265031D07F97B00E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JingShuiWifiViewController.xib; sourceTree = "<group>"; };
+		E00265051D08098500E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/tantouLvXinView.xib; sourceTree = "<group>"; };
+		E00265071D08098700E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/tantouLvXinView.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController.xib; sourceTree = "<group>"; };
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView.xib; sourceTree = "<group>"; };
@@ -3160,7 +3161,7 @@
 				426F42891C281F5900DC39DF /* CustomCommFunction.h */,
 				426F428A1C281F5900DC39DF /* CustomCommFunction.m */,
 				8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */,
-				8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */,
+				E00265061D08098500E31C79 /* tantouLvXinView.xib */,
 				422D914E1C1DB157007CFB3B /* MyDeviceCustomFitstView.h */,
 				422D914F1C1DB157007CFB3B /* MyDeviceCustomFitstView.m */,
 			);
@@ -4710,7 +4711,7 @@
 				8DB044391CC8CD1700B60DAB /* icon_circle_select.png in Resources */,
 				8DB044D31CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell.xib in Resources */,
 				42CB9EBB1C353C9C006D95CD /* icon_white.png in Resources */,
-				8D0C3E6B1C58E78C00EFBB22 /* tantouLvXinView.xib in Resources */,
+				E00265041D08098500E31C79 /* tantouLvXinView.xib in Resources */,
 				8DB044861CC8CD4200B60DAB /* icon_peidui_select_tan_tou@3x.png in Resources */,
 				8DB043F01CC8CCE200B60DAB /* icon_add_device_btn@3x.png in Resources */,
 				8DB044911CC8CD4200B60DAB /* match_finish_sanjiao@3x.png in Resources */,
@@ -5486,6 +5487,15 @@
 				E00265031D07F97B00E31C79 /* Base */,
 			);
 			name = JingShuiWifiViewController.xib;
+			sourceTree = "<group>";
+		};
+		E00265061D08098500E31C79 /* tantouLvXinView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00265051D08098500E31C79 /* en */,
+				E00265071D08098700E31C79 /* Base */,
+			);
+			name = tantouLvXinView.xib;
 			sourceTree = "<group>";
 		};
 		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */ = {

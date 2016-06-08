@@ -210,7 +210,7 @@ class TantouLXController: UIViewController {
             }
             else
             {
-                let alert=UIAlertView(title: "", message: "获取滤芯服务时间失败！", delegate: self, cancelButtonTitle: "确定")
+                let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("获取滤芯服务时间失败！"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
                 alert.show()
             }
         }

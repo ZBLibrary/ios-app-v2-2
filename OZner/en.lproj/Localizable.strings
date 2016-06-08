@@ -173,5 +173,7 @@
 
 "请输入网络名称" = "Please input the name of Network" ;
 
+"当前滤芯状态" = "Filter cartridge status" ;
+"获取滤芯服务时间失败！" = "Failed to get filter service time!" ;
 
 
