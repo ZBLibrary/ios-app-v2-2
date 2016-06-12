@@ -48,7 +48,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         self.myView.addSubview(bgImgView)
         
         let stateLabel:UILabel = UILabel(frame: CGRectMake(0,69*(height/667.0),self.myView.frame.size.width,24))
-        stateLabel.text = "浩泽智能化生活服务"
+        stateLabel.text = loadLanguage("浩泽智能化生活服务")
         stateLabel.textAlignment = NSTextAlignment.Center
         stateLabel.font = UIFont.systemFontOfSize(24)
         stateLabel.textColor = UIColor(red: 96.0, green: 121.0, blue: 149.0, alpha: 1.0)
@@ -56,7 +56,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         self.myView .addSubview(stateLabel)
         
         let secondLabel:UILabel = UILabel(frame: CGRectMake(0,stateLabel.frame.origin.y+stateLabel.frame.size.height+10*(height/667.0),self.myView.frame.size.width,11))
-        secondLabel.text = "立即添加设备，体验浩泽智能化生活服务"
+        secondLabel.text = loadLanguage("立即添加设备，体验浩泽智能化生活服务")
         secondLabel.textAlignment = NSTextAlignment.Center
         secondLabel.font = UIFont.systemFontOfSize(11)
         secondLabel.textColor = UIColor(red: 96.0, green: 121.0, blue: 149.0, alpha: 1.0)
