@@ -181,7 +181,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     override func viewWillAppear(animated: Bool) {
         OznerDeviceSensorUpdate(self.myCurrentDevice)
         self.navigationController?.navigationBarHidden=true
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
         setBartteryImg()
     }
 
@@ -456,7 +456,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
         
-        leftSlideView=UIView(frame: CGRect(x: 0, y: 64, width: 30, height: Screen_Hight-65-64))
+        leftSlideView=UIView(frame: CGRect(x: 0, y: 64, width: 30, height: Screen_Hight-64))
         //leftSlideView.backgroundColor=UIColor.redColor()
         leftSlideView.addGestureRecognizer(swipeGesture)
         self.view.addSubview(leftSlideView)
@@ -465,7 +465,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             leftSlideBG_gray.removeFromSuperview()
         }
-        leftSlideBG_gray=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
+        leftSlideBG_gray=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight))
         leftSlideBG_gray.backgroundColor=UIColor(white: 0, alpha: 0)
         leftSlideBG_gray.hidden=true
         self.view.addSubview(leftSlideBG_gray)
@@ -1457,16 +1457,16 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     //朋友圈内饮水量排名
     func FriendVolumeRank()
     {
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         self.m_bIsHideTableBar = true
         let controller = AmountOfDrinkingWaterViewController(nibName: "AmountOfDrinkingWaterViewController", bundle: nil)
         controller.currentType = 0
         controller.myCurrentDevice = self.myCurrentDevice as! Cup
         let cup = self.myCurrentDevice as! Cup
         let date = UToolBox.todayZero() as NSDate
-        controller.todayRank = Int32(self.currentVolumeValue!)
-        controller.defeatValue = Int32(self.currentDefeat!)
-        controller.defeatRank=Int32(self.currentRank!)
+        //controller.todayRank = Int32(self.currentVolumeValue!)
+        //controller.defeatValue = Int32(self.currentDefeat!)
+        //controller.defeatRank=Int32(self.currentRank!)
         let record:CupRecord? = cup.volumes.getRecordByDate(date)
         if(record != nil)
         {
@@ -1481,25 +1481,25 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             
         }
         controller.currentType = 0
-        let werbservice = DeviceWerbservice();
-        werbservice.volumeFriendRank { (rank:NSNumber!, arr:NSMutableArray!, status:StatusManager!) -> Void in
-            if(status.networkStatus == kSuccessStatus)
-            {
-                self.currentVolumeValue = Int(rank)
-                controller.todayRank=Int32(self.currentVolumeValue!)
-            }
-            else
-            {
-                self.currentVolumeValue=0
-                controller.todayRank=Int32(0)
-                
-            }
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            self.navigationController?.pushViewController(controller, animated: true)
-            
-        }
+//        let werbservice = DeviceWerbservice();
+//        werbservice.volumeFriendRank { (rank:NSNumber!, arr:NSMutableArray!, status:StatusManager!) -> Void in
+//            if(status.networkStatus == kSuccessStatus)
+//            {
+//                self.currentVolumeValue = Int(rank)
+//                controller.todayRank=Int32(self.currentVolumeValue!)
+//            }
+//            else
+//            {
+//                self.currentVolumeValue=0
+//                controller.todayRank=Int32(0)
+//                
+//            }
+//            MBProgressHUD.hideHUDForView(self.view, animated: true)
+//            self.navigationController?.pushViewController(controller, animated: true)
+//            
+//        }
  
-        
+        self.navigationController?.pushViewController(controller, animated: true)
 
     }
     //Cup点击引水量
@@ -1521,25 +1521,26 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             controller.myCurrentDevice = self.myCurrentDevice
             let cup = self.myCurrentDevice as! Cup
             controller.tdsValue = cup.sensor.TDS
-            controller.defeatRank = Int32(self.currentRank!)
-            controller.tdsRankValue = 1
+            //controller.defeatRank = Int32(self.currentRank!)
+            //controller.tdsRankValue = 1
             
-            controller.defeatValue = Int32(self.currentDefeat!)
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            let werbservice = DeviceWerbservice()
-            werbservice.TdsFriendRank(myCurrentDevice?.type, returnBlock: { (rank:NSNumber!, total:NSMutableArray!, status:StatusManager!) -> Void in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
-                if(status.networkStatus == kSuccessStatus)
-                {
-                    controller.tdsRankValue = rank.intValue
-                    
-                }
-                else
-                {
-                    controller.tdsRankValue = 1
-                }
-                self.navigationController?.pushViewController(controller, animated: true)
-            })
+            //controller.defeatValue = Int32(self.currentDefeat!)
+            self.navigationController?.pushViewController(controller, animated: true)
+//            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+//            let werbservice = DeviceWerbservice()
+//            werbservice.TdsFriendRank(myCurrentDevice?.type, returnBlock: { (rank:NSNumber!, total:NSMutableArray!, status:StatusManager!) -> Void in
+//                MBProgressHUD.hideHUDForView(self.view, animated: true)
+//                if(status.networkStatus == kSuccessStatus)
+//                {
+//                    controller.tdsRankValue = rank.intValue
+//                    
+//                }
+//                else
+//                {
+//                    controller.tdsRankValue = 1
+//                }
+//                self.navigationController?.pushViewController(controller, animated: true)
+//            })
 
         }
    

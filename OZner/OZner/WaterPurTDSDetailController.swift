@@ -74,8 +74,8 @@ class WaterPurTDSDetailController: UITableViewController {
             return secondCell
         default:
             let wCell = NSBundle.mainBundle().loadNibNamed("TDSFooterCellzb", owner: self, options: nil).last as! TDSFooterCellzb
-            wCell.waterKnowButton.addTarget(self, action: #selector(toWaterKnow), forControlEvents: .TouchUpInside)
-            wCell.toStoreButton.addTarget(self, action: #selector(toBuyClick), forControlEvents: .TouchUpInside)
+            //wCell.waterKnowButton.addTarget(self, action: #selector(toWaterKnow), forControlEvents: .TouchUpInside)
+            //wCell.toStoreButton.addTarget(self, action: #selector(toBuyClick), forControlEvents: .TouchUpInside)
             wCell.selectionStyle=UITableViewCellSelectionStyle.None
             return wCell
         }
@@ -183,9 +183,9 @@ class WaterPurTDSDetailController: UITableViewController {
     //水质纯净值说明
     func toWhatIsTDS()
     {
-        let tdsState=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
-        tdsState.title="什么是TDS?"
-        self.navigationController?.pushViewController(tdsState, animated: true)
+//        let tdsState=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
+//        tdsState.title="什么是TDS?"
+//        self.navigationController?.pushViewController(tdsState, animated: true)
     }
     //咨询
     func toChat()

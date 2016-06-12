@@ -11,13 +11,13 @@ import UIKit
 class drinKWaterCell: UITableViewCell {
     
     @IBOutlet var back: UIButton!
-    @IBOutlet var share: UIButton!
+    //@IBOutlet var share: UIButton!
     
-    @IBOutlet var shareImg: UIImageView!
+    //@IBOutlet var shareImg: UIImageView!
     @IBOutlet var title: UILabel!
     @IBOutlet var waterValueTitle: UILabel!
-    @IBOutlet var rankValue: UILabel!
-    @IBOutlet var zixunButton: UIButton!
+    //@IBOutlet var rankValue: UILabel!
+    //@IBOutlet var zixunButton: UIButton!
     @IBOutlet var zixunView: UIView!
     @IBOutlet var faceImg: UIImageView!
     @IBOutlet var faceState: UILabel!
@@ -26,36 +26,36 @@ class drinKWaterCell: UITableViewCell {
     @IBOutlet var symbolLabel: UILabel!
     @IBOutlet var rankView: UIView!
     
-    @IBOutlet weak var rankingLabel: UILabel!
+    //@IBOutlet weak var rankingLabel: UILabel!
     //温度需要的
     @IBOutlet var TempValue: UILabel!
-    var rank=0{
-        didSet{
-            rankValue.text=rank==0 ? loadLanguage("无"):"\(rank)"
-            switch  rankValue.text!.characters.count
-            {
-            case 0...2:
-                rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
-                break
-                
-            case 3...4:
-                rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 22)
-                break
-            case 5:
-                rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 16)
-                break
-            default:
-                rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 10)
-                break
-                
-            }
-        }
-    }
+//    var rank=0{
+//        didSet{
+//            rankValue.text=rank==0 ? loadLanguage("无"):"\(rank)"
+//            switch  rankValue.text!.characters.count
+//            {
+//            case 0...2:
+//                rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
+//                break
+//                
+//            case 3...4:
+//                rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 22)
+//                break
+//            case 5:
+//                rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 16)
+//                break
+//            default:
+//                rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 10)
+//                break
+//                
+//            }
+//        }
+//    }
     var waterValueChange:Int=0{
         didSet{
             if celltype==loadLanguage("饮水量")
             {
-                waterValue.text=loadLanguage("暂无")
+                waterValue.text="-"
                 switch waterValueChange
                 {
                 case 0...50:
@@ -74,12 +74,13 @@ class drinKWaterCell: UITableViewCell {
                     faceState.text=loadLanguage("今日水量已达标，休息，休息一会儿！")
                     break
                 default:
+                    faceState.text=loadLanguage("暂无")
                     break
                 }
             }
             else
             {
-                TempValue.text=loadLanguage("暂无")
+                TempValue.text="-"
                 switch waterValueChange
                 {
                 case 0...25:
@@ -98,6 +99,7 @@ class drinKWaterCell: UITableViewCell {
                     faceState.text=loadLanguage("水温偏烫再凉一凉吧，心急可是会受伤的哦！")
                     break
                 default:
+                    faceState.text=loadLanguage("暂无")
                     break
                 }
             }
@@ -113,8 +115,8 @@ class drinKWaterCell: UITableViewCell {
                 waterValue.hidden=false
                 symbolLabel.hidden=false
                 rankView.hidden=false
-                shareImg.hidden=false
-                share.enabled=true
+                //shareImg.hidden=false
+                //share.enabled=true
             }
             else
             {
@@ -124,8 +126,8 @@ class drinKWaterCell: UITableViewCell {
                 waterValue.hidden=true
                 symbolLabel.hidden=true
                 rankView.hidden=true
-                shareImg.hidden=true
-                share.enabled=false
+                //shareImg.hidden=true
+                //share.enabled=false
             }
         }
     }
@@ -133,7 +135,7 @@ class drinKWaterCell: UITableViewCell {
         super.awakeFromNib()
         zixunView.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).CGColor
         // Initialization code
-        rankingLabel.text = loadLanguage("好友排名")
+        //rankingLabel.text = loadLanguage("好友排名")
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

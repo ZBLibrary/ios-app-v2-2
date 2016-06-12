@@ -24,7 +24,7 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title=loadLanguage("智能杯")
-        let ScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
+        let ScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight))
         ScrollView.backgroundColor=UIColor(red: 238/255, green: 239/255, blue: 240/255, alpha: 1)
     mainView=NSBundle.mainBundle().loadNibNamed("setDev_CupView", owner: nil, options: nil).last as! setDev_CupView
         mainView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: mainView.bounds.size.height)
@@ -352,7 +352,7 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
         self.navigationController?.navigationBarHidden=false
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), forBarMetrics: UIBarMetrics.Default)
         self.navigationController!.navigationBar.shadowImage =  UIImage(named: "bg_clear_black")
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        //CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
     }
 
 }

@@ -102,9 +102,9 @@
 }
 - (void)toWhatTDS
 {
-    ToWhatViewController* tdsState=[[ToWhatViewController alloc] initWithNibName:@"ToWhatViewController" bundle:nil];
-    [tdsState setTitle:loadLanguage(@"什么是TDS?")];
-    [self.navigationController pushViewController:tdsState animated:YES];
+//    ToWhatViewController* tdsState=[[ToWhatViewController alloc] initWithNibName:@"ToWhatViewController" bundle:nil];
+//    [tdsState setTitle:loadLanguage(@"什么是TDS?")];
+//    [self.navigationController pushViewController:tdsState animated:YES];
 }
 //#pragma mark-AmountOfDrinkingWaterFirstCellDelegate
 - (void)amountOfDrinkingWaterZiXunAction
@@ -155,11 +155,11 @@
     }
     
     wCell.TDSValueChange =  self.tdsValue;
-    wCell.rankValueChange = self.tdsRankValue;
+    //wCell.rankValueChange = self.tdsRankValue;
     NSLog(@"%d",self.tdsRankValue);
     [wCell.BackClick addTarget:self action:@selector(leftBtnMethod) forControlEvents:UIControlEventTouchUpInside];
-    [wCell.shareCick addTarget:self action:@selector(rightBtnMethod) forControlEvents:UIControlEventTouchUpInside];
-    [wCell.toZiXun addTarget:self action:@selector(amountOfDrinkingWaterZiXunAction) forControlEvents:UIControlEventTouchUpInside];
+    //[wCell.shareCick addTarget:self action:@selector(rightBtnMethod) forControlEvents:UIControlEventTouchUpInside];
+    //[wCell.toZiXun addTarget:self action:@selector(amountOfDrinkingWaterZiXunAction) forControlEvents:UIControlEventTouchUpInside];
     [wCell.toTDSState addTarget:self action:@selector(toWhatTDS) forControlEvents:UIControlEventTouchUpInside];
 
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -189,8 +189,8 @@
         wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSFooterCellzb" owner:self options:nil] objectAtIndex:0];
         //wCell.delegate = self;
     }
-    [wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
-    [wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
+    //[wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
+    //[wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
     return wCell;
 }

@@ -148,7 +148,7 @@
         if (self.currentType==0) {
             wCell.celltype=loadLanguage(@"饮水量");
             wCell.waterValueChange=self.todayVolume;
-            wCell.rank=self.todayRank==0 ? 1:self.todayRank;
+            //wCell.rank=self.todayRank==0 ? 1:self.todayRank;
         }
         else{
             wCell.celltype=loadLanguage(@"水温");
@@ -157,8 +157,8 @@
         
     }
     [wCell.back addTarget:self action:@selector(leftBtnMethod) forControlEvents:UIControlEventTouchUpInside];
-    [wCell.share addTarget:self action:@selector(rightBtnMethod) forControlEvents:UIControlEventTouchUpInside];
-    [wCell.zixunButton addTarget:self action:@selector(amountOfDrinkingWaterZiXunAction) forControlEvents:UIControlEventTouchUpInside];
+    //[wCell.share addTarget:self action:@selector(rightBtnMethod) forControlEvents:UIControlEventTouchUpInside];
+    //[wCell.zixunButton addTarget:self action:@selector(amountOfDrinkingWaterZiXunAction) forControlEvents:UIControlEventTouchUpInside];
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
     return wCell;
 }
@@ -211,8 +211,8 @@
         wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSFooterCellzb" owner:self options:nil] objectAtIndex:0];
         //wCell.delegate = self;
     }
-    [wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
-    [wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
+    //[wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
+    //[wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
     return wCell;
 }

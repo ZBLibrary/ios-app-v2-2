@@ -490,12 +490,12 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
         let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
         //添加到服务器
-        let werservice = DeviceWerbservice() 
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:loadLanguage("我的杯子"),weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if(status.networkStatus == kSuccessStatus)
-            {
+        //let werservice = DeviceWerbservice()
+        //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+       // werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:loadLanguage("我的杯子"),weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+            //MBProgressHUD.hideHUDForView(self.view, animated: true)
+//            if(status.networkStatus == kSuccessStatus)
+//            {
                 device.settings.name = self.cupFinishedBgView?.myCupNameTextField?.text
                 device.settings.put("type", value: loadLanguage("我的杯子"))
                 device.settings.put("weight", value: self.cupFinishedBgView?.myWeightTextField?.text!)
@@ -505,20 +505,20 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
                 NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
                 
                 self.navigationController!.view .removeFromSuperview()
-            }
-            else
-            {
-                let str:NSString = status.errDesc
-                if(str.length > 0)
-                {
-                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
-                }
-                else
-                {
-                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
-                }
-            }
-        })
+//            }
+//            else
+//            {
+//                let str:NSString = status.errDesc
+//                if(str.length > 0)
+//                {
+//                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
+//                }
+//                else
+//                {
+//                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
+//                }
+//            }
+//        })
         
     }
     

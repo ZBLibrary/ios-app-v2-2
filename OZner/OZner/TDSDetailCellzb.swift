@@ -12,26 +12,26 @@ class TDSDetailCellzb: UITableViewCell {
 
     @IBOutlet var BackClick: UIButton!
     @IBOutlet var headTitle: UILabel!
-    @IBOutlet var shareCick: UIButton!
+   
     @IBOutlet var TDSValue: UILabel!
-    @IBOutlet var RankValue: UILabel!
+    
     @IBOutlet var faceIcon: UIImageView!
     @IBOutlet var faceState: UILabel!
     @IBOutlet var toTDSState: UIButton!
-    @IBOutlet var toZiXun: UIButton!
-    @IBOutlet var zixunViewzb: UIView!
+    //@IBOutlet var toZiXun: UIButton!
+    //@IBOutlet var zixunViewzb: UIView!
     
     var TDSValueChange:Int=0{
         didSet{
-            TDSValue.text=TDSValueChange==0||TDSValueChange==65535 ? loadLanguage("暂无"):"\(TDSValueChange)"
-            if TDSValue.text==loadLanguage("暂无")
-            {
-                TDSValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 25)
-            }
-            else
-            {
-                TDSValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
-            }
+            TDSValue.text=TDSValueChange==0||TDSValueChange==65535 ? "-":"\(TDSValueChange)"
+//            if TDSValue.text=="-"
+//            {
+//                TDSValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 25)
+//            }
+//            else
+//            {
+//                TDSValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
+//            }
             switch TDSValueChange
             {
             case 0..<TDS_Good_Int:
@@ -54,44 +54,10 @@ class TDSDetailCellzb: UITableViewCell {
         }
         
     }
-    var rankValueChange:Int=0{
-        didSet{
-            RankValue.text=rankValueChange==0 ? loadLanguage("暂无"):"\(rankValueChange)"
-            if RankValue.text==loadLanguage("暂无")
-            {
-                RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 25)
-            }
-            else
-            {
-                RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
-                print(rankValueChange)
-                switch  RankValue.text!.characters.count
-                {
-                case 0...2:
-                    RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
-                    break
-                    
-                
-                case 3...4:
-                    RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 22)
-                    break
-                case 5:
-                    RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 16)
-                    break
-                default:
-                    RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 10)
-                    break
-                    
-                }
-            }
-            
-            
-        }
-    }
-  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        zixunViewzb.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).CGColor
+        //zixunViewzb.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).CGColor
         // Initialization code
     }
 

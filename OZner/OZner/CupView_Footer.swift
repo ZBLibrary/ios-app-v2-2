@@ -83,7 +83,7 @@ class CupView_Footer: UIView {
             else
             {
                 self.tempImg.image = UIImage(named: "wen_du_1.png")
-                self.tempValue.text =  loadLanguage("暂无");
+                self.tempValue.text =  "-";
                 self.tempState.text =  loadLanguage("当前水温暂无");
             }
             
