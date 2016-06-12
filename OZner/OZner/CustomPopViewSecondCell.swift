@@ -10,9 +10,11 @@ import UIKit
 
 class CustomPopViewSecondCell: UITableViewCell {
 
+    @IBOutlet weak var chooseEquipment: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        chooseEquipment.text = loadLanguage("选择智能设备")
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

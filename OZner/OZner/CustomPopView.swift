@@ -78,8 +78,8 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         addBtn.addTarget(self, action:#selector(addDeviceAction), forControlEvents:UIControlEvents.TouchUpInside)
         self.myView.addSubview(addBtn)
         let tmpframezb=addBtn.frame
-        addLabel=UILabel(frame: CGRect(x: tmpframezb.origin.x+tmpframezb.size.width+5, y: tmpframezb.origin.y, width: 100, height: tmpframezb.size.height))
-        addLabel!.text="添加新设备"
+        addLabel=UILabel(frame: CGRect(x: tmpframezb.origin.x+tmpframezb.size.width+5, y: tmpframezb.origin.y, width: 140, height: tmpframezb.size.height))
+        addLabel!.text=loadLanguage("添加新设备")
         addLabel!.font=UIFont.systemFontOfSize(18)
         addLabel!.textColor=UIColor(red: 65/255, green: 105/255, blue: 143/255, alpha: 1)
         addLabel!.hidden=true
