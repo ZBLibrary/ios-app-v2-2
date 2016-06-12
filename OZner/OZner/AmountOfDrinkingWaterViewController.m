@@ -95,7 +95,7 @@
     getshareImageClass* getClass = [[getshareImageClass alloc]init];
     UIImage* image = [getClass getshareImagezb:self.defeatRank type:0 value:record.volume beat:beatzb maxWater:maxValue];
     //微信朋友圈
-    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:@"浩泽净水家" shareImg:image];
+    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"浩泽净水家") shareImg:image];
 }
 
 #pragma mark-AmountOfDrinkingWaterFirstCellDelegate
@@ -113,7 +113,7 @@
 - (void)jianKangShuiAction
 {
     WeiXinURLViewController* URLController=[[WeiXinURLViewController alloc] initWithNibName:@"WeiXinURLViewController" bundle:nil];
-    [URLController setTitle:@"健康水知道"];
+    [URLController setTitle:loadLanguage(@"健康水知道")];
     [self presentViewController:URLController animated:true completion:nil];
 }
 
@@ -146,12 +146,12 @@
         wCell = [[[NSBundle mainBundle]loadNibNamed:@"drinKWaterCell" owner:self options:nil] objectAtIndex:0];
         //0 饮水量，1 温度
         if (self.currentType==0) {
-            wCell.celltype=@"饮水量";
+            wCell.celltype=loadLanguage(@"饮水量");
             wCell.waterValueChange=self.todayVolume;
             wCell.rank=self.todayRank==0 ? 1:self.todayRank;
         }
         else{
-            wCell.celltype=@"水温";
+            wCell.celltype=loadLanguage(@"水温");
             wCell.waterValueChange=self.myCurrentDevice.sensor.Temperature;
         }
         

@@ -71,7 +71,7 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
         grayview.hidden=true
         self.view.addSubview(grayview)
 
-        dataPicker=["0":"15分钟","1":"30分钟","2":"45分钟","3":"1小时","4":"2小时"]
+        dataPicker=["0":loadLanguage("15分钟"),"1":loadLanguage("30分钟"),"2":loadLanguage("45分钟"),"3":loadLanguage("1小时"),"4":loadLanguage("2小时")]
         //取色板
         _colorCenterView=UIView(frame: CGRectMake(80, 80, 64, 64))
         _colorCenterView.backgroundColor=UIColor.whiteColor()
@@ -108,20 +108,20 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
        //删除设备
     func clearDeviceClick()
     {
-        let alert=UIAlertView(title: "", message: "删除此设备", delegate: self, cancelButtonTitle: "否", otherButtonTitles: "是")
+        let alert=UIAlertView(title: "", message: loadLanguage("删除此设备"), delegate: self, cancelButtonTitle: loadLanguage("否"), otherButtonTitles: loadLanguage("是"))
         alert.show()
         
     }
     //返回
     func back(){
-        let alert=UIAlertView(title: "", message: "是否保存？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "保存")
+        let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
         alert.show()
 
     }
     
     //alert 点击事件
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if alertView.message=="是否保存？"
+        if alertView.message==loadLanguage("是否保存？")
         {
             if buttonIndex==0
             {
@@ -132,7 +132,7 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
                 SaveClick()
             }
         }
-        if alertView.message=="删除此设备"
+        if alertView.message==loadLanguage("删除此设备")
         {
             if buttonIndex==1
             {
@@ -239,7 +239,7 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
         grayview.hidden=true
         if currentPicker != 0
         {
-            let tmpstr=(currentPicker/60==0 ? "":"\(currentPicker/60)小时")+(currentPicker%60==0 ? "":"\(currentPicker%60)分钟")
+            let tmpstr=(currentPicker/60==0 ? "":"\(currentPicker/60)\(loadLanguage("小时"))")+(currentPicker%60==0 ? "":"\(currentPicker%60)\(loadLanguage("分钟"))")
             mainView.cup_remindspace.text=tmpstr
             setCupStructdata["remindInterval"]=currentPicker
         }
@@ -318,7 +318,7 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
                 
                 //内容
                 
-                noti.alertBody = "该喝水了,亲";
+                noti.alertBody = loadLanguage("该喝水了,亲");
                 
                 //显示在icon上的红色圈中的数子
                 

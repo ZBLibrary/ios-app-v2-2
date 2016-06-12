@@ -73,13 +73,13 @@ class MySuggestViewController: UIViewController,UITextViewDelegate {
                 let isSuccess=responseObject.objectForKey("state") as! Int
                 if isSuccess > 0
                 {
-                    let successalert = UIAlertView(title: "", message: "意见提交成功", delegate: self, cancelButtonTitle: "ok")
+                    let successalert = UIAlertView(title: "", message:loadLanguage("意见提交成功"), delegate: self, cancelButtonTitle: "ok")
                     successalert.show()
                     self.navigationController?.popViewControllerAnimated(true)
                 }
                 else
                 {
-                    let successalert = UIAlertView(title: "", message: "意见提交失败", delegate: self, cancelButtonTitle: "ok")
+                    let successalert = UIAlertView(title: "", message:loadLanguage("意见提交失败"), delegate: self, cancelButtonTitle: "ok")
                     successalert.show()
                 }
                 

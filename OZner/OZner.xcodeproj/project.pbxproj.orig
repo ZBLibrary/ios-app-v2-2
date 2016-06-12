@@ -235,9 +235,12 @@
 		5273D7D11C25CD2500A8ACF2 /* setSmallAirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */; };
 		5274B0691C293BB5004EDC0D /* setSmallAirViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */; };
 		52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */; };
+		52791B971C18849100C098B2 /* setDev_CupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52791B961C18849100C098B2 /* setDev_CupView.xib */; };
 		52791B991C18849A00C098B2 /* setDev_CupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791B981C18849A00C098B2 /* setDev_CupView.swift */; };
 		52791BA31C18C2F500C098B2 /* setCupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */; };
+		52791BA41C18C2F500C098B2 /* setCupNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52791BA21C18C2F500C098B2 /* setCupNameViewController.xib */; };
 		52791BA71C18CDD300C098B2 /* setCuoTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */; };
+		52791BA81C18CDD300C098B2 /* setCuoTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52791BA61C18CDD300C098B2 /* setCuoTimeViewController.xib */; };
 		527E918D1C3BDCCF00828A1B /* LongImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527E918B1C3BDCCF00828A1B /* LongImageViewController.swift */; };
 		527E918E1C3BDCCF00828A1B /* LongImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527E918C1C3BDCCF00828A1B /* LongImageViewController.xib */; };
 		528D772C1C26A5F600243986 /* PM2d5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D772A1C26A5F600243986 /* PM2d5ViewController.swift */; };
@@ -840,18 +843,11 @@
 		8DFB39431C57730300A1641C /* TDSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */; };
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
-		B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */; };
-		B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70CC6481D057E3B002AE9A3 /* Main.storyboard */; };
-		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
-		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
-		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
+<<<<<<< HEAD
 		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */; };
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController.xib */; };
 		E00265041D08098500E31C79 /* tantouLvXinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265061D08098500E31C79 /* tantouLvXinView.xib */; };
-		E01551A41D0D02D9000E285F /* setDev_CupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551A61D0D02D9000E285F /* setDev_CupView.xib */; };
-		E01551A81D0D0D2C000E285F /* setCupNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */; };
-		E01551AC1D0D0F34000E285F /* setCuoTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */; };
 		E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView.xib */; };
 		E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */; };
@@ -860,6 +856,13 @@
 		E0EFFEF11D06604000E43C20 /* WeiXinURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF31D06604000E43C20 /* WeiXinURLViewController.xib */; };
 		E0EFFEF51D06607E00E43C20 /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF71D06607E00E43C20 /* OffLineSuggestView.xib */; };
 		E0EFFEF91D0666FF00E43C20 /* indoorAirWarn_Air.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air.xib */; };
+=======
+		B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */; };
+		B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70CC6481D057E3B002AE9A3 /* Main.storyboard */; };
+		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
+		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
+		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
+>>>>>>> GYJade
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1298,9 +1301,12 @@
 		5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView.swift; sourceTree = "<group>"; };
 		5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setSmallAirViewXib.xib; sourceTree = "<group>"; };
 		52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCUPDeviceViewController.swift; sourceTree = "<group>"; };
+		52791B961C18849100C098B2 /* setDev_CupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setDev_CupView.xib; sourceTree = "<group>"; };
 		52791B981C18849A00C098B2 /* setDev_CupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setDev_CupView.swift; sourceTree = "<group>"; };
 		52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCupNameViewController.swift; sourceTree = "<group>"; };
+		52791BA21C18C2F500C098B2 /* setCupNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setCupNameViewController.xib; sourceTree = "<group>"; };
 		52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCuoTimeViewController.swift; sourceTree = "<group>"; };
+		52791BA61C18CDD300C098B2 /* setCuoTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setCuoTimeViewController.xib; sourceTree = "<group>"; };
 		527E918B1C3BDCCF00828A1B /* LongImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongImageViewController.swift; sourceTree = "<group>"; };
 		527E918C1C3BDCCF00828A1B /* LongImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongImageViewController.xib; sourceTree = "<group>"; };
 		528D772A1C26A5F600243986 /* PM2d5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PM2d5ViewController.swift; sourceTree = "<group>"; };
@@ -2208,20 +2214,7 @@
 		8DFB393C1C57730300A1641C /* AmountOfDrinkingWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterViewController.h; sourceTree = "<group>"; };
 		8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
-		B70CC63E1D0574BD002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/My_MainView.xib; sourceTree = "<group>"; };
-		B70CC6411D0574C0002AE9A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/My_MainView.strings; sourceTree = "<group>"; };
-		B70CC6431D0574C3002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/My_MainView.strings"; sourceTree = "<group>"; };
-		B70CC6451D0574C5002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/My_MainView.strings"; sourceTree = "<group>"; };
-		B70CC6471D057E3B002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B70CC64C1D057E44002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		B70CC64E1D057E48002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
-		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
-		B76E77891D066BE3008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FriendsNav.xib; sourceTree = "<group>"; };
-		B76E778A1D066E94008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B76E778C1D069B1F008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
-		B76E77901D069B3F008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
-		B76E77921D06A236008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendSearch.xib; sourceTree = "<group>"; };
-		B76E77951D06A23A008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FriendSearch.strings; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
 		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController.xib; sourceTree = "<group>"; };
@@ -2230,12 +2223,6 @@
 		E00265031D07F97B00E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JingShuiWifiViewController.xib; sourceTree = "<group>"; };
 		E00265051D08098500E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/tantouLvXinView.xib; sourceTree = "<group>"; };
 		E00265071D08098700E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/tantouLvXinView.xib; sourceTree = "<group>"; };
-		E01551A51D0D02D9000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setDev_CupView.xib; sourceTree = "<group>"; };
-		E01551A71D0D02E6000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setDev_CupView.xib; sourceTree = "<group>"; };
-		E01551A91D0D0D2C000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCupNameViewController.xib; sourceTree = "<group>"; };
-		E01551AB1D0D0D2E000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCupNameViewController.xib; sourceTree = "<group>"; };
-		E01551AD1D0D0F34000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCuoTimeViewController.xib; sourceTree = "<group>"; };
-		E01551AF1D0D0F35000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCuoTimeViewController.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController.xib; sourceTree = "<group>"; };
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView.xib; sourceTree = "<group>"; };
@@ -2252,6 +2239,22 @@
 		E0EFFEF81D06608000E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OffLineSuggestView.xib; sourceTree = "<group>"; };
 		E0EFFEFA1D0666FF00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/indoorAirWarn_Air.xib; sourceTree = "<group>"; };
 		E0EFFEFC1D06670100E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/indoorAirWarn_Air.xib; sourceTree = "<group>"; };
+=======
+		B70CC63E1D0574BD002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/My_MainView.xib; sourceTree = "<group>"; };
+		B70CC6411D0574C0002AE9A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/My_MainView.strings; sourceTree = "<group>"; };
+		B70CC6431D0574C3002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/My_MainView.strings"; sourceTree = "<group>"; };
+		B70CC6451D0574C5002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/My_MainView.strings"; sourceTree = "<group>"; };
+		B70CC6471D057E3B002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B70CC64C1D057E44002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B70CC64E1D057E48002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
+		B76E77891D066BE3008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FriendsNav.xib; sourceTree = "<group>"; };
+		B76E778A1D066E94008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B76E778C1D069B1F008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
+		B76E77901D069B3F008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
+		B76E77921D06A236008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendSearch.xib; sourceTree = "<group>"; };
+		B76E77951D06A23A008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FriendSearch.strings; sourceTree = "<group>"; };
+>>>>>>> GYJade
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3739,12 +3742,12 @@
 			children = (
 				52FF7DE81C19F921005635F8 /* extral */,
 				52791B981C18849A00C098B2 /* setDev_CupView.swift */,
-				E01551A61D0D02D9000E285F /* setDev_CupView.xib */,
+				52791B961C18849100C098B2 /* setDev_CupView.xib */,
 				52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */,
 				52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */,
-				E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */,
+				52791BA21C18C2F500C098B2 /* setCupNameViewController.xib */,
 				52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */,
-				E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */,
+				52791BA61C18CDD300C098B2 /* setCuoTimeViewController.xib */,
 				52F1868A1C22847C00B74A05 /* SetCup.plist */,
 			);
 			name = setCup;
@@ -4780,13 +4783,13 @@
 				4288C5281C0EEE3800446D3E /* AddDeviceViewController.xib in Resources */,
 				8DB044B01CC8CD5500B60DAB /* device_jin_bigair_normal.png in Resources */,
 				8DB044951CC8CD4200B60DAB /* icon_peidui_select_smallair@2x.png in Resources */,
-				E01551A41D0D02D9000E285F /* setDev_CupView.xib in Resources */,
+				52791B971C18849100C098B2 /* setDev_CupView.xib in Resources */,
 				425F7A2B1C32B0C500C8B2E3 /* new_help_1@3x.png in Resources */,
 				B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */,
 				8DB044111CC8CCE200B60DAB /* 1_03.png in Resources */,
 				42E897A81C14486B00DD0228 /* OCFatherViewController.xib in Resources */,
 				425F7A281C32B0C500C8B2E3 /* new_help_0@2x.png in Resources */,
-				E01551AC1D0D0F34000E285F /* setCuoTimeViewController.xib in Resources */,
+				52791BA81C18CDD300C098B2 /* setCuoTimeViewController.xib in Resources */,
 				4281413F1C0B0CDA006FEDDE /* LeftViewController.xib in Resources */,
 				8DB0441A1CC8CCE200B60DAB /* device_wendu_0.png in Resources */,
 				528D772D1C26A5F600243986 /* PM2d5ViewController.xib in Resources */,
@@ -4821,7 +4824,7 @@
 				8DB0448A1CC8CD4200B60DAB /* icon_peidui_tantou_watting.png in Resources */,
 				8DB044631CC8CD2C00B60DAB /* icon_lvxin_service_2.png in Resources */,
 				52461F051C26985500834CC2 /* outAirXib.xib in Resources */,
-				E01551A81D0D0D2C000E285F /* setCupNameViewController.xib in Resources */,
+				52791BA41C18C2F500C098B2 /* setCupNameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5474,55 +5477,7 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B70CC63E1D0574BD002AE9A3 /* Base */,
-				B70CC6411D0574C0002AE9A3 /* en */,
-				B70CC6431D0574C3002AE9A3 /* zh-Hans */,
-				B70CC6451D0574C5002AE9A3 /* zh-Hant */,
-			);
-			name = My_MainView.xib;
-			sourceTree = "<group>";
-		};
-		B70CC6481D057E3B002AE9A3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B70CC6471D057E3B002AE9A3 /* Base */,
-				B70CC64C1D057E44002AE9A3 /* zh-Hans */,
-				B70CC64E1D057E48002AE9A3 /* zh-Hant */,
-				B76E778A1D066E94008476A6 /* en */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B76E77841D066BC7008476A6 /* FriendsNav.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B76E77831D066BC7008476A6 /* Base */,
-				B76E77891D066BE3008476A6 /* en */,
-			);
-			name = FriendsNav.xib;
-			sourceTree = "<group>";
-		};
-		B76E778D1D069B1F008476A6 /* YanZhengCell.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B76E778C1D069B1F008476A6 /* Base */,
-				B76E77901D069B3F008476A6 /* en */,
-			);
-			name = YanZhengCell.xib;
-			sourceTree = "<group>";
-		};
-		B76E77931D06A236008476A6 /* FriendSearch.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B76E77921D06A236008476A6 /* Base */,
-				B76E77951D06A23A008476A6 /* en */,
-			);
-			name = FriendSearch.xib;
-			sourceTree = "<group>";
-		};
+<<<<<<< HEAD
 		E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -5557,33 +5512,6 @@
 				E00265071D08098700E31C79 /* Base */,
 			);
 			name = tantouLvXinView.xib;
-			sourceTree = "<group>";
-		};
-		E01551A61D0D02D9000E285F /* setDev_CupView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E01551A51D0D02D9000E285F /* en */,
-				E01551A71D0D02E6000E285F /* Base */,
-			);
-			name = setDev_CupView.xib;
-			sourceTree = "<group>";
-		};
-		E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E01551A91D0D0D2C000E285F /* en */,
-				E01551AB1D0D0D2E000E285F /* Base */,
-			);
-			name = setCupNameViewController.xib;
-			sourceTree = "<group>";
-		};
-		E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E01551AD1D0D0F34000E285F /* en */,
-				E01551AF1D0D0F35000E285F /* Base */,
-			);
-			name = setCuoTimeViewController.xib;
 			sourceTree = "<group>";
 		};
 		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */ = {
@@ -5656,6 +5584,55 @@
 				E0EFFEFC1D06670100E43C20 /* Base */,
 			);
 			name = indoorAirWarn_Air.xib;
+=======
+		B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B70CC63E1D0574BD002AE9A3 /* Base */,
+				B70CC6411D0574C0002AE9A3 /* en */,
+				B70CC6431D0574C3002AE9A3 /* zh-Hans */,
+				B70CC6451D0574C5002AE9A3 /* zh-Hant */,
+			);
+			name = My_MainView.xib;
+			sourceTree = "<group>";
+		};
+		B70CC6481D057E3B002AE9A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B70CC6471D057E3B002AE9A3 /* Base */,
+				B70CC64C1D057E44002AE9A3 /* zh-Hans */,
+				B70CC64E1D057E48002AE9A3 /* zh-Hant */,
+				B76E778A1D066E94008476A6 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B76E77841D066BC7008476A6 /* FriendsNav.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E77831D066BC7008476A6 /* Base */,
+				B76E77891D066BE3008476A6 /* en */,
+			);
+			name = FriendsNav.xib;
+			sourceTree = "<group>";
+		};
+		B76E778D1D069B1F008476A6 /* YanZhengCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E778C1D069B1F008476A6 /* Base */,
+				B76E77901D069B3F008476A6 /* en */,
+			);
+			name = YanZhengCell.xib;
+			sourceTree = "<group>";
+		};
+		B76E77931D06A236008476A6 /* FriendSearch.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E77921D06A236008476A6 /* Base */,
+				B76E77951D06A23A008476A6 /* en */,
+			);
+			name = FriendSearch.xib;
+>>>>>>> GYJade
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

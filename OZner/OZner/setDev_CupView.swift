@@ -139,7 +139,7 @@ class setDev_CupView: UIView,UITextFieldDelegate {
     override func drawRect(rect: CGRect) {
         // Drawing code
         AboutLable.text=loadLanguage("关于智能杯")
-        ClearButton.setTitle("删除此设备", forState: .Normal)
+        ClearButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
         my_state1label.text=loadLanguage("感冒发烧")
         my_state2label.text=loadLanguage("运动出汗")
         my_state3label.text=loadLanguage("天气炎热")
@@ -225,7 +225,7 @@ class setDev_CupView: UIView,UITextFieldDelegate {
         var nameStr=cup.settings.name
         if nameStr.characters.contains("(")==false
         {
-            nameStr=nameStr+"(办公室)"
+            nameStr=nameStr+loadLanguage("(办公室)")
         }
         setCupStructdata["cup_name"]=nameStr.substringToIndex(nameStr.characters.indexOf("(")!)
         

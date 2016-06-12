@@ -252,7 +252,7 @@ NSString * kSelfThumb  ;//会员头像
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title=@"咨询";
+    self.title=loadLanguage(@"咨询");
     self.view.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:247/255.0f blue:254/255.f alpha:1.0f];
     //电话
     UIBarButtonItem* rightitem=[[UIBarButtonItem alloc] initWithImage: [UIImage imageNamed:@"CallPhoneImage"]style:UIBarButtonItemStylePlain  target:self action:@selector(callKFPhone)];

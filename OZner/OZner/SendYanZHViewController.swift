@@ -73,14 +73,14 @@ class SendYanZHViewController: UIViewController,UITextFieldDelegate {
                 let isSuccess=responseObject.objectForKey("state") as! Int
                 if isSuccess > 0
                 {
-                    let successalert = UIAlertView(title: "", message: "发送成功", delegate: self, cancelButtonTitle: "ok")
+                    let successalert = UIAlertView(title: "", message:loadLanguage("发送成功"), delegate: self, cancelButtonTitle: "ok")
                     NSNotificationCenter.defaultCenter().postNotificationName("sendAddFriendMesSuccess", object: nil)
                     successalert.show()
                     self.navigationController?.popViewControllerAnimated(true)
                 }
                 else if isSuccess == -10017
                 {
-                    let successalert = UIAlertView(title: "", message: "对方不是浩泽用户", delegate: self, cancelButtonTitle: "ok")
+                    let successalert = UIAlertView(title: "", message:loadLanguage("对方不是浩泽用户"), delegate: self, cancelButtonTitle: "ok")
                     successalert.show()
                 }
                 
