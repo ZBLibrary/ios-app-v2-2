@@ -43,10 +43,10 @@ class getshareImageClass:NSObject
     func getshareImagezb(rank:Int,type:Int,value:Int,beat:Int,maxWater:Int)->UIImage
     {
         let shareView=NSBundle.mainBundle().loadNibNamed("ShareView_zb", owner: nil, options: nil).last as! ShareView_zb
-        shareView.share_rank.text="排名\(rank==0 ? 1:rank)"
-        shareView.share_title.text=type==0 ? "当前饮水量为":"当前水质纯净值为"
+        shareView.share_rank.text="\(loadLanguage("排名"))\(rank==0 ? 1:rank)"
+        shareView.share_title.text=type==0 ? loadLanguage("当前饮水量为"):loadLanguage("当前水质纯净值为")
         shareView.share_value.text="\(value)"+(type==0 ? "ml":"")
-        shareView.share_beat.text="击败了\(beat>=100 ? 99:beat)％的用户"
+        shareView.share_beat.text="\(loadLanguage("击败了"))\(beat>=100 ? 99:beat)％\(loadLanguage("的用户"))"
         if type==0&&maxWater>0
         {
             let water=Double(value)/Double(maxWater)>1 ? 1:Double(value)/Double(maxWater)
@@ -94,13 +94,13 @@ class getshareImageClass:NSObject
             shareView.share_OwnerName.text=myinfo.objectForKey("nickname") as? String
             if shareView.share_OwnerName.text==""
             {
-                shareView.share_OwnerName.text="浩小泽"
+                shareView.share_OwnerName.text=loadLanguage("浩小泽")
             }
         }
         else
         {
             shareView.share_OwnerImage.image=UIImage(named: "shareOwnerimg")
-            shareView.share_OwnerName.text="浩小泽"
+            shareView.share_OwnerName.text = loadLanguage("浩小泽")
         }
         UIGraphicsBeginImageContext(shareView.bounds.size)//  (myView.bounds.size);
         shareView.layer.renderInContext(UIGraphicsGetCurrentContext()!) //[myView.layer renderInContext:UIGraphicsGetCurrentContext()];

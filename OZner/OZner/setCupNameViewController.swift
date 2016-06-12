@@ -64,11 +64,11 @@ class setCupNameViewController: UIViewController,UITextFieldDelegate {
         CupName.delegate=self
         CupName.enabled=false
         CupName.text=setCupStructdata["cup_name"] as? String
-        if (setCupStructdata["cup_Attrib"] as? String)=="我的水杯"
+        if (setCupStructdata["cup_Attrib"] as? String)==loadLanguage("我的水杯")
         {
             currentSelected=0
         }
-        else if (setCupStructdata["cup_Attrib"] as? String)=="家人水杯"
+        else if (setCupStructdata["cup_Attrib"] as? String)==loadLanguage("家人水杯")
         {
             currentSelected=1
         }else
@@ -122,7 +122,7 @@ class setCupNameViewController: UIViewController,UITextFieldDelegate {
     */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.title="设备名称"
+        self.title=loadLanguage("设备名称")
         self.navigationController?.navigationBar.barTintColor=UIColor(red: 248/255, green: 249/255, blue: 250/255, alpha: 1)
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }

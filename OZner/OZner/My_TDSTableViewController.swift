@@ -96,7 +96,7 @@ class My_TDSTableViewController: UITableViewController {
             }
             else
             {
-                let alert = UIAlertView(title: "", message: "网络不稳定，点赞失败", delegate: self, cancelButtonTitle: "ok")
+                let alert = UIAlertView(title: "", message:loadLanguage("网络不稳定，点赞失败"), delegate: self, cancelButtonTitle: "ok")
                 alert.show()
             }
             MBProgressHUD.hideHUDForView(self.view, animated: true)

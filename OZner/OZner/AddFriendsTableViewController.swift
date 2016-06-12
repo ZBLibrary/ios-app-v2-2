@@ -257,7 +257,7 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         let phonestr=tabelHeaderView.SearchTextFD.text!
         if phonestr==""
         {
-            let alert=UIAlertView(title: "", message: "输入信息不能为空！", delegate: self, cancelButtonTitle: "ok")
+            let alert=UIAlertView(title: "", message: loadLanguage("输入信息不能为空！"), delegate: self, cancelButtonTitle: "ok")
             alert.show()
             return
         }
@@ -293,14 +293,14 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
                         }
                     else
                         {
-                            let alert=UIAlertView(title: "", message: "对不起，没有找到！", delegate: self, cancelButtonTitle: "ok")
+                            let alert=UIAlertView(title: "", message:loadLanguage("对不起，没有找到！"), delegate: self, cancelButtonTitle: "ok")
                             alert.show()
                     }
                 
             }
             else
                 {
-                    let alert=UIAlertView(title: "", message: "对不起，网络异常！", delegate: self, cancelButtonTitle: "ok")
+                    let alert=UIAlertView(title: "", message: loadLanguage("对不起，网络异常！"), delegate: self, cancelButtonTitle: "ok")
                     alert.show()
             }
             

@@ -121,14 +121,11 @@
 		52080AFC1C3BBC0600150B4F /* util_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 52080AEB1C3BBC0600150B4F /* util_mosq.c */; };
 		52080AFD1C3BBC0600150B4F /* will_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 52080AED1C3BBC0600150B4F /* will_mosq.c */; };
 		521667861C48C258002068EF /* TDSDetailCellzb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521667841C48C258002068EF /* TDSDetailCellzb.swift */; };
-		521667871C48C258002068EF /* TDSDetailCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521667851C48C258002068EF /* TDSDetailCellzb.xib */; };
 		521758611C2B1F7700CCCB11 /* bigStateXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521758601C2B1F7700CCCB11 /* bigStateXib.swift */; };
 		521BF7C71C4A256300AD1EAB /* TDSFooterCellzb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BF7C51C4A256300AD1EAB /* TDSFooterCellzb.swift */; };
-		521BF7C81C4A256300AD1EAB /* TDSFooterCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BF7C61C4A256300AD1EAB /* TDSFooterCellzb.xib */; };
 		521BF7CB1C4A370000AD1EAB /* drinKWaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BF7C91C4A370000AD1EAB /* drinKWaterCell.swift */; };
 		521BF7CC1C4A370000AD1EAB /* drinKWaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BF7CA1C4A370000AD1EAB /* drinKWaterCell.xib */; };
 		52215DE51C4E9516007C8C96 /* CenterChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52215DE31C4E9516007C8C96 /* CenterChartCell.swift */; };
-		52215DE61C4E9516007C8C96 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52215DE41C4E9516007C8C96 /* CenterChartCell.xib */; };
 		52215DE81C4EA391007C8C96 /* drawCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52215DE71C4EA390007C8C96 /* drawCircleView.swift */; };
 		5226BB0A1C47F70800895AE4 /* TDSDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5226BB091C47F70800895AE4 /* TDSDetailHeadView.xib */; };
 		5226BB0C1C480E2C00895AE4 /* TDSDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5226BB0B1C480E2C00895AE4 /* TDSDetailHeadView.swift */; };
@@ -137,7 +134,6 @@
 		522D66641C31138E00BCA750 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 522D66661C31138E00BCA750 /* InfoPlist.strings */; };
 		522D666B1C31166C00BCA750 /* languageCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D666A1C31166C00BCA750 /* languageCommon.swift */; };
 		5231EA871C51328100DCB8F8 /* CupRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5231EA861C51328100DCB8F8 /* CupRecord.m */; };
-		5235E2161C40E68600B125AE /* ShareView_zb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5235E2151C40E68600B125AE /* ShareView_zb.xib */; };
 		5235E21A1C40F18100B125AE /* ShareView_zb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235E2191C40F18100B125AE /* ShareView_zb.swift */; };
 		523DC2D61C175BE500595099 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523DC2D41C175BE500595099 /* LoginViewController.swift */; };
 		523DC2F51C175DA800595099 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC2DD1C175DA800595099 /* MASCompositeConstraint.m */; };
@@ -225,27 +221,20 @@
 		524337CC1C42A8E50024133D /* WaterPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C71C42A8E50024133D /* WaterPurifierStatus.m */; };
 		524337DB1C42ABE50024133D /* MQTTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DA1C42ABE50024133D /* MQTTKit.m */; };
 		524337E21C42ABF20024133D /* ConfigurationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DD1C42ABF20024133D /* ConfigurationDevice.m */; };
-		52461EFF1C26847200834CC2 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461EFE1C26847200834CC2 /* headViewView.xib */; };
 		52461F011C26960A00834CC2 /* smallFooterViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F001C26960A00834CC2 /* smallFooterViewXib.xib */; };
 		52461F031C26970B00834CC2 /* bigFooterViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F021C26970B00834CC2 /* bigFooterViewXib.xib */; };
 		52461F051C26985500834CC2 /* outAirXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F041C26985500834CC2 /* outAirXib.xib */; };
 		52461F071C2699AD00834CC2 /* indoorAirXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F061C2699AD00834CC2 /* indoorAirXib.xib */; };
 		5264661F1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */; };
 		526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */; };
-		526643DB1C2A9723007D7A28 /* indoorAirWarn_Air.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */; };
 		526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */; };
 		526DDB361C4AB9AB00363504 /* CupView_Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DDB351C4AB9AB00363504 /* CupView_Footer.swift */; };
-		526DDB381C4AB9BB00363504 /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526DDB371C4AB9BB00363504 /* CupView_Footer.xib */; };
-		526DDB3C1C4B6E2700363504 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526DDB3A1C4B6E2700363504 /* MyDeviceMainController.xib */; };
 		5273D7D11C25CD2500A8ACF2 /* setSmallAirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */; };
 		5274B0691C293BB5004EDC0D /* setSmallAirViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */; };
 		52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */; };
-		52791B971C18849100C098B2 /* setDev_CupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52791B961C18849100C098B2 /* setDev_CupView.xib */; };
 		52791B991C18849A00C098B2 /* setDev_CupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791B981C18849A00C098B2 /* setDev_CupView.swift */; };
 		52791BA31C18C2F500C098B2 /* setCupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */; };
-		52791BA41C18C2F500C098B2 /* setCupNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52791BA21C18C2F500C098B2 /* setCupNameViewController.xib */; };
 		52791BA71C18CDD300C098B2 /* setCuoTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */; };
-		52791BA81C18CDD300C098B2 /* setCuoTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52791BA61C18CDD300C098B2 /* setCuoTimeViewController.xib */; };
 		527E918D1C3BDCCF00828A1B /* LongImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527E918B1C3BDCCF00828A1B /* LongImageViewController.swift */; };
 		527E918E1C3BDCCF00828A1B /* LongImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527E918C1C3BDCCF00828A1B /* LongImageViewController.xib */; };
 		528D772C1C26A5F600243986 /* PM2d5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D772A1C26A5F600243986 /* PM2d5ViewController.swift */; };
@@ -288,7 +277,6 @@
 		52AED7841C2F0C690068F2FF /* chatMessageCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AED7831C2F0C690068F2FF /* chatMessageCommon.swift */; };
 		52C4FC311C343CC000994AC6 /* bigautoModelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C4FC301C343CC000994AC6 /* bigautoModelView.xib */; };
 		52C4FC331C3440C500994AC6 /* bigautoModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C4FC321C3440C500994AC6 /* bigautoModelView.swift */; };
-		52DDC18A1C4127A000CBA038 /* Main_FooterView_zb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DDC1891C4127A000CBA038 /* Main_FooterView_zb.xib */; };
 		52DDC18C1C4127C300CBA038 /* Main_FooterView_zb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DDC18B1C4127C300CBA038 /* Main_FooterView_zb.swift */; };
 		52EA21EC1C0C8AEA00E88F29 /* MyInfoWerbservice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EA21EB1C0C8AEA00E88F29 /* MyInfoWerbservice.m */; };
 		52ECBE4A1C0C605B00A962E4 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECBE491C0C605B00A962E4 /* CoreFoundation.framework */; };
@@ -336,7 +324,6 @@
 		52FEC03F1C35961B00B6D0F1 /* userAgreeMentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEC03D1C35961B00B6D0F1 /* userAgreeMentsController.swift */; };
 		52FEC0401C35961B00B6D0F1 /* userAgreeMentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FEC03E1C35961B00B6D0F1 /* userAgreeMentsController.xib */; };
 		52FEC0431C35A99200B6D0F1 /* WeiXinURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEC0411C35A99200B6D0F1 /* WeiXinURLViewController.swift */; };
-		52FEC0441C35A99200B6D0F1 /* WeiXinURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FEC0421C35A99200B6D0F1 /* WeiXinURLViewController.xib */; };
 		52FF7DFC1C1A041B005635F8 /* HSVZB.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7DFB1C1A041B005635F8 /* HSVZB.m */; };
 		52FF7E051C1A043A005635F8 /* YJHColorPickerHSWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7DFE1C1A043A005635F8 /* YJHColorPickerHSWheel.m */; };
 		52FF7E061C1A043A005635F8 /* YJHColorPickerHSWheel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7E001C1A043A005635F8 /* YJHColorPickerHSWheel2.m */; };
@@ -346,7 +333,6 @@
 		8D09DBE01C5A698800D0432B /* loadFailedXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */; };
 		8D09DBE21C5A69D400D0432B /* LoadingXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBE11C5A69D400D0432B /* LoadingXib.swift */; };
 		8D0C3E6A1C58E78C00EFBB22 /* tantouLvXinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */; };
-		8D0C3E6B1C58E78C00EFBB22 /* tantouLvXinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */; };
 		8D0C3E6D1C58EE4000EFBB22 /* MyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */; };
 		8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */; };
 		8D26136A1CFD3DF3002ADB0E /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613621CFD3DF3002ADB0E /* Duration.swift */; };
@@ -377,7 +363,6 @@
 		8D4F4E821CDADD6D00BE1E77 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */; };
 		8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */; };
 		8D5110751CDC6B2A00B809FA /* OffLineSuggestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */; };
-		8D5110771CDC6DD000B809FA /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */; };
 		8D7234A71CF5450E0008B134 /* WaterReplenishmentMeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7234A61CF5450E0008B134 /* WaterReplenishmentMeterStatus.m */; };
 		8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */; };
 		8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */; };
@@ -786,10 +771,8 @@
 		8DB044DF1CC8CDC600B60DAB /* SkinQueryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044DD1CC8CDC600B60DAB /* SkinQueryTableViewController.swift */; };
 		8DB044E11CC8CE0600B60DAB /* CommonValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044E01CC8CE0600B60DAB /* CommonValue.swift */; };
 		8DBD54991C567E4A00D04B12 /* peiDuiOutTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */; };
-		8DBD549A1C567E4A00D04B12 /* peiDuiOutTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */; };
 		8DBD549F1C567E9200D04B12 /* kindly_notice_iconzb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD549D1C567E9200D04B12 /* kindly_notice_iconzb.png */; };
 		8DBD54A01C567E9200D04B12 /* match_device_failedzb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD549E1C567E9200D04B12 /* match_device_failedzb.png */; };
-		8DBD54AE1C567F3800D04B12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54A11C567F3800D04B12 /* Main.storyboard */; };
 		8DBD54AF1C567F3800D04B12 /* AddFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54A21C567F3800D04B12 /* AddFriendsTableViewController.swift */; };
 		8DBD54B01C567F3800D04B12 /* SendYanZHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54A31C567F3800D04B12 /* SendYanZHViewController.swift */; };
 		8DBD54B11C567F3800D04B12 /* YZNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */; };
@@ -809,21 +792,17 @@
 		8DBD54D71C567F4500D04B12 /* MyRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54BF1C567F4500D04B12 /* MyRankTableViewCell.swift */; };
 		8DBD54D81C567F4500D04B12 /* MyRankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C01C567F4500D04B12 /* MyRankTableViewCell.xib */; };
 		8DBD54D91C567F4500D04B12 /* YanZhengCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C11C567F4500D04B12 /* YanZhengCell.swift */; };
-		8DBD54DA1C567F4500D04B12 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C21C567F4500D04B12 /* YanZhengCell.xib */; };
 		8DBD54DB1C567F4500D04B12 /* ZanMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */; };
 		8DBD54DC1C567F4500D04B12 /* ZanMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */; };
 		8DBD54DD1C567F4500D04B12 /* FriendsNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C51C567F4500D04B12 /* FriendsNav.swift */; };
-		8DBD54DE1C567F4500D04B12 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C61C567F4500D04B12 /* FriendsNav.xib */; };
 		8DBD54DF1C567F4500D04B12 /* FriendsNavRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C71C567F4500D04B12 /* FriendsNavRight.swift */; };
 		8DBD54E01C567F4500D04B12 /* FriendsNavRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54C81C567F4500D04B12 /* FriendsNavRight.xib */; };
 		8DBD54E11C567F4500D04B12 /* EquidsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */; };
 		8DBD54E21C567F4500D04B12 /* EquidsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54CA1C567F4500D04B12 /* EquidsCollectionViewCell.xib */; };
 		8DBD54E31C567F4500D04B12 /* FriendSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54CB1C567F4500D04B12 /* FriendSearch.swift */; };
-		8DBD54E41C567F4500D04B12 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54CC1C567F4500D04B12 /* FriendSearch.xib */; };
 		8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */; };
 		8DBD54E61C567F4500D04B12 /* FriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */; };
 		8DBD54E71C567F4500D04B12 /* My_MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54CF1C567F4500D04B12 /* My_MainView.swift */; };
-		8DBD54E81C567F4500D04B12 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54D01C567F4500D04B12 /* My_MainView.xib */; };
 		8DBD54E91C567F4500D04B12 /* chatBarViewLiuyan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54D11C567F4500D04B12 /* chatBarViewLiuyan.swift */; };
 		8DBD54EA1C567F4500D04B12 /* chatBarViewLiuyan.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */; };
 		8DBD54ED1C567F8800D04B12 /* UserInfoActionWerbService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54EC1C567F8800D04B12 /* UserInfoActionWerbService.m */; };
@@ -831,9 +810,7 @@
 		8DD51FD81C7D8D3200F95695 /* MXChipIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FD21C7D8D3200F95695 /* MXChipIO.m */; };
 		8DD51FD91C7D8D3200F95695 /* MXChipIOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FD41C7D8D3200F95695 /* MXChipIOManager.m */; };
 		8DD51FDE1C7D97F100F95695 /* JingShuiWifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */; };
-		8DD51FDF1C7D97F100F95695 /* JingShuiWifiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */; };
 		8DD51FE21C7DA7CD00F95695 /* DeviceMatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */; };
-		8DD51FE31C7DA7CD00F95695 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */; };
 		8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */; };
 		8DE5FD7B1C56745D0092242F /* UserInfoClasszb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */; };
 		8DF060A51CC90F6100EC05D9 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060981CC90F6100EC05D9 /* Constraint.swift */; };
@@ -860,6 +837,29 @@
 		8DFB39431C57730300A1641C /* TDSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */; };
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
+		B7854BD91D0D004E0025125B /* TDSDetailCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BDB1D0D004E0025125B /* TDSDetailCellzb.xib */; };
+		B7854BDF1D0D05620025125B /* TDSFooterCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BE11D0D05620025125B /* TDSFooterCellzb.xib */; };
+		B7854BE51D0D191D0025125B /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BE71D0D191D0025125B /* CupView_Footer.xib */; };
+		B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */; };
+		B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70CC6481D057E3B002AE9A3 /* Main.storyboard */; };
+		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
+		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
+		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
+		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */; };
+		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController.xib */; };
+		E00265001D07F97900E31C79 /* JingShuiWifiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController.xib */; };
+		E00265041D08098500E31C79 /* tantouLvXinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265061D08098500E31C79 /* tantouLvXinView.xib */; };
+		E01551A41D0D02D9000E285F /* setDev_CupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551A61D0D02D9000E285F /* setDev_CupView.xib */; };
+		E01551A81D0D0D2C000E285F /* setCupNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */; };
+		E01551AC1D0D0F34000E285F /* setCuoTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */; };
+		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */; };
+		E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView.xib */; };
+		E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */; };
+		E0EFFEE91D05954700E43C20 /* Main_FooterView_zb.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEEB1D05954700E43C20 /* Main_FooterView_zb.xib */; };
+		E0EFFEED1D059BB800E43C20 /* ShareView_zb.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEEF1D059BB800E43C20 /* ShareView_zb.xib */; };
+		E0EFFEF11D06604000E43C20 /* WeiXinURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF31D06604000E43C20 /* WeiXinURLViewController.xib */; };
+		E0EFFEF51D06607E00E43C20 /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF71D06607E00E43C20 /* OffLineSuggestView.xib */; };
+		E0EFFEF91D0666FF00E43C20 /* indoorAirWarn_Air.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1078,14 +1078,11 @@
 		52080AED1C3BBC0600150B4F /* will_mosq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = will_mosq.c; sourceTree = "<group>"; };
 		52080AEE1C3BBC0600150B4F /* will_mosq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = will_mosq.h; sourceTree = "<group>"; };
 		521667841C48C258002068EF /* TDSDetailCellzb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSDetailCellzb.swift; sourceTree = "<group>"; };
-		521667851C48C258002068EF /* TDSDetailCellzb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSDetailCellzb.xib; sourceTree = "<group>"; };
 		521758601C2B1F7700CCCB11 /* bigStateXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bigStateXib.swift; sourceTree = "<group>"; };
 		521BF7C51C4A256300AD1EAB /* TDSFooterCellzb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSFooterCellzb.swift; sourceTree = "<group>"; };
-		521BF7C61C4A256300AD1EAB /* TDSFooterCellzb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSFooterCellzb.xib; sourceTree = "<group>"; };
 		521BF7C91C4A370000AD1EAB /* drinKWaterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinKWaterCell.swift; sourceTree = "<group>"; };
 		521BF7CA1C4A370000AD1EAB /* drinKWaterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = drinKWaterCell.xib; sourceTree = "<group>"; };
 		52215DE31C4E9516007C8C96 /* CenterChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterChartCell.swift; sourceTree = "<group>"; };
-		52215DE41C4E9516007C8C96 /* CenterChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenterChartCell.xib; sourceTree = "<group>"; };
 		52215DE71C4EA390007C8C96 /* drawCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawCircleView.swift; sourceTree = "<group>"; };
 		5226BB091C47F70800895AE4 /* TDSDetailHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSDetailHeadView.xib; sourceTree = "<group>"; };
 		5226BB0B1C480E2C00895AE4 /* TDSDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSDetailHeadView.swift; sourceTree = "<group>"; };
@@ -1104,7 +1101,6 @@
 		522D666A1C31166C00BCA750 /* languageCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = languageCommon.swift; sourceTree = "<group>"; };
 		5231EA851C51328100DCB8F8 /* CupRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CupRecord.h; sourceTree = "<group>"; };
 		5231EA861C51328100DCB8F8 /* CupRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CupRecord.m; sourceTree = "<group>"; };
-		5235E2151C40E68600B125AE /* ShareView_zb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareView_zb.xib; sourceTree = "<group>"; };
 		5235E2191C40F18100B125AE /* ShareView_zb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView_zb.swift; sourceTree = "<group>"; };
 		523DC2D41C175BE500595099 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		523DC2DC1C175DA800595099 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -1286,7 +1282,6 @@
 		524337DC1C42ABF20024133D /* ConfigurationDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationDevice.h; sourceTree = "<group>"; };
 		524337DD1C42ABF20024133D /* ConfigurationDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationDevice.m; sourceTree = "<group>"; };
 		524337DE1C42ABF20024133D /* EasyLinkSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyLinkSender.h; sourceTree = "<group>"; };
-		52461EFE1C26847200834CC2 /* headViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = headViewView.xib; sourceTree = "<group>"; };
 		52461F001C26960A00834CC2 /* smallFooterViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = smallFooterViewXib.xib; sourceTree = "<group>"; };
 		52461F021C26970B00834CC2 /* bigFooterViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bigFooterViewXib.xib; sourceTree = "<group>"; };
 		52461F041C26985500834CC2 /* outAirXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = outAirXib.xib; sourceTree = "<group>"; };
@@ -1295,20 +1290,14 @@
 		5264661C1C43D9C7006C86D3 /* MxChipAirPurifierStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierStatus.h; sourceTree = "<group>"; };
 		5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierStatus.m; sourceTree = "<group>"; };
 		526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Airgif_blue.gif; sourceTree = "<group>"; };
-		526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirWarn_Air.xib; sourceTree = "<group>"; };
 		526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indoorAirWarn_Air.swift; sourceTree = "<group>"; };
 		526DDB351C4AB9AB00363504 /* CupView_Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupView_Footer.swift; sourceTree = "<group>"; };
-		526DDB371C4AB9BB00363504 /* CupView_Footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CupView_Footer.xib; sourceTree = "<group>"; };
-		526DDB3A1C4B6E2700363504 /* MyDeviceMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDeviceMainController.xib; sourceTree = "<group>"; };
 		5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView.swift; sourceTree = "<group>"; };
 		5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setSmallAirViewXib.xib; sourceTree = "<group>"; };
 		52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCUPDeviceViewController.swift; sourceTree = "<group>"; };
-		52791B961C18849100C098B2 /* setDev_CupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setDev_CupView.xib; sourceTree = "<group>"; };
 		52791B981C18849A00C098B2 /* setDev_CupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setDev_CupView.swift; sourceTree = "<group>"; };
 		52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCupNameViewController.swift; sourceTree = "<group>"; };
-		52791BA21C18C2F500C098B2 /* setCupNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setCupNameViewController.xib; sourceTree = "<group>"; };
 		52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCuoTimeViewController.swift; sourceTree = "<group>"; };
-		52791BA61C18CDD300C098B2 /* setCuoTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setCuoTimeViewController.xib; sourceTree = "<group>"; };
 		527E918B1C3BDCCF00828A1B /* LongImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongImageViewController.swift; sourceTree = "<group>"; };
 		527E918C1C3BDCCF00828A1B /* LongImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongImageViewController.xib; sourceTree = "<group>"; };
 		528D772A1C26A5F600243986 /* PM2d5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PM2d5ViewController.swift; sourceTree = "<group>"; };
@@ -1353,7 +1342,6 @@
 		52AED7831C2F0C690068F2FF /* chatMessageCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatMessageCommon.swift; sourceTree = "<group>"; };
 		52C4FC301C343CC000994AC6 /* bigautoModelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bigautoModelView.xib; sourceTree = "<group>"; };
 		52C4FC321C3440C500994AC6 /* bigautoModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bigautoModelView.swift; sourceTree = "<group>"; };
-		52DDC1891C4127A000CBA038 /* Main_FooterView_zb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main_FooterView_zb.xib; sourceTree = "<group>"; };
 		52DDC18B1C4127C300CBA038 /* Main_FooterView_zb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_FooterView_zb.swift; sourceTree = "<group>"; };
 		52EA21EA1C0C8AEA00E88F29 /* MyInfoWerbservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoWerbservice.h; sourceTree = "<group>"; };
 		52EA21EB1C0C8AEA00E88F29 /* MyInfoWerbservice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoWerbservice.m; sourceTree = "<group>"; };
@@ -1415,7 +1403,6 @@
 		52FEC03D1C35961B00B6D0F1 /* userAgreeMentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userAgreeMentsController.swift; sourceTree = "<group>"; };
 		52FEC03E1C35961B00B6D0F1 /* userAgreeMentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userAgreeMentsController.xib; sourceTree = "<group>"; };
 		52FEC0411C35A99200B6D0F1 /* WeiXinURLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiXinURLViewController.swift; sourceTree = "<group>"; };
-		52FEC0421C35A99200B6D0F1 /* WeiXinURLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeiXinURLViewController.xib; sourceTree = "<group>"; };
 		52FF7DEC1C19F9E1005635F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52FF7DFA1C1A041B005635F8 /* HSVZB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSVZB.h; sourceTree = "<group>"; };
 		52FF7DFB1C1A041B005635F8 /* HSVZB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSVZB.m; sourceTree = "<group>"; };
@@ -1431,7 +1418,6 @@
 		8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadFailedXib.swift; sourceTree = "<group>"; };
 		8D09DBE11C5A69D400D0432B /* LoadingXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingXib.swift; sourceTree = "<group>"; };
 		8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tantouLvXinView.swift; sourceTree = "<group>"; };
-		8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tantouLvXinView.xib; sourceTree = "<group>"; };
 		8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStoreViewController.swift; sourceTree = "<group>"; };
 		8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
 		8D2613621CFD3DF3002ADB0E /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
@@ -1472,7 +1458,6 @@
 		8D4F4E831CDADD9900BE1E77 /* WaterPurifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier.h; sourceTree = "<group>"; };
 		8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
 		8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffLineSuggestView.swift; sourceTree = "<group>"; };
-		8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffLineSuggestView.xib; sourceTree = "<group>"; };
 		8D7234A61CF5450E0008B134 /* WaterReplenishmentMeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterStatus.m; sourceTree = "<group>"; };
 		8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish.plist; sourceTree = "<group>"; };
 		8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSexViewController.swift; sourceTree = "<group>"; };
@@ -2140,10 +2125,8 @@
 		8DB044DD1CC8CDC600B60DAB /* SkinQueryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinQueryTableViewController.swift; sourceTree = "<group>"; };
 		8DB044E01CC8CE0600B60DAB /* CommonValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonValue.swift; path = OZner/CommonValue.swift; sourceTree = "<group>"; };
 		8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peiDuiOutTimeCell.swift; sourceTree = "<group>"; };
-		8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
 		8DBD549D1C567E9200D04B12 /* kindly_notice_iconzb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kindly_notice_iconzb.png; sourceTree = "<group>"; };
 		8DBD549E1C567E9200D04B12 /* match_device_failedzb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = match_device_failedzb.png; sourceTree = "<group>"; };
-		8DBD54A11C567F3800D04B12 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8DBD54A21C567F3800D04B12 /* AddFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsTableViewController.swift; sourceTree = "<group>"; };
 		8DBD54A31C567F3800D04B12 /* SendYanZHViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendYanZHViewController.swift; sourceTree = "<group>"; };
 		8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNewsTableViewController.swift; sourceTree = "<group>"; };
@@ -2163,21 +2146,17 @@
 		8DBD54BF1C567F4500D04B12 /* MyRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRankTableViewCell.swift; sourceTree = "<group>"; };
 		8DBD54C01C567F4500D04B12 /* MyRankTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRankTableViewCell.xib; sourceTree = "<group>"; };
 		8DBD54C11C567F4500D04B12 /* YanZhengCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YanZhengCell.swift; sourceTree = "<group>"; };
-		8DBD54C21C567F4500D04B12 /* YanZhengCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YanZhengCell.xib; sourceTree = "<group>"; };
 		8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZanMeTableViewCell.swift; sourceTree = "<group>"; };
 		8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZanMeTableViewCell.xib; sourceTree = "<group>"; };
 		8DBD54C51C567F4500D04B12 /* FriendsNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsNav.swift; sourceTree = "<group>"; };
-		8DBD54C61C567F4500D04B12 /* FriendsNav.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsNav.xib; sourceTree = "<group>"; };
 		8DBD54C71C567F4500D04B12 /* FriendsNavRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsNavRight.swift; sourceTree = "<group>"; };
 		8DBD54C81C567F4500D04B12 /* FriendsNavRight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsNavRight.xib; sourceTree = "<group>"; };
 		8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquidsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DBD54CA1C567F4500D04B12 /* EquidsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EquidsCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DBD54CB1C567F4500D04B12 /* FriendSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearch.swift; sourceTree = "<group>"; };
-		8DBD54CC1C567F4500D04B12 /* FriendSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendSearch.xib; sourceTree = "<group>"; };
 		8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsCell.xib; sourceTree = "<group>"; };
 		8DBD54CF1C567F4500D04B12 /* My_MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_MainView.swift; sourceTree = "<group>"; };
-		8DBD54D01C567F4500D04B12 /* My_MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = My_MainView.xib; sourceTree = "<group>"; };
 		8DBD54D11C567F4500D04B12 /* chatBarViewLiuyan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatBarViewLiuyan.swift; sourceTree = "<group>"; };
 		8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatBarViewLiuyan.xib; sourceTree = "<group>"; };
 		8DBD54EB1C567F8800D04B12 /* UserInfoActionWerbService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoActionWerbService.h; sourceTree = "<group>"; };
@@ -2190,9 +2169,7 @@
 		8DD51FD41C7D8D3200F95695 /* MXChipIOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXChipIOManager.m; sourceTree = "<group>"; };
 		8DD51FDB1C7D97F100F95695 /* JingShuiWifiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JingShuiWifiViewController.h; sourceTree = "<group>"; };
 		8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JingShuiWifiViewController.m; sourceTree = "<group>"; };
-		8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JingShuiWifiViewController.xib; sourceTree = "<group>"; };
 		8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMatchedViewController.swift; sourceTree = "<group>"; };
-		8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceMatchedViewController.xib; sourceTree = "<group>"; };
 		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoClasszb.swift; sourceTree = "<group>"; };
 		8DF060981CC90F6100EC05D9 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -2228,6 +2205,56 @@
 		8DFB393C1C57730300A1641C /* AmountOfDrinkingWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterViewController.h; sourceTree = "<group>"; };
 		8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
+		B7854BDA1D0D004E0025125B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
+		B7854BDE1D0D00590025125B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
+		B7854BE01D0D05620025125B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TDSFooterCellzb.xib; sourceTree = "<group>"; };
+		B7854BE41D0D056B0025125B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSFooterCellzb.xib; sourceTree = "<group>"; };
+		B7854BE61D0D191D0025125B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CupView_Footer.xib; sourceTree = "<group>"; };
+		B7854BEA1D0D192F0025125B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CupView_Footer.xib; sourceTree = "<group>"; };
+		B70CC63E1D0574BD002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/My_MainView.xib; sourceTree = "<group>"; };
+		B70CC6411D0574C0002AE9A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/My_MainView.strings; sourceTree = "<group>"; };
+		B70CC6431D0574C3002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/My_MainView.strings"; sourceTree = "<group>"; };
+		B70CC6451D0574C5002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/My_MainView.strings"; sourceTree = "<group>"; };
+		B70CC6471D057E3B002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B70CC64C1D057E44002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B70CC64E1D057E48002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
+		B76E77891D066BE3008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FriendsNav.xib; sourceTree = "<group>"; };
+		B76E778A1D066E94008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B76E778C1D069B1F008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
+		B76E77901D069B3F008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
+		B76E77921D06A236008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendSearch.xib; sourceTree = "<group>"; };
+		B76E77951D06A23A008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FriendSearch.strings; sourceTree = "<group>"; };
+		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
+		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
+		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController.xib; sourceTree = "<group>"; };
+		E00264FF1D07F34900E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DeviceMatchedViewController.xib; sourceTree = "<group>"; };
+		E00265011D07F97900E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JingShuiWifiViewController.xib; sourceTree = "<group>"; };
+		E00265031D07F97B00E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JingShuiWifiViewController.xib; sourceTree = "<group>"; };
+		E00265051D08098500E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/tantouLvXinView.xib; sourceTree = "<group>"; };
+		E00265071D08098700E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/tantouLvXinView.xib; sourceTree = "<group>"; };
+		E01551A51D0D02D9000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setDev_CupView.xib; sourceTree = "<group>"; };
+		E01551A71D0D02E6000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setDev_CupView.xib; sourceTree = "<group>"; };
+		E01551A91D0D0D2C000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCupNameViewController.xib; sourceTree = "<group>"; };
+		E01551AB1D0D0D2E000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCupNameViewController.xib; sourceTree = "<group>"; };
+		E01551AD1D0D0F34000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCuoTimeViewController.xib; sourceTree = "<group>"; };
+		E01551AF1D0D0F35000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCuoTimeViewController.xib; sourceTree = "<group>"; };
+		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController.xib; sourceTree = "<group>"; };
+		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController.strings; sourceTree = "<group>"; };
+		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView.xib; sourceTree = "<group>"; };
+		E0EFFEE41D0570E500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/headViewView.xib; sourceTree = "<group>"; };
+		E0EFFEE61D05944E00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CenterChartCell.xib; sourceTree = "<group>"; };
+		E0EFFEE81D05945200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CenterChartCell.xib; sourceTree = "<group>"; };
+		E0EFFEEA1D05954700E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Main_FooterView_zb.xib; sourceTree = "<group>"; };
+		E0EFFEEC1D05954A00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Main_FooterView_zb.xib; sourceTree = "<group>"; };
+		E0EFFEEE1D059BB800E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ShareView_zb.xib; sourceTree = "<group>"; };
+		E0EFFEF01D059BBA00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareView_zb.xib; sourceTree = "<group>"; };
+		E0EFFEF21D06604000E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WeiXinURLViewController.xib; sourceTree = "<group>"; };
+		E0EFFEF41D06604200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WeiXinURLViewController.xib; sourceTree = "<group>"; };
+		E0EFFEF61D06607E00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OffLineSuggestView.xib; sourceTree = "<group>"; };
+		E0EFFEF81D06608000E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OffLineSuggestView.xib; sourceTree = "<group>"; };
+		E0EFFEFA1D0666FF00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/indoorAirWarn_Air.xib; sourceTree = "<group>"; };
+		E0EFFEFC1D06670100E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/indoorAirWarn_Air.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3149,7 +3176,7 @@
 				426F42891C281F5900DC39DF /* CustomCommFunction.h */,
 				426F428A1C281F5900DC39DF /* CustomCommFunction.m */,
 				8D0C3E681C58E78C00EFBB22 /* tantouLvXinView.swift */,
-				8D0C3E691C58E78C00EFBB22 /* tantouLvXinView.xib */,
+				E00265061D08098500E31C79 /* tantouLvXinView.xib */,
 				422D914E1C1DB157007CFB3B /* MyDeviceCustomFitstView.h */,
 				422D914F1C1DB157007CFB3B /* MyDeviceCustomFitstView.m */,
 			);
@@ -3214,13 +3241,13 @@
 				5226BB0B1C480E2C00895AE4 /* TDSDetailHeadView.swift */,
 				5226BB091C47F70800895AE4 /* TDSDetailHeadView.xib */,
 				521667841C48C258002068EF /* TDSDetailCellzb.swift */,
-				521667851C48C258002068EF /* TDSDetailCellzb.xib */,
+				B7854BDB1D0D004E0025125B /* TDSDetailCellzb.xib */,
 				521BF7C51C4A256300AD1EAB /* TDSFooterCellzb.swift */,
-				521BF7C61C4A256300AD1EAB /* TDSFooterCellzb.xib */,
+				B7854BE11D0D05620025125B /* TDSFooterCellzb.xib */,
 				521BF7C91C4A370000AD1EAB /* drinKWaterCell.swift */,
 				521BF7CA1C4A370000AD1EAB /* drinKWaterCell.xib */,
 				526DDB351C4AB9AB00363504 /* CupView_Footer.swift */,
-				526DDB371C4AB9BB00363504 /* CupView_Footer.xib */,
+				B7854BE71D0D191D0025125B /* CupView_Footer.xib */,
 			);
 			name = CupView;
 			sourceTree = "<group>";
@@ -3393,21 +3420,21 @@
 				8DBD54BF1C567F4500D04B12 /* MyRankTableViewCell.swift */,
 				8DBD54C01C567F4500D04B12 /* MyRankTableViewCell.xib */,
 				8DBD54C11C567F4500D04B12 /* YanZhengCell.swift */,
-				8DBD54C21C567F4500D04B12 /* YanZhengCell.xib */,
+				B76E778D1D069B1F008476A6 /* YanZhengCell.xib */,
 				8DBD54C31C567F4500D04B12 /* ZanMeTableViewCell.swift */,
 				8DBD54C41C567F4500D04B12 /* ZanMeTableViewCell.xib */,
 				8DBD54C51C567F4500D04B12 /* FriendsNav.swift */,
-				8DBD54C61C567F4500D04B12 /* FriendsNav.xib */,
+				B76E77841D066BC7008476A6 /* FriendsNav.xib */,
 				8DBD54C71C567F4500D04B12 /* FriendsNavRight.swift */,
 				8DBD54C81C567F4500D04B12 /* FriendsNavRight.xib */,
 				8DBD54C91C567F4500D04B12 /* EquidsCollectionViewCell.swift */,
 				8DBD54CA1C567F4500D04B12 /* EquidsCollectionViewCell.xib */,
 				8DBD54CB1C567F4500D04B12 /* FriendSearch.swift */,
-				8DBD54CC1C567F4500D04B12 /* FriendSearch.xib */,
+				B76E77931D06A236008476A6 /* FriendSearch.xib */,
 				8DBD54CD1C567F4500D04B12 /* FriendsCell.swift */,
 				8DBD54CE1C567F4500D04B12 /* FriendsCell.xib */,
 				8DBD54CF1C567F4500D04B12 /* My_MainView.swift */,
-				8DBD54D01C567F4500D04B12 /* My_MainView.xib */,
+				B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */,
 				8DBD54D11C567F4500D04B12 /* chatBarViewLiuyan.swift */,
 				8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */,
 			);
@@ -3417,7 +3444,7 @@
 		523DC3A41C175FC400595099 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				8DBD54A11C567F3800D04B12 /* Main.storyboard */,
+				B70CC6481D057E3B002AE9A3 /* Main.storyboard */,
 				8DBD54A21C567F3800D04B12 /* AddFriendsTableViewController.swift */,
 				8DBD54A31C567F3800D04B12 /* SendYanZHViewController.swift */,
 				8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */,
@@ -3440,7 +3467,7 @@
 				52A4EF5B1C27F7FF005F282D /* gifImage */,
 				526DA5311C291E7E002755CA /* indoorAirWarn */,
 				52A4EF591C27F34C005F282D /* headViewView.swift */,
-				52461EFE1C26847200834CC2 /* headViewView.xib */,
+				E0EFFEE11D056CAE00E43C20 /* headViewView.xib */,
 				52461F041C26985500834CC2 /* outAirXib.xib */,
 				52A4EF6A1C28A749005F282D /* outAirXib.swift */,
 				52461F061C2699AD00834CC2 /* indoorAirXib.xib */,
@@ -3461,7 +3488,7 @@
 			isa = PBXGroup;
 			children = (
 				526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */,
-				526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */,
+				E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air.xib */,
 			);
 			name = indoorAirWarn;
 			sourceTree = "<group>";
@@ -3486,9 +3513,9 @@
 				528D77381C26FF2B00243986 /* LoadingXib.xib */,
 				52215DE71C4EA390007C8C96 /* drawCircleView.swift */,
 				52215DE31C4E9516007C8C96 /* CenterChartCell.swift */,
-				52215DE41C4E9516007C8C96 /* CenterChartCell.xib */,
+				E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */,
 				52DDC18B1C4127C300CBA038 /* Main_FooterView_zb.swift */,
-				52DDC1891C4127A000CBA038 /* Main_FooterView_zb.xib */,
+				E0EFFEEB1D05954700E43C20 /* Main_FooterView_zb.xib */,
 				42C610611C46256200CA0EE9 /* CustomOCCircleView.h */,
 				42C610621C46256200CA0EE9 /* CustomOCCircleView.m */,
 				52A5E2D51C4FEFA40003CC4E /* lineChartViewzb.h */,
@@ -3496,11 +3523,11 @@
 				52A5E2D81C500FE50003CC4E /* MPGraphViewzb.h */,
 				52A5E2D91C500FE50003CC4E /* MPGraphViewzb.m */,
 				5235E2191C40F18100B125AE /* ShareView_zb.swift */,
-				5235E2151C40E68600B125AE /* ShareView_zb.xib */,
+				E0EFFEEF1D059BB800E43C20 /* ShareView_zb.xib */,
 				52FEC0411C35A99200B6D0F1 /* WeiXinURLViewController.swift */,
-				52FEC0421C35A99200B6D0F1 /* WeiXinURLViewController.xib */,
+				E0EFFEF31D06604000E43C20 /* WeiXinURLViewController.xib */,
 				8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */,
-				8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */,
+				E0EFFEF71D06607E00E43C20 /* OffLineSuggestView.xib */,
 			);
 			name = deviceCommon;
 			sourceTree = "<group>";
@@ -3645,7 +3672,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB044BC1CC8CD8D00B60DAB /* MyDeviceMainController.swift */,
-				526DDB3A1C4B6E2700363504 /* MyDeviceMainController.xib */,
+				E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */,
 				52895C051C4C02F7008D63D7 /* deviceCommon */,
 				8D4A818C1C916A9500B0FF89 /* MakePair */,
 				5226BB081C47F6C000895AE4 /* CupView */,
@@ -3715,12 +3742,12 @@
 			children = (
 				52FF7DE81C19F921005635F8 /* extral */,
 				52791B981C18849A00C098B2 /* setDev_CupView.swift */,
-				52791B961C18849100C098B2 /* setDev_CupView.xib */,
+				E01551A61D0D02D9000E285F /* setDev_CupView.xib */,
 				52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */,
 				52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */,
-				52791BA21C18C2F500C098B2 /* setCupNameViewController.xib */,
+				E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */,
 				52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */,
-				52791BA61C18CDD300C098B2 /* setCuoTimeViewController.xib */,
+				E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */,
 				52F1868A1C22847C00B74A05 /* SetCup.plist */,
 			);
 			name = setCup;
@@ -3780,14 +3807,14 @@
 				42DF14F81C109153002B4C83 /* CupMatchFinishedView.swift */,
 				422D914A1C1D9F10007CFB3B /* OtherMatchFinishdView.swift */,
 				8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */,
-				8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */,
+				E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */,
 				34A659011C452336002B2F10 /* CustomNoDeviceView.h */,
 				34A659021C452336002B2F10 /* CustomNoDeviceView.m */,
 				8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController.swift */,
-				8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */,
+				E00264FE1D07F34600E31C79 /* DeviceMatchedViewController.xib */,
 				8DD51FDB1C7D97F100F95695 /* JingShuiWifiViewController.h */,
 				8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */,
-				8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */,
+				E00265021D07F97900E31C79 /* JingShuiWifiViewController.xib */,
 				4288C5251C0EEE3800446D3E /* AddDeviceViewController.swift */,
 				4288C5261C0EEE3800446D3E /* AddDeviceViewController.xib */,
 				4288C53B1C0F06FF00446D3E /* AddDeviceCell.swift */,
@@ -4543,7 +4570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB044BB1CC8CD5500B60DAB /* yiban.png in Resources */,
-				521BF7C81C4A256300AD1EAB /* TDSFooterCellzb.xib in Resources */,
+				B7854BDF1D0D05620025125B /* TDSFooterCellzb.xib in Resources */,
 				8DB044651CC8CD2C00B60DAB /* icon_lvxin_service_3.png in Resources */,
 				8DB044D71CC8CDB500B60DAB /* SkinCenterTableViewCell.xib in Resources */,
 				428FC6D11C2ECFF2001D4ACF /* db_ozner_pub.db in Resources */,
@@ -4571,7 +4598,7 @@
 				8DB043ED1CC8CCE200B60DAB /* yin_shui_liang_3.png in Resources */,
 				8DB043F81CC8CCE200B60DAB /* select_device_4.png in Resources */,
 				528D77391C26FF2B00243986 /* LoadingXib.xib in Resources */,
-				8DD51FE31C7DA7CD00F95695 /* DeviceMatchedViewController.xib in Resources */,
+				E00264FC1D07F34600E31C79 /* DeviceMatchedViewController.xib in Resources */,
 				8DB0440F1CC8CCE200B60DAB /* tantou_dianliang_2.png in Resources */,
 				4288C5301C0F01A700446D3E /* SwiftFatherViewController.xib in Resources */,
 				8DB0444A1CC8CD1700B60DAB /* icon_jiare@3x.png in Resources */,
@@ -4580,16 +4607,16 @@
 				8DB044431CC8CD1700B60DAB /* jingshuiqi_wifi@3x.png in Resources */,
 				42CB9EC11C353CF3006D95CD /* icon_bubble_left.png in Resources */,
 				8DB0448D1CC8CD4200B60DAB /* icon_peidui_normal_cup@2x.png in Resources */,
-				526DDB381C4AB9BB00363504 /* CupView_Footer.xib in Resources */,
+				B7854BE51D0D191D0025125B /* CupView_Footer.xib in Resources */,
 				8DB043F61CC8CCE200B60DAB /* select_device_4zb.png in Resources */,
 				8DB0443C1CC8CD1700B60DAB /* icon_luyouqi.png in Resources */,
-				521667871C48C258002068EF /* TDSDetailCellzb.xib in Resources */,
+				B7854BD91D0D004E0025125B /* TDSDetailCellzb.xib in Resources */,
 				8DB0444B1CC8CD1700B60DAB /* icon_jiare_normal@3x.png in Resources */,
 				528FFF011C247B1D00D814A1 /* uiDatePickerView.xib in Resources */,
-				8DBD54DA1C567F4500D04B12 /* YanZhengCell.xib in Resources */,
+				B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */,
 				8DB043E51CC8CCE200B60DAB /* yin_shui_liang_0.png in Resources */,
 				528D77471C2716BA00243986 /* setTimingViewController.xib in Resources */,
-				526643DB1C2A9723007D7A28 /* indoorAirWarn_Air.xib in Resources */,
+				E0EFFEF91D0666FF00E43C20 /* indoorAirWarn_Air.xib in Resources */,
 				8DB0444E1CC8CD1700B60DAB /* icon_power@3x.png in Resources */,
 				8DB044381CC8CD1700B60DAB /* icon_circle_normal.png in Resources */,
 				8DB043F31CC8CCE200B60DAB /* select_device_1.png in Resources */,
@@ -4617,7 +4644,7 @@
 				523DC34F1C175E1B00595099 /* face.plist in Resources */,
 				4281410F1C0B072C006FEDDE /* LaunchScreen.storyboard in Resources */,
 				8DBD54E61C567F4500D04B12 /* FriendsCell.xib in Resources */,
-				52FEC0441C35A99200B6D0F1 /* WeiXinURLViewController.xib in Resources */,
+				E0EFFEF11D06604000E43C20 /* WeiXinURLViewController.xib in Resources */,
 				8DB043FB1CC8CCE200B60DAB /* right_row@2x.png in Resources */,
 				528FFEEF1C244EED00D814A1 /* setDeviceNameViewController.xib in Resources */,
 				8DB043FC1CC8CCE200B60DAB /* right_row@3x.png in Resources */,
@@ -4633,9 +4660,9 @@
 				42935B821C490D1100BCE76A /* zuo1.png in Resources */,
 				8DB044851CC8CD4200B60DAB /* icon_peidui_normal_tan_tou@2x.png in Resources */,
 				8DB044691CC8CD2C00B60DAB /* icon_lvxin_service_8.png in Resources */,
-				52461EFF1C26847200834CC2 /* headViewView.xib in Resources */,
+				E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */,
 				425F7A141C32ABD600C8B2E3 /* NewUserHelpViewController.xib in Resources */,
-				8DBD549A1C567E4A00D04B12 /* peiDuiOutTimeCell.xib in Resources */,
+				E00264F81D07E82600E31C79 /* peiDuiOutTimeCell.xib in Resources */,
 				8DBD54D41C567F4500D04B12 /* My_Rank_TDSCell.xib in Resources */,
 				8DBD54D81C567F4500D04B12 /* MyRankTableViewCell.xib in Resources */,
 				8DA4062A1C8446FD00AD5E5E /* ScanResultViewController.xib in Resources */,
@@ -4677,19 +4704,19 @@
 				8DB043F21CC8CCE200B60DAB /* select_device_0.png in Resources */,
 				8DFB393F1C57730300A1641C /* WhatHtml.plist in Resources */,
 				428FC6D01C2ECFEA001D4ACF /* db_ozner_uid.db in Resources */,
-				526DDB3C1C4B6E2700363504 /* MyDeviceMainController.xib in Resources */,
+				E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */,
 				8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */,
 				8DB043FD1CC8CCE200B60DAB /* left_row@2x.png in Resources */,
 				8DB044841CC8CD4200B60DAB /* icon_peidui_select_tan_tou@2x.png in Resources */,
-				8DBD54AE1C567F3800D04B12 /* Main.storyboard in Resources */,
+				B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */,
 				8DB044011CC8CCE200B60DAB /* pull_down_row@2x.png in Resources */,
 				528FFEF31C24625600D814A1 /* AboutDeviceViewController.xib in Resources */,
-				5235E2161C40E68600B125AE /* ShareView_zb.xib in Resources */,
+				E0EFFEED1D059BB800E43C20 /* ShareView_zb.xib in Resources */,
 				8DB0448C1CC8CD4200B60DAB /* icon_peidui_select_cup@2x.png in Resources */,
 				8DB044171CC8CCE200B60DAB /* dian_liang_70.png in Resources */,
 				8DB043E71CC8CCE200B60DAB /* icon_state_tanhao.png in Resources */,
 				8DB0443E1CC8CD1700B60DAB /* icon_peidui_normal_jingshuiqi @2x.png in Resources */,
-				8DBD54E41C567F4500D04B12 /* FriendSearch.xib in Resources */,
+				B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */,
 				8DBD54DC1C567F4500D04B12 /* ZanMeTableViewCell.xib in Resources */,
 				8DB044B41CC8CD5500B60DAB /* device_tan_tou_select_state.png in Resources */,
 				8DB0444F1CC8CD1700B60DAB /* icon_power_normal@3x.png in Resources */,
@@ -4699,17 +4726,17 @@
 				8DB044391CC8CD1700B60DAB /* icon_circle_select.png in Resources */,
 				8DB044D31CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell.xib in Resources */,
 				42CB9EBB1C353C9C006D95CD /* icon_white.png in Resources */,
-				8D0C3E6B1C58E78C00EFBB22 /* tantouLvXinView.xib in Resources */,
+				E00265041D08098500E31C79 /* tantouLvXinView.xib in Resources */,
 				8DB044861CC8CD4200B60DAB /* icon_peidui_select_tan_tou@3x.png in Resources */,
 				8DB043F01CC8CCE200B60DAB /* icon_add_device_btn@3x.png in Resources */,
 				8DB044911CC8CD4200B60DAB /* match_finish_sanjiao@3x.png in Resources */,
-				8DBD54DE1C567F4500D04B12 /* FriendsNav.xib in Resources */,
+				B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */,
 				42CB9EC21C353CF3006D95CD /* icon_bubble_right.png in Resources */,
 				52A4EF631C285E58005F282D /* smallStateXib.xib in Resources */,
 				8DB044001CC8CCE200B60DAB /* device_share@3x.png in Resources */,
 				4281414A1C0B15F0006FEDDE /* ic_menu_black_24dp@2x.png in Resources */,
 				425F7A291C32B0C500C8B2E3 /* new_help_0@3x.png in Resources */,
-				8D5110771CDC6DD000B809FA /* OffLineSuggestView.xib in Resources */,
+				E0EFFEF51D06607E00E43C20 /* OffLineSuggestView.xib in Resources */,
 				8DB044051CC8CCE200B60DAB /* device_konw@3x.png in Resources */,
 				8DB044B61CC8CD5500B60DAB /* device_jin_shui_qi_normal.png in Resources */,
 				8DB043EA1CC8CCE200B60DAB /* wen_du_3.png in Resources */,
@@ -4749,24 +4776,24 @@
 				42CB9EBD1C353CD1006D95CD /* icon_bubble_shang.png in Resources */,
 				8DB0440D1CC8CCE200B60DAB /* tantou_dianliang_1.png in Resources */,
 				8DB0441B1CC8CCE200B60DAB /* device_setting_icon.png in Resources */,
-				52215DE61C4E9516007C8C96 /* CenterChartCell.xib in Resources */,
-				52DDC18A1C4127A000CBA038 /* Main_FooterView_zb.xib in Resources */,
+				E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */,
+				E0EFFEE91D05954700E43C20 /* Main_FooterView_zb.xib in Resources */,
 				8DB044491CC8CD1700B60DAB /* icon_power_normal@2x.png in Resources */,
 				8DB043F41CC8CCE200B60DAB /* select_device_2.png in Resources */,
 				4288C5281C0EEE3800446D3E /* AddDeviceViewController.xib in Resources */,
 				8DB044B01CC8CD5500B60DAB /* device_jin_bigair_normal.png in Resources */,
 				8DB044951CC8CD4200B60DAB /* icon_peidui_select_smallair@2x.png in Resources */,
-				52791B971C18849100C098B2 /* setDev_CupView.xib in Resources */,
+				E01551A41D0D02D9000E285F /* setDev_CupView.xib in Resources */,
 				425F7A2B1C32B0C500C8B2E3 /* new_help_1@3x.png in Resources */,
-				8DBD54E81C567F4500D04B12 /* My_MainView.xib in Resources */,
+				B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */,
 				8DB044111CC8CCE200B60DAB /* 1_03.png in Resources */,
 				42E897A81C14486B00DD0228 /* OCFatherViewController.xib in Resources */,
 				425F7A281C32B0C500C8B2E3 /* new_help_0@2x.png in Resources */,
-				52791BA81C18CDD300C098B2 /* setCuoTimeViewController.xib in Resources */,
+				E01551AC1D0D0F34000E285F /* setCuoTimeViewController.xib in Resources */,
 				4281413F1C0B0CDA006FEDDE /* LeftViewController.xib in Resources */,
 				8DB0441A1CC8CCE200B60DAB /* device_wendu_0.png in Resources */,
 				528D772D1C26A5F600243986 /* PM2d5ViewController.xib in Resources */,
-				8DD51FDF1C7D97F100F95695 /* JingShuiWifiViewController.xib in Resources */,
+				E00265001D07F97900E31C79 /* JingShuiWifiViewController.xib in Resources */,
 				8DB0440C1CC8CCE200B60DAB /* device_smil@2x.png in Resources */,
 				8DB0444C1CC8CD1700B60DAB /* icon_zhileng@3x.png in Resources */,
 				8DB044131CC8CCE200B60DAB /* 1_08.png in Resources */,
@@ -4797,7 +4824,7 @@
 				8DB0448A1CC8CD4200B60DAB /* icon_peidui_tantou_watting.png in Resources */,
 				8DB044631CC8CD2C00B60DAB /* icon_lvxin_service_2.png in Resources */,
 				52461F051C26985500834CC2 /* outAirXib.xib in Resources */,
-				52791BA41C18C2F500C098B2 /* setCupNameViewController.xib in Resources */,
+				E01551A81D0D0D2C000E285F /* setCupNameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5450,6 +5477,217 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		B7854BDB1D0D004E0025125B /* TDSDetailCellzb.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7854BDA1D0D004E0025125B /* Base */,
+				B7854BDE1D0D00590025125B /* en */,
+			);
+			name = TDSDetailCellzb.xib;
+			sourceTree = "<group>";
+		};
+		B7854BE11D0D05620025125B /* TDSFooterCellzb.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7854BE01D0D05620025125B /* Base */,
+				B7854BE41D0D056B0025125B /* en */,
+			);
+			name = TDSFooterCellzb.xib;
+			sourceTree = "<group>";
+		};
+		B7854BE71D0D191D0025125B /* CupView_Footer.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7854BE61D0D191D0025125B /* Base */,
+				B7854BEA1D0D192F0025125B /* en */,
+			);
+			name = CupView_Footer.xib;
+			sourceTree = "<group>";
+		};
+		B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B70CC63E1D0574BD002AE9A3 /* Base */,
+				B70CC6411D0574C0002AE9A3 /* en */,
+				B70CC6431D0574C3002AE9A3 /* zh-Hans */,
+				B70CC6451D0574C5002AE9A3 /* zh-Hant */,
+			);
+			name = My_MainView.xib;
+			sourceTree = "<group>";
+		};
+		B70CC6481D057E3B002AE9A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B70CC6471D057E3B002AE9A3 /* Base */,
+				B70CC64C1D057E44002AE9A3 /* zh-Hans */,
+				B70CC64E1D057E48002AE9A3 /* zh-Hant */,
+				B76E778A1D066E94008476A6 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B76E77841D066BC7008476A6 /* FriendsNav.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E77831D066BC7008476A6 /* Base */,
+				B76E77891D066BE3008476A6 /* en */,
+			);
+			name = FriendsNav.xib;
+			sourceTree = "<group>";
+		};
+		B76E778D1D069B1F008476A6 /* YanZhengCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E778C1D069B1F008476A6 /* Base */,
+				B76E77901D069B3F008476A6 /* en */,
+			);
+			name = YanZhengCell.xib;
+			sourceTree = "<group>";
+		};
+		B76E77931D06A236008476A6 /* FriendSearch.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B76E77921D06A236008476A6 /* Base */,
+				B76E77951D06A23A008476A6 /* en */,
+			);
+			name = FriendSearch.xib;
+			sourceTree = "<group>";
+		};
+		E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00264F91D07E82600E31C79 /* en */,
+				E00264FB1D07E82800E31C79 /* Base */,
+			);
+			name = peiDuiOutTimeCell.xib;
+			sourceTree = "<group>";
+		};
+		E00264FE1D07F34600E31C79 /* DeviceMatchedViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00264FD1D07F34600E31C79 /* en */,
+				E00264FF1D07F34900E31C79 /* Base */,
+			);
+			name = DeviceMatchedViewController.xib;
+			sourceTree = "<group>";
+		};
+		E00265021D07F97900E31C79 /* JingShuiWifiViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00265011D07F97900E31C79 /* en */,
+				E00265031D07F97B00E31C79 /* Base */,
+			);
+			name = JingShuiWifiViewController.xib;
+			sourceTree = "<group>";
+		};
+		E00265061D08098500E31C79 /* tantouLvXinView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00265051D08098500E31C79 /* en */,
+				E00265071D08098700E31C79 /* Base */,
+			);
+			name = tantouLvXinView.xib;
+			sourceTree = "<group>";
+		};
+		E01551A61D0D02D9000E285F /* setDev_CupView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E01551A51D0D02D9000E285F /* en */,
+				E01551A71D0D02E6000E285F /* Base */,
+			);
+			name = setDev_CupView.xib;
+			sourceTree = "<group>";
+		};
+		E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E01551A91D0D0D2C000E285F /* en */,
+				E01551AB1D0D0D2E000E285F /* Base */,
+			);
+			name = setCupNameViewController.xib;
+			sourceTree = "<group>";
+		};
+		E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E01551AD1D0D0F34000E285F /* en */,
+				E01551AF1D0D0F35000E285F /* Base */,
+			);
+			name = setCuoTimeViewController.xib;
+			sourceTree = "<group>";
+		};
+		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEDA1D05576400E43C20 /* Base */,
+				E0EFFEDE1D0558D500E43C20 /* en */,
+			);
+			name = MyDeviceMainController.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEE11D056CAE00E43C20 /* headViewView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEE21D056D1F00E43C20 /* Base */,
+				E0EFFEE41D0570E500E43C20 /* en */,
+			);
+			name = headViewView.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEE61D05944E00E43C20 /* en */,
+				E0EFFEE81D05945200E43C20 /* Base */,
+			);
+			name = CenterChartCell.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEEB1D05954700E43C20 /* Main_FooterView_zb.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEEA1D05954700E43C20 /* en */,
+				E0EFFEEC1D05954A00E43C20 /* Base */,
+			);
+			name = Main_FooterView_zb.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEEF1D059BB800E43C20 /* ShareView_zb.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEEE1D059BB800E43C20 /* en */,
+				E0EFFEF01D059BBA00E43C20 /* Base */,
+			);
+			name = ShareView_zb.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEF31D06604000E43C20 /* WeiXinURLViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEF21D06604000E43C20 /* en */,
+				E0EFFEF41D06604200E43C20 /* Base */,
+			);
+			name = WeiXinURLViewController.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEF71D06607E00E43C20 /* OffLineSuggestView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEF61D06607E00E43C20 /* en */,
+				E0EFFEF81D06608000E43C20 /* Base */,
+			);
+			name = OffLineSuggestView.xib;
+			sourceTree = "<group>";
+		};
+		E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EFFEFA1D0666FF00E43C20 /* en */,
+				E0EFFEFC1D06670100E43C20 /* Base */,
+			);
+			name = indoorAirWarn_Air.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -5494,7 +5732,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "5df8cdad-d757-46d0-b805-0fb2f91fe3d3";
+				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5535,7 +5773,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "5df8cdad-d757-46d0-b805-0fb2f91fe3d3";
+				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5571,7 +5809,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -5606,7 +5844,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 			};
 			name = Release;

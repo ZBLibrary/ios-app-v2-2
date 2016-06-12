@@ -46,9 +46,9 @@ class My_MainView: UIView {
           //My_job.text=loadLanguage("银行卡代理会员" )
          MyMoneyLable .text=loadLanguage ("我的小金库")
          MyEquidsLable .text=loadLanguage("我的设备")
-         ShareLable .text="我的订单"
-         AgentLable .text="领红包"
-         AwardLable .text="我的券"
+         ShareLable .text=loadLanguage("我的订单")
+         AgentLable .text=loadLanguage("领红包")
+         AwardLable .text=loadLanguage("我的券")
          MyFriendLable.text=loadLanguage ("我的好友")
          BaogaoLable.text=loadLanguage ("查看水质检测报告")
          SuggestLable .text=loadLanguage ("我要提意见")

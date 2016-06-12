@@ -8,6 +8,7 @@
 
 #import "CustomOCCircleView.h"
 
+
 @implementation CustomOCCircleView
 
 - (id)initWithFrame:(CGRect)frame tdsValue:(int)tdsValue beatValue:(int)beatValue rankValue:(int)rankValue
@@ -20,7 +21,7 @@
         self.isFirstLoad=0;
         CGFloat height = SCREEN_HEIGHT/667.0;
         UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(0,44*height,self.frame.size.width,19*height)];
-        label.text = @"水质纯净值TDS";
+        label.text = loadLanguage(@"水质纯净值TDS");
         self.tdsFirstLabel = label;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:19*height];
@@ -31,7 +32,7 @@
         self.tdsStateImgIview = stateImgView;
         UILabel* stateLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,59,40,15)];
         self.tdsStateValueLabel = stateLabel;
-        NSString* title = @"暂无";
+        NSString* title = loadLanguage(@"暂无");
         self.originalTDSValue=self.currentTDSValue;
         if(self.currentTDSValue > 250)
         {
@@ -45,17 +46,17 @@
             if (self.currentTDSValue <= tds_good)
             {
                 stateImgView.image = [UIImage imageNamed:@"baobiao.png"];
-                title = @"好";
+                title = loadLanguage(@"好");
             }
             else if (self.currentTDSValue <= tds_bad)
             {
                 stateImgView.image = [UIImage imageNamed:@"yiban.png"];
-                title = @"一般";
+                title = loadLanguage(@"一般");
             }
             else
             {
                 stateImgView.image = [UIImage imageNamed:@"cha.png"];
-                title = @"偏差";
+                title = loadLanguage(@"偏差");
             }
             
             CGSize titleSize = [title boundingRectWithSize:CGSizeMake(self.frame.size.width, 14*height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14*height]} context:nil].size;
@@ -86,7 +87,7 @@
         }
         else
         {
-            thirdLabel.text = @"暂无";
+            thirdLabel.text = loadLanguage(@"暂无");
         }
         
         thirdLabel.textAlignment = NSTextAlignmentCenter;
@@ -102,7 +103,7 @@
         [self addSubview:button];
         
         UILabel* fourthLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,thirdLabel.frame.size.height+thirdLabel.frame.origin.y+13*height,self.frame.size.width,19*height)];
-        fourthLabel.text = @"击败了0%的用户";
+        fourthLabel.text = loadLanguage(@"击败了0%的用户");
         fourthLabel.hidden=true;
         fourthLabel.textAlignment = NSTextAlignmentCenter;
         fourthLabel.font = [UIFont fontWithName:@".SFUIDisplay-Thin" size:17];// systemFontOfSize:17];
@@ -142,24 +143,24 @@
     if(self.currentTDSValue/400.0 > 0)
     {
         CGFloat height = SCREEN_HEIGHT/667.0;
-        NSString* title = @"暂无";
+        NSString* title = loadLanguage(@"暂无");
         
         self.tdsStateImgIview.hidden = false;
         self.tdsStateValueLabel.hidden=false;
         if(self.currentTDSValue <= tds_good)
         {
             self.tdsStateImgIview.image = [UIImage imageNamed:@"baobiao.png"];
-            title = @"健康";
+            title = loadLanguage(@"健康");
         }
         else if (self.currentTDSValue <= tds_bad)
         {
             self.tdsStateImgIview.image = [UIImage imageNamed:@"yiban.png"];
-            title = @"一般";
+            title = loadLanguage(@"一般");
         }
         else
         {
             self.tdsStateImgIview.image = [UIImage imageNamed:@"cha.png"];
-            title = @"较差";
+            title = loadLanguage(@"较差");
         }
         
         CGSize titleSize = [title boundingRectWithSize:CGSizeMake(self.frame.size.width, 14*height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14*height]} context:nil].size;
@@ -171,7 +172,7 @@
     {
         self.tdsStateImgIview.hidden = true;
         self.tdsStateValueLabel.hidden=true;
-        NSString* title = @"暂无";
+        NSString* title = loadLanguage(@"暂无");
         CGFloat height = SCREEN_HEIGHT/667.0;
         //CGSize titleSize = [title boundingRectWithSize:CGSizeMake(self.frame.size.width, 14*height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14*height]} context:nil].size;
         self.tdsStateValueLabel.frame = CGRectMake(self.tdsStateImgIview.frame.origin.x+self.tdsStateImgIview.frame.size.width+5, self.tdsFirstLabel.frame.size.height+self.tdsFirstLabel.frame.origin.y+5*height, 40, 15);
@@ -202,19 +203,20 @@
     }
     else
     {
-        self.tdsLabel.text = @"暂无";
+        self.tdsLabel.text = loadLanguage(@"暂无");
     }
     if(self.currentDefeatValue > 0)
     {
         NSLog(@"%d",self.currentDefeatValue);
         NSLog(@"%d",self.currentRankValue);
         CGFloat per = (CGFloat)((CGFloat)(self.currentDefeatValue-self.currentRankValue)/((CGFloat)self.currentDefeatValue) * 100.0);
-        self.tdsDescLabel.text = [NSString stringWithFormat:@"击败了%d%%的用户",(int)per];
+       // CGFloat text =
+        self.tdsDescLabel.text = [NSString stringWithFormat:@"%@%d%%%@",loadLanguage(@"击败了"),(int)per,loadLanguage(@"的用户")];
         self.tdsDescLabel.hidden=false;
     }
     else
     {
-        self.tdsDescLabel.text = @"击败了0%的用户";
+        self.tdsDescLabel.text = loadLanguage(@"击败了0%的用户");
         self.tdsDescLabel.hidden=true;
     }
     

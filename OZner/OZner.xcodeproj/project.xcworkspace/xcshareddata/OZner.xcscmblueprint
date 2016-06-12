@@ -7,12 +7,14 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "B417C03A1674D27C40E173057F3EFCA89D14CD87" : 0,
+    "B69EA00F5F131820FF9BA77560B5184570563F17" : 0,
     "d6bdb37f-0875-4c4c-9ef7-387cf53df529++3468" : 0,
     "A9C05D07F27516CBB88819DF4A19F325A1130721" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4B8CCFCB-1E99-40BF-8FA6-BEF7A5173BE5",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "B417C03A1674D27C40E173057F3EFCA89D14CD87" : "New\/",
+    "B69EA00F5F131820FF9BA77560B5184570563F17" : "",
     "d6bdb37f-0875-4c4c-9ef7-387cf53df529++3468" : "..\/Documents\/%E4%B8%AA%E4%BA%BA%E6%96%87%E4%BB%B6\/UNS\/StoneSVN\/UU_Library",
     "A9C05D07F27516CBB88819DF4A19F325A1130721" : "ios-app-v2-2\/"
   },
@@ -29,6 +31,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ozner-app-ios-org\/ios-app-v2",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B417C03A1674D27C40E173057F3EFCA89D14CD87"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ozner-app-ios-org\/HoyoServicer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B69EA00F5F131820FF9BA77560B5184570563F17"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.9.12\/svn\/UU",

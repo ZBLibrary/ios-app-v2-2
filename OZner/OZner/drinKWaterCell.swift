@@ -9,7 +9,7 @@
 import UIKit
 
 class drinKWaterCell: UITableViewCell {
-
+    
     @IBOutlet var back: UIButton!
     @IBOutlet var share: UIButton!
     
@@ -26,17 +26,18 @@ class drinKWaterCell: UITableViewCell {
     @IBOutlet var symbolLabel: UILabel!
     @IBOutlet var rankView: UIView!
     
+    @IBOutlet weak var rankingLabel: UILabel!
     //温度需要的
     @IBOutlet var TempValue: UILabel!
     var rank=0{
         didSet{
-            rankValue.text=rank==0 ? "无":"\(rank)"
+            rankValue.text=rank==0 ? loadLanguage("无"):"\(rank)"
             switch  rankValue.text!.characters.count
             {
             case 0...2:
                 rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
                 break
-            
+                
             case 3...4:
                 rankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 22)
                 break
@@ -52,25 +53,25 @@ class drinKWaterCell: UITableViewCell {
     }
     var waterValueChange:Int=0{
         didSet{
-            if celltype=="饮水量"
+            if celltype==loadLanguage("饮水量")
             {
-                waterValue.text="暂无"
+                waterValue.text=loadLanguage("暂无")
                 switch waterValueChange
                 {
                 case 0...50:
                     waterValue.text="\(waterValueChange)"
                     faceImg.image=UIImage(named: "waterState3")
-                    faceState.text="当前喝水量还不够，离“水货”还有一段距离"
+                    faceState.text=loadLanguage("当前喝水量还不够，离“水货”还有一段距离")
                     break
                 case 51..<100:
                     waterValue.text="\(waterValueChange)"
                     faceImg.image=UIImage(named: "waterState2")
-                    faceState.text="健康的身体，需要配合良好的饮水习惯，加油哦！"
+                    faceState.text=loadLanguage("健康的身体，需要配合良好的饮水习惯，加油哦！")
                     break
                 case 100...1000000:
                     waterValue.text="\(100)"
                     faceImg.image=UIImage(named: "waterState1")
-                    faceState.text="今日水量已达标，休息，休息一会儿！"
+                    faceState.text=loadLanguage("今日水量已达标，休息，休息一会儿！")
                     break
                 default:
                     break
@@ -78,23 +79,23 @@ class drinKWaterCell: UITableViewCell {
             }
             else
             {
-                TempValue.text="暂无"
+                TempValue.text=loadLanguage("暂无")
                 switch waterValueChange
                 {
                 case 0...25:
-                    TempValue.text="偏凉"
+                    TempValue.text=loadLanguage("偏凉")
                     faceImg.image=UIImage(named: "waterState2")
-                    faceState.text="水温太凉啦！让胃暖起来，心才会暖！"
+                    faceState.text=loadLanguage("水温太凉啦！让胃暖起来，心才会暖！")
                     break
                 case 26...50:
-                    TempValue.text="适中"
+                    TempValue.text=loadLanguage("适中")
                     faceImg.image=UIImage(named: "waterState1")
-                    faceState.text="不凉不烫，要的就是刚刚好！"
+                    faceState.text=loadLanguage("不凉不烫，要的就是刚刚好！")
                     break
                 case 51...100:
-                    TempValue.text="偏烫"
+                    TempValue.text=loadLanguage("偏烫")
                     faceImg.image=UIImage(named: "waterState3")
-                    faceState.text="水温偏烫再凉一凉吧，心急可是会受伤的哦！"
+                    faceState.text=loadLanguage("水温偏烫再凉一凉吧，心急可是会受伤的哦！")
                     break
                 default:
                     break
@@ -105,9 +106,9 @@ class drinKWaterCell: UITableViewCell {
     var celltype=""{
         didSet{
             title.text=celltype
-            if celltype=="饮水量"
+            if celltype==loadLanguage("饮水量")
             {
-                waterValueTitle.text="今日已完成"
+                waterValueTitle.text=loadLanguage("今日已完成")
                 TempValue.hidden=true
                 waterValue.hidden=false
                 symbolLabel.hidden=false
@@ -117,8 +118,8 @@ class drinKWaterCell: UITableViewCell {
             }
             else
             {
-              //水温
-                waterValueTitle.text="水温"
+                //水温
+                waterValueTitle.text=loadLanguage("水温")
                 TempValue.hidden=false
                 waterValue.hidden=true
                 symbolLabel.hidden=true
@@ -132,11 +133,12 @@ class drinKWaterCell: UITableViewCell {
         super.awakeFromNib()
         zixunView.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).CGColor
         // Initialization code
+        rankingLabel.text = loadLanguage("好友排名")
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

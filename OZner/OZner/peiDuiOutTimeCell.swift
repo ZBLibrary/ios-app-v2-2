@@ -13,7 +13,7 @@ class peiDuiOutTimeCell: UITableViewCell {
     var isBlueToothDevice:Bool=false
         {
         didSet{
-            stateLabel.text=isBlueToothDevice==true ? "您可以检查蓝牙连接状态后再进行配对":"您可以检查WIFI连接状态后再进行配对"
+            stateLabel.text=isBlueToothDevice==true ? loadLanguage("您可以检查蓝牙连接状态后再进行配对"):loadLanguage("您可以检查WIFI连接状态后再进行配对")
         }
     }
     @IBOutlet var Back: UIButton!

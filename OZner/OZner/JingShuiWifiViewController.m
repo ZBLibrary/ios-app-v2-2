@@ -230,7 +230,7 @@
     leftBtn.frame = CGRectMake(0, 0, image.size.width, image.size.height);
     [leftBtn addTarget:self action:@selector(leftBtnMethod) forControlEvents:UIControlEventTouchUpInside];
     
-    [UITool customizeNavBar:self withTitle:@"设备配对" buttonImgL:leftBtn buttonImgR:nil];
+    [UITool customizeNavBar:self withTitle:loadLanguage(@"设备配对") buttonImgL:leftBtn buttonImgR:nil];
 }
 
 -(void)complete:(MXChipIO *)io
@@ -327,7 +327,7 @@
     NSString* tmpPass=[NSString stringWithFormat:@"%@",self.pswTF.text];
     if(tmpName.length == 0 )//|| self.pswTF.text.length == 0
     {
-        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"请输入网络名称" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:loadLanguage(@"错误") message:loadLanguage(@"请输入网络名称") delegate:nil cancelButtonTitle:loadLanguage(@"确定") otherButtonTitles:nil];
         [alert show];
         
     }

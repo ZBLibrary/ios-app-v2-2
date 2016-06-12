@@ -64,8 +64,8 @@ class CenterChartCell: UITableViewCell {
         segmentSelectIndex=segmentControl.selectedSegmentIndex+1;
     }
     @IBOutlet var rightImg: UIImageView!
-    let TDSTitle=["今日饮水纯净指数分布","本周饮水纯净指数分布","本月饮水纯净指数分布"]
-    var TempTitle=["今日饮水水温分布","本周饮水水温分布","本月饮水水温分布"]
+    let TDSTitle=[loadLanguage("今日饮水纯净指数分布"),loadLanguage("本周饮水纯净指数分布"),loadLanguage("本月饮水纯净指数分布")]
+    var TempTitle=[loadLanguage("今日饮水水温分布"),loadLanguage("本周饮水水温分布"),loadLanguage("本月饮水水温分布")]
     var segmentSelectIndex=0{
         didSet{
             
@@ -152,9 +152,9 @@ class CenterChartCell: UITableViewCell {
     //圆环更新方法
     func updateCircleView(state1:Int,state2:Int,state3:Int)
     {//type 0 TDS,1 温度
-        state1Label.text=cellType==0 ? "较差 \(state1)%":"偏烫 \(state1)%"
-        state2Label.text=cellType==0 ? "一般 \(state2)%":"适中 \(state2)%"
-        state3Label.text=cellType==0 ? "健康 \(state3)%":"偏凉 \(state3)%"
+        state1Label.text=cellType==0 ? "\(loadLanguage("较差")) \(state1)%":"\(loadLanguage("偏烫")) \(state1)%"
+        state2Label.text=cellType==0 ? "\(loadLanguage("一般")) \(state2)%":"\(loadLanguage("适中")) \(state2)%"
+        state3Label.text=cellType==0 ? "\(loadLanguage("健康")) \(state3)%":"\(loadLanguage("偏凉")) \(state3)%"
         
         state2Label.textColor=cellType==0 ? UIColor.init(red: 128/255, green: 94/255, blue: 230/255, alpha: 1):UIColor(red: 242/255, green: 134/255, blue: 82/255, alpha: 1)
         

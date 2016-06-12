@@ -47,7 +47,7 @@ class CupMatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
         let cupNameTextField = UITextField(frame: CGRectMake(30*(width/375.0),40*(height/667.0),150*(width/375.0),17*(height/667.0)))
         cupNameTextField.placeholder = loadLanguage("输入智能杯名称")
         cupNameTextField.delegate = self
-        cupNameTextField.font = UIFont.systemFontOfSize(17*(height/667.0))
+        cupNameTextField.font = UIFont.systemFontOfSize(14*(height/667.0))
         cupNameTextField.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         cupNameTextField.textAlignment = NSTextAlignment.Center
         self.myCupNameTextField = cupNameTextField
@@ -60,7 +60,7 @@ class CupMatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
         let contentStr:String = loadLanguage("我的水杯")
         let contentDic = [NSFontAttributeName:UIFont.systemFontOfSize(17*(height/667.0))];
         let contentSize = contentStr.boundingRectWithSize(CGSizeMake(width, 17*(height/667.0)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: contentDic, context: nil).size;
-        let label:UILabel = UILabel(frame: CGRectMake(leftSeparatorView.frame.size.width+leftSeparatorView.frame.origin.x+23*(width/375.0)+16*(width/375.0),cupNameTextField.frame.origin.y,contentSize.width,17*(height/667.0)))
+        let label:UILabel = UILabel(frame: CGRectMake(leftSeparatorView.frame.size.width+leftSeparatorView.frame.origin.x+23*(width/375.0)+16*(width/375.0),cupNameTextField.frame.origin.y,contentSize.width,18*(height/667.0)))
         label.text = loadLanguage("我的水杯")
         label.textAlignment = NSTextAlignment.Center
         label.font = UIFont.systemFontOfSize(17*(height/667.0))
@@ -82,7 +82,7 @@ class CupMatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
         weightTextField.delegate = self
         self.myWeightTextField = weightTextField
         weightTextField.keyboardType = UIKeyboardType.NumberPad
-        weightTextField.font = UIFont.systemFontOfSize(17*(height/667.0))
+        weightTextField.font = UIFont.systemFontOfSize(14*(height/667.0))
         weightTextField.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         weightTextField.textAlignment = NSTextAlignment.Center
         scrollView.addSubview(weightTextField)
@@ -90,19 +90,19 @@ class CupMatchFinishedView: UIView,UITextFieldDelegate,UIScrollViewDelegate {
         let weightStr:String = "KG"
         let weightDic = [NSFontAttributeName:UIFont.systemFontOfSize(17*(height/667.0))];
         let weightSize = weightStr.boundingRectWithSize(CGSizeMake(width, 17*(height/667.0)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: weightDic, context: nil).size;
-        let weightLabel:UILabel = UILabel(frame: CGRectMake(weightTextField.frame.size.width+weightTextField.frame.origin.x-weightSize.width-5,weightTextField.frame.origin.y,weightSize.width,17*(height/667.0)))
+        let weightLabel:UILabel = UILabel(frame: CGRectMake(weightTextField.frame.size.width+weightTextField.frame.origin.x+5,weightTextField.frame.origin.y,weightSize.width,17*(height/667.0)))
         weightLabel.text = "KG"
         weightLabel.textAlignment = NSTextAlignment.Center
         weightLabel.font = UIFont.systemFontOfSize(17*(height/667.0))
         weightLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
         scrollView .addSubview(weightLabel)
         
-        let weightSeparatorView = UIView(frame: CGRectMake(weightTextField.frame.origin.x,weightTextField.frame.size.height+weightTextField.frame.origin.y+10*(height/667.0),150*(width/375.0),1))
+        let weightSeparatorView = UIView(frame: CGRectMake(weightTextField.frame.origin.x,weightTextField.frame.size.height+weightTextField.frame.origin.y+10*(height/667.0),150*(width/375.0) + weightSize.width+5,1))
         weightSeparatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         scrollView.addSubview(weightSeparatorView)
 
         
-        let tiplabel:UILabel = UILabel(frame: CGRectMake(0,weightSeparatorView.frame.origin.y+weightSeparatorView.frame.size.height+5*(height/667.0),width,14*(height/667.0)))
+        let tiplabel:UILabel = UILabel(frame: CGRectMake(0,weightSeparatorView.frame.origin.y+weightSeparatorView.frame.size.height+5*(height/667.0),width,15*(height/667.0)))
         tiplabel.text = loadLanguage("填写体重获得更健康的饮水量建议")
         tiplabel.textAlignment = NSTextAlignment.Center
         tiplabel.font = UIFont.systemFontOfSize(14*(height/667.0))

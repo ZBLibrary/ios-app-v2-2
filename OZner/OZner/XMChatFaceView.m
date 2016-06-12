@@ -353,7 +353,7 @@
         
         UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 70, 0, 70, 40)];
         sendButton.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:70.0f/255.0f blue:1.0f alpha:1.0f];
-        [sendButton setTitle:@"发送" forState:UIControlStateNormal];
+        [sendButton setTitle:loadLanguage(@"发送") forState:UIControlStateNormal];
         [sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [sendButton addTarget:self action:@selector(sendAction:) forControlEvents:UIControlEventTouchUpInside];
         

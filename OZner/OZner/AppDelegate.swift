@@ -92,8 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         if(req.isKindOfClass(GetMessageFromWXReq.classForCoder()))
         {
             // 微信请求App提供内容， 需要app提供内容后使用sendRsp返回
-            let strTitle = "微信请求App提供内容"
-            let strMsg = "微信请求App提供内容，App要调用sendResp:GetMessageFromWXResp返回给微信"
+            let strTitle = loadLanguage("微信请求App提供内容")
+            let strMsg = loadLanguage("微信请求App提供内容，App要调用sendResp:GetMessageFromWXResp返回给微信")
             
             let alert = UIAlertView(title: strTitle, message: strMsg, delegate: self, cancelButtonTitle: "ok")
             
@@ -108,8 +108,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
             //显示微信传过来的内容
             let obj = msg.mediaObject as! WXAppExtendObject
             
-            let strTitle = "微信请求App显示内容"
-            let strMsg = "标题：\(msg.title) \n内容：\(msg.title) \n附带信息：\(msg.description)\n缩略图:\(msg.thumbData.length) bytes\n\n\(obj)"
+            let strTitle = loadLanguage("微信请求App显示内容")
+            let strMsg = "\(loadLanguage("标题："))\(msg.title) \n \(loadLanguage("内容: "))：\(msg.title) \n \(loadLanguage("附带信息："))\(msg.description)\n \(loadLanguage("缩略图:"))\(msg.thumbData.length) bytes\n\n\(obj)"
             
             let alert = UIAlertView(title: strTitle, message: strMsg, delegate: self, cancelButtonTitle: "ok")
             
@@ -119,8 +119,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         else if(req.isKindOfClass(LaunchFromWXReq.classForCoder()))
         {
             //从微信启动App
-            let strTitle = "从微信启动"
-            let strMsg = "这是从微信启动的消息"
+            let strTitle = loadLanguage("从微信启动")
+            let strMsg = loadLanguage("这是从微信启动的消息")
             
             let alert = UIAlertView(title: strTitle, message: strMsg, delegate: self, cancelButtonTitle: "ok")
             
@@ -248,7 +248,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
                 else
                 {
                     //账号被人登录了
-                    let alert=UIAlertView(title: "", message: "账号在另一台设备上登录了，请重新登录", delegate: self, cancelButtonTitle: "确定")
+                    let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("账号在另一台设备上登录了，请重新登录"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
                     alert.show()
                     LogInOut.loginInOutInstance().loginOutUser()
                 }
@@ -258,7 +258,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         }
     
     }
-    
+        
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
