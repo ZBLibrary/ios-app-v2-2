@@ -1,10 +1,10 @@
 /* 
-  Localizable.strings
-  OZner
-
-  Created by test on 15/12/28.
-  Copyright © 2015年 sunlinlin. All rights reserved.
-*/
+ Localizable.strings
+ OZner
+ 
+ Created by test on 15/12/28.
+ Copyright © 2015年 sunlinlin. All rights reserved.
+ */
 //登陆页面
 "短信验证码"="abc";
 "倒计时"="sda";
@@ -45,7 +45,7 @@
 "蓝牙连接" = "Bluetooth connection" ; // 连接
 "Wifi连接" = "Wifi connection" ;
 
-"无" = "Normal skin" ; //皮肤
+//"无" = "Normal skin" ; //皮肤
 "油性" = "Oily skin" ;
 "干性" = "Dry skin" ;
 
@@ -144,7 +144,7 @@
 
 "您可以检查WIFI连接状态后再进行配对" = "You can check the WiFi connection and try again" ;
 "您可以检查蓝牙连接状态后再进行配对" = "You can check the bluetooth connection and try again" ;
-"请添加设备" = "Please add device"
+"请添加设备" = "Please add device";
 "开启浩泽智能生活" = "Start OZNER smart life" ;
 "添加设备" = "Add device" ;
 
@@ -176,4 +176,32 @@
 "当前滤芯状态" = "Filter cartridge status" ;
 "获取滤芯服务时间失败！" = "Failed to get filter service time!" ;
 
+// 智能水杯
+//CustomThreeCircleView
+//AmountOfDrinkingCell
+"饮水量分布指数" = "Drinking water distribution index";//
+"周" = "Week";
+"日" = "Day";
+"月" = "Month";
+//TDSDetailCellzb
+"完美水质，体内每个细胞都说好！" = "Perfect water quality";
+"饮水安全需谨慎，你值得拥有更好的。" = "Safe drinking water need to be cautious , you deserve better";//
+"当前杂质较多，请放心给对手饮用" = "Current impurities";//
 
+//drinKWaterCell
+"无" = "None";//
+"饮水量" = "Water intake";//
+"当前喝水量还不够，离“水货”还有一段距离" = "The amount of water is not enough";//
+"健康的身体，需要配合良好的饮水习惯，加油哦！" = "Health, need to meet the good habit of drinking water , come on !";//
+"今日水量已达标，休息，休息一会儿！" = "Water Fully Met";//
+"水温太凉啦！让胃暖起来，心才会暖！" = "Water temperature is too cold!";
+"不凉不烫，要的就是刚刚好！" = "The temperature just right !";
+"水温偏烫再凉一凉吧，心急可是会受伤的哦！" = "Partial hot water temperature";
+//CupView_Footer
+"今日已完成" = "Fully Met";
+"水温" = "Water temperature";
+"好友排名" = "Ranking";
+"当前水温偏凉" = "Water temperature cool side";
+"当前水温适宜饮用" = "Water temperature suitable for drinking";
+"当前水温暂无" = "No water temperature";
+"当前水温偏烫" = "Partial hot water temperature";
