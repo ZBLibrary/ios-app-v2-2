@@ -127,7 +127,7 @@ class indoorAirViewController: UIViewController {
         if get_CurrSelectEquip()==4
         {
             let airPurifier_Bluetooth = self.myCurrentDevice as! AirPurifier_Bluetooth
-            smallHeadView.Pm2d5Value.text="\(airPurifier_Bluetooth.sensor.PM25)"
+            smallHeadView.Pm2d5Value.text=airPurifier_Bluetooth.sensor.PM25==65535 ? "-":"\(airPurifier_Bluetooth.sensor.PM25)"
             //airPurifier_Bluetooth.status
             mainview.smallairHidenView.addConstraint(NSLayoutConstraint(item: mainview.smallairHidenView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 0, constant: 0))
             mainview.airTotal.text = "无"
@@ -137,22 +137,23 @@ class indoorAirViewController: UIViewController {
             if airPurifier_Bluetooth.status.filterStatus.lastTime != nil
             {
                 
-                let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
-                let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
-                
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
-                let starDateStr=dateFormatter.stringFromDate(airPurifier_Bluetooth.status.filterStatus.lastTime)
-                mainview.starDatazb=starDateStr
-                print(starDateStr)
-                mainview.state=(stopTime-nowTime)>=0 ? Int(ceil((stopTime-nowTime)/(stopTime-starTime)*100)) : 0
+                //let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+                //let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
+                //let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
+                let tmpTime = min(100, 100-airPurifier_Bluetooth.status.filterStatus.workTime/600)
+                let remindTime = max(tmpTime, 0)
+                //let dateFormatter = NSDateFormatter()
+                //dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
+                //let starDateStr=dateFormatter.stringFromDate(airPurifier_Bluetooth.status.filterStatus.lastTime)
+                mainview.starDatazb=""
+               
+                mainview.state = Int(remindTime)
             }
         }
         else
         {
             let airPurifier_MxChip = self.myCurrentDevice as! AirPurifier_MxChip
-            bigHeadView.PM2d5Value.text="\(airPurifier_MxChip.sensor.PM25)"
+            bigHeadView.PM2d5Value.text=airPurifier_MxChip.sensor.PM25==65535 ? "-":"\(airPurifier_MxChip.sensor.PM25)"
             bigHeadView.VOCValue.text=VOCStantdart(airPurifier_MxChip.sensor.VOC)
             mainview.airTotal.text = "\(airPurifier_MxChip.sensor.TotalClean/1000)"
             mainview.reSetLvXinButton.hidden=true

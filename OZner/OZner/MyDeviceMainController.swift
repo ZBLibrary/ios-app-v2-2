@@ -1309,14 +1309,18 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             return
         }
         let airPurifier_Bluetooth = self.myCurrentDevice as! AirPurifier_Bluetooth
-        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+        //let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
         if airPurifier_Bluetooth.status.filterStatus.lastTime != .None
         {
             //let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970+90*24*3600
-            let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
-            let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
-            headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(stopTime-starTime)*100)))%":"0%"
-            switch ceil((stopTime-nowTime)/(stopTime-starTime)*100)
+            //let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
+            //let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
+            print(airPurifier_Bluetooth.status.filterStatus.workTime)
+            let remain=min(100, 100-airPurifier_Bluetooth.status.filterStatus.workTime/600)
+            let remain1 = max(remain, 0)
+            
+            headView.lvxinState.text = "\(remain1)%"
+            switch remain1
             {
             case 0..<15:
                 headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
@@ -1334,13 +1338,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
                 break
             }
-            if ((stopTime-nowTime)<=0)
+            if (remain1<=0)
             {
                 let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
                 alert.show()
             }
 
-            //NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
             
         }
     }
