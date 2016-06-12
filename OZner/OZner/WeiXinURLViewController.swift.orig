@@ -8,11 +8,19 @@
 
 import UIKit
 struct weiXinUrlNamezb {
+<<<<<<< HEAD
+    let myMoney=loadLanguage("我的小金库")
+    let shareLiKa=loadLanguage("我的订单")
+    let callFriend=loadLanguage("领红包")
+    let awardInfo=loadLanguage("我的券")
+    let waterReport=loadLanguage("查看水质检测报告")
+=======
     let myMoney = loadLanguage("我的小金库")
     let shareLiKa = loadLanguage("我的订单")
     let callFriend = loadLanguage("领红包")
     let awardInfo = loadLanguage("我的券")
     let waterReport = loadLanguage("查看水质检测报告")
+>>>>>>> GYJade
     
     let WaterKnow=loadLanguage("健康水知道")
     

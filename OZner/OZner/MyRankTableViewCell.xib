@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -49,9 +49,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-F1-QP5">
-                                <rect key="frame" x="25" y="93" width="62" height="11"/>
+                                <rect key="frame" x="25" y="93" width="62" height="13"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="11" id="Kax-CG-LTt"/>
+                                    <constraint firstAttribute="height" constant="13" id="Kax-CG-LTt"/>
                                     <constraint firstAttribute="width" constant="62" id="r4u-Eq-FFa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
@@ -65,9 +65,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您今日最佳（TDS）" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2H-Se-5xK">
-                                <rect key="frame" x="87" y="93" width="195" height="11"/>
+                                <rect key="frame" x="87" y="93" width="195" height="13"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="11" id="LEh-tY-GLU"/>
+                                    <constraint firstAttribute="height" constant="13" id="LEh-tY-GLU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
                                 <color key="textColor" red="0.38431372549999998" green="0.40000000000000002" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,10 +80,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获得点赞" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4q-ED-V6Y">
-                                <rect key="frame" x="282" y="93" width="50" height="11"/>
+                                <rect key="frame" x="282" y="93" width="50" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="mAy-8b-eZ7"/>
-                                    <constraint firstAttribute="height" constant="11" id="wcH-00-Ynh"/>
+                                    <constraint firstAttribute="height" constant="13" id="wcH-00-Ynh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
                                 <color key="textColor" red="0.38431372549999998" green="0.40000000000000002" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>

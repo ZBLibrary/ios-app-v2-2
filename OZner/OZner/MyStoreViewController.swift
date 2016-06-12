@@ -26,7 +26,7 @@ class MyStoreViewController: UIViewController,UIWebViewDelegate {
         button=UIButton(frame: CGRect(x: 0, y: Screen_Hight/2-40, width: SCREEN_WIDTH, height: 40))
         button.addTarget(self, action: #selector(loadAgain), forControlEvents: .TouchUpInside)
         button.setTitleColor(UIColor.grayColor(), forState: .Normal)
-        button.setTitle("加载失败点击继续加载！", forState: .Normal)
+        button.setTitle(loadLanguage("加载失败点击继续加载！"), forState: .Normal)
         button.hidden=true
         webView=UIWebView(frame: CGRect(x: 0, y: -20, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-25))
         

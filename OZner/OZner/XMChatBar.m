@@ -237,7 +237,7 @@
 }
 
 - (NSArray *)titlesOfMoreView:(XMChatMoreView *)moreView{
-    return @[@"拍摄",@"照片"];//,@"位置"];
+    return @[loadLanguage(@"拍摄"),loadLanguage(@"照片")];//,@"位置"];
 }
 
 - (NSArray *)imageNamesOfMoreView:(XMChatMoreView *)moreView{

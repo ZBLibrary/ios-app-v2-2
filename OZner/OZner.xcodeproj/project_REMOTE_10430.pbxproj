@@ -121,8 +121,10 @@
 		52080AFC1C3BBC0600150B4F /* util_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 52080AEB1C3BBC0600150B4F /* util_mosq.c */; };
 		52080AFD1C3BBC0600150B4F /* will_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 52080AED1C3BBC0600150B4F /* will_mosq.c */; };
 		521667861C48C258002068EF /* TDSDetailCellzb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521667841C48C258002068EF /* TDSDetailCellzb.swift */; };
+		521667871C48C258002068EF /* TDSDetailCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521667851C48C258002068EF /* TDSDetailCellzb.xib */; };
 		521758611C2B1F7700CCCB11 /* bigStateXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521758601C2B1F7700CCCB11 /* bigStateXib.swift */; };
 		521BF7C71C4A256300AD1EAB /* TDSFooterCellzb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BF7C51C4A256300AD1EAB /* TDSFooterCellzb.swift */; };
+		521BF7C81C4A256300AD1EAB /* TDSFooterCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BF7C61C4A256300AD1EAB /* TDSFooterCellzb.xib */; };
 		521BF7CB1C4A370000AD1EAB /* drinKWaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BF7C91C4A370000AD1EAB /* drinKWaterCell.swift */; };
 		521BF7CC1C4A370000AD1EAB /* drinKWaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BF7CA1C4A370000AD1EAB /* drinKWaterCell.xib */; };
 		52215DE51C4E9516007C8C96 /* CenterChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52215DE31C4E9516007C8C96 /* CenterChartCell.swift */; };
@@ -229,6 +231,7 @@
 		526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */; };
 		526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */; };
 		526DDB361C4AB9AB00363504 /* CupView_Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DDB351C4AB9AB00363504 /* CupView_Footer.swift */; };
+		526DDB381C4AB9BB00363504 /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526DDB371C4AB9BB00363504 /* CupView_Footer.xib */; };
 		5273D7D11C25CD2500A8ACF2 /* setSmallAirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */; };
 		5274B0691C293BB5004EDC0D /* setSmallAirViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */; };
 		52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */; };
@@ -837,9 +840,6 @@
 		8DFB39431C57730300A1641C /* TDSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */; };
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
-		B7854BD91D0D004E0025125B /* TDSDetailCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BDB1D0D004E0025125B /* TDSDetailCellzb.xib */; };
-		B7854BDF1D0D05620025125B /* TDSFooterCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BE11D0D05620025125B /* TDSFooterCellzb.xib */; };
-		B7854BE51D0D191D0025125B /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BE71D0D191D0025125B /* CupView_Footer.xib */; };
 		B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */; };
 		B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70CC6481D057E3B002AE9A3 /* Main.storyboard */; };
 		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
@@ -1078,8 +1078,10 @@
 		52080AED1C3BBC0600150B4F /* will_mosq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = will_mosq.c; sourceTree = "<group>"; };
 		52080AEE1C3BBC0600150B4F /* will_mosq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = will_mosq.h; sourceTree = "<group>"; };
 		521667841C48C258002068EF /* TDSDetailCellzb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSDetailCellzb.swift; sourceTree = "<group>"; };
+		521667851C48C258002068EF /* TDSDetailCellzb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSDetailCellzb.xib; sourceTree = "<group>"; };
 		521758601C2B1F7700CCCB11 /* bigStateXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bigStateXib.swift; sourceTree = "<group>"; };
 		521BF7C51C4A256300AD1EAB /* TDSFooterCellzb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSFooterCellzb.swift; sourceTree = "<group>"; };
+		521BF7C61C4A256300AD1EAB /* TDSFooterCellzb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSFooterCellzb.xib; sourceTree = "<group>"; };
 		521BF7C91C4A370000AD1EAB /* drinKWaterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinKWaterCell.swift; sourceTree = "<group>"; };
 		521BF7CA1C4A370000AD1EAB /* drinKWaterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = drinKWaterCell.xib; sourceTree = "<group>"; };
 		52215DE31C4E9516007C8C96 /* CenterChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterChartCell.swift; sourceTree = "<group>"; };
@@ -1292,6 +1294,7 @@
 		526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Airgif_blue.gif; sourceTree = "<group>"; };
 		526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indoorAirWarn_Air.swift; sourceTree = "<group>"; };
 		526DDB351C4AB9AB00363504 /* CupView_Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupView_Footer.swift; sourceTree = "<group>"; };
+		526DDB371C4AB9BB00363504 /* CupView_Footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CupView_Footer.xib; sourceTree = "<group>"; };
 		5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView.swift; sourceTree = "<group>"; };
 		5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setSmallAirViewXib.xib; sourceTree = "<group>"; };
 		52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCUPDeviceViewController.swift; sourceTree = "<group>"; };
@@ -2205,12 +2208,6 @@
 		8DFB393C1C57730300A1641C /* AmountOfDrinkingWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterViewController.h; sourceTree = "<group>"; };
 		8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
-		B7854BDA1D0D004E0025125B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
-		B7854BDE1D0D00590025125B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
-		B7854BE01D0D05620025125B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TDSFooterCellzb.xib; sourceTree = "<group>"; };
-		B7854BE41D0D056B0025125B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSFooterCellzb.xib; sourceTree = "<group>"; };
-		B7854BE61D0D191D0025125B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CupView_Footer.xib; sourceTree = "<group>"; };
-		B7854BEA1D0D192F0025125B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CupView_Footer.xib; sourceTree = "<group>"; };
 		B70CC63E1D0574BD002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/My_MainView.xib; sourceTree = "<group>"; };
 		B70CC6411D0574C0002AE9A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/My_MainView.strings; sourceTree = "<group>"; };
 		B70CC6431D0574C3002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/My_MainView.strings"; sourceTree = "<group>"; };
@@ -3241,13 +3238,13 @@
 				5226BB0B1C480E2C00895AE4 /* TDSDetailHeadView.swift */,
 				5226BB091C47F70800895AE4 /* TDSDetailHeadView.xib */,
 				521667841C48C258002068EF /* TDSDetailCellzb.swift */,
-				B7854BDB1D0D004E0025125B /* TDSDetailCellzb.xib */,
+				521667851C48C258002068EF /* TDSDetailCellzb.xib */,
 				521BF7C51C4A256300AD1EAB /* TDSFooterCellzb.swift */,
-				B7854BE11D0D05620025125B /* TDSFooterCellzb.xib */,
+				521BF7C61C4A256300AD1EAB /* TDSFooterCellzb.xib */,
 				521BF7C91C4A370000AD1EAB /* drinKWaterCell.swift */,
 				521BF7CA1C4A370000AD1EAB /* drinKWaterCell.xib */,
 				526DDB351C4AB9AB00363504 /* CupView_Footer.swift */,
-				B7854BE71D0D191D0025125B /* CupView_Footer.xib */,
+				526DDB371C4AB9BB00363504 /* CupView_Footer.xib */,
 			);
 			name = CupView;
 			sourceTree = "<group>";
@@ -4523,7 +4520,7 @@
 				TargetAttributes = {
 					428141001C0B072C006FEDDE = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = UZZG6NM74T;
+						DevelopmentTeam = BQE6636VJ7;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -4570,7 +4567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB044BB1CC8CD5500B60DAB /* yiban.png in Resources */,
-				B7854BDF1D0D05620025125B /* TDSFooterCellzb.xib in Resources */,
+				521BF7C81C4A256300AD1EAB /* TDSFooterCellzb.xib in Resources */,
 				8DB044651CC8CD2C00B60DAB /* icon_lvxin_service_3.png in Resources */,
 				8DB044D71CC8CDB500B60DAB /* SkinCenterTableViewCell.xib in Resources */,
 				428FC6D11C2ECFF2001D4ACF /* db_ozner_pub.db in Resources */,
@@ -4607,10 +4604,10 @@
 				8DB044431CC8CD1700B60DAB /* jingshuiqi_wifi@3x.png in Resources */,
 				42CB9EC11C353CF3006D95CD /* icon_bubble_left.png in Resources */,
 				8DB0448D1CC8CD4200B60DAB /* icon_peidui_normal_cup@2x.png in Resources */,
-				B7854BE51D0D191D0025125B /* CupView_Footer.xib in Resources */,
+				526DDB381C4AB9BB00363504 /* CupView_Footer.xib in Resources */,
 				8DB043F61CC8CCE200B60DAB /* select_device_4zb.png in Resources */,
 				8DB0443C1CC8CD1700B60DAB /* icon_luyouqi.png in Resources */,
-				B7854BD91D0D004E0025125B /* TDSDetailCellzb.xib in Resources */,
+				521667871C48C258002068EF /* TDSDetailCellzb.xib in Resources */,
 				8DB0444B1CC8CD1700B60DAB /* icon_jiare_normal@3x.png in Resources */,
 				528FFF011C247B1D00D814A1 /* uiDatePickerView.xib in Resources */,
 				B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */,
@@ -5477,33 +5474,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B7854BDB1D0D004E0025125B /* TDSDetailCellzb.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7854BDA1D0D004E0025125B /* Base */,
-				B7854BDE1D0D00590025125B /* en */,
-			);
-			name = TDSDetailCellzb.xib;
-			sourceTree = "<group>";
-		};
-		B7854BE11D0D05620025125B /* TDSFooterCellzb.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7854BE01D0D05620025125B /* Base */,
-				B7854BE41D0D056B0025125B /* en */,
-			);
-			name = TDSFooterCellzb.xib;
-			sourceTree = "<group>";
-		};
-		B7854BE71D0D191D0025125B /* CupView_Footer.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7854BE61D0D191D0025125B /* Base */,
-				B7854BEA1D0D192F0025125B /* en */,
-			);
-			name = CupView_Footer.xib;
-			sourceTree = "<group>";
-		};
 		B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -5732,7 +5702,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
+				PROVISIONING_PROFILE = "5df8cdad-d757-46d0-b805-0fb2f91fe3d3";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5773,7 +5743,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
+				PROVISIONING_PROFILE = "5df8cdad-d757-46d0-b805-0fb2f91fe3d3";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5806,10 +5776,10 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhengwenxiang.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -5841,10 +5811,10 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhengwenxiang.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 			};
 			name = Release;
