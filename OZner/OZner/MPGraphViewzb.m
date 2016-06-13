@@ -83,7 +83,11 @@
             label.textColor = cellType==0 ? [UIColor colorWithRed:128.0/255 green:94.0/255 blue:230.0/255 alpha:1.0]:[UIColor colorWithRed:242.0/255 green:134.0/255 blue:82.0/255 alpha:1.0];
             label.font = [UIFont systemFontOfSize:14*(SCREEN_HEIGHT/667.0)];
             [self addSubview:label];
-            
+            //第三个label
+            content = [NSString stringWithFormat:@"%@(0%%)",self.title3];// @"较差(0%)";
+            size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
+
+            orignX = SCREEN_WIDTH-(11+5+size.width+20);
             circleView = [[UIView alloc]initWithFrame:CGRectMake(orignX, separator.frame.origin.y+separator.frame.size.height+23+15*(SCREEN_HEIGHT/667.0), 11, 11)];
             circleView.layer.masksToBounds = YES;
             circleView.layer.cornerRadius = circleView.frame.size.width/2;
@@ -91,8 +95,7 @@
             circleView.layer.borderWidth = 1;
             [self addSubview:circleView];
             
-            content = [NSString stringWithFormat:@"%@(0%%)",self.title3];// @"较差(0%)";
-            size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
+            
             
             label = [[UILabel alloc]initWithFrame:CGRectMake(circleView.frame.size.width+circleView.frame.origin.x+5, circleView.frame.origin.y-(size.height-circleView.frame.size.height)/2, size.width+20, size.height)];
             label.text = content;

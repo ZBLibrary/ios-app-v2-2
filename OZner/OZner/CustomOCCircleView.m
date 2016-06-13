@@ -74,7 +74,7 @@
         stateLabel.frame=CGRectMake(0,59,50,20);
         stateLabel.text = title;
         stateLabel.textAlignment = NSTextAlignmentCenter;
-        stateLabel.font = [UIFont systemFontOfSize:15];
+        stateLabel.font = [UIFont systemFontOfSize:10];
         stateLabel.textColor = [UIColor colorWithRed:105.0/255 green:163.0/255 blue:237.0/255 alpha:1.0];
         [self addSubview:stateLabel];
         
@@ -196,10 +196,16 @@
     {
         [self.myLayer removeFromSuperlayer];
     }
+    [self setStateValue];
+    NSLog(@"%f",self.originalTDSValue);
+    NSLog(@"%f",self.currentTDSValue);
+    NSLog(@"================");
+    NSLog(@"****************");
     
-    if(self.currentTDSValue/400.0 > 0)
+    if(self.originalTDSValue > 0)
     {
         self.tdsLabel.text = [NSString stringWithFormat:@"%d",(int)self.originalTDSValue];
+        
     }
     else
     {
@@ -220,7 +226,7 @@
         self.tdsDescLabel.hidden=true;
     }
     
-    [self setStateValue];
+    
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetAllowsAntialiasing(context, true);
@@ -239,10 +245,6 @@
     arc.fillColor = [UIColor clearColor].CGColor;
     arc.strokeColor = [UIColor purpleColor].CGColor;
     arc.lineWidth = 10;
-//    if (self.isFirstLoad==1)
-//    {
-//        return;
-//    }
     if (self.isFirstLoad==0&&self.currentTDSValue>1&&self.isFirstLoad!=1) {
         self.isFirstLoad=1;
         NSTimer *timer= [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(animateEndSet:) userInfo:nil repeats:NO];

@@ -78,8 +78,8 @@
 //"较差" = "Bad" ;
 //"一般" = "So-so" ;
 //"健康" = "Healthy" ;
-"偏烫" = "Partial hot" ;
-"偏凉" = "Slants cool" ;
+"偏烫" = "Hot" ;
+"偏凉" = "Cool" ;
 "适中" = "Moderate" ;
 
 "微信请求App提供内容" = "Provide content WeChat request App" ; //微信

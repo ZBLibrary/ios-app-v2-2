@@ -5709,8 +5709,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5732,7 +5732,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
+				PROVISIONING_PROFILE = "79e7e08e-d3f7-40d5-a8bb-a98080c7fee9";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5757,8 +5757,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -5773,7 +5773,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "a5cab96b-7e09-4ee7-84e2-c1a17bab71de";
+				PROVISIONING_PROFILE = "79e7e08e-d3f7-40d5-a8bb-a98080c7fee9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5806,7 +5806,7 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozenr.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoze.jingshuijiaV2;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
@@ -5841,7 +5841,7 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozenr.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoze.jingshuijiaV2;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";

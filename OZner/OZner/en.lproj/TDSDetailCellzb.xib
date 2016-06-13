@@ -180,7 +180,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="ctd-xi-LzQ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                                 <color key="textColor" red="0.18039215689999999" green="0.34509803919999998" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
