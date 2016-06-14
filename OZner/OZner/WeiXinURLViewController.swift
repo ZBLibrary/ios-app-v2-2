@@ -116,7 +116,7 @@ class WeiXinURLViewController: UIViewController,UIWebViewDelegate {
             break
             //空净滤芯
         case weiXinUrl.byAirLX:
-            tmpURL = GoUrlBefore("http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=64&il=1")
+            tmpURL = GoUrlBefore(goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=64&il=1")
             break
             
             //智能水探头

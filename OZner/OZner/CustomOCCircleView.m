@@ -195,8 +195,8 @@
     {
         [self.myLayer removeFromSuperlayer];
     }
-    
-    if(self.currentTDSValue/400.0 > 0)
+    [self setStateValue];
+    if(self.originalTDSValue > 0)
     {
         self.tdsLabel.text = [NSString stringWithFormat:@"%d",(int)self.originalTDSValue];
     }
@@ -218,7 +218,7 @@
         self.tdsDescLabel.hidden=true;
     }
     
-    [self setStateValue];
+    
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetAllowsAntialiasing(context, true);

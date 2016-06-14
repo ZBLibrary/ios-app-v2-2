@@ -99,10 +99,21 @@ class indoorAirViewController: UIViewController {
     func bugLvXin()
     {
         let weiXinUrl=weiXinUrlNamezb()
-        let tmpURLController=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
-        
-        tmpURLController.title=weiXinUrl.byAirLX
-        self.presentViewController(tmpURLController, animated: true, completion: nil)
+        if get_CurrSelectEquip()==4
+        {
+            
+            let tmpURLController=WeiXinURLViewController(goUrl: "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=65")
+            
+            tmpURLController.title=weiXinUrl.byAirLX
+            self.presentViewController(tmpURLController, animated: true, completion: nil)
+        }
+        else{
+            
+            let tmpURLController=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
+            
+            tmpURLController.title=weiXinUrl.byAirLX
+            self.presentViewController(tmpURLController, animated: true, completion: nil)
+        }
     }
     func Back()
     {
