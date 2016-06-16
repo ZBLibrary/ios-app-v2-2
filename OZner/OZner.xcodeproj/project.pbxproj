@@ -369,6 +369,8 @@
 		8D756AC71C8E91D50022CF63 /* SetSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */; };
 		8D756ACA1C8EC3950022CF63 /* SetRemindTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */; };
 		8D756ACB1C8EC3950022CF63 /* SetRemindTimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */; };
+		8D7CA8F01D115089002C1196 /* icon_buble_add_device_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D7CA8EF1D115089002C1196 /* icon_buble_add_device_en.png */; };
+		8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D7CA8F11D1150C0002C1196 /* icon_buble_add_device.png */; };
 		8D7FEC771C746DE200DD01AF /* WaterPurifierHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell.swift */; };
 		8D7FEC781C746DE200DD01AF /* WaterPurifierHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell.xib */; };
 		8D88804F1C8DCC4D007391E1 /* setWaterReplenishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */; };
@@ -615,7 +617,6 @@
 		8DA406291C8446FD00AD5E5E /* ScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA406271C8446FD00AD5E5E /* ScanResultViewController.m */; };
 		8DA4062A1C8446FD00AD5E5E /* ScanResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA406281C8446FD00AD5E5E /* ScanResultViewController.xib */; };
 		8DB043A91CC8CC6B00B60DAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043A81CC8CC6B00B60DAB /* Assets.xcassets */; };
-		8DB043E31CC8CCE200B60DAB /* icon_buble_add_device@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043AA1CC8CCE200B60DAB /* icon_buble_add_device@2x.png */; };
 		8DB043E41CC8CCE200B60DAB /* icon_add_device_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043AB1CC8CCE200B60DAB /* icon_add_device_btn@2x.png */; };
 		8DB043E51CC8CCE200B60DAB /* yin_shui_liang_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043AC1CC8CCE200B60DAB /* yin_shui_liang_0.png */; };
 		8DB043E61CC8CCE200B60DAB /* icon_state_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043AD1CC8CCE200B60DAB /* icon_state_circle.png */; };
@@ -1464,6 +1465,8 @@
 		8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetSexViewController.xib; sourceTree = "<group>"; };
 		8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRemindTimeController.swift; sourceTree = "<group>"; };
 		8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetRemindTimeController.xib; sourceTree = "<group>"; };
+		8D7CA8EF1D115089002C1196 /* icon_buble_add_device_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_buble_add_device_en.png; sourceTree = "<group>"; };
+		8D7CA8F11D1150C0002C1196 /* icon_buble_add_device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_buble_add_device.png; sourceTree = "<group>"; };
 		8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurifierHeadCell.swift; sourceTree = "<group>"; };
 		8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurifierHeadCell.xib; sourceTree = "<group>"; };
 		8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setWaterReplenishController.swift; sourceTree = "<group>"; };
@@ -1967,7 +1970,6 @@
 		8DA406271C8446FD00AD5E5E /* ScanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanResultViewController.m; sourceTree = "<group>"; };
 		8DA406281C8446FD00AD5E5E /* ScanResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanResultViewController.xib; sourceTree = "<group>"; };
 		8DB043A81CC8CC6B00B60DAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8DB043AA1CC8CCE200B60DAB /* icon_buble_add_device@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_buble_add_device@2x.png"; sourceTree = "<group>"; };
 		8DB043AB1CC8CCE200B60DAB /* icon_add_device_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_add_device_btn@2x.png"; sourceTree = "<group>"; };
 		8DB043AC1CC8CCE200B60DAB /* yin_shui_liang_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yin_shui_liang_0.png; sourceTree = "<group>"; };
 		8DB043AD1CC8CCE200B60DAB /* icon_state_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_state_circle.png; sourceTree = "<group>"; };
@@ -2663,7 +2665,8 @@
 		4248B2BE1C0D834A00181CA0 /* MyDevice */ = {
 			isa = PBXGroup;
 			children = (
-				8DB043AA1CC8CCE200B60DAB /* icon_buble_add_device@2x.png */,
+				8D7CA8F11D1150C0002C1196 /* icon_buble_add_device.png */,
+				8D7CA8EF1D115089002C1196 /* icon_buble_add_device_en.png */,
 				8DB043AB1CC8CCE200B60DAB /* icon_add_device_btn@2x.png */,
 				8DB043AC1CC8CCE200B60DAB /* yin_shui_liang_0.png */,
 				8DB043AD1CC8CCE200B60DAB /* icon_state_circle.png */,
@@ -4594,6 +4597,7 @@
 				8DB044CF1CC8CDB500B60DAB /* WaterReplenishMainView.xib in Resources */,
 				8D4354FA1C75A410007F83DA /* WaterPurFooterCell.xib in Resources */,
 				528FFF071C25779800D814A1 /* setShuiJi.plist in Resources */,
+				8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */,
 				428141491C0B15F0006FEDDE /* ic_menu_black_24dp.png in Resources */,
 				8DB043ED1CC8CCE200B60DAB /* yin_shui_liang_3.png in Resources */,
 				8DB043F81CC8CCE200B60DAB /* select_device_4.png in Resources */,
@@ -4653,7 +4657,6 @@
 				52F1868B1C22847C00B74A05 /* SetCup.plist in Resources */,
 				8DB044B21CC8CD5500B60DAB /* device_cup_normal_state.png in Resources */,
 				528FFF051C25778000D814A1 /* setTanTou.plist in Resources */,
-				8DB043E31CC8CCE200B60DAB /* icon_buble_add_device@2x.png in Resources */,
 				8DB044B51CC8CD5500B60DAB /* device_jin_shui_qi_select.png in Resources */,
 				8DB043E81CC8CCE200B60DAB /* wen_du_1.png in Resources */,
 				8DB044AA1CC8CD5500B60DAB /* icon_smallair_peidui_waitting.png in Resources */,
@@ -4796,6 +4799,7 @@
 				E00265001D07F97900E31C79 /* JingShuiWifiViewController.xib in Resources */,
 				8DB0440C1CC8CCE200B60DAB /* device_smil@2x.png in Resources */,
 				8DB0444C1CC8CD1700B60DAB /* icon_zhileng@3x.png in Resources */,
+				8D7CA8F01D115089002C1196 /* icon_buble_add_device_en.png in Resources */,
 				8DB044131CC8CCE200B60DAB /* 1_08.png in Resources */,
 				8DB044461CC8CD1700B60DAB /* icon_zhileng@2x.png in Resources */,
 				8DB0445F1CC8CD2C00B60DAB /* icon_time_now.png in Resources */,
@@ -5709,8 +5713,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5732,7 +5736,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "79e7e08e-d3f7-40d5-a8bb-a98080c7fee9";
+				PROVISIONING_PROFILE = "13231069-9d47-4b46-ad00-7d1a5dc48d44";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5757,8 +5761,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -5773,7 +5777,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "79e7e08e-d3f7-40d5-a8bb-a98080c7fee9";
+				PROVISIONING_PROFILE = "13231069-9d47-4b46-ad00-7d1a5dc48d44";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5786,8 +5790,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5809,7 +5813,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.haoze.jingshuijiaV2;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "13231069-9d47-4b46-ad00-7d1a5dc48d44";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -5821,8 +5825,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5844,7 +5848,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.haoze.jingshuijiaV2;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "13231069-9d47-4b46-ad00-7d1a5dc48d44";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 			};
 			name = Release;

@@ -69,7 +69,8 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         self.myView.addSubview(logoImgView)
         
         let bubbleImgView:UIImageView = UIImageView(frame: CGRectMake(93*(width/375.0), logoImgView.frame.origin.y+logoImgView.frame.size.height+23*(height/667.0)-16, 113*(width/375.0), 110*(height/667.0)))
-        bubbleImgView.image = UIImage(named: "icon_buble_add_device.png")
+        bubbleImgView.image = UIImage(named: loadLanguage("icon_buble_add_device.png"))
+        
         self.myBubbleImgView = bubbleImgView
         self.myView.addSubview(bubbleImgView)
         print(width)

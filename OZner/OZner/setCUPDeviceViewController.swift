@@ -221,13 +221,13 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
     }
     func SetCupTimeSpace()
     {
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        //CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
         grayview.hidden=false
     }
     //PickerOK
     func PickerCancel()
     {
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        //CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         grayview.hidden=true
     }
     //PickerOK
@@ -235,7 +235,7 @@ class setCUPDeviceViewController: UIViewController,UIPickerViewDelegate,UIAlertV
     var currentPicker=0
     func PickerOK()
     {
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        //CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         grayview.hidden=true
         if currentPicker != 0
         {

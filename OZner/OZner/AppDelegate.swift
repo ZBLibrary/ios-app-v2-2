@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         
         //BPush.registerChannel(launchOptions, apiKey: "7nGBGzSxkIgjpEHHusrgdobS", pushMode: BPushMode.Production, withFirstAction: nil, withSecondAction: nil, withCategory: nil, isDebug: true)
         //Bugly记录第三方库
-        CrashReporter.sharedInstance().installWithAppId("900019591")
+        CrashReporter.sharedInstance().installWithAppId("900034009")
         //app图标
         UIApplication.sharedApplication().applicationIconBadgeNumber=0
         //设置启动页面时间
