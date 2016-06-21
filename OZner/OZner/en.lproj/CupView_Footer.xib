@@ -53,7 +53,7 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ex-mK-Rpe">
                                     <rect key="frame" x="40" y="26" width="110" height="35"/>
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                     <color key="textColor" red="0.2627450980392157" green="0.36470588235294116" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -130,7 +130,7 @@
                                         <constraint firstAttribute="height" constant="25" id="6ZT-2s-7T6"/>
                                         <constraint firstAttribute="width" constant="110" id="OZz-1K-lew"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                     <color key="textColor" red="0.26274509800000001" green="0.36470588240000001" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>

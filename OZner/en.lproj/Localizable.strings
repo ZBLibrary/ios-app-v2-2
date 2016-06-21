@@ -65,6 +65,9 @@
 "设备已连接" = "Device connected" ;
 "设备连接中" = "Device being connected" ;
 "设备没有连接上" = "Device connection fails" ;
+"连接中" = "Connecting";
+"已连接" = "Connected";
+"已断开" = "Disconnected";
 
 "优" = "Excellent" ; // 空气状况
 "良" = "Good" ;
@@ -105,13 +108,13 @@
 "击败了" = "Beat the" ;
 "的用户" = "of users" ;
 
-"周一" = "Monday" ; // 星期
-"周二" = "Tuesday" ;
-"周三" = "Wednesday" ;
-"周四" = "Thursday" ;
-"周五" = "Friday" ;
-"周六" = "Saturday" ;
-"周日" = "Sunday" ;
+"周一" = "Mon" ; // 星期
+"周二" = "Tue" ;
+"周三" = "Wed" ;
+"周四" = "Thu" ;
+"周五" = "Fri" ;
+"周六" = "Sat" ;
+"周日" = "Sun" ;
 
 "排名" = "Rank" ;
 "当前饮水量为" = "Current water intake" ;
@@ -358,9 +361,10 @@
 "今日已完成" = "Fully Met";
 "水温" = "Water temperature";
 "好友排名" = "Ranking";
-"当前水温偏凉" = "Water temperature cool side";
-"当前水温适宜饮用" = "Water temperature suitable for drinking";
-"当前水温暂无" = "No water temperature";
-"当前水温偏烫" = "Partial hot water temperature";
+"当前水温偏凉" = "Cool side";
+"当前水温适宜饮用" = "Suitable";
+"当前水温暂无" = "None";
+"当前水温偏烫" = "Partial hot";
 
-
+"选择智能设备" = "Select Smart Device";
+"添加新设备" = "Add New Device";

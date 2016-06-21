@@ -22,15 +22,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4c-h2-9Pt">
                                 <rect key="frame" x="0.0" y="10" width="375" height="114"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="改善您的饮水健康" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSd-gp-hUc">
-                                        <rect key="frame" x="0.0" y="19" width="375" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="3is-Hf-q3Q"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" red="0.23529411764705882" green="0.23921568627450981" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adT-HG-L5f">
                                         <rect key="frame" x="0.0" y="55" width="375" height="40"/>
                                         <subviews>
@@ -49,8 +40,11 @@
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                         <color key="textColor" red="0.12156862745098039" green="0.43529411764705883" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="device_konwzb" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-ss-afN">
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="device_konwzb" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-ss-afN">
                                                         <rect key="frame" x="10" y="10" width="15" height="20"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p75-79-cWZ">
@@ -143,17 +137,26 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiu-2w-Q48">
-                                        <rect key="frame" x="0.0" y="95" width="375" height="19"/>
+                                        <rect key="frame" x="0.0" y="95" width="375" height="18.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhu-bH-k6T">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="19"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="18.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHi-jV-CoX">
-                                        <rect key="frame" x="0.0" y="36" width="375" height="19"/>
+                                        <rect key="frame" x="0.0" y="36.5" width="375" height="19"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="改善您的饮水健康" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSd-gp-hUc">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="3is-Hf-q3Q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" red="0.23529411764705882" green="0.23921568627450981" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
