@@ -90,8 +90,9 @@
     
     [LogInOut loginInOutInstance].logInoutDelegate = self;
 
-    //[self loadFirstView];
-    [self isFirstOpenApp];
+    [self loadFirstView];
+    
+    //[self isFirstOpenApp];
     
 }
 
@@ -142,30 +143,30 @@
 
 - (void)loadFirstView
 {
-    [[LoginManager loginInstance]decodeParamObject];
-    if([[LoginManager loginInstance]loginInfo].sessionToken && [[[LoginManager loginInstance]loginInfo].sessionToken length] > 0)
-    {
-        NSLog(@"%@",[[LoginManager loginInstance]loginInfo].sessionToken);
+//    [[LoginManager loginInstance]decodeParamObject];
+//    if([[LoginManager loginInstance]loginInfo].sessionToken && [[[LoginManager loginInstance]loginInfo].sessionToken length] > 0)
+//    {
+    
         mHomeController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [self.view addSubview:mHomeController.view];
-        [[OznerManager instance]setOwner:[[LoginManager loginInstance]loginInfo].loginName];
+        [[OznerManager instance]setOwner:@"CupLibrary"];
         [[NetworkManager sharedInstance] startWithAid:nil sesToken:[[LoginManager loginInstance]loginInfo].sessionToken httpAdress:HTTP_ADDRESS];
         //创建数据库，如果存在就直接打开，如果不存在就关闭
         [[LoginManager loginInstance]decodeParamObject];
         [[UserDatabase sharedUserDatabase]createDBFileInDocument:[kDatabase stringByAppendingString:[NSString stringWithFormat:@"%@.db",[[[LoginManager loginInstance]loginInfo]loginName]]] srcDBFile:kDatabase_uid versionId:0];
         [[UserDatabase sharedUserDatabase] startDBEngineWithDB:[kDatabase stringByAppendingString:[NSString stringWithFormat:@"%@.db",[[[LoginManager loginInstance]loginInfo]loginName]]]];
         
-    }
-    else
-    {
-        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
-        mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        [mLoginNavController.navigationBar loadNavigationBar];
-            
-        [self.view addSubview:mLoginNavController.view];
-    }
+//    }
+//    else
+//    {
+//        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
+//        mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//        [mLoginNavController.navigationBar loadNavigationBar];
+//            
+//        [self.view addSubview:mLoginNavController.view];
+//    }
 }
 
 #pragma mark-HomeControllerDelegate

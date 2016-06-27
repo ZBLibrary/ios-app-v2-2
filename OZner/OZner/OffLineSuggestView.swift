@@ -20,11 +20,11 @@ class OffLineSuggestView: UIView {
         didSet{
             if isAir==false {
                 thirdItem_Height.constant=0
-                fourthLabel.text="3.如仍无法连接设备，请在设置中删除此设备，重新配对"
+                fourthLabel.text=loadLanguage("3.如仍无法连接设备，请在设置中删除此设备，重新配对")
             }
             else{
                 thirdItem_Height.constant=44
-                fourthLabel.text="4.如仍无法连接设备，请在设置中删除此设备，重新配对"
+                fourthLabel.text=loadLanguage("4.如仍无法连接设备，请在设置中删除此设备，重新配对")
             }
         }
     }

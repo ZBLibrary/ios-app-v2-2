@@ -22,9 +22,9 @@
 //type:0 日,1 周,2 月
 - (void)drawLineView:(int)cellType dateType:(int)dateType dataArrzb:(NSArray*)dataArrzb Recordzb:(CupRecord*)Recordzb {
     self.CellType=cellType;
-    self.title1=cellType==0 ? @"健康":@"偏凉";
-    self.title2=cellType==0 ? @"一般":@"适中";
-    self.title3=cellType==0 ? @"较差":@"偏烫";
+    self.title1=cellType==0 ? loadLanguage(@"健康"):loadLanguage(@"偏凉");
+    self.title2=cellType==0 ? loadLanguage(@"一般"):loadLanguage(@"适中");
+    self.title3=cellType==0 ? loadLanguage(@"较差"):loadLanguage(@"偏烫");
     switch (dateType) {
         case 0:
             self.dataArr=dataArrzb;

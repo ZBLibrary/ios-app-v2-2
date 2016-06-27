@@ -70,9 +70,23 @@ class indoorAirXib: UIView {
                 tmparray = endDateStr.componentsSeparatedByString("-") as NSArray
                 endYear.text=tmparray.objectAtIndex(0) as? String
                 endDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
+                //当前日期
+                let nowStr=dateFormatter.stringFromDate(NSDate())
+                let tmpNowArray = nowStr.componentsSeparatedByString("-") as NSArray
+                curYear.text=tmpNowArray.objectAtIndex(0) as? String
+                curDate.text=(tmpNowArray.objectAtIndex(1) as? String)!+"-"+(tmpNowArray.objectAtIndex(2) as! String)
                 setNeedsLayout()
                 layoutIfNeeded()
                 
+            }
+            else
+            {
+                starYear.text=""
+                starDate.text=""
+                endYear.text=""
+                endDate.text=""
+                curYear.text=""
+                curDate.text=""
             }
         }
     }
@@ -80,12 +94,13 @@ class indoorAirXib: UIView {
 
     var state=0 {
         didSet{
-            lvxinState.text="\(state)"
-            print(state)
-            Image0Width.constant=(Screen_Width-80)*CGFloat(100-state)/100
-            downImgLeft.constant=36+(Screen_Width-80)*CGFloat(100-state)/100
             
-            curDateViewtoLeft.constant=(Screen_Width-80)*CGFloat(100-state)/100+20
+            lvxinState.text="\(min(state, 100))"
+            print(state)
+            Image0Width.constant=(Screen_Width-80)*CGFloat(100-min(state, 100))/100
+            downImgLeft.constant=36+(Screen_Width-80)*CGFloat(100-min(state, 100))/100
+            
+            curDateViewtoLeft.constant=(Screen_Width-80)*CGFloat(100-min(state, 100))/100+20
             setNeedsLayout()
             layoutIfNeeded()
         }
@@ -101,13 +116,7 @@ class indoorAirXib: UIView {
         airpuifiler.text = loadLanguage("空气净化器当前总净化量");
         filter.text = loadLanguage("滤芯还剩");
         Tips.text = loadLanguage("温馨提示:及时更换滤芯,享纯净空气");
-        //当前日期
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat="yyyy-MM-dd"
-        let nowStr=dateFormatter.stringFromDate(NSDate())
-        let tmparray = nowStr.componentsSeparatedByString("-") as NSArray
-        curYear.text=tmparray.objectAtIndex(0) as? String
-        curDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
+        
         
     }
    

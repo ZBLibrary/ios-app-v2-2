@@ -28,37 +28,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         self.window?.makeKeyAndVisible()
         
         //注册微信
-        WXApi.registerApp("wx45a8cc642a2295b5", withDescription: "haoze")
+        //WXApi.registerApp("wx45a8cc642a2295b5", withDescription: "haoze")
         //百度推送
         // iOS8 下需要使用新的 API
-        let tmpStr=UIDevice.currentDevice().systemVersion
+        //let tmpStr=UIDevice.currentDevice().systemVersion
         
-        let fullNameArr = (tmpStr as NSString).substringToIndex(1)
+        //let fullNameArr = (tmpStr as NSString).substringToIndex(1)
         
         //print(fullNameArr)
-        if (Float(fullNameArr) >= 8.0){
-            //3.创建UIUserNotificationSettings，并设置消息的显示类类型
-            var myTypes=UIUserNotificationType()
-            myTypes.insert(UIUserNotificationType.Sound)
-            myTypes.insert(UIUserNotificationType.Badge)
-            myTypes.insert(UIUserNotificationType.Alert)
-            let userSetting = UIUserNotificationSettings(forTypes:myTypes, categories:nil)
-            
-            UIApplication.sharedApplication().registerUserNotificationSettings(userSetting)
-        }
-        else {
-            
-            var myTypes:UIRemoteNotificationType = UIRemoteNotificationType()
-            myTypes.insert(UIRemoteNotificationType.Alert)
-            myTypes.insert(UIRemoteNotificationType.Sound)
-            
-            UIApplication.sharedApplication().registerForRemoteNotificationTypes(myTypes)
-        }
+//        if (Float(fullNameArr) >= 8.0){
+//            //3.创建UIUserNotificationSettings，并设置消息的显示类类型
+//            var myTypes=UIUserNotificationType()
+//            myTypes.insert(UIUserNotificationType.Sound)
+//            myTypes.insert(UIUserNotificationType.Badge)
+//            myTypes.insert(UIUserNotificationType.Alert)
+//            let userSetting = UIUserNotificationSettings(forTypes:myTypes, categories:nil)
+//            
+//            UIApplication.sharedApplication().registerUserNotificationSettings(userSetting)
+//        }
+//        else {
+//            
+//            var myTypes:UIRemoteNotificationType = UIRemoteNotificationType()
+//            myTypes.insert(UIRemoteNotificationType.Alert)
+//            myTypes.insert(UIRemoteNotificationType.Sound)
+//            
+//            UIApplication.sharedApplication().registerForRemoteNotificationTypes(myTypes)
+//        }
 
         
-        BPush.registerChannel(launchOptions, apiKey: "7nGBGzSxkIgjpEHHusrgdobS", pushMode: BPushMode.Production, withFirstAction: nil, withSecondAction: nil, withCategory: nil, isDebug: true)
-        //Bug记录第三方库
-        CrashReporter.sharedInstance().installWithAppId("900019591")
+        //BPush.registerChannel(launchOptions, apiKey: "7nGBGzSxkIgjpEHHusrgdobS", pushMode: BPushMode.Production, withFirstAction: nil, withSecondAction: nil, withCategory: nil, isDebug: true)
+        //Bugly记录第三方库
+        CrashReporter.sharedInstance().installWithAppId("900034009")
         //app图标
         UIApplication.sharedApplication().applicationIconBadgeNumber=0
         //设置启动页面时间
@@ -92,8 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         if(req.isKindOfClass(GetMessageFromWXReq.classForCoder()))
         {
             // 微信请求App提供内容， 需要app提供内容后使用sendRsp返回
-            let strTitle = "微信请求App提供内容"
-            let strMsg = "微信请求App提供内容，App要调用sendResp:GetMessageFromWXResp返回给微信"
+            let strTitle = loadLanguage("微信请求App提供内容")
+            let strMsg = loadLanguage("微信请求App提供内容，App要调用sendResp:GetMessageFromWXResp返回给微信")
             
             let alert = UIAlertView(title: strTitle, message: strMsg, delegate: self, cancelButtonTitle: "ok")
             
@@ -108,8 +108,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
             //显示微信传过来的内容
             let obj = msg.mediaObject as! WXAppExtendObject
             
-            let strTitle = "微信请求App显示内容"
-            let strMsg = "标题：\(msg.title) \n内容：\(msg.title) \n附带信息：\(msg.description)\n缩略图:\(msg.thumbData.length) bytes\n\n\(obj)"
+            let strTitle = loadLanguage("微信请求App显示内容")
+            let strMsg = "\(loadLanguage("标题："))\(msg.title) \n \(loadLanguage("内容: "))：\(msg.title) \n \(loadLanguage("附带信息："))\(msg.description)\n \(loadLanguage("缩略图:"))\(msg.thumbData.length) bytes\n\n\(obj)"
             
             let alert = UIAlertView(title: strTitle, message: strMsg, delegate: self, cancelButtonTitle: "ok")
             
@@ -119,8 +119,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         else if(req.isKindOfClass(LaunchFromWXReq.classForCoder()))
         {
             //从微信启动App
-            let strTitle = "从微信启动"
-            let strMsg = "这是从微信启动的消息"
+            let strTitle = loadLanguage("从微信启动")
+            let strMsg = loadLanguage("这是从微信启动的消息")
             
             let alert = UIAlertView(title: strTitle, message: strMsg, delegate: self, cancelButtonTitle: "ok")
             
@@ -159,106 +159,106 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         // 打印到日志 textView 中
         print(userInfo)
         //var userinfoString:String=""
-        var action_baidu=""
-        var data_baidu=""
-        for (k,v) in userInfo
-        {
-            if k == "action"
-            {
-                action_baidu=v as! String
-            }
-            
-            if k == "data"
-            {
-                data_baidu=v.isKindOfClass(NSNull)==true ? "":(v as! String)
-            }
-        }
-        UIApplication.sharedApplication().applicationIconBadgeNumber=0
-        // 应用在前台 或者后台开启状态下
-        if application.applicationState == UIApplicationState.Background || application.applicationState == UIApplicationState.Active
-        {
-            print("acitve or background")
-            let tmpIndex=CustomTabBarView.sharedCustomTabBar().currentSelectEdIndex_ZB
-            if action_baidu=="chat"&&(tmpIndex != 2)
-            {
-                let badgeLabel=(CustomTabBarView.sharedCustomTabBar().badgeMuArr as NSMutableArray).objectAtIndex(2) as! UILabel
-                let tmpstr=Int(badgeLabel.text! as String)
-                badgeLabel.text="\(tmpstr!+1)"
-                badgeLabel.hidden=false
-            }
-            
-        }
-        else//杀死状态下，直接跳转到跳转页面。
-        {
-            //跳转到聊天界面
-            if action_baidu=="chat"
-            {
-                let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
-                let button=array.objectAtIndex(2) as! UIButton
-                CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
-            }
-        }
-        if action_baidu=="chat"
-        {
-             saveChatMessage(data_baidu)
-             NSNotificationCenter.defaultCenter().postNotificationName("receiveMessageFromKF", object: nil, userInfo: userInfo)
-        }
-        if action_baidu=="NewFriend"
-        {
-            //别人接受我的请求－－－－通知
-            NSUserDefaults.standardUserDefaults().setValue(1, forKey: "OtherAcceptMeNews")
-            NSNotificationCenter.defaultCenter().postNotificationName("OtherAcceptMeNews", object: nil, userInfo: userInfo)
-        }
-        if action_baidu=="NewFriendVF"
-        {
-            //别人请求添加我为好友 －－－通知
-
-            let newFriendCount=(NSUserDefaults.standardUserDefaults().objectForKey("OtherRequestNews")==nil ? 0:NSUserDefaults.standardUserDefaults().objectForKey("OtherRequestNews")) as! Int
-            NSUserDefaults.standardUserDefaults().setValue(newFriendCount+1, forKey: "OtherRequestNews")
-            NSNotificationCenter.defaultCenter().postNotificationName("OtherRequestNews", object: nil, userInfo: userInfo)
-        }
-        //个人中心新留言通知
-        if action_baidu=="NewMessage"
-        {
-            //let liuyanCount=(NSUserDefaults.standardUserDefaults().objectForKey("NewMessageCount")==nil ? 0:NSUserDefaults.standardUserDefaults().objectForKey("NewMessageCount")) as! Int
-            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "NewMessageCount")
-            NSNotificationCenter.defaultCenter().postNotificationName("MyCenterNewMessageNotice", object: nil, userInfo: userInfo)
-        }
-        //个人中心有新排名通知
-        if action_baidu=="NewRank"
-        {
-            print(userInfo)
-            print(userInfo)
-        }
-        //有登录通知
-        if action_baidu=="LoginNotify"
-        {
-            print(LoginManager.loginInstance().loginInfo)
-            print(data_baidu)
-            if LoginManager.loginInstance().loginInfo.userID==nil
-            {
-                return
-            }
-            if data_baidu.containsString(LoginManager.loginInstance().loginInfo.userID)
-            {
-                if data_baidu.containsString(LoginManager.loginInstance().loginInfo.sessionToken)
-                {
-                    
-                }
-                else
-                {
-                    //账号被人登录了
-                    let alert=UIAlertView(title: "", message: "账号在另一台设备上登录了，请重新登录", delegate: self, cancelButtonTitle: "确定")
-                    alert.show()
-                    LogInOut.loginInOutInstance().loginOutUser()
-                }
-                
-            }
-            
-        }
+//        var action_baidu=""
+//        var data_baidu=""
+//        for (k,v) in userInfo
+//        {
+//            if k == "action"
+//            {
+//                action_baidu=v as! String
+//            }
+//            
+//            if k == "data"
+//            {
+//                data_baidu=v.isKindOfClass(NSNull)==true ? "":(v as! String)
+//            }
+//        }
+//        UIApplication.sharedApplication().applicationIconBadgeNumber=0
+//        // 应用在前台 或者后台开启状态下
+//        if application.applicationState == UIApplicationState.Background || application.applicationState == UIApplicationState.Active
+//        {
+//            print("acitve or background")
+//            let tmpIndex=CustomTabBarView.sharedCustomTabBar().currentSelectEdIndex_ZB
+//            if action_baidu=="chat"&&(tmpIndex != 2)
+//            {
+//                let badgeLabel=(CustomTabBarView.sharedCustomTabBar().badgeMuArr as NSMutableArray).objectAtIndex(2) as! UILabel
+//                let tmpstr=Int(badgeLabel.text! as String)
+//                badgeLabel.text="\(tmpstr!+1)"
+//                badgeLabel.hidden=false
+//            }
+//            
+//        }
+//        else//杀死状态下，直接跳转到跳转页面。
+//        {
+//            //跳转到聊天界面
+//            if action_baidu=="chat"
+//            {
+//                let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
+//                let button=array.objectAtIndex(2) as! UIButton
+//                CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+//            }
+//        }
+//        if action_baidu=="chat"
+//        {
+//             saveChatMessage(data_baidu)
+//             NSNotificationCenter.defaultCenter().postNotificationName("receiveMessageFromKF", object: nil, userInfo: userInfo)
+//        }
+//        if action_baidu=="NewFriend"
+//        {
+//            //别人接受我的请求－－－－通知
+//            NSUserDefaults.standardUserDefaults().setValue(1, forKey: "OtherAcceptMeNews")
+//            NSNotificationCenter.defaultCenter().postNotificationName("OtherAcceptMeNews", object: nil, userInfo: userInfo)
+//        }
+//        if action_baidu=="NewFriendVF"
+//        {
+//            //别人请求添加我为好友 －－－通知
+//
+//            let newFriendCount=(NSUserDefaults.standardUserDefaults().objectForKey("OtherRequestNews")==nil ? 0:NSUserDefaults.standardUserDefaults().objectForKey("OtherRequestNews")) as! Int
+//            NSUserDefaults.standardUserDefaults().setValue(newFriendCount+1, forKey: "OtherRequestNews")
+//            NSNotificationCenter.defaultCenter().postNotificationName("OtherRequestNews", object: nil, userInfo: userInfo)
+//        }
+//        //个人中心新留言通知
+//        if action_baidu=="NewMessage"
+//        {
+//            //let liuyanCount=(NSUserDefaults.standardUserDefaults().objectForKey("NewMessageCount")==nil ? 0:NSUserDefaults.standardUserDefaults().objectForKey("NewMessageCount")) as! Int
+//            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "NewMessageCount")
+//            NSNotificationCenter.defaultCenter().postNotificationName("MyCenterNewMessageNotice", object: nil, userInfo: userInfo)
+//        }
+//        //个人中心有新排名通知
+//        if action_baidu=="NewRank"
+//        {
+//            print(userInfo)
+//            print(userInfo)
+//        }
+//        //有登录通知
+//        if action_baidu=="LoginNotify"
+//        {
+//            print(LoginManager.loginInstance().loginInfo)
+//            print(data_baidu)
+//            if LoginManager.loginInstance().loginInfo.userID==nil
+//            {
+//                return
+//            }
+//            if data_baidu.containsString(LoginManager.loginInstance().loginInfo.userID)
+//            {
+//                if data_baidu.containsString(LoginManager.loginInstance().loginInfo.sessionToken)
+//                {
+//                    
+//                }
+//                else
+//                {
+//                    //账号被人登录了
+//                    let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("账号在另一台设备上登录了，请重新登录"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
+//                    alert.show()
+//                    LogInOut.loginInOutInstance().loginOutUser()
+//                }
+//                
+//            }
+//            
+//        }
     
     }
-    
+        
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

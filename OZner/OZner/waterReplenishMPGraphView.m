@@ -250,7 +250,7 @@
     {
         case 0:
         {
-            str = @"周一";
+            str = loadLanguage(@"周一");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }

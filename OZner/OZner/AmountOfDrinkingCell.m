@@ -26,12 +26,12 @@
     {
         UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(0, 21, SCREEN_WIDTH, 17)];
         label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
-        label.text = @"饮水量分布指数";
+        label.text = loadLanguage(@"饮水量分布指数");
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:17];
         [self addSubview:label];
         
-        NSArray *arr = [[NSArray alloc]initWithObjects:@"日",@"周",@"月", nil];
+        NSArray *arr = [[NSArray alloc]initWithObjects:loadLanguage(@"日"), loadLanguage(@"周"),loadLanguage(@"月"), nil];
         UISegmentedControl* controller = [[UISegmentedControl alloc]initWithItems:arr];
         controller.frame = CGRectMake(20*(SCREEN_WIDTH/375.0), 48, SCREEN_WIDTH-20*(SCREEN_WIDTH/375.0)*2, 25);
         controller.selectedSegmentIndex = 0;

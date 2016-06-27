@@ -48,7 +48,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         self.myView.addSubview(bgImgView)
         
         let stateLabel:UILabel = UILabel(frame: CGRectMake(0,69*(height/667.0),self.myView.frame.size.width,24))
-        stateLabel.text = "浩泽智能化生活服务"
+        stateLabel.text = loadLanguage("浩泽智能化生活服务")
         stateLabel.textAlignment = NSTextAlignment.Center
         stateLabel.font = UIFont.systemFontOfSize(24)
         stateLabel.textColor = UIColor(red: 96.0, green: 121.0, blue: 149.0, alpha: 1.0)
@@ -56,7 +56,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         self.myView .addSubview(stateLabel)
         
         let secondLabel:UILabel = UILabel(frame: CGRectMake(0,stateLabel.frame.origin.y+stateLabel.frame.size.height+10*(height/667.0),self.myView.frame.size.width,11))
-        secondLabel.text = "立即添加设备，体验浩泽智能化生活服务"
+        secondLabel.text = loadLanguage("立即添加设备，体验浩泽智能化生活服务")
         secondLabel.textAlignment = NSTextAlignment.Center
         secondLabel.font = UIFont.systemFontOfSize(11)
         secondLabel.textColor = UIColor(red: 96.0, green: 121.0, blue: 149.0, alpha: 1.0)
@@ -69,7 +69,8 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         self.myView.addSubview(logoImgView)
         
         let bubbleImgView:UIImageView = UIImageView(frame: CGRectMake(93*(width/375.0), logoImgView.frame.origin.y+logoImgView.frame.size.height+23*(height/667.0)-16, 113*(width/375.0), 110*(height/667.0)))
-        bubbleImgView.image = UIImage(named: "icon_buble_add_device.png")
+        bubbleImgView.image = UIImage(named: loadLanguage("icon_buble_add_device.png"))
+        
         self.myBubbleImgView = bubbleImgView
         self.myView.addSubview(bubbleImgView)
         print(width)
@@ -78,8 +79,8 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         addBtn.addTarget(self, action:#selector(addDeviceAction), forControlEvents:UIControlEvents.TouchUpInside)
         self.myView.addSubview(addBtn)
         let tmpframezb=addBtn.frame
-        addLabel=UILabel(frame: CGRect(x: tmpframezb.origin.x+tmpframezb.size.width+5, y: tmpframezb.origin.y, width: 100, height: tmpframezb.size.height))
-        addLabel!.text="添加新设备"
+        addLabel=UILabel(frame: CGRect(x: tmpframezb.origin.x+tmpframezb.size.width+5, y: tmpframezb.origin.y, width: 140, height: tmpframezb.size.height))
+        addLabel!.text=loadLanguage("添加新设备")
         addLabel!.font=UIFont.systemFontOfSize(18)
         addLabel!.textColor=UIColor(red: 65/255, green: 105/255, blue: 143/255, alpha: 1)
         addLabel!.hidden=true

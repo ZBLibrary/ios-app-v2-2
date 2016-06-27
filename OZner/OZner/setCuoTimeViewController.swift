@@ -136,7 +136,7 @@ class setCuoTimeViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.title="设置定时"
+        self.title=loadLanguage("设置定时")
         self.navigationController?.navigationBar.barTintColor=UIColor(red: 248/255, green: 249/255, blue: 250/255, alpha: 1)
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }

@@ -151,7 +151,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     @IBAction func deviceSetting(sender: AnyObject) {
         if(self.myCurrentDevice == nil)
         {
-            let alert = UIAlertView(title: "提示", message: "请连接设备", delegate: self, cancelButtonTitle: "ok")
+            let alert = UIAlertView(title:loadLanguage("提示"), message: loadLanguage("请连接设备"), delegate: self, cancelButtonTitle: "ok")
             alert.show()
         }
         else
@@ -181,7 +181,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     override func viewWillAppear(animated: Bool) {
         OznerDeviceSensorUpdate(self.myCurrentDevice)
         self.navigationController?.navigationBarHidden=true
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
         setBartteryImg()
     }
 
@@ -271,7 +271,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         deviceStateViewBG.hidden=false
         
         
-        titleLabel.text="首页"
+        titleLabel.text=loadLanguage("首页")
         
         isNeedDownLXDate=false
         switch true
@@ -456,7 +456,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         }
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
         
-        leftSlideView=UIView(frame: CGRect(x: 0, y: 64, width: 30, height: Screen_Hight-65-64))
+        leftSlideView=UIView(frame: CGRect(x: 0, y: 64, width: 30, height: Screen_Hight-64))
         //leftSlideView.backgroundColor=UIColor.redColor()
         leftSlideView.addGestureRecognizer(swipeGesture)
         self.view.addSubview(leftSlideView)
@@ -465,7 +465,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             leftSlideBG_gray.removeFromSuperview()
         }
-        leftSlideBG_gray=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
+        leftSlideBG_gray=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight))
         leftSlideBG_gray.backgroundColor=UIColor(white: 0, alpha: 0)
         leftSlideBG_gray.hidden=true
         self.view.addSubview(leftSlideBG_gray)
@@ -489,8 +489,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         case 1:
             let skipController=SkinQueryTableViewController()
             let tmpDevice=myCurrentDevice as! WaterReplenishmentMeter
-            let tmpSex=tmpDevice.settings.get("sex", default: "女")
-            skipController.currentSex=(tmpSex as! String)=="女" ? SexType.WoMan:SexType.Man
+            let tmpSex=tmpDevice.settings.get("sex", default: loadLanguage("女"))
+            skipController.currentSex=(tmpSex as! String)==loadLanguage("女") ? SexType.WoMan:SexType.Man
             if waterReplenishMainView?.avgAndTimesArr.count>0 {
                 let tmpArr:[String:HeadOfWaterReplenishStruct]=(waterReplenishMainView?.avgAndTimesArr)!
                 let tmpTimes=(tmpArr["0"]?.checkTimes)!+(tmpArr["1"]?.checkTimes)!+(tmpArr["2"]?.checkTimes)!+(tmpArr["3"]?.checkTimes)!
@@ -500,11 +500,11 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             skipController.TimeString=(stringFromDate(NSDate(), format: "yyyy-MM") as String)+"-01  "+(stringFromDate(NSDate(), format: "yyyy-MM-dd") as String)
             let tmpStr=button.titleLabel?.text!
             print(tmpStr)
-            if ((tmpStr?.containsString("无")) != false)
+            if ((tmpStr?.containsString(loadLanguage("无"))) != false)
             {skipController.currentSkinTypeIndex=0}
-            else if ((tmpStr?.containsString("油性")) != false)
+            else if ((tmpStr?.containsString(loadLanguage("油性"))) != false)
             {skipController.currentSkinTypeIndex=1}
-            if ((tmpStr?.containsString("干性")) != false)
+            if ((tmpStr?.containsString(loadLanguage("干性"))) != false)
             {skipController.currentSkinTypeIndex=2}
             else
             {skipController.currentSkinTypeIndex=3}
@@ -551,7 +551,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             }
             if waterPurFooter.ishaveCoolAblity==false
             {
-                let alert=UIAlertView(title: "", message: "抱歉，该净水器型号没有提供此项功能！", delegate: self, cancelButtonTitle: "确定")
+                let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("抱歉，该净水器型号没有提供此项功能！"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
                 alert.show()
                 return
             }
@@ -568,7 +568,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             }
             if waterPurFooter.ishaveHotAblity==false
             {
-                let alert=UIAlertView(title: "", message: "抱歉，该净水器型号没有提供此项功能！", delegate: self, cancelButtonTitle: "确定")
+                let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("抱歉，该净水器型号没有提供此项功能！"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
                 alert.show()
                 return
             }
@@ -665,7 +665,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                     {
                         self.lvxinValue.text = "100%";
                         self.lvxinImg.image=UIImage(named: "tantou_dianliang_3")
-                        self.lvxinState.text="滤芯状态"
+                        self.lvxinState.text=loadLanguage("滤芯状态")
                     }
                     else
                     {
@@ -709,7 +709,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             var AlertDaysOfWater=30
             
-            let queue = dispatch_queue_create ("净水机队列",DISPATCH_QUEUE_CONCURRENT)
+            let queue = dispatch_queue_create (loadLanguage("净水机队列"),DISPATCH_QUEUE_CONCURRENT)
             dispatch_async(queue, {
                 //获取水机设备制冷是否可用和设备类型
                 werbservice.GetMachineType(self.myCurrentDevice?.identifier, returnBlock: { (isshowscan,waterType, hotandcoll,buyUrl,alertDaysOfWater, status:StatusManager!) -> Void in
@@ -774,7 +774,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                                     self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
                                     break
                                 }
-                                self.lvxinState.text=value<=AlertDaysOfWater ? "请及时更换滤芯":"滤芯状态"
+                                self.lvxinState.text=value<=AlertDaysOfWater ? loadLanguage("请及时更换滤芯"):loadLanguage("滤芯状态")
                                 
                                 self.lvxinValue.text = "\(value<0 ? 0:value)%"
                                 if self.lvxinValue.text=="0%"&&(endTime-nowTime)>0
@@ -784,7 +784,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                                 if value<=AlertDaysOfWater
                                 {
                                     let alertView=SCLAlertView()
-                                    alertView.addButton("现在去购买滤芯", action: {
+                                    alertView.addButton(loadLanguage("现在去购买滤芯"), action: {
                                         //提到购买滤芯的页面
                                         let buyLX=WeiXinURLViewController(goUrl: self.BuyWaterUrlString)
                                         let witchUrl=weiXinUrlNamezb()
@@ -793,8 +793,8 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                                         
                                         self.presentViewController(buyLX, animated: true, completion: nil)
                                     })
-                                    alertView.addButton("我知道了", action:{})
-                                    alertView.showNotice("温馨提示", subTitle: "你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用")
+                                    alertView.addButton(loadLanguage("我知道了"), action:{})
+                                    alertView.showNotice(loadLanguage("温馨提示"), subTitle: loadLanguage("你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用"))
                                 }
                             }
                             else
@@ -850,7 +850,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         if(self.myCurrentDevice == nil)
         {
             deviceStateViewBG.hidden=true
-            self.titleLabel.text = "首页"
+            self.titleLabel.text = loadLanguage("首页")
             
         }
         else
@@ -1087,13 +1087,13 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 let goal:String? = cup.settings.get("my_drinkwater", default: nil) as? String
                 if goal?.isEmpty == false
                 {
-                    cupFooterView.drinkMuBiao.text=loadLanguage( "饮水目标:" ) + goal!+"ml"
+                    cupFooterView.drinkMuBiao.text=loadLanguage( loadLanguage("饮水目标:") ) + goal!+"ml"
                     self.currentGoalVolumeValue = Int(goal!)
                 }
                 else
                 {
                     self.currentGoalVolumeValue = 2000;
-                    cupFooterView.drinkMuBiao.text=loadLanguage( "饮水目标:2000ml" )
+                    cupFooterView.drinkMuBiao.text=loadLanguage( loadLanguage("饮水目标:2000ml") )
                 }
                 
                 if(self.currentTDS != tds)
@@ -1282,7 +1282,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                         if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
                         {
                             isNeedDownLXDate=true
-                            let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
+                            let alert=UIAlertView(title: loadLanguage("温馨提示"), message:  loadLanguage("你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用"), delegate: self, cancelButtonTitle:loadLanguage("确定"))
                             alert.show()
                         }
                         //NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
@@ -1291,7 +1291,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                     
                 }else
                 {
-                    IAW_TempView.PM25.text=loadLanguage("已关机")
+                    IAW_TempView.PM25.text=loadLanguage(loadLanguage("已关机"))
                     //IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
                 }
 
@@ -1309,14 +1309,18 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             return
         }
         let airPurifier_Bluetooth = self.myCurrentDevice as! AirPurifier_Bluetooth
-        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+        //let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
         if airPurifier_Bluetooth.status.filterStatus.lastTime != .None
         {
             //let stopTime:NSTimeInterval=airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970+90*24*3600
-            let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
-            let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
-            headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(stopTime-starTime)*100)))%":"0%"
-            switch ceil((stopTime-nowTime)/(stopTime-starTime)*100)
+            //let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
+            //let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
+            print(airPurifier_Bluetooth.status.filterStatus.workTime)
+            let remain=min(100, 100-airPurifier_Bluetooth.status.filterStatus.workTime/600)
+            let remain1 = max(remain, 0)
+            
+            headView.lvxinState.text = "\(remain1)%"
+            switch remain1
             {
             case 0..<15:
                 headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
@@ -1334,13 +1338,12 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
                 break
             }
-            if ((stopTime-nowTime)<=0)
+            if (remain1<=0)
             {
-                let alert=UIAlertView(title: "", message: "设备滤芯已到期，建议您及时更换滤芯！", delegate: self, cancelButtonTitle: "确定")
+                let alert=UIAlertView(title: loadLanguage("温馨提示"), message:  loadLanguage("你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用"), delegate: self, cancelButtonTitle:loadLanguage("确定"))
                 alert.show()
             }
 
-            //NSNotificationCenter.defaultCenter().postNotificationName("updateAirLvXinData", object: nil)
             
         }
     }
@@ -1386,7 +1389,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             {
                 let airPurifier = self.myCurrentDevice as! AirPurifier_MxChip
                 if airPurifier.isOffline==true{
-                    IAW_TempView.PM25.text="设备已断开"
+                    IAW_TempView.PM25.text=loadLanguage("设备已断开")
                     IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 24)
                     print(IAW_TempView.PM25.font)
                 }
@@ -1454,16 +1457,16 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     //朋友圈内饮水量排名
     func FriendVolumeRank()
     {
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         self.m_bIsHideTableBar = true
         let controller = AmountOfDrinkingWaterViewController(nibName: "AmountOfDrinkingWaterViewController", bundle: nil)
         controller.currentType = 0
         controller.myCurrentDevice = self.myCurrentDevice as! Cup
         let cup = self.myCurrentDevice as! Cup
         let date = UToolBox.todayZero() as NSDate
-        controller.todayRank = Int32(self.currentVolumeValue!)
-        controller.defeatValue = Int32(self.currentDefeat!)
-        controller.defeatRank=Int32(self.currentRank!)
+        //controller.todayRank = Int32(self.currentVolumeValue!)
+        //controller.defeatValue = Int32(self.currentDefeat!)
+        //controller.defeatRank=Int32(self.currentRank!)
         let record:CupRecord? = cup.volumes.getRecordByDate(date)
         if(record != nil)
         {
@@ -1478,25 +1481,25 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             
         }
         controller.currentType = 0
-        let werbservice = DeviceWerbservice();
-        werbservice.volumeFriendRank { (rank:NSNumber!, arr:NSMutableArray!, status:StatusManager!) -> Void in
-            if(status.networkStatus == kSuccessStatus)
-            {
-                self.currentVolumeValue = Int(rank)
-                controller.todayRank=Int32(self.currentVolumeValue!)
-            }
-            else
-            {
-                self.currentVolumeValue=0
-                controller.todayRank=Int32(0)
-                
-            }
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            self.navigationController?.pushViewController(controller, animated: true)
-            
-        }
+//        let werbservice = DeviceWerbservice();
+//        werbservice.volumeFriendRank { (rank:NSNumber!, arr:NSMutableArray!, status:StatusManager!) -> Void in
+//            if(status.networkStatus == kSuccessStatus)
+//            {
+//                self.currentVolumeValue = Int(rank)
+//                controller.todayRank=Int32(self.currentVolumeValue!)
+//            }
+//            else
+//            {
+//                self.currentVolumeValue=0
+//                controller.todayRank=Int32(0)
+//                
+//            }
+//            MBProgressHUD.hideHUDForView(self.view, animated: true)
+//            self.navigationController?.pushViewController(controller, animated: true)
+//            
+//        }
  
-        
+        self.navigationController?.pushViewController(controller, animated: true)
 
     }
     //Cup点击引水量
@@ -1518,25 +1521,26 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             controller.myCurrentDevice = self.myCurrentDevice
             let cup = self.myCurrentDevice as! Cup
             controller.tdsValue = cup.sensor.TDS
-            controller.defeatRank = Int32(self.currentRank!)
-            controller.tdsRankValue = 1
+            //controller.defeatRank = Int32(self.currentRank!)
+            //controller.tdsRankValue = 1
             
-            controller.defeatValue = Int32(self.currentDefeat!)
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            let werbservice = DeviceWerbservice()
-            werbservice.TdsFriendRank(myCurrentDevice?.type, returnBlock: { (rank:NSNumber!, total:NSMutableArray!, status:StatusManager!) -> Void in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
-                if(status.networkStatus == kSuccessStatus)
-                {
-                    controller.tdsRankValue = rank.intValue
-                    
-                }
-                else
-                {
-                    controller.tdsRankValue = 1
-                }
-                self.navigationController?.pushViewController(controller, animated: true)
-            })
+            //controller.defeatValue = Int32(self.currentDefeat!)
+            self.navigationController?.pushViewController(controller, animated: true)
+//            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+//            let werbservice = DeviceWerbservice()
+//            werbservice.TdsFriendRank(myCurrentDevice?.type, returnBlock: { (rank:NSNumber!, total:NSMutableArray!, status:StatusManager!) -> Void in
+//                MBProgressHUD.hideHUDForView(self.view, animated: true)
+//                if(status.networkStatus == kSuccessStatus)
+//                {
+//                    controller.tdsRankValue = rank.intValue
+//                    
+//                }
+//                else
+//                {
+//                    controller.tdsRankValue = 1
+//                }
+//                self.navigationController?.pushViewController(controller, animated: true)
+//            })
 
         }
    
@@ -1700,7 +1704,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     {
         if self.myCurrentDevice==nil
         {
-            let alert=UIAlertView(title: "", message: "设备没有连接上", delegate: self, cancelButtonTitle: "ok")
+             let alert=UIAlertView(title: loadLanguage("温馨提示"), message:  loadLanguage("设备没有连接上"), delegate: self, cancelButtonTitle:loadLanguage("确定"))
             alert.show()
             return
         }
@@ -1746,7 +1750,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                         StrongSelf.outAirView.AQI.text=AQI
                         StrongSelf.outAirView.teampret.text=temperature+"℃"
                         StrongSelf.outAirView.hubit.text=humidity+"%"
-                        StrongSelf.outAirView.datafrom.text="数据来源:"+dataFrom
+                        StrongSelf.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
                     }
                     StrongSelf.headView.cityName.text=cityname
                     StrongSelf.headView.polution.text=pollution
@@ -2024,7 +2028,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             vocStr=loadLanguage("差")
             break
         default:
-            vocStr="检测"
+            vocStr=loadLanguage("检测")
             break
             
         }

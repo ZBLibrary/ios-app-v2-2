@@ -55,7 +55,7 @@
     // 默认第一个 可以修改
     m_Index = 0;
     
-    CustomPopView* cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT-65)];
+    CustomPopView* cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     self.myCustomView = cutomView;
     self.myCustomView.delegate = self;
     self.myCustomView.myDevices = (NSMutableArray*)[[OznerManager instance]getDevices];

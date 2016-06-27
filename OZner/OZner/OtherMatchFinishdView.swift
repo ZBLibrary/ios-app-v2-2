@@ -43,7 +43,7 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
         self.backgroundColor = UIColor.clearColor()
         
         let cupNameTextField = UITextField(frame: CGRectMake((width-150*(width/375.0))/2,55*(height/667.0),150*(width/375.0),17*(height/667.0)))
-        cupNameTextField.placeholder = "输入设备名称"
+        cupNameTextField.placeholder = loadLanguage("输入设备名称")
         cupNameTextField.delegate = self
         cupNameTextField.font = UIFont.systemFontOfSize(17*(height/667.0))
         cupNameTextField.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -72,7 +72,7 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
         case 3:
             label.text=loadLanguage("客厅")
         case 5:
-            segmentControl=UISegmentedControl(items: ["女","男"])
+            segmentControl=UISegmentedControl(items: [loadLanguage("女"),loadLanguage("男")])
             segmentControl?.frame=CGRect(x: (Screen_Width-126)/2, y: 29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y, width: 126, height: 25)
             segmentControl?.layer.borderColor=UIColor(red: 64/255, green: 140/255, blue: 241/255, alpha: 1).CGColor
             segmentControl?.layer.borderWidth=1
@@ -81,7 +81,7 @@ class OtherMatchFinishdView: UIView,UITextFieldDelegate {
             segmentControl?.selectedSegmentIndex=0
             scrollView.addSubview(segmentControl!)
             label.frame=CGRect(x: (Screen_Width-126)/2, y: segmentControl!.frame.origin.y+30, width: 126, height: 20)
-            label.text="请选择设定您的性别"
+            label.text=loadLanguage("请选择设定您的性别")
             label.font = UIFont.systemFontOfSize(12*(height/667.0))
         default:
             break

@@ -31,13 +31,13 @@ class CustomPopViewFirstCell: UITableViewCell {
         switch device.connectStatus()
         {
         case Connecting:
-            self.connectStateLabel.text="连接中"
+            self.connectStateLabel.text=loadLanguage("连接中")
             break
         case Connected:
-            self.connectStateLabel.text="已连接"
+            self.connectStateLabel.text=loadLanguage("已连接")
             break
         default:
-            self.connectStateLabel.text="已断开"
+            self.connectStateLabel.text=loadLanguage("已断开")
             break
         }
         
