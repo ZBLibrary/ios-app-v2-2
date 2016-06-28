@@ -158,20 +158,20 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             if ((self.myCurrentDevice?.isKindOfClass(Cup.classForCoder())) == true)
             {//水杯设置
-                let controller=setCUPDeviceViewController()
+                let controller=setCUPDeviceViewController_EN()
                 controller.myCurrentDevice = self.myCurrentDevice
                 
                 self.navigationController?.pushViewController(controller, animated: true)
                 
             }else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true){
                 //探头设置
-                let controller=setTanTouViewController(nibName: "setTanTouViewController", bundle: nil)
+                let controller=setTanTouViewController_EN(nibName: "setTanTouViewController_EN", bundle: nil)
                 controller.myCurrentDevice = self.myCurrentDevice
                 self.navigationController?.pushViewController(controller, animated: true)
             }
             else if ( WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true){
                 //净水器设置
-                let controller=setShuiJiViewController(nibName: "setShuiJiViewController", bundle: nil)
+                let controller=setShuiJiViewController_EN(nibName: "setShuiJiViewController_EN", bundle: nil)
                 controller.myCurrentDevice = self.myCurrentDevice
                 self.navigationController?.pushViewController(controller, animated: true)
             }
@@ -483,7 +483,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         switch button.tag
         {
         case 0:
-            let setController=setWaterReplenishController()
+            let setController=setWaterReplenishController_EN()
             setController.myCurrentDevice=myCurrentDevice as? WaterReplenishmentMeter
             self.navigationController?.pushViewController(setController, animated: true)
         case 1:
@@ -1708,7 +1708,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             alert.show()
             return
         }
-        let airsetting=setAirViewController()
+        let airsetting=setAirViewController_EN()
         airsetting.myCurrentDevice=self.myCurrentDevice
         self.navigationController?.pushViewController(airsetting, animated: true)
     }
