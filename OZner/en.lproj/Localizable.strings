@@ -43,7 +43,7 @@
 "净水器" = "Water Purifier" ;
 "台式空净" = "Desk-top Air Purifier" ;
 "立式空净" = "Vertical Style Air Purifier" ;
-"智能补水仪" = "smart moisturizing device" ;
+"智能补水仪" = "smart moisturizing device" ;//
 
 "蓝牙连接" = "Bluetooth" ; // 连接
 "Wifi连接" = "Wifi" ;
