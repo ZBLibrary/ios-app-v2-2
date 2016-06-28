@@ -19,7 +19,7 @@
 
 @end
 
-@interface HomeViewController : FatherViewController<LeftItemDelegate, HomeDelegate,MyDeviceMainControllerDelegate,CustomPopViewDelegate>
+@interface HomeViewController : FatherViewController<LeftItemDelegate, HomeDelegate,MyDeviceMainController_ENDelegate,CustomPopViewDelegate>
 {
     
 }

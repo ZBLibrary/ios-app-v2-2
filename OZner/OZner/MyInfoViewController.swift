@@ -157,7 +157,7 @@ class MyInfoViewController: UIViewController {
     func toURL(button:UIButton)
     {
         let weiXinUrl=weiXinUrlNamezb()
-        let tmpURLController=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
+        let tmpURLController=WeiXinURLViewController_EN(nibName: "WeiXinURLViewController_EN", bundle: nil)
         switch button.tag
         {
         case 0:

@@ -25,7 +25,7 @@
     LoginViewController*        mLoginController;
     UINavigationController*     mLoginNavController;
     //添加设备
-    AddDeviceViewController*   mAddDeviceViewController;
+    AddDeviceViewController_EN*   mAddDeviceViewController;
     UINavigationController*    mAddDeviceNavController;
     NewUserHelpViewController*  mNewUserHelpController;
     UINavigationController*     mNewUserHelpNavController;
@@ -49,7 +49,7 @@
 {
     
     //设备
-    MyDeviceMainController* deviceController = [[MyDeviceMainController alloc] initWithNibName:@"MyDeviceMainController" bundle:nil];//[[MyDeviceMainController alloc]init];
+    MyDeviceMainController_EN* deviceController = [[MyDeviceMainController_EN alloc] initWithNibName:@"MyDeviceMainController_EN" bundle:nil];//[[MyDeviceMainController alloc]init];
     UINavigationController* nav0 = [[UINavigationController alloc]initWithRootViewController:deviceController];
     [nav0.navigationBar loadNavigationBar];
     
@@ -172,7 +172,7 @@
 #pragma mark-HomeControllerDelegate
 - (void)customViewAddCallBack
 {
-    mAddDeviceViewController = [[AddDeviceViewController alloc] initWithNibName:@"AddDeviceViewController" bundle:nil];//[[AddDeviceViewController alloc] init];
+    mAddDeviceViewController = [[AddDeviceViewController_EN alloc] initWithNibName:@"AddDeviceViewController_EN" bundle:nil];//[[AddDeviceViewController alloc] init];
     mAddDeviceNavController = [[UINavigationController alloc] initWithRootViewController:mAddDeviceViewController];
     mAddDeviceNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     

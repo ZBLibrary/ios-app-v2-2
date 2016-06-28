@@ -42,7 +42,7 @@ class getshareImageClass:NSObject
 {
     func getshareImagezb(rank:Int,type:Int,value:Int,beat:Int,maxWater:Int)->UIImage
     {
-        let shareView=NSBundle.mainBundle().loadNibNamed("ShareView_zb", owner: nil, options: nil).last as! ShareView_zb
+        let shareView=NSBundle.mainBundle().loadNibNamed("ShareView_zb_EN", owner: nil, options: nil).last as! ShareView_zb_EN
         shareView.share_rank.text="\(loadLanguage("排名"))\(rank==0 ? 1:rank)"
         shareView.share_title.text=type==0 ? loadLanguage("当前饮水量为"):loadLanguage("当前水质纯净值为")
         shareView.share_value.text="\(value)"+(type==0 ? "ml":"")

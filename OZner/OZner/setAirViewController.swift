@@ -171,7 +171,7 @@ class setAirViewController: UIViewController,UIAlertViewDelegate {
     
     func toOperatingIntroduc()
     {
-        let lonImage=LongImageViewController(nibName: "LongImageViewController", bundle: nil)
+        let lonImage=LongImageViewController_EN(nibName: "LongImageViewController_EN", bundle: nil)
         lonImage.iswhitch=0
         self.navigationController?.pushViewController(lonImage, animated: true)
     }
@@ -182,7 +182,7 @@ class setAirViewController: UIViewController,UIAlertViewDelegate {
 //    }
     func tocommonQestion()
     {
-        let lonImage=LongImageViewController(nibName: "LongImageViewController", bundle: nil)
+        let lonImage=LongImageViewController_EN(nibName: "LongImageViewController_EN", bundle: nil)
         lonImage.iswhitch=1
         self.navigationController?.pushViewController(lonImage, animated: true)
     }

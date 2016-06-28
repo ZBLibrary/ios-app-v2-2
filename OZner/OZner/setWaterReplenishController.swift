@@ -225,7 +225,7 @@ class setWaterReplenishController: UITableViewController,UIAlertViewDelegate {
     func toInstructions()
     {
         let weiXinUrl=weiXinUrlNamezb()
-        let tmpURLController=WeiXinURLViewController(nibName: "WeiXinURLViewController", bundle: nil)
+        let tmpURLController=WeiXinURLViewController_EN(nibName: "WeiXinURLViewController_EN", bundle: nil)
         tmpURLController.title=weiXinUrl.WaterReplenishOperation
         self.presentViewController(tmpURLController, animated: true, completion: nil)
         
