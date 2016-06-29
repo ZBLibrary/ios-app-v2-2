@@ -253,7 +253,6 @@
 		528FFEF61C24628400D814A1 /* setShuiJiViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEF41C24628400D814A1 /* setShuiJiViewController_EN.swift */; };
 		528FFEFB1C24705400D814A1 /* setAirViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEFA1C24705400D814A1 /* setAirViewController_EN.swift */; };
 		528FFEFF1C247AF000D814A1 /* uiDatePickerView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEFE1C247AF000D814A1 /* uiDatePickerView_EN.swift */; };
-		528FFF011C247B1D00D814A1 /* uiDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FFF001C247B1D00D814A1 /* uiDatePickerView.xib */; };
 		528FFF031C25726F00D814A1 /* setCommon_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFF021C25726F00D814A1 /* setCommon_EN.swift */; };
 		528FFF051C25778000D814A1 /* setTanTou_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528FFF041C25778000D814A1 /* setTanTou_EN.plist */; };
 		528FFF071C25779800D814A1 /* setShuiJi_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528FFF061C25779800D814A1 /* setShuiJi_EN.plist */; };
@@ -853,6 +852,7 @@
 		E066B92A1D2260D000810566 /* SetSexViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B92C1D2260D000810566 /* SetSexViewController_EN.xib */; };
 		E066B92E1D2261BB00810566 /* SetRemindTimeController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9301D2261BB00810566 /* SetRemindTimeController_EN.xib */; };
 		E066B9321D22639D00810566 /* mainOfSetWaterReplenCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9341D22639D00810566 /* mainOfSetWaterReplenCell_EN.xib */; };
+		E066B9361D2360CE00810566 /* uiDatePickerView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9381D2360CE00810566 /* uiDatePickerView_EN.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */; };
 		E0EFFEDF1D056CAE00E43C20 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView.xib */; };
 		E0EFFEE51D05944E00E43C20 /* CenterChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell.xib */; };
@@ -1317,7 +1317,6 @@
 		528FFEF41C24628400D814A1 /* setShuiJiViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setShuiJiViewController_EN.swift; sourceTree = "<group>"; };
 		528FFEFA1C24705400D814A1 /* setAirViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setAirViewController_EN.swift; sourceTree = "<group>"; };
 		528FFEFE1C247AF000D814A1 /* uiDatePickerView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uiDatePickerView_EN.swift; sourceTree = "<group>"; };
-		528FFF001C247B1D00D814A1 /* uiDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = uiDatePickerView.xib; sourceTree = "<group>"; };
 		528FFF021C25726F00D814A1 /* setCommon_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCommon_EN.swift; sourceTree = "<group>"; };
 		528FFF041C25778000D814A1 /* setTanTou_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setTanTou_EN.plist; sourceTree = "<group>"; };
 		528FFF061C25779800D814A1 /* setShuiJi_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setShuiJi_EN.plist; sourceTree = "<group>"; };
@@ -2247,6 +2246,8 @@
 		E066B9311D2261BD00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
 		E066B9331D22639D00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/mainOfSetWaterReplenCell_EN.xib; sourceTree = "<group>"; };
 		E066B9351D2263A000810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/mainOfSetWaterReplenCell_EN.xib; sourceTree = "<group>"; };
+		E066B9371D2360CE00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/uiDatePickerView_EN.xib; sourceTree = "<group>"; };
+		E066B9391D2360D100810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/uiDatePickerView_EN.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController.xib; sourceTree = "<group>"; };
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView.xib; sourceTree = "<group>"; };
@@ -3549,7 +3550,7 @@
 				528FFEF01C24625600D814A1 /* AboutDeviceViewController_EN.swift */,
 				528FFEF11C24625600D814A1 /* AboutDeviceViewController_EN.xib */,
 				528FFEFE1C247AF000D814A1 /* uiDatePickerView_EN.swift */,
-				528FFF001C247B1D00D814A1 /* uiDatePickerView.xib */,
+				E066B9381D2360CE00810566 /* uiDatePickerView_EN.xib */,
 				528FFF021C25726F00D814A1 /* setCommon_EN.swift */,
 			);
 			name = setCommon;
@@ -4622,7 +4623,7 @@
 				8DB0443C1CC8CD1700B60DAB /* icon_luyouqi.png in Resources */,
 				B7854BD91D0D004E0025125B /* TDSDetailCellzb.xib in Resources */,
 				8DB0444B1CC8CD1700B60DAB /* icon_jiare_normal@3x.png in Resources */,
-				528FFF011C247B1D00D814A1 /* uiDatePickerView.xib in Resources */,
+				E066B9361D2360CE00810566 /* uiDatePickerView_EN.xib in Resources */,
 				B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */,
 				8DB043E51CC8CCE200B60DAB /* yin_shui_liang_0.png in Resources */,
 				528D77471C2716BA00243986 /* setTimingViewController.xib in Resources */,
@@ -5678,6 +5679,15 @@
 				E066B9351D2263A000810566 /* Base */,
 			);
 			name = mainOfSetWaterReplenCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		E066B9381D2360CE00810566 /* uiDatePickerView_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E066B9371D2360CE00810566 /* en */,
+				E066B9391D2360D100810566 /* Base */,
+			);
+			name = uiDatePickerView_EN.xib;
 			sourceTree = "<group>";
 		};
 		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController.xib */ = {
