@@ -35,13 +35,13 @@ class WaterPurTDSDetailCell1_EN: UITableViewCell {
         else
         {
             friendRank.font=UIFont(name: ".SFUIDisplay-Thin", size: 20)
-            friendRank.text="暂无"
+            friendRank.text=loadLanguage("暂无")
         }
         //
         if tdsBefore==0||tdsBefore==65535
         {
             TDS_Before.font=UIFont(name: ".SFUIDisplay-Thin", size: 11)
-            TDS_Before.text="暂无"
+            TDS_Before.text=loadLanguage("暂无")
         }
         else
         {
@@ -52,7 +52,7 @@ class WaterPurTDSDetailCell1_EN: UITableViewCell {
         if tdsAfter==0||tdsAfter==65535
         {
             TDS_After.font=UIFont(name: ".SFUIDisplay-Thin", size: 11)
-            TDS_After.text="暂无"
+            TDS_After.text=loadLanguage("暂无")
         }
         else
         {

@@ -50,7 +50,7 @@
         circleView.layer.borderWidth = 1;
         [self addSubview:circleView];
         
-        NSString* content = @"净化前";
+        NSString* content = loadLanguage(@"净化前");
         
         CGSize size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
         //int orignX = 0;
@@ -72,7 +72,7 @@
         circleView.layer.borderWidth = 1;
         [self addSubview:circleView];
         
-        content = @"净化后";
+        content = loadLanguage(@"净化后");
         size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
         
         label = [[UILabel alloc]initWithFrame:CGRectMake((SCREEN_WIDTH-30)/2+36, circleView.frame.origin.y-(size.height-circleView.frame.size.height)/2, size.width+20, size.height)];
@@ -203,7 +203,7 @@
 - (void)createLine
 {
     CGFloat font = 10.0;
-    NSString* str = @"较差";
+    NSString* str = loadLanguage(@"较差");
     CGSize  size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
@@ -216,7 +216,7 @@
     [self addSubview:separatorView];
     
     
-    str = @"一般";
+    str = loadLanguage(@"一般");
     size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     label = [[UILabel alloc]initWithFrame:CGRectMake(0, (self.frame.size.height-23-44)*0.33, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
@@ -228,7 +228,7 @@
     separatorView.backgroundColor = [UIColor colorWithRed:204.0/255 green:204.0/255 blue:204.0/255 alpha:1.0];
     [self addSubview:separatorView];
     
-    str = @"安全";
+    str =loadLanguage(@"安全");
     size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     label = [[UILabel alloc]initWithFrame:CGRectMake(0, (self.frame.size.height-23-44)*0.66, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:82.0/255.0 green:190.0/255.0 blue:91.0/255.0 alpha:1];

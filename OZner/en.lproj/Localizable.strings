@@ -1,4 +1,4 @@
-/* 
+/*
  Localizable.strings
  OZner
  
@@ -78,9 +78,6 @@
 "差" = "Bad" ;
 
 "适中" = "Moderate" ; //水温
-//"较差" = "Bad" ;
-//"一般" = "So-so" ;
-//"健康" = "Healthy" ;
 "偏烫" = "Hot" ;
 "偏凉" = "Cool" ;
 "适中" = "Moderate" ;
@@ -373,3 +370,13 @@
 "添加新设备" = "Add New Device";
 "浩泽智能化生活服务" = "Ozner Smart Life";
 "立即添加设备，体验浩泽智能化生活服务" = "Add new device,start Ozner smart life";
+
+//WaterPurifierHeadCell_EN
+"经过净化后的水质健康，适合您直饮" = "Purified water";
+"净化前" = "Unpurified";
+"净化后" = "Purified";
+"安全" = "Safety";
+"城市" = "City";
+"细颗粒物" = "PM(2.5)";
+"空气质量指数" = "AQI";
+"湿度" = "Humidity";

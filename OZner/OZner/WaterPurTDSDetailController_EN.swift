@@ -196,7 +196,7 @@ class WaterPurTDSDetailController_EN: UITableViewController {
     func toWaterKnow()
     {
         let URLController=WeiXinURLViewController_EN(nibName: "WeiXinURLViewController_EN", bundle: nil)
-        URLController.title="健康水知道"
+        URLController.title=loadLanguage("健康水知道")
         self.presentViewController(URLController, animated: true, completion: nil)
     }
     //购买净水器

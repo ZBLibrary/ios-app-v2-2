@@ -18,7 +18,7 @@ class TantouLXController_EN: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title="当前滤芯状态"
+        self.title=loadLanguage("当前滤芯状态")
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
         leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
