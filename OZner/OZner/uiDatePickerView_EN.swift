@@ -24,6 +24,7 @@ class uiDatePickerView_EN: UIView {
         datePicker.backgroundColor=UIColor.whiteColor()
         cancelButton.setTitle(loadLanguage("取消"), forState: .Normal)
         OKButton.setTitle(loadLanguage("确定"), forState: .Normal)
+        //
     }
     
 
