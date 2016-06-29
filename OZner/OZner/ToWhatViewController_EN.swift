@@ -35,7 +35,6 @@ class ToWhatViewController_EN: UIViewController {
         let htmlString = tmpstr?.objectForKey((self.title)!) as! String
         webView.loadHTMLString(htmlString, baseURL: nil)
         webView.scalesPageToFit = true
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
