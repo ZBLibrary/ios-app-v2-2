@@ -229,12 +229,6 @@
 		526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */; };
 		526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air_EN.swift */; };
 		526DDB361C4AB9AB00363504 /* CupView_Footer_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DDB351C4AB9AB00363504 /* CupView_Footer_EN.swift */; };
-		5273D7D11C25CD2500A8ACF2 /* setSmallAirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */; };
-		5274B0691C293BB5004EDC0D /* setSmallAirViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */; };
-		52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */; };
-		52791B991C18849A00C098B2 /* setDev_CupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791B981C18849A00C098B2 /* setDev_CupView.swift */; };
-		52791BA31C18C2F500C098B2 /* setCupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */; };
-		52791BA71C18CDD300C098B2 /* setCuoTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */; };
 		527E918D1C3BDCCF00828A1B /* LongImageViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527E918B1C3BDCCF00828A1B /* LongImageViewController_EN.swift */; };
 		527E918E1C3BDCCF00828A1B /* LongImageViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527E918C1C3BDCCF00828A1B /* LongImageViewController_EN.xib */; };
 		528D772C1C26A5F600243986 /* PM2d5ViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D772A1C26A5F600243986 /* PM2d5ViewController_EN.swift */; };
@@ -246,22 +240,6 @@
 		528D773F1C270D2800243986 /* indoorHead_BigXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D773E1C270D2800243986 /* indoorHead_BigXib_EN.xib */; };
 		528D77461C2716BA00243986 /* setTimingViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D77441C2716BA00243986 /* setTimingViewController_EN.swift */; };
 		528D77471C2716BA00243986 /* setTimingViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D77451C2716BA00243986 /* setTimingViewController_EN.xib */; };
-		528FFEE51C2403E800D814A1 /* setTanTouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEE31C2403E800D814A1 /* setTanTouViewController.swift */; };
-		528FFEE61C2403E800D814A1 /* setTanTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FFEE41C2403E800D814A1 /* setTanTouViewController.xib */; };
-		528FFEEE1C244EED00D814A1 /* setDeviceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEEC1C244EED00D814A1 /* setDeviceNameViewController.swift */; };
-		528FFEEF1C244EED00D814A1 /* setDeviceNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FFEED1C244EED00D814A1 /* setDeviceNameViewController.xib */; };
-		528FFEF21C24625600D814A1 /* AboutDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEF01C24625600D814A1 /* AboutDeviceViewController.swift */; };
-		528FFEF31C24625600D814A1 /* AboutDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FFEF11C24625600D814A1 /* AboutDeviceViewController.xib */; };
-		528FFEF61C24628400D814A1 /* setShuiJiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEF41C24628400D814A1 /* setShuiJiViewController.swift */; };
-		528FFEF71C24628400D814A1 /* setShuiJiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FFEF51C24628400D814A1 /* setShuiJiViewController.xib */; };
-		528FFEFB1C24705400D814A1 /* setAirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEFA1C24705400D814A1 /* setAirViewController.swift */; };
-		528FFEFF1C247AF000D814A1 /* uiDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFEFE1C247AF000D814A1 /* uiDatePickerView.swift */; };
-		528FFF011C247B1D00D814A1 /* uiDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FFF001C247B1D00D814A1 /* uiDatePickerView.xib */; };
-		528FFF031C25726F00D814A1 /* setCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528FFF021C25726F00D814A1 /* setCommon.swift */; };
-		528FFF051C25778000D814A1 /* setTanTou.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528FFF041C25778000D814A1 /* setTanTou.plist */; };
-		528FFF071C25779800D814A1 /* setShuiJi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528FFF061C25779800D814A1 /* setShuiJi.plist */; };
-		528FFF091C2577AA00D814A1 /* setSmallAir.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528FFF081C2577AA00D814A1 /* setSmallAir.plist */; };
-		528FFF0B1C2577BA00D814A1 /* setBigAir.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528FFF0A1C2577BA00D814A1 /* setBigAir.plist */; };
 		52A4EF5A1C27F34C005F282D /* headViewView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A4EF591C27F34C005F282D /* headViewView_EN.swift */; };
 		52A4EF631C285E58005F282D /* smallStateXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A4EF621C285E58005F282D /* smallStateXib_EN.xib */; };
 		52A4EF651C285E6E005F282D /* bigStateXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A4EF641C285E6E005F282D /* bigStateXib_EN.xib */; };
@@ -318,7 +296,6 @@
 		52ECBEC31C0C6EED00A962E4 /* ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECBEC21C0C6EED00A962E4 /* ImageUtil.m */; };
 		52EF00C51C2FE443002484B9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EF00C21C2FE443002484B9 /* libWeChatSDK.a */; };
 		52EF00C71C2FE530002484B9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EF00C61C2FE530002484B9 /* libc++.tbd */; };
-		52F1868B1C22847C00B74A05 /* SetCup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F1868A1C22847C00B74A05 /* SetCup.plist */; };
 		52F1C5011C4D6BA80008B8E5 /* TantouLXController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F1C5001C4D6BA80008B8E5 /* TantouLXController_EN.swift */; };
 		52F465F81C2D482A0052D7C8 /* smallStateXib_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F465F71C2D482A0052D7C8 /* smallStateXib_EN.swift */; };
 		52FEC03F1C35961B00B6D0F1 /* userAgreeMentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEC03D1C35961B00B6D0F1 /* userAgreeMentsController.swift */; };
@@ -364,18 +341,10 @@
 		8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */; };
 		8D5110751CDC6B2A00B809FA /* OffLineSuggestView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5110741CDC6B2A00B809FA /* OffLineSuggestView_EN.swift */; };
 		8D7234A71CF5450E0008B134 /* WaterReplenishmentMeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7234A61CF5450E0008B134 /* WaterReplenishmentMeterStatus.m */; };
-		8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */; };
-		8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */; };
-		8D756AC71C8E91D50022CF63 /* SetSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */; };
-		8D756ACA1C8EC3950022CF63 /* SetRemindTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */; };
-		8D756ACB1C8EC3950022CF63 /* SetRemindTimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */; };
 		8D7CA8F01D115089002C1196 /* icon_buble_add_device_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D7CA8EF1D115089002C1196 /* icon_buble_add_device_en.png */; };
 		8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D7CA8F11D1150C0002C1196 /* icon_buble_add_device.png */; };
 		8D7FEC771C746DE200DD01AF /* WaterPurifierHeadCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell_EN.swift */; };
 		8D7FEC781C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib */; };
-		8D88804F1C8DCC4D007391E1 /* setWaterReplenishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */; };
-		8D8880521C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */; };
-		8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */; };
 		8D9C63561CA2456200543353 /* MXChipPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63551CA2456200543353 /* MXChipPair.m */; };
 		8D9C635A1CA245B700543353 /* HttpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63581CA245B700543353 /* HttpServer.m */; };
 		8D9C635B1CA245B700543353 /* EasyLinkSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63591CA245B700543353 /* EasyLinkSender.m */; };
@@ -846,13 +815,44 @@
 		B7854BD91D0D004E0025125B /* TDSDetailCellzb_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BDB1D0D004E0025125B /* TDSDetailCellzb_EN.xib */; };
 		B7854BDF1D0D05620025125B /* TDSFooterCellzb_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BE11D0D05620025125B /* TDSFooterCellzb_EN.xib */; };
 		B7854BE51D0D191D0025125B /* CupView_Footer_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7854BE71D0D191D0025125B /* CupView_Footer_EN.xib */; };
+		B7D8C1791D2373AB0089C241 /* AboutDeviceViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */; };
+		B7D8C17A1D2373AB0089C241 /* AboutDeviceViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */; };
+		B7D8C17B1D2373AB0089C241 /* setCommon_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1751D2373AB0089C241 /* setCommon_EN.swift */; };
+		B7D8C17C1D2373AB0089C241 /* setDeviceNameViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1761D2373AB0089C241 /* setDeviceNameViewController_EN.swift */; };
+		B7D8C17D1D2373AB0089C241 /* setDeviceNameViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1771D2373AB0089C241 /* setDeviceNameViewController_EN.xib */; };
+		B7D8C17E1D2373AB0089C241 /* uiDatePickerView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1781D2373AB0089C241 /* uiDatePickerView_EN.swift */; };
+		B7D8C1811D2373C30089C241 /* uiDatePickerView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C17F1D2373C30089C241 /* uiDatePickerView_EN.xib */; };
+		B7D8C1841D2374670089C241 /* setDev_CupView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1831D2374670089C241 /* setDev_CupView_EN.swift */; };
+		B7D8C1871D2374800089C241 /* setDev_CupView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1851D2374800089C241 /* setDev_CupView_EN.xib */; };
+		B7D8C18A1D2374BB0089C241 /* setCUPDeviceViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1891D2374BB0089C241 /* setCUPDeviceViewController_EN.swift */; };
+		B7D8C18C1D2375F40089C241 /* setCupNameViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C18B1D2375F40089C241 /* setCupNameViewController_EN.swift */; };
+		B7D8C19D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C18D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib */; };
+		B7D8C19E1D2376680089C241 /* setCuoTimeViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C18F1D2376680089C241 /* setCuoTimeViewController_EN.xib */; };
+		B7D8C19F1D2376680089C241 /* setCupNameViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1911D2376680089C241 /* setCupNameViewController_EN.xib */; };
+		B7D8C1A01D2376680089C241 /* SetRemindTimeController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1931D2376680089C241 /* SetRemindTimeController_EN.xib */; };
+		B7D8C1A11D2376680089C241 /* SetSexViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1951D2376680089C241 /* SetSexViewController_EN.xib */; };
+		B7D8C1A21D2376680089C241 /* setShuiJiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1971D2376680089C241 /* setShuiJiViewController_EN.xib */; };
+		B7D8C1A31D2376680089C241 /* setSmallAirViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1991D2376680089C241 /* setSmallAirViewXib_EN.xib */; };
+		B7D8C1A41D2376680089C241 /* setTanTouViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C19B1D2376680089C241 /* setTanTouViewController_EN.xib */; };
+		B7D8C1BD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1AD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift */; };
+		B7D8C1BE1D2376F60089C241 /* setAirViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1AE1D2376F60089C241 /* setAirViewController_EN.swift */; };
+		B7D8C1BF1D2376F60089C241 /* setBigAir_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1AF1D2376F60089C241 /* setBigAir_EN.plist */; };
+		B7D8C1C01D2376F60089C241 /* setCuoTimeViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B01D2376F60089C241 /* setCuoTimeViewController_EN.swift */; };
+		B7D8C1C11D2376F60089C241 /* SetCup_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1B11D2376F60089C241 /* SetCup_EN.plist */; };
+		B7D8C1C21D2376F60089C241 /* SetRemindTimeController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B21D2376F60089C241 /* SetRemindTimeController_EN.swift */; };
+		B7D8C1C31D2376F60089C241 /* SetSexViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B31D2376F60089C241 /* SetSexViewController_EN.swift */; };
+		B7D8C1C41D2376F60089C241 /* setShuiJi_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1B41D2376F60089C241 /* setShuiJi_EN.plist */; };
+		B7D8C1C51D2376F60089C241 /* setShuiJiViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B51D2376F60089C241 /* setShuiJiViewController_EN.swift */; };
+		B7D8C1C61D2376F60089C241 /* setSmallAir_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1B61D2376F60089C241 /* setSmallAir_EN.plist */; };
+		B7D8C1C71D2376F60089C241 /* setSmallAirView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B71D2376F60089C241 /* setSmallAirView_EN.swift */; };
+		B7D8C1C81D2376F60089C241 /* setTanTou_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1B81D2376F60089C241 /* setTanTou_EN.plist */; };
+		B7D8C1C91D2376F60089C241 /* setTanTouViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B91D2376F60089C241 /* setTanTouViewController_EN.swift */; };
+		B7D8C1CA1D2376F60089C241 /* setWaterReplenish_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */; };
+		B7D8C1CB1D2376F60089C241 /* setWaterReplenishController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1BB1D2376F60089C241 /* setWaterReplenishController_EN.swift */; };
 		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */; };
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */; };
 		E00265041D08098500E31C79 /* tantouLvXinView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265061D08098500E31C79 /* tantouLvXinView_EN.xib */; };
-		E01551A41D0D02D9000E285F /* setDev_CupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551A61D0D02D9000E285F /* setDev_CupView.xib */; };
-		E01551A81D0D0D2C000E285F /* setCupNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */; };
-		E01551AC1D0D0F34000E285F /* setCuoTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController_EN.xib */; };
 		E0EFFEDF1D056CAE00E43C20 /* headViewView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView_EN.xib */; };
 		E0EFFEE51D05944E00E43C20 /* CenterChartCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell_EN.xib */; };
@@ -1293,12 +1293,6 @@
 		526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Airgif_blue.gif; sourceTree = "<group>"; };
 		526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = indoorAirWarn_Air_EN.swift; sourceTree = "<group>"; };
 		526DDB351C4AB9AB00363504 /* CupView_Footer_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupView_Footer_EN.swift; sourceTree = "<group>"; };
-		5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView.swift; sourceTree = "<group>"; };
-		5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setSmallAirViewXib.xib; sourceTree = "<group>"; };
-		52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCUPDeviceViewController.swift; sourceTree = "<group>"; };
-		52791B981C18849A00C098B2 /* setDev_CupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setDev_CupView.swift; sourceTree = "<group>"; };
-		52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCupNameViewController.swift; sourceTree = "<group>"; };
-		52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCuoTimeViewController.swift; sourceTree = "<group>"; };
 		527E918B1C3BDCCF00828A1B /* LongImageViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongImageViewController_EN.swift; sourceTree = "<group>"; };
 		527E918C1C3BDCCF00828A1B /* LongImageViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongImageViewController_EN.xib; sourceTree = "<group>"; };
 		528D772A1C26A5F600243986 /* PM2d5ViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PM2d5ViewController_EN.swift; sourceTree = "<group>"; };
@@ -1310,22 +1304,6 @@
 		528D773E1C270D2800243986 /* indoorHead_BigXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorHead_BigXib_EN.xib; sourceTree = "<group>"; };
 		528D77441C2716BA00243986 /* setTimingViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setTimingViewController_EN.swift; sourceTree = "<group>"; };
 		528D77451C2716BA00243986 /* setTimingViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setTimingViewController_EN.xib; sourceTree = "<group>"; };
-		528FFEE31C2403E800D814A1 /* setTanTouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setTanTouViewController.swift; sourceTree = "<group>"; };
-		528FFEE41C2403E800D814A1 /* setTanTouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setTanTouViewController.xib; sourceTree = "<group>"; };
-		528FFEEC1C244EED00D814A1 /* setDeviceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setDeviceNameViewController.swift; sourceTree = "<group>"; };
-		528FFEED1C244EED00D814A1 /* setDeviceNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setDeviceNameViewController.xib; sourceTree = "<group>"; };
-		528FFEF01C24625600D814A1 /* AboutDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDeviceViewController.swift; sourceTree = "<group>"; };
-		528FFEF11C24625600D814A1 /* AboutDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutDeviceViewController.xib; sourceTree = "<group>"; };
-		528FFEF41C24628400D814A1 /* setShuiJiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setShuiJiViewController.swift; sourceTree = "<group>"; };
-		528FFEF51C24628400D814A1 /* setShuiJiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setShuiJiViewController.xib; sourceTree = "<group>"; };
-		528FFEFA1C24705400D814A1 /* setAirViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setAirViewController.swift; sourceTree = "<group>"; };
-		528FFEFE1C247AF000D814A1 /* uiDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uiDatePickerView.swift; sourceTree = "<group>"; };
-		528FFF001C247B1D00D814A1 /* uiDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = uiDatePickerView.xib; sourceTree = "<group>"; };
-		528FFF021C25726F00D814A1 /* setCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCommon.swift; sourceTree = "<group>"; };
-		528FFF041C25778000D814A1 /* setTanTou.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setTanTou.plist; sourceTree = "<group>"; };
-		528FFF061C25779800D814A1 /* setShuiJi.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setShuiJi.plist; sourceTree = "<group>"; };
-		528FFF081C2577AA00D814A1 /* setSmallAir.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setSmallAir.plist; sourceTree = "<group>"; };
-		528FFF0A1C2577BA00D814A1 /* setBigAir.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setBigAir.plist; sourceTree = "<group>"; };
 		52A4EF591C27F34C005F282D /* headViewView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headViewView_EN.swift; sourceTree = "<group>"; };
 		52A4EF621C285E58005F282D /* smallStateXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = smallStateXib_EN.xib; sourceTree = "<group>"; };
 		52A4EF641C285E6E005F282D /* bigStateXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bigStateXib_EN.xib; sourceTree = "<group>"; };
@@ -1398,7 +1376,6 @@
 		52EF00C31C2FE443002484B9 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		52EF00C41C2FE443002484B9 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		52EF00C61C2FE530002484B9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		52F1868A1C22847C00B74A05 /* SetCup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SetCup.plist; sourceTree = "<group>"; };
 		52F1C5001C4D6BA80008B8E5 /* TantouLXController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TantouLXController_EN.swift; sourceTree = "<group>"; };
 		52F465F71C2D482A0052D7C8 /* smallStateXib_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smallStateXib_EN.swift; sourceTree = "<group>"; };
 		52FEC03D1C35961B00B6D0F1 /* userAgreeMentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userAgreeMentsController.swift; sourceTree = "<group>"; };
@@ -1460,18 +1437,10 @@
 		8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
 		8D5110741CDC6B2A00B809FA /* OffLineSuggestView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffLineSuggestView_EN.swift; sourceTree = "<group>"; };
 		8D7234A61CF5450E0008B134 /* WaterReplenishmentMeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterStatus.m; sourceTree = "<group>"; };
-		8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish.plist; sourceTree = "<group>"; };
-		8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSexViewController.swift; sourceTree = "<group>"; };
-		8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetSexViewController.xib; sourceTree = "<group>"; };
-		8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRemindTimeController.swift; sourceTree = "<group>"; };
-		8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetRemindTimeController.xib; sourceTree = "<group>"; };
 		8D7CA8EF1D115089002C1196 /* icon_buble_add_device_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_buble_add_device_en.png; sourceTree = "<group>"; };
 		8D7CA8F11D1150C0002C1196 /* icon_buble_add_device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_buble_add_device.png; sourceTree = "<group>"; };
 		8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurifierHeadCell_EN.swift; sourceTree = "<group>"; };
 		8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurifierHeadCell_EN.xib; sourceTree = "<group>"; };
-		8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setWaterReplenishController.swift; sourceTree = "<group>"; };
-		8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell.swift; sourceTree = "<group>"; };
-		8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainOfSetWaterReplenCell.xib; sourceTree = "<group>"; };
 		8D8B6F401CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterStatus.h; sourceTree = "<group>"; };
 		8D9C63541CA2456200543353 /* MXChipPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXChipPair.h; sourceTree = "<group>"; };
 		8D9C63551CA2456200543353 /* MXChipPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXChipPair.m; sourceTree = "<group>"; };
@@ -2227,6 +2196,50 @@
 		B7854BE41D0D056B0025125B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSFooterCellzb_EN.xib; sourceTree = "<group>"; };
 		B7854BE61D0D191D0025125B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CupView_Footer_EN.xib; sourceTree = "<group>"; };
 		B7854BEA1D0D192F0025125B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CupView_Footer_EN.xib; sourceTree = "<group>"; };
+		B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDeviceViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutDeviceViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1751D2373AB0089C241 /* setCommon_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCommon_EN.swift; sourceTree = "<group>"; };
+		B7D8C1761D2373AB0089C241 /* setDeviceNameViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setDeviceNameViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1771D2373AB0089C241 /* setDeviceNameViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setDeviceNameViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1781D2373AB0089C241 /* uiDatePickerView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uiDatePickerView_EN.swift; sourceTree = "<group>"; };
+		B7D8C1801D2373C30089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/uiDatePickerView_EN.xib; sourceTree = "<group>"; };
+		B7D8C1821D2374010089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/uiDatePickerView_EN.xib; sourceTree = "<group>"; };
+		B7D8C1831D2374670089C241 /* setDev_CupView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setDev_CupView_EN.swift; sourceTree = "<group>"; };
+		B7D8C1861D2374800089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setDev_CupView_EN.xib; sourceTree = "<group>"; };
+		B7D8C1881D23749A0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setDev_CupView_EN.xib; sourceTree = "<group>"; };
+		B7D8C1891D2374BB0089C241 /* setCUPDeviceViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCUPDeviceViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C18B1D2375F40089C241 /* setCupNameViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCupNameViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C18E1D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/mainOfSetWaterReplenCell_EN.xib; sourceTree = "<group>"; };
+		B7D8C1901D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCuoTimeViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1921D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCupNameViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1941D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1961D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetSexViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1981D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setShuiJiViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C19A1D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setSmallAirViewXib_EN.xib; sourceTree = "<group>"; };
+		B7D8C19C1D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setTanTouViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1A51D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/mainOfSetWaterReplenCell_EN.xib; sourceTree = "<group>"; };
+		B7D8C1A61D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCuoTimeViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1A71D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCupNameViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1A81D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1A91D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetSexViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1AA1D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setShuiJiViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1AB1D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setSmallAirViewXib_EN.xib; sourceTree = "<group>"; };
+		B7D8C1AC1D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setTanTouViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C1AD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell_EN.swift; sourceTree = "<group>"; };
+		B7D8C1AE1D2376F60089C241 /* setAirViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setAirViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1AF1D2376F60089C241 /* setBigAir_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setBigAir_EN.plist; sourceTree = "<group>"; };
+		B7D8C1B01D2376F60089C241 /* setCuoTimeViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCuoTimeViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1B11D2376F60089C241 /* SetCup_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SetCup_EN.plist; sourceTree = "<group>"; };
+		B7D8C1B21D2376F60089C241 /* SetRemindTimeController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetRemindTimeController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1B31D2376F60089C241 /* SetSexViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSexViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1B41D2376F60089C241 /* setShuiJi_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setShuiJi_EN.plist; sourceTree = "<group>"; };
+		B7D8C1B51D2376F60089C241 /* setShuiJiViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setShuiJiViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1B61D2376F60089C241 /* setSmallAir_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setSmallAir_EN.plist; sourceTree = "<group>"; };
+		B7D8C1B71D2376F60089C241 /* setSmallAirView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView_EN.swift; sourceTree = "<group>"; };
+		B7D8C1B81D2376F60089C241 /* setTanTou_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setTanTou_EN.plist; sourceTree = "<group>"; };
+		B7D8C1B91D2376F60089C241 /* setTanTouViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setTanTouViewController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish_EN.plist; sourceTree = "<group>"; };
+		B7D8C1BB1D2376F60089C241 /* setWaterReplenishController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setWaterReplenishController_EN.swift; sourceTree = "<group>"; };
 		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
@@ -2235,12 +2248,6 @@
 		E00265031D07F97B00E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JingShuiWifiViewController_EN.xib; sourceTree = "<group>"; };
 		E00265051D08098500E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/tantouLvXinView_EN.xib; sourceTree = "<group>"; };
 		E00265071D08098700E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/tantouLvXinView_EN.xib; sourceTree = "<group>"; };
-		E01551A51D0D02D9000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setDev_CupView.xib; sourceTree = "<group>"; };
-		E01551A71D0D02E6000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setDev_CupView.xib; sourceTree = "<group>"; };
-		E01551A91D0D0D2C000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCupNameViewController.xib; sourceTree = "<group>"; };
-		E01551AB1D0D0D2E000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCupNameViewController.xib; sourceTree = "<group>"; };
-		E01551AD1D0D0F34000E285F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCuoTimeViewController.xib; sourceTree = "<group>"; };
-		E01551AF1D0D0F35000E285F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCuoTimeViewController.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController_EN.xib; sourceTree = "<group>"; };
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController_EN.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView_EN.xib; sourceTree = "<group>"; };
@@ -3538,13 +3545,13 @@
 		528FFEE71C2444DD00D814A1 /* setCommon */ = {
 			isa = PBXGroup;
 			children = (
-				528FFEEC1C244EED00D814A1 /* setDeviceNameViewController.swift */,
-				528FFEED1C244EED00D814A1 /* setDeviceNameViewController.xib */,
-				528FFEF01C24625600D814A1 /* AboutDeviceViewController.swift */,
-				528FFEF11C24625600D814A1 /* AboutDeviceViewController.xib */,
-				528FFEFE1C247AF000D814A1 /* uiDatePickerView.swift */,
-				528FFF001C247B1D00D814A1 /* uiDatePickerView.xib */,
-				528FFF021C25726F00D814A1 /* setCommon.swift */,
+				B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */,
+				B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */,
+				B7D8C1751D2373AB0089C241 /* setCommon_EN.swift */,
+				B7D8C1761D2373AB0089C241 /* setDeviceNameViewController_EN.swift */,
+				B7D8C1771D2373AB0089C241 /* setDeviceNameViewController_EN.xib */,
+				B7D8C1781D2373AB0089C241 /* uiDatePickerView_EN.swift */,
+				B7D8C17F1D2373C30089C241 /* uiDatePickerView_EN.xib */,
 			);
 			name = setCommon;
 			sourceTree = "<group>";
@@ -3552,11 +3559,11 @@
 		528FFEF81C2462C600D814A1 /* setAirCleaner */ = {
 			isa = PBXGroup;
 			children = (
-				528FFEFA1C24705400D814A1 /* setAirViewController.swift */,
-				5274B0681C293BB5004EDC0D /* setSmallAirViewXib.xib */,
-				5273D7D01C25CD2500A8ACF2 /* setSmallAirView.swift */,
-				528FFF081C2577AA00D814A1 /* setSmallAir.plist */,
-				528FFF0A1C2577BA00D814A1 /* setBigAir.plist */,
+				B7D8C1AE1D2376F60089C241 /* setAirViewController_EN.swift */,
+				B7D8C1B71D2376F60089C241 /* setSmallAirView_EN.swift */,
+				B7D8C1991D2376680089C241 /* setSmallAirViewXib_EN.xib */,
+				B7D8C1B61D2376F60089C241 /* setSmallAir_EN.plist */,
+				B7D8C1AF1D2376F60089C241 /* setBigAir_EN.plist */,
 			);
 			name = setAirCleaner;
 			sourceTree = "<group>";
@@ -3743,15 +3750,15 @@
 		892284461C2162C000EE97BC /* setCup */ = {
 			isa = PBXGroup;
 			children = (
+				B7D8C1831D2374670089C241 /* setDev_CupView_EN.swift */,
+				B7D8C1851D2374800089C241 /* setDev_CupView_EN.xib */,
+				B7D8C1891D2374BB0089C241 /* setCUPDeviceViewController_EN.swift */,
+				B7D8C18B1D2375F40089C241 /* setCupNameViewController_EN.swift */,
+				B7D8C1911D2376680089C241 /* setCupNameViewController_EN.xib */,
+				B7D8C1B01D2376F60089C241 /* setCuoTimeViewController_EN.swift */,
+				B7D8C18F1D2376680089C241 /* setCuoTimeViewController_EN.xib */,
+				B7D8C1B11D2376F60089C241 /* SetCup_EN.plist */,
 				52FF7DE81C19F921005635F8 /* extral */,
-				52791B981C18849A00C098B2 /* setDev_CupView.swift */,
-				E01551A61D0D02D9000E285F /* setDev_CupView.xib */,
-				52791B941C18844900C098B2 /* setCUPDeviceViewController.swift */,
-				52791BA11C18C2F500C098B2 /* setCupNameViewController.swift */,
-				E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */,
-				52791BA51C18CDD300C098B2 /* setCuoTimeViewController.swift */,
-				E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */,
-				52F1868A1C22847C00B74A05 /* SetCup.plist */,
 			);
 			name = setCup;
 			sourceTree = "<group>";
@@ -3759,9 +3766,9 @@
 		892284471C2162F900EE97BC /* setShuiJi */ = {
 			isa = PBXGroup;
 			children = (
-				528FFEF41C24628400D814A1 /* setShuiJiViewController.swift */,
-				528FFEF51C24628400D814A1 /* setShuiJiViewController.xib */,
-				528FFF061C25779800D814A1 /* setShuiJi.plist */,
+				B7D8C1B51D2376F60089C241 /* setShuiJiViewController_EN.swift */,
+				B7D8C1971D2376680089C241 /* setShuiJiViewController_EN.xib */,
+				B7D8C1B41D2376F60089C241 /* setShuiJi_EN.plist */,
 			);
 			name = setShuiJi;
 			sourceTree = "<group>";
@@ -3769,9 +3776,9 @@
 		892284481C21633500EE97BC /* setTanTou */ = {
 			isa = PBXGroup;
 			children = (
-				528FFEE31C2403E800D814A1 /* setTanTouViewController.swift */,
-				528FFEE41C2403E800D814A1 /* setTanTouViewController.xib */,
-				528FFF041C25778000D814A1 /* setTanTou.plist */,
+				B7D8C1B91D2376F60089C241 /* setTanTouViewController_EN.swift */,
+				B7D8C19B1D2376680089C241 /* setTanTouViewController_EN.xib */,
+				B7D8C1B81D2376F60089C241 /* setTanTou_EN.plist */,
 			);
 			name = setTanTou;
 			sourceTree = "<group>";
@@ -3889,14 +3896,14 @@
 		8D88804D1C8DC8DA007391E1 /* setWaterReplenish */ = {
 			isa = PBXGroup;
 			children = (
-				8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */,
-				8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */,
-				8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */,
-				8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */,
-				8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */,
-				8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */,
-				8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */,
-				8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */,
+				B7D8C1AD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift */,
+				B7D8C1B21D2376F60089C241 /* SetRemindTimeController_EN.swift */,
+				B7D8C1B31D2376F60089C241 /* SetSexViewController_EN.swift */,
+				B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */,
+				B7D8C1BB1D2376F60089C241 /* setWaterReplenishController_EN.swift */,
+				B7D8C18D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib */,
+				B7D8C1931D2376680089C241 /* SetRemindTimeController_EN.xib */,
+				B7D8C1951D2376680089C241 /* SetSexViewController_EN.xib */,
 			);
 			name = setWaterReplenish;
 			sourceTree = "<group>";
@@ -4573,20 +4580,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB044BB1CC8CD5500B60DAB /* yiban.png in Resources */,
+				B7D8C1A01D2376680089C241 /* SetRemindTimeController_EN.xib in Resources */,
 				B7854BDF1D0D05620025125B /* TDSFooterCellzb_EN.xib in Resources */,
 				8DB044651CC8CD2C00B60DAB /* icon_lvxin_service_3.png in Resources */,
 				8DB044D71CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.xib in Resources */,
 				428FC6D11C2ECFF2001D4ACF /* db_ozner_pub.db in Resources */,
-				5274B0691C293BB5004EDC0D /* setSmallAirViewXib.xib in Resources */,
 				8DB044B31CC8CD5500B60DAB /* device_tan_tou_noamrl_state.png in Resources */,
 				8DB044941CC8CD4200B60DAB /* icon_peidui_select_bigair@2x.png in Resources */,
 				528D773F1C270D2800243986 /* indoorHead_BigXib_EN.xib in Resources */,
-				528FFEF71C24628400D814A1 /* setShuiJiViewController.xib in Resources */,
+				B7D8C1CA1D2376F60089C241 /* setWaterReplenish_EN.plist in Resources */,
 				8DB044B91CC8CD5500B60DAB /* cha.png in Resources */,
 				8DB043EE1CC8CCE200B60DAB /* icon_no_device_logo@2x.png in Resources */,
 				8DB0440B1CC8CCE200B60DAB /* device_cup@2x.png in Resources */,
 				8DB044091CC8CCE200B60DAB /* device_smil@3x.png in Resources */,
 				8DBD54E21C567F4500D04B12 /* EquidsCollectionViewCell.xib in Resources */,
+				B7D8C19E1D2376680089C241 /* setCuoTimeViewController_EN.xib in Resources */,
 				8DB044411CC8CD1700B60DAB /* icon_yun.png in Resources */,
 				8DBD54D61C567F4500D04B12 /* AddFriendTableViewCell.xib in Resources */,
 				8DB0448F1CC8CD4200B60DAB /* icon_peidui_normal_cup@3x.png in Resources */,
@@ -4596,15 +4604,16 @@
 				8DB043F71CC8CCE200B60DAB /* select_device_3.png in Resources */,
 				8DB044CF1CC8CDB500B60DAB /* WaterReplenishMainView_EN.xib in Resources */,
 				8D4354FA1C75A410007F83DA /* WaterPurFooterCell_EN.xib in Resources */,
-				528FFF071C25779800D814A1 /* setShuiJi.plist in Resources */,
 				8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */,
 				428141491C0B15F0006FEDDE /* ic_menu_black_24dp.png in Resources */,
+				B7D8C1C81D2376F60089C241 /* setTanTou_EN.plist in Resources */,
 				8DB043ED1CC8CCE200B60DAB /* yin_shui_liang_3.png in Resources */,
 				8DB043F81CC8CCE200B60DAB /* select_device_4.png in Resources */,
 				528D77391C26FF2B00243986 /* LoadingXib_EN.xib in Resources */,
 				E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */,
 				8DB0440F1CC8CCE200B60DAB /* tantou_dianliang_2.png in Resources */,
 				4288C5301C0F01A700446D3E /* SwiftFatherViewController.xib in Resources */,
+				B7D8C1A31D2376680089C241 /* setSmallAirViewXib_EN.xib in Resources */,
 				8DB0444A1CC8CD1700B60DAB /* icon_jiare@3x.png in Resources */,
 				8DB044611CC8CD2C00B60DAB /* icon_lvxin_more_3.png in Resources */,
 				8DB0445D1CC8CD2C00B60DAB /* lvxin_icon_state.png in Resources */,
@@ -4616,19 +4625,17 @@
 				8DB0443C1CC8CD1700B60DAB /* icon_luyouqi.png in Resources */,
 				B7854BD91D0D004E0025125B /* TDSDetailCellzb_EN.xib in Resources */,
 				8DB0444B1CC8CD1700B60DAB /* icon_jiare_normal@3x.png in Resources */,
-				528FFF011C247B1D00D814A1 /* uiDatePickerView.xib in Resources */,
 				B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */,
+				B7D8C19F1D2376680089C241 /* setCupNameViewController_EN.xib in Resources */,
 				8DB043E51CC8CCE200B60DAB /* yin_shui_liang_0.png in Resources */,
 				528D77471C2716BA00243986 /* setTimingViewController_EN.xib in Resources */,
 				E0EFFEF91D0666FF00E43C20 /* indoorAirWarn_Air_EN.xib in Resources */,
 				8DB0444E1CC8CD1700B60DAB /* icon_power@3x.png in Resources */,
 				8DB044381CC8CD1700B60DAB /* icon_circle_normal.png in Resources */,
 				8DB043F31CC8CCE200B60DAB /* select_device_1.png in Resources */,
-				8D756ACB1C8EC3950022CF63 /* SetRemindTimeController.xib in Resources */,
 				8DB044101CC8CCE200B60DAB /* tantou_dianliang_3.png in Resources */,
 				8DB044AB1CC8CD5500B60DAB /* dot_guide_1.png in Resources */,
 				8DB043E61CC8CCE200B60DAB /* icon_state_circle.png in Resources */,
-				528FFF091C2577AA00D814A1 /* setSmallAir.plist in Resources */,
 				42CB9EC31C353CF3006D95CD /* zhong_03.png in Resources */,
 				8DB044041CC8CCE200B60DAB /* device_konw@2x.png in Resources */,
 				8DB044181CC8CCE200B60DAB /* dian_liang_100.png in Resources */,
@@ -4650,17 +4657,15 @@
 				8DBD54E61C567F4500D04B12 /* FriendsCell.xib in Resources */,
 				E0EFFEF11D06604000E43C20 /* WeiXinURLViewController_EN.xib in Resources */,
 				8DB043FB1CC8CCE200B60DAB /* right_row@2x.png in Resources */,
-				528FFEEF1C244EED00D814A1 /* setDeviceNameViewController.xib in Resources */,
 				8DB043FC1CC8CCE200B60DAB /* right_row@3x.png in Resources */,
 				8D7FEC781C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib in Resources */,
 				8DBD54A01C567E9200D04B12 /* match_device_failedzb.png in Resources */,
-				52F1868B1C22847C00B74A05 /* SetCup.plist in Resources */,
 				8DB044B21CC8CD5500B60DAB /* device_cup_normal_state.png in Resources */,
-				528FFF051C25778000D814A1 /* setTanTou.plist in Resources */,
 				8DB044B51CC8CD5500B60DAB /* device_jin_shui_qi_select.png in Resources */,
 				8DB043E81CC8CCE200B60DAB /* wen_du_1.png in Resources */,
 				8DB044AA1CC8CD5500B60DAB /* icon_smallair_peidui_waitting.png in Resources */,
 				42935B821C490D1100BCE76A /* zuo1.png in Resources */,
+				B7D8C1C61D2376F60089C241 /* setSmallAir_EN.plist in Resources */,
 				8DB044851CC8CD4200B60DAB /* icon_peidui_normal_tan_tou@2x.png in Resources */,
 				8DB044691CC8CD2C00B60DAB /* icon_lvxin_service_8.png in Resources */,
 				E0EFFEDF1D056CAE00E43C20 /* headViewView_EN.xib in Resources */,
@@ -4668,6 +4673,7 @@
 				E00264F81D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib in Resources */,
 				8DBD54D41C567F4500D04B12 /* My_Rank_TDSCell.xib in Resources */,
 				8DBD54D81C567F4500D04B12 /* MyRankTableViewCell.xib in Resources */,
+				B7D8C1A11D2376680089C241 /* SetSexViewController_EN.xib in Resources */,
 				8DA4062A1C8446FD00AD5E5E /* ScanResultViewController.xib in Resources */,
 				8DB044AF1CC8CD5500B60DAB /* device_jin_smallair_normal.png in Resources */,
 				4288C52C1C0EF80A00446D3E /* icon_back@3x.png in Resources */,
@@ -4703,24 +4709,23 @@
 				8DB0445E1CC8CD2C00B60DAB /* icon_lvxin_more_1.png in Resources */,
 				8DB0444D1CC8CD1700B60DAB /* icon_zhileng_normal@3x.png in Resources */,
 				8DB044821CC8CD4200B60DAB /* icon_peidui_complete_jingshuiqi.png in Resources */,
-				528FFEE61C2403E800D814A1 /* setTanTouViewController.xib in Resources */,
 				8DB043F21CC8CCE200B60DAB /* select_device_0.png in Resources */,
 				8DFB393F1C57730300A1641C /* WhatHtml.plist in Resources */,
 				428FC6D01C2ECFEA001D4ACF /* db_ozner_uid.db in Resources */,
 				E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController_EN.xib in Resources */,
-				8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */,
 				8DB043FD1CC8CCE200B60DAB /* left_row@2x.png in Resources */,
 				8DB044841CC8CD4200B60DAB /* icon_peidui_select_tan_tou@2x.png in Resources */,
 				B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */,
 				8DB044011CC8CCE200B60DAB /* pull_down_row@2x.png in Resources */,
-				528FFEF31C24625600D814A1 /* AboutDeviceViewController.xib in Resources */,
 				E0EFFEED1D059BB800E43C20 /* ShareView_zb_EN.xib in Resources */,
 				8DB0448C1CC8CD4200B60DAB /* icon_peidui_select_cup@2x.png in Resources */,
+				B7D8C1871D2374800089C241 /* setDev_CupView_EN.xib in Resources */,
 				8DB044171CC8CCE200B60DAB /* dian_liang_70.png in Resources */,
 				8DB043E71CC8CCE200B60DAB /* icon_state_tanhao.png in Resources */,
 				8DB0443E1CC8CD1700B60DAB /* icon_peidui_normal_jingshuiqi @2x.png in Resources */,
 				B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */,
 				8DBD54DC1C567F4500D04B12 /* ZanMeTableViewCell.xib in Resources */,
+				B7D8C1BF1D2376F60089C241 /* setBigAir_EN.plist in Resources */,
 				8DB044B41CC8CD5500B60DAB /* device_tan_tou_select_state.png in Resources */,
 				8DB0444F1CC8CD1700B60DAB /* icon_power_normal@3x.png in Resources */,
 				8DB0440E1CC8CCE200B60DAB /* tantou_dianliang_0.png in Resources */,
@@ -4738,16 +4743,17 @@
 				52A4EF631C285E58005F282D /* smallStateXib_EN.xib in Resources */,
 				8DB044001CC8CCE200B60DAB /* device_share@3x.png in Resources */,
 				4281414A1C0B15F0006FEDDE /* ic_menu_black_24dp@2x.png in Resources */,
+				B7D8C1A41D2376680089C241 /* setTanTouViewController_EN.xib in Resources */,
 				425F7A291C32B0C500C8B2E3 /* new_help_0@3x.png in Resources */,
 				E0EFFEF51D06607E00E43C20 /* OffLineSuggestView_EN.xib in Resources */,
 				8DB044051CC8CCE200B60DAB /* device_konw@3x.png in Resources */,
 				8DB044B61CC8CD5500B60DAB /* device_jin_shui_qi_normal.png in Resources */,
 				8DB043EA1CC8CCE200B60DAB /* wen_du_3.png in Resources */,
 				8DB044671CC8CD2C00B60DAB /* icon_lvxin_service_5.png in Resources */,
-				8D756AC71C8E91D50022CF63 /* SetSexViewController.xib in Resources */,
 				523DC34D1C175E1B00595099 /* chatBar.xcassets in Resources */,
 				8DB043E41CC8CCE200B60DAB /* icon_add_device_btn@2x.png in Resources */,
 				8DB043EF1CC8CCE200B60DAB /* icon_buble_add_device@3x.png in Resources */,
+				B7D8C1C11D2376F60089C241 /* SetCup_EN.plist in Resources */,
 				52A4EF651C285E6E005F282D /* bigStateXib_EN.xib in Resources */,
 				8DB044121CC8CCE200B60DAB /* 1_05.png in Resources */,
 				8DB044191CC8CCE200B60DAB /* device_left_btn.png in Resources */,
@@ -4762,6 +4768,7 @@
 				8DBD54E01C567F4500D04B12 /* FriendsNavRight.xib in Resources */,
 				42CB9EC51C353CF9006D95CD /* icon_bubble_close.png in Resources */,
 				8DB044601CC8CD2C00B60DAB /* icon_lvxin_more_2.png in Resources */,
+				B7D8C17A1D2373AB0089C241 /* AboutDeviceViewController_EN.xib in Resources */,
 				8DB044071CC8CCE200B60DAB /* device_zixun@3x.png in Resources */,
 				4288C52B1C0EF80A00446D3E /* icon_back@2x.png in Resources */,
 				8DBD549F1C567E9200D04B12 /* kindly_notice_iconzb.png in Resources */,
@@ -4779,6 +4786,7 @@
 				42CB9EBD1C353CD1006D95CD /* icon_bubble_shang.png in Resources */,
 				8DB0440D1CC8CCE200B60DAB /* tantou_dianliang_1.png in Resources */,
 				8DB0441B1CC8CCE200B60DAB /* device_setting_icon.png in Resources */,
+				B7D8C1C41D2376F60089C241 /* setShuiJi_EN.plist in Resources */,
 				E0EFFEE51D05944E00E43C20 /* CenterChartCell_EN.xib in Resources */,
 				E0EFFEE91D05954700E43C20 /* Main_FooterView_zb_EN.xib in Resources */,
 				8DB044491CC8CD1700B60DAB /* icon_power_normal@2x.png in Resources */,
@@ -4786,13 +4794,11 @@
 				4288C5281C0EEE3800446D3E /* AddDeviceViewController_EN.xib in Resources */,
 				8DB044B01CC8CD5500B60DAB /* device_jin_bigair_normal.png in Resources */,
 				8DB044951CC8CD4200B60DAB /* icon_peidui_select_smallair@2x.png in Resources */,
-				E01551A41D0D02D9000E285F /* setDev_CupView.xib in Resources */,
 				425F7A2B1C32B0C500C8B2E3 /* new_help_1@3x.png in Resources */,
 				B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */,
 				8DB044111CC8CCE200B60DAB /* 1_03.png in Resources */,
 				42E897A81C14486B00DD0228 /* OCFatherViewController.xib in Resources */,
 				425F7A281C32B0C500C8B2E3 /* new_help_0@2x.png in Resources */,
-				E01551AC1D0D0F34000E285F /* setCuoTimeViewController.xib in Resources */,
 				4281413F1C0B0CDA006FEDDE /* LeftViewController.xib in Resources */,
 				8DB0441A1CC8CCE200B60DAB /* device_wendu_0.png in Resources */,
 				528D772D1C26A5F600243986 /* PM2d5ViewController_EN.xib in Resources */,
@@ -4804,11 +4810,12 @@
 				8DB044461CC8CD1700B60DAB /* icon_zhileng@2x.png in Resources */,
 				8DB0445F1CC8CD2C00B60DAB /* icon_time_now.png in Resources */,
 				8DB044D91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib in Resources */,
-				528FFF0B1C2577BA00D814A1 /* setBigAir.plist in Resources */,
 				4288C53E1C0F06FF00446D3E /* AddDeviceCell_EN.xib in Resources */,
 				423114551C4370E80062FFFF /* scanboarder.png in Resources */,
 				423114571C43711D0062FFFF /* scanline.png in Resources */,
 				4281414B1C0B15F0006FEDDE /* ic_menu_black_24dp@3x.png in Resources */,
+				B7D8C19D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib in Resources */,
+				B7D8C1A21D2376680089C241 /* setShuiJiViewController_EN.xib in Resources */,
 				528D77311C26ACF100243986 /* VOC_AirViewController_EN.xib in Resources */,
 				42CF4EA81C16F6D7000E22DC /* CustomPopViewSecondCell.xib in Resources */,
 				8DB044421CC8CD1700B60DAB /* jingshuiqi_wifi@2x.png in Resources */,
@@ -4819,16 +4826,16 @@
 				8DB0443D1CC8CD1700B60DAB /* icon_mima.png in Resources */,
 				52461F011C26960A00834CC2 /* smallFooterViewXib_EN.xib in Resources */,
 				8DB044661CC8CD2C00B60DAB /* icon_lvxin_service_4.png in Resources */,
+				B7D8C17D1D2373AB0089C241 /* setDeviceNameViewController_EN.xib in Resources */,
 				8DB044881CC8CD4200B60DAB /* icon_circle_watting.png in Resources */,
 				52C4FC311C343CC000994AC6 /* bigautoModelView_EN.xib in Resources */,
+				B7D8C1811D2373C30089C241 /* uiDatePickerView_EN.xib in Resources */,
 				8DB044061CC8CCE200B60DAB /* device_puucashe@3x.png in Resources */,
 				8DB044481CC8CD1700B60DAB /* icon_power@2x.png in Resources */,
-				8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */,
 				8DB043FE1CC8CCE200B60DAB /* left_row@3x.png in Resources */,
 				8DB0448A1CC8CD4200B60DAB /* icon_peidui_tantou_watting.png in Resources */,
 				8DB044631CC8CD2C00B60DAB /* icon_lvxin_service_2.png in Resources */,
 				52461F051C26985500834CC2 /* outAirXib_EN.xib in Resources */,
-				E01551A81D0D0D2C000E285F /* setCupNameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4865,9 +4872,9 @@
 				8DA405A51C8441B500AD5E5E /* ZXMaxiCodeDecoder.m in Sources */,
 				8DA405691C8441B500AD5E5E /* ZXCode128Writer.m in Sources */,
 				8DA403691C843F8600AD5E5E /* LBXScanNative.m in Sources */,
-				5273D7D11C25CD2500A8ACF2 /* setSmallAirView.swift in Sources */,
 				8DA4056F1C8441B500AD5E5E /* ZXDataMatrixBitMatrixParser.m in Sources */,
 				8DA405C41C8441B500AD5E5E /* ZXPDF417ErrorCorrection.m in Sources */,
+				B7D8C1C51D2376F60089C241 /* setShuiJiViewController_EN.swift in Sources */,
 				8D26136A1CFD3DF3002ADB0E /* Duration.swift in Sources */,
 				8DA405A21C8441B500AD5E5E /* ZXMathUtils.m in Sources */,
 				523DC2FC1C175DA800595099 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -4897,7 +4904,6 @@
 				8D0C3E6A1C58E78C00EFBB22 /* tantouLvXinView_EN.swift in Sources */,
 				8DA405DF1C8441B500AD5E5E /* ZXQRCodeMaskUtil.m in Sources */,
 				8DA4056C1C8441B500AD5E5E /* ZXCode93Reader.m in Sources */,
-				8D88804F1C8DCC4D007391E1 /* setWaterReplenishController.swift in Sources */,
 				8DA406041C8441B500AD5E5E /* ZXUPCAReader.m in Sources */,
 				8DA405AA1C8441B500AD5E5E /* ZXMultiDetector.m in Sources */,
 				8DA405671C8441B500AD5E5E /* ZXCodaBarWriter.m in Sources */,
@@ -4907,12 +4913,12 @@
 				8DF060AF1CC90F6100EC05D9 /* View+SnapKit.swift in Sources */,
 				527E918D1C3BDCCF00828A1B /* LongImageViewController_EN.swift in Sources */,
 				5243379C1C42A63F0024133D /* DeviceSetting.m in Sources */,
-				528FFEF21C24625600D814A1 /* AboutDeviceViewController.swift in Sources */,
 				8DA405401C8441B500AD5E5E /* ZXAI013103decoder.m in Sources */,
 				8DA405EF1C8441B500AD5E5E /* ZXRSSExpandedCurrentParsingState.m in Sources */,
 				524337581C42A5C30024133D /* MxChipAirPurifierFilterStatus.m in Sources */,
 				8DB044E11CC8CE0600B60DAB /* CommonValue.swift in Sources */,
 				8D3B60E71C929C0F007857E9 /* CALayer+extension.swift in Sources */,
+				B7D8C1C21D2376F60089C241 /* SetRemindTimeController_EN.swift in Sources */,
 				42A7BB6C1C0C2B0F008DB6E5 /* UToolBox.m in Sources */,
 				8DA405C91C8441B500AD5E5E /* ZXPDF417Writer.m in Sources */,
 				8DA405761C8441B500AD5E5E /* ZXDataMatrixEdifactEncoder.m in Sources */,
@@ -4925,6 +4931,8 @@
 				424C155E1C1047B70001C36E /* DeviceMatchCellView_EN.swift in Sources */,
 				523DC3491C175E1B00595099 /* XMMessage.m in Sources */,
 				8DA4058E1C8441B500AD5E5E /* ZXEncodeHints.m in Sources */,
+				B7D8C17E1D2373AB0089C241 /* uiDatePickerView_EN.swift in Sources */,
+				B7D8C1CB1D2376F60089C241 /* setWaterReplenishController_EN.swift in Sources */,
 				8DA406181C84451900AD5E5E /* SubLBXScanViewController.m in Sources */,
 				8DA405481C8441B500AD5E5E /* ZXAI01weightDecoder.m in Sources */,
 				52A4EF6D1C28B0F2005F282D /* indoorAirViewController_EN.swift in Sources */,
@@ -4938,6 +4946,7 @@
 				8DB044D81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift in Sources */,
 				8DA405FC1C8441B500AD5E5E /* ZXSMSMMSResultParser.m in Sources */,
 				42A7BB541C0C248C008DB6E5 /* UserDatabase.m in Sources */,
+				B7D8C1C01D2376F60089C241 /* setCuoTimeViewController_EN.swift in Sources */,
 				523DC3391C175E1B00595099 /* XMImageMessageCell.m in Sources */,
 				52FEC0431C35A99200B6D0F1 /* WeiXinURLViewController_EN.swift in Sources */,
 				524337BC1C42A8D70024133D /* TapSensor.m in Sources */,
@@ -4972,7 +4981,6 @@
 				8DFB39401C57730300A1641C /* ToWhatViewController_EN.swift in Sources */,
 				8DA405741C8441B500AD5E5E /* ZXDataMatrixDefaultPlacement.m in Sources */,
 				42A7BB1F1C0C23A4008DB6E5 /* NSData+NSDictionary+JSON.m in Sources */,
-				52791B991C18849A00C098B2 /* setDev_CupView.swift in Sources */,
 				3473593C1C1C4D6200F4C79C /* LogInOut.m in Sources */,
 				52215DE81C4EA391007C8C96 /* drawCircleView_EN.swift in Sources */,
 				5243377F1C42A6320024133D /* CupGravity.m in Sources */,
@@ -4981,7 +4989,6 @@
 				524337CB1C42A8E50024133D /* WaterPurifierSensor.m in Sources */,
 				8D4354F91C75A410007F83DA /* WaterPurFooterCell_EN.swift in Sources */,
 				8DA405641C8441B500AD5E5E /* ZXCGImageLuminanceSource.m in Sources */,
-				8D8880521C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift in Sources */,
 				8DA405FA1C8441B500AD5E5E /* ZXRSSPair.m in Sources */,
 				426F42901C2829DE00DC39DF /* DeviceWerbservice.m in Sources */,
 				8DA405BC1C8441B500AD5E5E /* ZXPDF417DecodedBitStreamParser.m in Sources */,
@@ -5002,7 +5009,6 @@
 				8DA405D71C8441B500AD5E5E /* ZXQRCodeDecoderMetaData.m in Sources */,
 				8DBD54D51C567F4500D04B12 /* AddFriendTableViewCell.swift in Sources */,
 				8DA405451C8441B500AD5E5E /* ZXAI013x0xDecoder.m in Sources */,
-				8D756ACA1C8EC3950022CF63 /* SetRemindTimeController.swift in Sources */,
 				8DA405E91C8441B500AD5E5E /* ZXResultParser.m in Sources */,
 				8DA4056A1C8441B500AD5E5E /* ZXCode39Reader.m in Sources */,
 				8DA405571C8441B500AD5E5E /* ZXBinaryBitmap.m in Sources */,
@@ -5046,7 +5052,6 @@
 				8DA405CF1C8441B500AD5E5E /* ZXQRCodeAlignmentPattern.m in Sources */,
 				8DA405CB1C8441B500AD5E5E /* ZXPlanarYUVLuminanceSource.m in Sources */,
 				524337B61C42A8D70024133D /* Tap.m in Sources */,
-				528FFEE51C2403E800D814A1 /* setTanTouViewController.swift in Sources */,
 				8DA405AD1C8441B500AD5E5E /* ZXMultiFormatReader.m in Sources */,
 				8DA405EE1C8441B500AD5E5E /* ZXRSSExpandedBlockParsedResult.m in Sources */,
 				8DA4060F1C8441B500AD5E5E /* ZXVCardResultParser.m in Sources */,
@@ -5065,7 +5070,6 @@
 				8DA405C21C8441B500AD5E5E /* ZXPDF417Dimensions.m in Sources */,
 				8DA405E01C8441B500AD5E5E /* ZXQRCodeMatrixUtil.m in Sources */,
 				42A7BB421C0C2410008DB6E5 /* WebAssistant.m in Sources */,
-				528FFEF61C24628400D814A1 /* setShuiJiViewController.swift in Sources */,
 				4248B2EE1C0D917B00181CA0 /* CustomPopView.swift in Sources */,
 				8DA405A91C8441B500AD5E5E /* ZXMonochromeRectangleDetector.m in Sources */,
 				8DA4036D1C843F8600AD5E5E /* LBXScanViewController.m in Sources */,
@@ -5077,13 +5081,14 @@
 				4288C5271C0EEE3800446D3E /* AddDeviceViewController_EN.swift in Sources */,
 				52ECBEA51C0C6AFE00A962E4 /* ExtendViewController.m in Sources */,
 				52A4EF6F1C28B12F005F282D /* indoorAirXib_EN.swift in Sources */,
+				B7D8C17B1D2373AB0089C241 /* setCommon_EN.swift in Sources */,
 				8DA405B31C8441B500AD5E5E /* ZXPDF417.m in Sources */,
 				8DA405951C8441B500AD5E5E /* ZXGeoParsedResult.m in Sources */,
 				8DA405D11C8441B500AD5E5E /* ZXQRCodeBitMatrixParser.m in Sources */,
 				524337841C42A6320024133D /* CupRecordList.m in Sources */,
 				528D77301C26ACF100243986 /* VOC_AirViewController_EN.swift in Sources */,
 				5243379B1C42A63F0024133D /* BaseOznerObject.m in Sources */,
-				8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */,
+				B7D8C1841D2374670089C241 /* setDev_CupView_EN.swift in Sources */,
 				42A7BB371C0C23BC008DB6E5 /* ASIDownloadCache.m in Sources */,
 				8DA405F91C8441B500AD5E5E /* ZXRSSFinderPattern.m in Sources */,
 				524337B71C42A8D70024133D /* TapFirmware.m in Sources */,
@@ -5113,8 +5118,6 @@
 				8DA406251C8446BF00AD5E5E /* MyQRViewController.m in Sources */,
 				34A659031C452336002B2F10 /* CustomNoDeviceView_EN.m in Sources */,
 				424C155C1C103C6F0001C36E /* iCarousel.m in Sources */,
-				52791BA71C18CDD300C098B2 /* setCuoTimeViewController.swift in Sources */,
-				528FFEFB1C24705400D814A1 /* setAirViewController.swift in Sources */,
 				8DA4057A1C8441B500AD5E5E /* ZXDataMatrixReader.m in Sources */,
 				8DA405B81C8441B500AD5E5E /* ZXPDF417BoundingBox.m in Sources */,
 				8DA405E51C8441B500AD5E5E /* ZXQRCodeWriter.m in Sources */,
@@ -5166,6 +5169,7 @@
 				8DF060AE1CC90F6100EC05D9 /* SnapKit.swift in Sources */,
 				8DA405931C8441B500AD5E5E /* ZXGenericGFPoly.m in Sources */,
 				52FF7E061C1A043A005635F8 /* YJHColorPickerHSWheel2.m in Sources */,
+				B7D8C1791D2373AB0089C241 /* AboutDeviceViewController_EN.swift in Sources */,
 				422D915B1C1DBC19007CFB3B /* NSAttributedStringView.m in Sources */,
 				422D914B1C1D9F10007CFB3B /* OtherMatchFinishdView_EN.swift in Sources */,
 				8DB044CE1CC8CDB500B60DAB /* WaterReplenishMainView_EN.swift in Sources */,
@@ -5213,7 +5217,7 @@
 				42A7BB391C0C23BC008DB6E5 /* ASIHTTPRequest.m in Sources */,
 				8DA405AC1C8441B500AD5E5E /* ZXMultiFormatOneDReader.m in Sources */,
 				8DBD54B41C567F3800D04B12 /* EquidsCollectionViewController.swift in Sources */,
-				52791BA31C18C2F500C098B2 /* setCupNameViewController.swift in Sources */,
+				B7D8C1BD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift in Sources */,
 				8DA405E61C8441B500AD5E5E /* ZXReedSolomonDecoder.m in Sources */,
 				8DA4057C1C8441B500AD5E5E /* ZXDataMatrixSymbolInfo144.m in Sources */,
 				523DC33B1C175E1B00595099 /* XMSystemMessageCell.m in Sources */,
@@ -5225,7 +5229,6 @@
 				8DBD54B01C567F3800D04B12 /* SendYanZHViewController.swift in Sources */,
 				522D666B1C31166C00BCA750 /* languageCommon.swift in Sources */,
 				8DA405AF1C8441B500AD5E5E /* ZXMultiFormatWriter.m in Sources */,
-				528FFEEE1C244EED00D814A1 /* setDeviceNameViewController.swift in Sources */,
 				524337591C42A5C30024133D /* PowerTimer.m in Sources */,
 				8D9C63561CA2456200543353 /* MXChipPair.m in Sources */,
 				8DA406031C8441B500AD5E5E /* ZXTextParsedResult.m in Sources */,
@@ -5244,6 +5247,7 @@
 				42E897A71C14486B00DD0228 /* OCFatherViewController.m in Sources */,
 				52080AF91C3BBC0600150B4F /* thread_mosq.c in Sources */,
 				52DDC18C1C4127C300CBA038 /* Main_FooterView_zb_EN.swift in Sources */,
+				B7D8C18C1D2375F40089C241 /* setCupNameViewController_EN.swift in Sources */,
 				8DB044D41CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.swift in Sources */,
 				8DA4053B1C8441B500AD5E5E /* ZXAbstractExpandedDecoder.m in Sources */,
 				8DA405CA1C8441B500AD5E5E /* ZXPerspectiveTransform.m in Sources */,
@@ -5256,6 +5260,7 @@
 				8DA405821C8441B500AD5E5E /* ZXDecoderResult.m in Sources */,
 				8D4354FD1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.swift in Sources */,
 				8DA4054B1C8441B500AD5E5E /* ZXAztecCode.m in Sources */,
+				B7D8C1C91D2376F60089C241 /* setTanTouViewController_EN.swift in Sources */,
 				8DA4059A1C8441B500AD5E5E /* ZXImage.m in Sources */,
 				8DA405D91C8441B500AD5E5E /* ZXQRCodeEncoder.m in Sources */,
 				8DBD54D71C567F4500D04B12 /* MyRankTableViewCell.swift in Sources */,
@@ -5282,13 +5287,13 @@
 				8DA4057E1C8441B500AD5E5E /* ZXDataMatrixVersion.m in Sources */,
 				523DC3711C175E9B00595099 /* AFURLSessionManager.m in Sources */,
 				8DA405BD1C8441B500AD5E5E /* ZXPDF417DetectionResult.m in Sources */,
-				528FFF031C25726F00D814A1 /* setCommon.swift in Sources */,
 				8DA405911C8441B500AD5E5E /* ZXExpandedProductResultParser.m in Sources */,
 				42A7BB171C0C237D008DB6E5 /* NetworkEntrance.m in Sources */,
 				425381411C1482E3005FF2F3 /* MPPlot.m in Sources */,
 				8DA405D81C8441B500AD5E5E /* ZXQRCodeDetector.m in Sources */,
 				8DF060B01CC90F6100EC05D9 /* ViewController+SnapKit.swift in Sources */,
 				523DC33F1C175E1B00595099 /* XMChatFaceView.m in Sources */,
+				B7D8C1C71D2376F60089C241 /* setSmallAirView_EN.swift in Sources */,
 				8DA4057F1C8441B500AD5E5E /* ZXDataMatrixWriter.m in Sources */,
 				523DC34B1C175E1B00595099 /* XMTextMessage.m in Sources */,
 				524337431C42A5BB0024133D /* AirPurifier_Bluetooth.m in Sources */,
@@ -5351,7 +5356,6 @@
 				8DA405B71C8441B500AD5E5E /* ZXPDF417BarcodeValue.m in Sources */,
 				8D4355011C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.swift in Sources */,
 				524337801C42A6320024133D /* CupManager.m in Sources */,
-				528FFEFF1C247AF000D814A1 /* uiDatePickerView.swift in Sources */,
 				8DA4053C1C8441B500AD5E5E /* ZXAbstractRSSReader.m in Sources */,
 				8DBD54B31C567F3800D04B12 /* MyInfoViewController.swift in Sources */,
 				8DA405611C8441B500AD5E5E /* ZXByteMatrix.m in Sources */,
@@ -5367,6 +5371,8 @@
 				8DBD54B11C567F3800D04B12 /* YZNewsTableViewController.swift in Sources */,
 				8DA405841C8441B500AD5E5E /* ZXDetectorResult.m in Sources */,
 				8D09DBE01C5A698800D0432B /* loadFailedXib_EN.swift in Sources */,
+				B7D8C1C31D2376F60089C241 /* SetSexViewController_EN.swift in Sources */,
+				B7D8C18A1D2374BB0089C241 /* setCUPDeviceViewController_EN.swift in Sources */,
 				8DBD54E71C567F4500D04B12 /* My_MainView.swift in Sources */,
 				349F0CD01C158EB900E46253 /* CustomPopViewFirstCell.swift in Sources */,
 				8DF253AA1C77233F00CE2AE5 /* MBProgressHUD.m in Sources */,
@@ -5375,6 +5381,7 @@
 				523DC2F71C175DA800595099 /* MASConstraintMaker.m in Sources */,
 				4253813F1C1482E3005FF2F3 /* UIView+Frame.m in Sources */,
 				523DC36A1C175E9B00595099 /* AFHTTPRequestOperationManager.m in Sources */,
+				B7D8C1BE1D2376F60089C241 /* setAirViewController_EN.swift in Sources */,
 				8DA405F01C8441B500AD5E5E /* ZXRSSExpandedDecodedChar.m in Sources */,
 				8DBD54B51C567F3800D04B12 /* AboutUSViewController.swift in Sources */,
 				8DA4055E1C8441B500AD5E5E /* ZXBoolArray.m in Sources */,
@@ -5388,6 +5395,7 @@
 				425381401C1482E3005FF2F3 /* UIBezierPath+curved.m in Sources */,
 				52080AFD1C3BBC0600150B4F /* will_mosq.c in Sources */,
 				8DBD54DF1C567F4500D04B12 /* FriendsNavRight.swift in Sources */,
+				B7D8C17C1D2373AB0089C241 /* setDeviceNameViewController_EN.swift in Sources */,
 				8DA4036F1C843F8600AD5E5E /* LBXScanWrapper.m in Sources */,
 				8DA405851C8441B500AD5E5E /* ZXDimension.m in Sources */,
 				524337CA1C42A8E50024133D /* WaterPurifierManager.m in Sources */,
@@ -5403,7 +5411,6 @@
 				8DA4053E1C8441B500AD5E5E /* ZXAddressBookDoCoMoResultParser.m in Sources */,
 				8DA405681C8441B500AD5E5E /* ZXCode128Reader.m in Sources */,
 				8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */,
-				52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */,
 				4288C53D1C0F06FF00446D3E /* AddDeviceCell_EN.swift in Sources */,
 				8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */,
 				8DA405561C8441B500AD5E5E /* ZXBinarizer.m in Sources */,
@@ -5557,6 +5564,96 @@
 			name = CupView_Footer_EN.xib;
 			sourceTree = "<group>";
 		};
+		B7D8C17F1D2373C30089C241 /* uiDatePickerView_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1801D2373C30089C241 /* Base */,
+				B7D8C1821D2374010089C241 /* en */,
+			);
+			name = uiDatePickerView_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1851D2374800089C241 /* setDev_CupView_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1861D2374800089C241 /* Base */,
+				B7D8C1881D23749A0089C241 /* en */,
+			);
+			name = setDev_CupView_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C18D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C18E1D2376680089C241 /* en */,
+				B7D8C1A51D23769D0089C241 /* Base */,
+			);
+			name = mainOfSetWaterReplenCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C18F1D2376680089C241 /* setCuoTimeViewController_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1901D2376680089C241 /* en */,
+				B7D8C1A61D23769D0089C241 /* Base */,
+			);
+			name = setCuoTimeViewController_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1911D2376680089C241 /* setCupNameViewController_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1921D2376680089C241 /* en */,
+				B7D8C1A71D23769D0089C241 /* Base */,
+			);
+			name = setCupNameViewController_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1931D2376680089C241 /* SetRemindTimeController_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1941D2376680089C241 /* en */,
+				B7D8C1A81D23769D0089C241 /* Base */,
+			);
+			name = SetRemindTimeController_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1951D2376680089C241 /* SetSexViewController_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1961D2376680089C241 /* en */,
+				B7D8C1A91D23769D0089C241 /* Base */,
+			);
+			name = SetSexViewController_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1971D2376680089C241 /* setShuiJiViewController_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1981D2376680089C241 /* en */,
+				B7D8C1AA1D23769D0089C241 /* Base */,
+			);
+			name = setShuiJiViewController_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1991D2376680089C241 /* setSmallAirViewXib_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C19A1D2376680089C241 /* en */,
+				B7D8C1AB1D23769D0089C241 /* Base */,
+			);
+			name = setSmallAirViewXib_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C19B1D2376680089C241 /* setTanTouViewController_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C19C1D2376680089C241 /* en */,
+				B7D8C1AC1D23769D0089C241 /* Base */,
+			);
+			name = setTanTouViewController_EN.xib;
+			sourceTree = "<group>";
+		};
 		E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -5591,33 +5688,6 @@
 				E00265071D08098700E31C79 /* Base */,
 			);
 			name = tantouLvXinView_EN.xib;
-			sourceTree = "<group>";
-		};
-		E01551A61D0D02D9000E285F /* setDev_CupView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E01551A51D0D02D9000E285F /* en */,
-				E01551A71D0D02E6000E285F /* Base */,
-			);
-			name = setDev_CupView.xib;
-			sourceTree = "<group>";
-		};
-		E01551AA1D0D0D2C000E285F /* setCupNameViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E01551A91D0D0D2C000E285F /* en */,
-				E01551AB1D0D0D2E000E285F /* Base */,
-			);
-			name = setCupNameViewController.xib;
-			sourceTree = "<group>";
-		};
-		E01551AE1D0D0F34000E285F /* setCuoTimeViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E01551AD1D0D0F34000E285F /* en */,
-				E01551AF1D0D0F35000E285F /* Base */,
-			);
-			name = setCuoTimeViewController.xib;
 			sourceTree = "<group>";
 		};
 		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController_EN.xib */ = {
