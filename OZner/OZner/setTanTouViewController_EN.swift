@@ -129,7 +129,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         var nameStr=tap.settings.name
         if nameStr.characters.contains("(")==false
         {
-            nameStr=nameStr+"(厨房)"
+            nameStr=nameStr+loadLanguage("(厨房)")
         }
         plistData.setValue(nameStr.substringToIndex(nameStr.characters.indexOf("(")!) as String, forKey: "deviceName")
         let tmpname=plistData.objectForKey("deviceName") as! String
@@ -158,14 +158,14 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
     }
     //返回
     func back(){
-        let alert=UIAlertView(title: "", message: "是否保存？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "保存")
+        let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
         alert.show()
 
     }
     
     //alert 点击事件
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if alertView.message=="是否保存？"
+        if alertView.message==loadLanguage("是否保存？")
         {
             if buttonIndex==0
             {
@@ -176,7 +176,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
                 SaveClick()
             }
         }
-        if alertView.message=="删除此设备"
+        if alertView.message==loadLanguage("删除此设备")
         {
             if buttonIndex==1
             {

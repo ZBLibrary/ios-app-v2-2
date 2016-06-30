@@ -724,15 +724,10 @@
 		8DB044BB1CC8CD5500B60DAB /* yiban.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB044A81CC8CD5500B60DAB /* yiban.png */; };
 		8DB044BD1CC8CD8D00B60DAB /* MyDeviceMainController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044BC1CC8CD8D00B60DAB /* MyDeviceMainController_EN.swift */; };
 		8DB044CE1CC8CDB500B60DAB /* WaterReplenishMainView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044BE1CC8CDB500B60DAB /* WaterReplenishMainView_EN.swift */; };
-		8DB044CF1CC8CDB500B60DAB /* WaterReplenishMainView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB044BF1CC8CDB500B60DAB /* WaterReplenishMainView_EN.xib */; };
 		8DB044D01CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044C01CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.swift */; };
-		8DB044D11CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB044C11CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.xib */; };
 		8DB044D21CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044C21CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.swift */; };
-		8DB044D31CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB044C31CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.xib */; };
 		8DB044D41CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044C41CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.swift */; };
-		8DB044D51CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB044C51CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.xib */; };
 		8DB044D61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044C61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift */; };
-		8DB044D71CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB044C71CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.xib */; };
 		8DB044D81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044C81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift */; };
 		8DB044D91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB044C91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib */; };
 		8DB044DA1CC8CDB500B60DAB /* waterReplenishChartView_EN.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044CB1CC8CDB500B60DAB /* waterReplenishChartView_EN.m */; };
@@ -853,6 +848,11 @@
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */; };
 		E00265041D08098500E31C79 /* tantouLvXinView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265061D08098500E31C79 /* tantouLvXinView_EN.xib */; };
+		E066B9411D24BD0A00810566 /* WaterReplenishMainView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9431D24BD0A00810566 /* WaterReplenishMainView_EN.xib */; };
+		E066B9451D24BDB400810566 /* HeadOfWaterReplenishDetailCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9471D24BDB400810566 /* HeadOfWaterReplenishDetailCell_EN.xib */; };
+		E066B9491D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B94B1D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib */; };
+		E066B94D1D24C28500810566 /* SkinHeadTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B94F1D24C28500810566 /* SkinHeadTableViewCell_EN.xib */; };
+		E066B9511D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9531D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController_EN.xib */; };
 		E0EFFEDF1D056CAE00E43C20 /* headViewView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView_EN.xib */; };
 		E0EFFEE51D05944E00E43C20 /* CenterChartCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell_EN.xib */; };
@@ -2077,15 +2077,10 @@
 		8DB044A81CC8CD5500B60DAB /* yiban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yiban.png; sourceTree = "<group>"; };
 		8DB044BC1CC8CD8D00B60DAB /* MyDeviceMainController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDeviceMainController_EN.swift; sourceTree = "<group>"; };
 		8DB044BE1CC8CDB500B60DAB /* WaterReplenishMainView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReplenishMainView_EN.swift; sourceTree = "<group>"; };
-		8DB044BF1CC8CDB500B60DAB /* WaterReplenishMainView_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterReplenishMainView_EN.xib; sourceTree = "<group>"; };
 		8DB044C01CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadOfWaterReplenishDetailCell_EN.swift; sourceTree = "<group>"; };
-		8DB044C11CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
 		8DB044C21CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterOfWaterReplenishDetailCell_EN.swift; sourceTree = "<group>"; };
-		8DB044C31CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
 		8DB044C41CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinHeadTableViewCell_EN.swift; sourceTree = "<group>"; };
-		8DB044C51CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinHeadTableViewCell_EN.xib; sourceTree = "<group>"; };
 		8DB044C61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCenterTableViewCell_EN.swift; sourceTree = "<group>"; };
-		8DB044C71CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinCenterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		8DB044C81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinFooterTableViewCell_EN.swift; sourceTree = "<group>"; };
 		8DB044C91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		8DB044CA1CC8CDB500B60DAB /* waterReplenishChartView_EN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waterReplenishChartView_EN.h; sourceTree = "<group>"; };
@@ -2248,6 +2243,16 @@
 		E00265031D07F97B00E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JingShuiWifiViewController_EN.xib; sourceTree = "<group>"; };
 		E00265051D08098500E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/tantouLvXinView_EN.xib; sourceTree = "<group>"; };
 		E00265071D08098700E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/tantouLvXinView_EN.xib; sourceTree = "<group>"; };
+		E066B9421D24BD0A00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterReplenishMainView_EN.xib; sourceTree = "<group>"; };
+		E066B9441D24BD0C00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterReplenishMainView_EN.xib; sourceTree = "<group>"; };
+		E066B9461D24BDB400810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HeadOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
+		E066B9481D24BDB500810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HeadOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
+		E066B94A1D24BE8D00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FooterOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
+		E066B94C1D24BE8E00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FooterOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
+		E066B94E1D24C28500810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinHeadTableViewCell_EN.xib; sourceTree = "<group>"; };
+		E066B9501D24C28700810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinHeadTableViewCell_EN.xib; sourceTree = "<group>"; };
+		E066B9521D24C4CA00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinCenterTableViewCell_EN.xib; sourceTree = "<group>"; };
+		E066B9541D24C4CC00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinCenterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController_EN.xib; sourceTree = "<group>"; };
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController_EN.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView_EN.xib; sourceTree = "<group>"; };
@@ -3838,15 +3843,15 @@
 			isa = PBXGroup;
 			children = (
 				8DB044BE1CC8CDB500B60DAB /* WaterReplenishMainView_EN.swift */,
-				8DB044BF1CC8CDB500B60DAB /* WaterReplenishMainView_EN.xib */,
+				E066B9431D24BD0A00810566 /* WaterReplenishMainView_EN.xib */,
 				8DB044C01CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.swift */,
-				8DB044C11CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.xib */,
+				E066B9471D24BDB400810566 /* HeadOfWaterReplenishDetailCell_EN.xib */,
 				8DB044C21CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.swift */,
-				8DB044C31CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.xib */,
+				E066B94B1D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib */,
 				8DB044C41CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.swift */,
-				8DB044C51CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.xib */,
+				E066B94F1D24C28500810566 /* SkinHeadTableViewCell_EN.xib */,
 				8DB044C61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift */,
-				8DB044C71CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.xib */,
+				E066B9531D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib */,
 				8DB044C81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift */,
 				8DB044C91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib */,
 				8DB044CA1CC8CDB500B60DAB /* waterReplenishChartView_EN.h */,
@@ -4583,7 +4588,7 @@
 				B7D8C1A01D2376680089C241 /* SetRemindTimeController_EN.xib in Resources */,
 				B7854BDF1D0D05620025125B /* TDSFooterCellzb_EN.xib in Resources */,
 				8DB044651CC8CD2C00B60DAB /* icon_lvxin_service_3.png in Resources */,
-				8DB044D71CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.xib in Resources */,
+				E066B9511D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib in Resources */,
 				428FC6D11C2ECFF2001D4ACF /* db_ozner_pub.db in Resources */,
 				8DB044B31CC8CD5500B60DAB /* device_tan_tou_noamrl_state.png in Resources */,
 				8DB044941CC8CD4200B60DAB /* icon_peidui_select_bigair@2x.png in Resources */,
@@ -4599,10 +4604,10 @@
 				8DBD54D61C567F4500D04B12 /* AddFriendTableViewCell.xib in Resources */,
 				8DB0448F1CC8CD4200B60DAB /* icon_peidui_normal_cup@3x.png in Resources */,
 				52FEC0401C35961B00B6D0F1 /* userAgreeMentsController.xib in Resources */,
-				8DB044D51CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.xib in Resources */,
+				E066B94D1D24C28500810566 /* SkinHeadTableViewCell_EN.xib in Resources */,
 				8DB044641CC8CD2C00B60DAB /* icon_lvxin_service_7.png in Resources */,
 				8DB043F71CC8CCE200B60DAB /* select_device_3.png in Resources */,
-				8DB044CF1CC8CDB500B60DAB /* WaterReplenishMainView_EN.xib in Resources */,
+				E066B9411D24BD0A00810566 /* WaterReplenishMainView_EN.xib in Resources */,
 				8D4354FA1C75A410007F83DA /* WaterPurFooterCell_EN.xib in Resources */,
 				8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */,
 				428141491C0B15F0006FEDDE /* ic_menu_black_24dp.png in Resources */,
@@ -4729,10 +4734,10 @@
 				8DB044B41CC8CD5500B60DAB /* device_tan_tou_select_state.png in Resources */,
 				8DB0444F1CC8CD1700B60DAB /* icon_power_normal@3x.png in Resources */,
 				8DB0440E1CC8CCE200B60DAB /* tantou_dianliang_0.png in Resources */,
-				8DB044D11CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.xib in Resources */,
+				E066B9451D24BDB400810566 /* HeadOfWaterReplenishDetailCell_EN.xib in Resources */,
 				8DFB39431C57730300A1641C /* TDSDetailViewController_EN.xib in Resources */,
 				8DB044391CC8CD1700B60DAB /* icon_circle_select.png in Resources */,
-				8DB044D31CC8CDB500B60DAB /* FooterOfWaterReplenishDetailCell_EN.xib in Resources */,
+				E066B9491D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib in Resources */,
 				42CB9EBB1C353C9C006D95CD /* icon_white.png in Resources */,
 				E00265041D08098500E31C79 /* tantouLvXinView_EN.xib in Resources */,
 				8DB044861CC8CD4200B60DAB /* icon_peidui_select_tan_tou@3x.png in Resources */,
@@ -5688,6 +5693,51 @@
 				E00265071D08098700E31C79 /* Base */,
 			);
 			name = tantouLvXinView_EN.xib;
+			sourceTree = "<group>";
+		};
+		E066B9431D24BD0A00810566 /* WaterReplenishMainView_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E066B9421D24BD0A00810566 /* en */,
+				E066B9441D24BD0C00810566 /* Base */,
+			);
+			name = WaterReplenishMainView_EN.xib;
+			sourceTree = "<group>";
+		};
+		E066B9471D24BDB400810566 /* HeadOfWaterReplenishDetailCell_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E066B9461D24BDB400810566 /* en */,
+				E066B9481D24BDB500810566 /* Base */,
+			);
+			name = HeadOfWaterReplenishDetailCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		E066B94B1D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E066B94A1D24BE8D00810566 /* en */,
+				E066B94C1D24BE8E00810566 /* Base */,
+			);
+			name = FooterOfWaterReplenishDetailCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		E066B94F1D24C28500810566 /* SkinHeadTableViewCell_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E066B94E1D24C28500810566 /* en */,
+				E066B9501D24C28700810566 /* Base */,
+			);
+			name = SkinHeadTableViewCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		E066B9531D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E066B9521D24C4CA00810566 /* en */,
+				E066B9541D24C4CC00810566 /* Base */,
+			);
+			name = SkinCenterTableViewCell_EN.xib;
 			sourceTree = "<group>";
 		};
 		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController_EN.xib */ = {

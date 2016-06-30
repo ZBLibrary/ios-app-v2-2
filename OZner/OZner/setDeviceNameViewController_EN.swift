@@ -97,9 +97,9 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
             break
         case 6:
             noticeName="setWaterReplenishName"
-            textstring="办公室"
-            setAdress1.text="办公室"
-            setAdress2.text="家"
+            textstring=loadLanguage("办公室")
+            setAdress1.text=loadLanguage("办公室")
+            setAdress2.text=loadLanguage("家")
             break
         default:
             break
@@ -112,7 +112,7 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     func back(){
         if (dataPlist.objectForKey("deviceName") as? String) != NameText.text!+"("+(setAdressImage1.hidden==false ? setAdress1.text:setAdress2.text)!+")"
         {
-            let alert=UIAlertView(title: "", message: "是否保存？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "保存")
+            let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
             alert.show()
         }
         else

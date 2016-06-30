@@ -89,7 +89,7 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
             var nameStr=airMx.settings.name
             if nameStr.characters.contains("(")==false
             {
-                nameStr=nameStr+"(家)"
+                nameStr=nameStr+loadLanguage("(家)")
             }
             plistData.setValue(nameStr.substringToIndex(nameStr.characters.indexOf("(")!) as String, forKey: "deviceName")
             let tmpname=plistData.objectForKey("deviceName") as! String

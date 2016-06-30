@@ -48,9 +48,30 @@
 "蓝牙连接" = "Bluetooth" ; // 连接
 "Wifi连接" = "Wifi" ;
 
-//"无" = "Normal skin" ; //皮肤
+"中性" = "Normal skin" ; //皮肤
 "油性" = "Oily skin" ;
 "干性" = "Dry skin" ;
+"干燥" = "drying" ;
+"正常" = "normal" ;
+"水润" = "watering" ;
+
+"检测失败,请重试" = "Test failed, please try again" ;
+"您的检测时间未满5秒..." = "Your testing time less than 5 seconds..." ;
+"水分太低" = "Water is too low" ;
+"您的肤质" = "Your skin" ;
+"脸颊两边皮肤干燥起皮,T区油腻毛孔粗大痘痘横行,脸部亟需补水哦" = "On both sides of the cheeks dry skin peeling,T area rich pore bulky blain blain,face need filling water" ;
+"皮肤不油也不干,脸部缺水问题暂时得到缓解" = "Skin not oily also not stem, face shortages eased temporarily" ;
+"脸部细腻红润有光泽,补水到位,面色也不一样哦" = "Delicate face ruddy luster, hydrating, complexion is different also" ;
+"眼部肌肤干燥，易出现皱纹及水肿。此处皮肤一旦松弛较难恢复原状态。补水是延缓衰老的根本保障" = "" ;
+"眼部现在的皮肤水分属于正常水平，但是略显疲惫，请注意保湿！" = "Dry eye skin, prone to wrinkles and edema.Once the skin flabby here more difficult to restore the original state.Hydrating is fundamental guarantee of anti-aging" ;
+"眼部现在的肌肤已经喝饱了水分！要继续保持哦！" = "Now the eye skin drink enough water!To continue to maintain!" ;
+"手部干燥细纹也跑出来啦,手指的肉刺也变多,需要赶快补充水分哦" = "Hand dry fine lines also ran out, finger meat became more, need to supplement moisture" ;
+"手部现在的肌肤水份得到补充,果然光滑许多" = "Smooth hand skin replenished water now, indeed as expected" ;
+"手部润滑有弹性,喝饱水的肌肤果然让人爱不释手呢 " = "Hand lubrication elastic, drink enough water in the skin really let a person fondle admiringly" ;
+"颈部组织薄弱，油脂分泌少，水分难以保持，皱纹容易产生，补水显得格外重要" = "Neck organization is weak, less oil secretion, moisture is difficult to maintain, prone to wrinkles, hydrating appears especially important" ;
+"颈部水份已达标，别让颈纹泄露了你的年龄" = "Neck moisture has to amount to mark, don't let neck lines reveal your age" ;
+"颈部现在很水润，但不要松懈哦" = "The neck now is water embellish, but not lax" ;
+
 
 "提示" = "Tips" ; // 提示报错
 "请连接设备" = "Please connect the device" ;
@@ -62,6 +83,7 @@
 "现在去购买滤芯" = "Buy filter cartridge now" ;
 "我知道了" = "I see" ;
 "请尝试以下方式：" = "Please try the followi/Users/roni/Desktop/sourcetree/jsj/OZner/en.lproj/Localizable.stringsng ways:" ;
+"该补水了,亲" = "Should moisturize,dear" ;
 
 "已关机" = "Power-off" ; // 机器连接状态
 "设备已断开" = "Device disconnected" ;
@@ -144,8 +166,11 @@
 "完成" = "success" ;
 "填写体重获得更健康的饮水量建议" = "Fill in the weight gain more healthy water quantity" ;
 "输入设备名称" = "Input the Device's name" ;
-//"办公室" = "Office" ;
+"办公室" = "Office" ;
+"家" = "Home" ;
 "客厅" = "Living room" ;
+"(厨房)" = "(kitchen)" ;
+"(家)" = "(Home)" ;
 "请选择设定您的性别" = "Please select your gender" ;
 
 "您可以检查WIFI连接状态后再进行配对" = "You can check the WiFi connection and try again" ;
@@ -292,6 +317,10 @@
 "关于智能杯" = "About Ozner cup" ;
 "智能杯" = "Ozner cup" ;
 "删除此设备" = "Delete the device" ;
+"健康(0%)" = "Healthy(0%)" ;
+"一般(0%)" = "So-so(0%)" ;
+"较差(0%)" = "Bad(0%)" ;
+"12月1日" = "December 1" ;
 
 "感冒发烧" = "cold/fever" ;
 "运动出汗" = "sweat" ;
@@ -373,3 +402,33 @@
 "添加新设备" = "Add New Device";
 "浩泽智能化生活服务" = "Ozner Smart Life";
 "立即添加设备，体验浩泽智能化生活服务" = "Add new device,start Ozner smart life";
+
+// 补水仪
+"请将补水仪放置脸部" = "Place the moisturizing meter face" ;
+"请将补水仪放置眼部" = "Place the moisturizing meter eye" ;
+"请将补水仪放置手部" = "Place the moisturizing meter hand" ;
+"请将补水仪放置颈部" = "Place the moisturizing meter neck" ;
+"上一次检测" = "The last test" ;
+"平均值" = "The average" ;
+"次" = "time" ;
+"今日肌肤状态  干燥" = "Today's state of the skin  drying" ;
+"今日肌肤状态  水润" = "Today's state of the skin  watering" ;
+"今日肌肤状态  正常" = "Today's state of the skin  normal" ;
+"脸部" = "face" ;
+"眼部" = "eye" ;
+"手部" = "hand" ;
+"颈部" = "neck" ;
+
+"干性皮肤" = "Dry skin" ;
+"油性皮肤" = "Oil skin" ;
+"中性皮肤" = "Normal skin" ;
+"数据累计不足，无法查询到您的肤质类型，请再接再厉" = "There is insufficient data accumulated query to your skin type,fighting" ;
+"干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱，定期使用适量精华补水也能改善您的干性特质哦！" = "Dry muscle replenishing water needed, in addition, the skin nutrition lack will accelerate water retention ability weak, regularly use a moderate amount of essence filling water also can improve the drying characteristics of you!" ;
+"皮肤通道是先吸收水，再吸收油。当肌底极度缺水干燥的时候，为保护皮肤，油脂才会分泌过盛。水油已严重失衡啦，请注意控油补水！" = "Channel is to absorb water, skin to absorb the oil.When the muscle of bottom water in dry, to protect the skin, excessive grease to secrete.Water and oil is serious imbalance, please note accusing oil filling water!" ;
+"干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱！" = "Dry muscle replenishing water needed, in addition, the skin nutrition lack will accelerate water retention ability weak!" ;
+"您还从未检测过哦" = "You have never tested" ;
+"通过数据累计统计，仅供参考。" = "Through data accumulated statistics, are for reference only." ;
+"检测次数累计达45次才能给您相对精准的数据" = "45 times detection can give you a relatively accurate data" ;
+"统计时间" = "Statistical time" ;
+
+

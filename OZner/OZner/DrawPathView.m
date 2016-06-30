@@ -37,7 +37,7 @@
         circleView.layer.borderWidth = 1;
         [self addSubview:circleView];
         
-        NSString* content = @"健康(0%)";
+        NSString* content = loadLanguage(@"健康(0%)");
         
         CGSize size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
         int orignX = 0;
@@ -57,7 +57,7 @@
         circleView.layer.borderWidth = 1;
         [self addSubview:circleView];
         
-        content = @"一般(0%)";
+        content = loadLanguage(@"一般(0%)");
         size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
         
         label = [[UILabel alloc]initWithFrame:CGRectMake(circleView.frame.size.width+circleView.frame.origin.x+5, circleView.frame.origin.y-(size.height-circleView.frame.size.height)/2, size.width+20, size.height)];
@@ -75,7 +75,7 @@
         circleView.layer.borderWidth = 1;
         [self addSubview:circleView];
         
-        content = @"较差(0%)";
+        content =  loadLanguage(@"较差(0%)");
         size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
         
         label = [[UILabel alloc]initWithFrame:CGRectMake(circleView.frame.size.width+circleView.frame.origin.x+5, circleView.frame.origin.y-(size.height-circleView.frame.size.height)/2, size.width+20, size.height)];
@@ -207,7 +207,7 @@
 - (void)createMonth
 {
     CGFloat font = 10.0;
-    NSString* str = @"较差";
+    NSString* str = loadLanguage(@"较差");
     CGSize  size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
@@ -220,7 +220,7 @@
     [self addSubview:separatorView];
     
     
-    str = @"一般";
+    str = loadLanguage(@"一般");
     size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     label = [[UILabel alloc]initWithFrame:CGRectMake(0, (self.frame.size.height-23-44)*0.33, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
@@ -232,7 +232,7 @@
     separatorView.backgroundColor = [UIColor colorWithRed:204.0/255 green:204.0/255 blue:204.0/255 alpha:1.0];
     [self addSubview:separatorView];
     
-    str = @"健康";
+    str = loadLanguage(@"健康");
     size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     label = [[UILabel alloc]initWithFrame:CGRectMake(0, (self.frame.size.height-23-44)*0.66, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
@@ -254,7 +254,7 @@
     {
         case 0:
         {
-            str = @"12月1日";
+            str = loadLanguage(@"12月1日");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             label.frame = CGRectMake(leftDistance+(distance)*index-size.width/2, self.frame.size.height-size.height-44, size.width, size.height);
             self.currentMonthLabel = label;
@@ -303,44 +303,44 @@
     {
         case 0:
         {
-            str = @"周一";
+            str = loadLanguage(@"周一");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 1:
         {
-            str = @"周二";
+            str = loadLanguage(@"周二");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 2:
         {
-            str = @"周三";
+            str = loadLanguage(@"周三");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 3:
         {
-            str = @"周四";
+            str = loadLanguage(@"周四");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             
             break;
         }
         case 4:
         {
-            str = @"周五";
+            str = loadLanguage(@"周五");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 5:
         {
-            str = @"周六";
+            str = loadLanguage(@"周六");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 6:
         {
-            str = @"周日";
+            str = loadLanguage(@"周日");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }

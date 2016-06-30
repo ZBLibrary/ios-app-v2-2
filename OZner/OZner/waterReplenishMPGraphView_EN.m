@@ -256,38 +256,38 @@
         }
         case 1:
         {
-            str = @"周二";
+            str = loadLanguage(@"周二");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 2:
         {
-            str = @"周三";
+            str = loadLanguage(@"周三");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 3:
         {
-            str = @"周四";
+            str = loadLanguage(@"周四");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             
             break;
         }
         case 4:
         {
-            str = @"周五";
+            str = loadLanguage(@"周五");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 5:
         {
-            str = @"周六";
+            str = loadLanguage(@"周六");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }
         case 6:
         {
-            str = @"周日";
+            str = loadLanguage(@"周日");
             size = [str boundingRectWithSize:CGSizeMake(100, 14) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} context:nil].size;
             break;
         }

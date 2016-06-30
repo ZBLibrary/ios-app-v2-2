@@ -96,7 +96,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         {
             color_explan_image2.image=UIImage(named: "showhuan2")
             color_expan_label1.text=loadLanguage("25°C以下")
-            color_expan_label2.text="25°C-50°C"
+            color_expan_label2.text=loadLanguage("25°C-50°C")
             color_expan_label3.text=loadLanguage("50°C以上")
             let cup=myCurrentDevice as! Cup
             cup.settings.haloMode=2

@@ -46,6 +46,7 @@ class SkinHeadTableViewCell_EN: UITableViewCell {
         skinStateLabel.text = currentSkin==0 ? "您还从未检测过哦":"通过数据累计统计，仅供参考。"
         skinImg.image=UIImage(named: (sex==SexType.Man ? "man":"woman")+"SkinOfChaXun\(currentSkin)")
         skinDescripe.text=skinDescripeText[currentSkin]
+       // skinStateLabel.adjustsFontSizeToFitWidth
         
     }
 }

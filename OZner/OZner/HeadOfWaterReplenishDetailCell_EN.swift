@@ -76,18 +76,18 @@ class HeadOfWaterReplenishDetailCell_EN: UITableViewCell {
             
             if Int((tmpStru?.skinValueOfToday)!)<WaterTypeValue[[.Face,.Eyes,.Hands,.Neck][currentOrgan]]![0]
             {
-                descOfSkinState.text="今日肌肤状态  干燥"
+                descOfSkinState.text=loadLanguage("今日肌肤状态  干燥")
             }
             else if Int((tmpStru?.skinValueOfToday)!)>WaterTypeValue[[.Face,.Eyes,.Hands,.Neck][currentOrgan]]![1]{
-                descOfSkinState.text="今日肌肤状态  水润"
+                descOfSkinState.text=loadLanguage("今日肌肤状态  水润")
             }
             else
             {
-                descOfSkinState.text="今日肌肤状态  正常"
+                descOfSkinState.text=loadLanguage("今日肌肤状态  正常")
             }
             
-            lastCheckValue.text="上次检测"+(NSString(format: "%.1f", (tmpStru?.lastSkinValue)!) as String)+"%"
-            averageCheckValue.text="平均值"+(NSString(format: "%.1f", (tmpStru?.averageSkinValue)!) as String)+"%("+(NSString(format: "%d", (tmpStru?.checkTimes)!) as String)+"次)"
+            lastCheckValue.text="\(loadLanguage("上次检测"))"+(NSString(format: "%.1f", (tmpStru?.lastSkinValue)!) as String)+"%"
+            averageCheckValue.text="\(loadLanguage("上次检测"))"+(NSString(format: "%.1f", (tmpStru?.averageSkinValue)!) as String)+"%("+(NSString(format: "%d", (tmpStru?.checkTimes)!) as String)+"\(loadLanguage("次")))"
             if isFistLoad==false{
                 delegate?.setCurrentOrgan(currentOrgan)
             }

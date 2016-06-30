@@ -64,22 +64,22 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
             {
             case isInside(locaArr![0],touchPoint):
                 currentBodyPart=BodyParts.Face
-                alertBeforeTest.text="请将补水仪放置脸部"
+                alertBeforeTest.text=loadLanguage("请将补水仪放置脸部")
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![1])
                 stateOfView=1
             case isInside(locaArr![1],touchPoint):
                 currentBodyPart=BodyParts.Eyes
-                alertBeforeTest.text="请将补水仪放置眼部"
+                alertBeforeTest.text=loadLanguage("请将补水仪放置眼部")
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![2])
                 stateOfView=1
             case isInside(locaArr![2],touchPoint):
                 currentBodyPart=BodyParts.Hands
-                alertBeforeTest.text="请将补水仪放置手部"
+                alertBeforeTest.text=loadLanguage("请将补水仪放置手部")
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![3])
                 stateOfView=1
             case isInside(locaArr![3],touchPoint):
                 currentBodyPart=BodyParts.Neck
-                alertBeforeTest.text="请将补水仪放置颈部"
+                alertBeforeTest.text=loadLanguage("请将补水仪放置颈部")
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![4])
                 stateOfView=1
             default:
@@ -148,13 +148,13 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                 if avgAndTimesArr.count>0
                 {
                     let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
-                    resultValueLabel.text = "上一次检测 \(Int(tmpStruct.lastSkinValue))%  |  平均值 \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)次）"
+                    resultValueLabel.text = "\(loadLanguage("上一次检测")) \(Int(tmpStruct.lastSkinValue))%  |  \(loadLanguage("平均值")) \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)\(loadLanguage("次"))）"
                 }
             case 2:
                 centerCircleView.backgroundColor=color_blue
                 alertBeforeTest.hidden=false
                 TestingIcon.hidden=false
-                alertBeforeTest.text="检测中"
+                alertBeforeTest.text=loadLanguage("检测中")
                 alertBeforeTest.font=UIFont.systemFontOfSize(20)
                 resultStateLabel.text=""
                 //检测转圈动画
@@ -164,7 +164,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                 if avgAndTimesArr.count>0
                 {
                     let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
-                    resultValueLabel.text = "上一次检测 \(Int(tmpStruct.lastSkinValue))%  |  平均值 \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)次）"
+                    resultValueLabel.text = "\(loadLanguage("上一次检测")) \(Int(tmpStruct.lastSkinValue))%  |  \(loadLanguage("平均值")) \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)\(loadLanguage("次"))）"
                 }
             case 3:
                 resultValueContainView.hidden=false
@@ -190,7 +190,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                 if avgAndTimesArr.count>0
                 {
                     let tmpStruct=avgAndTimesArr["\(currentBodyPart.hashValue)"]! as HeadOfWaterReplenishStruct
-                    resultValueLabel.text = "上一次检测 \(Int(tmpStruct.lastSkinValue))%  |  平均值 \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)次）"
+                    resultValueLabel.text = "\(loadLanguage("上一次检测")) \(Int(tmpStruct.lastSkinValue))%  |  \(loadLanguage("平均值")) \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)\(loadLanguage("次"))）"
                 }
             default:
                 break
@@ -200,15 +200,15 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
 
     //水分类型描述
     private let WaterStateArr=[
-        BodyParts.Face:["脸颊两边皮肤干燥起皮  T区油腻毛孔粗大痘痘横行 脸部亟需补水哦","皮肤不油也不干 脸部缺水问题暂时得到缓解","脸部细腻红润有光泽 补水到位 面色也不一样哦"],
-        BodyParts.Eyes:["眼部肌肤干燥，易出现皱纹及水肿。此处皮肤一旦松弛较难恢复原状态。补水是延缓衰老的根本保障","眼部现在的皮肤水分属于正常水平，但是略显疲惫，请注意保湿！","眼部现在的肌肤已经喝饱了水分！要继续保持哦！"],
-        BodyParts.Hands:["手部干燥细纹也跑出来啦 手指的肉刺也变多 需要赶快补充水分哦","手部现在的肌肤水份得到补充 果然光滑许多","手部润滑有弹性 喝饱水的肌肤果然让人爱不释手呢 "],
-        BodyParts.Neck:["颈部组织薄弱，油脂分泌少，水分难以保持，皱纹容易产生，补水显得格外重要","颈部水份已达标，别让颈纹泄露了你的年龄","颈部现在很水润，但不要松懈哦"]
+        BodyParts.Face:[loadLanguage("脸颊两边皮肤干燥起皮,T区油腻毛孔粗大痘痘横行,脸部亟需补水哦"),loadLanguage("皮肤不油也不干,脸部缺水问题暂时得到缓解"),loadLanguage("脸部细腻红润有光泽,补水到位,面色也不一样哦")],
+        BodyParts.Eyes:[loadLanguage("眼部肌肤干燥，易出现皱纹及水肿。此处皮肤一旦松弛较难恢复原状态。补水是延缓衰老的根本保障"),loadLanguage("眼部现在的皮肤水分属于正常水平，但是略显疲惫，请注意保湿！"),loadLanguage("眼部现在的肌肤已经喝饱了水分！要继续保持哦！")],
+        BodyParts.Hands:[loadLanguage("手部干燥细纹也跑出来啦,手指的肉刺也变多,需要赶快补充水分哦"),loadLanguage("手部现在的肌肤水份得到补充,果然光滑许多"),loadLanguage("手部润滑有弹性,喝饱水的肌肤果然让人爱不释手呢 ")],
+        BodyParts.Neck:[loadLanguage("颈部组织薄弱，油脂分泌少，水分难以保持，皱纹容易产生，补水显得格外重要"),loadLanguage("颈部水份已达标，别让颈纹泄露了你的年龄"),loadLanguage("颈部现在很水润，但不要松懈哦")]
     ]
 
 
-    private let SkinType=["干性","中性","油性"]
-    private let WaterType=["干燥","正常","水润"]
+    private let SkinType=[loadLanguage("干性"),loadLanguage("中性"),loadLanguage("油性")]
+    private let WaterType=[loadLanguage("干燥"),loadLanguage("正常"),loadLanguage("水润")]
     private let ColorType=[UIColor(red: 252/255, green: 128/255, blue: 65/255, alpha: 1),UIColor(red: 64/255, green: 125/255, blue: 250/255, alpha: 1),UIColor(red: 64/255, green: 125/255, blue: 250/255, alpha: 1)]
     
     //water,取值范围
@@ -266,9 +266,9 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                     if self!.runTimeOfAnimations>=10.0
                     {
                         let alertView=SCLAlertView()
-                        alertView.showTitle("", subTitle: "您的检测时间未满5秒...", duration: 2.0, completeText: "完成", style: SCLAlertViewStyle.Notice)
+                        alertView.showTitle("", subTitle: loadLanguage("您的检测时间未满5秒..."), duration: 2.0, completeText: loadLanguage("完成"), style: SCLAlertViewStyle.Notice)
                         self!.stateOfView=1
-                        self!.alertBeforeTest.text="检测失败,请重试"
+                        self!.alertBeforeTest.text=loadLanguage("检测失败,请重试")
                     }
                     self!.runTimeOfAnimations=0.0
                     self!.isStopAnimation=true
@@ -293,7 +293,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     //更新性别
     func updateViewzb()
     {
-        currentSex=(WaterReplenishDevice?.settings.get("sex", default: "女"))! as! String=="女" ? SexType.WoMan:SexType.Man
+        currentSex=(WaterReplenishDevice?.settings.get("sex", default: loadLanguage("女")))! as! String==loadLanguage("女") ? SexType.WoMan:SexType.Man
         setNeedsLayout()
         layoutIfNeeded()
     }
@@ -310,12 +310,12 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                 let weakSelf=self
                 if WaterReplenishDevice!.status.oil==0 {
                     let alertView=SCLAlertView()
-                    alertView.showTitle("", subTitle: "您的检测时间未满5秒...", duration: 2.0, completeText: "完成", style: SCLAlertViewStyle.Notice)
+                    alertView.showTitle("", subTitle: loadLanguage("您的检测时间未满5秒..."), duration: 2.0, completeText: loadLanguage("完成"), style: SCLAlertViewStyle.Notice)
                     weakSelf.stateOfView=1
-                    weakSelf.alertBeforeTest.text="检测失败,请重试"
+                    weakSelf.alertBeforeTest.text=loadLanguage("检测失败,请重试")
                 }
                 else if (WaterReplenishDevice!.status.oil < 0)||(WaterReplenishDevice!.status.moisture < 0){
-                    weakSelf.alertBeforeTest.text="水分太低"
+                    weakSelf.alertBeforeTest.text=loadLanguage("水分太低")
                     weakSelf.stateOfView=1
                 }else{
                     stateOfView=3//检测完成
@@ -412,7 +412,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         didSet{
             if currentSkinTypeIndex>0&&currentSkinTypeIndex<3
             {
-                self.skinButton.setTitle("您的肤质   "+self.SkinType[currentSkinTypeIndex], forState: .Normal)
+                self.skinButton.setTitle("\(loadLanguage("您的肤质"))   "+self.SkinType[currentSkinTypeIndex], forState: .Normal)
                 
             }
             

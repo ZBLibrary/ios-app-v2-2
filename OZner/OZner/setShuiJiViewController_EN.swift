@@ -41,7 +41,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
     
     @IBOutlet var deleteDeviceButton: UIButton!
     @IBAction func deleteDeviceClick(sender: AnyObject) {
-        let alert=UIAlertView(title: "", message: "删除此设备", delegate: self, cancelButtonTitle: "否", otherButtonTitles: "是")
+        let alert=UIAlertView(title: "", message: loadLanguage("删除此设备"), delegate: self, cancelButtonTitle: loadLanguage("否"), otherButtonTitles: loadLanguage("是"))
         alert.show()
     }
     func ClearClick_OK()
@@ -89,7 +89,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         var nameStr=water.settings.name
         if nameStr.characters.contains("(")==false
         {
-            nameStr=nameStr+"(家)"
+            nameStr=nameStr+loadLanguage("(家)")
         }
         plistData.setValue(nameStr.substringToIndex(nameStr.characters.indexOf("(")!) as String, forKey: "deviceName")
         let tmpname=plistData.objectForKey("deviceName") as! String
@@ -102,14 +102,14 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
     //返回
     func back(){
  
-        let alert=UIAlertView(title: "", message: "是否保存？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "保存")
+        let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
         alert.show()
        
     }
     
     //alert 点击事件
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if alertView.message=="是否保存？"
+        if alertView.message==loadLanguage("是否保存？")
         {
             if buttonIndex==0
             {
@@ -120,7 +120,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
                 SaveClick()
             }
         }
-        if alertView.message=="删除此设备"
+        if alertView.message==loadLanguage("删除此设备")
         {
             if buttonIndex==1
             {

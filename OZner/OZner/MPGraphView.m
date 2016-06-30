@@ -40,7 +40,7 @@
             circleView.layer.borderWidth = 1;
             [self addSubview:circleView];
             
-            NSString* content = @"健康(0%)";
+            NSString* content = loadLanguage(@"健康(0%)");
             
             CGSize size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
             int orignX = 0;
@@ -61,7 +61,7 @@
             circleView.layer.borderWidth = 1;
             [self addSubview:circleView];
             
-            content = @"一般(0%)";
+            content = loadLanguage(@"一般(0%)");
             size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
             
             label = [[UILabel alloc]initWithFrame:CGRectMake(circleView.frame.size.width+circleView.frame.origin.x+5, circleView.frame.origin.y-(size.height-circleView.frame.size.height)/2, size.width+20, size.height)];
@@ -79,7 +79,7 @@
             circleView.layer.borderWidth = 1;
             [self addSubview:circleView];
             
-            content = @"较差(0%)";
+            content = loadLanguage(@"较差(0%)");
             size = [content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, 14*(SCREEN_HEIGHT/667.0)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0*(SCREEN_HEIGHT/667.0)]} context:nil].size;
             
             label = [[UILabel alloc]initWithFrame:CGRectMake(circleView.frame.size.width+circleView.frame.origin.x+5, circleView.frame.origin.y-(size.height-circleView.frame.size.height)/2, size.width+20, size.height)];
@@ -215,7 +215,7 @@
 - (void)createMonth
 {
     CGFloat font = 10.0;
-    NSString* str = @"较差";
+    NSString* str = loadLanguage(@"较差");
     CGSize  size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
@@ -228,7 +228,7 @@
     [self addSubview:separatorView];
     
     
-    str = @"一般";
+    str = loadLanguage(@"一般");
     size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     label = [[UILabel alloc]initWithFrame:CGRectMake(0, (self.frame.size.height-23-44)*0.33, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
@@ -240,7 +240,7 @@
     separatorView.backgroundColor = [UIColor colorWithRed:204.0/255 green:204.0/255 blue:204.0/255 alpha:1.0];
     [self addSubview:separatorView];
     
-    str = @"健康";
+    str = loadLanguage(@"健康");
     size = [str boundingRectWithSize:CGSizeMake(100, font) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     label = [[UILabel alloc]initWithFrame:CGRectMake(0, (self.frame.size.height-23-44)*0.66, size.width, size.height)];
     label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];

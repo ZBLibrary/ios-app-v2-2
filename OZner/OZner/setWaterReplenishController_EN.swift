@@ -17,7 +17,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title="智能补水仪"
+        self.title=loadLanguage("智能补水仪")
         let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
@@ -34,11 +34,11 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         if myCurrentDevice != nil
         {
         settingDic?.setValue(myCurrentDevice?.settings.name, forKey: "deviceName")
-        settingDic?.setValue(myCurrentDevice?.settings.get("deviceAttrib", default: "办公室"), forKey: "deviceAttrib")
+        settingDic?.setValue(myCurrentDevice?.settings.get("deviceAttrib", default: loadLanguage("办公室")), forKey: "deviceAttrib")
         settingDic?.setValue(myCurrentDevice?.settings.get("checktime1", default: 30600), forKey: "checktime1")
         settingDic?.setValue(myCurrentDevice?.settings.get("checktime2", default: 52200), forKey: "checktime2")
         settingDic?.setValue(myCurrentDevice?.settings.get("checktime3", default: 75600), forKey: "checktime3")
-        settingDic?.setValue(myCurrentDevice?.settings.get("sex", default: "女"), forKey: "sex")
+        settingDic?.setValue(myCurrentDevice?.settings.get("sex", default: loadLanguage("女")), forKey: "sex")
             
         }
     }
@@ -53,7 +53,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
     }
     //返回
     func back(){
-        let alert=UIAlertView(title: "", message: "是否保存？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "保存")
+        let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
         alert.show()
     }
     //保存
@@ -104,7 +104,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
                 //推送声音
                 noti.soundName = UILocalNotificationDefaultSoundName
                 //内容
-                noti.alertBody = "该补水了,亲";
+                noti.alertBody = loadLanguage("该补水了,亲");
                 //显示在icon上的红色圈中的数子
                 noti.applicationIconBadgeNumber = 1;
                 UIApplication.sharedApplication().scheduleLocalNotification(noti)
@@ -118,7 +118,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
     }
     //alert 点击事件
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if alertView.message=="是否保存？"
+        if alertView.message==loadLanguage("是否保存？")
         {
             if buttonIndex==0
             {
@@ -129,7 +129,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
                 SaveClick()
             }
         }
-        if alertView.message=="删除此设备"
+        if alertView.message==loadLanguage("删除此设备")
         {
             if buttonIndex==1
             {
@@ -235,7 +235,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
     }
     func clearButton()
     {
-        let alert=UIAlertView(title: "", message: "删除此设备", delegate: self, cancelButtonTitle: "否", otherButtonTitles: "是")
+        let alert=UIAlertView(title: "", message: loadLanguage("删除此设备"), delegate: self, cancelButtonTitle: loadLanguage("否"), otherButtonTitles: loadLanguage("是"))
         alert.show()
     }
 

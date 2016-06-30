@@ -40,7 +40,6 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
     }
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         
         // Configure the view for the selected state
     }
@@ -64,7 +63,7 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
             {
                 return
             }
-            organLabel.text=["脸部","眼部","手部","颈部"][currentOrgan]
+            organLabel.text=[loadLanguage("脸部"),loadLanguage("眼部"),loadLanguage("手部"),loadLanguage("颈部")][currentOrgan]
    
             drawChartView(segmentControl.selectedSegmentIndex)
             
