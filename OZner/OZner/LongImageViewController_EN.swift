@@ -36,12 +36,12 @@ class LongImageViewController_EN: UIViewController {
         
             if get_CurrSelectEquip()==4
             {
-                 self.title="台式空气净化器使用说明"
+                 self.title=loadLanguage("台式空气净化器使用说明")
                  imageView=UIImageView(image: UIImage(named: "airOperation_small"))
             }
             else
             {
-                 self.title="立式空气净化器使用说明"
+                 self.title=loadLanguage("立式空气净化器使用说明")
                  imageView=UIImageView(image: UIImage(named: "airOperation_big"))
             }
         }
@@ -49,12 +49,12 @@ class LongImageViewController_EN: UIViewController {
         {
             if get_CurrSelectEquip()==4
             {
-                self.title="台式空气净化器常见问题"
+                self.title=loadLanguage("台式空气净化器常见问题")
                 imageView=UIImageView(image: UIImage(named: "airProblem_small"))
             }
             else
             {
-                self.title="立式空气净化器常见问题"
+                self.title=loadLanguage("立式空气净化器常见问题")
                 imageView=UIImageView(image: UIImage(named: "airProblem_big"))
             }
         }

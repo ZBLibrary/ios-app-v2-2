@@ -14,7 +14,7 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
     }
-        required init(coder aDecoder: NSCoder) {
+    required init(coder aDecoder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
         
@@ -46,7 +46,7 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="设备名称"
-         Place.text=loadLanguage("使用地点")
+        Place.text=loadLanguage("使用地点")
         //初始化控件
         initCustomView()
         NameText.text=dataPlist.objectForKey("deviceName") as? String
@@ -59,7 +59,7 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
         self.navigationItem.rightBarButtonItem=savebutton
         // Do any additional setup after loading the view.
     }
-
+    
     //自定义函数
     //初始化控件
     
@@ -67,28 +67,28 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
         var textstring=""
         switch(get_CurrSelectEquip())
         {
-            //探头
+        //探头
         case 2:
             noticeName="setTanTouName"
             textstring=loadLanguage("洗手间")
             setAdress1.text=loadLanguage("洗手间")
             setAdress2.text=loadLanguage("厨房")
             break
-            //净水器
+        //净水器
         case 3:
             noticeName="setShuiJiName"
             textstring=loadLanguage("家")
             setAdress1.text=loadLanguage("家")
             setAdress2.text=loadLanguage("办公室")
             break
-            //台式空气净化器
+        //台式空气净化器
         case 4:
             noticeName="setSmallAirName"
             textstring=loadLanguage("客厅")
             setAdress1.text=loadLanguage("客厅")
             setAdress2.text=loadLanguage("卧室")
             break
-            //立式空气净化器
+        //立式空气净化器
         case 5:
             noticeName="setBigAirName"
             textstring=loadLanguage("客厅")
@@ -117,7 +117,7 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
         }
         else
         {
-           self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewControllerAnimated(true)
         }
     }
     //alert 点击事件
@@ -161,13 +161,13 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

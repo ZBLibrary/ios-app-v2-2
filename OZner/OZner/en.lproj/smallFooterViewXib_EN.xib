@@ -17,7 +17,7 @@
                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air0013" translatesAutoresizingMaskIntoConstraints="NO" id="dDj-Qd-Kiy">
                             <rect key="frame" x="18" y="76" width="18" height="4"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="低风速" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZd-uu-jHF">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low wind Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZd-uu-jHF">
                             <rect key="frame" x="0.0" y="95" width="54" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="kH5-FF-L91"/>
@@ -51,7 +51,7 @@
                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air0017" translatesAutoresizingMaskIntoConstraints="NO" id="Iwb-ea-yRN">
                             <rect key="frame" x="18" y="72" width="18" height="12"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高风速" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhM-X8-xv6">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhM-X8-xv6">
                             <rect key="frame" x="0.0" y="99" width="54" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="A7J-HZ-gCs"/>
@@ -108,7 +108,7 @@
                             <color key="textColor" red="0.0039215686274509803" green="0.36078431372549019" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="低速" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWC-Mx-Lk0">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWC-Mx-Lk0">
                             <rect key="frame" x="0.0" y="35" width="60" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="Bas-nG-X1p"/>

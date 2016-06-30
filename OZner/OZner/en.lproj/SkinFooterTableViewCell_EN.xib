@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2i-fH-yLk">
                                 <rect key="frame" x="0.0" y="15" width="375" height="236"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="womanSkinOfChaXun1" translatesAutoresizingMaskIntoConstraints="NO" id="cua-1Q-ASZ">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="womanSkinOfChaXun1" translatesAutoresizingMaskIntoConstraints="NO" id="cua-1Q-ASZ">
                                         <rect key="frame" x="15" y="82" width="344" height="154"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他肤质类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-N4-hlm">
@@ -43,7 +43,7 @@
                                                         <rect key="frame" x="7" y="0.0" width="55" height="25"/>
                                                         <color key="backgroundColor" red="0.1843137255" green="0.44705882349999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
-                                                        <state key="normal" title="干性">
+                                                        <state key="normal" title="Dry skin">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -70,7 +70,7 @@
                                                         <rect key="frame" x="7" y="0.0" width="55" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
-                                                        <state key="normal" title="油性">
+                                                        <state key="normal" title="Oily skin">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -97,7 +97,7 @@
                                                         <rect key="frame" x="7" y="0.0" width="55" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
-                                                        <state key="normal" title="中性">
+                                                        <state key="normal" title="Neutral">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -159,7 +159,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJi-Ru-Rwc">
                                 <rect key="frame" x="0.0" y="251" width="375" height="90"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温馨提示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2W-Nb-tJa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2W-Nb-tJa">
                                         <rect key="frame" x="15" y="12" width="345" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="1Lj-qP-q3w"/>
@@ -168,7 +168,7 @@
                                         <color key="textColor" red="0.93745909689999996" green="0.93745909689999996" blue="0.93745909689999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="健康的新陈代谢以及内分泌健康的新陈代谢以及内分泌健康的新陈代谢以及内分泌健康的新陈代谢以及内分泌健康的新陈代谢以及内分泌健康的新陈代谢以及内分泌以" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHE-g1-4an">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Healthy metabolism " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHE-g1-4an">
                                         <rect key="frame" x="10" y="22" width="361" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

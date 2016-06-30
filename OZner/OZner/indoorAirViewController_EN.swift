@@ -71,7 +71,7 @@ class indoorAirViewController_EN: UIViewController {
         
         let alertview=SCLAlertView()
         
-        alertview.addButton("确定") {
+        alertview.addButton(loadLanguage("确定")) {
             if airPurifier_Bluetooth != nil {
                 MBProgressHUD.showHUDAddedTo(weakSelf.view, animated: true)
                 airPurifier_Bluetooth?.status.resetFilterStatus({ (error) in
@@ -81,9 +81,9 @@ class indoorAirViewController_EN: UIViewController {
                 weakSelf.performSelector(#selector(weakSelf.UpDateDataAndNotice), withObject: nil, afterDelay: 6);
             }
         }
-        alertview.addButton("取消") {
+        alertview.addButton(loadLanguage("取消")) {
         }
-        alertview.showInfo("", subTitle: "重置后将对滤芯使用时间重新计时，这将会影响到空气净化效果。确认是否重置？")
+        alertview.showInfo("", subTitle: loadLanguage("重置后将对滤芯使用时间重新计时，这将会影响到空气净化效果。确认是否重置？"))
     }
     func UpDateDataAndNotice()  {
         upDateData()
@@ -130,7 +130,7 @@ class indoorAirViewController_EN: UIViewController {
             smallHeadView.Pm2d5Value.text=airPurifier_Bluetooth.sensor.PM25==65535 ? "-":"\(airPurifier_Bluetooth.sensor.PM25)"
             //airPurifier_Bluetooth.status
             mainview.smallairHidenView.addConstraint(NSLayoutConstraint(item: mainview.smallairHidenView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 0, constant: 0))
-            mainview.airTotal.text = "无"
+            mainview.airTotal.text = loadLanguage("无")
             mainview.smallairHidenView.hidden=true
             //mainview.airPurifier_Bluetooth=airPurifier_Bluetooth
             //滤芯状态
@@ -183,19 +183,19 @@ class indoorAirViewController_EN: UIViewController {
         switch voc
         {
         case 0:
-            vocStr="优"
+            vocStr=loadLanguage("优")
             break
         case 1:
-            vocStr="良"
+            vocStr=loadLanguage("良")
             break
         case 2:
-            vocStr="一般"
+            vocStr=loadLanguage("一般")
             break
         case 3:
-            vocStr="差"
+            vocStr=loadLanguage("差")
             break
         default:
-            vocStr="检测"
+            vocStr=loadLanguage("检测")
             break
             
         }

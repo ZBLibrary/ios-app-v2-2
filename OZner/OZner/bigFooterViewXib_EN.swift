@@ -33,8 +33,8 @@ class bigFooterViewXib_EN: UIView {
 //    let OffName=["1":"关","2":"模式","3":"定时","4":"童锁","5":"低速","6":"中速","7":"高速"]
     let OnImage=["1":"air01001","2":"air01002","3":"air01004"]
     let OffImage=["1":"air22011","2":"air22012","3":"air22014"]
-    let OnName=["1":"开","2":"模式","3":"童锁"]
-    let OffName=["1":"关","2":"模式","3":"童锁"]
+    let OnName=["1":loadLanguage("开"),"2":loadLanguage("模式"),"3":loadLanguage("童锁")]
+    let OffName=["1":loadLanguage("关"),"2":loadLanguage("模式"),"3":loadLanguage("童锁")]
     let OnColor=UIColor(red: 0, green: 111/255, blue: 246/255, alpha: 1)
     let OffColor=UIColor(red: 159/255, green: 160/255, blue: 162/255, alpha: 1)
     func updateView(isOn:Bool)

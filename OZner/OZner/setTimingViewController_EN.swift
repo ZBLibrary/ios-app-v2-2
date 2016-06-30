@@ -200,14 +200,14 @@ class setTimingViewController_EN: UIViewController {
     }
     
     @IBOutlet var weakView: UIView!
-    let arrayWeek=["1":"一","2":"二","3":"三","4":"四","5":"五","6":"六","7":"日"]
+    let arrayWeek=["1":loadLanguage("一"),"2":loadLanguage("二"),"3":loadLanguage("三"),"4":loadLanguage("四"),"5":loadLanguage("五"),"6":loadLanguage("六"),"7":loadLanguage("日")]
     let sendairWeekValue:NSDictionary=["1":1,"2":2,"3":4,"4":8,"5":16,"6":32,"7":64]
     var weakbuttons=[UIButton]()
     let color_select=UIColor(red: 76/255, green: 152/255, blue: 1, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title="定时"
+        self.title=loadLanguage("定时")
         Trunon.text = loadLanguage("开机时间");
         
         shutdown.text = loadLanguage("关机时间");
@@ -215,7 +215,7 @@ class setTimingViewController_EN: UIViewController {
         selecttime.text = loadLanguage("选择周重复时间");
         
         
-        let savebutton=UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(SaveClick))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         self.navigationItem.rightBarButtonItem=savebutton
         var viewwidth:CGFloat=Screen_Width*36/375
         if viewwidth>36
@@ -246,7 +246,7 @@ class setTimingViewController_EN: UIViewController {
      
         if self.myCurrentDevice==nil&&AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)==false
         {
-            let alert=UIAlertView(title: "", message: "保存失败，未连接设备!", delegate: self, cancelButtonTitle: "ok")
+            let alert=UIAlertView(title: "", message: loadLanguage("保存失败，未连接设备!"), delegate: self, cancelButtonTitle: "ok")
             alert.show()
             return
         }

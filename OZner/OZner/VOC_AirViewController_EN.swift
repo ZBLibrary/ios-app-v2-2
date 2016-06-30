@@ -41,7 +41,7 @@ class VOC_AirViewController_EN: UIViewController {
         super.viewDidLoad()
 
         Volotiiecompounds.text = loadLanguage("挥发性有机化合物");
-        self.title="什么是VOC"
+        self.title=loadLanguage("什么是VOC")
         desriText.text = loadLanguage("  通常指在常温下容易挥发的有机化物。较常见的苯 、甲苯、二甲苯、乙苯、苯乙烯、甲醛、TVOC(6-16个碳的烷烃）、酮类等。 这些化合物具有易挥发和亲油等特点，被广泛应用于鞋类、玩具、油漆和石墨、粘合剂、化妆品、室内和汽车装饰材料等工业领域。VOC对人体健康有巨大的影响，会伤害人的肝脏、肾脏、大脑和神经系统，造成记忆力减退等严重后果，甚至可能致癌。");
 
         
