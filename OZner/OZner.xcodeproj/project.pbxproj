@@ -221,10 +221,8 @@
 		524337CC1C42A8E50024133D /* WaterPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C71C42A8E50024133D /* WaterPurifierStatus.m */; };
 		524337DB1C42ABE50024133D /* MQTTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DA1C42ABE50024133D /* MQTTKit.m */; };
 		524337E21C42ABF20024133D /* ConfigurationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DD1C42ABF20024133D /* ConfigurationDevice.m */; };
-		52461F011C26960A00834CC2 /* smallFooterViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F001C26960A00834CC2 /* smallFooterViewXib_EN.xib */; };
 		52461F031C26970B00834CC2 /* bigFooterViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F021C26970B00834CC2 /* bigFooterViewXib_EN.xib */; };
 		52461F051C26985500834CC2 /* outAirXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F041C26985500834CC2 /* outAirXib_EN.xib */; };
-		52461F071C2699AD00834CC2 /* indoorAirXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F061C2699AD00834CC2 /* indoorAirXib_EN.xib */; };
 		5264661F1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */; };
 		526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */; };
 		526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air_EN.swift */; };
@@ -234,7 +232,6 @@
 		528D772C1C26A5F600243986 /* PM2d5ViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D772A1C26A5F600243986 /* PM2d5ViewController_EN.swift */; };
 		528D772D1C26A5F600243986 /* PM2d5ViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D772B1C26A5F600243986 /* PM2d5ViewController_EN.xib */; };
 		528D77301C26ACF100243986 /* VOC_AirViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D772E1C26ACF100243986 /* VOC_AirViewController_EN.swift */; };
-		528D77311C26ACF100243986 /* VOC_AirViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D772F1C26ACF100243986 /* VOC_AirViewController_EN.xib */; };
 		528D77391C26FF2B00243986 /* LoadingXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D77381C26FF2B00243986 /* LoadingXib_EN.xib */; };
 		528D773D1C27094000243986 /* indoorHead_SmallXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D773C1C27094000243986 /* indoorHead_SmallXib_EN.xib */; };
 		528D773F1C270D2800243986 /* indoorHead_BigXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D773E1C270D2800243986 /* indoorHead_BigXib_EN.xib */; };
@@ -325,11 +322,8 @@
 		8D3B60E71C929C0F007857E9 /* CALayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */; };
 		8D4354F61C75A049007F83DA /* WaterPurTDSDetailController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354F51C75A049007F83DA /* WaterPurTDSDetailController_EN.swift */; };
 		8D4354F91C75A410007F83DA /* WaterPurFooterCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354F71C75A410007F83DA /* WaterPurFooterCell_EN.swift */; };
-		8D4354FA1C75A410007F83DA /* WaterPurFooterCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4354F81C75A410007F83DA /* WaterPurFooterCell_EN.xib */; };
 		8D4354FD1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354FB1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.swift */; };
-		8D4354FE1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4354FC1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.xib */; };
 		8D4355011C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354FF1C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.swift */; };
-		8D4355021C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4355001C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.xib */; };
 		8D438E8F1C9AB42A0060896D /* OznerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E8E1C9AB42A0060896D /* OznerManager.m */; };
 		8D438E961C9AB44F0060896D /* WaterReplenishmentMeterMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E911C9AB44F0060896D /* WaterReplenishmentMeterMgr.m */; };
 		8D438E971C9AB44F0060896D /* WaterReplenishmentMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E931C9AB44F0060896D /* WaterReplenishmentMeter.m */; };
@@ -344,7 +338,6 @@
 		8D7CA8F01D115089002C1196 /* icon_buble_add_device_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D7CA8EF1D115089002C1196 /* icon_buble_add_device_en.png */; };
 		8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D7CA8F11D1150C0002C1196 /* icon_buble_add_device.png */; };
 		8D7FEC771C746DE200DD01AF /* WaterPurifierHeadCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell_EN.swift */; };
-		8D7FEC781C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib */; };
 		8D9C63561CA2456200543353 /* MXChipPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63551CA2456200543353 /* MXChipPair.m */; };
 		8D9C635A1CA245B700543353 /* HttpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63581CA245B700543353 /* HttpServer.m */; };
 		8D9C635B1CA245B700543353 /* EasyLinkSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63591CA245B700543353 /* EasyLinkSender.m */; };
@@ -729,7 +722,6 @@
 		8DB044D41CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044C41CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.swift */; };
 		8DB044D61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044C61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift */; };
 		8DB044D81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044C81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift */; };
-		8DB044D91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB044C91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib */; };
 		8DB044DA1CC8CDB500B60DAB /* waterReplenishChartView_EN.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044CB1CC8CDB500B60DAB /* waterReplenishChartView_EN.m */; };
 		8DB044DB1CC8CDB500B60DAB /* waterReplenishMPGraphView_EN.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044CD1CC8CDB500B60DAB /* waterReplenishMPGraphView_EN.m */; };
 		8DB044DE1CC8CDC600B60DAB /* WaterReplenishDetailTableViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB044DC1CC8CDC600B60DAB /* WaterReplenishDetailTableViewController_EN.swift */; };
@@ -795,7 +787,7 @@
 		8DF253B61C774E8500CE2AE5 /* WaterMPGraphView_EN.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF253B51C774E8500CE2AE5 /* WaterMPGraphView_EN.m */; };
 		8DFB392D1C57248700A1641C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB392C1C57248700A1641C /* ChatViewController.m */; };
 		8DFB39331C574E4B00A1641C /* MxChipAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */; };
-		8DFB393F1C57730300A1641C /* WhatHtml.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39361C57730300A1641C /* WhatHtml.plist */; };
+		8DFB393F1C57730300A1641C /* WhatHtml_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39361C57730300A1641C /* WhatHtml_EN.plist */; };
 		8DFB39401C57730300A1641C /* ToWhatViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39371C57730300A1641C /* ToWhatViewController_EN.swift */; };
 		8DFB39411C57730300A1641C /* ToWhatViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39381C57730300A1641C /* ToWhatViewController_EN.xib */; };
 		8DFB39421C57730300A1641C /* TDSDetailViewController_EN.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393A1C57730300A1641C /* TDSDetailViewController_EN.m */; };
@@ -844,6 +836,14 @@
 		B7D8C1C91D2376F60089C241 /* setTanTouViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B91D2376F60089C241 /* setTanTouViewController_EN.swift */; };
 		B7D8C1CA1D2376F60089C241 /* setWaterReplenish_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */; };
 		B7D8C1CB1D2376F60089C241 /* setWaterReplenishController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1BB1D2376F60089C241 /* setWaterReplenishController_EN.swift */; };
+		B7D8C1CD1D23A1F40089C241 /* WaterPurifierHeadCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1CF1D23A1F40089C241 /* WaterPurifierHeadCell_EN.xib */; };
+		B7D8C1D11D23A5C70089C241 /* WaterPurFooterCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1D31D23A5C70089C241 /* WaterPurFooterCell_EN.xib */; };
+		B7D8C1D71D23A76D0089C241 /* WaterPurTDSDetailCell1_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1D91D23A76D0089C241 /* WaterPurTDSDetailCell1_EN.xib */; };
+		B7D8C1DB1D23AEA30089C241 /* WaterPurTDSDetailCell2_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1DD1D23AEA30089C241 /* WaterPurTDSDetailCell2_EN.xib */; };
+		B7D8C2341D24A8E30089C241 /* indoorAirXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C2361D24A8E30089C241 /* indoorAirXib_EN.xib */; };
+		B7D8C2371D24AFB10089C241 /* VOC_AirViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C2391D24AFB10089C241 /* VOC_AirViewController_EN.xib */; };
+		B7D8C23A1D24B3E20089C241 /* smallFooterViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C23C1D24B3E20089C241 /* smallFooterViewXib_EN.xib */; };
+		B7D8C23D1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C23F1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib */; };
 		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */; };
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */; };
@@ -1283,10 +1283,8 @@
 		524337DC1C42ABF20024133D /* ConfigurationDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationDevice.h; sourceTree = "<group>"; };
 		524337DD1C42ABF20024133D /* ConfigurationDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationDevice.m; sourceTree = "<group>"; };
 		524337DE1C42ABF20024133D /* EasyLinkSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyLinkSender.h; sourceTree = "<group>"; };
-		52461F001C26960A00834CC2 /* smallFooterViewXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = smallFooterViewXib_EN.xib; sourceTree = "<group>"; };
 		52461F021C26970B00834CC2 /* bigFooterViewXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bigFooterViewXib_EN.xib; sourceTree = "<group>"; };
 		52461F041C26985500834CC2 /* outAirXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = outAirXib_EN.xib; sourceTree = "<group>"; };
-		52461F061C2699AD00834CC2 /* indoorAirXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirXib_EN.xib; sourceTree = "<group>"; };
 		526466191C43D9C7006C86D3 /* AirPurifierConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifierConsts.h; sourceTree = "<group>"; };
 		5264661C1C43D9C7006C86D3 /* MxChipAirPurifierStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierStatus.h; sourceTree = "<group>"; };
 		5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierStatus.m; sourceTree = "<group>"; };
@@ -1298,7 +1296,6 @@
 		528D772A1C26A5F600243986 /* PM2d5ViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PM2d5ViewController_EN.swift; sourceTree = "<group>"; };
 		528D772B1C26A5F600243986 /* PM2d5ViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PM2d5ViewController_EN.xib; sourceTree = "<group>"; };
 		528D772E1C26ACF100243986 /* VOC_AirViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOC_AirViewController_EN.swift; sourceTree = "<group>"; };
-		528D772F1C26ACF100243986 /* VOC_AirViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VOC_AirViewController_EN.xib; sourceTree = "<group>"; };
 		528D77381C26FF2B00243986 /* LoadingXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingXib_EN.xib; sourceTree = "<group>"; };
 		528D773C1C27094000243986 /* indoorHead_SmallXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorHead_SmallXib_EN.xib; sourceTree = "<group>"; };
 		528D773E1C270D2800243986 /* indoorHead_BigXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorHead_BigXib_EN.xib; sourceTree = "<group>"; };
@@ -1412,11 +1409,8 @@
 		8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CALayer+extension.swift"; path = "OZner/CALayer+extension.swift"; sourceTree = "<group>"; };
 		8D4354F51C75A049007F83DA /* WaterPurTDSDetailController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailController_EN.swift; sourceTree = "<group>"; };
 		8D4354F71C75A410007F83DA /* WaterPurFooterCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurFooterCell_EN.swift; sourceTree = "<group>"; };
-		8D4354F81C75A410007F83DA /* WaterPurFooterCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurFooterCell_EN.xib; sourceTree = "<group>"; };
 		8D4354FB1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailCell1_EN.swift; sourceTree = "<group>"; };
-		8D4354FC1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurTDSDetailCell1_EN.xib; sourceTree = "<group>"; };
 		8D4354FF1C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailCell2_EN.swift; sourceTree = "<group>"; };
-		8D4355001C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurTDSDetailCell2_EN.xib; sourceTree = "<group>"; };
 		8D438E8D1C9AB42A0060896D /* OznerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OznerManager.h; sourceTree = "<group>"; };
 		8D438E8E1C9AB42A0060896D /* OznerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OznerManager.m; sourceTree = "<group>"; };
 		8D438E901C9AB44F0060896D /* WaterReplenishmentMeterMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterMgr.h; sourceTree = "<group>"; };
@@ -1440,7 +1434,6 @@
 		8D7CA8EF1D115089002C1196 /* icon_buble_add_device_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_buble_add_device_en.png; sourceTree = "<group>"; };
 		8D7CA8F11D1150C0002C1196 /* icon_buble_add_device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_buble_add_device.png; sourceTree = "<group>"; };
 		8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurifierHeadCell_EN.swift; sourceTree = "<group>"; };
-		8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurifierHeadCell_EN.xib; sourceTree = "<group>"; };
 		8D8B6F401CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterStatus.h; sourceTree = "<group>"; };
 		8D9C63541CA2456200543353 /* MXChipPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXChipPair.h; sourceTree = "<group>"; };
 		8D9C63551CA2456200543353 /* MXChipPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXChipPair.m; sourceTree = "<group>"; };
@@ -2082,7 +2075,6 @@
 		8DB044C41CC8CDB500B60DAB /* SkinHeadTableViewCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinHeadTableViewCell_EN.swift; sourceTree = "<group>"; };
 		8DB044C61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCenterTableViewCell_EN.swift; sourceTree = "<group>"; };
 		8DB044C81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinFooterTableViewCell_EN.swift; sourceTree = "<group>"; };
-		8DB044C91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		8DB044CA1CC8CDB500B60DAB /* waterReplenishChartView_EN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waterReplenishChartView_EN.h; sourceTree = "<group>"; };
 		8DB044CB1CC8CDB500B60DAB /* waterReplenishChartView_EN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waterReplenishChartView_EN.m; sourceTree = "<group>"; };
 		8DB044CC1CC8CDB500B60DAB /* waterReplenishMPGraphView_EN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waterReplenishMPGraphView_EN.h; sourceTree = "<group>"; };
@@ -2162,7 +2154,7 @@
 		8DFB392E1C574E2A00A1641C /* BluetoothAirPurifierSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothAirPurifierSensor.h; sourceTree = "<group>"; };
 		8DFB39311C574E4B00A1641C /* MxChipAirPurifierSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierSensor.h; sourceTree = "<group>"; };
 		8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierSensor.m; sourceTree = "<group>"; };
-		8DFB39361C57730300A1641C /* WhatHtml.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WhatHtml.plist; sourceTree = "<group>"; };
+		8DFB39361C57730300A1641C /* WhatHtml_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WhatHtml_EN.plist; sourceTree = "<group>"; };
 		8DFB39371C57730300A1641C /* ToWhatViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToWhatViewController_EN.swift; sourceTree = "<group>"; };
 		8DFB39381C57730300A1641C /* ToWhatViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToWhatViewController_EN.xib; sourceTree = "<group>"; };
 		8DFB39391C57730300A1641C /* TDSDetailViewController_EN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSDetailViewController_EN.h; sourceTree = "<group>"; };
@@ -2235,6 +2227,18 @@
 		B7D8C1B91D2376F60089C241 /* setTanTouViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setTanTouViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish_EN.plist; sourceTree = "<group>"; };
 		B7D8C1BB1D2376F60089C241 /* setWaterReplenishController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setWaterReplenishController_EN.swift; sourceTree = "<group>"; };
+		B7D8C1CE1D23A1F40089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterPurifierHeadCell_EN.xib; sourceTree = "<group>"; };
+		B7D8C1D01D23A1F60089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterPurifierHeadCell_EN.xib; sourceTree = "<group>"; };
+		B7D8C1D21D23A5C70089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterPurFooterCell_EN.xib; sourceTree = "<group>"; };
+		B7D8C1D61D23A5D90089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterPurFooterCell_EN.xib; sourceTree = "<group>"; };
+		B7D8C1D81D23A76D0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterPurTDSDetailCell1_EN.xib; sourceTree = "<group>"; };
+		B7D8C1DA1D23A77A0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterPurTDSDetailCell1_EN.xib; sourceTree = "<group>"; };
+		B7D8C1DC1D23AEA30089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterPurTDSDetailCell2_EN.xib; sourceTree = "<group>"; };
+		B7D8C1E01D23AEA90089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterPurTDSDetailCell2_EN.xib; sourceTree = "<group>"; };
+		B7D8C2351D24A8E30089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/indoorAirXib_EN.xib; sourceTree = "<group>"; };
+		B7D8C2381D24AFB10089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VOC_AirViewController_EN.xib; sourceTree = "<group>"; };
+		B7D8C23B1D24B3E20089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/smallFooterViewXib_EN.xib; sourceTree = "<group>"; };
+		B7D8C23E1D24C13D0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
@@ -3483,15 +3487,15 @@
 				526DA5311C291E7E002755CA /* indoorAirWarn */,
 				52A4EF591C27F34C005F282D /* headViewView_EN.swift */,
 				E0EFFEE11D056CAE00E43C20 /* headViewView_EN.xib */,
-				52461F041C26985500834CC2 /* outAirXib_EN.xib */,
 				52A4EF6A1C28A749005F282D /* outAirXib_EN.swift */,
-				52461F061C2699AD00834CC2 /* indoorAirXib_EN.xib */,
+				52461F041C26985500834CC2 /* outAirXib_EN.xib */,
 				52A4EF6E1C28B12F005F282D /* indoorAirXib_EN.swift */,
+				B7D8C2361D24A8E30089C241 /* indoorAirXib_EN.xib */,
 				52A4EF6C1C28B0F2005F282D /* indoorAirViewController_EN.swift */,
 				528D772A1C26A5F600243986 /* PM2d5ViewController_EN.swift */,
 				528D772B1C26A5F600243986 /* PM2d5ViewController_EN.xib */,
 				528D772E1C26ACF100243986 /* VOC_AirViewController_EN.swift */,
-				528D772F1C26ACF100243986 /* VOC_AirViewController_EN.xib */,
+				B7D8C2391D24AFB10089C241 /* VOC_AirViewController_EN.xib */,
 				8D09DBDF1C5A698800D0432B /* loadFailedXib_EN.swift */,
 				527E918B1C3BDCCF00828A1B /* LongImageViewController_EN.swift */,
 				527E918C1C3BDCCF00828A1B /* LongImageViewController_EN.xib */,
@@ -3521,7 +3525,7 @@
 		52895C051C4C02F7008D63D7 /* deviceCommon */ = {
 			isa = PBXGroup;
 			children = (
-				8DFB39361C57730300A1641C /* WhatHtml.plist */,
+				8DFB39361C57730300A1641C /* WhatHtml_EN.plist */,
 				8DFB39371C57730300A1641C /* ToWhatViewController_EN.swift */,
 				8DFB39381C57730300A1641C /* ToWhatViewController_EN.xib */,
 				8D09DBE11C5A69D400D0432B /* LoadingXib_EN.swift */,
@@ -3577,7 +3581,7 @@
 			isa = PBXGroup;
 			children = (
 				52A4EF661C2871A0005F282D /* smallFooterViewXib_EN.swift */,
-				52461F001C26960A00834CC2 /* smallFooterViewXib_EN.xib */,
+				B7D8C23C1D24B3E20089C241 /* smallFooterViewXib_EN.xib */,
 				528D773C1C27094000243986 /* indoorHead_SmallXib_EN.xib */,
 				52A4EF701C28B59F005F282D /* indoorHead_SmallXib_EN.swift */,
 				52A4EF621C285E58005F282D /* smallStateXib_EN.xib */,
@@ -3853,7 +3857,7 @@
 				8DB044C61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift */,
 				E066B9531D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib */,
 				8DB044C81CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.swift */,
-				8DB044C91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib */,
+				B7D8C23F1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib */,
 				8DB044CA1CC8CDB500B60DAB /* waterReplenishChartView_EN.h */,
 				8DB044CB1CC8CDB500B60DAB /* waterReplenishChartView_EN.m */,
 				8DB044CC1CC8CDB500B60DAB /* waterReplenishMPGraphView_EN.h */,
@@ -3875,13 +3879,13 @@
 			isa = PBXGroup;
 			children = (
 				8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell_EN.swift */,
-				8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib */,
+				B7D8C1CF1D23A1F40089C241 /* WaterPurifierHeadCell_EN.xib */,
 				8D4354F71C75A410007F83DA /* WaterPurFooterCell_EN.swift */,
-				8D4354F81C75A410007F83DA /* WaterPurFooterCell_EN.xib */,
+				B7D8C1D31D23A5C70089C241 /* WaterPurFooterCell_EN.xib */,
 				8D4354FB1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.swift */,
-				8D4354FC1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.xib */,
+				B7D8C1D91D23A76D0089C241 /* WaterPurTDSDetailCell1_EN.xib */,
 				8D4354FF1C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.swift */,
-				8D4355001C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.xib */,
+				B7D8C1DD1D23AEA30089C241 /* WaterPurTDSDetailCell2_EN.xib */,
 				8DF253B11C774E6500CE2AE5 /* WaterineChartView_EN.h */,
 				8DF253B21C774E6500CE2AE5 /* WaterineChartView_EN.m */,
 				8DF253B41C774E8500CE2AE5 /* WaterMPGraphView_EN.h */,
@@ -4607,8 +4611,8 @@
 				E066B94D1D24C28500810566 /* SkinHeadTableViewCell_EN.xib in Resources */,
 				8DB044641CC8CD2C00B60DAB /* icon_lvxin_service_7.png in Resources */,
 				8DB043F71CC8CCE200B60DAB /* select_device_3.png in Resources */,
-				E066B9411D24BD0A00810566 /* WaterReplenishMainView_EN.xib in Resources */,
-				8D4354FA1C75A410007F83DA /* WaterPurFooterCell_EN.xib in Resources */,
+				8DB044CF1CC8CDB500B60DAB /* WaterReplenishMainView_EN.xib in Resources */,
+				B7D8C1D11D23A5C70089C241 /* WaterPurFooterCell_EN.xib in Resources */,
 				8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */,
 				428141491C0B15F0006FEDDE /* ic_menu_black_24dp.png in Resources */,
 				B7D8C1C81D2376F60089C241 /* setTanTou_EN.plist in Resources */,
@@ -4663,7 +4667,7 @@
 				E0EFFEF11D06604000E43C20 /* WeiXinURLViewController_EN.xib in Resources */,
 				8DB043FB1CC8CCE200B60DAB /* right_row@2x.png in Resources */,
 				8DB043FC1CC8CCE200B60DAB /* right_row@3x.png in Resources */,
-				8D7FEC781C746DE200DD01AF /* WaterPurifierHeadCell_EN.xib in Resources */,
+				B7D8C1CD1D23A1F40089C241 /* WaterPurifierHeadCell_EN.xib in Resources */,
 				8DBD54A01C567E9200D04B12 /* match_device_failedzb.png in Resources */,
 				8DB044B21CC8CD5500B60DAB /* device_cup_normal_state.png in Resources */,
 				8DB044B51CC8CD5500B60DAB /* device_jin_shui_qi_select.png in Resources */,
@@ -4682,7 +4686,7 @@
 				8DA4062A1C8446FD00AD5E5E /* ScanResultViewController.xib in Resources */,
 				8DB044AF1CC8CD5500B60DAB /* device_jin_smallair_normal.png in Resources */,
 				4288C52C1C0EF80A00446D3E /* icon_back@3x.png in Resources */,
-				8D4354FE1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.xib in Resources */,
+				B7D8C1D71D23A76D0089C241 /* WaterPurTDSDetailCell1_EN.xib in Resources */,
 				8DB044901CC8CD4200B60DAB /* match_finish_sanjiao@2x.png in Resources */,
 				8DB043F91CC8CCE200B60DAB /* mydevice_bg@2x.png in Resources */,
 				522D66641C31138E00BCA750 /* InfoPlist.strings in Resources */,
@@ -4708,14 +4712,14 @@
 				425F7A2C1C32B0C500C8B2E3 /* new_help_2@2x.png in Resources */,
 				8DB044021CC8CCE200B60DAB /* pull_down_row@3x.png in Resources */,
 				8DB044141CC8CCE200B60DAB /* 100%.png in Resources */,
-				8D4355021C760AD5007F83DA /* WaterPurTDSDetailCell2_EN.xib in Resources */,
+				B7D8C1DB1D23AEA30089C241 /* WaterPurTDSDetailCell2_EN.xib in Resources */,
 				8DB044811CC8CD4200B60DAB /* icon_peidui_complete_bigair.png in Resources */,
 				8DB044441CC8CD1700B60DAB /* icon_jiare@2x.png in Resources */,
 				8DB0445E1CC8CD2C00B60DAB /* icon_lvxin_more_1.png in Resources */,
 				8DB0444D1CC8CD1700B60DAB /* icon_zhileng_normal@3x.png in Resources */,
 				8DB044821CC8CD4200B60DAB /* icon_peidui_complete_jingshuiqi.png in Resources */,
 				8DB043F21CC8CCE200B60DAB /* select_device_0.png in Resources */,
-				8DFB393F1C57730300A1641C /* WhatHtml.plist in Resources */,
+				8DFB393F1C57730300A1641C /* WhatHtml_EN.plist in Resources */,
 				428FC6D01C2ECFEA001D4ACF /* db_ozner_uid.db in Resources */,
 				E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController_EN.xib in Resources */,
 				8DB043FD1CC8CCE200B60DAB /* left_row@2x.png in Resources */,
@@ -4778,7 +4782,7 @@
 				4288C52B1C0EF80A00446D3E /* icon_back@2x.png in Resources */,
 				8DBD549F1C567E9200D04B12 /* kindly_notice_iconzb.png in Resources */,
 				521BF7CC1C4A370000AD1EAB /* drinKWaterCell_EN.xib in Resources */,
-				52461F071C2699AD00834CC2 /* indoorAirXib_EN.xib in Resources */,
+				B7D8C2341D24A8E30089C241 /* indoorAirXib_EN.xib in Resources */,
 				8DFB39411C57730300A1641C /* ToWhatViewController_EN.xib in Resources */,
 				425F7A2D1C32B0C500C8B2E3 /* new_help_2@3x.png in Resources */,
 				8DB044161CC8CCE200B60DAB /* dian_liang_30.png in Resources */,
@@ -4814,14 +4818,14 @@
 				8DB044131CC8CCE200B60DAB /* 1_08.png in Resources */,
 				8DB044461CC8CD1700B60DAB /* icon_zhileng@2x.png in Resources */,
 				8DB0445F1CC8CD2C00B60DAB /* icon_time_now.png in Resources */,
-				8DB044D91CC8CDB500B60DAB /* SkinFooterTableViewCell_EN.xib in Resources */,
+				B7D8C23D1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib in Resources */,
 				4288C53E1C0F06FF00446D3E /* AddDeviceCell_EN.xib in Resources */,
 				423114551C4370E80062FFFF /* scanboarder.png in Resources */,
 				423114571C43711D0062FFFF /* scanline.png in Resources */,
 				4281414B1C0B15F0006FEDDE /* ic_menu_black_24dp@3x.png in Resources */,
 				B7D8C19D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib in Resources */,
 				B7D8C1A21D2376680089C241 /* setShuiJiViewController_EN.xib in Resources */,
-				528D77311C26ACF100243986 /* VOC_AirViewController_EN.xib in Resources */,
+				B7D8C2371D24AFB10089C241 /* VOC_AirViewController_EN.xib in Resources */,
 				42CF4EA81C16F6D7000E22DC /* CustomPopViewSecondCell.xib in Resources */,
 				8DB044421CC8CD1700B60DAB /* jingshuiqi_wifi@2x.png in Resources */,
 				42935B801C490D0100BCE76A /* you1.png in Resources */,
@@ -4829,7 +4833,7 @@
 				8DB043FA1CC8CCE200B60DAB /* mydevice_bg@3x.png in Resources */,
 				8DB043A91CC8CC6B00B60DAB /* Assets.xcassets in Resources */,
 				8DB0443D1CC8CD1700B60DAB /* icon_mima.png in Resources */,
-				52461F011C26960A00834CC2 /* smallFooterViewXib_EN.xib in Resources */,
+				B7D8C23A1D24B3E20089C241 /* smallFooterViewXib_EN.xib in Resources */,
 				8DB044661CC8CD2C00B60DAB /* icon_lvxin_service_4.png in Resources */,
 				B7D8C17D1D2373AB0089C241 /* setDeviceNameViewController_EN.xib in Resources */,
 				8DB044881CC8CD4200B60DAB /* icon_circle_watting.png in Resources */,
@@ -5657,6 +5661,74 @@
 				B7D8C1AC1D23769D0089C241 /* Base */,
 			);
 			name = setTanTouViewController_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1CF1D23A1F40089C241 /* WaterPurifierHeadCell_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1CE1D23A1F40089C241 /* en */,
+				B7D8C1D01D23A1F60089C241 /* Base */,
+			);
+			name = WaterPurifierHeadCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1D31D23A5C70089C241 /* WaterPurFooterCell_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1D21D23A5C70089C241 /* Base */,
+				B7D8C1D61D23A5D90089C241 /* en */,
+			);
+			name = WaterPurFooterCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1D91D23A76D0089C241 /* WaterPurTDSDetailCell1_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1D81D23A76D0089C241 /* en */,
+				B7D8C1DA1D23A77A0089C241 /* Base */,
+			);
+			name = WaterPurTDSDetailCell1_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C1DD1D23AEA30089C241 /* WaterPurTDSDetailCell2_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C1DC1D23AEA30089C241 /* Base */,
+				B7D8C1E01D23AEA90089C241 /* en */,
+			);
+			name = WaterPurTDSDetailCell2_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C2361D24A8E30089C241 /* indoorAirXib_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C2351D24A8E30089C241 /* en */,
+			);
+			name = indoorAirXib_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C2391D24AFB10089C241 /* VOC_AirViewController_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C2381D24AFB10089C241 /* en */,
+			);
+			name = VOC_AirViewController_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C23C1D24B3E20089C241 /* smallFooterViewXib_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C23B1D24B3E20089C241 /* en */,
+			);
+			name = smallFooterViewXib_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7D8C23F1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7D8C23E1D24C13D0089C241 /* en */,
+			);
+			name = SkinFooterTableViewCell_EN.xib;
 			sourceTree = "<group>";
 		};
 		E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */ = {

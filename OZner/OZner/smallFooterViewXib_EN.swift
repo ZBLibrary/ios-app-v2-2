@@ -95,14 +95,14 @@ class smallFooterViewXib_EN: UIView {
         speedValue.text="\(Int(tmpValue*100))"
         if tmpValue<1/3
         {
-            speedText.text="低速"
+            speedText.text=loadLanguage("低速")
         }
         else if tmpValue>2/3
         {
-            speedText.text="高速"
+            speedText.text=loadLanguage("高速")
         }
         else{
-            speedText.text="中速"
+            speedText.text=loadLanguage("中速")
         }
         
         if gesture != nil {

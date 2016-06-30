@@ -73,18 +73,18 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             {
             case 0..<TDS_Good_Int:
                 faceImgView.image=UIImage(named: "waterState1")
-                faceTextLabel.text="健康"
-                drinkingSuggest.text="经过净化后的水质健康，适合您直饮"
+                faceTextLabel.text=loadLanguage("健康")
+                drinkingSuggest.text=loadLanguage("经过净化后的水质健康，适合您直饮")
                 break
             case TDS_Good_Int..<TDS_Bad_Int:
                 faceImgView.image=UIImage(named: "waterState2")
-                faceTextLabel.text="一般"
-                drinkingSuggest.text="经过净化后的水质健康，适合您直饮"
+                faceTextLabel.text=loadLanguage("一般")
+                drinkingSuggest.text=loadLanguage("经过净化后的水质健康，适合您直饮")
                 break
             default:
                 faceImgView.image=UIImage(named: "waterState3")
-                faceTextLabel.text="较差"
-                drinkingSuggest.text="经过净化后的水质健康，适合您直饮"
+                faceTextLabel.text=loadLanguage("较差")
+                drinkingSuggest.text=loadLanguage("经过净化后的水质健康，适合您直饮")
                 break
             }
             
@@ -93,13 +93,13 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
     func NoRecord()
     {
         faceImgView.hidden=true
-        faceTextLabel.text="健康"
+        faceTextLabel.text=loadLanguage("健康")
         purifiedBefore.text="1"
         
         //purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*Screen_Width/375)
         purifiedAfter.text="1"
         //purifiedAfter.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*Screen_Width/375)
-        drinkingSuggest.text="经过净化后的水质健康，适合您直饮"
+        drinkingSuggest.text=loadLanguage("经过净化后的水质健康，适合您直饮")
         //RedrawCicle(0, TDS: 0)
         //RedrawCicle(1, TDS: 0)
     }

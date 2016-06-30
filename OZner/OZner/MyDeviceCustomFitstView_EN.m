@@ -64,7 +64,7 @@
 //当月
 - (void)dayGraphView:(NSArray*)record
 {
- 
+    
     //取这个月的
     NSDate* monthFirstDay = [UToolBox dateStartOfMonth:[NSDate date]];
     NSString* firstDayStr = [UToolBox stringFromDate:monthFirstDay format:@"yyyy-MM-dd HH:mm:ss"];
@@ -92,7 +92,7 @@
         nowStr = [[nowStr componentsSeparatedByString:@"-"] objectAtIndex:2];
         int nowDay = [nowStr intValue];
         
-
+        
         float totalWidth = SCREEN_WIDTH- 14*(SCREEN_WIDTH/375.0)*2 - 35-15;
         float scale = ((nowDay-firstDay)/(float)([UToolBox monthCount:month]-1));
         float length = totalWidth*scale;
@@ -132,7 +132,7 @@
             }
         }
         [muArr addObject:[NSNumber numberWithFloat:length]];
-       
+        
     }
     graph.values=originArr;//横坐标
     graph.zongArr = originArr1;//总坐标
@@ -166,24 +166,24 @@
         }
         float totolCount=state1+state2+state3;
         if (totolCount>0) {
-            graph.firstLabel.text = [NSString stringWithFormat:@"健康(%d%%)",(int)(100*state1/totolCount)];
-            graph.secondLabel.text = [NSString stringWithFormat:@"一般(%d%%)",(int)(100*state2/totolCount)];
-            graph.thirdLabel.text = [NSString stringWithFormat:@"较差(%d%%)",100-(int)(100*state1/totolCount)-(int)(100*state2/totolCount)];
+            graph.firstLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@"健康"),(int)(100*state1/totolCount)];
+            graph.secondLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@"一般"),(int)(100*state2/totolCount)];
+            graph.thirdLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@"较差"),100-(int)(100*state1/totolCount)-(int)(100*state2/totolCount)];
             
             
             
         } else {
-            graph.firstLabel.text = [NSString stringWithFormat:@"健康(%d%%)",0];
-            graph.secondLabel.text = [NSString stringWithFormat:@"一般(%d%%)",0];
-            graph.thirdLabel.text = [NSString stringWithFormat:@"较差(%d%%)",0];
+            graph.firstLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@"健康"),0];
+            graph.secondLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@"一般"),0];
+            graph.thirdLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@""),0];
         }
-       
+        
     }
     else
     {
-        graph.firstLabel.text = [NSString stringWithFormat:@"健康(%d%%)",0];
-        graph.secondLabel.text = [NSString stringWithFormat:@"一般(%d%%)",0];
-        graph.secondLabel.text = [NSString stringWithFormat:@"较差(%d%%)",0];
+        graph.firstLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@"健康"),0];
+        graph.secondLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@"一般"),0];
+        graph.thirdLabel.text = [NSString stringWithFormat:@"%@(%d%%)",loadLanguage(@"较差"),0];
     }
     [self addSubview:self.monthMpGraphView];
 }
