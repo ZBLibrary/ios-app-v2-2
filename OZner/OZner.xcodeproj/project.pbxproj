@@ -848,7 +848,6 @@
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */; };
 		E00265041D08098500E31C79 /* tantouLvXinView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265061D08098500E31C79 /* tantouLvXinView_EN.xib */; };
-		E066B9411D24BD0A00810566 /* WaterReplenishMainView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9431D24BD0A00810566 /* WaterReplenishMainView_EN.xib */; };
 		E066B9451D24BDB400810566 /* HeadOfWaterReplenishDetailCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9471D24BDB400810566 /* HeadOfWaterReplenishDetailCell_EN.xib */; };
 		E066B9491D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B94B1D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib */; };
 		E066B94D1D24C28500810566 /* SkinHeadTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B94F1D24C28500810566 /* SkinHeadTableViewCell_EN.xib */; };
@@ -4542,7 +4541,7 @@
 				TargetAttributes = {
 					428141001C0B072C006FEDDE = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = BQE6636VJ7;
+						DevelopmentTeam = UZZG6NM74T;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -4611,7 +4610,6 @@
 				E066B94D1D24C28500810566 /* SkinHeadTableViewCell_EN.xib in Resources */,
 				8DB044641CC8CD2C00B60DAB /* icon_lvxin_service_7.png in Resources */,
 				8DB043F71CC8CCE200B60DAB /* select_device_3.png in Resources */,
-				8DB044CF1CC8CDB500B60DAB /* WaterReplenishMainView_EN.xib in Resources */,
 				B7D8C1D11D23A5C70089C241 /* WaterPurFooterCell_EN.xib in Resources */,
 				8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */,
 				428141491C0B15F0006FEDDE /* ic_menu_black_24dp.png in Resources */,
