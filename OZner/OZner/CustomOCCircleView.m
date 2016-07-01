@@ -134,12 +134,14 @@
 -(void)setStateValue
 {
     self.originalTDSValue = self.currentTDSValue;
-    if(self.currentTDSValue>250)
+    if(self.originalTDSValue>250)
     {
         self.currentTDSValue = 250;
     }
-    
-    if(self.currentTDSValue/400.0 > 0)
+    if (self.originalTDSValue>5000) {
+        self.currentTDSValue = 0;
+    }
+    if(self.originalTDSValue > 0)
     {
         CGFloat height = SCREEN_HEIGHT/667.0;
         NSString* title = @"暂无";
@@ -196,7 +198,7 @@
         [self.myLayer removeFromSuperlayer];
     }
     [self setStateValue];
-    if(self.originalTDSValue > 0)
+    if(self.originalTDSValue > 0 && self.originalTDSValue < 5000)
     {
         self.tdsLabel.text = [NSString stringWithFormat:@"%d",(int)self.originalTDSValue];
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="setShuiJiViewController" customModule="OZner" customModuleProvider="target">
@@ -10,6 +10,7 @@
                 <outlet property="DeviceName" destination="aJT-aT-um9" id="VS0-gI-C4K"/>
                 <outlet property="DeviceNameLable" destination="Hds-se-gbt" id="UE3-yh-KBw"/>
                 <outlet property="deleteDeviceButton" destination="YGc-Sj-DrQ" id="9V3-4C-dJA"/>
+                <outlet property="macAdressLabel" destination="nBo-ex-gQO" id="NKp-e1-eux"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -86,27 +87,41 @@
                         <constraint firstItem="Hds-se-gbt" firstAttribute="centerY" secondItem="GYB-5x-JRG" secondAttribute="centerY" id="skQ-qt-SN0"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGc-Sj-DrQ">
-                    <rect key="frame" x="68" y="153" width="240" height="40"/>
-                    <color key="backgroundColor" red="0.99607843139999996" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcO-zS-m4e">
+                    <rect key="frame" x="0.0" y="69" width="375" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水机型号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qec-JA-CIE">
+                            <rect key="frame" x="15" y="0.0" width="70" height="44"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="89:69:78:87:a3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBo-ex-gQO">
+                            <rect key="frame" x="261.5" y="0.0" width="98.5" height="44"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="240" id="UQy-IQ-uK7"/>
-                        <constraint firstAttribute="height" constant="40" id="ubn-aa-HJ1"/>
+                        <constraint firstAttribute="bottom" secondItem="nBo-ex-gQO" secondAttribute="bottom" id="3kp-dJ-yBr"/>
+                        <constraint firstAttribute="trailing" secondItem="nBo-ex-gQO" secondAttribute="trailing" constant="15" id="IwU-ml-Tc7"/>
+                        <constraint firstItem="qec-JA-CIE" firstAttribute="top" secondItem="gcO-zS-m4e" secondAttribute="top" id="NK3-nP-c7w"/>
+                        <constraint firstItem="qec-JA-CIE" firstAttribute="leading" secondItem="gcO-zS-m4e" secondAttribute="leading" constant="15" id="XXG-Rv-XJu"/>
+                        <constraint firstItem="nBo-ex-gQO" firstAttribute="leading" secondItem="qec-JA-CIE" secondAttribute="trailing" id="aCt-jr-xLc"/>
+                        <constraint firstItem="nBo-ex-gQO" firstAttribute="top" secondItem="gcO-zS-m4e" secondAttribute="top" id="sSP-0D-d3n"/>
+                        <constraint firstAttribute="height" constant="44" id="wb4-fi-PUC"/>
+                        <constraint firstAttribute="bottom" secondItem="qec-JA-CIE" secondAttribute="bottom" id="whA-n0-ciL"/>
                     </constraints>
-                    <state key="normal" title="删除此设备">
-                        <color key="titleColor" red="0.91372549020000005" green="0.34901960780000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.mass">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="deleteDeviceClick:" destination="-1" eventType="touchUpInside" id="Zx9-8r-ffu"/>
-                    </connections>
-                </button>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="aCt-jr-xLc"/>
+                        </mask>
+                    </variation>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RE9-Ey-9kv">
-                    <rect key="frame" x="0.0" y="88" width="375" height="47"/>
+                    <rect key="frame" x="0.0" y="133" width="375" height="47"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于净水器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1I2-Cv-Be2">
                             <rect key="frame" x="15" y="14" width="76" height="19"/>
@@ -143,10 +158,31 @@
                         <constraint firstItem="RL7-fN-SOS" firstAttribute="centerY" secondItem="RE9-Ey-9kv" secondAttribute="centerY" id="Ven-g0-l9x"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGc-Sj-DrQ">
+                    <rect key="frame" x="68" y="198" width="240" height="40"/>
+                    <color key="backgroundColor" red="0.99607843139999996" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="UQy-IQ-uK7"/>
+                        <constraint firstAttribute="height" constant="40" id="ubn-aa-HJ1"/>
+                    </constraints>
+                    <state key="normal" title="删除此设备">
+                        <color key="titleColor" red="0.91372549020000005" green="0.34901960780000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.mass">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="deleteDeviceClick:" destination="-1" eventType="touchUpInside" id="Zx9-8r-ffu"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="RE9-Ey-9kv" secondAttribute="trailing" id="03L-RH-WHA"/>
+                <constraint firstItem="gcO-zS-m4e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0fS-z2-wcY"/>
+                <constraint firstAttribute="trailing" secondItem="gcO-zS-m4e" secondAttribute="trailing" id="Blx-0W-xni"/>
                 <constraint firstItem="GYB-5x-JRG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="QWd-8o-vwM"/>
                 <constraint firstAttribute="trailing" secondItem="GYB-5x-JRG" secondAttribute="trailing" id="ZLi-xN-kU9"/>
                 <constraint firstItem="YGc-Sj-DrQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fNS-0T-V1W"/>
@@ -154,8 +190,15 @@
                 <constraint firstItem="GYB-5x-JRG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ocd-L8-isG"/>
                 <constraint firstItem="YGc-Sj-DrQ" firstAttribute="top" secondItem="RE9-Ey-9kv" secondAttribute="bottom" constant="18" id="tQc-d6-Tce"/>
                 <constraint firstItem="RE9-Ey-9kv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="woo-np-xK6"/>
+                <constraint firstItem="gcO-zS-m4e" firstAttribute="top" secondItem="GYB-5x-JRG" secondAttribute="bottom" constant="1" id="xNF-1O-aae"/>
+                <constraint firstItem="RE9-Ey-9kv" firstAttribute="top" secondItem="gcO-zS-m4e" secondAttribute="bottom" constant="20" id="ys6-0b-Uan"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="nuT-Be-mYp"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>

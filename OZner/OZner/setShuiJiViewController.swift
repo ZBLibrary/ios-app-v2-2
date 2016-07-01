@@ -21,12 +21,32 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
         fatalError("init(coder:) has not been implemented")
         
     }
+    var macAdress:String?
+    
+    convenience  init(mac:String?) {
+        
+        var nibNameOrNil = String?("setShuiJiViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        self.macAdress = mac ?? ""
+    }
     var plistData:NSMutableDictionary=getPlistData("setShuiJi")
    
     var myCurrentDevice:OznerDevice?
  
     @IBOutlet var DeviceName: UILabel!
  
+    @IBOutlet weak var macAdressLabel: UILabel!
     @IBAction func toSetDvName(sender: AnyObject) {
         let setnamecontroller=setDeviceNameViewController(nibName: "setDeviceNameViewController", bundle: nil)
         setnamecontroller.dataPlist=plistData
@@ -46,11 +66,11 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
     }
     func ClearClick_OK()
     {
-        print("－－－－－－删除前－－－－－－")
-        print(OznerManager.instance().getDevices().count)
+        //print("－－－－－－删除前－－－－－－")
+        //print(OznerManager.instance().getDevices().count)
         OznerManager.instance().remove(myCurrentDevice)
-        print("－－－－－－删除后－－－－－－")
-        print(OznerManager.instance().getDevices().count)
+        //print("－－－－－－删除后－－－－－－")
+        //print(OznerManager.instance().getDevices().count)
         //发出通知
         NSNotificationCenter.defaultCenter().postNotificationName("removDeviceByZB", object: nil)
         self.navigationController?.popViewControllerAnimated(true)
@@ -58,6 +78,7 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
     @IBOutlet var DeviceNameLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        macAdressLabel.text=macAdress
         DeviceNameLable.text=loadLanguage("我的净水器" )
        deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
         self.title=loadLanguage("净水器")

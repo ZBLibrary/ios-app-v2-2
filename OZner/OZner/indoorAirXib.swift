@@ -58,7 +58,7 @@ class indoorAirXib: UIView {
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
                 let date = dateFormatter.dateFromString(starDatazb)! as NSDate
                 //let tmpTime=date.timeIntervalSince1970+3600*24*90
-                let endDateTime = date+3.months//NSDate(timeIntervalSince1970: tmpTime)
+                let endDateTime = date+12.months//NSDate(timeIntervalSince1970: tmpTime)
                 dateFormatter.dateFormat="yyyy-MM-dd"
                 
                 let starStr=dateFormatter.stringFromDate(date)
@@ -94,12 +94,13 @@ class indoorAirXib: UIView {
 
     var state=0 {
         didSet{
-            lvxinState.text="\(state)"
-            print(state)
-            Image0Width.constant=(Screen_Width-80)*CGFloat(100-state)/100
-            downImgLeft.constant=36+(Screen_Width-80)*CGFloat(100-state)/100
             
-            curDateViewtoLeft.constant=(Screen_Width-80)*CGFloat(100-state)/100+20
+            lvxinState.text="\(min(state, 100))"
+            print(state)
+            Image0Width.constant=(Screen_Width-80)*CGFloat(100-min(state, 100))/100
+            downImgLeft.constant=36+(Screen_Width-80)*CGFloat(100-min(state, 100))/100
+            
+            curDateViewtoLeft.constant=(Screen_Width-80)*CGFloat(100-min(state, 100))/100+20
             setNeedsLayout()
             layoutIfNeeded()
         }

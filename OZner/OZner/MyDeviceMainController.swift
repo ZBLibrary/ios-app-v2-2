@@ -171,7 +171,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             }
             else if ( WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true){
                 //净水器设置
-                let controller=setShuiJiViewController(nibName: "setShuiJiViewController", bundle: nil)
+                let controller=setShuiJiViewController(mac: self.myCurrentDevice?.identifier)
                 controller.myCurrentDevice = self.myCurrentDevice
                 self.navigationController?.pushViewController(controller, animated: true)
             }
