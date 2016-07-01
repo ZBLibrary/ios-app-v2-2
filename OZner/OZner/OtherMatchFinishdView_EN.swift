@@ -42,8 +42,8 @@ class OtherMatchFinishdView_EN: UIView,UITextFieldDelegate {
         
         self.backgroundColor = UIColor(red: 110.0, green: 206.0, blue: 250.0, alpha: 1.0)
         self.backgroundColor = UIColor.clearColor()
-        
-        let cupNameTextField = UITextField(frame: CGRectMake((width-150*(width/375.0))/2,55*(height/667.0),150*(width/375.0),17*(height/667.0)))
+        //TODO:
+        let cupNameTextField = UITextField(frame: CGRectMake((width-150*(width/375.0))/2,55*(height/667.0),190*(width/375.0),17*(height/667.0)))
         cupNameTextField.placeholder = loadLanguage("输入设备名称")
         cupNameTextField.delegate = self
         cupNameTextField.font = UIFont.systemFontOfSize(17*(height/667.0))

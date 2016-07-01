@@ -65,7 +65,7 @@ class CustomPopViewFirstCell: UITableViewCell {
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 7.5, 12.5)
             break
         case AirPurifierManager.isMXChipAirPurifier(device.type)://立式空气净化器 wifi设备
-            self.connectStateLabel.text=(device  as! AirPurifier_MxChip).isOffline==true ? "已断开":self.connectStateLabel.text
+            self.connectStateLabel.text=(device  as! AirPurifier_MxChip).isOffline==true ? loadLanguage("已断开"):self.connectStateLabel.text
             self.deviceStateImgView.image = UIImage(named: "device_jin_bigair_normal.png")
             self.connectImgView.image = UIImage(named: "device_icon_wifi.png")
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 15.5, 11)

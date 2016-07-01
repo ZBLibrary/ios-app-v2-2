@@ -175,6 +175,7 @@
 "家" = "Home" ;
 "客厅" = "Living room" ;
 "(厨房)" = "(kitchen)" ;
+"厨房" = "kitchen";
 "(家)" = "(Home)" ;
 "请选择设定您的性别" = "Please select your gender" ;
 
@@ -349,8 +350,8 @@
 "保存" = "Save" ;
 "取消" = "Cancel" ;
 "确定" = "OK" ;
-"是" = "yes" ;
-"否" = "no" ;
+"是" = "Yes" ;
+"否" = "No" ;
 "是否保存？" = "Save?" ;
 "属性" = "Attributes" ;
 
@@ -477,11 +478,17 @@
 "选择周重复时间" = "Repetition time";
 "保存失败，未连接设备!" = "Save failed , no device is connected !";
 //
-
-
-
-
-
-
-
+"本月水质纯净指数分布" = "This month pure water exponential distribution";
+"我的水探头" = "My Tester";
+"检测时间" = "Testing time";
+"检测时间1" = "Testing time 1";
+"检测时间2" = "Testing time 2";
+"滤芯不足10天会显示提醒" = "Remind in case filter cartridge can be used for less than 10 days";
+"洗手间" = "Washroom";
+"使用地点" = "Using sites";
+"立式空气净化器" = "Vertical style air purifier";
+"污染较少" = "Less polluting";
+"空气质量灯光提醒" = "Light signal for air quality ";
+"污染严重" = "Heavy pollution";
+"卧室" = "Bedroom";
 

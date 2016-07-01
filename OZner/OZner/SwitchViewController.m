@@ -83,13 +83,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     mLeftController = [[LeftViewController alloc] initWithNibName:@"LeftViewController" bundle:nil];
-
+    
     mLeftController.iDelegate = mHomeController;
     mLeftController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:mLeftController.view];
     
     [LogInOut loginInOutInstance].logInoutDelegate = self;
-
+    
     [self loadFirstView];
     
     //[self isFirstOpenApp];
@@ -121,7 +121,7 @@
         mNewUserHelpNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [mNewUserHelpNavController.navigationBar loadNavigationBar];
         //mNewUserHelpNavController.navigationBarHidden = YES;
-
+        
         [self.view addSubview:mNewUserHelpNavController.view];
     }
 }
@@ -143,10 +143,10 @@
 
 - (void)loadFirstView
 {
-//    [[LoginManager loginInstance]decodeParamObject];
-//    if([[LoginManager loginInstance]loginInfo].sessionToken && [[[LoginManager loginInstance]loginInfo].sessionToken length] > 0)
-//    {
-    
+    [[LoginManager loginInstance]decodeParamObject];
+    if([[LoginManager loginInstance]loginInfo].sessionToken && [[[LoginManager loginInstance]loginInfo].sessionToken length] > 0)
+    {
+        
         mHomeController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [self.view addSubview:mHomeController.view];
         [[OznerManager instance]setOwner:@"CupLibrary"];
@@ -156,17 +156,17 @@
         [[UserDatabase sharedUserDatabase]createDBFileInDocument:[kDatabase stringByAppendingString:[NSString stringWithFormat:@"%@.db",[[[LoginManager loginInstance]loginInfo]loginName]]] srcDBFile:kDatabase_uid versionId:0];
         [[UserDatabase sharedUserDatabase] startDBEngineWithDB:[kDatabase stringByAppendingString:[NSString stringWithFormat:@"%@.db",[[[LoginManager loginInstance]loginInfo]loginName]]]];
         
-//    }
-//    else
-//    {
-//        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-//        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
-//        mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-//        [mLoginNavController.navigationBar loadNavigationBar];
-//            
-//        [self.view addSubview:mLoginNavController.view];
-//    }
+    }
+    else
+    {
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
+        mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [mLoginNavController.navigationBar loadNavigationBar];
+        
+        [self.view addSubview:mLoginNavController.view];
+    }
 }
 
 #pragma mark-HomeControllerDelegate
@@ -200,7 +200,7 @@
             [self initTabController];
             mHomeController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             [self.view addSubview:mHomeController.view];
-           
+            
             mLoginNavController = nil;
         }
         else
@@ -241,27 +241,7 @@
     [[LoginManager loginInstance]loginInfo].avatarUrl = nil;   //上传文件的随机值
     [[LoginManager loginInstance]loginInfo].gender = nil;
     [[OznerManager instance]setOwner:@"LoginOut"];
-//    [[LoginManager loginInstance]loginInfo].version = nil;
-//    [[LoginManager loginInstance]loginInfo].longitude = nil;
-//    [[LoginManager loginInstance]loginInfo].latitude = nil;
-//    [[LoginManager loginInstance]loginInfo].targetGender = nil;
-//    [[LoginManager loginInstance]loginInfo].updateTime = nil;
-//    [[LoginManager loginInstance]loginInfo].profileUpdateTime = nil;
-//    [[LoginManager loginInstance]loginInfo].easePassWord = nil;
-//    [[LoginManager loginInstance]loginInfo].signature = nil;
-//    [[LoginManager loginInstance]loginInfo].birthday = nil;
-//    [[LoginManager loginInstance]loginInfo].location = nil;
-//    [[LoginManager loginInstance]loginInfo].tags = nil;
-//    [[LoginManager loginInstance]loginInfo].userHeight = nil;
-//    [[LoginManager loginInstance]loginInfo].identifierState = nil;
-//    [[LoginManager loginInstance]loginInfo].identifier = nil;
-//    [[LoginManager loginInstance]loginInfo].stature = nil;
-//    [[LoginManager loginInstance]loginInfo].age = nil;
-//    [[LoginManager loginInstance]loginInfo].constellation = nil;
-//    [[LoginManager loginInstance]loginInfo].commentLevel = nil;
-//    [[LoginManager loginInstance]loginInfo].balance = nil;
-//    [[LoginManager loginInstance]loginInfo].officialUserId = nil;
-    
+
     [[LoginManager loginInstance]encodeParamObject];
     
     //聊天登出
@@ -273,7 +253,7 @@
         [view removeFromSuperview];
     }
     
-//    // 释放控制器
+    //    // 释放控制器
     if (mHomeController)
     {
         //[mHomeController release];
@@ -288,14 +268,14 @@
     [mLoginNavController.navigationBar loadNavigationBar];
     
     [self.view addSubview:mLoginNavController.view];
-//    mLoginController = [[LoginViewController alloc] init];
-//    mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
-//    mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-//    
-//    [mLoginNavController.navigationBar loadNavigationBar];
-//    //[mLoginController release];
-//    
-//    [self.view addSubview:mLoginNavController.view];
+    //    mLoginController = [[LoginViewController alloc] init];
+    //    mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
+    //    mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    //    
+    //    [mLoginNavController.navigationBar loadNavigationBar];
+    //    //[mLoginController release];
+    //    
+    //    [self.view addSubview:mLoginNavController.view];
     
 }
 
@@ -305,13 +285,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

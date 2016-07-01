@@ -45,7 +45,7 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     @IBOutlet var Place: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="设备名称"
+        self.title=loadLanguage("设备名称")
         Place.text=loadLanguage("使用地点")
         //初始化控件
         initCustomView()

@@ -1627,7 +1627,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 let tmpbigFooter=NSBundle.mainBundle().loadNibNamed("bigFooterViewXib_EN", owner: nil, options: nil).last as! bigFooterViewXib_EN
                 //if i<=4
                 //{
-                tmpbigFooter.frame=CGRect(x:spaceValue*CGFloat(i)+bigViewWidth*CGFloat(i-1), y: 0, width: bigViewWidth, height: footerScroll.bounds.height)
+                tmpbigFooter.frame=CGRect(x:spaceValue*CGFloat(i)+bigViewWidth*CGFloat(i-1), y: 0, width: bigViewWidth + 5, height: footerScroll.bounds.height)
                 //                }
                 //                else
                 //                {
@@ -1639,7 +1639,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 tmpbigFooter.index=i
                 
                 tmpbigFooter.ison=false
-                tmpbigFooter.switchButton.layer.cornerRadius=bigViewWidth/2
+                tmpbigFooter.switchButton.layer.cornerRadius=(bigViewWidth + 5.0)/2
                 bigFooterViews.append(tmpbigFooter)
                 footerScroll.addSubview(tmpbigFooter)
             }
