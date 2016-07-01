@@ -440,12 +440,12 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex)
         let device = OznerManager.instance().getDeviceByIO(deviceIo! as! BaseDeviceIO) as OznerDevice
         //添加到服务器
-        let werservice = DeviceWerbservice()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:loadLanguage("我的")+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if(status.networkStatus == kSuccessStatus)
-            {
+//        let werservice = DeviceWerbservice()
+//        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+//        werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:loadLanguage("我的")+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+//            MBProgressHUD.hideHUDForView(self.view, animated: true)
+//            if(status.networkStatus == kSuccessStatus)
+//            {
                 device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
                 device.settings.put("type", value: self.deviceNameArr[self.deviceCuttentType])
                 switch self.deviceCuttentType
@@ -460,20 +460,20 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
                 
                 self.navigationController!.view .removeFromSuperview()
-            }
-            else
-            {
-                let str:NSString = status.errDesc
-                if(str.length > 0)
-                {
-                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
-                }
-                else
-                {
-                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
-                }
-            }
-        })
+//            }
+//            else
+//            {
+//                let str:NSString = status.errDesc
+//                if(str.length > 0)
+//                {
+//                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
+//                }
+//                else
+//                {
+//                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
+//                }
+//            }
+//        })
     }
     //水杯配完对后的回掉事件
     func cupFinishedAction() {
