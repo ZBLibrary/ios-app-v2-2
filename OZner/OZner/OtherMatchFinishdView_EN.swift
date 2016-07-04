@@ -43,7 +43,8 @@ class OtherMatchFinishdView_EN: UIView,UITextFieldDelegate {
         self.backgroundColor = UIColor(red: 110.0, green: 206.0, blue: 250.0, alpha: 1.0)
         self.backgroundColor = UIColor.clearColor()
         //TODO:
-        let cupNameTextField = UITextField(frame: CGRectMake((width-150*(width/375.0))/2,55*(height/667.0),190*(width/375.0),17*(height/667.0)))
+        //(width-150*(width/375.0))
+        let cupNameTextField = UITextField(frame: CGRectMake((width-190*(width/375.0))/2.0,55*(height/667.0),190*(width/375.0),17*(height/667.0)))
         cupNameTextField.placeholder = loadLanguage("输入设备名称")
         cupNameTextField.delegate = self
         cupNameTextField.font = UIFont.systemFontOfSize(17*(height/667.0))
@@ -52,15 +53,16 @@ class OtherMatchFinishdView_EN: UIView,UITextFieldDelegate {
         self.myTanTouNameTextField = cupNameTextField
         scrollView.addSubview(cupNameTextField)
         
-        let leftSeparatorView = UIView(frame: CGRectMake(cupNameTextField.frame.origin.x,cupNameTextField.frame.size.height+cupNameTextField.frame.origin.y+10*(height/667.0),150*(width/375.0),1))
+        let leftSeparatorView = UIView(frame: CGRectMake(cupNameTextField.frame.origin.x,cupNameTextField.frame.size.height+cupNameTextField.frame.origin.y+10*(height/667.0),190*(width/375.0),1))
         leftSeparatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         scrollView.addSubview(leftSeparatorView)
         
 
-        let label:UILabel = UILabel(frame: CGRectMake((width-150*(width/375.0))/2,29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y,150*(width/375.0),17*(height/667.0)))
+        let label:UILabel = UILabel(frame: CGRectMake((width-190*(width/375.0))/2.0,29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y,190*(width/375.0),18*(height/667.0)))
+            //UILabel(frame: CGRectMake((width-150*(width/375.0))/2,29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y,150*(width/375.0),18*(height/667.0)))
         label.text = loadLanguage("办公室")
         label.textAlignment = NSTextAlignment.Center
-        label.font = UIFont.systemFontOfSize(17*(height/667.0))
+        label.font = UIFont.systemFontOfSize(16*(height/667.0))
         label.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
         scrollView.addSubview(label)
         

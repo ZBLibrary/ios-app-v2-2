@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -13,13 +13,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6h-Ak-by3">
                     <rect key="frame" x="0.0" y="0.0" width="54" height="156"/>
                     <subviews>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="air0013" translatesAutoresizingMaskIntoConstraints="NO" id="dDj-Qd-Kiy">
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air0013" translatesAutoresizingMaskIntoConstraints="NO" id="dDj-Qd-Kiy">
                             <rect key="frame" x="18" y="76" width="18" height="4"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Low wind Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZd-uu-jHF">
-                            <rect key="frame" x="0.0" y="95" width="54" height="10"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZd-uu-jHF">
+                            <rect key="frame" x="0.0" y="95" width="54" height="12"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="10" id="kH5-FF-L91"/>
+                                <constraint firstAttribute="height" constant="12" id="kH5-FF-L91"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.63921568627450975" green="0.65490196078431373" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,9 +51,9 @@
                             <rect key="frame" x="18" y="72" width="18" height="12"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhM-X8-xv6">
-                            <rect key="frame" x="0.0" y="99" width="54" height="10"/>
+                            <rect key="frame" x="0.0" y="99" width="54" height="12"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="10" id="A7J-HZ-gCs"/>
+                                <constraint firstAttribute="height" constant="12" id="A7J-HZ-gCs"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.63921568630000003" green="0.65490196079999996" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -112,7 +112,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="Bas-nG-X1p"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="6"/>
                             <color key="textColor" red="0.0039215686269999999" green="0.36078431370000003" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -187,7 +187,7 @@
                 <outlet property="speedValue" destination="jAt-hK-aZc" id="ToG-yu-V0p"/>
                 <outlet property="targertView" destination="vti-jx-PeU" id="WCg-di-8Rh"/>
             </connections>
-            <point key="canvasLocation" x="339.5" y="161"/>
+            <point key="canvasLocation" x="83.5" y="165"/>
         </view>
     </objects>
     <resources>

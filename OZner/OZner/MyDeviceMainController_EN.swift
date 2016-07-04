@@ -1750,6 +1750,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                         StrongSelf.outAirView.AQI.text=AQI
                         StrongSelf.outAirView.teampret.text=temperature+"℃"
                         StrongSelf.outAirView.hubit.text=humidity+"%"
+                   //     print("jlsjlkjlksjfkl\(dataFrom)") ---  并不是英文
                         StrongSelf.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
                     }
                     StrongSelf.headView.cityName.text=cityname
