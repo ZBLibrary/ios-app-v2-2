@@ -91,7 +91,7 @@
                 <outlet property="PM25" destination="mLU-bM-4vB" id="NAO-IP-LM6"/>
                 <outlet property="airText" destination="xc1-f2-Yep" id="xKb-p3-69e"/>
             </connections>
-            <point key="canvasLocation" x="179" y="227.5"/>
+            <point key="canvasLocation" x="178.5" y="227.5"/>
         </view>
     </objects>
 </document>
