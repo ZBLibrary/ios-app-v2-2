@@ -13,6 +13,7 @@ import UIKit
      func touchCustomPopView()
      func addDeviceCallBack()
 }
+let TDSPAN_TYPE = "SCP001"
 
 class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     
@@ -152,24 +153,25 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         {
         case CupManager.isCup(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "deveice_cup_select_state.png")
-            break
+            
         case TapManager.isTap(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
-            break
+            
         case WaterPurifierManager.isWaterPurifier(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_jin_shui_qi_select.png")
-            break
+            
         case AirPurifierManager.isBluetoothAirPurifier(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_jin_smallair_select.png")
-            break
+            
         case AirPurifierManager.isMXChipAirPurifier(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_jin_bigair_select.png")
             
-            break
+            
             //补水仪
         case  WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "WaterReplenish1_2")
-            break
+        case device.type==TDSPAN_TYPE:
+            wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
         default:
             break
         }

@@ -113,16 +113,21 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         for i in 0 ..< arr.count
         {
             let deviceIo = arr.objectAtIndex(i) as! BaseDeviceIO
+//            if
+//                deviceCuttentType == 6&&deviceIo.type == TDSPAN_TYPE {
+//                muArr .addObject(deviceIo)
+//                
+//            }
             if OznerManager.instance().checkisBindMode(deviceIo) == true
             {
                 if(deviceCuttentType == 0&&CupManager.isCup(deviceIo.type)) ||
-                (deviceCuttentType == 1&&TapManager.isTap(deviceIo.type)) ||
-                (deviceCuttentType == 2&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
-                (deviceCuttentType == 3&&AirPurifierManager.isBluetoothAirPurifier(deviceIo.type)) ||
-                (deviceCuttentType == 4&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type)) ||
-                (deviceCuttentType == 5&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
+                    (deviceCuttentType == 1&&TapManager.isTap(deviceIo.type)) ||
+                    (deviceCuttentType == 2&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
+                    (deviceCuttentType == 3&&AirPurifierManager.isBluetoothAirPurifier(deviceIo.type)) ||
+                    (deviceCuttentType == 4&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type)) ||
+                (deviceCuttentType == 5&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type)) || deviceCuttentType == 6&&deviceIo.type == TDSPAN_TYPE
                 {
-                        muArr .addObject(deviceIo)
+                    muArr .addObject(deviceIo)
                 }
             }
         }
@@ -216,6 +221,11 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             self.circleIconImgView.image = UIImage(named: "WaterReplenish3")
             animationImgView.image=UIImage(named: "WaterReplenishComplete")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("补水仪名称")
+        case 6:
+            self.firstLabel.text = loadLanguage("长按下start按钮")
+            self.circleIconImgView.image = UIImage(named: "icon_peidui_tantou_watting.png")
+            animationImgView.image=UIImage(named: "icon_peidui_complete_tan_tou.png")
+            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入TDS笔名称")
         default:
             break
         }
@@ -314,15 +324,15 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             if(self.deveiceDataList?.count > 0)
             {
                 let muArr1:NSMutableArray = NSMutableArray(array: self.deveiceDataList!)
-                if(muArr.count > 0)
+                if(muArr.count > 0 && deveiceDataList?.count > 0)
                 {
-                    for var index = 0; index < self.deveiceDataList?.count; index += 1
+                    for  tmpio  in  deveiceDataList!
                     {
-                        let io = self.deveiceDataList?.objectAtIndex(index) as! BaseDeviceIO
+                        let io = tmpio as! BaseDeviceIO
                         var isEqual = false
-                        for index in 0 ..< muArr.count
+                        for tmpio1 in  muArr
                         {
-                            let io1 = muArr.objectAtIndex(index) as! BaseDeviceIO
+                            let io1 = tmpio1 as! BaseDeviceIO
                             if(io.identifier == io1.identifier)
                             {
                                 isEqual = true;
@@ -424,7 +434,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
     }
 
     //除了水杯的配对完成回掉事件
-    var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","智能补水仪"]
+    var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","智能补水仪","TDS笔"]
     func otherFinishedAction()
     {
         if ((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
@@ -436,9 +446,11 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             
             return
         }
+        print(self.mIndex)
+        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
+        print(deviceIo.type)
         
-        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex)
-        let device = OznerManager.instance().getDeviceByIO(deviceIo! as! BaseDeviceIO) as OznerDevice
+        let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
         //添加到服务器
         let werservice = DeviceWerbservice()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -623,22 +635,24 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         {
         case 0:
             imageName = mIndex == row ? "icon_peidui_select_cup.png":"icon_peidui_normal_cup.png"
-            break
+            
         case 1:
             imageName = mIndex == row ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
-            break
+            
         case 2:
             imageName = mIndex == row ? "icon_peidui_select_jingshuiqi.png":"icon_peidui_normal_jingshuiqi.png"
-            break
+            
         case 3:
             imageName = mIndex == row ? "icon_peidui_select_smallair.png":"icon_peidui_normal_smallair.png"
-            break
+            
         case 4:
             imageName = mIndex == row ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
-            break
+            
         case 5:
             imageName = mIndex == row ? "WaterReplenish4":"WaterReplenish5"
-            break
+            
+        case 6:
+            imageName = mIndex == row ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
         default:
             break
         }
@@ -679,6 +693,9 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
             case 5:
                 wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
                 wCellView.titleLabel?.text = "补水仪"
+            case 6:
+                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_tan_tou.png")
+                wCellView.titleLabel?.text = loadLanguage("TDS笔")
             default:
                 break
             }
@@ -708,22 +725,25 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
                 {
                 case 0:
                     imageName = mIndex == i ? "icon_peidui_select_cup.png":"icon_peidui_normal_cup.png"
-                    break
+                    
                 case 1:
                     imageName = mIndex == i ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
-                    break
+                    
                 case 2:
                     imageName = mIndex == i ? "icon_peidui_select_jingshuiqi.png":"icon_peidui_normal_jingshuiqi.png"
-                    break
+                    
                 case 3:
                     imageName = mIndex == i ? "icon_peidui_select_smallair.png":"icon_peidui_normal_smallair.png"
-                    break
+                   
                 case 4:
                     imageName = mIndex == i ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
-                    break
+                    
                 case 5:
                     imageName = mIndex == i ? "WaterReplenish4":"WaterReplenish5"
-                    break
+                    
+                case 6:
+                    imageName = mIndex == i ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
+                    
                 default:
                     break
                 }

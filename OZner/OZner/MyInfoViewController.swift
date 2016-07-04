@@ -99,11 +99,11 @@ class MyInfoViewController: UIViewController {
                     let data=userinfo.objectForKey("data")?.objectAtIndex(0)
                     print(data)
                     let mobile=data?.objectForKey("mobile") as! String
-                    var name=data!.objectForKey("nickname") as! String
+                    var name:String=(data!.objectForKey("nickname") ?? "") as! String
                     
                     name=name=="" ? mobile : name
                     
-                    StrongSelf.mainView.My_login.setTitle((name ?? "无名"), forState: .Normal)
+                    StrongSelf.mainView.My_login.setTitle(name, forState: .Normal)
                     var Score=data!.objectForKey("Score") as! String
                     Score=Score=="" ? "0" : Score
                     StrongSelf.mainView.My_Money.text=Score
@@ -112,12 +112,14 @@ class MyInfoViewController: UIViewController {
                     
                     let tmpName=gradeName.stringByReplacingOccurrencesOfString("会员", withString: "代理会员")
                     StrongSelf.mainView.My_job.text=tmpName
-                    if headimg == ""
+                    if !(headimg.containsString("http://") || headimg.containsString("https://"))
                     {
                         StrongSelf.mainView.My_head.image=UIImage(named: "DefaultHeadImage")
                     }
                     else{
+                        
                         StrongSelf.mainView.My_head.image=UIImage(data: NSData(contentsOfURL: NSURL(string: headimg)!)!)
+                        
                     }
                     
                     StrongSelf.mainView.My_login.enabled=false

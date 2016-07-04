@@ -27,7 +27,7 @@ class indoorHead_BigXib: UIView {
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         // Drawing code
-        VOCValue.text = loadLanguage("检测中");
+        //VOCValue.text = loadLanguage("检测中");
         FineAir.text = loadLanguage("为空气中细微颗粒");
         Airmattter.text = loadLanguage("为空气中挥发性有机化合物");
     

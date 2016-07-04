@@ -378,6 +378,8 @@
 		8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */; };
 		8D5110751CDC6B2A00B809FA /* OffLineSuggestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */; };
 		8D5110771CDC6DD000B809FA /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */; };
+		8D6E13981D2A333900883F6D /* SetTdsPanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E13961D2A333900883F6D /* SetTdsPanViewController.swift */; };
+		8D6E13991D2A333900883F6D /* SetTdsPanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6E13971D2A333900883F6D /* SetTdsPanViewController.xib */; };
 		8D7234A71CF5450E0008B134 /* WaterReplenishmentMeterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7234A61CF5450E0008B134 /* WaterReplenishmentMeterStatus.m */; };
 		8D756AC31C8E8C700022CF63 /* setWaterReplenish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */; };
 		8D756AC61C8E91D50022CF63 /* SetSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */; };
@@ -1473,6 +1475,8 @@
 		8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
 		8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffLineSuggestView.swift; sourceTree = "<group>"; };
 		8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffLineSuggestView.xib; sourceTree = "<group>"; };
+		8D6E13961D2A333900883F6D /* SetTdsPanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTdsPanViewController.swift; sourceTree = "<group>"; };
+		8D6E13971D2A333900883F6D /* SetTdsPanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetTdsPanViewController.xib; sourceTree = "<group>"; };
 		8D7234A61CF5450E0008B134 /* WaterReplenishmentMeterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterStatus.m; sourceTree = "<group>"; };
 		8D756AC21C8E8C700022CF63 /* setWaterReplenish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish.plist; sourceTree = "<group>"; };
 		8D756AC41C8E91D50022CF63 /* SetSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSexViewController.swift; sourceTree = "<group>"; };
@@ -3752,6 +3756,7 @@
 				528FFEE71C2444DD00D814A1 /* setCommon */,
 				892284461C2162C000EE97BC /* setCup */,
 				892284481C21633500EE97BC /* setTanTou */,
+				8D6E13951D2A319700883F6D /* setTDSPan */,
 				892284471C2162F900EE97BC /* setShuiJi */,
 				528FFEF81C2462C600D814A1 /* setAirCleaner */,
 				8D88804D1C8DC8DA007391E1 /* setWaterReplenish */,
@@ -3827,6 +3832,15 @@
 				8DB044DD1CC8CDC600B60DAB /* SkinQueryTableViewController.swift */,
 			);
 			name = WaterReplenishmentController;
+			sourceTree = "<group>";
+		};
+		8D6E13951D2A319700883F6D /* setTDSPan */ = {
+			isa = PBXGroup;
+			children = (
+				8D6E13961D2A333900883F6D /* SetTdsPanViewController.swift */,
+				8D6E13971D2A333900883F6D /* SetTdsPanViewController.xib */,
+			);
+			name = setTDSPan;
 			sourceTree = "<group>";
 		};
 		8D7FEC6B1C746C1400DD01AF /* WaterPurifierView */ = {
@@ -4743,6 +4757,7 @@
 				8DB044471CC8CD1700B60DAB /* icon_zhileng_normal@2x.png in Resources */,
 				8DB044BA1CC8CD5500B60DAB /* baobiao.png in Resources */,
 				8DB0448B1CC8CD4200B60DAB /* icon_peidui_watting.png in Resources */,
+				8D6E13991D2A333900883F6D /* SetTdsPanViewController.xib in Resources */,
 				8DB043FF1CC8CCE200B60DAB /* device_share@2x.png in Resources */,
 				8DB044B71CC8CD5500B60DAB /* device_icon_blutooth.png in Resources */,
 				526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */,
@@ -5335,6 +5350,7 @@
 				52ECBE8C1C0C68D300A962E4 /* LeftViewController.m in Sources */,
 				8DBD54B11C567F3800D04B12 /* YZNewsTableViewController.swift in Sources */,
 				8DA405841C8441B500AD5E5E /* ZXDetectorResult.m in Sources */,
+				8D6E13981D2A333900883F6D /* SetTdsPanViewController.swift in Sources */,
 				8D09DBE01C5A698800D0432B /* loadFailedXib.swift in Sources */,
 				8DBD54E71C567F4500D04B12 /* My_MainView.swift in Sources */,
 				349F0CD01C158EB900E46253 /* CustomPopViewFirstCell.swift in Sources */,
@@ -5471,8 +5487,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5494,7 +5510,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "564b0e28-fb62-45a1-8f88-978f7336630b";
+				PROVISIONING_PROFILE = "bf4f067c-a6f2-4b13-8098-0e66cd381dec";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5519,8 +5535,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -5535,7 +5551,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "564b0e28-fb62-45a1-8f88-978f7336630b";
+				PROVISIONING_PROFILE = "bf4f067c-a6f2-4b13-8098-0e66cd381dec";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -5548,8 +5564,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5571,7 +5587,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "564b0e28-fb62-45a1-8f88-978f7336630b";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -5583,8 +5599,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5606,7 +5622,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "564b0e28-fb62-45a1-8f88-978f7336630b";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 			};
 			name = Release;

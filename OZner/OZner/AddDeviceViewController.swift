@@ -69,7 +69,10 @@ class AddDeviceViewController: SwiftFatherViewController,UITableViewDataSource,U
         case 5:
             
             cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-        default : 
+        case 6:
+            
+            cell.layOutAddDeviceCell("TDSPAN_ICON", content: loadLanguage("TDS笔"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+        default :
             break
         }
 
