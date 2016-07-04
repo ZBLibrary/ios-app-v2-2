@@ -81,7 +81,7 @@ static CustomTabBarView*    g_CustomTabBar;
             label.highlightedTextColor = [UIColor colorWithRed:50.0/255.0 green:114.0/255.0 blue:201.0/255.0 alpha:1.0];
             label.backgroundColor = [UIColor clearColor];
             label.font = [UIFont systemFontOfSize:12.0];
-            label.text =loadLanguage([itemArray objectAtIndex:i]);
+            label.text = [itemArray objectAtIndex:i];
             [view addSubview:label];
             [label release];
             
