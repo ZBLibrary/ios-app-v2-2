@@ -4496,7 +4496,7 @@
 				TargetAttributes = {
 					428141001C0B072C006FEDDE = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = UZZG6NM74T;
+						DevelopmentTeam = BQE6636VJ7;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -5568,7 +5568,7 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roni.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
@@ -5603,7 +5603,7 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roni.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
