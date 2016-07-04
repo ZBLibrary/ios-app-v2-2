@@ -20,12 +20,13 @@ class DeviceMatchCellView_EN: UIView {
         iconImgView?.backgroundColor = UIColor.clearColor()
         self.addSubview(iconImgView!)
         
-        let label:UILabel = UILabel(frame: CGRectMake(0,(iconImgView?.frame.origin.y)!+(iconImgView?.frame.size.height)!+10,self.frame.size.width,14))
+        let label:UILabel = UILabel(frame: CGRectMake(0,(iconImgView?.frame.origin.y)!+(iconImgView?.frame.size.height)!+10,width,14))
         label.textAlignment = NSTextAlignment.Center
-        self.titleLabel = label;
         label.font = UIFont.systemFontOfSize(14)
         label.textColor = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.5)
-        self .addSubview(label)
+        //label.sizeToFit()
+        self.addSubview(label)
+        self.titleLabel = label;
     }
     
     required init?(coder aDecoder: NSCoder) {

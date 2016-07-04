@@ -222,7 +222,6 @@
 		524337DB1C42ABE50024133D /* MQTTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DA1C42ABE50024133D /* MQTTKit.m */; };
 		524337E21C42ABF20024133D /* ConfigurationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DD1C42ABF20024133D /* ConfigurationDevice.m */; };
 		52461F031C26970B00834CC2 /* bigFooterViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F021C26970B00834CC2 /* bigFooterViewXib_EN.xib */; };
-		52461F051C26985500834CC2 /* outAirXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F041C26985500834CC2 /* outAirXib_EN.xib */; };
 		5264661F1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */; };
 		526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */; };
 		526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526643DE1C2A9B37007D7A28 /* indoorAirWarn_Air_EN.swift */; };
@@ -852,6 +851,7 @@
 		E066B9491D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B94B1D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib */; };
 		E066B94D1D24C28500810566 /* SkinHeadTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B94F1D24C28500810566 /* SkinHeadTableViewCell_EN.xib */; };
 		E066B9511D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9531D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib */; };
+		E066B9551D2A016200810566 /* outAirXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9571D2A016200810566 /* outAirXib_EN.xib */; };
 		E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController_EN.xib */; };
 		E0EFFEDF1D056CAE00E43C20 /* headViewView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE11D056CAE00E43C20 /* headViewView_EN.xib */; };
 		E0EFFEE51D05944E00E43C20 /* CenterChartCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEE71D05944E00E43C20 /* CenterChartCell_EN.xib */; };
@@ -1283,7 +1283,6 @@
 		524337DD1C42ABF20024133D /* ConfigurationDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationDevice.m; sourceTree = "<group>"; };
 		524337DE1C42ABF20024133D /* EasyLinkSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyLinkSender.h; sourceTree = "<group>"; };
 		52461F021C26970B00834CC2 /* bigFooterViewXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bigFooterViewXib_EN.xib; sourceTree = "<group>"; };
-		52461F041C26985500834CC2 /* outAirXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = outAirXib_EN.xib; sourceTree = "<group>"; };
 		526466191C43D9C7006C86D3 /* AirPurifierConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifierConsts.h; sourceTree = "<group>"; };
 		5264661C1C43D9C7006C86D3 /* MxChipAirPurifierStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierStatus.h; sourceTree = "<group>"; };
 		5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierStatus.m; sourceTree = "<group>"; };
@@ -2256,6 +2255,8 @@
 		E066B9501D24C28700810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinHeadTableViewCell_EN.xib; sourceTree = "<group>"; };
 		E066B9521D24C4CA00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinCenterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		E066B9541D24C4CC00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinCenterTableViewCell_EN.xib; sourceTree = "<group>"; };
+		E066B9561D2A016200810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/outAirXib_EN.xib; sourceTree = "<group>"; };
+		E066B9581D2A016400810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/outAirXib_EN.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController_EN.xib; sourceTree = "<group>"; };
 		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController_EN.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView_EN.xib; sourceTree = "<group>"; };
@@ -3487,7 +3488,7 @@
 				52A4EF591C27F34C005F282D /* headViewView_EN.swift */,
 				E0EFFEE11D056CAE00E43C20 /* headViewView_EN.xib */,
 				52A4EF6A1C28A749005F282D /* outAirXib_EN.swift */,
-				52461F041C26985500834CC2 /* outAirXib_EN.xib */,
+				E066B9571D2A016200810566 /* outAirXib_EN.xib */,
 				52A4EF6E1C28B12F005F282D /* indoorAirXib_EN.swift */,
 				B7D8C2361D24A8E30089C241 /* indoorAirXib_EN.xib */,
 				52A4EF6C1C28B0F2005F282D /* indoorAirViewController_EN.swift */,
@@ -4842,7 +4843,7 @@
 				8DB043FE1CC8CCE200B60DAB /* left_row@3x.png in Resources */,
 				8DB0448A1CC8CD4200B60DAB /* icon_peidui_tantou_watting.png in Resources */,
 				8DB044631CC8CD2C00B60DAB /* icon_lvxin_service_2.png in Resources */,
-				52461F051C26985500834CC2 /* outAirXib_EN.xib in Resources */,
+				E066B9551D2A016200810566 /* outAirXib_EN.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5808,6 +5809,15 @@
 				E066B9541D24C4CC00810566 /* Base */,
 			);
 			name = SkinCenterTableViewCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		E066B9571D2A016200810566 /* outAirXib_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E066B9561D2A016200810566 /* en */,
+				E066B9581D2A016400810566 /* Base */,
+			);
+			name = outAirXib_EN.xib;
 			sourceTree = "<group>";
 		};
 		E0AFF0BE1D054DE20042CF04 /* MyDeviceMainController_EN.xib */ = {
