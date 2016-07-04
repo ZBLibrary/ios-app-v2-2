@@ -82,10 +82,10 @@
                                     <color key="textColor" red="0.1843137255" green="0.49803921569999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air220001" translatesAutoresizingMaskIntoConstraints="NO" id="vxJ-dG-gIl">
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="air220001" translatesAutoresizingMaskIntoConstraints="NO" id="vxJ-dG-gIl">
                                     <rect key="frame" x="14" y="0.0" width="14" height="7"/>
                                 </imageView>
-                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air220001" translatesAutoresizingMaskIntoConstraints="NO" id="ttJ-UA-2uf">
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="air220001" translatesAutoresizingMaskIntoConstraints="NO" id="ttJ-UA-2uf">
                                     <rect key="frame" x="89" y="0.0" width="14" height="7"/>
                                 </imageView>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air220002" translatesAutoresizingMaskIntoConstraints="NO" id="xG2-bA-GSY">
@@ -115,7 +115,7 @@
                                 <constraint firstItem="XLh-fd-cLP" firstAttribute="centerY" secondItem="sNs-h6-PAx" secondAttribute="centerY" constant="-3" id="xFo-a5-5ko"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbl-s2-mlG">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbl-s2-mlG">
                             <rect key="frame" x="130" y="72" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="hm3-PG-OHt"/>
@@ -125,7 +125,7 @@
                                 <action selector="leftUPbutton:" destination="-1" eventType="touchUpInside" id="i2K-4s-hVE"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdB-pc-si8">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdB-pc-si8">
                             <rect key="frame" x="205" y="72" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="VCg-IE-eaQ"/>
@@ -216,10 +216,10 @@
                                     <color key="textColor" red="0.1843137255" green="0.49803921569999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air220001" translatesAutoresizingMaskIntoConstraints="NO" id="xwz-wJ-fsd">
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="air220001" translatesAutoresizingMaskIntoConstraints="NO" id="xwz-wJ-fsd">
                                     <rect key="frame" x="14" y="0.0" width="14" height="7"/>
                                 </imageView>
-                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air220001" translatesAutoresizingMaskIntoConstraints="NO" id="ksi-je-bUU">
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="air220001" translatesAutoresizingMaskIntoConstraints="NO" id="ksi-je-bUU">
                                     <rect key="frame" x="89" y="0.0" width="14" height="7"/>
                                 </imageView>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="air220002" translatesAutoresizingMaskIntoConstraints="NO" id="8IX-Nw-jhq">
@@ -249,7 +249,7 @@
                                 <constraint firstAttribute="bottom" secondItem="8IX-Nw-jhq" secondAttribute="bottom" id="xDN-h3-uDY"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh7-bU-p4N">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh7-bU-p4N">
                             <rect key="frame" x="130" y="206" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="8cU-lD-lW8"/>
@@ -259,7 +259,7 @@
                                 <action selector="endleftUPbutton:" destination="-1" eventType="touchUpInside" id="XYG-qZ-z7J"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7s-mW-l2v">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7s-mW-l2v">
                             <rect key="frame" x="205" y="206" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="O7l-5E-yX8"/>
