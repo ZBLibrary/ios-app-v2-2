@@ -14,7 +14,7 @@ var appDelegate: AppDelegate {
 class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertViewDelegate {
 
     var window: UIWindow?
-
+    
     /// 网络状态
     var reachOfNetwork:Reachability?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
