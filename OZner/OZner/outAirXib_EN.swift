@@ -51,6 +51,8 @@ class outAirXib_EN: UIView {
         //datasource.text = loadLanguage("数据来源,中国环境监测总站");
         IKnowButton.titleLabel?.text = loadLanguage("我知道了");
     
+    
+    
         
     
     
