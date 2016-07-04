@@ -658,7 +658,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         if(view == nil)
         {
             let width = UIScreen.mainScreen().bounds.width
-            let wCellView = DeviceMatchCellView_EN.init(frame: CGRectMake(0, 0, 98*(width/375.0), 98*(width/375.0)))
+            //98*(width/375.0)
+            let wCellView = DeviceMatchCellView_EN.init(frame: CGRectMake(0, 0, width, 98*(width/375.0)))
             switch deviceCuttentType
             {
             case 0:
