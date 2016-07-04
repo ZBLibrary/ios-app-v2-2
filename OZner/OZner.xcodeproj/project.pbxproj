@@ -226,15 +226,21 @@
 		524337DB1C42ABE50024133D /* MQTTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DA1C42ABE50024133D /* MQTTKit.m */; };
 		524337E21C42ABF20024133D /* ConfigurationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DD1C42ABF20024133D /* ConfigurationDevice.m */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 		52461EFF1C26847200834CC2 /* headViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461EFE1C26847200834CC2 /* headViewView.xib */; };
 		52461F011C26960A00834CC2 /* smallFooterViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F001C26960A00834CC2 /* smallFooterViewXib.xib */; };
 		52461F031C26970B00834CC2 /* bigFooterViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F021C26970B00834CC2 /* bigFooterViewXib.xib */; };
 		52461F051C26985500834CC2 /* outAirXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F041C26985500834CC2 /* outAirXib.xib */; };
 		52461F071C2699AD00834CC2 /* indoorAirXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F061C2699AD00834CC2 /* indoorAirXib.xib */; };
+<<<<<<< HEAD
 =======
 		52461F031C26970B00834CC2 /* bigFooterViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F021C26970B00834CC2 /* bigFooterViewXib_EN.xib */; };
 		52461F051C26985500834CC2 /* outAirXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52461F041C26985500834CC2 /* outAirXib_EN.xib */; };
 >>>>>>> parent of 4417e42... //台式空净
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 		5264661F1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */; };
 		526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 526643D41C2A8F6E007D7A28 /* Airgif_blue.gif */; };
 		526643DB1C2A9723007D7A28 /* indoorAirWarn_Air.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526643D71C2A9723007D7A28 /* indoorAirWarn_Air.xib */; };
@@ -859,6 +865,9 @@
 		8DFB392D1C57248700A1641C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB392C1C57248700A1641C /* ChatViewController.m */; };
 		8DFB39331C574E4B00A1641C /* MxChipAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 		8DFB393F1C57730300A1641C /* WhatHtml.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39361C57730300A1641C /* WhatHtml.plist */; };
 		8DFB39401C57730300A1641C /* ToWhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39371C57730300A1641C /* ToWhatViewController.swift */; };
 		8DFB39411C57730300A1641C /* ToWhatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39381C57730300A1641C /* ToWhatViewController.xib */; };
@@ -866,6 +875,7 @@
 		8DFB39431C57730300A1641C /* TDSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393B1C57730300A1641C /* TDSDetailViewController.xib */; };
 		8DFB39441C57730300A1641C /* AmountOfDrinkingWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */; };
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */; };
+<<<<<<< HEAD
 =======
 		8DFB393F1C57730300A1641C /* WhatHtml_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB39361C57730300A1641C /* WhatHtml_EN.plist */; };
 		8DFB39401C57730300A1641C /* ToWhatViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB39371C57730300A1641C /* ToWhatViewController_EN.swift */; };
@@ -941,6 +951,8 @@
 		E0EFFEF51D06607E00E43C20 /* OffLineSuggestView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF71D06607E00E43C20 /* OffLineSuggestView_EN.xib */; };
 		E0EFFEF91D0666FF00E43C20 /* indoorAirWarn_Air_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air_EN.xib */; };
 >>>>>>> parent of 4417e42... //台式空净
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1368,15 +1380,21 @@
 		524337DD1C42ABF20024133D /* ConfigurationDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationDevice.m; sourceTree = "<group>"; };
 		524337DE1C42ABF20024133D /* EasyLinkSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyLinkSender.h; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 		52461EFE1C26847200834CC2 /* headViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = headViewView.xib; sourceTree = "<group>"; };
 		52461F001C26960A00834CC2 /* smallFooterViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = smallFooterViewXib.xib; sourceTree = "<group>"; };
 		52461F021C26970B00834CC2 /* bigFooterViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bigFooterViewXib.xib; sourceTree = "<group>"; };
 		52461F041C26985500834CC2 /* outAirXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = outAirXib.xib; sourceTree = "<group>"; };
 		52461F061C2699AD00834CC2 /* indoorAirXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = indoorAirXib.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
 =======
 		52461F021C26970B00834CC2 /* bigFooterViewXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bigFooterViewXib_EN.xib; sourceTree = "<group>"; };
 		52461F041C26985500834CC2 /* outAirXib_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = outAirXib_EN.xib; sourceTree = "<group>"; };
 >>>>>>> parent of 4417e42... //台式空净
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 		526466191C43D9C7006C86D3 /* AirPurifierConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifierConsts.h; sourceTree = "<group>"; };
 		5264661C1C43D9C7006C86D3 /* MxChipAirPurifierStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierStatus.h; sourceTree = "<group>"; };
 		5264661D1C43D9C7006C86D3 /* MxChipAirPurifierStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierStatus.m; sourceTree = "<group>"; };
@@ -2306,6 +2324,9 @@
 		8DFB39311C574E4B00A1641C /* MxChipAirPurifierSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxChipAirPurifierSensor.h; sourceTree = "<group>"; };
 		8DFB39321C574E4B00A1641C /* MxChipAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MxChipAirPurifierSensor.m; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 		8DFB39361C57730300A1641C /* WhatHtml.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WhatHtml.plist; sourceTree = "<group>"; };
 		8DFB39371C57730300A1641C /* ToWhatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToWhatViewController.swift; sourceTree = "<group>"; };
 		8DFB39381C57730300A1641C /* ToWhatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToWhatViewController.xib; sourceTree = "<group>"; };
@@ -2315,6 +2336,7 @@
 		8DFB393C1C57730300A1641C /* AmountOfDrinkingWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterViewController.h; sourceTree = "<group>"; };
 		8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
 =======
 		8DFB39361C57730300A1641C /* WhatHtml_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WhatHtml_EN.plist; sourceTree = "<group>"; };
 		8DFB39371C57730300A1641C /* ToWhatViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToWhatViewController_EN.swift; sourceTree = "<group>"; };
@@ -2436,6 +2458,8 @@
 		E0EFFEFA1D0666FF00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/indoorAirWarn_Air_EN.xib; sourceTree = "<group>"; };
 		E0EFFEFC1D06670100E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/indoorAirWarn_Air_EN.xib; sourceTree = "<group>"; };
 >>>>>>> parent of 4417e42... //台式空净
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3648,6 +3672,9 @@
 				52A4EF5B1C27F7FF005F282D /* gifImage */,
 				526DA5311C291E7E002755CA /* indoorAirWarn */,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 				52A4EF591C27F34C005F282D /* headViewView.swift */,
 				52461EFE1C26847200834CC2 /* headViewView.xib */,
 				52461F041C26985500834CC2 /* outAirXib.xib */,
@@ -3662,6 +3689,7 @@
 				8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */,
 				527E918B1C3BDCCF00828A1B /* LongImageViewController.swift */,
 				527E918C1C3BDCCF00828A1B /* LongImageViewController.xib */,
+<<<<<<< HEAD
 =======
 				52A4EF591C27F34C005F282D /* headViewView_EN.swift */,
 				E0EFFEE11D056CAE00E43C20 /* headViewView_EN.xib */,
@@ -3678,6 +3706,8 @@
 				527E918B1C3BDCCF00828A1B /* LongImageViewController_EN.swift */,
 				527E918C1C3BDCCF00828A1B /* LongImageViewController_EN.xib */,
 >>>>>>> parent of 4417e42... //台式空净
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -5022,11 +5052,16 @@
 				8DB0448A1CC8CD4200B60DAB /* icon_peidui_tantou_watting.png in Resources */,
 				8DB044631CC8CD2C00B60DAB /* icon_lvxin_service_2.png in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				52461F051C26985500834CC2 /* outAirXib.xib in Resources */,
 				52791BA41C18C2F500C098B2 /* setCupNameViewController.xib in Resources */,
 =======
 				52461F051C26985500834CC2 /* outAirXib_EN.xib in Resources */,
 >>>>>>> parent of 4417e42... //台式空净
+=======
+				52461F051C26985500834CC2 /* outAirXib.xib in Resources */,
+				52791BA41C18C2F500C098B2 /* setCupNameViewController.xib in Resources */,
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5680,6 +5715,7 @@
 			sourceTree = "<group>";
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */ = {
 			isa = PBXVariantGroup;
@@ -6069,6 +6105,8 @@
 			sourceTree = "<group>";
 		};
 >>>>>>> parent of 4417e42... //台式空净
+=======
+>>>>>>> d2c51eb074d4c5492c4434076c01c97a12135a04
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
