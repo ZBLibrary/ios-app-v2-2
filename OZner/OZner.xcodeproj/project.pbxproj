@@ -860,6 +860,10 @@
 		E0EFFEF11D06604000E43C20 /* WeiXinURLViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF31D06604000E43C20 /* WeiXinURLViewController_EN.xib */; };
 		E0EFFEF51D06607E00E43C20 /* OffLineSuggestView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEF71D06607E00E43C20 /* OffLineSuggestView_EN.xib */; };
 		E0EFFEF91D0666FF00E43C20 /* indoorAirWarn_Air_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFFEFB1D0666FF00E43C20 /* indoorAirWarn_Air_EN.xib */; };
+		E0F32A1F1D45E39B00D78EE5 /* RNEmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F32A1D1D45E39B00D78EE5 /* RNEmailLoginViewController.swift */; };
+		E0F32A201D45E39B00D78EE5 /* RNEmailLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F32A1E1D45E39B00D78EE5 /* RNEmailLoginViewController.xib */; };
+		E0F32A231D45F00800D78EE5 /* RNEmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F32A211D45F00800D78EE5 /* RNEmailRegisterViewController.swift */; };
+		E0F32A241D45F00800D78EE5 /* RNEmailRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F32A221D45F00800D78EE5 /* RNEmailRegisterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2273,6 +2277,10 @@
 		E0EFFEF81D06608000E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OffLineSuggestView_EN.xib; sourceTree = "<group>"; };
 		E0EFFEFA1D0666FF00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/indoorAirWarn_Air_EN.xib; sourceTree = "<group>"; };
 		E0EFFEFC1D06670100E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/indoorAirWarn_Air_EN.xib; sourceTree = "<group>"; };
+		E0F32A1D1D45E39B00D78EE5 /* RNEmailLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNEmailLoginViewController.swift; sourceTree = "<group>"; };
+		E0F32A1E1D45E39B00D78EE5 /* RNEmailLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RNEmailLoginViewController.xib; sourceTree = "<group>"; };
+		E0F32A211D45F00800D78EE5 /* RNEmailRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNEmailRegisterViewController.swift; sourceTree = "<group>"; };
+		E0F32A221D45F00800D78EE5 /* RNEmailRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RNEmailRegisterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2847,6 +2855,7 @@
 			isa = PBXGroup;
 			children = (
 				428141041C0B072C006FEDDE /* AppDelegate.swift */,
+				E0F32A1C1D45E25000D78EE5 /* NewLogin */,
 				52ECBEA91C0C6B6000A962E4 /* MyDevice */,
 				52ECBEA81C0C6B5D00A962E4 /* MyStore */,
 				52ECBEA71C0C6B5A00A962E4 /* chat */,
@@ -4474,6 +4483,17 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		E0F32A1C1D45E25000D78EE5 /* NewLogin */ = {
+			isa = PBXGroup;
+			children = (
+				E0F32A1D1D45E39B00D78EE5 /* RNEmailLoginViewController.swift */,
+				E0F32A1E1D45E39B00D78EE5 /* RNEmailLoginViewController.xib */,
+				E0F32A211D45F00800D78EE5 /* RNEmailRegisterViewController.swift */,
+				E0F32A221D45F00800D78EE5 /* RNEmailRegisterViewController.xib */,
+			);
+			path = NewLogin;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -4618,6 +4638,7 @@
 				8DB043ED1CC8CCE200B60DAB /* yin_shui_liang_3.png in Resources */,
 				8DB043F81CC8CCE200B60DAB /* select_device_4.png in Resources */,
 				528D77391C26FF2B00243986 /* LoadingXib_EN.xib in Resources */,
+				E0F32A241D45F00800D78EE5 /* RNEmailRegisterViewController.xib in Resources */,
 				E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */,
 				8DB0440F1CC8CCE200B60DAB /* tantou_dianliang_2.png in Resources */,
 				4288C5301C0F01A700446D3E /* SwiftFatherViewController.xib in Resources */,
@@ -4808,6 +4829,7 @@
 				42E897A81C14486B00DD0228 /* OCFatherViewController.xib in Resources */,
 				425F7A281C32B0C500C8B2E3 /* new_help_0@2x.png in Resources */,
 				4281413F1C0B0CDA006FEDDE /* LeftViewController.xib in Resources */,
+				E0F32A201D45E39B00D78EE5 /* RNEmailLoginViewController.xib in Resources */,
 				8DB0441A1CC8CCE200B60DAB /* device_wendu_0.png in Resources */,
 				528D772D1C26A5F600243986 /* PM2d5ViewController_EN.xib in Resources */,
 				E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */,
@@ -5066,6 +5088,7 @@
 				8DA405C51C8441B500AD5E5E /* ZXPDF417HighLevelEncoder.m in Sources */,
 				8DA405441C8441B500AD5E5E /* ZXAI013x0x1xDecoder.m in Sources */,
 				8DA405AB1C8441B500AD5E5E /* ZXMultiFinderPatternFinder.m in Sources */,
+				E0F32A1F1D45E39B00D78EE5 /* RNEmailLoginViewController.swift in Sources */,
 				8DA4058F1C8441B500AD5E5E /* ZXErrors.m in Sources */,
 				523DC3461C175E1B00595099 /* UIImageView+XMWebImage.m in Sources */,
 				8DA405F41C8441B500AD5E5E /* ZXRSSExpandedFieldParser.m in Sources */,
@@ -5081,6 +5104,7 @@
 				4248B2EE1C0D917B00181CA0 /* CustomPopView.swift in Sources */,
 				8DA405A91C8441B500AD5E5E /* ZXMonochromeRectangleDetector.m in Sources */,
 				8DA4036D1C843F8600AD5E5E /* LBXScanViewController.m in Sources */,
+				E0F32A231D45F00800D78EE5 /* RNEmailRegisterViewController.swift in Sources */,
 				425381451C14A19F005FF2F3 /* MPGraphView.m in Sources */,
 				8DBD54B21C567F3800D04B12 /* FriendsTableViewController.swift in Sources */,
 				8DA405AE1C8441B500AD5E5E /* ZXMultiFormatUPCEANReader.m in Sources */,
@@ -5993,6 +6017,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEFINES_MODULE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6028,6 +6053,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEFINES_MODULE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

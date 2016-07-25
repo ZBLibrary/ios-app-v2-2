@@ -17,6 +17,9 @@
 #import "ChatViewController.h"
 #import "MBProgressHUD.h"
 #import "NewUserHelpViewController.h"
+
+#import "OZner-swift.h"
+
 @interface SwitchViewController ()<HomeControllerDelegate,LoginOutDelegate,NewUserHelpViewDelegate>
 {
     LeftViewController*         mLeftController;
@@ -29,6 +32,10 @@
     UINavigationController*    mAddDeviceNavController;
     NewUserHelpViewController*  mNewUserHelpController;
     UINavigationController*     mNewUserHelpNavController;
+    
+    
+    // 新增,改变登陆方式
+    RNEmailLoginViewController* emailLoginViewController ;
 }
 
 @end
