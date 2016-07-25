@@ -11,11 +11,11 @@
 #import "Helper.h"
 
 @implementation MXChipIO
--(instancetype)init:(NSString *)identifier MQTT:(MQTTProxy*)proxy Type:(NSString *)type
+-(instancetype)init:(NSString *)identifier MQTT:(MQTTProxy*)Proxy Type:(NSString *)type
 {
     if (self=[super init:identifier Type:type])
     {
-        self->proxy=proxy;
+        self->proxy=Proxy;
     }
     return self;
 }
@@ -138,6 +138,7 @@
     if (runThread) return;
     runThread=[[NSThread alloc] initWithTarget:self selector:@selector(runThreadProc) object:nil];
     [runThread start];
+    
 }
 
 -(void)setSecureCode:(NSString*)secureCode;

@@ -8,11 +8,12 @@
 
 #import "JingShuiWifiViewController.h"
 #import "VersionSettingDBManager.h"
-#import "MXChipPair.h"
+#import "WifiPair.h"
 #import "OZner-swift.h"
-@interface JingShuiWifiViewController ()<MxChipPairDelegate,UIAlertViewDelegate>
 
-@property (nonatomic,strong)  MXChipPair* currentPair;
+@interface JingShuiWifiViewController ()<WifiPairDelegate,UIAlertViewDelegate>
+
+@property (nonatomic,strong)  WifiPair* currentPair;
 @property (nonatomic,strong)  peiDuiOutTimeCell* failViewzb;
 @end
 
@@ -23,7 +24,7 @@
     // Do any additional setup after loading the view from its nib.
     m_bIsAgree = YES;
     m_bIsShow = FALSE;
-    MXChipPair* pair = [[MXChipPair alloc]init];
+    WifiPair* pair = [[WifiPair alloc]init];
     self.currentPair = pair;
     pair.delegate = self;
     
@@ -59,7 +60,7 @@
     self.nextBtn.layer.masksToBounds = true;
     self.nextBtn.layer.cornerRadius = 20;
     
-    NSString* ssid = [MXChipPair  getWifiSSID];
+    NSString* ssid = [WifiPair  getWifiSSID];
     if(ssid.length > 0)
     {
         self.accountTF.text = ssid;
@@ -233,16 +234,13 @@
     [UITool customizeNavBar:self withTitle:@"设备配对" buttonImgL:leftBtn buttonImgR:nil];
 }
 
--(void)complete:(MXChipIO *)io
-{
-    
-}
+
 
 
 /*!
  @function 开始发送Wifi信息
  */
--(void)mxChipPairSendConfiguration
+-(void)SendConfiguration
 {
     
 }
@@ -250,7 +248,7 @@
 /*!
  @function 等待设备连接
  */
--(void)mxChipPairWaitConnectWifi
+-(void)WaitConnectWifi
 {
     
 }
@@ -258,13 +256,13 @@
 /*!
  @function 等待设备激活
  */
--(void)mxChipPairActivate
+-(void)ActivateDevice
 {
     
 }
 
 //配网完成
--(void)mxChipComplete:(MXChipIO*)io
+-(void)PairComplete:(BaseDeviceIO*)io
 {
     [self endTimer];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -290,7 +288,7 @@
 }
 
 //配网失败
--(void)mxChipFailure
+-(void)PairFailure
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self endTimer];

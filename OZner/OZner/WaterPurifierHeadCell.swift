@@ -32,7 +32,7 @@ class WaterPurifierHeadCell: UITableViewCell {
                 return
             }
             //firstLoadTwo--
-            if TdsBefore==65535
+            if TdsBefore>5000
             {
                 RedrawCicle(0, TDS: 0)
                 return
@@ -55,7 +55,7 @@ class WaterPurifierHeadCell: UITableViewCell {
                 return
             }
             //firstLoadTwo--
-            if TdsAfter==65535||TdsAfter==0
+            if TdsAfter>5000||TdsAfter==0
             {
                 NoRecord()
                 RedrawCicle(1, TDS: 0)

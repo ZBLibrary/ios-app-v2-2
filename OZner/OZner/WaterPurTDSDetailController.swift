@@ -9,7 +9,7 @@
 import UIKit
 
 class WaterPurTDSDetailController: UITableViewController {
-    var myCurrentDevice:WaterPurifier?
+    var myCurrentDevice:OznerDevice?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,7 +84,17 @@ class WaterPurTDSDetailController: UITableViewController {
     //获取好友圈排名
     func getFriendTdsRank()
     {
-        self.fristCell.updateCell(Int(max((self.myCurrentDevice?.sensor.TDS1)!, (self.myCurrentDevice?.sensor.TDS2)!)), tdsAfter: Int(min((self.myCurrentDevice?.sensor.TDS1)!, (self.myCurrentDevice?.sensor.TDS2)!)), friendsRank: 0)
+        if WaterPurifierManager.isWaterPurifier_Ayla(myCurrentDevice?.type) {
+            let tmpDev = self.myCurrentDevice as! WaterPurifier_Ayla
+            
+            self.fristCell.updateCell(Int(max(tmpDev.TDS1,tmpDev.TDS2)), tdsAfter: Int(min(tmpDev.TDS1,tmpDev.TDS2)), friendsRank: 0)
+        }
+        else{
+            let tmpDev = self.myCurrentDevice as! WaterPurifier
+            self.fristCell.updateCell(Int(max((tmpDev.sensor.TDS1), (tmpDev.sensor.TDS2))), tdsAfter: Int(min((tmpDev.sensor.TDS1), (tmpDev.sensor.TDS2))), friendsRank: 0)
+        }
+        
+        let strongSelf = self
         
         let manager = AFHTTPRequestOperationManager()
         let url = StarURL_New+"/OznerDevice/TdsFriendRank"
@@ -98,13 +108,22 @@ class WaterPurTDSDetailController: UITableViewController {
                 if state > 0
                 {
                     let needRank=responseObject.objectForKey("data")?.objectAtIndex(0).objectForKey("rank") as! Int
-                    self.fristCell.updateCell(Int(max((self.myCurrentDevice?.sensor.TDS1)!, (self.myCurrentDevice?.sensor.TDS2)!)), tdsAfter: Int(min((self.myCurrentDevice?.sensor.TDS1)!, (self.myCurrentDevice?.sensor.TDS2)!)), friendsRank: needRank)
+                    if WaterPurifierManager.isWaterPurifier_Ayla(strongSelf.myCurrentDevice?.type) {
+                        let tmpDev = strongSelf.myCurrentDevice as! WaterPurifier_Ayla
+                        
+                        strongSelf.fristCell.updateCell(Int(max(tmpDev.TDS1,tmpDev.TDS2)), tdsAfter: Int(min(tmpDev.TDS1,tmpDev.TDS2)), friendsRank: needRank)
+                    }
+                    else{
+                        let tmpDev = strongSelf.myCurrentDevice as! WaterPurifier
+                        strongSelf.fristCell.updateCell(Int(max(tmpDev.sensor.TDS1, tmpDev.sensor.TDS2)), tdsAfter: Int(min(tmpDev.sensor.TDS1, tmpDev.sensor.TDS2)), friendsRank: needRank)
+                    }
+                    
                 }
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
-                print("Error: " + error.localizedDescription)
+            failure: { (operation: AFHTTPRequestOperation?,
+                error: NSError?) in
+                print("Error: " + error!.localizedDescription)
         })
         
         

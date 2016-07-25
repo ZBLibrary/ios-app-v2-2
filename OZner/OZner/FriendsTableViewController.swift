@@ -561,8 +561,8 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                 }
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,
+                error: NSError?) in
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
         })
         

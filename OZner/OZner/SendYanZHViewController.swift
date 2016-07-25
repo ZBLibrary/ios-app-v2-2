@@ -85,8 +85,8 @@ class SendYanZHViewController: UIViewController,UITextFieldDelegate {
                 }
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,
+                error: NSError?) in
                 
                 //print("Error: " + error.localizedDescription)
                 

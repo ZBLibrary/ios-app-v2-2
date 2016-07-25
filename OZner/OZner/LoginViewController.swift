@@ -65,13 +65,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         let manager = AFHTTPRequestOperationManager()
         let url = StarURL_New+"/OznerServer/GetPhoneCode"
         let params:NSDictionary = ["phone":Phone]
+        
         manager.POST(url,
             parameters: params,
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,
+                error: NSError?) in
                 self.errorLabel.text=loadLanguage("网络连接失败,请重试。")
                 self.shuttime=0
         })

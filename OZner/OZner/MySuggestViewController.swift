@@ -84,8 +84,8 @@ class MySuggestViewController: UIViewController,UITextViewDelegate {
                 }
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,
+                error: NSError?) in
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
                 
         })

@@ -167,9 +167,9 @@ class TantouLXController: UIViewController {
                     }
                 }
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
-                print("Error: " + error.localizedDescription)
+            failure: { (operation: AFHTTPRequestOperation?,
+                error: NSError?) in
+                print("Error: " + error!.localizedDescription)
         })
         
         

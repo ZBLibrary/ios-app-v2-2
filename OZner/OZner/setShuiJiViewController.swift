@@ -105,9 +105,10 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
     //加载设备里面数据
     func loadDeviceData()
     {
-        let water = self.myCurrentDevice as! WaterPurifier
+        var nameStr=(self.myCurrentDevice?.settings.name)! as String
+        
         //名称体重饮水量
-        var nameStr=water.settings.name
+
         if nameStr.characters.contains("(")==false
         {
             nameStr=nameStr+"(家)"
@@ -163,9 +164,8 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
         //写入本地
         setPlistData(plistData, fileName: "setShuiJi")
             //写入设备
-        let water = self.myCurrentDevice as! WaterPurifier
-        water.settings.name=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
-        OznerManager.instance().save(water)
+        self.myCurrentDevice!.settings.name=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
+        OznerManager.instance().save(self.myCurrentDevice)
         NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
         self.navigationController?.popViewControllerAnimated(true)
     }

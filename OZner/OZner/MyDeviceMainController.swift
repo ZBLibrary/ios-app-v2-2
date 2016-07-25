@@ -127,7 +127,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             //净水器滤芯详情页
             let controller=TantouLXController()
             controller.buyWaterLVXinUrl=BuyWaterUrlString
-            controller.myCurrentDevice = self.myCurrentDevice as! WaterPurifier
+            controller.myCurrentDevice = self.myCurrentDevice
             controller.IsShowScanOfWater=IsShowScanOfWater
             self.navigationController?.pushViewController(controller, animated: true)
         }
@@ -369,7 +369,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             
             deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Top, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Top, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Bottom, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Bottom, multiplier: 1, constant: 0))
-            waterPurFooter.waterDevice=myCurrentDevice as? WaterPurifier
+            waterPurFooter.waterDevice = myCurrentDevice 
             
         case AirPurifierManager.isBluetoothAirPurifier(type):
             //台式空气净化器视图
@@ -554,65 +554,122 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             return
         }
-        let waterPur=myCurrentDevice as! WaterPurifier
-        switch button.tag
-        {
-        case 0://电源
-            
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            waterPur.status.setPower(!waterPur.status.power, callback: { (error:NSError!) -> Void in
-                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
-                //MBProgressHUD.hideHUDForView(self.view, animated: true)
-            })
-            break
-        case 1://制冷
-            if waterPur.status.power==false
+        let StrongSelf = self
+        
+        if WaterPurifierManager.isWaterPurifier_Ayla(myCurrentDevice?.type) {
+            let waterPur=myCurrentDevice as! WaterPurifier_Ayla
+            switch button.tag
             {
-                return
+            case 0://电源
+                
+                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                waterPur.setPower(!waterPur.getPower(), callback: { (error:NSError!) in
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                })
+                
+            case 1://制冷
+                if waterPur.getPower()==false
+                {
+                    return
+                }
+                if waterPurFooter.ishaveCoolAblity==false
+                {
+                    let alert=UIAlertView(title: "", message: "抱歉，该净水器型号没有提供此项功能！", delegate: self, cancelButtonTitle: "确定")
+                    alert.show()
+                    return
+                }
+                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                waterPur.setCool(!waterPur.getCool(), callback: { (error:NSError!) in
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                })
+               
+            case 2://加热
+                if waterPur.getPower()==false
+                {
+                    return
+                }
+                if waterPurFooter.ishaveHotAblity==false
+                {
+                    let alert=UIAlertView(title: "", message: "抱歉，该净水器型号没有提供此项功能！", delegate: self, cancelButtonTitle: "确定")
+                    alert.show()
+                    return
+                }
+                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                waterPur.setHot(!waterPur.getHot(), callback: { (error:NSError!) in
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                })
+            default:
+                break
             }
-            if waterPurFooter.ishaveCoolAblity==false
-            {
-                let alert=UIAlertView(title: "", message: "抱歉，该净水器型号没有提供此项功能！", delegate: self, cancelButtonTitle: "确定")
-                alert.show()
-                return
-            }
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            waterPur.status.setCool(!waterPur.status.cool, callback: { (error:NSError!) -> Void in
-                //MBProgressHUD.hideHUDForView(self.view, animated: true)
-                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
-            })
-            break
-        case 2://加热
-            if waterPur.status.power==false
-            {
-                return
-            }
-            if waterPurFooter.ishaveHotAblity==false
-            {
-                let alert=UIAlertView(title: "", message: "抱歉，该净水器型号没有提供此项功能！", delegate: self, cancelButtonTitle: "确定")
-                alert.show()
-                return
-            }
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            waterPur.status.setHot(!waterPur.status.hot, callback: { (error:NSError!) -> Void in
-                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
-            })
-            break
-        default:
-            break
         }
+        else{
+            let waterPur=myCurrentDevice as! WaterPurifier
+            switch button.tag
+            {
+            case 0://电源
+                
+                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                waterPur.status.setPower(!waterPur.status.power, callback: { (error:NSError!) -> Void in
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
+                    //MBProgressHUD.hideHUDForView(self.view, animated: true)
+                })
+                break
+            case 1://制冷
+                if waterPur.status.power==false
+                {
+                    return
+                }
+                if waterPurFooter.ishaveCoolAblity==false
+                {
+                    let alert=UIAlertView(title: "", message: "抱歉，该净水器型号没有提供此项功能！", delegate: self, cancelButtonTitle: "确定")
+                    alert.show()
+                    return
+                }
+                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                waterPur.status.setCool(!waterPur.status.cool, callback: { (error:NSError!) -> Void in
+                    //MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
+                })
+                break
+            case 2://加热
+                if waterPur.status.power==false
+                {
+                    return
+                }
+                if waterPurFooter.ishaveHotAblity==false
+                {
+                    let alert=UIAlertView(title: "", message: "抱歉，该净水器型号没有提供此项功能！", delegate: self, cancelButtonTitle: "确定")
+                    alert.show()
+                    return
+                }
+                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                waterPur.status.setHot(!waterPur.status.hot, callback: { (error:NSError!) -> Void in
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
+                })
+                break
+            default:
+                break
+            }
+        }
+        
     }
     // 跳转到净水器TDS详情页
     func TDSDetailOfWaterPurf()
     {
-        if (myCurrentDevice as? WaterPurifier)?.isOffline==true {
-            DeviceOffLineClick()
+        if WaterPurifierManager.isWaterPurifier_Ayla(myCurrentDevice?.type) {
+            if (myCurrentDevice as? WaterPurifier_Ayla)?.isOffline==true {
+                DeviceOffLineClick()
+                return
+            }
+        }else{
+            if (myCurrentDevice as? WaterPurifier)?.isOffline==true {
+                DeviceOffLineClick()
+                return
+            }
         }
-        else{
-            let tdsController=WaterPurTDSDetailController()
-            tdsController.myCurrentDevice = myCurrentDevice as? WaterPurifier
-            self.navigationController?.pushViewController(tdsController, animated: true)
-        }
+        let tdsController=WaterPurTDSDetailController()
+        tdsController.myCurrentDevice = myCurrentDevice
+        self.navigationController?.pushViewController(tdsController, animated: true)
     }
 
     func leftMenuShouqiClick()
@@ -831,9 +888,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                         }
                         
                     },
-                    failure: { (operation: AFHTTPRequestOperation!,
-                        error: NSError!) in
-                        print("Error: " + error.localizedDescription)
+                    failure: { (operation: AFHTTPRequestOperation?,
+                        error: NSError?) in
+                        print("Error: " + error!.localizedDescription)
                 })
             })
             
@@ -1184,6 +1241,29 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                     self.currentTDS = tds
                 }
             }
+            else if(self.myCurrentDevice?.isKindOfClass(WaterPurifier_Ayla.classForCoder()) == true)
+            {
+                //Ayla净水器
+                let waterAyla=self.myCurrentDevice! as! WaterPurifier_Ayla
+                if waterAyla.getPower()==true
+                {
+                    WaterPurfHeadView?.TdsBefore=Int(max(waterAyla.TDS1, waterAyla.TDS2))
+                    WaterPurfHeadView?.TdsAfter=Int(min(waterAyla.TDS1, waterAyla.TDS2))
+                    tds=(WaterPurfHeadView?.TdsAfter)!
+                }
+                if(isNeedDownLXDate == false)
+                {
+                    isNeedDownLXDate = true
+                    self.downLoadLvXinState()
+                }
+                //print(self.currentTDS)
+                if(self.currentTDS > tds&&(tds > 0))
+                {
+                    
+                    self.downLoadTDS(tds,tdsBefore: (WaterPurfHeadView?.TdsBefore)!)
+                    self.currentTDS = tds
+                }
+            }
             else if AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type)&&(IAW_TempView != nil)
             {
                 let airPurifier_Bluetooth = self.myCurrentDevice as! AirPurifier_Bluetooth
@@ -1431,17 +1511,34 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                
             }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
             {
-                let waterPurifier = self.myCurrentDevice as! WaterPurifier
-                WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurifier.isOffline
-                WaterPurfHeadView?.deviceValueContainer.hidden=waterPurifier.isOffline
-                if waterPurifier.isOffline==false {
-                    waterPurFooter.updateSwitchState()
-                    if (self.myCurrentDevice as! WaterPurifier).status.power==false
-                    {
-                        WaterPurfHeadView?.TdsBefore=0
-                        WaterPurfHeadView?.TdsAfter=0
+                if WaterPurifierManager.isWaterPurifier_Ayla(myCurrentDevice?.type) {
+                    let waterPurif = self.myCurrentDevice as! WaterPurifier_Ayla
+                    WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurif.isOffline
+                    WaterPurfHeadView?.deviceValueContainer.hidden=waterPurif.isOffline
+                    if waterPurif.isOffline==false {
+                        waterPurFooter.updateSwitchState()
+                        if waterPurif.getPower()==false
+                        {
+                            WaterPurfHeadView?.TdsBefore=0
+                            WaterPurfHeadView?.TdsAfter=0
+                        }
+                        
                     }
                     
+                }
+                else{
+                    let waterPurif = self.myCurrentDevice as! WaterPurifier
+                    WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurif.isOffline
+                    WaterPurfHeadView?.deviceValueContainer.hidden=waterPurif.isOffline
+                    if waterPurif.isOffline==false {
+                        waterPurFooter.updateSwitchState()
+                        if waterPurif.status.power==false
+                        {
+                            WaterPurfHeadView?.TdsBefore=0
+                            WaterPurfHeadView?.TdsAfter=0
+                        }
+                        
+                    }
                 }
                 
             }
@@ -1984,6 +2081,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     func StopLoadAnimal()
     {
         MBProgressHUD.hideHUDForView(self.view, animated: false)
+        waterPurFooter.updateSwitchState()
     }
     //风速模式选择函数
     func selectWhichModelbig(button:UIButton)

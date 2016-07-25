@@ -16,6 +16,7 @@
 #import "Helper.h"
 
 
+
 @implementation OznerManager
 
 OznerManager* oznerManager=nil;
@@ -31,7 +32,7 @@ OznerManager* oznerManager=nil;
 
 -(NSString*)getOwnerTableName
 {
-    return [NSString stringWithFormat:@"A%@",[Helper md5:owner]];
+    return [NSString stringWithFormat:@"A%@",[Helper md5:user]];
 }
 
 -(instancetype)init
@@ -60,21 +61,26 @@ OznerManager* oznerManager=nil;
 }
 -(void)closeAll
 {
+    
     [self.ioManager closeAll];
 }
--(void)setOwner:(NSString *)aOwner
+-(void)setOwner:(NSString *)aOwner Token:(NSString*)Token
 {
     if (!aOwner) return;
     
-    self->owner=[[NSString stringWithString:aOwner] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    [OznerManager instance]->user=[[NSString stringWithString:aOwner] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    [OznerManager instance]->token=Token;
+    NSLog(@"%@",[OznerManager instance]->user);
     @synchronized(devices) {
         [devices removeAllObjects];
     }
     [self closeAll];
-    
+    [[[[OznerManager instance] ioManager] aylaIOManager] Start:aOwner Token:Token];
+    //AylaIOManager* tmpIO=[[AylaIOManager alloc] init];
+    //[tmpIO Start:aOwner Token:Token];
     NSString* sql=[NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (identifier VARCHAR PRIMARY KEY NOT NULL,Type Text NOT NULL,JSON TEXT)",[self getOwnerTableName]];
     [db ExecSQLNonQuery:sql params:nil];
-    [self.delegate OznerManagerDidOwnerChanged:self->owner];
+    [self.delegate OznerManagerDidOwnerChanged:[OznerManager instance]->user];
     [self loadDevices];
     
 }
@@ -97,7 +103,13 @@ OznerManager* oznerManager=nil;
     OznerDevice* device=nil;
     @synchronized(devices) {
         device=[devices objectForKey:io.identifier];
-        if (device) return device;
+        if ([WaterPurifierManager isWaterPurifier_Ayla:io.type]) {
+            
+        }
+        else
+        {
+            if (device) return device;
+        }
     }
 
     for (BaseDeviceManager* mgr in deviceMgrList)
@@ -137,7 +149,8 @@ OznerManager* oznerManager=nil;
 -(void)save:(OznerDevice*)device Callback:(OperateCallback)cb;
 {
     if (!devices) return;
-    if (StringIsNullOrEmpty(owner)) return;
+    NSString* tasa = [OznerManager instance]->user;
+    //if (StringIsNullOrEmpty([[OznerManager instance] user])) return;
     bool isNew=false;
     
     @synchronized(devices) {
@@ -213,6 +226,10 @@ OznerManager* oznerManager=nil;
     [db ExecSQLNonQuery:sql params:[NSArray arrayWithObjects:device.identifier, nil]];
     @synchronized(devices) {
         [devices removeObjectForKey:device.identifier];
+    }
+    //Ayla 
+    if ([WaterPurifierManager isWaterPurifier_Ayla:device.type]) {
+        [[[[OznerManager instance] ioManager] aylaIOManager] removeDevice:device.identifier];
     }
     [device bind:nil];
     [self.delegate OznerManagerDidRemoveDevice:device];

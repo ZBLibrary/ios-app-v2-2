@@ -26,6 +26,7 @@
 /*!
  @function OznerManagerDidRemoveDevice
  @discussion 删除一个配对设备事件
+ 
 */
 -(void)OznerManagerDidRemoveDevice:(OznerDevice*)device;
 /*!
@@ -47,17 +48,19 @@
     @private
     NSMutableDictionary* devices;
     BluetoothIOMgr* bluetoothMgr;
-    NSString* owner;
+    NSString* user;
+    NSString* token;
     SqlLiteDB* db;
     NSArray* deviceMgrList;
 }
 @property (nonatomic, weak) id<OznerManagerDelegate> delegate;
-
+//@property (nonatomic, weak) NSString* token;
+//@property (nonatomic, weak) NSString* user;
 /*!
  @function setOwner
  @discussion 设置当前运行账号
  */
--(void)setOwner:(NSString*)owner;
+-(void)setOwner:(NSString*)owner Token:(NSString*)Token;
 /*!
  @function getDevice
  @discussion 通过设备id获取设备对象

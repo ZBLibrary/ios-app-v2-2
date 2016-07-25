@@ -105,6 +105,7 @@
 		42E897B11C144CBC00DD0228 /* UITool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42E897B01C144CBC00DD0228 /* UITool.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42E897B41C144CD700DD0228 /* NavigaitionTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E897B31C144CD700DD0228 /* NavigaitionTitleView.m */; };
 		42E897B71C1451D200DD0228 /* AmountOfDrinkingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E897B61C1451D200DD0228 /* AmountOfDrinkingCell.m */; };
+		50FF0693F9705F95DAC9AE43 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84679D935994BFB037D1C0CA /* libPods.a */; };
 		52080AEF1C3BBC0600150B4F /* logging_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 52080AD31C3BBC0600150B4F /* logging_mosq.c */; };
 		52080AF01C3BBC0600150B4F /* memory_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 52080AD51C3BBC0600150B4F /* memory_mosq.c */; };
 		52080AF11C3BBC0600150B4F /* messages_mosq.c in Sources */ = {isa = PBXBuildFile; fileRef = 52080AD71C3BBC0600150B4F /* messages_mosq.c */; };
@@ -177,15 +178,6 @@
 		523DC34D1C175E1B00595099 /* chatBar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523DC3311C175E1B00595099 /* chatBar.xcassets */; };
 		523DC34E1C175E1B00595099 /* XMLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3331C175E1B00595099 /* XMLocationController.m */; };
 		523DC34F1C175E1B00595099 /* face.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523DC3341C175E1B00595099 /* face.plist */; };
-		523DC3691C175E9B00595099 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3571C175E9B00595099 /* AFHTTPRequestOperation.m */; };
-		523DC36A1C175E9B00595099 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3591C175E9B00595099 /* AFHTTPRequestOperationManager.m */; };
-		523DC36B1C175E9B00595099 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC35B1C175E9B00595099 /* AFHTTPSessionManager.m */; };
-		523DC36C1C175E9B00595099 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC35E1C175E9B00595099 /* AFNetworkReachabilityManager.m */; };
-		523DC36D1C175E9B00595099 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3601C175E9B00595099 /* AFSecurityPolicy.m */; };
-		523DC36E1C175E9B00595099 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3621C175E9B00595099 /* AFURLConnectionOperation.m */; };
-		523DC36F1C175E9B00595099 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3641C175E9B00595099 /* AFURLRequestSerialization.m */; };
-		523DC3701C175E9B00595099 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3661C175E9B00595099 /* AFURLResponseSerialization.m */; };
-		523DC3711C175E9B00595099 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 523DC3681C175E9B00595099 /* AFURLSessionManager.m */; };
 		5243373A1C42A5AF0024133D /* AirPurifierManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337391C42A5AF0024133D /* AirPurifierManager.m */; };
 		524337431C42A5BB0024133D /* AirPurifier_Bluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243373C1C42A5BB0024133D /* AirPurifier_Bluetooth.m */; };
 		524337451C42A5BB0024133D /* BluetoothAirPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337401C42A5BB0024133D /* BluetoothAirPurifierStatus.m */; };
@@ -207,7 +199,6 @@
 		5243379B1C42A63F0024133D /* BaseOznerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5243378E1C42A63F0024133D /* BaseOznerObject.m */; };
 		5243379C1C42A63F0024133D /* DeviceSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337901C42A63F0024133D /* DeviceSetting.m */; };
 		5243379D1C42A63F0024133D /* IOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337931C42A63F0024133D /* IOManager.m */; };
-		5243379E1C42A63F0024133D /* IOManagerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337951C42A63F0024133D /* IOManagerList.m */; };
 		5243379F1C42A63F0024133D /* OznerDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337981C42A63F0024133D /* OznerDevice.m */; };
 		524337A41C42A64B0024133D /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337A11C42A64B0024133D /* Helper.m */; };
 		524337A51C42A64B0024133D /* SqlLiteDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337A31C42A64B0024133D /* SqlLiteDB.m */; };
@@ -219,8 +210,6 @@
 		524337BB1C42A8D70024133D /* TapRecordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337B11C42A8D70024133D /* TapRecordList.m */; };
 		524337BC1C42A8D70024133D /* TapSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337B31C42A8D70024133D /* TapSensor.m */; };
 		524337BD1C42A8D70024133D /* TapSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337B51C42A8D70024133D /* TapSettings.m */; };
-		524337C91C42A8E50024133D /* WaterPurifierInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C11C42A8E50024133D /* WaterPurifierInfo.m */; };
-		524337CA1C42A8E50024133D /* WaterPurifierManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C31C42A8E50024133D /* WaterPurifierManager.m */; };
 		524337CB1C42A8E50024133D /* WaterPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C51C42A8E50024133D /* WaterPurifierSensor.m */; };
 		524337CC1C42A8E50024133D /* WaterPurifierStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337C71C42A8E50024133D /* WaterPurifierStatus.m */; };
 		524337DB1C42ABE50024133D /* MQTTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 524337DA1C42ABE50024133D /* MQTTKit.m */; };
@@ -367,7 +356,6 @@
 		8D4354FE1C760AC0007F83DA /* WaterPurTDSDetailCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4354FC1C760AC0007F83DA /* WaterPurTDSDetailCell1.xib */; };
 		8D4355011C760AD5007F83DA /* WaterPurTDSDetailCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354FF1C760AD5007F83DA /* WaterPurTDSDetailCell2.swift */; };
 		8D4355021C760AD5007F83DA /* WaterPurTDSDetailCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4355001C760AD5007F83DA /* WaterPurTDSDetailCell2.xib */; };
-		8D438E8F1C9AB42A0060896D /* OznerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E8E1C9AB42A0060896D /* OznerManager.m */; };
 		8D438E961C9AB44F0060896D /* WaterReplenishmentMeterMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E911C9AB44F0060896D /* WaterReplenishmentMeterMgr.m */; };
 		8D438E971C9AB44F0060896D /* WaterReplenishmentMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E931C9AB44F0060896D /* WaterReplenishmentMeter.m */; };
 		8D438EA31C9AB4690060896D /* BluetoothIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438E9A1C9AB4690060896D /* BluetoothIO.m */; };
@@ -375,7 +363,6 @@
 		8D438EA61C9AB4690060896D /* FirmwareTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438EA01C9AB4690060896D /* FirmwareTools.m */; };
 		8D438EA71C9AB4690060896D /* ScanData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D438EA21C9AB4690060896D /* ScanData.m */; };
 		8D4F4E821CDADD6D00BE1E77 /* AirPurifier_MxChip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */; };
-		8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */; };
 		8D5110751CDC6B2A00B809FA /* OffLineSuggestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */; };
 		8D5110771CDC6DD000B809FA /* OffLineSuggestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */; };
 		8D6E13981D2A333900883F6D /* SetTdsPanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E13961D2A333900883F6D /* SetTdsPanViewController.swift */; };
@@ -391,8 +378,6 @@
 		8D88804F1C8DCC4D007391E1 /* setWaterReplenishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */; };
 		8D8880521C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */; };
 		8D8880531C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */; };
-		8D9C63561CA2456200543353 /* MXChipPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63551CA2456200543353 /* MXChipPair.m */; };
-		8D9C635A1CA245B700543353 /* HttpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63581CA245B700543353 /* HttpServer.m */; };
 		8D9C635B1CA245B700543353 /* EasyLinkSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C63591CA245B700543353 /* EasyLinkSender.m */; };
 		8DA403661C843F8600AD5E5E /* LBXZXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA403521C843F8600AD5E5E /* LBXZXCapture.m */; };
 		8DA403671C843F8600AD5E5E /* ZXingWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA403551C843F8600AD5E5E /* ZXingWrapper.m */; };
@@ -830,7 +815,6 @@
 		8DBD54EA1C567F4500D04B12 /* chatBarViewLiuyan.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */; };
 		8DBD54ED1C567F8800D04B12 /* UserInfoActionWerbService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD54EC1C567F8800D04B12 /* UserInfoActionWerbService.m */; };
 		8DD51FD71C7D8D3200F95695 /* MQTTProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FD01C7D8D3200F95695 /* MQTTProxy.m */; };
-		8DD51FD81C7D8D3200F95695 /* MXChipIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FD21C7D8D3200F95695 /* MXChipIO.m */; };
 		8DD51FD91C7D8D3200F95695 /* MXChipIOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FD41C7D8D3200F95695 /* MXChipIOManager.m */; };
 		8DD51FDE1C7D97F100F95695 /* JingShuiWifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FDC1C7D97F100F95695 /* JingShuiWifiViewController.m */; };
 		8DD51FDF1C7D97F100F95695 /* JingShuiWifiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FDD1C7D97F100F95695 /* JingShuiWifiViewController.xib */; };
@@ -838,6 +822,17 @@
 		8DD51FE31C7DA7CD00F95695 /* DeviceMatchedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */; };
 		8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */; };
 		8DE5FD7B1C56745D0092242F /* UserInfoClasszb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */; };
+		8DE7582C1D41EA1900E721DA /* OznerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7582B1D41EA1900E721DA /* OznerManager.m */; };
+		8DE758321D41EBD700E721DA /* AylaIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7582F1D41EBD700E721DA /* AylaIO.m */; };
+		8DE758331D41EBD700E721DA /* AylaIOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE758311D41EBD700E721DA /* AylaIOManager.m */; };
+		8DE758361D41EC0A00E721DA /* HttpServer_Xu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE758351D41EC0A00E721DA /* HttpServer_Xu.m */; };
+		8DE758391D41EC1100E721DA /* WifiPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE758381D41EC1100E721DA /* WifiPair.m */; };
+		8DE7583C1D41EC5200E721DA /* IOManagerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7583B1D41EC5200E721DA /* IOManagerList.m */; };
+		8DE758451D41ED4300E721DA /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7583E1D41ED4300E721DA /* WaterPurifier.m */; };
+		8DE758461D41ED4300E721DA /* WaterPurifier_Ayla.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE758401D41ED4300E721DA /* WaterPurifier_Ayla.m */; };
+		8DE758471D41ED4300E721DA /* WaterPurifierInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE758421D41ED4300E721DA /* WaterPurifierInfo.m */; };
+		8DE758481D41ED4300E721DA /* WaterPurifierManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE758441D41ED4300E721DA /* WaterPurifierManager.m */; };
+		8DE7584B1D41EE4200E721DA /* MXChipIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7584A1D41EE4200E721DA /* MXChipIO.m */; };
 		8DF060A51CC90F6100EC05D9 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060981CC90F6100EC05D9 /* Constraint.swift */; };
 		8DF060A61CC90F6100EC05D9 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */; };
 		8DF060A71CC90F6100EC05D9 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */; };
@@ -972,7 +967,6 @@
 		4296750B1C31675000F76245 /* VersionSettingDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionSettingDBManager.m; sourceTree = "<group>"; };
 		4296750D1C316E7C00F76245 /* LoginWerbService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWerbService.h; sourceTree = "<group>"; };
 		4296750E1C316E7D00F76245 /* LoginWerbService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWerbService.m; sourceTree = "<group>"; };
-		42A7BB101C0C237C008DB6E5 /* OZner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OZner-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		42A7BB111C0C237D008DB6E5 /* NetworkEntrance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkEntrance.h; sourceTree = "<group>"; };
 		42A7BB121C0C237D008DB6E5 /* NetworkEntrance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkEntrance.m; sourceTree = "<group>"; };
 		42A7BB131C0C237D008DB6E5 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -1186,25 +1180,6 @@
 		523DC3321C175E1B00595099 /* XMLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLocationController.h; sourceTree = "<group>"; };
 		523DC3331C175E1B00595099 /* XMLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLocationController.m; sourceTree = "<group>"; };
 		523DC3341C175E1B00595099 /* face.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = face.plist; sourceTree = "<group>"; };
-		523DC3561C175E9B00595099 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		523DC3571C175E9B00595099 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		523DC3581C175E9B00595099 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		523DC3591C175E9B00595099 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		523DC35A1C175E9B00595099 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		523DC35B1C175E9B00595099 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		523DC35C1C175E9B00595099 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		523DC35D1C175E9B00595099 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		523DC35E1C175E9B00595099 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		523DC35F1C175E9B00595099 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		523DC3601C175E9B00595099 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		523DC3611C175E9B00595099 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		523DC3621C175E9B00595099 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		523DC3631C175E9B00595099 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		523DC3641C175E9B00595099 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		523DC3651C175E9B00595099 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		523DC3661C175E9B00595099 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		523DC3671C175E9B00595099 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		523DC3681C175E9B00595099 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		524337381C42A5AF0024133D /* AirPurifierManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifierManager.h; sourceTree = "<group>"; };
 		524337391C42A5AF0024133D /* AirPurifierManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifierManager.m; sourceTree = "<group>"; };
 		5243373B1C42A5BB0024133D /* AirPurifier_Bluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifier_Bluetooth.h; sourceTree = "<group>"; };
@@ -1250,8 +1225,6 @@
 		524337911C42A63F0024133D /* IOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManager.h; sourceTree = "<group>"; };
 		524337921C42A63F0024133D /* IOManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IOManager.hpp; sourceTree = "<group>"; };
 		524337931C42A63F0024133D /* IOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOManager.m; sourceTree = "<group>"; };
-		524337941C42A63F0024133D /* IOManagerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerList.h; sourceTree = "<group>"; };
-		524337951C42A63F0024133D /* IOManagerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOManagerList.m; sourceTree = "<group>"; };
 		524337961C42A63F0024133D /* OznerDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OznerDevice.h; sourceTree = "<group>"; };
 		524337971C42A63F0024133D /* OznerDevice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OznerDevice.hpp; sourceTree = "<group>"; };
 		524337981C42A63F0024133D /* OznerDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OznerDevice.m; sourceTree = "<group>"; };
@@ -1275,10 +1248,6 @@
 		524337B31C42A8D70024133D /* TapSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapSensor.m; sourceTree = "<group>"; };
 		524337B41C42A8D70024133D /* TapSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapSettings.h; sourceTree = "<group>"; };
 		524337B51C42A8D70024133D /* TapSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapSettings.m; sourceTree = "<group>"; };
-		524337C01C42A8E50024133D /* WaterPurifierInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifierInfo.h; sourceTree = "<group>"; };
-		524337C11C42A8E50024133D /* WaterPurifierInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifierInfo.m; sourceTree = "<group>"; };
-		524337C21C42A8E50024133D /* WaterPurifierManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifierManager.h; sourceTree = "<group>"; };
-		524337C31C42A8E50024133D /* WaterPurifierManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifierManager.m; sourceTree = "<group>"; };
 		524337C41C42A8E50024133D /* WaterPurifierSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifierSensor.h; sourceTree = "<group>"; };
 		524337C51C42A8E50024133D /* WaterPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifierSensor.m; sourceTree = "<group>"; };
 		524337C61C42A8E50024133D /* WaterPurifierStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifierStatus.h; sourceTree = "<group>"; };
@@ -1429,6 +1398,8 @@
 		52FF7E021C1A043A005635F8 /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		52FF7E031C1A043A005635F8 /* UIColor+Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Convert.h"; sourceTree = "<group>"; };
 		52FF7E041C1A043A005635F8 /* UIColor+Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Convert.m"; sourceTree = "<group>"; };
+		691E677C8DCB67A5D6A6916D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		84679D935994BFB037D1C0CA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05EEC81CA10FB70095CF32 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		8D09DBDF1C5A698800D0432B /* loadFailedXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadFailedXib.swift; sourceTree = "<group>"; };
 		8D09DBE11C5A69D400D0432B /* LoadingXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingXib.swift; sourceTree = "<group>"; };
@@ -1455,8 +1426,6 @@
 		8D4354FC1C760AC0007F83DA /* WaterPurTDSDetailCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurTDSDetailCell1.xib; sourceTree = "<group>"; };
 		8D4354FF1C760AD5007F83DA /* WaterPurTDSDetailCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailCell2.swift; sourceTree = "<group>"; };
 		8D4355001C760AD5007F83DA /* WaterPurTDSDetailCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterPurTDSDetailCell2.xib; sourceTree = "<group>"; };
-		8D438E8D1C9AB42A0060896D /* OznerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OznerManager.h; sourceTree = "<group>"; };
-		8D438E8E1C9AB42A0060896D /* OznerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OznerManager.m; sourceTree = "<group>"; };
 		8D438E901C9AB44F0060896D /* WaterReplenishmentMeterMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterMgr.h; sourceTree = "<group>"; };
 		8D438E911C9AB44F0060896D /* WaterReplenishmentMeterMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterReplenishmentMeterMgr.m; sourceTree = "<group>"; };
 		8D438E921C9AB44F0060896D /* WaterReplenishmentMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeter.h; sourceTree = "<group>"; };
@@ -1471,8 +1440,6 @@
 		8D438EA21C9AB4690060896D /* ScanData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanData.m; sourceTree = "<group>"; };
 		8D4F4E801CDADD6D00BE1E77 /* AirPurifier_MxChip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPurifier_MxChip.h; sourceTree = "<group>"; };
 		8D4F4E811CDADD6D00BE1E77 /* AirPurifier_MxChip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPurifier_MxChip.m; sourceTree = "<group>"; };
-		8D4F4E831CDADD9900BE1E77 /* WaterPurifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier.h; sourceTree = "<group>"; };
-		8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
 		8D5110741CDC6B2A00B809FA /* OffLineSuggestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffLineSuggestView.swift; sourceTree = "<group>"; };
 		8D5110761CDC6DD000B809FA /* OffLineSuggestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffLineSuggestView.xib; sourceTree = "<group>"; };
 		8D6E13961D2A333900883F6D /* SetTdsPanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTdsPanViewController.swift; sourceTree = "<group>"; };
@@ -1489,10 +1456,6 @@
 		8D8880501C8DCCA1007391E1 /* mainOfSetWaterReplenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell.swift; sourceTree = "<group>"; };
 		8D8880511C8DCCA1007391E1 /* mainOfSetWaterReplenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainOfSetWaterReplenCell.xib; sourceTree = "<group>"; };
 		8D8B6F401CD0BEF9007E41F2 /* WaterReplenishmentMeterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterReplenishmentMeterStatus.h; sourceTree = "<group>"; };
-		8D9C63541CA2456200543353 /* MXChipPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXChipPair.h; sourceTree = "<group>"; };
-		8D9C63551CA2456200543353 /* MXChipPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXChipPair.m; sourceTree = "<group>"; };
-		8D9C63571CA245B700543353 /* HttpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpServer.h; sourceTree = "<group>"; };
-		8D9C63581CA245B700543353 /* HttpServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpServer.m; sourceTree = "<group>"; };
 		8D9C63591CA245B700543353 /* EasyLinkSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyLinkSender.m; sourceTree = "<group>"; };
 		8DA403511C843F8600AD5E5E /* LBXZXCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXZXCapture.h; sourceTree = "<group>"; };
 		8DA403521C843F8600AD5E5E /* LBXZXCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXZXCapture.m; sourceTree = "<group>"; };
@@ -2143,6 +2106,7 @@
 		8DB044DC1CC8CDC600B60DAB /* WaterReplenishDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReplenishDetailTableViewController.swift; sourceTree = "<group>"; };
 		8DB044DD1CC8CDC600B60DAB /* SkinQueryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinQueryTableViewController.swift; sourceTree = "<group>"; };
 		8DB044E01CC8CE0600B60DAB /* CommonValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonValue.swift; path = OZner/CommonValue.swift; sourceTree = "<group>"; };
+		8DB288311D41F748009A3C19 /* OZner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OZner-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DBD54971C567E4A00D04B12 /* peiDuiOutTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peiDuiOutTimeCell.swift; sourceTree = "<group>"; };
 		8DBD54981C567E4A00D04B12 /* peiDuiOutTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = peiDuiOutTimeCell.xib; sourceTree = "<group>"; };
 		8DBD549D1C567E9200D04B12 /* kindly_notice_iconzb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kindly_notice_iconzb.png; sourceTree = "<group>"; };
@@ -2188,8 +2152,6 @@
 		8DBD54EC1C567F8800D04B12 /* UserInfoActionWerbService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoActionWerbService.m; sourceTree = "<group>"; };
 		8DD51FCF1C7D8D3200F95695 /* MQTTProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTProxy.h; sourceTree = "<group>"; };
 		8DD51FD01C7D8D3200F95695 /* MQTTProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTProxy.m; sourceTree = "<group>"; };
-		8DD51FD11C7D8D3200F95695 /* MXChipIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXChipIO.h; sourceTree = "<group>"; };
-		8DD51FD21C7D8D3200F95695 /* MXChipIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXChipIO.m; sourceTree = "<group>"; };
 		8DD51FD31C7D8D3200F95695 /* MXChipIOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXChipIOManager.h; sourceTree = "<group>"; };
 		8DD51FD41C7D8D3200F95695 /* MXChipIOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXChipIOManager.m; sourceTree = "<group>"; };
 		8DD51FDB1C7D97F100F95695 /* JingShuiWifiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JingShuiWifiViewController.h; sourceTree = "<group>"; };
@@ -2199,6 +2161,28 @@
 		8DD51FE11C7DA7CD00F95695 /* DeviceMatchedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceMatchedViewController.xib; sourceTree = "<group>"; };
 		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoClasszb.swift; sourceTree = "<group>"; };
+		8DE7582A1D41EA1900E721DA /* OznerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OznerManager.h; sourceTree = "<group>"; };
+		8DE7582B1D41EA1900E721DA /* OznerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OznerManager.m; sourceTree = "<group>"; };
+		8DE7582E1D41EBD700E721DA /* AylaIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AylaIO.h; sourceTree = "<group>"; };
+		8DE7582F1D41EBD700E721DA /* AylaIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AylaIO.m; sourceTree = "<group>"; };
+		8DE758301D41EBD700E721DA /* AylaIOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AylaIOManager.h; sourceTree = "<group>"; };
+		8DE758311D41EBD700E721DA /* AylaIOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AylaIOManager.m; sourceTree = "<group>"; };
+		8DE758341D41EC0A00E721DA /* HttpServer_Xu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpServer_Xu.h; sourceTree = "<group>"; };
+		8DE758351D41EC0A00E721DA /* HttpServer_Xu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpServer_Xu.m; sourceTree = "<group>"; };
+		8DE758371D41EC1100E721DA /* WifiPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiPair.h; sourceTree = "<group>"; };
+		8DE758381D41EC1100E721DA /* WifiPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiPair.m; sourceTree = "<group>"; };
+		8DE7583A1D41EC5200E721DA /* IOManagerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOManagerList.h; sourceTree = "<group>"; };
+		8DE7583B1D41EC5200E721DA /* IOManagerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOManagerList.m; sourceTree = "<group>"; };
+		8DE7583D1D41ED4300E721DA /* WaterPurifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier.h; sourceTree = "<group>"; };
+		8DE7583E1D41ED4300E721DA /* WaterPurifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier.m; sourceTree = "<group>"; };
+		8DE7583F1D41ED4300E721DA /* WaterPurifier_Ayla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier_Ayla.h; sourceTree = "<group>"; };
+		8DE758401D41ED4300E721DA /* WaterPurifier_Ayla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifier_Ayla.m; sourceTree = "<group>"; };
+		8DE758411D41ED4300E721DA /* WaterPurifierInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifierInfo.h; sourceTree = "<group>"; };
+		8DE758421D41ED4300E721DA /* WaterPurifierInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifierInfo.m; sourceTree = "<group>"; };
+		8DE758431D41ED4300E721DA /* WaterPurifierManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifierManager.h; sourceTree = "<group>"; };
+		8DE758441D41ED4300E721DA /* WaterPurifierManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterPurifierManager.m; sourceTree = "<group>"; };
+		8DE758491D41EE4200E721DA /* MXChipIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXChipIO.h; sourceTree = "<group>"; };
+		8DE7584A1D41EE4200E721DA /* MXChipIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXChipIO.m; sourceTree = "<group>"; };
 		8DF060981CC90F6100EC05D9 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
 		8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -2232,6 +2216,7 @@
 		8DFB393C1C57730300A1641C /* AmountOfDrinkingWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountOfDrinkingWaterViewController.h; sourceTree = "<group>"; };
 		8DFB393D1C57730300A1641C /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
+		9F66CE8186A3B57C3082A568 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2239,12 +2224,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52ECBE581C0C60DF00A962E4 /* SystemConfiguration.framework in Frameworks */,
+				52ECBE611C0C638700A962E4 /* CoreLocation.framework in Frameworks */,
+				52ECBE5D1C0C636900A962E4 /* AudioToolbox.framework in Frameworks */,
+				52ECBE6B1C0C63B600A962E4 /* CoreGraphics.framework in Frameworks */,
+				52ECBE7F1C0C643100A962E4 /* libz.tbd in Frameworks */,
 				8D2B50E11C7C43840019DE11 /* JavaScriptCore.framework in Frameworks */,
 				52EF00C71C2FE530002484B9 /* libc++.tbd in Frameworks */,
 				8D05EEC91CA10FB70095CF32 /* Bugly.framework in Frameworks */,
-				52ECBE7F1C0C643100A962E4 /* libz.tbd in Frameworks */,
 				52ECBE501C0C608A00A962E4 /* Security.framework in Frameworks */,
-				52ECBE581C0C60DF00A962E4 /* SystemConfiguration.framework in Frameworks */,
 				52ECBE7D1C0C642B00A962E4 /* libsqlite3.tbd in Frameworks */,
 				52ECBE7B1C0C641900A962E4 /* libz.1.2.5.tbd in Frameworks */,
 				52ECBE791C0C640800A962E4 /* ImageIO.framework in Frameworks */,
@@ -2254,7 +2242,6 @@
 				52ECBE711C0C63DA00A962E4 /* libresolv.tbd in Frameworks */,
 				52ECBE6F1C0C63CB00A962E4 /* Social.framework in Frameworks */,
 				52ECBE6D1C0C63C200A962E4 /* MobileCoreServices.framework in Frameworks */,
-				52ECBE6B1C0C63B600A962E4 /* CoreGraphics.framework in Frameworks */,
 				52ECBE691C0C63AC00A962E4 /* CoreTelephony.framework in Frameworks */,
 				52ECBE671C0C639E00A962E4 /* CoreMedia.framework in Frameworks */,
 				52EF00C51C2FE443002484B9 /* libWeChatSDK.a in Frameworks */,
@@ -2263,9 +2250,7 @@
 				52ECBE651C0C639700A962E4 /* AdSupport.framework in Frameworks */,
 				5228C57D1C517B8A002C2E18 /* libBPush.a in Frameworks */,
 				52ECBE631C0C638F00A962E4 /* MapKit.framework in Frameworks */,
-				52ECBE611C0C638700A962E4 /* CoreLocation.framework in Frameworks */,
 				52ECBE5F1C0C637E00A962E4 /* MessageUI.framework in Frameworks */,
-				52ECBE5D1C0C636900A962E4 /* AudioToolbox.framework in Frameworks */,
 				52ECBE5B1C0C62F200A962E4 /* libxml2.tbd in Frameworks */,
 				52ECBE561C0C60CA00A962E4 /* CFNetwork.framework in Frameworks */,
 				52ECBE4A1C0C605B00A962E4 /* CoreFoundation.framework in Frameworks */,
@@ -2273,6 +2258,7 @@
 				52ECBE521C0C60A100A962E4 /* QuartzCore.framework in Frameworks */,
 				52ECBE4E1C0C607A00A962E4 /* AVFoundation.framework in Frameworks */,
 				52ECBE4C1C0C606C00A962E4 /* UIKit.framework in Frameworks */,
+				50FF0693F9705F95DAC9AE43 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2293,6 +2279,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321512A3E9488C5D37579171 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				691E677C8DCB67A5D6A6916D /* Pods.debug.xcconfig */,
+				9F66CE8186A3B57C3082A568 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		347359161C1C06AF00F4C79C /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
@@ -2344,8 +2339,8 @@
 		349F0C561C15852D00E46253 /* OznerLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				8D438E8D1C9AB42A0060896D /* OznerManager.h */,
-				8D438E8E1C9AB42A0060896D /* OznerManager.m */,
+				8DE7582A1D41EA1900E721DA /* OznerManager.h */,
+				8DE7582B1D41EA1900E721DA /* OznerManager.m */,
 				521D26151C2AB59400D4DB10 /* WaterReplenishmentMeter */,
 				42C9A9D61C18211C00EAB8CF /* AirPurifier */,
 				349F0C5A1C15855600E46253 /* Bluetooth */,
@@ -2363,6 +2358,7 @@
 		349F0C571C15854E00E46253 /* Wifi */ = {
 			isa = PBXGroup;
 			children = (
+				8DE7582D1D41EBC600E721DA /* Ayla */,
 				349F0CC11C1586D000E46253 /* MXChip */,
 			);
 			name = Wifi;
@@ -2395,8 +2391,8 @@
 				524337911C42A63F0024133D /* IOManager.h */,
 				524337921C42A63F0024133D /* IOManager.hpp */,
 				524337931C42A63F0024133D /* IOManager.m */,
-				524337941C42A63F0024133D /* IOManagerList.h */,
-				524337951C42A63F0024133D /* IOManagerList.m */,
+				8DE7583A1D41EC5200E721DA /* IOManagerList.h */,
+				8DE7583B1D41EC5200E721DA /* IOManagerList.m */,
 				524337961C42A63F0024133D /* OznerDevice.h */,
 				524337971C42A63F0024133D /* OznerDevice.hpp */,
 				524337981C42A63F0024133D /* OznerDevice.m */,
@@ -2476,12 +2472,12 @@
 			children = (
 				8DD51FCF1C7D8D3200F95695 /* MQTTProxy.h */,
 				8DD51FD01C7D8D3200F95695 /* MQTTProxy.m */,
-				8DD51FD11C7D8D3200F95695 /* MXChipIO.h */,
-				8DD51FD21C7D8D3200F95695 /* MXChipIO.m */,
+				8DE758491D41EE4200E721DA /* MXChipIO.h */,
+				8DE7584A1D41EE4200E721DA /* MXChipIO.m */,
 				8DD51FD31C7D8D3200F95695 /* MXChipIOManager.h */,
 				8DD51FD41C7D8D3200F95695 /* MXChipIOManager.m */,
-				8D9C63541CA2456200543353 /* MXChipPair.h */,
-				8D9C63551CA2456200543353 /* MXChipPair.m */,
+				8DE758371D41EC1100E721DA /* WifiPair.h */,
+				8DE758381D41EC1100E721DA /* WifiPair.m */,
 				52080ACD1C3BBBD600150B4F /* libmosquitto */,
 				52AACC751C3809FB00C60704 /* MQTTKit */,
 				42C9A9CB1C181CCD00EAB8CF /* Pair */,
@@ -2604,6 +2600,7 @@
 				52ECBE4D1C0C607A00A962E4 /* AVFoundation.framework */,
 				52ECBE4B1C0C606C00A962E4 /* UIKit.framework */,
 				52ECBE491C0C605B00A962E4 /* CoreFoundation.framework */,
+				84679D935994BFB037D1C0CA /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2788,6 +2785,7 @@
 				428141181C0B072D006FEDDE /* OZnerTests */,
 				428141231C0B072D006FEDDE /* OZnerUITests */,
 				428141021C0B072C006FEDDE /* Products */,
+				321512A3E9488C5D37579171 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3050,8 +3048,8 @@
 				524337DD1C42ABF20024133D /* ConfigurationDevice.m */,
 				524337DE1C42ABF20024133D /* EasyLinkSender.h */,
 				8D9C63591CA245B700543353 /* EasyLinkSender.m */,
-				8D9C63571CA245B700543353 /* HttpServer.h */,
-				8D9C63581CA245B700543353 /* HttpServer.m */,
+				8DE758341D41EC0A00E721DA /* HttpServer_Xu.h */,
+				8DE758351D41EC0A00E721DA /* HttpServer_Xu.m */,
 			);
 			name = Pair;
 			sourceTree = "<group>";
@@ -3059,12 +3057,14 @@
 		42C9A9D51C18211700EAB8CF /* WaterPurifier */ = {
 			isa = PBXGroup;
 			children = (
-				8D4F4E831CDADD9900BE1E77 /* WaterPurifier.h */,
-				8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */,
-				524337C01C42A8E50024133D /* WaterPurifierInfo.h */,
-				524337C11C42A8E50024133D /* WaterPurifierInfo.m */,
-				524337C21C42A8E50024133D /* WaterPurifierManager.h */,
-				524337C31C42A8E50024133D /* WaterPurifierManager.m */,
+				8DE7583D1D41ED4300E721DA /* WaterPurifier.h */,
+				8DE7583E1D41ED4300E721DA /* WaterPurifier.m */,
+				8DE7583F1D41ED4300E721DA /* WaterPurifier_Ayla.h */,
+				8DE758401D41ED4300E721DA /* WaterPurifier_Ayla.m */,
+				8DE758411D41ED4300E721DA /* WaterPurifierInfo.h */,
+				8DE758421D41ED4300E721DA /* WaterPurifierInfo.m */,
+				8DE758431D41ED4300E721DA /* WaterPurifierManager.h */,
+				8DE758441D41ED4300E721DA /* WaterPurifierManager.m */,
 				524337C41C42A8E50024133D /* WaterPurifierSensor.h */,
 				524337C51C42A8E50024133D /* WaterPurifierSensor.m */,
 				524337C61C42A8E50024133D /* WaterPurifierStatus.h */,
@@ -3343,7 +3343,7 @@
 		523DC3531C175E5800595099 /* ExtralLibarary */ = {
 			isa = PBXGroup;
 			children = (
-				42A7BB101C0C237C008DB6E5 /* OZner-Bridging-Header.h */,
+				8DB288311D41F748009A3C19 /* OZner-Bridging-Header.h */,
 				8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */,
 				8D2613601CFD3DC6002ADB0E /* NSDate+Expand */,
 				8DF060971CC90F1300EC05D9 /* SnapKit */,
@@ -3355,36 +3355,9 @@
 				423114521C434E650062FFFF /* Discode */,
 				5228C57A1C517B7D002C2E18 /* BaiDuPush */,
 				8DEDC4E71C7C394A0098BAE5 /* Bugly */,
-				523DC3551C175E8100595099 /* AFNetworking */,
 			);
 			name = ExtralLibarary;
 			path = OZner;
-			sourceTree = "<group>";
-		};
-		523DC3551C175E8100595099 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				523DC3561C175E9B00595099 /* AFHTTPRequestOperation.h */,
-				523DC3571C175E9B00595099 /* AFHTTPRequestOperation.m */,
-				523DC3581C175E9B00595099 /* AFHTTPRequestOperationManager.h */,
-				523DC3591C175E9B00595099 /* AFHTTPRequestOperationManager.m */,
-				523DC35A1C175E9B00595099 /* AFHTTPSessionManager.h */,
-				523DC35B1C175E9B00595099 /* AFHTTPSessionManager.m */,
-				523DC35C1C175E9B00595099 /* AFNetworking.h */,
-				523DC35D1C175E9B00595099 /* AFNetworkReachabilityManager.h */,
-				523DC35E1C175E9B00595099 /* AFNetworkReachabilityManager.m */,
-				523DC35F1C175E9B00595099 /* AFSecurityPolicy.h */,
-				523DC3601C175E9B00595099 /* AFSecurityPolicy.m */,
-				523DC3611C175E9B00595099 /* AFURLConnectionOperation.h */,
-				523DC3621C175E9B00595099 /* AFURLConnectionOperation.m */,
-				523DC3631C175E9B00595099 /* AFURLRequestSerialization.h */,
-				523DC3641C175E9B00595099 /* AFURLRequestSerialization.m */,
-				523DC3651C175E9B00595099 /* AFURLResponseSerialization.h */,
-				523DC3661C175E9B00595099 /* AFURLResponseSerialization.m */,
-				523DC3671C175E9B00595099 /* AFURLSessionManager.h */,
-				523DC3681C175E9B00595099 /* AFURLSessionManager.m */,
-			);
-			name = AFNetworking;
 			sourceTree = "<group>";
 		};
 		523DC3A31C175FBC00595099 /* view */ = {
@@ -4399,6 +4372,17 @@
 			name = LBXAlertAction;
 			sourceTree = "<group>";
 		};
+		8DE7582D1D41EBC600E721DA /* Ayla */ = {
+			isa = PBXGroup;
+			children = (
+				8DE7582E1D41EBD700E721DA /* AylaIO.h */,
+				8DE7582F1D41EBD700E721DA /* AylaIO.m */,
+				8DE758301D41EBD700E721DA /* AylaIOManager.h */,
+				8DE758311D41EBD700E721DA /* AylaIOManager.m */,
+			);
+			name = Ayla;
+			sourceTree = "<group>";
+		};
 		8DEDC4E71C7C394A0098BAE5 /* Bugly */ = {
 			isa = PBXGroup;
 			children = (
@@ -4449,9 +4433,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 428141291C0B072D006FEDDE /* Build configuration list for PBXNativeTarget "OZner" */;
 			buildPhases = (
+				185E5694E6B0DEFD98F19923 /* Check Pods Manifest.lock */,
 				428140FD1C0B072C006FEDDE /* Sources */,
 				428140FE1C0B072C006FEDDE /* Frameworks */,
 				428140FF1C0B072C006FEDDE /* Resources */,
+				2557C0E595FD6DDB0865F820 /* Embed Pods Frameworks */,
+				81CAA7B9281C818D2D588E4D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4832,6 +4819,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		185E5694E6B0DEFD98F19923 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2557C0E595FD6DDB0865F820 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81CAA7B9281C818D2D588E4D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		428140FD1C0B072C006FEDDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -4863,7 +4898,6 @@
 				42907EB51C2E83B700430BB9 /* UserActionDBManager.m in Sources */,
 				523DC2FA1C175DA800595099 /* MASViewConstraint.m in Sources */,
 				8DA406211C84456B00AD5E5E /* UIAlertView+LBXAlertAction.m in Sources */,
-				8D438E8F1C9AB42A0060896D /* OznerManager.m in Sources */,
 				523DC2F51C175DA800595099 /* MASCompositeConstraint.m in Sources */,
 				5243379D1C42A63F0024133D /* IOManager.m in Sources */,
 				8DA405891C8441B500AD5E5E /* ZXEAN8Writer.m in Sources */,
@@ -4873,7 +4907,6 @@
 				8DD51FDE1C7D97F100F95695 /* JingShuiWifiViewController.m in Sources */,
 				8DBD54E11C567F4500D04B12 /* EquidsCollectionViewCell.swift in Sources */,
 				524337CC1C42A8E50024133D /* WaterPurifierStatus.m in Sources */,
-				523DC36D1C175E9B00595099 /* AFSecurityPolicy.m in Sources */,
 				8DA405D61C8441B500AD5E5E /* ZXQRCodeDecoder.m in Sources */,
 				52080AFA1C3BBC0600150B4F /* time_mosq.c in Sources */,
 				42A7BB191C0C237D008DB6E5 /* StatusManager.m in Sources */,
@@ -4905,7 +4938,6 @@
 				526643DF1C2A9B37007D7A28 /* indoorAirWarn_Air.swift in Sources */,
 				8DA406141C8441B500AD5E5E /* ZXWifiParsedResult.m in Sources */,
 				8DF060A61CC90F6100EC05D9 /* ConstraintAttributes.swift in Sources */,
-				5243379E1C42A63F0024133D /* IOManagerList.m in Sources */,
 				424C155E1C1047B70001C36E /* DeviceMatchCellView.swift in Sources */,
 				523DC3491C175E1B00595099 /* XMMessage.m in Sources */,
 				8DA4058E1C8441B500AD5E5E /* ZXEncodeHints.m in Sources */,
@@ -4927,7 +4959,6 @@
 				524337BC1C42A8D70024133D /* TapSensor.m in Sources */,
 				8DA405B11C8441B500AD5E5E /* ZXOneDReader.m in Sources */,
 				8DA405D01C8441B500AD5E5E /* ZXQRCodeAlignmentPatternFinder.m in Sources */,
-				8D9C635A1CA245B700543353 /* HttpServer.m in Sources */,
 				528D772C1C26A5F600243986 /* PM2d5ViewController.swift in Sources */,
 				52080AF01C3BBC0600150B4F /* memory_mosq.c in Sources */,
 				52A4EF5A1C27F34C005F282D /* headViewView.swift in Sources */,
@@ -4939,8 +4970,8 @@
 				8DA405E21C8441B500AD5E5E /* ZXQRCodeMultiReader.m in Sources */,
 				8D4354F61C75A049007F83DA /* WaterPurTDSDetailController.swift in Sources */,
 				52A5E2DA1C500FE50003CC4E /* MPGraphViewzb.m in Sources */,
+				8DE758451D41ED4300E721DA /* WaterPurifier.m in Sources */,
 				8DA4055A1C8441B500AD5E5E /* ZXBitMatrix.m in Sources */,
-				523DC36C1C175E9B00595099 /* AFNetworkReachabilityManager.m in Sources */,
 				8DBD54ED1C567F8800D04B12 /* UserInfoActionWerbService.m in Sources */,
 				42A7BB3B1C0C23BC008DB6E5 /* ASINetworkQueue.m in Sources */,
 				8DA406051C8441B500AD5E5E /* ZXUPCAWriter.m in Sources */,
@@ -4951,12 +4982,12 @@
 				426F428C1C281F5900DC39DF /* CustomCommFunction.m in Sources */,
 				8DB044BD1CC8CD8D00B60DAB /* MyDeviceMainController.swift in Sources */,
 				8D320BD01CC5D02D00DAC59A /* BluetoothIOMgr.m in Sources */,
-				523DC36B1C175E9B00595099 /* AFHTTPSessionManager.m in Sources */,
 				523DC3481C175E1B00595099 /* XMLocationMessage.m in Sources */,
 				8DFB39401C57730300A1641C /* ToWhatViewController.swift in Sources */,
 				8DA405741C8441B500AD5E5E /* ZXDataMatrixDefaultPlacement.m in Sources */,
 				42A7BB1F1C0C23A4008DB6E5 /* NSData+NSDictionary+JSON.m in Sources */,
 				52791B991C18849A00C098B2 /* setDev_CupView.swift in Sources */,
+				8DE758361D41EC0A00E721DA /* HttpServer_Xu.m in Sources */,
 				3473593C1C1C4D6200F4C79C /* LogInOut.m in Sources */,
 				52215DE81C4EA391007C8C96 /* drawCircleView.swift in Sources */,
 				5243377F1C42A6320024133D /* CupGravity.m in Sources */,
@@ -4974,7 +5005,6 @@
 				8DA4053F1C8441B500AD5E5E /* ZXAddressBookParsedResult.m in Sources */,
 				8DBD54B91C567F3800D04B12 /* My_TDSTableViewController.swift in Sources */,
 				4296750F1C316E7D00F76245 /* LoginWerbService.m in Sources */,
-				523DC3691C175E9B00595099 /* AFHTTPRequestOperation.m in Sources */,
 				8DA405FD1C8441B500AD5E5E /* ZXSMSParsedResult.m in Sources */,
 				8DA405D41C8441B500AD5E5E /* ZXQRCodeDataMask.m in Sources */,
 				8D7FEC771C746DE200DD01AF /* WaterPurifierHeadCell.swift in Sources */,
@@ -5020,6 +5050,7 @@
 				52080AF71C3BBC0600150B4F /* send_client_mosq.c in Sources */,
 				523DC3451C175E1B00595099 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				8D26136D1CFD3DF3002ADB0E /* NSTimeInterval+Timepiece.swift in Sources */,
+				8DE7583C1D41EC5200E721DA /* IOManagerList.m in Sources */,
 				52ECBEC31C0C6EED00A962E4 /* ImageUtil.m in Sources */,
 				8DA405871C8441B500AD5E5E /* ZXEAN13Writer.m in Sources */,
 				52080AFC1C3BBC0600150B4F /* util_mosq.c in Sources */,
@@ -5091,6 +5122,7 @@
 				8DA405F51C8441B500AD5E5E /* ZXRSSExpandedGeneralAppIdDecoder.m in Sources */,
 				5243377E1C42A6320024133D /* CupFirmware.m in Sources */,
 				8DA406091C8441B500AD5E5E /* ZXUPCEANReader.m in Sources */,
+				8DE7584B1D41EE4200E721DA /* MXChipIO.m in Sources */,
 				8DA405B91C8441B500AD5E5E /* ZXPDF417Codeword.m in Sources */,
 				8DA405F71C8441B500AD5E5E /* ZXRSSExpandedReader.m in Sources */,
 				8DF060A91CC90F6100EC05D9 /* ConstraintMaker.swift in Sources */,
@@ -5132,7 +5164,6 @@
 				8DA405CE1C8441B500AD5E5E /* ZXQRCode.m in Sources */,
 				52A4EF711C28B59F005F282D /* indoorHead_SmallXib.swift in Sources */,
 				8DA403661C843F8600AD5E5E /* LBXZXCapture.m in Sources */,
-				8D4F4E851CDADD9900BE1E77 /* WaterPurifier.m in Sources */,
 				8DB044DE1CC8CDC600B60DAB /* WaterReplenishDetailTableViewController.swift in Sources */,
 				8DBD54E91C567F4500D04B12 /* chatBarViewLiuyan.swift in Sources */,
 				52F1C5011C4D6BA80008B8E5 /* TantouLXController.swift in Sources */,
@@ -5143,7 +5174,6 @@
 				8DA406111C8441B500AD5E5E /* ZXVINParsedResult.m in Sources */,
 				8DF060A71CC90F6100EC05D9 /* ConstraintDescription.swift in Sources */,
 				8DA406071C8441B500AD5E5E /* ZXUPCEANExtension5Support.m in Sources */,
-				523DC36E1C175E9B00595099 /* AFURLConnectionOperation.m in Sources */,
 				52080AFB1C3BBC0600150B4F /* tls_mosq.c in Sources */,
 				425381631C14DCFD005FF2F3 /* CustomThreeCircleView.m in Sources */,
 				8DA403681C843F8600AD5E5E /* LBXScanLineAnimation.m in Sources */,
@@ -5175,10 +5205,10 @@
 				52A4EF671C2871A0005F282D /* smallFooterViewXib.swift in Sources */,
 				8D26136F1CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift in Sources */,
 				8DA405CC1C8441B500AD5E5E /* ZXProductParsedResult.m in Sources */,
-				8DD51FD81C7D8D3200F95695 /* MXChipIO.m in Sources */,
 				524337991C42A63F0024133D /* BaseDeviceIO.m in Sources */,
 				52AED7841C2F0C690068F2FF /* chatMessageCommon.swift in Sources */,
 				8DA4056B1C8441B500AD5E5E /* ZXCode39Writer.m in Sources */,
+				8DE758471D41ED4300E721DA /* WaterPurifierInfo.m in Sources */,
 				8DA4054E1C8441B500AD5E5E /* ZXAztecDetectorResult.m in Sources */,
 				8DA405631C8441B500AD5E5E /* ZXCapture.m in Sources */,
 				8DA405511C8441B500AD5E5E /* ZXAztecReader.m in Sources */,
@@ -5211,7 +5241,6 @@
 				8DA405AF1C8441B500AD5E5E /* ZXMultiFormatWriter.m in Sources */,
 				528FFEEE1C244EED00D814A1 /* setDeviceNameViewController.swift in Sources */,
 				524337591C42A5C30024133D /* PowerTimer.m in Sources */,
-				8D9C63561CA2456200543353 /* MXChipPair.m in Sources */,
 				8DA406031C8441B500AD5E5E /* ZXTextParsedResult.m in Sources */,
 				521BF7CB1C4A370000AD1EAB /* drinKWaterCell.swift in Sources */,
 				8DA405E81C8441B500AD5E5E /* ZXResult.m in Sources */,
@@ -5255,16 +5284,13 @@
 				8DA405C61C8441B500AD5E5E /* ZXPDF417Reader.m in Sources */,
 				8DF060AC1CC90F6100EC05D9 /* EdgeInsets.swift in Sources */,
 				8DA405621C8441B500AD5E5E /* ZXCalendarParsedResult.m in Sources */,
-				523DC3701C175E9B00595099 /* AFURLResponseSerialization.m in Sources */,
 				42A7BB661C0C2A0A008DB6E5 /* UIImageAdditions.mm in Sources */,
 				8DA405B61C8441B500AD5E5E /* ZXPDF417BarcodeRow.m in Sources */,
-				524337C91C42A8E50024133D /* WaterPurifierInfo.m in Sources */,
 				8DA405881C8441B500AD5E5E /* ZXEAN8Reader.m in Sources */,
 				8DA405411C8441B500AD5E5E /* ZXAI01320xDecoder.m in Sources */,
 				8DA405A61C8441B500AD5E5E /* ZXMaxiCodeReader.m in Sources */,
 				8DA405521C8441B500AD5E5E /* ZXAztecSimpleToken.m in Sources */,
 				8DA4057E1C8441B500AD5E5E /* ZXDataMatrixVersion.m in Sources */,
-				523DC3711C175E9B00595099 /* AFURLSessionManager.m in Sources */,
 				8DA405BD1C8441B500AD5E5E /* ZXPDF417DetectionResult.m in Sources */,
 				528FFF031C25726F00D814A1 /* setCommon.swift in Sources */,
 				8DA405911C8441B500AD5E5E /* ZXExpandedProductResultParser.m in Sources */,
@@ -5295,6 +5321,7 @@
 				52080AF11C3BBC0600150B4F /* messages_mosq.c in Sources */,
 				8DA4053D1C8441B500AD5E5E /* ZXAddressBookAUResultParser.m in Sources */,
 				8DA405731C8441B500AD5E5E /* ZXDataMatrixDecoder.m in Sources */,
+				8DE758391D41EC1100E721DA /* WifiPair.m in Sources */,
 				8DA405501C8441B500AD5E5E /* ZXAztecHighLevelEncoder.m in Sources */,
 				8DA405B51C8441B500AD5E5E /* ZXPDF417BarcodeMetadata.m in Sources */,
 				42907EAE1C2E6ED700430BB9 /* UserInfoDBManager.m in Sources */,
@@ -5309,7 +5336,6 @@
 				8DA405F11C8441B500AD5E5E /* ZXRSSExpandedDecodedInformation.m in Sources */,
 				52A4EF691C2871FF005F282D /* bigFooterViewXib.swift in Sources */,
 				524337DB1C42ABE50024133D /* MQTTKit.m in Sources */,
-				523DC36F1C175E9B00595099 /* AFURLRequestSerialization.m in Sources */,
 				523DC2FB1C175DA800595099 /* NSArray+MASAdditions.m in Sources */,
 				8DA4055D1C8441B500AD5E5E /* ZXBookmarkDoCoMoResultParser.m in Sources */,
 				8DA405DC1C8441B500AD5E5E /* ZXQRCodeFinderPatternFinder.m in Sources */,
@@ -5334,6 +5360,7 @@
 				52C4FC331C3440C500994AC6 /* bigautoModelView.swift in Sources */,
 				8DA405B71C8441B500AD5E5E /* ZXPDF417BarcodeValue.m in Sources */,
 				8D4355011C760AD5007F83DA /* WaterPurTDSDetailCell2.swift in Sources */,
+				8DE7582C1D41EA1900E721DA /* OznerManager.m in Sources */,
 				524337801C42A6320024133D /* CupManager.m in Sources */,
 				528FFEFF1C247AF000D814A1 /* uiDatePickerView.swift in Sources */,
 				8DA4053C1C8441B500AD5E5E /* ZXAbstractRSSReader.m in Sources */,
@@ -5358,8 +5385,8 @@
 				8DA405DD1C8441B500AD5E5E /* ZXQRCodeFinderPatternInfo.m in Sources */,
 				42A7BB381C0C23BC008DB6E5 /* ASIFormDataRequest.m in Sources */,
 				523DC2F71C175DA800595099 /* MASConstraintMaker.m in Sources */,
+				8DE758321D41EBD700E721DA /* AylaIO.m in Sources */,
 				4253813F1C1482E3005FF2F3 /* UIView+Frame.m in Sources */,
-				523DC36A1C175E9B00595099 /* AFHTTPRequestOperationManager.m in Sources */,
 				8DA405F01C8441B500AD5E5E /* ZXRSSExpandedDecodedChar.m in Sources */,
 				8DBD54B51C567F3800D04B12 /* AboutUSViewController.swift in Sources */,
 				8DA4055E1C8441B500AD5E5E /* ZXBoolArray.m in Sources */,
@@ -5375,8 +5402,8 @@
 				8DBD54DF1C567F4500D04B12 /* FriendsNavRight.swift in Sources */,
 				8DA4036F1C843F8600AD5E5E /* LBXScanWrapper.m in Sources */,
 				8DA405851C8441B500AD5E5E /* ZXDimension.m in Sources */,
-				524337CA1C42A8E50024133D /* WaterPurifierManager.m in Sources */,
 				8DA405C11C8441B500AD5E5E /* ZXPDF417DetectorResult.m in Sources */,
+				8DE758461D41ED4300E721DA /* WaterPurifier_Ayla.m in Sources */,
 				8DA405ED1C8441B500AD5E5E /* ZXRSSDataCharacter.m in Sources */,
 				52F465F81C2D482A0052D7C8 /* smallStateXib.swift in Sources */,
 				521BF7C71C4A256300AD1EAB /* TDSFooterCellzb.swift in Sources */,
@@ -5388,11 +5415,13 @@
 				8DA4053E1C8441B500AD5E5E /* ZXAddressBookDoCoMoResultParser.m in Sources */,
 				8DA405681C8441B500AD5E5E /* ZXCode128Reader.m in Sources */,
 				8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */,
+				8DE758331D41EBD700E721DA /* AylaIOManager.m in Sources */,
 				52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */,
 				4288C53D1C0F06FF00446D3E /* AddDeviceCell.swift in Sources */,
 				8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */,
 				8DA405561C8441B500AD5E5E /* ZXBinarizer.m in Sources */,
 				42A7BB361C0C23BC008DB6E5 /* ASIDataDecompressor.m in Sources */,
+				8DE758481D41ED4300E721DA /* WaterPurifierManager.m in Sources */,
 				8DA4036E1C843F8600AD5E5E /* LBXScanViewStyle.m in Sources */,
 				523DC3371C175E1B00595099 /* XMLocationManager.m in Sources */,
 				52080AF31C3BBC0600150B4F /* net_mosq.c in Sources */,
@@ -5510,8 +5539,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "bf4f067c-a6f2-4b13-8098-0e66cd381dec";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -5551,8 +5582,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "bf4f067c-a6f2-4b13-8098-0e66cd381dec";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -5560,6 +5593,7 @@
 		};
 		4281412A1C0B072D006FEDDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 691E677C8DCB67A5D6A6916D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -5584,17 +5618,41 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"CocoaAsyncSocket\"",
+					"-l\"CocoaHTTPServer\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"iOS_AylaLibrary\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OZner/OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4281412B1C0B072D006FEDDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F66CE8186A3B57C3082A568 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -5619,11 +5677,34 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"CocoaAsyncSocket\"",
+					"-l\"CocoaHTTPServer\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"iOS_AylaLibrary\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OZner/OZner-Bridging-Header.h";
 			};
 			name = Release;
 		};
