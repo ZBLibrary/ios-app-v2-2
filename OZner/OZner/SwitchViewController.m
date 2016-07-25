@@ -64,7 +64,7 @@
     
     //我的信息
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MyInfoViewController* infoController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
+    MyInfoViewController_EN * infoController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
     UINavigationController* nav3 = [[UINavigationController alloc] initWithRootViewController:infoController];
     [nav3.navigationBar loadNavigationBar];
     
