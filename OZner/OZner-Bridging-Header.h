@@ -80,6 +80,9 @@
 #import "LBXScanView.h"
 #import "SubLBXScanViewController.h"
 
+// 导航
+#import "JMNavigationController.h"
+
 #define degreesToRadians(degrees) (M_PI * degrees / 180.0)
 
 #define CellColor [UIColor colorWithRed:247 green:247 blue:247 alpha:0.70]//cell的半透明颜色

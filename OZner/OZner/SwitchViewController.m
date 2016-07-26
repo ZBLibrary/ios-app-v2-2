@@ -17,21 +17,29 @@
 #import "ChatViewController.h"
 #import "MBProgressHUD.h"
 #import "NewUserHelpViewController.h"
+
+#import "OZner-swift.h"
+
+
 @interface SwitchViewController ()<HomeControllerDelegate,LoginOutDelegate,NewUserHelpViewDelegate>
 {
     LeftViewController*         mLeftController;
     HomeViewController*         mHomeController;
     CustomTabBarController*     myTabController;
     LoginViewController*        mLoginController;
-    UINavigationController*     mLoginNavController;
+    
+    // 替换新的 nav
+    JMNavigationController*     mLoginNavController;
+    
     //添加设备
     AddDeviceViewController_EN*   mAddDeviceViewController;
     UINavigationController*    mAddDeviceNavController;
     NewUserHelpViewController*  mNewUserHelpController;
     UINavigationController*     mNewUserHelpNavController;
     
-    //个人信息
-    MyInfoViewController_EN *myInfo_EN;
+    
+    // 新增,改变登陆方式
+    RNEmailLoginViewController* emailLoginViewController ;
 }
 
 @end
@@ -67,7 +75,7 @@
     
     //我的信息
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MyInfoViewController * infoController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
+    MyInfoViewController* infoController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
     UINavigationController* nav3 = [[UINavigationController alloc] initWithRootViewController:infoController];
     [nav3.navigationBar loadNavigationBar];
     
@@ -98,6 +106,12 @@
     //[self isFirstOpenApp];
     
 }
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated] ;
+//    
+//    self.navigationController.navigationBar.hidden = true ;
+//}
 
 - (void)isFirstOpenApp
 {
@@ -135,6 +149,7 @@
     [mNewUserHelpNavController.view removeFromSuperview];
     mNewUserHelpNavController = nil;
     
+
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
@@ -162,9 +177,11 @@
     }
     else
     {
-        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
+        emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
+//        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
         mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [mLoginNavController.navigationBar loadNavigationBar];
         
@@ -183,18 +200,6 @@
     
     [self.view addSubview:mAddDeviceNavController.view];
     
-}
-
-- (void)customViewAddInfoMation
-{
-    //我的信息
-    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    myInfo_EN = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
-    mAddDeviceNavController = [[UINavigationController alloc] initWithRootViewController:myInfo_EN];
-    mAddDeviceNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    [mAddDeviceNavController.navigationBar loadNavigationBar];
-    
-    [self.view addSubview:mAddDeviceNavController.view];
 }
 
 #pragma mark- LoginOutDelegate
