@@ -12,6 +12,7 @@ import UIKit
 {
      func touchCustomPopView()
      func addDeviceCallBack()
+    optional func infomationClick()
 }
 
 class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
@@ -24,6 +25,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     var myBgImgView:UIImageView?
     //显示设备数据
     var myTableView:UITableView?
+    var clickBtn: UIButton?
     var firstLabel:UILabel?
     var mySecondLabel:UILabel?
     var myBubbleImgView:UIImageView?
@@ -47,7 +49,18 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         self.myBgImgView = bgImgView
         self.myView.addSubview(bgImgView)
         
-        let stateLabel:UILabel = UILabel(frame: CGRectMake(0,69*(height/667.0),self.myView.frame.size.width,24))
+        let btn = UIButton(type: UIButtonType.Custom)
+        btn.frame = CGRect(x: 0, y: 20, width: self.myView.frame.size.width, height: 90)
+        btn.setTitle("Ozner", forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named:"My_Unlogin_head" ), forState: UIControlState.Normal)
+        btn.titleEdgeInsets = UIEdgeInsetsMake(100, -85, 0, 0)
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0)
+        btn.addTarget(self, action: "btnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        self.clickBtn = btn
+        self.myView.addSubview(btn)
+        
+        let stateLabel:UILabel = UILabel(frame: CGRectMake(0,130*(height/667.0),self.myView.frame.size.width,24))
         stateLabel.text = loadLanguage("浩泽智能化生活服务")
         stateLabel.textAlignment = NSTextAlignment.Center
         stateLabel.font = UIFont.systemFontOfSize(24)
@@ -244,4 +257,9 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     {
         delegate?.addDeviceCallBack()
     }
+    func btnClick()
+    {
+    delegate?.infomationClick!()
+    }
+    
 }

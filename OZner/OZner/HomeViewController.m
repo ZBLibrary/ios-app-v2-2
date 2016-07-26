@@ -110,6 +110,12 @@
         [self.delegate customViewAddCallBack];
     }
 }
+- (void)infomationClick
+{
+    if ([self.delegate respondsToSelector:@selector(customViewAddInfoMation)]) {
+        [self.delegate customViewAddInfoMation];
+    }
+}
 
 #pragma mark - LeftItemDelegate Method
 - (void)dSelectItemIndex:(NSInteger)index

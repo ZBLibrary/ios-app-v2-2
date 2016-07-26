@@ -29,6 +29,9 @@
     UINavigationController*    mAddDeviceNavController;
     NewUserHelpViewController*  mNewUserHelpController;
     UINavigationController*     mNewUserHelpNavController;
+    
+    //个人信息
+    MyInfoViewController_EN *myInfo_EN;
 }
 
 @end
@@ -64,7 +67,7 @@
     
     //我的信息
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MyInfoViewController_EN * infoController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
+    MyInfoViewController * infoController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
     UINavigationController* nav3 = [[UINavigationController alloc] initWithRootViewController:infoController];
     [nav3.navigationBar loadNavigationBar];
     
@@ -180,6 +183,18 @@
     
     [self.view addSubview:mAddDeviceNavController.view];
     
+}
+
+- (void)customViewAddInfoMation
+{
+    //我的信息
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    myInfo_EN = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
+    mAddDeviceNavController = [[UINavigationController alloc] initWithRootViewController:myInfo_EN];
+    mAddDeviceNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [mAddDeviceNavController.navigationBar loadNavigationBar];
+    
+    [self.view addSubview:mAddDeviceNavController.view];
 }
 
 #pragma mark- LoginOutDelegate

@@ -181,7 +181,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     override func viewWillAppear(animated: Bool) {
         OznerDeviceSensorUpdate(self.myCurrentDevice)
         self.navigationController?.navigationBarHidden=true
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
         setBartteryImg()
     }
 

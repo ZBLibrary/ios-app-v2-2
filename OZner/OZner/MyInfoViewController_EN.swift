@@ -28,7 +28,7 @@ class MyInfoViewController_EN: UIViewController {
         mainView.My_login.addTarget(self, action: #selector(toLogin), forControlEvents: .TouchUpInside)
         
         mainView.frame=CGRect(x: 0, y: -20, width: Screen_Width, height: 602)
-        ScrollView.contentSize=CGSize(width: 0, height: 602)
+        //        ScrollView.contentSize=CGSize(width: 0, height: 602)
         ScrollView.addSubview(mainView)
         self.view.addSubview(ScrollView)
         
@@ -141,11 +141,21 @@ class MyInfoViewController_EN: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //我的设备数量
-        let devices=OznerManager.instance().getDevices() as [AnyObject!]
+        //        let devices=OznerManager.instance().getDevices() as [AnyObject!]
         //        mainView.My_EquipCount.text="\(devices.count)"
-        self.navigationController?.navigationBarHidden=true
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        self.navigationController?.navigationBarHidden=false
+        self.title = loadLanguage("个人设置")
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back@2x"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(leftMethod))
+        leftButton.tintColor = UIColor.darkGrayColor()
+        self.navigationItem.leftBarButtonItem = leftButton;
+        //        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
     }
+    
+    func leftMethod()
+    {
+        self.navigationController!.view .removeFromSuperview()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

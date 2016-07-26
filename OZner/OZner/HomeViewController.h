@@ -16,6 +16,7 @@
 
 @optional
 - (void)customViewAddCallBack;
+- (void)customViewAddInfoMation;
 
 @end
 
