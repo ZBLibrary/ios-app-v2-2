@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         self.window?.rootViewController = switchController;
         self.window?.makeKeyAndVisible()
         
+        //
+        
         //注册微信
         //WXApi.registerApp("wx45a8cc642a2295b5", withDescription: "haoze")
         //百度推送
