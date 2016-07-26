@@ -1,19 +1,14 @@
 //
-//  RNEmailRegisterViewController.swift
+//  RNModifyPasswordViewController.swift
 //  OZner
 //
-//  Created by 婉卿容若 on 16/7/25.
+//  Created by 婉卿容若 on 16/7/26.
 //  Copyright © 2016年 sunlinlin. All rights reserved.
 //
 
-/*
- * 这里写了很多重复的方法(由于项目要转移,不宜添加太多新的文件)
- * 后期项目转移合并之后,再寻找机会进行组件化
- */
-
 import UIKit
 
-class RNEmailRegisterViewController: UIViewController {
+class RNModifyPasswordViewController: UIViewController {
     
     // 正则判定
     
@@ -52,6 +47,7 @@ class RNEmailRegisterViewController: UIViewController {
     
     @IBOutlet weak var getCodeBtn: UIButton! // 获取验证码
     
+    
     var countDownTimer: NSTimer? // 计时器
     
     var remainingSeconds = 0{ // 倒计时剩余多少秒
@@ -76,32 +72,29 @@ class RNEmailRegisterViewController: UIViewController {
             if  newValue {
                 countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
                 
-               // getCodeBtn.backgroundColor = UIColor.grayColor()
+                // getCodeBtn.backgroundColor = UIColor.grayColor()
             }else {
                 
                 countDownTimer?.invalidate()
                 countDownTimer = nil
                 
-              //  getCodeBtn.backgroundColor = UIColor.brownColor()
+                //  getCodeBtn.backgroundColor = UIColor.brownColor()
             }
             
             getCodeBtn.enabled = !newValue
         }
     }
     
+
     
     // MARK: -  Life cycle - 即生命周期
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController?.interactivePopGestureRecognizer?.enabled = true
-//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        
         addDelegateForTextField()
         keyBoardObserve()
         addTap()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -141,14 +134,14 @@ class RNEmailRegisterViewController: UIViewController {
 
 // MARK: - Public Methods - 即系统提供的方法
 
-extension RNEmailRegisterViewController{
+extension RNModifyPasswordViewController{
     
 }
 
 // MARK: - Private Methods - 即私人写的方法
 
-extension  RNEmailRegisterViewController: UITextFieldDelegate{
-    
+extension  RNModifyPasswordViewController: UITextFieldDelegate{
+ 
     // 添加代理
     func addDelegateForTextField() {
         
@@ -157,7 +150,7 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         pswTextField.delegate = self
         cPswTextField.delegate = self
     }
-
+    
     
     // 校验
     func checkout01() -> Bool{
@@ -212,10 +205,10 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
             
             return false
         }
-
+        
         
         guard (pswTextField.text! as NSString).isEqualToString(cPswTextField.text!) else {
-         
+            
             let alertView=SCLAlertView()
             alertView.addButton("确定", action: {})
             alertView.showError("错误提示", subTitle:  "两次密码不同")
@@ -224,7 +217,7 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         }
         
         return true
-
+        
     }
     
     
@@ -246,7 +239,7 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
-
+    
     
     // 添加手势
     func addTap() {
@@ -256,15 +249,15 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         let tap = UITapGestureRecognizer(target: self, action: #selector(keyHidden))
         contrainerView.addGestureRecognizer(tap)
     }
-
     
-    // 注册请求
-    func registerRequeset(){
+    
+    // 修改密码请求
+    func modifyRequeset(){
         let email = emailTextField.text!
         let password = pswTextField.text!
         let code = codeTextField.text!
         let manager = AFHTTPRequestOperationManager()
-        let url = StarURL_New+"/OznerServer/MailRegister"
+        let url = StarURL_New+"/OznerServer/ResetPassword"
         let params:NSDictionary = ["username":email,"password":password,"code":code]
         manager.POST(url,
                      parameters: params,
@@ -273,10 +266,10 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
                         
                         let alertView=SCLAlertView()
                         alertView.addButton("确定", action: { [weak self] in
-                        
+                            
                             self!.navigationController?.popViewControllerAnimated(true)
-                        })
-                        alertView.showError("提示", subTitle: "注册成功,返回登录")
+                            })
+                        alertView.showError("提示", subTitle: "修改成功,返回登录")
             },
                      failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in
@@ -288,13 +281,13 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         
         
     }
-
     
+
 }
 
 // MARK: - Event response - 按钮/手势等事件的回应方法
 
-extension  RNEmailRegisterViewController{
+extension  RNModifyPasswordViewController{
     
     // 获取验证码
     @IBAction func getCodeAction(sender: UIButton) {
@@ -333,16 +326,17 @@ extension  RNEmailRegisterViewController{
         })
         
     }
+
     
     // 注册
-    @IBAction func registerAction(sender: UIButton) {
+    @IBAction func modifyAction(sender: UIButton) {
         
         guard checkout01() else{ return }
         
         guard checkout02() else{ return }
         
         // 请求接口
-        registerRequeset()
+        modifyRequeset()
     }
     
     // 返回
@@ -350,13 +344,13 @@ extension  RNEmailRegisterViewController{
         
         navigationController?.popViewControllerAnimated(true)
     }
-    
+
     //计时器事件
     func updateTime() -> Void {
         
         remainingSeconds -= 1
     }
-
+    
     // 键盘显示
     func keyboardWillShow(notification: NSNotification) {
         
@@ -377,7 +371,7 @@ extension  RNEmailRegisterViewController{
         let e = UIEdgeInsetsMake(0, 0, 0, 0)
         
         scrollView.contentInset = e
-
+        
     }
     
     // 手势收起键盘
@@ -385,15 +379,15 @@ extension  RNEmailRegisterViewController{
         
         contrainerView.endEditing(true)
     }
-
     
+
 }
 
 // MARK: - Delegates - 即各种代理方法
 
 // MARK: - UITextFieldDelegate
 
-extension RNEmailRegisterViewController{
+extension RNModifyPasswordViewController{
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         

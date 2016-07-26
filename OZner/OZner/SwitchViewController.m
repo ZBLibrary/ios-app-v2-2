@@ -20,13 +20,17 @@
 
 #import "OZner-swift.h"
 
+
 @interface SwitchViewController ()<HomeControllerDelegate,LoginOutDelegate,NewUserHelpViewDelegate>
 {
     LeftViewController*         mLeftController;
     HomeViewController*         mHomeController;
     CustomTabBarController*     myTabController;
     LoginViewController*        mLoginController;
-    UINavigationController*     mLoginNavController;
+    
+    // 替换新的 nav
+    JMNavigationController*     mLoginNavController;
+    
     //添加设备
     AddDeviceViewController_EN*   mAddDeviceViewController;
     UINavigationController*    mAddDeviceNavController;
@@ -103,6 +107,12 @@
     
 }
 
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated] ;
+//    
+//    self.navigationController.navigationBar.hidden = true ;
+//}
+
 - (void)isFirstOpenApp
 {
     //找到plist文件中得到版本号所对应的键
@@ -139,6 +149,7 @@
     [mNewUserHelpNavController.view removeFromSuperview];
     mNewUserHelpNavController = nil;
     
+
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
@@ -166,9 +177,11 @@
     }
     else
     {
-        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
+        emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
+//        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
         mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [mLoginNavController.navigationBar loadNavigationBar];
         

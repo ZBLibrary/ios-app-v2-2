@@ -33,17 +33,27 @@ class RNEmailLoginViewController: UIViewController {
 
 
     // MARK: - properties - 即定义的各种属性
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var contrainerView: UIView! //
+    
     @IBOutlet weak var emailTextField: UITextField! // 邮箱
     
     @IBOutlet weak var passwordTextfield: UITextField! // 密码
     
+    @IBOutlet weak var phoneLoginButton: UIButton!
     
     // MARK: -  Life cycle - 即生命周期
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        phoneLoginButton.hidden = true
         
+        addDelegateForTextField()
+        keyBoardObserve()
+        addTap()
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +64,7 @@ class RNEmailLoginViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -73,7 +84,9 @@ class RNEmailLoginViewController: UIViewController {
     
     deinit{
         
-        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+
     }
     
 }
@@ -82,11 +95,22 @@ class RNEmailLoginViewController: UIViewController {
 
 extension RNEmailLoginViewController{
     
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        view.endEditing(true)
+//        
+//    }
 }
 
 // MARK: - Private Methods - 即私人写的方法
 
-extension  RNEmailLoginViewController{
+extension  RNEmailLoginViewController: UITextFieldDelegate{
+    
+    // 添加代理
+    func addDelegateForTextField() {
+        
+        emailTextField.delegate = self
+        passwordTextfield.delegate = self
+    }
     
     // 校验
     func checkout() -> Bool{
@@ -135,6 +159,24 @@ extension  RNEmailLoginViewController{
         return matcher.match(email)
     }
     
+    
+    // 键盘监听
+    func keyBoardObserve() {
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+
+    
+    // 添加手势
+    func addTap() {
+        
+        scrollView.userInteractionEnabled = true
+        contrainerView.userInteractionEnabled = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(keyHidden))
+        contrainerView.addGestureRecognizer(tap)
+    }
 }
 
 // MARK: - Event response - 按钮/手势等事件的回应方法
@@ -150,8 +192,15 @@ extension  RNEmailLoginViewController{
         }
         
         // 登陆请求
+        loginRequeset()
     }
     
+    // 忘记密码
+    @IBAction func forgetPassword(sender: UIButton) {
+        
+        let modifyPassword = RNModifyPasswordViewController()
+        navigationController?.pushViewController(modifyPassword, animated: true)
+    }
     // 注册账号(邮箱)
     @IBAction func registerAction(sender: UIButton) {
         
@@ -164,10 +213,92 @@ extension  RNEmailLoginViewController{
     // 验证码登录
     @IBAction func loginWithVetificationCode(sender: UIButton) {
         
+        
+//        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginViewController")
+        
+        navigationController?.pushViewController(loginController, animated: true)
     }
     
+    // 键盘显示
+    func keyboardWillShow(notification: NSNotification) {
+        
+        // 获取键盘高度
+        let height = notification.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().height
+        
+        // 设置 contentInset 的值,默认为(0,0,0,0)
+        let e = UIEdgeInsetsMake(0, 0, height!, 0)
+        
+        scrollView.contentInset = e
+        
+    }
+    
+    // 键盘隐藏
+    func keyboardWillHidden(notification: NSNotification) {
+        
+        // 将 contentInset 的值设回默认值(0,0,0,0)
+        let e = UIEdgeInsetsMake(0, 0, 0, 0)
+        
+        scrollView.contentInset = e
+        
+    }
+
+    // 手势收起键盘
+    func keyHidden() {
+        
+        contrainerView.endEditing(true)
+    }
+    
+    // 登陆请求
+    func loginRequeset(){
+        let phone = emailTextField.text!
+        let password = passwordTextfield.text!
+        let miei = UIDevice.currentDevice().identifierForVendor!.UUIDString
+        let devicename = UIDevice.currentDevice().name
+        let manager = AFHTTPRequestOperationManager()
+        let url = StarURL_New+"/OznerServer/MailLogin"
+        let params:NSDictionary = ["username":phone,"password":password,"miei":miei,"devicename":devicename]
+        manager.POST(url,
+                     parameters: params,
+                     success: { (operation: AFHTTPRequestOperation!,
+                        responseObject: AnyObject!) in
+                        
+                        // 登陆成功
+                        print("dengluchenggong")
+            },
+                     failure: { (operation: AFHTTPRequestOperation!,
+                        error: NSError!) in
+                       
+                        let alertView=SCLAlertView()
+                        alertView.addButton("确定", action: {})
+                        alertView.showError("错误提示", subTitle: error.localizedDescription)
+        })
+        
+        
+    }
+
 }
 
 // MARK: - Delegates - 即各种代理方法
 
+// MARK: - UITextFieldDelegate
+
+extension RNEmailLoginViewController{
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if textField.tag < 1 {
+            let tf = contrainerView.viewWithTag(textField.tag + 1) as! UITextField
+            tf.becomeFirstResponder()
+            return true
+        }
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+}
 

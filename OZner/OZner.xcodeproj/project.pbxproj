@@ -864,6 +864,9 @@
 		E0F32A201D45E39B00D78EE5 /* RNEmailLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F32A1E1D45E39B00D78EE5 /* RNEmailLoginViewController.xib */; };
 		E0F32A231D45F00800D78EE5 /* RNEmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F32A211D45F00800D78EE5 /* RNEmailRegisterViewController.swift */; };
 		E0F32A241D45F00800D78EE5 /* RNEmailRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F32A221D45F00800D78EE5 /* RNEmailRegisterViewController.xib */; };
+		E0F32A2A1D473B2900D78EE5 /* JMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F32A291D473B2900D78EE5 /* JMNavigationController.m */; };
+		E0F32A311D4749B500D78EE5 /* RNModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F32A2F1D4749B500D78EE5 /* RNModifyPasswordViewController.swift */; };
+		E0F32A321D4749B500D78EE5 /* RNModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F32A301D4749B500D78EE5 /* RNModifyPasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2281,6 +2284,10 @@
 		E0F32A1E1D45E39B00D78EE5 /* RNEmailLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RNEmailLoginViewController.xib; sourceTree = "<group>"; };
 		E0F32A211D45F00800D78EE5 /* RNEmailRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNEmailRegisterViewController.swift; sourceTree = "<group>"; };
 		E0F32A221D45F00800D78EE5 /* RNEmailRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RNEmailRegisterViewController.xib; sourceTree = "<group>"; };
+		E0F32A281D473B2900D78EE5 /* JMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMNavigationController.h; sourceTree = "<group>"; };
+		E0F32A291D473B2900D78EE5 /* JMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMNavigationController.m; sourceTree = "<group>"; };
+		E0F32A2F1D4749B500D78EE5 /* RNModifyPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNModifyPasswordViewController.swift; sourceTree = "<group>"; };
+		E0F32A301D4749B500D78EE5 /* RNModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RNModifyPasswordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2917,6 +2924,7 @@
 				42A7BB601C0C29CB008DB6E5 /* Tools */,
 				42A7BB431C0C242B008DB6E5 /* ParseDictionaryData */,
 				42A7BB0B1C0C231B008DB6E5 /* HttpService */,
+				E0F32A271D473B2900D78EE5 /* navigation */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -4490,8 +4498,19 @@
 				E0F32A1E1D45E39B00D78EE5 /* RNEmailLoginViewController.xib */,
 				E0F32A211D45F00800D78EE5 /* RNEmailRegisterViewController.swift */,
 				E0F32A221D45F00800D78EE5 /* RNEmailRegisterViewController.xib */,
+				E0F32A2F1D4749B500D78EE5 /* RNModifyPasswordViewController.swift */,
+				E0F32A301D4749B500D78EE5 /* RNModifyPasswordViewController.xib */,
 			);
 			path = NewLogin;
+			sourceTree = "<group>";
+		};
+		E0F32A271D473B2900D78EE5 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E0F32A281D473B2900D78EE5 /* JMNavigationController.h */,
+				E0F32A291D473B2900D78EE5 /* JMNavigationController.m */,
+			);
+			path = navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4743,6 +4762,7 @@
 				428FC6D01C2ECFEA001D4ACF /* db_ozner_uid.db in Resources */,
 				E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController_EN.xib in Resources */,
 				8DB043FD1CC8CCE200B60DAB /* left_row@2x.png in Resources */,
+				E0F32A321D4749B500D78EE5 /* RNModifyPasswordViewController.xib in Resources */,
 				8DB044841CC8CD4200B60DAB /* icon_peidui_select_tan_tou@2x.png in Resources */,
 				B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */,
 				8DB044011CC8CCE200B60DAB /* pull_down_row@2x.png in Resources */,
@@ -5216,6 +5236,7 @@
 				8DA405831C8441B500AD5E5E /* ZXDefaultGridSampler.m in Sources */,
 				524337861C42A6320024133D /* CupSettings.m in Sources */,
 				8DA405B41C8441B500AD5E5E /* ZXPDF417BarcodeMatrix.m in Sources */,
+				E0F32A2A1D473B2900D78EE5 /* JMNavigationController.m in Sources */,
 				52FF7E051C1A043A005635F8 /* YJHColorPickerHSWheel.m in Sources */,
 				8DA405A31C8441B500AD5E5E /* ZXMaxiCodeBitMatrixParser.m in Sources */,
 				42A7BB3F1C0C23FC008DB6E5 /* Reachability.m in Sources */,
@@ -5432,6 +5453,7 @@
 				8DA405851C8441B500AD5E5E /* ZXDimension.m in Sources */,
 				524337CA1C42A8E50024133D /* WaterPurifierManager.m in Sources */,
 				8DA405C11C8441B500AD5E5E /* ZXPDF417DetectorResult.m in Sources */,
+				E0F32A311D4749B500D78EE5 /* RNModifyPasswordViewController.swift in Sources */,
 				8DA405ED1C8441B500AD5E5E /* ZXRSSDataCharacter.m in Sources */,
 				52F465F81C2D482A0052D7C8 /* smallStateXib_EN.swift in Sources */,
 				521BF7C71C4A256300AD1EAB /* TDSFooterCellzb_EN.swift in Sources */,
