@@ -45,6 +45,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
     @IBOutlet var CupNamebutton: UIButton!
     @IBOutlet var setCupTime: UIButton!
     @IBOutlet var aetCuptimeSpace: UIButton!
+    @IBOutlet weak var aboutCupContainer: UIView!
     
     
     @IBAction func clickstate1(sender: AnyObject) {
@@ -155,6 +156,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         PhoneTX.text=loadLanguage("手机提醒")
         XSColor.text=loadLanguage("显示灯带颜色")
        Attention.text=loadLanguage("注意:电量低于10%时,光圈双闪。")
+        //aboutCupContainer.hidden = !IsLoginByPhone()
     }
 
     

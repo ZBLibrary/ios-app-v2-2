@@ -34,6 +34,7 @@ class tantouLvXinView_EN: UIView {
     
     @IBOutlet var ErWeiMaContainView: UIView!
     //滤芯使用开始时间
+    @IBOutlet weak var chatAndBuyContainer: UIView!
     var maxUserDay:Int=365//净水器365，探头30
     var starDate=""{
         didSet{
@@ -77,25 +78,7 @@ class tantouLvXinView_EN: UIView {
             {
                 LvXinBaiFen.text="1"
             }
-//            //图片判断就行了
-//            switch remindDay
-//            {
-//            case 0:
-//                lvXinImg.image=UIImage(named: "")
-//                break
-//            case 1...14:
-//                lvXinImg.image=UIImage(named: "")
-//                break
-//            case 15...29:
-//                lvXinImg.image=UIImage(named: "")
-//                break
-//            case 30:
-//                lvXinImg.image=UIImage(named: "")
-//                break
-//            default:
-//                lvXinImg.image=UIImage(named: "")
-//                break
-//            }
+
         }
     }
     // Only override drawRect: if you perform custom drawing.
@@ -105,8 +88,7 @@ class tantouLvXinView_EN: UIView {
         MoreDeviceButton2.tag=2
         MoreDeviceButton3.tag=3
         // Drawing code
-        //jindu100JuLeft.constant=42
-        //currentDateJuLeft.constant=28
+
         zixunView.layer.borderWidth=0.5
         zixunView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).CGColor
         buyLXView.layer.cornerRadius=20
@@ -114,6 +96,11 @@ class tantouLvXinView_EN: UIView {
         buyLXView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).CGColor
         saoMaView.layer.borderWidth=0.5
         saoMaView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).CGColor
+        
+        chatAndBuyContainer.hidden = !IsLoginByPhone()
+        MoreDeviceButton1.enabled = IsLoginByPhone()
+        MoreDeviceButton2.enabled = IsLoginByPhone()
+        MoreDeviceButton3.enabled = IsLoginByPhone()
     }
     
 

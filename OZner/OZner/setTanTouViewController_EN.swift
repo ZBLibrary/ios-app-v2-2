@@ -10,6 +10,7 @@ import UIKit
 
 class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
 
+    @IBOutlet weak var aboutContainer: UIView!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -68,6 +69,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //aboutContainer.hidden = !IsLoginByPhone()
         DeviceNameLable.text=loadLanguage("我的水探头")
         checkLable.text=loadLanguage("检测时间")
         checkLabel1.text=loadLanguage("检测时间1")

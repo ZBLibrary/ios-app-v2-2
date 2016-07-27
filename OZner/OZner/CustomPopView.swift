@@ -134,6 +134,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             self.mySecondLabel?.hidden = true
             self.myBubbleImgView?.hidden = true
             addLabel?.hidden=false
+            self.clickBtn?.hidden = true
         }
         else
         {
@@ -145,6 +146,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             self.mySecondLabel?.hidden = false
             self.myBubbleImgView?.hidden = false
             addLabel?.hidden=true
+            self.clickBtn?.hidden = false
         }
         
         self.myTableView!.reloadData()

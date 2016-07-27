@@ -10,6 +10,7 @@ import UIKit
 
 class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
 
+    @IBOutlet weak var aboutContainer: UIView!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -58,6 +59,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
     @IBOutlet var DeviceNameLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //aboutContainer.hidden = !IsLoginByPhone()
         DeviceNameLable.text=loadLanguage("我的净水器" )
        deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
         self.title=loadLanguage("净水器")
