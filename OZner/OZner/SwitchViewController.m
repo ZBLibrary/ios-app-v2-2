@@ -147,12 +147,19 @@
 - (void)onClickNewUserViewExperience
 {
     [mNewUserHelpNavController.view removeFromSuperview];
-    mNewUserHelpNavController = nil;
+     mNewUserHelpNavController = nil;
     
+    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+    
+    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
+    }else{
+        emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
+    }
 
-    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
     mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [mLoginNavController.navigationBar loadNavigationBar];
     
@@ -177,11 +184,20 @@
     }
     else
     {
-        emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
-        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
-//        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-//        mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
+        
+        NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+        
+       // NSLog(@"jjhjkjjjj;%@",currentLanguage) ;
+        
+        if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+            UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+            mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
+        }else{
+            emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+            mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
+        }
+
         mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [mLoginNavController.navigationBar loadNavigationBar];
         
@@ -205,6 +221,17 @@
 #pragma mark- LoginOutDelegate
 - (void)onLoginSuccess:(LoginUserInfo *)loginUserInfo currentView:(UIView *)currentView
 {
+    
+    // 登陆成功之后根据系统语言判断当前的登陆当时并保存到 NSUserDefalut
+    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+        // 中文-手机号登陆
+        [[NSUserDefaults standardUserDefaults]setObject:CHINESE forKey:CURRENT_LOGIN_STYLE] ;
+    }else{
+        // 英文-邮箱登陆
+        [[NSUserDefaults standardUserDefaults]setObject:CHINESE forKey:CURRENT_LOGIN_STYLE] ;
+    }
+    
     [MBProgressHUD hideHUDForView:currentView animated:YES];
     
     [[NetworkManager sharedInstance] startWithAid:nil sesToken:loginUserInfo.sessionToken httpAdress:HTTP_ADDRESS];
@@ -281,9 +308,17 @@
     }
     
     //[self deallocTimer];
-    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    mLoginNavController = [[UINavigationController alloc] initWithRootViewController:mLoginController];
+    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+    
+    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
+    }else{
+        emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
+    }
+
     mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [mLoginNavController.navigationBar loadNavigationBar];
     

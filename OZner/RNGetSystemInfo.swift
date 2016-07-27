@@ -22,7 +22,16 @@ class RNGetSystemInfo: NSObject {
         return sharedInstance
     }
     
+    // 获取当前设备的系统语言
+    // 中文 - zh-Hans-CN
     
+    func getCurrentSystemLanguage() -> String{
+        
+        let languages = NSLocale.preferredLanguages()
+        let currentLanguage = languages[0]
+        
+        return currentLanguage
+    }
     
 
 }

@@ -26,7 +26,7 @@ static LogInOut* g_LoginInOutManager = nil;
     return g_LoginInOutManager;
 }
 
-//登录
+//登录 - 手机号
 - (void)loginWithAccount:(NSString*)loginName
                 password:(NSString*)password
              currentView:(UIView*)currentView
@@ -80,6 +80,62 @@ static LogInOut* g_LoginInOutManager = nil;
         
     }];
 }
+
+//登录 - 邮箱
+- (void)loginWithEmail:(NSString*)loginName
+                password:(NSString*)password
+             currentView:(UIView*)currentView
+{
+    LoginWerbService* werbservice = [[LoginWerbService alloc]init];
+    
+    [werbservice loginByEmail:loginName psw:password returnBlock:^(LoginUserInfo *userInfo, StatusManager *status) {
+        
+        if(status.networkStatus == kSuccessStatus)
+        {
+            //成功获取到用户信息，成功更新那个百度设备号，才算登录成功
+            //获取到用户信息
+            //更新用户心里面的百度设备号
+            [[NetworkManager sharedInstance] startWithAid:nil sesToken:userInfo.sessionToken httpAdress:HTTP_ADDRESS];
+            [[NSUserDefaults standardUserDefaults] setObject:userInfo.sessionToken forKey:@"UserToken"];
+            //            updateUserInfozb* update=[[updateUserInfozb alloc] init];
+            //            [update bindBaiDu:^(BOOL istrue) {
+            //                if (istrue) {
+            //                    NSLog(@"%@",self.logInoutDelegate);
+            if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginSuccess: currentView:)])
+            {
+                
+                [self.logInoutDelegate onLoginSuccess:userInfo currentView:currentView];
+                
+            }
+            
+            //                }
+            //                else
+            //                {
+            //                    if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginFailed:currentView:)])
+            //                    {
+            //                        [LoginManager loginInstance].loginInfo.loginName = nil;
+            //                        [LoginManager loginInstance].loginInfo.password = nil;
+            //                        [LoginManager loginInstance].loginInfo.sessionToken = nil;
+            //                        [LoginManager loginInstance].loginInfo.userID = nil;
+            //                        [[LoginManager loginInstance]encodeParamObject];
+            //
+            //
+            //                        [self.logInoutDelegate onLoginFailed:status.errDesc currentView:currentView];
+            //                    }
+            //                }
+            //}];
+        }
+        else
+        {
+            if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginFailed:currentView:)])
+            {
+                [self.logInoutDelegate onLoginFailed:status.errDesc currentView:currentView];
+            }
+        }
+        
+    }];
+}
+
 
 //登陆成功
 - (void)loginSuccess:(UIView*)currentView

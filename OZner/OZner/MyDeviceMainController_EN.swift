@@ -181,7 +181,13 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     override func viewWillAppear(animated: Bool) {
         OznerDeviceSensorUpdate(self.myCurrentDevice)
         self.navigationController?.navigationBarHidden=true
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        
+        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(CHINESE){
+            CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        }else{
+            CustomTabBarView.sharedCustomTabBar().hideMyTabBar;
+        }
+       
         setBartteryImg()
     }
 
