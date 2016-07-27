@@ -86,8 +86,8 @@
                                         <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="RLe-Oo-dEJ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwX-Ew-2jr">
-                                    <rect key="frame" x="270.5" y="475" width="59" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwX-Ew-2jr">
+                                    <rect key="frame" x="274" y="475" width="52" height="30"/>
                                     <state key="normal" title="Sign up">
                                         <color key="titleColor" red="0.0" green="0.72156862749999995" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>

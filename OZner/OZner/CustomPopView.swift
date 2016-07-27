@@ -10,8 +10,8 @@ import UIKit
 
 @objc protocol CustomPopViewDelegate
 {
-     func touchCustomPopView()
-     func addDeviceCallBack()
+    func touchCustomPopView()
+    func addDeviceCallBack()
     optional func infomationClick()
 }
 
@@ -31,11 +31,11 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     var myBubbleImgView:UIImageView?
     //当前选中的indexpath
     var currentIndexPath:NSIndexPath?
-
+    
     var addLabel:UILabel?
     var luangeHeight:CGFloat?
-     override  init(frame: CGRect)
-     {
+    override  init(frame: CGRect)
+    {
         super.init(frame: frame)
         self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         self.myView.backgroundColor = UIColor(red: 100.0, green: 200.0, blue: 150.0, alpha: 1.0)
@@ -49,6 +49,13 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         bgImgView.image = UIImage(named: "mydevice_bg.png")
         self.myBgImgView = bgImgView
         self.myView.addSubview(bgImgView)
+
+        if LoginManager.loginInstance().loginInfo.loginName.containsString("@") == false {
+            NSUserDefaults.standardUserDefaults().setObject(LoginByPhone, forKey: CURRENT_LOGIN_STYLE)
+        } else {
+            NSUserDefaults.standardUserDefaults().setObject(LoginByEmail, forKey: CURRENT_LOGIN_STYLE)
+        }
+        
         if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail) {
             luangeHeight = 140
             let btn = UIButton(type: UIButtonType.Custom)
@@ -64,7 +71,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         } else {
             luangeHeight = 69
         }
-
+        
         
         let stateLabel:UILabel = UILabel(frame: CGRectMake(0,luangeHeight!*(height/667.0),self.myView.frame.size.width,24))
         stateLabel.text = loadLanguage("浩泽智能化生活服务")
@@ -105,7 +112,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         addLabel!.hidden=true
         self.myView.addSubview(addLabel!)
         //创建tableview
-        let table = UITableView(frame: CGRectMake(0, 0, self.myView.frame.size.width, addBtn.frame.origin.y))
+        let table = UITableView(frame: CGRectMake(0, 20, self.myView.frame.size.width, addBtn.frame.origin.y))
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = UIColor.clearColor()
@@ -116,11 +123,11 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(receiveDeleteDevicesNotify), name: "removDeviceByZB", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(receiveDeleteDevicesNotify), name: "updateDeviceInfo", object: nil)
-     }
-
-     required init?(coder aDecoder: NSCoder) {
-         fatalError("init(coder:) has not been implemented")
-     }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func relaodData()
     {
@@ -156,7 +163,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             let wCell = self.myTableView!.cellForRowAtIndexPath(currentIndexPath!) as! CustomPopViewFirstCell
             wCell.setSelected(true, animated: true)
             let device = (self.myDevices?.objectAtIndex(currentIndexPath!.row-1))! as! OznerDevice
-     
+            
             setSelectWhichCell(wCell, device: device)
             
         }
@@ -188,14 +195,14 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             wCell.deviceStateImgView.image = UIImage(named: "device_jin_bigair_select.png")
             
             break
-            //补水仪
+        //补水仪
         case  WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "WaterReplenish1_2")
             break
         default:
             break
         }
-
+        
     }
     func receiveDeleteDevicesNotify()
     {
@@ -223,6 +230,18 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
+        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail) {
+            let btn = UIButton(type: UIButtonType.Custom)
+            btn.frame = CGRect(x: 0, y: 0, width: self.myView.frame.size.width, height: 90*(height/667.0))
+            btn.setTitle("Ozner", forState: UIControlState.Normal)
+            btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            btn.setImage(UIImage(named:"My_Unlogin_head" ), forState: UIControlState.Normal)
+            btn.titleEdgeInsets = UIEdgeInsetsMake(100, -90, 0, 0)
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0)
+            btn.addTarget(self, action: #selector(CustomPopView.btnClick), forControlEvents: UIControlEvents.TouchUpInside)
+            tableView.tableHeaderView = btn
+        }
+        
         if indexPath.row == 0
         {
             let wCell = NSBundle.mainBundle().loadNibNamed("CustomPopViewSecondCell", owner: self, options: nil).first as! CustomPopViewSecondCell;
@@ -232,7 +251,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         else
         {
             let wCell = NSBundle.mainBundle().loadNibNamed("CustomPopViewFirstCell", owner: self, options: nil).first as! CustomPopViewFirstCell;
-
+            
             let device = (self.myDevices?.objectAtIndex(indexPath.row-1))! as! OznerDevice
             wCell.backgroundColor = UIColor.clearColor()
             wCell.layCustomPopViewFirstCell(device,isSlected:false)
@@ -245,15 +264,15 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         
         if indexPath.row > 0
         {
-
-            currentIndexPath=indexPath
-                let wCell = tableView.cellForRowAtIndexPath(indexPath) as! CustomPopViewFirstCell
-                let device = (self.myDevices?.objectAtIndex(indexPath.row-1))! as! OznerDevice
             
-                    setSelectWhichCell(wCell, device: device)
-                    delegate?.touchCustomPopView()
-                    NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object:device)
-         }
+            currentIndexPath=indexPath
+            let wCell = tableView.cellForRowAtIndexPath(indexPath) as! CustomPopViewFirstCell
+            let device = (self.myDevices?.objectAtIndex(indexPath.row-1))! as! OznerDevice
+            
+            setSelectWhichCell(wCell, device: device)
+            delegate?.touchCustomPopView()
+            NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object:device)
+        }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -267,7 +286,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     }
     func btnClick()
     {
-    delegate?.infomationClick!()
+        delegate?.infomationClick!()
     }
     
 }

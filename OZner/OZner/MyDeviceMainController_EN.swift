@@ -1770,7 +1770,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     func IKnow()
     {
         bgairView.removeFromSuperview()
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
+            CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        }
     }
     
     //设备未联网信息显示
