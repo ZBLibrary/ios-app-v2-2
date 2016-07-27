@@ -156,7 +156,7 @@
         mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
     }else{
-        emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+        emailLoginViewController = [[RNEmailLoginViewController alloc] initWithNibName:@"RNEmailLoginViewController" bundle:nil] ;
         mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
     }
 
@@ -201,7 +201,7 @@
             mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
             mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
         }else{
-            emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+            emailLoginViewController = [[RNEmailLoginViewController alloc] initWithNibName:@"RNEmailLoginViewController" bundle:nil] ;
             mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
         }
 

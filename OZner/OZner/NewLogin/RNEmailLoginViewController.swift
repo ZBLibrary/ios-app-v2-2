@@ -42,14 +42,44 @@ class RNEmailLoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextfield: UITextField! // 密码
     
-    @IBOutlet weak var phoneLoginButton: UIButton!
+    @IBOutlet weak var phoneLoginButton: UIButton! // 验证码登录
     
     // MARK: -  Life cycle - 即生命周期
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    
+    convenience init() {
+        
+        var nibNameOrNil = String?("RNEmailLoginViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        phoneLoginButton.hidden = true
+       // phoneLoginButton.hidden = true
         
         addDelegateForTextField()
         keyBoardObserve()
@@ -202,13 +232,13 @@ extension  RNEmailLoginViewController{
     // 忘记密码
     @IBAction func forgetPassword(sender: UIButton) {
         
-        let modifyPassword = RNModifyPasswordViewController()
+        let modifyPassword = RNModifyPasswordViewController(nibName: "RNModifyPasswordViewController", bundle: nil)
         navigationController?.pushViewController(modifyPassword, animated: true)
     }
     // 注册账号(邮箱)
     @IBAction func registerAction(sender: UIButton) {
         
-        let register = RNEmailRegisterViewController()
+        let register = RNEmailRegisterViewController(nibName: "RNEmailRegisterViewController", bundle: nil)
         
         navigationController?.pushViewController(register, animated: true)
         
