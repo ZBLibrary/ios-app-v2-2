@@ -452,7 +452,7 @@ NSString * kSelfThumb  ;//会员头像
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
        
-        XMTextMessage *textMessage = [XMMessage textMessage:@{@"messageOwner":@(XMMessageOwnerTypeSystem),@"messageTime":@([[NSDate date] timeIntervalSince1970]),@"messageText":@"信息发送失败!请确保网络通畅并已关注浩泽微信公众号"}];
+        XMTextMessage *textMessage = [XMMessage textMessage:@{@"messageOwner":@(XMMessageOwnerTypeSystem),@"messageTime":@([[NSDate date] timeIntervalSince1970]),@"messageText":loadLanguage(@"信息发送失败!请确保网络通畅并已关注浩泽微信公众号")}];
         textMessage.senderAvatarThumb = self.sendFailThumb;
         textMessage.senderNickName = self.chatterName;
         textMessage.messageChatType = 1;
