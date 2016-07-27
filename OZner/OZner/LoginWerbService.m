@@ -40,7 +40,7 @@
 {
     NetworkEntrance* entrance = [[NetworkEntrance alloc]init];
     
-    [entrance addObject:userName forKey:@"UserName"];
+    [entrance addObject:userName forKey:@"username"];
     [entrance addObject:psw forKey:@"passWord"];
     [entrance addObject:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forKey:@"miei"];
     [entrance addObject:[[UIDevice currentDevice] name] forKey:@"devicename"];
