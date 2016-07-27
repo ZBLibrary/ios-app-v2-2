@@ -269,7 +269,7 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
                             
                             self!.navigationController?.popViewControllerAnimated(true)
                             })
-                        alertView.showError("Tips", subTitle: "Modify success, return to login")
+                        alertView.showSuccess("Tips", subTitle: "Modify success, return to login")
             },
                      failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in
@@ -315,7 +315,7 @@ extension  RNModifyPasswordViewController{
                             self!.isCounting = true
                             
                         })
-                        alertView.showError("Tips", subTitle: "Get verification code is successful, open the mailbox access security code")
+                        alertView.showSuccess("Tips", subTitle: "Get verification code is successful, open the mailbox access security code")
             },
                      failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in

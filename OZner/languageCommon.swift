@@ -12,3 +12,8 @@ func loadLanguage(text:String)->String
 {
     return NSLocalizedString(text, comment: "")
 }
+//是否是手机号登录
+func IsLoginByPhone() -> Bool {
+    return (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone)
+}
+        

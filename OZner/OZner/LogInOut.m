@@ -42,10 +42,10 @@ static LogInOut* g_LoginInOutManager = nil;
             //更新用户心里面的百度设备号
             [[NetworkManager sharedInstance] startWithAid:nil sesToken:userInfo.sessionToken httpAdress:HTTP_ADDRESS];
             [[NSUserDefaults standardUserDefaults] setObject:userInfo.sessionToken forKey:@"UserToken"];
-//            updateUserInfozb* update=[[updateUserInfozb alloc] init];
-//            [update bindBaiDu:^(BOOL istrue) {
-//                if (istrue) {
-//                    NSLog(@"%@",self.logInoutDelegate);
+            updateUserInfozb* update=[[updateUserInfozb alloc] init];
+            [update bindBaiDu:^(BOOL istrue) {
+                if (istrue) {
+                    NSLog(@"%@",self.logInoutDelegate);
                     if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginSuccess: currentView:)])
                     {
                         
@@ -53,22 +53,22 @@ static LogInOut* g_LoginInOutManager = nil;
                         
                     }
                     
-//                }
-//                else
-//                {
-//                    if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginFailed:currentView:)])
-//                    {
-//                        [LoginManager loginInstance].loginInfo.loginName = nil;
-//                        [LoginManager loginInstance].loginInfo.password = nil;
-//                        [LoginManager loginInstance].loginInfo.sessionToken = nil;
-//                        [LoginManager loginInstance].loginInfo.userID = nil;
-//                        [[LoginManager loginInstance]encodeParamObject];
-//                        
-//                        
-//                        [self.logInoutDelegate onLoginFailed:status.errDesc currentView:currentView];
-//                    }
-//                }
-            //}];
+                }
+                else
+                {
+                    if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginFailed:currentView:)])
+                    {
+                        [LoginManager loginInstance].loginInfo.loginName = nil;
+                        [LoginManager loginInstance].loginInfo.password = nil;
+                        [LoginManager loginInstance].loginInfo.sessionToken = nil;
+                        [LoginManager loginInstance].loginInfo.userID = nil;
+                        [[LoginManager loginInstance]encodeParamObject];
+                        
+                        
+                        [self.logInoutDelegate onLoginFailed:status.errDesc currentView:currentView];
+                    }
+                }
+            }];
         }
         else
         {
@@ -97,10 +97,10 @@ static LogInOut* g_LoginInOutManager = nil;
             //更新用户心里面的百度设备号
             [[NetworkManager sharedInstance] startWithAid:nil sesToken:userInfo.sessionToken httpAdress:HTTP_ADDRESS];
             [[NSUserDefaults standardUserDefaults] setObject:userInfo.sessionToken forKey:@"UserToken"];
-            //            updateUserInfozb* update=[[updateUserInfozb alloc] init];
-            //            [update bindBaiDu:^(BOOL istrue) {
-            //                if (istrue) {
-            //                    NSLog(@"%@",self.logInoutDelegate);
+                        updateUserInfozb* update=[[updateUserInfozb alloc] init];
+                        [update bindBaiDu:^(BOOL istrue) {
+                            if (istrue) {
+                                NSLog(@"%@",self.logInoutDelegate);
             if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginSuccess: currentView:)])
             {
                 
@@ -108,22 +108,22 @@ static LogInOut* g_LoginInOutManager = nil;
                 
             }
             
-            //                }
-            //                else
-            //                {
-            //                    if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginFailed:currentView:)])
-            //                    {
-            //                        [LoginManager loginInstance].loginInfo.loginName = nil;
-            //                        [LoginManager loginInstance].loginInfo.password = nil;
-            //                        [LoginManager loginInstance].loginInfo.sessionToken = nil;
-            //                        [LoginManager loginInstance].loginInfo.userID = nil;
-            //                        [[LoginManager loginInstance]encodeParamObject];
-            //
-            //
-            //                        [self.logInoutDelegate onLoginFailed:status.errDesc currentView:currentView];
-            //                    }
-            //                }
-            //}];
+                            }
+                            else
+                            {
+                                if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginFailed:currentView:)])
+                                {
+                                    [LoginManager loginInstance].loginInfo.loginName = nil;
+                                    [LoginManager loginInstance].loginInfo.password = nil;
+                                    [LoginManager loginInstance].loginInfo.sessionToken = nil;
+                                    [LoginManager loginInstance].loginInfo.userID = nil;
+                                    [[LoginManager loginInstance]encodeParamObject];
+            
+            
+                                    [self.logInoutDelegate onLoginFailed:status.errDesc currentView:currentView];
+                                }
+                            }
+            }];
         }
         else
         {

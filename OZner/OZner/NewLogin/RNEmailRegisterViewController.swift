@@ -276,7 +276,7 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
                         
                             self!.navigationController?.popViewControllerAnimated(true)
                         })
-                        alertView.showError("Tips", subTitle: "Registration is successful, return to the login")
+                        alertView.showSuccess("Tips", subTitle: "Registration is successful, return to the login")
             },
                      failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in
@@ -322,7 +322,7 @@ extension  RNEmailRegisterViewController{
                             self!.isCounting = true
                             
                         })
-                        alertView.showError("Tips", subTitle: "Get verification code is successful, open the mailbox access security code")
+                        alertView.showSuccess("Tips", subTitle: "Get verification code is successful, open the mailbox access security code")
             },
                      failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in

@@ -959,6 +959,7 @@
                 <outlet property="YSTX" destination="CSF-Pi-icn" id="5gO-5b-Aov"/>
                 <outlet property="YSTimeJLable" destination="h2C-8H-9uh" id="6ef-6X-ceO"/>
                 <outlet property="YSTimeLable" destination="OfI-jp-KH3" id="vnb-RS-NkO"/>
+                <outlet property="aboutCupContainer" destination="Ywi-XZ-NyG" id="PdH-Zt-Yvo"/>
                 <outlet property="aetCuptimeSpace" destination="QQK-ee-DAg" id="7aD-Eh-b2x"/>
                 <outlet property="color_expan_label1" destination="wk9-xQ-oiE" id="MYt-5T-8Ve"/>
                 <outlet property="color_expan_label2" destination="gVe-W6-lRJ" id="g9V-FP-LLc"/>

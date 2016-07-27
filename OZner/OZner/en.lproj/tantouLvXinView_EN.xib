@@ -646,6 +646,7 @@
                 <outlet property="MoreDeviceButton3" destination="WXf-D6-YNv" id="Kyg-Xp-FCz"/>
                 <outlet property="buyLXButton" destination="9cd-d1-5Er" id="wse-Lm-m26"/>
                 <outlet property="buyLXView" destination="WWq-92-uH8" id="O9g-C6-sem"/>
+                <outlet property="chatAndBuyContainer" destination="bzI-Yh-Wc1" id="fSw-O0-o6Q"/>
                 <outlet property="curMonDay" destination="8oh-mt-IGa" id="a4z-EQ-9Xe"/>
                 <outlet property="curYear" destination="pPv-lG-EWG" id="vzt-6J-mse"/>
                 <outlet property="currentDateJuLeft" destination="kii-x3-4a0" id="Cg6-Qa-u7s"/>

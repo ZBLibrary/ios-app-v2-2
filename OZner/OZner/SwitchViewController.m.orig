@@ -229,14 +229,24 @@
 - (void)onLoginSuccess:(LoginUserInfo *)loginUserInfo currentView:(UIView *)currentView
 {
     
+<<<<<<< HEAD
+    // 登陆成功之后根据系统语言判断当前的登陆方式并保存到 NSUserDefalut
+    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+=======
     // 登陆成功之后根据系统语言判断当前的登陆当时并保存到 NSUserDefalut
     //NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
     if ([loginUserInfo.loginName containsString:@"@"] == false){
+>>>>>>> master_English_EN
         // 中文-手机号登陆
         [[NSUserDefaults standardUserDefaults]setObject:LoginByPhone forKey:CURRENT_LOGIN_STYLE] ;
     }else{
         // 英文-邮箱登陆
+<<<<<<< HEAD
+        [[NSUserDefaults standardUserDefaults]setObject:ENGLISH forKey:CURRENT_LOGIN_STYLE] ;
+=======
         [[NSUserDefaults standardUserDefaults]setObject:LoginByEmail forKey:CURRENT_LOGIN_STYLE] ;
+>>>>>>> master_English_EN
     }
     
     [MBProgressHUD hideHUDForView:currentView animated:YES];
