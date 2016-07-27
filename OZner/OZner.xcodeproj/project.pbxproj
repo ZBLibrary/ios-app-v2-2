@@ -795,6 +795,9 @@
 		8DFB39451C57730300A1641C /* AmountOfDrinkingWaterViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB393E1C57730300A1641C /* AmountOfDrinkingWaterViewController_EN.xib */; };
 		B70CC63D1D0574BD002AE9A3 /* My_MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */; };
 		B70CC6461D057E3B002AE9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70CC6481D057E3B002AE9A3 /* Main.storyboard */; };
+		B711216C1D45E2020098C31C /* My_MainView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B711216B1D45E2020098C31C /* My_MainView_EN.swift */; };
+		B71121701D45F5900098C31C /* MyInfoViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B711216F1D45F5900098C31C /* MyInfoViewController_EN.swift */; };
+		B71121711D45FD510098C31C /* My_MainView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B71121731D45FD510098C31C /* My_MainView_EN.xib */; };
 		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
 		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
 		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
@@ -2176,6 +2179,10 @@
 		B70CC6471D057E3B002AE9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B70CC64C1D057E44002AE9A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		B70CC64E1D057E48002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		B711216B1D45E2020098C31C /* My_MainView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_MainView_EN.swift; sourceTree = "<group>"; };
+		B711216F1D45F5900098C31C /* MyInfoViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewController_EN.swift; sourceTree = "<group>"; };
+		B71121721D45FD510098C31C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/My_MainView_EN.xib; sourceTree = "<group>"; };
+		B71121741D45FD5A0098C31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/My_MainView_EN.xib; sourceTree = "<group>"; };
 		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
 		B76E77891D066BE3008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FriendsNav.xib; sourceTree = "<group>"; };
 		B76E778A1D066E94008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -3476,6 +3483,8 @@
 				B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */,
 				8DBD54D11C567F4500D04B12 /* chatBarViewLiuyan.swift */,
 				8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */,
+				B711216B1D45E2020098C31C /* My_MainView_EN.swift */,
+				B71121731D45FD510098C31C /* My_MainView_EN.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -3489,6 +3498,7 @@
 				8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */,
 				8DBD54A51C567F3800D04B12 /* FriendsTableViewController.swift */,
 				8DBD54A61C567F3800D04B12 /* MyInfoViewController.swift */,
+				B711216F1D45F5900098C31C /* MyInfoViewController_EN.swift */,
 				8DBD54A71C567F3800D04B12 /* EquidsCollectionViewController.swift */,
 				8DBD54A81C567F3800D04B12 /* AboutUSViewController.swift */,
 				8DBD54A91C567F3800D04B12 /* MySetViewController.swift */,
@@ -4649,6 +4659,7 @@
 				8DB044411CC8CD1700B60DAB /* icon_yun.png in Resources */,
 				8DBD54D61C567F4500D04B12 /* AddFriendTableViewCell.xib in Resources */,
 				8DB0448F1CC8CD4200B60DAB /* icon_peidui_normal_cup@3x.png in Resources */,
+				B71121711D45FD510098C31C /* My_MainView_EN.xib in Resources */,
 				52FEC0401C35961B00B6D0F1 /* userAgreeMentsController.xib in Resources */,
 				E066B94D1D24C28500810566 /* SkinHeadTableViewCell_EN.xib in Resources */,
 				8DB044641CC8CD2C00B60DAB /* icon_lvxin_service_7.png in Resources */,
@@ -4983,6 +4994,7 @@
 				5243379E1C42A63F0024133D /* IOManagerList.m in Sources */,
 				424C155E1C1047B70001C36E /* DeviceMatchCellView_EN.swift in Sources */,
 				523DC3491C175E1B00595099 /* XMMessage.m in Sources */,
+				B71121701D45F5900098C31C /* MyInfoViewController_EN.swift in Sources */,
 				8DA4058E1C8441B500AD5E5E /* ZXEncodeHints.m in Sources */,
 				B7D8C17E1D2373AB0089C241 /* uiDatePickerView_EN.swift in Sources */,
 				B7D8C1CB1D2376F60089C241 /* setWaterReplenishController_EN.swift in Sources */,
@@ -5116,6 +5128,7 @@
 				523DC3461C175E1B00595099 /* UIImageView+XMWebImage.m in Sources */,
 				8DA405F41C8441B500AD5E5E /* ZXRSSExpandedFieldParser.m in Sources */,
 				8DA405C31C8441B500AD5E5E /* ZXPDF417ECErrorCorrection.m in Sources */,
+				B711216C1D45E2020098C31C /* My_MainView_EN.swift in Sources */,
 				8DA405E11C8441B500AD5E5E /* ZXQRCodeMode.m in Sources */,
 				3473593F1C1C4DF600F4C79C /* GlobalClass.m in Sources */,
 				4296750C1C31675000F76245 /* VersionSettingDBManager.m in Sources */,
@@ -5566,6 +5579,15 @@
 				B76E778A1D066E94008476A6 /* en */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B71121731D45FD510098C31C /* My_MainView_EN.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B71121721D45FD510098C31C /* en */,
+				B71121741D45FD5A0098C31C /* Base */,
+			);
+			name = My_MainView_EN.xib;
 			sourceTree = "<group>";
 		};
 		B76E77841D066BC7008476A6 /* FriendsNav.xib */ = {
@@ -6054,7 +6076,7 @@
 				GCC_PREFIX_HEADER = "OZner/OZner-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = OZner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6090,7 +6112,7 @@
 				GCC_PREFIX_HEADER = "OZner/OZner-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = OZner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

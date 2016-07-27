@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     /// 网络状态
     var reachOfNetwork:Reachability?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // Override point for customization after application launch.
         
        // RNGetSystemInfo.systemLanguage()
