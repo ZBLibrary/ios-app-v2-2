@@ -33,6 +33,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     var currentIndexPath:NSIndexPath?
 
     var addLabel:UILabel?
+    var luangeHeight:CGFloat?
      override  init(frame: CGRect)
      {
         super.init(frame: frame)
@@ -48,19 +49,24 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         bgImgView.image = UIImage(named: "mydevice_bg.png")
         self.myBgImgView = bgImgView
         self.myView.addSubview(bgImgView)
+        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail) {
+            luangeHeight = 140
+            let btn = UIButton(type: UIButtonType.Custom)
+            btn.frame = CGRect(x: 0, y: 20, width: self.myView.frame.size.width, height: 90*(height/667.0))
+            btn.setTitle("Ozner", forState: UIControlState.Normal)
+            btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            btn.setImage(UIImage(named:"My_Unlogin_head" ), forState: UIControlState.Normal)
+            btn.titleEdgeInsets = UIEdgeInsetsMake(100, -85, 0, 0)
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0)
+            btn.addTarget(self, action: #selector(CustomPopView.btnClick), forControlEvents: UIControlEvents.TouchUpInside)
+            self.clickBtn = btn
+            self.myView.addSubview(btn)
+        } else {
+            luangeHeight = 69
+        }
+
         
-        let btn = UIButton(type: UIButtonType.Custom)
-        btn.frame = CGRect(x: 0, y: 20, width: self.myView.frame.size.width, height: 90*(height/667.0))
-        btn.setTitle("Ozner", forState: UIControlState.Normal)
-        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        btn.setImage(UIImage(named:"My_Unlogin_head" ), forState: UIControlState.Normal)
-        btn.titleEdgeInsets = UIEdgeInsetsMake(100, -85, 0, 0)
-        btn.imageEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0)
-        btn.addTarget(self, action: #selector(CustomPopView.btnClick), forControlEvents: UIControlEvents.TouchUpInside)
-        self.clickBtn = btn
-        self.myView.addSubview(btn)
-        
-        let stateLabel:UILabel = UILabel(frame: CGRectMake(0,140*(height/667.0),self.myView.frame.size.width,24))
+        let stateLabel:UILabel = UILabel(frame: CGRectMake(0,luangeHeight!*(height/667.0),self.myView.frame.size.width,24))
         stateLabel.text = loadLanguage("浩泽智能化生活服务")
         stateLabel.textAlignment = NSTextAlignment.Center
         stateLabel.font = UIFont.systemFontOfSize(24)
@@ -128,6 +134,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             self.mySecondLabel?.hidden = true
             self.myBubbleImgView?.hidden = true
             addLabel?.hidden=false
+            self.clickBtn?.hidden = true
         }
         else
         {
@@ -139,6 +146,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             self.mySecondLabel?.hidden = false
             self.myBubbleImgView?.hidden = false
             addLabel?.hidden=true
+            self.clickBtn?.hidden = false
         }
         
         self.myTableView!.reloadData()

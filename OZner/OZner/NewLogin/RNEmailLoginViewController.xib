@@ -173,9 +173,9 @@
                                 <mask key="constraints">
                                     <exclude reference="uik-rv-m74"/>
                                     <exclude reference="qeX-XC-SeA"/>
+                                    <exclude reference="Ser-YQ-ZAM"/>
                                     <exclude reference="AXc-PT-Nel"/>
                                     <exclude reference="LuX-6g-mj0"/>
-                                    <exclude reference="Ser-YQ-ZAM"/>
                                 </mask>
                             </variation>
                         </view>

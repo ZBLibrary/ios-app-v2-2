@@ -34,10 +34,11 @@ class tantouLvXinView_EN: UIView {
     
     @IBOutlet var ErWeiMaContainView: UIView!
     //滤芯使用开始时间
-    @IBOutlet weak var chatAndBuyContainer: UIView!
+    @IBOutlet var chatAndBuyContainer: UIView!
     var maxUserDay:Int=365//净水器365，探头30
     var starDate=""{
         didSet{
+            
             if starDate != ""
             {
                 print(starDate)
@@ -88,6 +89,13 @@ class tantouLvXinView_EN: UIView {
         MoreDeviceButton2.tag=2
         MoreDeviceButton3.tag=3
         // Drawing code
+        
+        print("kkkkkkkkkkkk:\(IsLoginByPhone())")
+       // chatAndBuyContainer.hidden = !IsLoginByPhone()
+        MoreDeviceButton1.enabled = IsLoginByPhone()
+        MoreDeviceButton2.enabled = IsLoginByPhone()
+        MoreDeviceButton3.enabled = IsLoginByPhone()
+
 
         zixunView.layer.borderWidth=0.5
         zixunView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).CGColor
@@ -97,10 +105,6 @@ class tantouLvXinView_EN: UIView {
         saoMaView.layer.borderWidth=0.5
         saoMaView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).CGColor
         
-        chatAndBuyContainer.hidden = !IsLoginByPhone()
-        MoreDeviceButton1.enabled = IsLoginByPhone()
-        MoreDeviceButton2.enabled = IsLoginByPhone()
-        MoreDeviceButton3.enabled = IsLoginByPhone()
     }
     
 
