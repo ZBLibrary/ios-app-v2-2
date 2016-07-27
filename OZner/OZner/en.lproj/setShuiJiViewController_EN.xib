@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="DeviceName" destination="aJT-aT-um9" id="VS0-gI-C4K"/>
                 <outlet property="DeviceNameLable" destination="Hds-se-gbt" id="UE3-yh-KBw"/>
+                <outlet property="aboutContainer" destination="RE9-Ey-9kv" id="NP7-lH-CMY"/>
                 <outlet property="deleteDeviceButton" destination="YGc-Sj-DrQ" id="9V3-4C-dJA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -132,7 +133,7 @@
                                 <action selector="toAboutDevice:" destination="-1" eventType="touchUpInside" id="3na-pd-NBN"/>
                             </connections>
                         </button>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RL7-fN-SOS">
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RL7-fN-SOS">
                             <rect key="frame" x="350" y="17" width="10" height="13"/>
                         </imageView>
                     </subviews>

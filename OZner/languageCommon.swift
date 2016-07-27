@@ -12,8 +12,8 @@ func loadLanguage(text:String)->String
 {
     return NSLocalizedString(text, comment: "")
 }
-
-var IsChinese:Bool = {
-    return loadLanguage("CurrentLanguage")=="CN";
-}()
+//是否是手机号登录
+func IsLoginByPhone() -> Bool {
+    return (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(CHINESE)
+}
         
