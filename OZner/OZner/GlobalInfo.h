@@ -17,6 +17,10 @@
 //登录 - 邮箱
 #define EMAIL_URL_LOGIN                         @"/OznerServer/MailLogin"
 
+//  当前登陆方式
+#define CURRENT_LOGIN_STYLE                     @"currentLoginStyle"
+#define CHINESE                                 @"chinese"
+#define ENGLISH                                 @"english"
 
 //添加设备
 #define WERB_URL_ADD_DEVICE                     @"OznerServer/AddDevice"

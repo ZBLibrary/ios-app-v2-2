@@ -25,8 +25,12 @@
 
 +(LogInOut*)loginInOutInstance;
 
-//登录
+//登录 - 手机
 - (void)loginWithAccount:(NSString*)loginName
+                password:(NSString*)password
+             currentView:(UIView*)currentView;
+//登录 - 邮箱
+- (void)loginWithEmail:(NSString*)loginName
                 password:(NSString*)password
              currentView:(UIView*)currentView;
 
