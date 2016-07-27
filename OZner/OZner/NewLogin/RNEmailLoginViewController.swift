@@ -118,8 +118,8 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
         guard !(emailTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "邮箱不能为空")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Email cannot be empty")
             
             return false
         }
@@ -127,8 +127,8 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
         guard isValidateEmail(emailTextField.text!) else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "邮箱格式不正确")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Email address format is not correct")
             
             return false
         }
@@ -136,8 +136,8 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
         guard !(passwordTextfield.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "密码不能为空")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Password connot be empty")
             
             return false
         }
@@ -276,8 +276,8 @@ extension  RNEmailLoginViewController{
                         error: NSError!) in
                        
                         let alertView=SCLAlertView()
-                        alertView.addButton("确定", action: {})
-                        alertView.showError("错误提示", subTitle: error.localizedDescription)
+                        alertView.addButton("OK", action: {})
+                        alertView.showError("Error Tips", subTitle: error.localizedDescription)
         })
         
         

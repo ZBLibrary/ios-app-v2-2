@@ -229,7 +229,7 @@
         [[NSUserDefaults standardUserDefaults]setObject:CHINESE forKey:CURRENT_LOGIN_STYLE] ;
     }else{
         // 英文-邮箱登陆
-        [[NSUserDefaults standardUserDefaults]setObject:CHINESE forKey:CURRENT_LOGIN_STYLE] ;
+        [[NSUserDefaults standardUserDefaults]setObject:ENGLISH forKey:CURRENT_LOGIN_STYLE] ;
     }
     
     [MBProgressHUD hideHUDForView:currentView animated:YES];

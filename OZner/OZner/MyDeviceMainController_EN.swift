@@ -185,7 +185,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(CHINESE){
             CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         }else{
-            CustomTabBarView.sharedCustomTabBar().hideMyTabBar;
+            CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
         }
        
         setBartteryImg()
