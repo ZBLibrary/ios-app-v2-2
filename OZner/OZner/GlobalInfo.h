@@ -12,8 +12,11 @@
 //外网服务器
 #define HTTP_ADDRESS       @"http://app.ozner.net:888/"//"http://ozner.bynear.cn/"
 
-//登录
+//登录 - 手机号
 #define WERB_URL_LOGIN                          @"OznerServer/Login"
+//登录 - 邮箱
+#define EMAIL_URL_LOGIN                         @"/OznerServer/MailLogin"
+
 
 //添加设备
 #define WERB_URL_ADD_DEVICE                     @"OznerServer/AddDevice"

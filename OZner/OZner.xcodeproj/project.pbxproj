@@ -867,6 +867,7 @@
 		E0F32A2A1D473B2900D78EE5 /* JMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F32A291D473B2900D78EE5 /* JMNavigationController.m */; };
 		E0F32A311D4749B500D78EE5 /* RNModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F32A2F1D4749B500D78EE5 /* RNModifyPasswordViewController.swift */; };
 		E0F32A321D4749B500D78EE5 /* RNModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F32A301D4749B500D78EE5 /* RNModifyPasswordViewController.xib */; };
+		E0F32A361D476D1000D78EE5 /* RNGetSystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F32A351D476D1000D78EE5 /* RNGetSystemInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2288,6 +2289,7 @@
 		E0F32A291D473B2900D78EE5 /* JMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMNavigationController.m; sourceTree = "<group>"; };
 		E0F32A2F1D4749B500D78EE5 /* RNModifyPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		E0F32A301D4749B500D78EE5 /* RNModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RNModifyPasswordViewController.xib; sourceTree = "<group>"; };
+		E0F32A351D476D1000D78EE5 /* RNGetSystemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNGetSystemInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2925,6 +2927,7 @@
 				42A7BB431C0C242B008DB6E5 /* ParseDictionaryData */,
 				42A7BB0B1C0C231B008DB6E5 /* HttpService */,
 				E0F32A271D473B2900D78EE5 /* navigation */,
+				E0F32A351D476D1000D78EE5 /* RNGetSystemInfo.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -5125,6 +5128,7 @@
 				8DA405A91C8441B500AD5E5E /* ZXMonochromeRectangleDetector.m in Sources */,
 				8DA4036D1C843F8600AD5E5E /* LBXScanViewController.m in Sources */,
 				E0F32A231D45F00800D78EE5 /* RNEmailRegisterViewController.swift in Sources */,
+				E0F32A361D476D1000D78EE5 /* RNGetSystemInfo.swift in Sources */,
 				425381451C14A19F005FF2F3 /* MPGraphView.m in Sources */,
 				8DBD54B21C567F3800D04B12 /* FriendsTableViewController.swift in Sources */,
 				8DA405AE1C8441B500AD5E5E /* ZXMultiFormatUPCEANReader.m in Sources */,

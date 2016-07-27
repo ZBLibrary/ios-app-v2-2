@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+       // RNGetSystemInfo.systemLanguage()
+        
         NetworkManager.sharedInstance().startWithAid(nil, sesToken: nil, httpAdress: HTTP_ADDRESS) 
         let switchController = SwitchViewController(nibName: "SwitchViewController", bundle: nil)
         // myTabController
