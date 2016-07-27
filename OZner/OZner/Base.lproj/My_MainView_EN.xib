@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -57,7 +58,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEw-B9-HLC">
                     <rect key="frame" x="0.0" y="191" width="384" height="44"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNk-RV-hd4">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My_share" translatesAutoresizingMaskIntoConstraints="NO" id="uNk-RV-hd4">
                             <rect key="frame" x="13" y="13" width="18" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="18" id="GVZ-Ns-9fw"/>
@@ -76,9 +77,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v73-Ps-iI3">
                             <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
                         </button>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eeC-JD-pCv">
-                            <rect key="frame" x="0.0" y="-191" width="20" height="20"/>
-                        </activityIndicatorView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbB-0H-LTk">
                             <rect key="frame" x="49" y="43" width="335" height="1"/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,7 +119,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyT-fg-wjR">
                     <rect key="frame" x="0.0" y="235" width="384" height="44"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="agl-8V-7RK">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My_suggest" translatesAutoresizingMaskIntoConstraints="NO" id="agl-8V-7RK">
                             <rect key="frame" x="13" y="13" width="18" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="18" id="BdD-of-mkb"/>
@@ -184,7 +182,7 @@
                                 <constraint firstAttribute="height" constant="1" id="Mdc-Y5-CAh"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-rt-rg1">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My_set" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-rt-rg1">
                             <rect key="frame" x="13" y="13" width="18" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="18" id="Q1y-yZ-SMR"/>
@@ -265,6 +263,9 @@
     </objects>
     <resources>
         <image name="My_Unlogin_head" width="75" height="75"/>
+        <image name="My_set" width="16" height="16"/>
+        <image name="My_share" width="16" height="16"/>
+        <image name="My_suggest" width="16" height="16"/>
         <image name="My_toright_icon" width="10" height="13"/>
     </resources>
 </document>

@@ -91,7 +91,7 @@ NSString * kSelfThumb  ;//会员头像
 
     id tmpphone=[[NSUserDefaults standardUserDefaults] objectForKey:@"Phone"];
     if (tmpphone==nil||[tmpphone isEqualToString:@""]) {
-        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"请登陆" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"ok", nil];
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:loadLanguage(@"提示") message:loadLanguage(@"请登陆") delegate:self cancelButtonTitle:loadLanguage(@"取消") otherButtonTitles:@"ok", nil];
         [alert show];
         return;
     }

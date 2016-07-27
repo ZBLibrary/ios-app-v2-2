@@ -218,6 +218,19 @@
     
 }
 
+- (void)customViewAddInfoMation
+{
+
+    //我的信息
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MyInfoViewController* infoController = [mainStoryboard instantiateViewControllerWithIdentifier:@"MyinfoViewController"];
+    mAddDeviceNavController = [[UINavigationController alloc] initWithRootViewController:infoController];
+     mAddDeviceNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [mAddDeviceNavController.navigationBar loadNavigationBar];
+    
+    [self.view addSubview:mAddDeviceNavController.view];
+}
+
 #pragma mark- LoginOutDelegate
 - (void)onLoginSuccess:(LoginUserInfo *)loginUserInfo currentView:(UIView *)currentView
 {
@@ -229,7 +242,7 @@
         [[NSUserDefaults standardUserDefaults]setObject:CHINESE forKey:CURRENT_LOGIN_STYLE] ;
     }else{
         // 英文-邮箱登陆
-        [[NSUserDefaults standardUserDefaults]setObject:CHINESE forKey:CURRENT_LOGIN_STYLE] ;
+        [[NSUserDefaults standardUserDefaults]setObject:ENGLISH forKey:CURRENT_LOGIN_STYLE] ;
     }
     
     [MBProgressHUD hideHUDForView:currentView animated:YES];
