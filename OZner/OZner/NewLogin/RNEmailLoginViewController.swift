@@ -79,7 +79,7 @@ class RNEmailLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // phoneLoginButton.hidden = true
+        phoneLoginButton.hidden = true
         
         addDelegateForTextField()
         keyBoardObserve()
