@@ -12,3 +12,8 @@ func loadLanguage(text:String)->String
 {
     return NSLocalizedString(text, comment: "")
 }
+
+var IsChinese:Bool = {
+    return loadLanguage("CurrentLanguage")=="CN";
+}()
+        

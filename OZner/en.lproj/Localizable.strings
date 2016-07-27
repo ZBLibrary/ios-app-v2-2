@@ -13,6 +13,7 @@
 
 // MyDeviceMainController
 //图片
+"CurrentLanguage" = "EN";
 "icon_buble_add_device.png" = "icon_buble_add_device_en.png";
 
 "滤芯状态" = "Filter status" ; // ....

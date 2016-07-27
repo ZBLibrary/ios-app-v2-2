@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         
         // Override point for customization after application launch.
         
-       // RNGetSystemInfo.systemLanguage()
-        
+        // RNGetSystemInfo.systemLanguage()
+        print("ischinese:\(IsChinese)")
         NetworkManager.sharedInstance().startWithAid(nil, sesToken: nil, httpAdress: HTTP_ADDRESS) 
         let switchController = SwitchViewController(nibName: "SwitchViewController", bundle: nil)
         // myTabController
