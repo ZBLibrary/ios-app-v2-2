@@ -174,6 +174,13 @@
         
         mHomeController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [self.view addSubview:mHomeController.view];
+        if ([[[LoginManager loginInstance]loginInfo].loginName containsString:@"@"] == false){
+            // 中文-手机号登陆
+            [[NSUserDefaults standardUserDefaults]setObject:LoginByPhone forKey:CURRENT_LOGIN_STYLE] ;
+        }else{
+            // 英文-邮箱登陆
+            [[NSUserDefaults standardUserDefaults]setObject:LoginByEmail forKey:CURRENT_LOGIN_STYLE] ;
+        }
         [[OznerManager instance]setOwner:[[LoginManager loginInstance]loginInfo].loginName];
         [[NetworkManager sharedInstance] startWithAid:nil sesToken:[[LoginManager loginInstance]loginInfo].sessionToken httpAdress:HTTP_ADDRESS];
         //创建数据库，如果存在就直接打开，如果不存在就关闭
@@ -184,7 +191,7 @@
     }
     else
     {
-        
+        //
         NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
         
        // NSLog(@"jjhjkjjjj;%@",currentLanguage) ;
