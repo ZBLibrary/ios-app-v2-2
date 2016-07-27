@@ -64,6 +64,7 @@ class RNEmailLoginViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        //
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
@@ -192,7 +193,10 @@ extension  RNEmailLoginViewController{
         }
         
         // 登陆请求
-        loginRequeset()
+        //loginRequeset()
+        
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        LogInOut.loginInOutInstance().loginWithEmail(emailTextField.text!, password: passwordTextfield.text!, currentView: self.view)
     }
     
     // 忘记密码

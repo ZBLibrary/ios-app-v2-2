@@ -12,7 +12,10 @@
 
 @interface LoginWerbService : NSObject
 
-//登录
+//登录 - 手机号
 - (ASIFormDataRequest*)login:(NSString*)userName psw:(NSString*)psw returnBlock:(void(^)(LoginUserInfo* userInfo, StatusManager* status))handler;
+
+//登录 - 邮箱
+- (ASIFormDataRequest*)loginByEmail:(NSString*)userName psw:(NSString*)psw returnBlock:(void(^)(LoginUserInfo* userInfo, StatusManager* status))handler;
 
 @end
