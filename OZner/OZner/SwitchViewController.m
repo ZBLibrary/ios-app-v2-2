@@ -174,7 +174,7 @@
         
         mHomeController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [self.view addSubview:mHomeController.view];
-        [[OznerManager instance]setOwner:@"CupLibrary"];
+        [[OznerManager instance]setOwner:[[LoginManager loginInstance]loginInfo].loginName];
         [[NetworkManager sharedInstance] startWithAid:nil sesToken:[[LoginManager loginInstance]loginInfo].sessionToken httpAdress:HTTP_ADDRESS];
         //创建数据库，如果存在就直接打开，如果不存在就关闭
         [[LoginManager loginInstance]decodeParamObject];
@@ -223,13 +223,13 @@
 {
     
     // 登陆成功之后根据系统语言判断当前的登陆当时并保存到 NSUserDefalut
-    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
-    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+    //NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+    if ([loginUserInfo.loginName containsString:@"@"] == false){
         // 中文-手机号登陆
-        [[NSUserDefaults standardUserDefaults]setObject:CHINESE forKey:CURRENT_LOGIN_STYLE] ;
+        [[NSUserDefaults standardUserDefaults]setObject:LoginByPhone forKey:CURRENT_LOGIN_STYLE] ;
     }else{
         // 英文-邮箱登陆
-        [[NSUserDefaults standardUserDefaults]setObject:CHINESE forKey:CURRENT_LOGIN_STYLE] ;
+        [[NSUserDefaults standardUserDefaults]setObject:LoginByEmail forKey:CURRENT_LOGIN_STYLE] ;
     }
     
     [MBProgressHUD hideHUDForView:currentView animated:YES];

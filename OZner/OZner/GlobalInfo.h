@@ -19,8 +19,8 @@
 
 //  当前登陆方式
 #define CURRENT_LOGIN_STYLE                     @"currentLoginStyle"
-#define CHINESE                                 @"chinese"
-#define ENGLISH                                 @"english"
+#define LoginByPhone                            @"LoginByPhone"
+#define LoginByEmail                            @"LoginByEmail"
 
 //添加设备
 #define WERB_URL_ADD_DEVICE                     @"OznerServer/AddDevice"
