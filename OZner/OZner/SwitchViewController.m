@@ -222,7 +222,7 @@
 - (void)onLoginSuccess:(LoginUserInfo *)loginUserInfo currentView:(UIView *)currentView
 {
     
-    // 登陆成功之后根据系统语言判断当前的登陆当时并保存到 NSUserDefalut
+    // 登陆成功之后根据系统语言判断当前的登陆方式并保存到 NSUserDefalut
     NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
     if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
         // 中文-手机号登陆

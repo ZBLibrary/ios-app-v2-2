@@ -182,12 +182,13 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         OznerDeviceSensorUpdate(self.myCurrentDevice)
         self.navigationController?.navigationBarHidden=true
         
+        // 判断登陆方式
         if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(CHINESE){
             CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         }else{
-            CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+            CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
         }
-       
+        
         setBartteryImg()
     }
 
