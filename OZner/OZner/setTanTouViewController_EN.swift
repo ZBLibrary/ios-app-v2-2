@@ -149,10 +149,11 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
     func curLabelTime(timeStr:String)->NSDate
     {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat="YYYY-MM-DD"
-        var nowStr=dateFormatter.stringFromDate(NSDate())
+        dateFormatter.dateFormat="YYYY-MM-dd"
+        var nowStr:String=dateFormatter.stringFromDate(NSDate())
         nowStr=nowStr+" "+timeStr+":00"
-        dateFormatter.dateFormat="YYYY-MM-DD hh:mm:ss"
+//        let value = "2016-07-27 18:00:00"
+        dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
         let tmpDate=dateFormatter.dateFromString(nowStr)! as NSDate
         print(tmpDate)
         
