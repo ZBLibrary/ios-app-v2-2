@@ -22,7 +22,7 @@ class MyInfoViewController: UIViewController {
         ScrollView.backgroundColor=UIColor(red: 238/255, green: 239/255, blue: 240/255, alpha: 1)
         mainView=NSBundle.mainBundle().loadNibNamed("My_MainView", owner: nil, options: nil).last as! My_MainView
         mainView_EN=NSBundle.mainBundle().loadNibNamed("My_MainView_EN", owner: nil, options: nil).last as! My_MainView_EN
-        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(CHINESE) {
+        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
             
             //添加数据和事件
             mainView.My_Equids_button.addTarget(self, action: #selector(EquidsClick), forControlEvents: .TouchUpInside)
@@ -101,7 +101,7 @@ class MyInfoViewController: UIViewController {
         //get_Phone()
         let werbservice = MyInfoWerbservice()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        if get_Phone() == "null" ||  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(ENGLISH)  {
+        if get_Phone() == "null" ||  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail)  {
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             return
         }
@@ -241,7 +241,7 @@ class MyInfoViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //我的设备数量
-        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(CHINESE) {
+        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
             let devices=OznerManager.instance().getDevices() as [AnyObject!]
             mainView.My_EquipCount.text="\(devices.count)"
             self.navigationController?.navigationBarHidden=true

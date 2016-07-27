@@ -249,8 +249,11 @@
         [[NSUserDefaults standardUserDefaults]setObject:LoginByPhone forKey:CURRENT_LOGIN_STYLE] ;
     }else{
         // 英文-邮箱登陆
+<<<<<<< HEAD
+        [[NSUserDefaults standardUserDefaults]setObject:ENGLISH forKey:CURRENT_LOGIN_STYLE] ;
+=======
         [[NSUserDefaults standardUserDefaults]setObject:LoginByEmail forKey:CURRENT_LOGIN_STYLE] ;
-
+>>>>>>> master_English_EN
     }
     
     [MBProgressHUD hideHUDForView:currentView animated:YES];

@@ -49,7 +49,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         bgImgView.image = UIImage(named: "mydevice_bg.png")
         self.myBgImgView = bgImgView
         self.myView.addSubview(bgImgView)
-        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(ENGLISH) {
+        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail) {
             luangeHeight = 140
             let btn = UIButton(type: UIButtonType.Custom)
             btn.frame = CGRect(x: 0, y: 20, width: self.myView.frame.size.width, height: 90*(height/667.0))
