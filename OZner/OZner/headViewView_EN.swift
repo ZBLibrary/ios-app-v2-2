@@ -13,6 +13,7 @@ let airViewColor_state3:UIColor=UIColor(red: 254/255, green: 101/255, blue: 101/
 class headViewView_EN: UIView {
 
     
+    @IBOutlet var FuLiZiOfSmallAir: UILabel!
     @IBOutlet var loadingLabel: UILabel!
     @IBOutlet var headTitle: UILabel!
     @IBOutlet var toLeftMenu: UIButton!
@@ -32,7 +33,7 @@ class headViewView_EN: UIView {
     @IBOutlet var PM25: UILabel!
     
     @IBOutlet var LvXinState: UIButton!
-    @IBOutlet weak var Airpulifer: UILabel!
+    
     @IBOutlet var centerViewzb: UIView!
     
     @IBOutlet var LvXinStateImage: UIImageView!
@@ -43,7 +44,7 @@ class headViewView_EN: UIView {
         }
     }
     //负离子，台式空净
-    @IBOutlet weak var FuLiZiOfSmallAir: UILabel!
+    //@IBOutlet weak var FuLiZiOfSmallAir: UILabel!
     
    
     // Only override drawRect: if you perform custom drawing.
@@ -53,7 +54,7 @@ class headViewView_EN: UIView {
         
       //polution.text = loadLanguage("滤芯状态");
         
-        //Airpulifer.text = loadLanguage("台式空气净化器");
+        
         
         setNeedsLayout()
         layoutIfNeeded()
