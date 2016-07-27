@@ -286,7 +286,8 @@
 {
     [MBProgressHUD hideHUDForView:currentView animated:YES];
     
-    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:loadLanguage(@"提示") message:loadLanguage(@"账号或密码错误") delegate:nil cancelButtonTitle:loadLanguage(@"确定") otherButtonTitles: nil, nil] ;
+    [alert show] ;
 }
 
 - (void)onNoNeedLogin:(UIView *)currentView
