@@ -64,6 +64,7 @@ class RNEmailLoginViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        //
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
