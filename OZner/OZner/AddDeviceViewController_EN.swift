@@ -61,11 +61,11 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
             
         case 3:
             
-            cell.layOutAddDeviceCell("select_device_3zb", content: loadLanguage("台式空净"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+            cell.layOutAddDeviceCell("select_device_3zb", content: loadLanguage("台式空净专用"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
             
         case 4:
             
-            cell.layOutAddDeviceCell("select_device_4zb", content: loadLanguage("立式空净"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
+            cell.layOutAddDeviceCell("select_device_4zb", content: loadLanguage("立式空净专用"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
         case 5:
             
             cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
