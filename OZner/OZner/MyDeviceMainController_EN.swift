@@ -698,7 +698,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                             self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
                             break
                         }
-                        self.lvxinState.text=value<=30 ? "请及时更换滤芯":"滤芯状态"
+                        self.lvxinState.text=value<=30 ? loadLanguage("请及时更换滤芯"):loadLanguage("滤芯状态")
                         value=value<=0 ? 0:value
                         self.lvxinValue.text = "\(value)%"
                         if value==0&&(maxUserDay-userDay.floatValue)>0
