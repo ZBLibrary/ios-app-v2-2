@@ -13,7 +13,7 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
     var myCurrentDevice:OznerDevice?
     let plistName:String=get_CurrSelectEquip()==4 ? "setSmallAir_EN":"setBigAir_EN"
     var plistData:NSMutableDictionary!
-    var mainView:setSmallAirView_EN!
+    var mainView:setSmallAirView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +36,7 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
         plistData=getPlistData(plistName)
         let ScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight))
         ScrollView.backgroundColor=UIColor(red: 238/255, green: 239/255, blue: 240/255, alpha: 1)
-        mainView=NSBundle.mainBundle().loadNibNamed("setSmallAirViewXib_EN", owner: nil, options: nil).last as! setSmallAirView_EN
+        mainView=NSBundle.mainBundle().loadNibNamed("setSmallAirViewXib", owner: nil, options: nil).last as! setSmallAirView
         mainView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: mainView.bounds.size.height)
         //loadDeviceData加载设备里面数据
         loadDeviceData()

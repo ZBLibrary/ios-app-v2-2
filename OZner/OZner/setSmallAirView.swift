@@ -8,7 +8,7 @@
 
 import UIKit
 
-class setSmallAirView_EN: UIView {
+class setSmallAirView: UIView {
 
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var nameValue: UILabel!
@@ -27,7 +27,7 @@ class setSmallAirView_EN: UIView {
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         // Drawing code
-        //nameLabel.text=loadLanguage("立式空气净化器")
+         //nameLabel.text=loadLanguage("立式空气净化器")
         color.text=loadLanguage("显示灯带颜色")
         TiXing.text=loadLanguage("空气质量灯光提醒")
         You.text=loadLanguage("优")

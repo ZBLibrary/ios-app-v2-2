@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="EJA-a0-DNp" customClass="setSmallAirView_EN">
+        <view contentMode="scaleToFill" id="EJA-a0-DNp" customClass="setSmallAirView" customModule="OZner" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -22,7 +23,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立式空气净化器(客厅)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZK-YO-WXb">
-                            <rect key="frame" x="138" y="11" width="211" height="21"/>
+                            <rect key="frame" x="168" y="11" width="181" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="18B-0H-Z2z"/>
                                 <constraint firstAttribute="width" constant="127" id="8Mt-Ub-jYS"/>
@@ -43,21 +44,21 @@
                                 <constraint firstAttribute="height" constant="18" id="wpo-oa-Ecz"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立式空气净化器" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-vj-wCd">
-                            <rect key="frame" x="15" y="11" width="100" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desk-top air purifier" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-vj-wCd">
+                            <rect key="frame" x="15" y="11" width="130" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="5rT-gg-x76"/>
-                                <constraint firstAttribute="width" constant="100" id="I7c-jp-n7Q"/>
+                                <constraint firstAttribute="width" constant="130" id="I7c-jp-n7Q"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                             <color key="textColor" red="0.22352941176470587" green="0.22745098039215686" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示灯带颜色" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-zg-cA8">
-                            <rect key="frame" x="15" y="56" width="77" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show LED ring color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-zg-cA8">
+                            <rect key="frame" x="15" y="56" width="200" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="91I-Sv-ze8"/>
-                                <constraint firstAttribute="width" constant="77" id="EY5-qT-N9H"/>
+                                <constraint firstAttribute="width" constant="200" id="EY5-qT-N9H"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                             <color key="textColor" red="0.47843137254901957" green="0.4823529411764706" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,7 +67,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opl-f8-g4c">
                             <rect key="frame" x="0.0" y="79" width="375" height="126"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空气质量灯光提醒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdC-4V-0Sq">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light signal for air quality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdC-4V-0Sq">
                                     <rect key="frame" x="13" y="13" width="220" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="b4B-yX-2RN"/>
@@ -76,35 +77,35 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="showhuan3" translatesAutoresizingMaskIntoConstraints="NO" id="QAf-j3-4ZR">
-                                    <rect key="frame" x="268" y="42" width="43" height="43"/>
+                                    <rect key="frame" x="286" y="42" width="43" height="43"/>
                                 </imageView>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="showhuan22" translatesAutoresizingMaskIntoConstraints="NO" id="hdU-nm-BgQ">
                                     <rect key="frame" x="166" y="42" width="43" height="43"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="污染较少" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOg-QH-SbF">
-                                    <rect key="frame" x="152" y="95" width="72" height="11"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Less pollution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOg-QH-SbF">
+                                    <rect key="frame" x="143" y="95" width="90" height="11"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="11" id="Ykv-KH-Cyv"/>
-                                        <constraint firstAttribute="width" constant="72" id="tIR-5q-3Hp"/>
+                                        <constraint firstAttribute="width" constant="90" id="tIR-5q-3Hp"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" red="0.52941176469999995" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="污染严重" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXJ-vy-nCW">
-                                    <rect key="frame" x="253" y="95" width="72" height="11"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heavy pollution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXJ-vy-nCW">
+                                    <rect key="frame" x="262" y="95" width="90" height="11"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="ElC-v1-lKf"/>
                                         <constraint firstAttribute="height" constant="11" id="HcM-WB-04r"/>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="11" id="We9-6d-KqC"/>
-                                        <constraint firstAttribute="width" constant="72" id="dd6-Xd-mYD"/>
+                                        <constraint firstAttribute="width" constant="90" id="dd6-Xd-mYD"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" red="0.52941176469999995" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6L-jJ-Bqg">
-                                    <rect key="frame" x="49" y="95" width="72" height="11"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6L-jJ-Bqg">
+                                    <rect key="frame" x="40" y="95" width="72" height="11"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="11" id="Tdx-SG-Htw"/>
                                         <constraint firstAttribute="width" constant="72" id="eSE-sr-kZW"/>
@@ -114,7 +115,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="showhuan1" translatesAutoresizingMaskIntoConstraints="NO" id="dHQ-5u-FVO">
-                                    <rect key="frame" x="64" y="42" width="42" height="43"/>
+                                    <rect key="frame" x="55" y="42" width="42" height="43"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,10 +142,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0R6-gn-q0E">
                             <rect key="frame" x="0.0" y="223" width="375" height="49"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空气净化器使用说明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZI-pg-WX1">
-                                    <rect key="frame" x="15" y="16" width="141" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instruction of air purifier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZI-pg-WX1">
+                                    <rect key="frame" x="15" y="16" width="200" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="141" id="TJR-TR-VlN"/>
+                                        <constraint firstAttribute="width" constant="200" id="TJR-TR-VlN"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                     <color key="textColor" red="0.22352941179999999" green="0.2274509804" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -184,7 +185,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giy-jJ-TOU">
                             <rect key="frame" x="0.0" y="290" width="375" height="43"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="常见问题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIF-3N-zwb">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FAQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIF-3N-zwb">
                                     <rect key="frame" x="13" y="11" width="60" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="eYT-KW-MnM"/>
@@ -225,7 +226,7 @@
                                 <constraint firstAttribute="height" constant="44" id="yeZ-RP-Id5"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                            <state key="normal" title="删除此设备">
+                            <state key="normal" title="Delete the device">
                                 <color key="titleColor" red="0.90196078430000004" green="0.18039215689999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>

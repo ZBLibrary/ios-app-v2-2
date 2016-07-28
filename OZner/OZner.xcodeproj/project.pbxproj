@@ -821,7 +821,6 @@
 		B7D8C1A01D2376680089C241 /* SetRemindTimeController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1931D2376680089C241 /* SetRemindTimeController_EN.xib */; };
 		B7D8C1A11D2376680089C241 /* SetSexViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1951D2376680089C241 /* SetSexViewController_EN.xib */; };
 		B7D8C1A21D2376680089C241 /* setShuiJiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1971D2376680089C241 /* setShuiJiViewController_EN.xib */; };
-		B7D8C1A31D2376680089C241 /* setSmallAirViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1991D2376680089C241 /* setSmallAirViewXib_EN.xib */; };
 		B7D8C1A41D2376680089C241 /* setTanTouViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C19B1D2376680089C241 /* setTanTouViewController_EN.xib */; };
 		B7D8C1BD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1AD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift */; };
 		B7D8C1BE1D2376F60089C241 /* setAirViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1AE1D2376F60089C241 /* setAirViewController_EN.swift */; };
@@ -833,7 +832,6 @@
 		B7D8C1C41D2376F60089C241 /* setShuiJi_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1B41D2376F60089C241 /* setShuiJi_EN.plist */; };
 		B7D8C1C51D2376F60089C241 /* setShuiJiViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B51D2376F60089C241 /* setShuiJiViewController_EN.swift */; };
 		B7D8C1C61D2376F60089C241 /* setSmallAir_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1B61D2376F60089C241 /* setSmallAir_EN.plist */; };
-		B7D8C1C71D2376F60089C241 /* setSmallAirView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B71D2376F60089C241 /* setSmallAirView_EN.swift */; };
 		B7D8C1C81D2376F60089C241 /* setTanTou_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1B81D2376F60089C241 /* setTanTou_EN.plist */; };
 		B7D8C1C91D2376F60089C241 /* setTanTouViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B91D2376F60089C241 /* setTanTouViewController_EN.swift */; };
 		B7D8C1CA1D2376F60089C241 /* setWaterReplenish_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */; };
@@ -846,6 +844,8 @@
 		B7D8C2371D24AFB10089C241 /* VOC_AirViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C2391D24AFB10089C241 /* VOC_AirViewController_EN.xib */; };
 		B7D8C23A1D24B3E20089C241 /* smallFooterViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C23C1D24B3E20089C241 /* smallFooterViewXib_EN.xib */; };
 		B7D8C23D1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C23F1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib */; };
+		B7F5B7171D499E6800446670 /* setSmallAirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B7161D499E6800446670 /* setSmallAirView.swift */; };
+		B7F5B71A1D499F1B00446670 /* setSmallAirViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B71C1D499F1B00446670 /* setSmallAirViewXib.xib */; };
 		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */; };
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */; };
@@ -2215,7 +2215,6 @@
 		B7D8C1941D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1961D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetSexViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1981D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setShuiJiViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C19A1D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setSmallAirViewXib_EN.xib; sourceTree = "<group>"; };
 		B7D8C19C1D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setTanTouViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A51D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/mainOfSetWaterReplenCell_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A61D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCuoTimeViewController_EN.xib; sourceTree = "<group>"; };
@@ -2223,7 +2222,6 @@
 		B7D8C1A81D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A91D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetSexViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1AA1D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setShuiJiViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C1AB1D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setSmallAirViewXib_EN.xib; sourceTree = "<group>"; };
 		B7D8C1AC1D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setTanTouViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1AD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell_EN.swift; sourceTree = "<group>"; };
 		B7D8C1AE1D2376F60089C241 /* setAirViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setAirViewController_EN.swift; sourceTree = "<group>"; };
@@ -2235,7 +2233,6 @@
 		B7D8C1B41D2376F60089C241 /* setShuiJi_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setShuiJi_EN.plist; sourceTree = "<group>"; };
 		B7D8C1B51D2376F60089C241 /* setShuiJiViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setShuiJiViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C1B61D2376F60089C241 /* setSmallAir_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setSmallAir_EN.plist; sourceTree = "<group>"; };
-		B7D8C1B71D2376F60089C241 /* setSmallAirView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView_EN.swift; sourceTree = "<group>"; };
 		B7D8C1B81D2376F60089C241 /* setTanTou_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setTanTou_EN.plist; sourceTree = "<group>"; };
 		B7D8C1B91D2376F60089C241 /* setTanTouViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setTanTouViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish_EN.plist; sourceTree = "<group>"; };
@@ -2252,6 +2249,9 @@
 		B7D8C2381D24AFB10089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VOC_AirViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C23B1D24B3E20089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/smallFooterViewXib_EN.xib; sourceTree = "<group>"; };
 		B7D8C23E1D24C13D0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
+		B7F5B7161D499E6800446670 /* setSmallAirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView.swift; sourceTree = "<group>"; };
+		B7F5B71B1D499F1B00446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setSmallAirViewXib.xib; sourceTree = "<group>"; };
+		B7F5B71D1D499F2100446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setSmallAirViewXib.xib; sourceTree = "<group>"; };
 		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
@@ -3599,8 +3599,8 @@
 			isa = PBXGroup;
 			children = (
 				B7D8C1AE1D2376F60089C241 /* setAirViewController_EN.swift */,
-				B7D8C1B71D2376F60089C241 /* setSmallAirView_EN.swift */,
-				B7D8C1991D2376680089C241 /* setSmallAirViewXib_EN.xib */,
+				B7F5B7161D499E6800446670 /* setSmallAirView.swift */,
+				B7F5B71C1D499F1B00446670 /* setSmallAirViewXib.xib */,
 				B7D8C1B61D2376F60089C241 /* setSmallAir_EN.plist */,
 				B7D8C1AF1D2376F60089C241 /* setBigAir_EN.plist */,
 			);
@@ -4675,7 +4675,6 @@
 				E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */,
 				8DB0440F1CC8CCE200B60DAB /* tantou_dianliang_2.png in Resources */,
 				4288C5301C0F01A700446D3E /* SwiftFatherViewController.xib in Resources */,
-				B7D8C1A31D2376680089C241 /* setSmallAirViewXib_EN.xib in Resources */,
 				8DB0444A1CC8CD1700B60DAB /* icon_jiare@3x.png in Resources */,
 				8DB044611CC8CD2C00B60DAB /* icon_lvxin_more_3.png in Resources */,
 				8DB0445D1CC8CD2C00B60DAB /* lvxin_icon_state.png in Resources */,
@@ -4808,6 +4807,7 @@
 				4281414A1C0B15F0006FEDDE /* ic_menu_black_24dp@2x.png in Resources */,
 				B7D8C1A41D2376680089C241 /* setTanTouViewController_EN.xib in Resources */,
 				425F7A291C32B0C500C8B2E3 /* new_help_0@3x.png in Resources */,
+				B7F5B71A1D499F1B00446670 /* setSmallAirViewXib.xib in Resources */,
 				E0EFFEF51D06607E00E43C20 /* OffLineSuggestView_EN.xib in Resources */,
 				8DB044051CC8CCE200B60DAB /* device_konw@3x.png in Resources */,
 				8DB044B61CC8CD5500B60DAB /* device_jin_shui_qi_normal.png in Resources */,
@@ -5363,9 +5363,9 @@
 				8DA405D81C8441B500AD5E5E /* ZXQRCodeDetector.m in Sources */,
 				8DF060B01CC90F6100EC05D9 /* ViewController+SnapKit.swift in Sources */,
 				523DC33F1C175E1B00595099 /* XMChatFaceView.m in Sources */,
-				B7D8C1C71D2376F60089C241 /* setSmallAirView_EN.swift in Sources */,
 				8DA4057F1C8441B500AD5E5E /* ZXDataMatrixWriter.m in Sources */,
 				523DC34B1C175E1B00595099 /* XMTextMessage.m in Sources */,
+				B7F5B7171D499E6800446670 /* setSmallAirView.swift in Sources */,
 				524337431C42A5BB0024133D /* AirPurifier_Bluetooth.m in Sources */,
 				8DA4054C1C8441B500AD5E5E /* ZXAztecDecoder.m in Sources */,
 				8DA405F61C8441B500AD5E5E /* ZXRSSExpandedPair.m in Sources */,
@@ -5716,15 +5716,6 @@
 			name = setShuiJiViewController_EN.xib;
 			sourceTree = "<group>";
 		};
-		B7D8C1991D2376680089C241 /* setSmallAirViewXib_EN.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7D8C19A1D2376680089C241 /* en */,
-				B7D8C1AB1D23769D0089C241 /* Base */,
-			);
-			name = setSmallAirViewXib_EN.xib;
-			sourceTree = "<group>";
-		};
 		B7D8C19B1D2376680089C241 /* setTanTouViewController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -5800,6 +5791,15 @@
 				B7D8C23E1D24C13D0089C241 /* en */,
 			);
 			name = SkinFooterTableViewCell_EN.xib;
+			sourceTree = "<group>";
+		};
+		B7F5B71C1D499F1B00446670 /* setSmallAirViewXib.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7F5B71B1D499F1B00446670 /* en */,
+				B7F5B71D1D499F2100446670 /* Base */,
+			);
+			name = setSmallAirViewXib.xib;
 			sourceTree = "<group>";
 		};
 		E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */ = {
