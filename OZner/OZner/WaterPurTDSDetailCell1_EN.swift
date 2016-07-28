@@ -16,7 +16,8 @@ class WaterPurTDSDetailCell1_EN: UITableViewCell {
     @IBOutlet var toChat: UIButton!
     //
     @IBOutlet var chatView: UIView!
-    @IBOutlet weak var rankContainer: UIView!
+    @IBOutlet var rankContainer: UIView!
+
     //
     @IBOutlet var TDS_Before: UILabel!
     @IBOutlet var TDS_After: UILabel!
@@ -27,6 +28,7 @@ class WaterPurTDSDetailCell1_EN: UITableViewCell {
     //更新视图数据
     func updateCell(tdsBefore:Int,tdsAfter:Int,friendsRank:Int)
     {
+        
         //
         if friendsRank != 0
         {
@@ -75,7 +77,8 @@ class WaterPurTDSDetailCell1_EN: UITableViewCell {
         super.awakeFromNib()
         chatView.layer.borderColor=UIColor(red: 64/255, green: 140/255, blue: 246/255, alpha: 1).CGColor
         chatView.hidden = !IsLoginByPhone()
-        rankContainer.hidden = !IsLoginByPhone()
+       
+       // rankContainer.hidden = !IsLoginByPhone()
         // Initialization code
     }
 
