@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -23,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="10" width="375" height="114"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="改善您的饮水健康" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSd-gp-hUc">
-                                        <rect key="frame" x="0.0" y="18.5" width="375" height="19"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="3is-Hf-q3Q"/>
                                         </constraints>
@@ -32,7 +31,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adT-HG-L5f">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="55" width="375" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-e0-kNE">
                                                 <rect key="frame" x="0.0" y="0.0" width="29" height="40"/>
@@ -143,7 +142,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiu-2w-Q48">
-                                        <rect key="frame" x="0.0" y="95.5" width="375" height="18.5"/>
+                                        <rect key="frame" x="0.0" y="95" width="375" height="18.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhu-bH-k6T">
@@ -151,7 +150,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHi-jV-CoX">
-                                        <rect key="frame" x="0.0" y="37.5" width="375" height="18"/>
+                                        <rect key="frame" x="0.0" y="37" width="375" height="18"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
