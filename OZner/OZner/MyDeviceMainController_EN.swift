@@ -16,7 +16,7 @@ import UIKit
 class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,CustomOCCircleView_ENDelegate,OznerDeviceDelegate,UIScrollViewDelegate,UIAlertViewDelegate{
     
     
-    
+    //
     //---------------airCleaner------------
     //主滚动视图
     var MainScrollView: UIScrollView!

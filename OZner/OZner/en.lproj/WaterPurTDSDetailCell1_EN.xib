@@ -399,7 +399,7 @@
                 <outlet property="chatView" destination="h07-yK-5sD" id="XVd-Up-kXV"/>
                 <outlet property="faceImg" destination="tsq-lc-q4b" id="Nq9-wq-hnP"/>
                 <outlet property="friendRank" destination="cgK-Oz-QPy" id="pDy-Pw-ebW"/>
-                <outlet property="rankContainer" destination="qSq-Su-weS" id="YvN-Tz-TYu"/>
+                <outlet property="rankContainer" destination="qSq-Su-weS" id="bBO-zg-639"/>
                 <outlet property="shareButton" destination="tQR-0H-S6C" id="hjJ-5w-OV1"/>
                 <outlet property="suggestion" destination="BPq-ys-yER" id="kgE-MT-YwO"/>
                 <outlet property="toChat" destination="Jj1-VF-QnD" id="0n4-Sx-ntx"/>
