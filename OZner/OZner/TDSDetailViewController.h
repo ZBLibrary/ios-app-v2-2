@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "OznerDevice.h"
 
-@interface TDSDetailViewController_EN : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface TDSDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
     BOOL m_isShowCircle;
 }

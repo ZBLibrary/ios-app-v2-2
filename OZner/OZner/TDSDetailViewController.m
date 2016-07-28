@@ -6,7 +6,7 @@
 //  Copyright © 2015年 sunlinlin. All rights reserved.
 //
 
-#import "TDSDetailViewController_EN.h"
+#import "TDSDetailViewController.h"
 
 #import "DeviceWerbservice.h"
 #import "CustomTabBarView.h"
@@ -14,13 +14,13 @@
 #import "MBProgressHUD.h"
 #import "OZner-swift.h"
 
-@interface TDSDetailViewController_EN ()
+@interface TDSDetailViewController ()
 
 //@property (nonatomic,strong) TDSDetailSecondCell* currentSecondCell;
 
 @end
 
-@implementation TDSDetailViewController_EN
+@implementation TDSDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -98,13 +98,13 @@
     UIImage* image = [getClass getshareImagezb:self.defeatRank type:1 value:self.tdsValue beat:beatzb maxWater:0];
     
     //微信朋友圈
-    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"浩泽净水家") shareImg:image];
+    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:@"浩泽净水家" shareImg:image];
 }
 - (void)toWhatTDS
 {
-//    ToWhatViewController* tdsState=[[ToWhatViewController alloc] initWithNibName:@"ToWhatViewController" bundle:nil];
-//    [tdsState setTitle:loadLanguage(@"什么是TDS?")];
-//    [self.navigationController pushViewController:tdsState animated:YES];
+    ToWhatViewController_EN* tdsState=[[ToWhatViewController_EN alloc] initWithNibName:@"ToWhatViewController_EN" bundle:nil];
+    [tdsState setTitle:@"什么是TDS?"];
+    [self.navigationController pushViewController:tdsState animated:YES];
 }
 //#pragma mark-AmountOfDrinkingWaterFirstCellDelegate
 - (void)amountOfDrinkingWaterZiXunAction
@@ -121,7 +121,7 @@
 - (void)jianKangShuiAction
 {
     WeiXinURLViewController_EN* URLController=[[WeiXinURLViewController_EN alloc] initWithNibName:@"WeiXinURLViewController_EN" bundle:nil];
-    [URLController setTitle:loadLanguage(@"健康水知道")];
+    [URLController setTitle:@"健康水知道"];
     [self presentViewController:URLController animated:true completion:nil];
 }
 
@@ -148,18 +148,18 @@
 - (UITableViewCell*)createFirstCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* amountWaterFirstCell = @"amountWaterFirstCell";
-    TDSDetailCellzb_EN* wCell = [tableView dequeueReusableCellWithIdentifier:amountWaterFirstCell];
+    TDSDetailCellzb* wCell = [tableView dequeueReusableCellWithIdentifier:amountWaterFirstCell];
     if(wCell == nil)
     {
-        wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSDetailCellzb_EN" owner:self options:nil] objectAtIndex:0];
+        wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSDetailCellzb" owner:self options:nil] objectAtIndex:0];
     }
     
     wCell.TDSValueChange =  self.tdsValue;
-    //wCell.rankValueChange = self.tdsRankValue;
+    wCell.rankValueChange = self.tdsRankValue;
     NSLog(@"%d",self.tdsRankValue);
     [wCell.BackClick addTarget:self action:@selector(leftBtnMethod) forControlEvents:UIControlEventTouchUpInside];
-    //[wCell.shareCick addTarget:self action:@selector(rightBtnMethod) forControlEvents:UIControlEventTouchUpInside];
-    //[wCell.toZiXun addTarget:self action:@selector(amountOfDrinkingWaterZiXunAction) forControlEvents:UIControlEventTouchUpInside];
+    [wCell.shareCick addTarget:self action:@selector(rightBtnMethod) forControlEvents:UIControlEventTouchUpInside];
+    [wCell.toZiXun addTarget:self action:@selector(amountOfDrinkingWaterZiXunAction) forControlEvents:UIControlEventTouchUpInside];
     [wCell.toTDSState addTarget:self action:@selector(toWhatTDS) forControlEvents:UIControlEventTouchUpInside];
 
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -183,14 +183,14 @@
 - (UITableViewCell*)createThirdCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* thirdCell = @"thirdCell";
-    TDSFooterCellzb_EN* wCell = [tableView dequeueReusableCellWithIdentifier:thirdCell];
+    TDSFooterCellzb* wCell = [tableView dequeueReusableCellWithIdentifier:thirdCell];
     if(wCell == nil)
     {
-        wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSFooterCellzb_EN" owner:self options:nil] objectAtIndex:0];
+        wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSFooterCellzb" owner:self options:nil] objectAtIndex:0];
         //wCell.delegate = self;
     }
-    //[wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
-    //[wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
+    [wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
+    [wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
     return wCell;
 }

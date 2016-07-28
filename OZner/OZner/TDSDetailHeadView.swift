@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TDSDetailHeadView_EN: UIView {
+class TDSDetailHeadView: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.

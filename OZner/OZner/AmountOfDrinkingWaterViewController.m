@@ -6,19 +6,19 @@
 //  Copyright © 2015年 sunlinlin. All rights reserved.
 //
 
-#import "AmountOfDrinkingWaterViewController_EN.h"
+#import "AmountOfDrinkingWaterViewController.h"
 //#import "AmountOfDrinkingWaterFirstCell.h"
-#import "AmountOfDrinkingCell_EN.h"
+#import "AmountOfDrinkingCell.h"
 //#import "AmountOfDrinkingThirdCell.h"
 #import "ShareManager.h"
 #import "OZner-swift.h"
-@interface AmountOfDrinkingWaterViewController_EN ()
-@property (nonatomic,strong) AmountOfDrinkingCell_EN* currentSecondCell;
+@interface AmountOfDrinkingWaterViewController ()
+@property (nonatomic,strong) AmountOfDrinkingCell* currentSecondCell;
 @property (nonatomic,strong) CenterChartCell_EN* circleCell;
 @property (nonatomic,assign) BOOL currentChartType;//YES 圆，NO 折线
 @end
 
-@implementation AmountOfDrinkingWaterViewController_EN
+@implementation AmountOfDrinkingWaterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,7 +95,7 @@
     getshareImageClass* getClass = [[getshareImageClass alloc]init];
     UIImage* image = [getClass getshareImagezb:self.defeatRank type:0 value:record.volume beat:beatzb maxWater:maxValue];
     //微信朋友圈
-    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"浩泽净水家") shareImg:image];
+    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:@"浩泽净水家" shareImg:image];
 }
 
 #pragma mark-AmountOfDrinkingWaterFirstCellDelegate
@@ -113,7 +113,7 @@
 - (void)jianKangShuiAction
 {
     WeiXinURLViewController_EN* URLController=[[WeiXinURLViewController_EN alloc] initWithNibName:@"WeiXinURLViewController_EN" bundle:nil];
-    [URLController setTitle:loadLanguage(@"健康水知道")];
+    [URLController setTitle:@"健康水知道"];
     [self presentViewController:URLController animated:true completion:nil];
 }
 
@@ -140,25 +140,25 @@
 - (UITableViewCell*)createFirstCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* amountWaterFirstCell = @"amountWaterFirstCell";
-    drinKWaterCell_EN* wCell = [tableView dequeueReusableCellWithIdentifier:amountWaterFirstCell];
+    drinKWaterCell* wCell = [tableView dequeueReusableCellWithIdentifier:amountWaterFirstCell];
     if(wCell == nil&&self.myCurrentDevice != nil)
     {
-        wCell = [[[NSBundle mainBundle]loadNibNamed:@"drinKWaterCell_EN" owner:self options:nil] objectAtIndex:0];
+        wCell = [[[NSBundle mainBundle]loadNibNamed:@"drinKWaterCell" owner:self options:nil] objectAtIndex:0];
         //0 饮水量，1 温度
         if (self.currentType==0) {
-            wCell.celltype=loadLanguage(@"饮水量");
+            wCell.celltype=@"饮水量";
             wCell.waterValueChange=self.todayVolume;
-            //wCell.rank=self.todayRank==0 ? 1:self.todayRank;
+            wCell.rank=self.todayRank==0 ? 1:self.todayRank;
         }
         else{
-            wCell.celltype=loadLanguage(@"水温");
+            wCell.celltype=@"水温";
             wCell.waterValueChange=self.myCurrentDevice.sensor.Temperature;
         }
         
     }
     [wCell.back addTarget:self action:@selector(leftBtnMethod) forControlEvents:UIControlEventTouchUpInside];
-    //[wCell.share addTarget:self action:@selector(rightBtnMethod) forControlEvents:UIControlEventTouchUpInside];
-    //[wCell.zixunButton addTarget:self action:@selector(amountOfDrinkingWaterZiXunAction) forControlEvents:UIControlEventTouchUpInside];
+    [wCell.share addTarget:self action:@selector(rightBtnMethod) forControlEvents:UIControlEventTouchUpInside];
+    [wCell.zixunButton addTarget:self action:@selector(amountOfDrinkingWaterZiXunAction) forControlEvents:UIControlEventTouchUpInside];
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
     return wCell;
 }
@@ -178,10 +178,10 @@
         return _circleCell;
     } else {
         
-        AmountOfDrinkingCell_EN* wCell = [tableView dequeueReusableCellWithIdentifier:amountWaterSecondCell];
+        AmountOfDrinkingCell* wCell = [tableView dequeueReusableCellWithIdentifier:amountWaterSecondCell];
         if(wCell == nil)
         {
-            wCell = [[AmountOfDrinkingCell_EN alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:amountWaterSecondCell];
+            wCell = [[AmountOfDrinkingCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:amountWaterSecondCell];
             wCell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
@@ -205,14 +205,14 @@
 - (UITableViewCell*)createThirdCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* thirdCell = @"thirdCell";
-    TDSFooterCellzb_EN* wCell = [tableView dequeueReusableCellWithIdentifier:thirdCell];
+    TDSFooterCellzb* wCell = [tableView dequeueReusableCellWithIdentifier:thirdCell];
     if(wCell == nil)
     {
-        wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSFooterCellzb_EN" owner:self options:nil] objectAtIndex:0];
+        wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSFooterCellzb" owner:self options:nil] objectAtIndex:0];
         //wCell.delegate = self;
     }
-    //[wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
-    //[wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
+    [wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
+    [wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
     return wCell;
 }

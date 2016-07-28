@@ -6,9 +6,9 @@
 //  Copyright © 2015年 sunlinlin. All rights reserved.
 //
 
-#import "AmountOfDrinkingCell_EN.h"
+#import "AmountOfDrinkingCell.h"
 
-@implementation AmountOfDrinkingCell_EN
+@implementation AmountOfDrinkingCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -26,12 +26,12 @@
     {
         UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(0, 21, SCREEN_WIDTH, 17)];
         label.textColor = [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1.0];
-        label.text = loadLanguage(@"饮水量分布指数");
+        label.text = @"饮水量分布指数";
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:17];
         [self addSubview:label];
         
-        NSArray *arr = [[NSArray alloc]initWithObjects:loadLanguage(@"日"), loadLanguage(@"周"),loadLanguage(@"月"), nil];
+        NSArray *arr = [[NSArray alloc]initWithObjects:@"日",@"周",@"月", nil];
         UISegmentedControl* controller = [[UISegmentedControl alloc]initWithItems:arr];
         controller.frame = CGRectMake(20*(SCREEN_WIDTH/375.0), 48, SCREEN_WIDTH-20*(SCREEN_WIDTH/375.0)*2, 25);
         controller.selectedSegmentIndex = 0;
@@ -251,7 +251,7 @@
 {
     NSDate* date=[[NSDate alloc] initWithTimeIntervalSince1970:(int)([[NSDate dateWithTimeIntervalSinceNow:0] timeIntervalSince1970])/86400*86400];
     CupRecord* record = [self.myCurrentDevice.volumes getRecordByDate:date];
-    CustomThreeCircleView_EN* circleView = [[CustomThreeCircleView_EN alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.TDS_Good/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:0];
+    CustomThreeCircleView* circleView = [[CustomThreeCircleView alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.TDS_Good/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:0];
     circleView.highScale = record.TDS_Good/(CGFloat)record.Count;
     circleView.middleScale = record.TDS_Mid/(CGFloat)record.Count;
     circleView.lowScale = record.TDS_Bad/(CGFloat)record.Count;
@@ -267,7 +267,7 @@
     NSInteger dayZeor = ((int)[weekFirstDay timeIntervalSince1970])/86400*86400;
     weekFirstDay = [[NSDate alloc]initWithTimeIntervalSince1970:dayZeor];
     CupRecord* record = [self.myCurrentDevice.volumes getRecordByDate:weekFirstDay];
-    CustomThreeCircleView_EN* circleView = [[CustomThreeCircleView_EN alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:0];
+    CustomThreeCircleView* circleView = [[CustomThreeCircleView alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:0];
     circleView.highScale = record.TDS_Good/(CGFloat)record.Count;
     circleView.middleScale = record.TDS_Mid/(CGFloat)record.Count;
     circleView.lowScale = record.TDS_Bad/(CGFloat)record.Count;
@@ -283,7 +283,7 @@
     NSInteger monthZeor = ((int)[monthFirstDay timeIntervalSince1970])/86400*86400;
     monthFirstDay = [[NSDate alloc]initWithTimeIntervalSince1970:monthZeor];
     CupRecord* record = [self.myCurrentDevice.volumes getRecordByDate:monthFirstDay];
-    CustomThreeCircleView_EN* circleView = [[CustomThreeCircleView_EN alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:0];
+    CustomThreeCircleView* circleView = [[CustomThreeCircleView alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:0];
     circleView.highScale = record.TDS_Good/(CGFloat)record.Count;
     circleView.middleScale = record.TDS_Mid/(CGFloat)record.Count;
     circleView.lowScale = record.TDS_Bad/(CGFloat)record.Count;
@@ -296,7 +296,7 @@
 {
     NSDate* date=[[NSDate alloc] initWithTimeIntervalSince1970:(int)([[NSDate dateWithTimeIntervalSinceNow:0] timeIntervalSince1970])/86400*86400];
     CupRecord* record = [self.myCurrentDevice.volumes getRecordByDate:date];
-    CustomThreeCircleView_EN* circleView = [[CustomThreeCircleView_EN alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:1];
+    CustomThreeCircleView* circleView = [[CustomThreeCircleView alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:1];
     circleView.highScale = record.Temperature_High/(CGFloat)record.Count;
     circleView.middleScale = record.Temperature_Mid/(CGFloat)record.Count;
     circleView.lowScale = record.Temperature_Low/(CGFloat)record.Count;
@@ -312,7 +312,7 @@
     NSInteger dayZeor = ((int)[weekFirstDay timeIntervalSince1970])/86400*86400;
     weekFirstDay = [[NSDate alloc]initWithTimeIntervalSince1970:dayZeor];
     CupRecord* record = [self.myCurrentDevice.volumes getRecordByDate:weekFirstDay];
-   CustomThreeCircleView_EN* circleView = [[CustomThreeCircleView_EN alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:1];
+   CustomThreeCircleView* circleView = [[CustomThreeCircleView alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:1];
     circleView.highScale = record.Temperature_High/(CGFloat)record.Count;
     circleView.middleScale = record.Temperature_Mid/(CGFloat)record.Count;
     circleView.lowScale = record.Temperature_Low/(CGFloat)record.Count;
@@ -328,7 +328,7 @@
     NSInteger monthZeor = ((int)[monthFirstDay timeIntervalSince1970])/86400*86400;
     monthFirstDay = [[NSDate alloc]initWithTimeIntervalSince1970:monthZeor];
     CupRecord* record = [self.myCurrentDevice.volumes getRecordByDate:monthFirstDay];
-    CustomThreeCircleView_EN* circleView = [[CustomThreeCircleView_EN alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:1];
+    CustomThreeCircleView* circleView = [[CustomThreeCircleView alloc]initWithFrame:CGRectMake(14*(SCREEN_WIDTH/375.0),96, SCREEN_WIDTH-14*(SCREEN_WIDTH/375.0)*2, 150) high:record.Temperature_High/(CGFloat)record.Count middle:record.Temperature_Mid/(CGFloat)record.Count low:record.Temperature_Low/(CGFloat)record.Count type:1];
     circleView.highScale = record.Temperature_High/(CGFloat)record.Count;
     circleView.middleScale = record.Temperature_Mid/(CGFloat)record.Count;
     circleView.lowScale = record.Temperature_Low/(CGFloat)record.Count;

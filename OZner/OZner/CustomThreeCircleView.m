@@ -6,9 +6,9 @@
 //  Copyright © 2015年 sunlinlin. All rights reserved.
 //
 
-#import "CustomThreeCircleView_EN.h"
+#import "CustomThreeCircleView.h"
 
-@implementation CustomThreeCircleView_EN
+@implementation CustomThreeCircleView
 
 - (id)initWithFrame:(CGRect)frame high:(double)high middle:(double)middle low:(double)low type:(int)type
 {
@@ -18,10 +18,10 @@
         self.middleScale = middle;
         self.lowScale = high;
         self.backgroundColor = [UIColor clearColor];
-        NSString* title = loadLanguage(@"偏烫");
+        NSString* title = @"偏烫";
         if(type == 0)
         {
-            title = loadLanguage(@"较差");
+            title = @"较差";
         }
         NSString* str = [NSString stringWithFormat:@"%@ %d%%",title,(int)(high*100)];
         CGSize size = [str boundingRectWithSize:CGSizeMake(self.frame.size.width/2, 10) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10]} context:nil].size;
@@ -32,10 +32,10 @@
         label.font = [UIFont systemFontOfSize:10];
         [self addSubview:label];
         
-        title = loadLanguage(@"适中");
+        title = @"适中";
         if(type == 0)
         {
-            title = loadLanguage(@"一般");
+            title = @"一般";
         }
 
         str = [NSString stringWithFormat:@"%@ %d%%",title,(int)(middle*100)];
@@ -48,10 +48,10 @@
         label.font = [UIFont systemFontOfSize:10];
         [self addSubview:label];
         
-        title = loadLanguage(@"偏凉");
+        title = @"偏凉";
         if(type == 0)
         {
-            title = loadLanguage(@"健康");
+            title = @"健康";
         }
         str = [NSString stringWithFormat:@"%@ %d%%",title,(int)(low*100)];
         size = [str boundingRectWithSize:CGSizeMake(self.frame.size.width/2, 10) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10]} context:nil].size;

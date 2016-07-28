@@ -73,7 +73,7 @@ class WaterPurTDSDetailController_EN: UITableViewController {
             secondCell.selectionStyle=UITableViewCellSelectionStyle.None
             return secondCell
         default:
-            let wCell = NSBundle.mainBundle().loadNibNamed("TDSFooterCellzb_EN", owner: self, options: nil).last as! TDSFooterCellzb_EN
+            let wCell = NSBundle.mainBundle().loadNibNamed("TDSFooterCellzb", owner: self, options: nil).last as! TDSFooterCellzb
             //wCell.waterKnowButton.addTarget(self, action: #selector(toWaterKnow), forControlEvents: .TouchUpInside)
             //wCell.toStoreButton.addTarget(self, action: #selector(toBuyClick), forControlEvents: .TouchUpInside)
             wCell.selectionStyle=UITableViewCellSelectionStyle.None

@@ -240,7 +240,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     var defaultFooterView:Main_FooterView_zb_EN!
     //Cup页面视图
     var cupHeadView:UIView!
-    var cupFooterView:CupView_Footer_EN!
+    var cupFooterView:CupView_Footer!
     //Tap页面视图
     //净水器页面视图
     //加载哪个设备视图
@@ -297,7 +297,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
 
             //尾部视图
             Height_DeviceFooter.constant=Screen_Hight*160/667
-            cupFooterView=NSBundle.mainBundle().loadNibNamed("CupView_Footer_EN", owner: self, options: nil).last as! CupView_Footer_EN
+            cupFooterView=NSBundle.mainBundle().loadNibNamed("CupView_Footer", owner: self, options: nil).last as! CupView_Footer
             cupFooterView.drinkButton.addTarget(self, action: #selector(amoutOfWaterAction), forControlEvents: .TouchUpInside)
             cupFooterView.tempButton.addTarget(self, action: #selector(temperatureAction), forControlEvents: .TouchUpInside)
             cupFooterView.translatesAutoresizingMaskIntoConstraints = false
@@ -1454,7 +1454,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     func temperatureAction()
     {
         self.m_bIsHideTableBar = true
-        let controller = AmountOfDrinkingWaterViewController_EN(nibName: "AmountOfDrinkingWaterViewController_EN", bundle: nil)
+        let controller = AmountOfDrinkingWaterViewController(nibName: "AmountOfDrinkingWaterViewController", bundle: nil)
         controller.currentType = 1
         controller.myCurrentDevice = self.myCurrentDevice as! Cup
         controller.defeatValue = Int32(self.currentDefeat!)
@@ -1466,7 +1466,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     {
         //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         self.m_bIsHideTableBar = true
-        let controller = AmountOfDrinkingWaterViewController_EN(nibName: "AmountOfDrinkingWaterViewController_EN", bundle: nil)
+        let controller = AmountOfDrinkingWaterViewController(nibName: "AmountOfDrinkingWaterViewController", bundle: nil)
         controller.currentType = 0
         controller.myCurrentDevice = self.myCurrentDevice as! Cup
         let cup = self.myCurrentDevice as! Cup
@@ -1524,7 +1524,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         self.m_bIsHideTableBar = true
         if((self.myCurrentDevice?.isKindOfClass(Cup.classForCoder())) == true)
         {
-            let controller = TDSDetailViewController_EN(nibName: "TDSDetailViewController_EN", bundle: nil)
+            let controller = TDSDetailViewController(nibName: "TDSDetailViewController", bundle: nil)
             controller.myCurrentDevice = self.myCurrentDevice
             let cup = self.myCurrentDevice as! Cup
             controller.tdsValue = cup.sensor.TDS

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CupView_Footer_EN: UIView {
+class CupView_Footer: UIView {
 
     
     @IBOutlet var haveDrink: UILabel!
@@ -83,7 +83,7 @@ class CupView_Footer_EN: UIView {
             else
             {
                 self.tempImg.image = UIImage(named: "wen_du_1.png")
-                self.tempValue.text =  "-";
+                self.tempValue.text =  loadLanguage("暂无");
                 self.tempState.text =  loadLanguage("当前水温暂无");
             }
             

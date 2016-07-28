@@ -12,7 +12,7 @@
 #import "OCFatherViewController.h"
 
 
-@interface AmountOfDrinkingWaterViewController_EN : OCFatherViewController<UITableViewDataSource,UITableViewDelegate>
+@interface AmountOfDrinkingWaterViewController : OCFatherViewController<UITableViewDataSource,UITableViewDelegate>
 {
     BOOL m_isShowCircel;
 }

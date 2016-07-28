@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomThreeCircleView_EN : UIView
+@interface CustomThreeCircleView : UIView
 
 @property (nonatomic,assign) int currentType;
 @property (nonatomic,assign) double highScale;
