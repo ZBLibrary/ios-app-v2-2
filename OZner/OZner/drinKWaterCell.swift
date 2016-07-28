@@ -112,7 +112,7 @@ class drinKWaterCell: UITableViewCell {
                 waterValue.hidden=false
                 symbolLabel.hidden=false
                 rankView.hidden=false
-                shareImg.hidden=false
+                shareImg.hidden = !IsLoginByPhone()
                 share.enabled=true
             }
             else
@@ -123,7 +123,8 @@ class drinKWaterCell: UITableViewCell {
                 waterValue.hidden=true
                 symbolLabel.hidden=true
                 rankView.hidden=true
-                shareImg.hidden=true
+                //true
+                shareImg.hidden = !IsLoginByPhone()
                 share.enabled=false
             }
         }
@@ -131,6 +132,9 @@ class drinKWaterCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         zixunView.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).CGColor
+        zixunView.hidden = !IsLoginByPhone();
+        shareImg.hidden = !IsLoginByPhone();
+        share.hidden = !IsLoginByPhone();
         // Initialization code
     }
 

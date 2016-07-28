@@ -25,10 +25,10 @@ class TDSDetailCellzb: UITableViewCell {
     var TDSValueChange:Int=0{
         didSet{
 
-            TDSValue.text=TDSValueChange==0||TDSValueChange==65535 ? loadLanguage("暂无"):"\(TDSValueChange)"
-            if TDSValue.text==loadLanguage("暂无")
+            TDSValue.text=TDSValueChange==0||TDSValueChange==65535 ? loadLanguage("暂无1"):"\(TDSValueChange)"
+            if TDSValue.text==loadLanguage("暂无1")
             {
-                TDSValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 25)
+                TDSValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 20)
             }
             else
             {
@@ -58,10 +58,10 @@ class TDSDetailCellzb: UITableViewCell {
     }
     var rankValueChange:Int=0{
         didSet{
-            RankValue.text=rankValueChange==0 ? loadLanguage("暂无"):"\(rankValueChange)"
-            if RankValue.text==loadLanguage("暂无")
+            RankValue.text=rankValueChange==0 ? loadLanguage("暂无1"):"\(rankValueChange)"
+            if RankValue.text==loadLanguage("暂无1")
             {
-                RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 25)
+                RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 20)
             }
             else
             {
@@ -97,7 +97,7 @@ class TDSDetailCellzb: UITableViewCell {
         hideImage.hidden = !IsLoginByPhone()
         shareCick.enabled = IsLoginByPhone()
         zixunViewzb.hidden = !IsLoginByPhone()
-        
+
         // Initialization code
     }
     

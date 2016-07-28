@@ -835,7 +835,6 @@
 		B7F5B72E1D49B8AA00446670 /* TDSDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B7221D49B8AA00446670 /* TDSDetailHeadView.swift */; };
 		B7F5B72F1D49B8AA00446670 /* TDSDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7231D49B8AA00446670 /* TDSDetailHeadView.xib */; };
 		B7F5B7301D49B8AA00446670 /* TDSDetailCellzb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B7241D49B8AA00446670 /* TDSDetailCellzb.swift */; };
-		B7F5B7311D49B8AA00446670 /* TDSDetailCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7251D49B8AA00446670 /* TDSDetailCellzb.xib */; };
 		B7F5B7321D49B8AA00446670 /* TDSFooterCellzb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B7261D49B8AA00446670 /* TDSFooterCellzb.swift */; };
 		B7F5B7341D49B8AA00446670 /* drinKWaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B7281D49B8AA00446670 /* drinKWaterCell.swift */; };
 		B7F5B7361D49B8AA00446670 /* CupView_Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B72A1D49B8AA00446670 /* CupView_Footer.swift */; };
@@ -846,6 +845,7 @@
 		B7F5B7421D49CF9A00446670 /* drinKWaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7441D49CF9A00446670 /* drinKWaterCell.xib */; };
 		B7F5B7481D49D36D00446670 /* TDSFooterCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B74A1D49D36D00446670 /* TDSFooterCellzb.xib */; };
 		B7F5B74E1D49D5FD00446670 /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7501D49D5FD00446670 /* CupView_Footer.xib */; };
+		B7F5B7541D49E9E000446670 /* TDSDetailCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7561D49E9E000446670 /* TDSDetailCellzb.xib */; };
 		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */; };
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */; };
@@ -2236,7 +2236,6 @@
 		B7F5B7221D49B8AA00446670 /* TDSDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSDetailHeadView.swift; sourceTree = "<group>"; };
 		B7F5B7231D49B8AA00446670 /* TDSDetailHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSDetailHeadView.xib; sourceTree = "<group>"; };
 		B7F5B7241D49B8AA00446670 /* TDSDetailCellzb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSDetailCellzb.swift; sourceTree = "<group>"; };
-		B7F5B7251D49B8AA00446670 /* TDSDetailCellzb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDSDetailCellzb.xib; sourceTree = "<group>"; };
 		B7F5B7261D49B8AA00446670 /* TDSFooterCellzb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSFooterCellzb.swift; sourceTree = "<group>"; };
 		B7F5B7281D49B8AA00446670 /* drinKWaterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinKWaterCell.swift; sourceTree = "<group>"; };
 		B7F5B72A1D49B8AA00446670 /* CupView_Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupView_Footer.swift; sourceTree = "<group>"; };
@@ -2252,6 +2251,9 @@
 		B7F5B74D1D49D43900446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSFooterCellzb.xib; sourceTree = "<group>"; };
 		B7F5B74F1D49D5FD00446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CupView_Footer.xib; sourceTree = "<group>"; };
 		B7F5B7531D49D60E00446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CupView_Footer.xib; sourceTree = "<group>"; };
+		B7F5B7551D49E9E000446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
+		B7F5B7591D49E9E900446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
+		B7F5B75F1D49F74300446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/drinKWaterCell.xib"; sourceTree = "<group>"; };
 		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
@@ -3288,7 +3290,7 @@
 				B7F5B7221D49B8AA00446670 /* TDSDetailHeadView.swift */,
 				B7F5B7231D49B8AA00446670 /* TDSDetailHeadView.xib */,
 				B7F5B7241D49B8AA00446670 /* TDSDetailCellzb.swift */,
-				B7F5B7251D49B8AA00446670 /* TDSDetailCellzb.xib */,
+				B7F5B7561D49E9E000446670 /* TDSDetailCellzb.xib */,
 				B7F5B7261D49B8AA00446670 /* TDSFooterCellzb.swift */,
 				B7F5B74A1D49D36D00446670 /* TDSFooterCellzb.xib */,
 				B7F5B7281D49B8AA00446670 /* drinKWaterCell.swift */,
@@ -4816,7 +4818,7 @@
 				8DB043EF1CC8CCE200B60DAB /* icon_buble_add_device@3x.png in Resources */,
 				B7D8C1C11D2376F60089C241 /* SetCup_EN.plist in Resources */,
 				52A4EF651C285E6E005F282D /* bigStateXib_EN.xib in Resources */,
-				B7F5B7311D49B8AA00446670 /* TDSDetailCellzb.xib in Resources */,
+				B7F5B7541D49E9E000446670 /* TDSDetailCellzb.xib in Resources */,
 				8DB044121CC8CCE200B60DAB /* 1_05.png in Resources */,
 				8DB044191CC8CCE200B60DAB /* device_left_btn.png in Resources */,
 				527E918E1C3BDCCF00828A1B /* LongImageViewController_EN.xib in Resources */,
@@ -5782,6 +5784,7 @@
 			children = (
 				B7F5B7431D49CF9A00446670 /* Base */,
 				B7F5B7471D49D0C700446670 /* en */,
+				B7F5B75F1D49F74300446670 /* zh-Hans */,
 			);
 			name = drinKWaterCell.xib;
 			sourceTree = "<group>";
@@ -5802,6 +5805,15 @@
 				B7F5B7531D49D60E00446670 /* en */,
 			);
 			name = CupView_Footer.xib;
+			sourceTree = "<group>";
+		};
+		B7F5B7561D49E9E000446670 /* TDSDetailCellzb.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7F5B7551D49E9E000446670 /* Base */,
+				B7F5B7591D49E9E900446670 /* en */,
+			);
+			name = TDSDetailCellzb.xib;
 			sourceTree = "<group>";
 		};
 		E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */ = {

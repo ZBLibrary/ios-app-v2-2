@@ -66,7 +66,7 @@ class MyInfoViewController: UIViewController {
             mainView_EN.SuggestButton.addTarget(self, action: #selector(Suggest), forControlEvents: .TouchUpInside)
             mainView_EN.Set.addTarget(self, action: #selector(SetApp), forControlEvents: .TouchUpInside)
             
-            mainView_EN.My_login.addTarget(self, action: #selector(toLogin1), forControlEvents: .TouchUpInside)
+            //            mainView_EN.My_login.addTarget(self, action: #selector(toLogin1), forControlEvents: .TouchUpInside)
             
             mainView_EN.frame=CGRect(x: 0, y: -20, width: Screen_Width, height: 602)
             //        ScrollView.contentSize=CGSize(width: 0, height: 602)
@@ -75,7 +75,7 @@ class MyInfoViewController: UIViewController {
             self.view.addSubview(ScrollView)
             
             //初始化加载数据
-            loadMyInfo()
+            //            loadMyInfo()
         }
     }
     

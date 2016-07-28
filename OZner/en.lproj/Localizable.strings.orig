@@ -46,6 +46,8 @@
 "立式空净" = "Vertical Style Air Purifier" ;
 "台式空气净化器" = "Desk-top Air Purifier" ;
 "立式空气净化器" = "Vertical Style Air Purifier" ;
+"台式空净专用" = "Desk-Purifier" ;
+"立式空净专用" = "Vertical-Purifier" ;
 "智能补水仪" = "smart moisturizing device" ;//
 
 "蓝牙连接" = "Bluetooth" ; // 连接
@@ -82,7 +84,7 @@
 //"确定" = "OK" ;
 "温馨提示" = "Warm tips" ;
 "你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用" = "Your filter cartridge is about to be expired. Please replace it timely" ;
-"请及时更换滤芯" = "Please replace the filter timely" ;
+"请及时更换滤芯" = "Replace the filter timely" ;
 "现在去购买滤芯" = "Buy filter cartridge now" ;
 "我知道了" = "I See" ;
 "请尝试以下方式：" = "Please try the followi/Users/roni/Desktop/sourcetree/jsj/OZner/en.lproj/Localizable.stringsng ways:" ;
@@ -242,6 +244,15 @@
 //My_MainView
 "银卡代理会员" = "Silver card agent member";
 "金卡代理会员" = "Gold card agent member";
+"铂金卡会员" = "Platinum card agent member";
+"银钻" = "Silver Diamond";
+"金钻" = "Gold Diamond";
+"1级合作卡" = "Level 1 Cooperation card";
+"2级合作卡" = "Level 2 Cooperation card";
+"智卡" = "Smart Card";
+"品牌合作卡" = "Co-branding card";
+"联席代理人" = "Co-agents";
+"伙伴卡" = "Partners Cards";
 "我的小金库" = "My private coffer ";
 "我的设备" = "My device";
 "我的订单" = "My order";
@@ -500,6 +511,9 @@
 "信息发送失败!请确保网络通畅并已关注浩泽微信公众号" = "Message not sent ! Make sure that the network has been smooth and micro-channel public attention Ozner Chak No.";
 "关于水探头" = "About Water Tester";
 
-
 "账号或密码错误" = "Account or password error" ;
+"台式空氣淨化器" = "Desk-top Air Purifier";
 
+"空气净化器滤芯" = " Air Purifier Filter" ;
+
+"暂无1" = "None";
