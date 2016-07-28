@@ -31,8 +31,8 @@
                                 <constraint firstAttribute="height" constant="92" id="hix-dF-wrH"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indoor Air Quality Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-B6-zRJ">
-                            <rect key="frame" x="94" y="35" width="185.5" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="室内空气质量详情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-B6-zRJ">
+                            <rect key="frame" x="119" y="35" width="136" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="5kZ-hU-YX8"/>
                                 <constraint firstAttribute="width" constant="137" id="bl2-2p-Ghy"/>
@@ -64,8 +64,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1I-mW-ldH">
                     <rect key="frame" x="0.0" y="200" width="375" height="90"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The current total amount of purification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xE-Tb-TcX">
-                            <rect key="frame" x="84" y="20" width="207" height="11"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空气净化器当前总净化量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xE-Tb-TcX">
+                            <rect key="frame" x="126" y="20" width="124" height="11"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="124" id="67L-cA-gd0"/>
                                 <constraint firstAttribute="height" constant="11" id="aof-lc-llx"/>
@@ -73,14 +73,9 @@
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" red="0.54117647059999996" green="0.5450980392" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="67L-cA-gd0"/>
-                                </mask>
-                            </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="on6-mK-ccC">
-                            <rect key="frame" x="84" y="45" width="110" height="30"/>
+                            <rect key="frame" x="126" y="45" width="110" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="110" id="a9N-BM-LhO"/>
                                 <constraint firstAttribute="height" constant="30" id="tn3-9W-NJC"/>
@@ -90,7 +85,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-42-t9Z">
-                            <rect key="frame" x="194" y="60" width="25" height="15"/>
+                            <rect key="frame" x="236" y="60" width="25" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="YtP-ye-5i3"/>
                                 <constraint firstAttribute="width" constant="25" id="sau-V3-TeR"/>
@@ -114,6 +109,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rj-4r-blB">
                     <rect key="frame" x="0.0" y="302" width="375" height="162"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滤芯还剩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-Pu-eya">
+                            <rect key="frame" x="14" y="17" width="56" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="14" id="f7c-tk-WtI"/>
+                                <constraint firstAttribute="width" constant="60" id="xKY-RQ-CEf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.54117647058823526" green="0.54509803921568623" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="xKY-RQ-CEf"/>
+                                </mask>
+                            </variation>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlG-yn-hDz">
                             <rect key="frame" x="130" y="50" width="116" height="36"/>
                             <subviews>
@@ -321,21 +331,6 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The remaining fiter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-Pu-eya">
-                            <rect key="frame" x="14" y="17" width="122" height="20"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="f7c-tk-WtI"/>
-                                <constraint firstAttribute="width" constant="60" id="xKY-RQ-CEf"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" red="0.54117647058823526" green="0.54509803921568623" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="xKY-RQ-CEf"/>
-                                </mask>
-                            </variation>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -365,7 +360,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0se-wZ-LVp">
                     <rect key="frame" x="0.0" y="465" width="375" height="34"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips: Please replace the filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6E-Zz-SCd">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温馨提示：及时更换滤芯，享纯净空气。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6E-Zz-SCd">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" red="0.49019607843137253" green="0.49019607843137253" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
@@ -385,14 +380,14 @@
                     <rect key="frame" x="61" y="521" width="254" height="42"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XN1-dA-rlx">
-                            <rect key="frame" x="0.0" y="0.0" width="88" height="42"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="42"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="88" id="Qvl-ny-Wuw"/>
+                                <constraint firstAttribute="width" constant="80" id="Qvl-ny-Wuw"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Consult" image="zixunIconzb">
+                            <state key="normal" title="咨询" image="zixunIconzb">
                                 <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
@@ -404,7 +399,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Buy filter" image="device_puucashezb">
+                            <state key="normal" title="购买滤芯" image="device_puucashezb">
                                 <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>

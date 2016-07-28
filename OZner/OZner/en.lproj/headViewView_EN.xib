@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -162,7 +162,7 @@
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRX-zi-oRn">
-                            <rect key="frame" x="137" y="83" width="100" height="37"/>
+                            <rect key="frame" x="127" y="83" width="120" height="37"/>
                             <subviews>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="airLvxinState0" translatesAutoresizingMaskIntoConstraints="NO" id="oOU-ma-hVb">
                                     <rect key="frame" x="0.0" y="0.0" width="17" height="37"/>
@@ -171,7 +171,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTr-n0-MCq">
-                                    <rect key="frame" x="27" y="22" width="73" height="15"/>
+                                    <rect key="frame" x="27" y="22" width="93" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="56" id="vpS-Um-A0w"/>
                                         <constraint firstAttribute="height" constant="15" id="x1s-fw-XQn"/>
@@ -189,7 +189,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sau-CH-C9a">
-                                    <rect key="frame" x="27" y="0.0" width="73" height="22"/>
+                                    <rect key="frame" x="27" y="0.0" width="93" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="56" id="3Ac-Rn-hk3"/>
                                         <constraint firstAttribute="height" constant="24" id="9eb-Je-S6Q"/>
@@ -205,7 +205,7 @@
                                     </variation>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8q-cy-emD">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="37"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="37"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -219,7 +219,7 @@
                                 <constraint firstAttribute="bottom" secondItem="jTr-n0-MCq" secondAttribute="bottom" id="XBO-WB-B94"/>
                                 <constraint firstItem="oOU-ma-hVb" firstAttribute="leading" secondItem="dRX-zi-oRn" secondAttribute="leading" id="ZcC-8d-V6F"/>
                                 <constraint firstItem="J8q-cy-emD" firstAttribute="top" secondItem="dRX-zi-oRn" secondAttribute="top" id="b4v-Vw-aOu"/>
-                                <constraint firstAttribute="width" constant="100" id="dhM-Kx-zfZ"/>
+                                <constraint firstAttribute="width" constant="120" id="dhM-Kx-zfZ"/>
                                 <constraint firstAttribute="trailing" secondItem="jTr-n0-MCq" secondAttribute="trailing" id="doP-Zd-8ua"/>
                                 <constraint firstAttribute="height" constant="37" id="jbP-No-jAH"/>
                                 <constraint firstItem="oOU-ma-hVb" firstAttribute="top" secondItem="dRX-zi-oRn" secondAttribute="top" id="klI-WE-fsk"/>

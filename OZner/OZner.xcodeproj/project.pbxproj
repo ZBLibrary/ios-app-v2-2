@@ -2300,6 +2300,7 @@
 		E0F32A2F1D4749B500D78EE5 /* RNModifyPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		E0F32A301D4749B500D78EE5 /* RNModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RNModifyPasswordViewController.xib; sourceTree = "<group>"; };
 		E0F32A351D476D1000D78EE5 /* RNGetSystemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNGetSystemInfo.swift; sourceTree = "<group>"; };
+		E0F32A411D49EC3600D78EE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/indoorAirXib_EN.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5741,6 +5742,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B7D8C2351D24A8E30089C241 /* en */,
+				E0F32A411D49EC3600D78EE5 /* Base */,
 			);
 			name = indoorAirXib_EN.xib;
 			sourceTree = "<group>";

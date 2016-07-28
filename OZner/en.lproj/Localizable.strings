@@ -84,7 +84,7 @@
 //"确定" = "OK" ;
 "温馨提示" = "Warm tips" ;
 "你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用" = "Your filter cartridge is about to be expired. Please replace it timely" ;
-"请及时更换滤芯" = "Please replace the filter timely" ;
+"请及时更换滤芯" = "Replace the filter timely" ;
 "现在去购买滤芯" = "Buy filter cartridge now" ;
 "我知道了" = "I See" ;
 "请尝试以下方式：" = "Please try the followi/Users/roni/Desktop/sourcetree/jsj/OZner/en.lproj/Localizable.stringsng ways:" ;
@@ -515,3 +515,5 @@
 "台式空氣淨化器" = "Desk-top Air Purifier";
 
 "暂无1" = "None";
+"空气净化器滤芯" = " Air Purifier Filter" ;
+
