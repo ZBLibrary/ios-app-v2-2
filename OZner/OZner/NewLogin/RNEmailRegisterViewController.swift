@@ -165,8 +165,8 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         guard !(emailTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "邮箱不能为空")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Email cannot be empty")
             
             return false
         }
@@ -174,8 +174,8 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         guard isValidateEmail(emailTextField.text!) else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "邮箱格式不正确")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Email address format is not correct")
             
             return false
         }
@@ -189,8 +189,8 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         guard !(codeTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "验证码不能为空")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  " Security code cannot be empty")
             
             return false
         }
@@ -198,8 +198,8 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         guard !(pswTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "密码不能为空")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Password connot be empty")
             
             return false
         }
@@ -207,8 +207,8 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         guard !(cPswTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "确认密码不能为空")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle: "Confirm Password connot be empty")
             
             return false
         }
@@ -217,8 +217,8 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
         guard (pswTextField.text! as NSString).isEqualToString(cPswTextField.text!) else {
          
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "两次密码不同")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Two different passwords")
             
             return false
         }
@@ -272,18 +272,18 @@ extension  RNEmailRegisterViewController: UITextFieldDelegate{
                         responseObject: AnyObject!) in
                         
                         let alertView=SCLAlertView()
-                        alertView.addButton("确定", action: { [weak self] in
+                        alertView.addButton("OK", action: { [weak self] in
                         
                             self!.navigationController?.popViewControllerAnimated(true)
                         })
-                        alertView.showError("提示", subTitle: "注册成功,返回登录")
+                        alertView.showSuccess("Tips", subTitle: "Registration is successful, return to the login")
             },
                      failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in
                         
                         let alertView=SCLAlertView()
-                        alertView.addButton("确定", action: {})
-                        alertView.showError("错误提示", subTitle: error.localizedDescription)
+                        alertView.addButton("OK", action: {})
+                        alertView.showError("Error Tips", subTitle: error.localizedDescription)
         })
         
         
@@ -316,20 +316,20 @@ extension  RNEmailRegisterViewController{
                         responseObject: AnyObject!) in
                         
                         let alertView=SCLAlertView()
-                        alertView.addButton("确定", action: { [weak self] in
+                        alertView.addButton("OK", action: { [weak self] in
                             
                             self!.remainingSeconds = 60
                             self!.isCounting = true
                             
                         })
-                        alertView.showError("提示", subTitle: "获取验证码成功,打开邮箱获取验证码")
+                        alertView.showSuccess("Tips", subTitle: "Get verification code is successful, open the mailbox access security code")
             },
                      failure: { (operation: AFHTTPRequestOperation!,
                         error: NSError!) in
                         
                         let alertView=SCLAlertView()
-                        alertView.addButton("确定", action: {})
-                        alertView.showError("错误提示", subTitle: error.localizedDescription)
+                        alertView.addButton("OK", action: {})
+                        alertView.showError("Error Tips", subTitle: error.localizedDescription)
         })
         
     }

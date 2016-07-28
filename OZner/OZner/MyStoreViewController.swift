@@ -61,6 +61,7 @@ class MyStoreViewController: UIViewController,UIWebViewDelegate {
     func GoUrlBefore(url:String)->String
     {
         
+        print("tttttttttt:\(UserTalkCode)")
         return "http://www.oznerwater.com/lktnew/wap/app/Oauth2.aspx?mobile="+mobile+"&UserTalkCode="+UserTalkCode+"&Language="+Language+"&Area="+Area+"&goUrl="+url
         //print("http://test.oznerwater.com/lktnew/wap/app/Oauth2.aspx?mobile="+mobile+"&UserTalkCode="+UserTalkCode+"&Language="+Language+"&Area="+Area+"&goUrl="+url)
     }

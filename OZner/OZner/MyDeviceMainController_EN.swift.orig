@@ -182,8 +182,12 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         OznerDeviceSensorUpdate(self.myCurrentDevice)
         self.navigationController?.navigationBarHidden=true
         
+<<<<<<< HEAD
         // 判断登陆方式
-       if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
+        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(CHINESE){
+=======
+        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
+>>>>>>> master_English_EN
             CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         }else{
             CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
@@ -1770,9 +1774,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     func IKnow()
     {
         bgairView.removeFromSuperview()
-        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
-            CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
-        }
+        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
     }
     
     //设备未联网信息显示

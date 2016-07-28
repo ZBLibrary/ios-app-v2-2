@@ -156,7 +156,7 @@
         mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
     }else{
-        emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+        emailLoginViewController = [[RNEmailLoginViewController alloc] initWithNibName:@"RNEmailLoginViewController" bundle:nil] ;
         mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
     }
 
@@ -201,7 +201,7 @@
             mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
             mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
         }else{
-            emailLoginViewController = [[RNEmailLoginViewController alloc] init] ;
+            emailLoginViewController = [[RNEmailLoginViewController alloc] initWithNibName:@"RNEmailLoginViewController" bundle:nil] ;
             mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
         }
 
@@ -286,7 +286,8 @@
 {
     [MBProgressHUD hideHUDForView:currentView animated:YES];
     
-    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:loadLanguage(@"提示") message:loadLanguage(@"账号或密码错误") delegate:nil cancelButtonTitle:loadLanguage(@"确定") otherButtonTitles: nil, nil] ;
+    [alert show] ;
 }
 
 - (void)onNoNeedLogin:(UIView *)currentView

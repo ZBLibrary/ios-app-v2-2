@@ -42,9 +42,39 @@ class RNEmailLoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextfield: UITextField! // 密码
     
-    @IBOutlet weak var phoneLoginButton: UIButton!
+    @IBOutlet weak var phoneLoginButton: UIButton! // 验证码登录
     
     // MARK: -  Life cycle - 即生命周期
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    
+    convenience init() {
+        
+        var nibNameOrNil = String?("RNEmailLoginViewController")
+        
+        //考虑到xib文件可能不存在或被删，故加入判断
+        
+        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+            
+        {
+            
+            nibNameOrNil = nil
+            
+        }
+        
+        self.init(nibName: nibNameOrNil, bundle: nil)
+        
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,8 +149,8 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
         guard !(emailTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "邮箱不能为空")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Email cannot be empty")
             
             return false
         }
@@ -128,8 +158,8 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
         guard isValidateEmail(emailTextField.text!) else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "邮箱格式不正确")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Email address format is not correct")
             
             return false
         }
@@ -137,8 +167,8 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
         guard !(passwordTextfield.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("确定", action: {})
-            alertView.showError("错误提示", subTitle:  "密码不能为空")
+            alertView.addButton("OK", action: {})
+            alertView.showError("Error Tips", subTitle:  "Password connot be empty")
             
             return false
         }
@@ -202,13 +232,13 @@ extension  RNEmailLoginViewController{
     // 忘记密码
     @IBAction func forgetPassword(sender: UIButton) {
         
-        let modifyPassword = RNModifyPasswordViewController()
+        let modifyPassword = RNModifyPasswordViewController(nibName: "RNModifyPasswordViewController", bundle: nil)
         navigationController?.pushViewController(modifyPassword, animated: true)
     }
     // 注册账号(邮箱)
     @IBAction func registerAction(sender: UIButton) {
         
-        let register = RNEmailRegisterViewController()
+        let register = RNEmailRegisterViewController(nibName: "RNEmailRegisterViewController", bundle: nil)
         
         navigationController?.pushViewController(register, animated: true)
         
@@ -277,8 +307,8 @@ extension  RNEmailLoginViewController{
                         error: NSError!) in
                        
                         let alertView=SCLAlertView()
-                        alertView.addButton("确定", action: {})
-                        alertView.showError("错误提示", subTitle: error.localizedDescription)
+                        alertView.addButton("OK", action: {})
+                        alertView.showError("Error Tips", subTitle: error.localizedDescription)
         })
         
         
