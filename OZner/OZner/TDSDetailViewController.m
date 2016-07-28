@@ -207,7 +207,13 @@
     }
     else
     {
-        return [self createThirdCell:tableView cellForRowAtIndexPath:indexPath];
+        if ( [[[[NSUserDefaults standardUserDefaults]valueForKey:LoginByPhone] stringValue] isEqualToString:LoginByPhone] ) {
+            return [self createThirdCell:tableView cellForRowAtIndexPath:indexPath];
+        } else {
+            UITableViewCell * cell = [[UITableViewCell alloc] init];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
     }
     
 }
