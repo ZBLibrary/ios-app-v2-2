@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -118,7 +118,7 @@
                                         <rect key="frame" x="350" y="0.0" width="25" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFd-gh-lPV">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFd-gh-lPV">
                                         <rect key="frame" x="270" y="20" width="80" height="40"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="zixunIconzb" translatesAutoresizingMaskIntoConstraints="NO" id="n6K-nm-dNX">
@@ -363,6 +363,7 @@
                 <outlet property="faceIcon" destination="ac8-gI-kia" id="iZY-DM-PB5"/>
                 <outlet property="faceState" destination="L57-bh-EZ2" id="XRM-Ef-Gbh"/>
                 <outlet property="headTitle" destination="163-WK-8Me" id="Rd0-jr-oS1"/>
+                <outlet property="hideImage" destination="Xml-lJ-eYD" id="5Hr-MW-XOV"/>
                 <outlet property="shareCick" destination="2Ub-M5-C9Q" id="LVi-mz-g85"/>
                 <outlet property="toTDSState" destination="bCu-aT-YAR" id="sv6-bS-yt9"/>
                 <outlet property="toZiXun" destination="zXx-cy-IVj" id="Ajh-0a-22D"/>

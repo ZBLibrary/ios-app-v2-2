@@ -95,7 +95,7 @@
     getshareImageClass* getClass = [[getshareImageClass alloc]init];
     UIImage* image = [getClass getshareImagezb:self.defeatRank type:0 value:record.volume beat:beatzb maxWater:maxValue];
     //微信朋友圈
-    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:@"浩泽净水家" shareImg:image];
+    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"浩泽净水家") shareImg:image];
 }
 
 #pragma mark-AmountOfDrinkingWaterFirstCellDelegate
@@ -113,7 +113,7 @@
 - (void)jianKangShuiAction
 {
     WeiXinURLViewController_EN* URLController=[[WeiXinURLViewController_EN alloc] initWithNibName:@"WeiXinURLViewController_EN" bundle:nil];
-    [URLController setTitle:@"健康水知道"];
+    [URLController setTitle:loadLanguage(@"健康水知道")];
     [self presentViewController:URLController animated:true completion:nil];
 }
 
@@ -141,17 +141,18 @@
 {
     static NSString* amountWaterFirstCell = @"amountWaterFirstCell";
     drinKWaterCell* wCell = [tableView dequeueReusableCellWithIdentifier:amountWaterFirstCell];
+    wCell.selectionStyle = UITableViewCellSelectionStyleNone;
     if(wCell == nil&&self.myCurrentDevice != nil)
     {
         wCell = [[[NSBundle mainBundle]loadNibNamed:@"drinKWaterCell" owner:self options:nil] objectAtIndex:0];
         //0 饮水量，1 温度
         if (self.currentType==0) {
-            wCell.celltype=@"饮水量";
+            wCell.celltype=loadLanguage(@"饮水量");
             wCell.waterValueChange=self.todayVolume;
             wCell.rank=self.todayRank==0 ? 1:self.todayRank;
         }
         else{
-            wCell.celltype=@"水温";
+            wCell.celltype=loadLanguage(@"水温");
             wCell.waterValueChange=self.myCurrentDevice.sensor.Temperature;
         }
         
@@ -173,7 +174,7 @@
         _circleCell.myCurrentDevice=self.myCurrentDevice;
         _circleCell.cellType=1;//水温
         _circleCell.ChartType=0;//圆环图
-
+        
         _circleCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return _circleCell;
     } else {
@@ -204,17 +205,23 @@
 
 - (UITableViewCell*)createThirdCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //setObject:LoginByEmail forKey:CURRENT_LOGIN_STYLE]
+    
     static NSString* thirdCell = @"thirdCell";
+    
     TDSFooterCellzb* wCell = [tableView dequeueReusableCellWithIdentifier:thirdCell];
+    wCell.selectionStyle = UITableViewCellSelectionStyleNone;
     if(wCell == nil)
     {
         wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSFooterCellzb" owner:self options:nil] objectAtIndex:0];
+        wCell.selectionStyle = UITableViewCellSelectionStyleNone;
         //wCell.delegate = self;
     }
     [wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
     [wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
     return wCell;
+    
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -229,7 +236,13 @@
     }
     else
     {
-        return [self createThirdCell:tableView cellForRowAtIndexPath:indexPath];
+        if ( [[[[NSUserDefaults standardUserDefaults]valueForKey:LoginByPhone] stringValue] isEqualToString:LoginByPhone] ) {
+            return [self createThirdCell:tableView cellForRowAtIndexPath:indexPath];
+        } else {
+            UITableViewCell * cell = [[UITableViewCell alloc] init];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
     }
     
 }

@@ -98,12 +98,12 @@
     UIImage* image = [getClass getshareImagezb:self.defeatRank type:1 value:self.tdsValue beat:beatzb maxWater:0];
     
     //微信朋友圈
-    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:@"浩泽净水家" shareImg:image];
+    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"浩泽净水家") shareImg:image];
 }
 - (void)toWhatTDS
 {
     ToWhatViewController_EN* tdsState=[[ToWhatViewController_EN alloc] initWithNibName:@"ToWhatViewController_EN" bundle:nil];
-    [tdsState setTitle:@"什么是TDS?"];
+    [tdsState setTitle:loadLanguage(@"什么是TDS?")];
     [self.navigationController pushViewController:tdsState animated:YES];
 }
 //#pragma mark-AmountOfDrinkingWaterFirstCellDelegate
@@ -121,7 +121,7 @@
 - (void)jianKangShuiAction
 {
     WeiXinURLViewController_EN* URLController=[[WeiXinURLViewController_EN alloc] initWithNibName:@"WeiXinURLViewController_EN" bundle:nil];
-    [URLController setTitle:@"健康水知道"];
+    [URLController setTitle:loadLanguage(@"健康水知道")];
     [self presentViewController:URLController animated:true completion:nil];
 }
 
@@ -153,7 +153,7 @@
     {
         wCell = [[[NSBundle mainBundle]loadNibNamed:@"TDSDetailCellzb" owner:self options:nil] objectAtIndex:0];
     }
-    
+    wCell.zixunViewzb.hidden = YES;
     wCell.TDSValueChange =  self.tdsValue;
     wCell.rankValueChange = self.tdsRankValue;
     NSLog(@"%d",self.tdsRankValue);

@@ -9,7 +9,7 @@
 import UIKit
 
 class TDSDetailCellzb: UITableViewCell {
-
+    
     @IBOutlet var BackClick: UIButton!
     @IBOutlet var headTitle: UILabel!
     @IBOutlet var shareCick: UIButton!
@@ -21,10 +21,12 @@ class TDSDetailCellzb: UITableViewCell {
     @IBOutlet var toZiXun: UIButton!
     @IBOutlet var zixunViewzb: UIView!
     
+    @IBOutlet weak var hideImage: UIImageView!
     var TDSValueChange:Int=0{
         didSet{
-            TDSValue.text=TDSValueChange==0||TDSValueChange==65535 ? "暂无":"\(TDSValueChange)"
-            if TDSValue.text=="暂无"
+
+            TDSValue.text=TDSValueChange==0||TDSValueChange==65535 ? loadLanguage("暂无"):"\(TDSValueChange)"
+            if TDSValue.text==loadLanguage("暂无")
             {
                 TDSValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 25)
             }
@@ -36,18 +38,18 @@ class TDSDetailCellzb: UITableViewCell {
             {
             case 0..<TDS_Good_Int:
                 faceIcon.image=UIImage(named: "waterState1")
-                faceState.text="完美水质，体内每个细胞都说好！"
+                faceState.text=loadLanguage("完美水质，体内每个细胞都说好！")
                 break
             case TDS_Good_Int..<TDS_Bad_Int:
                 faceIcon.image=UIImage(named: "waterState2")
-                faceState.text="饮水安全需谨慎，你值得拥有更好的。"
+                faceState.text=loadLanguage("饮水安全需谨慎，你值得拥有更好的。")
                 break
             case TDS_Bad_Int..<65535:
                 faceIcon.image=UIImage(named: "waterState3")
-                faceState.text="当前杂质较多，请放心给对手饮用"
+                faceState.text=loadLanguage("当前杂质较多，请放心给对手饮用")
                 break
             default:
-                faceState.text="暂无"
+                faceState.text=loadLanguage("暂无")
                 break
             }
             
@@ -56,8 +58,8 @@ class TDSDetailCellzb: UITableViewCell {
     }
     var rankValueChange:Int=0{
         didSet{
-            RankValue.text=rankValueChange==0 ? "暂无":"\(rankValueChange)"
-            if RankValue.text=="暂无"
+            RankValue.text=rankValueChange==0 ? loadLanguage("暂无"):"\(rankValueChange)"
+            if RankValue.text==loadLanguage("暂无")
             {
                 RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 25)
             }
@@ -71,7 +73,7 @@ class TDSDetailCellzb: UITableViewCell {
                     RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
                     break
                     
-                
+                    
                 case 3...4:
                     RankValue.font=UIFont(name: ".SFUIDisplay-Thin", size: 22)
                     break
@@ -88,16 +90,20 @@ class TDSDetailCellzb: UITableViewCell {
             
         }
     }
-  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         zixunViewzb.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).CGColor
+        hideImage.hidden = !IsLoginByPhone()
+        shareCick.enabled = IsLoginByPhone()
+        zixunViewzb.hidden = !IsLoginByPhone()
+        
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

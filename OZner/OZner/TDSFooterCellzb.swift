@@ -25,6 +25,7 @@ class TDSFooterCellzb: UITableViewCell {
         bugView.layer.cornerRadius=20
         bugView.layer.masksToBounds=true
         // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

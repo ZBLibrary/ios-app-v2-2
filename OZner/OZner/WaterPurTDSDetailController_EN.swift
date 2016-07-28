@@ -78,6 +78,7 @@ class WaterPurTDSDetailController_EN: UITableViewController {
             //wCell.toStoreButton.addTarget(self, action: #selector(toBuyClick), forControlEvents: .TouchUpInside)
             wCell.selectionStyle=UITableViewCellSelectionStyle.None
             return wCell
+
         }
         
     }
