@@ -141,7 +141,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             
             //调用语音接口
             self.getYYbutton.enabled=false
-            self.errorLabel.text=loadLanguage("您将会收到来自4001电话语音,请注意接听。")
+            self.errorLabel.text=loadLanguage("您将会收到语音电话,请注意接听。")
             self.getYYbutton.backgroundColor=color_BT_bg_ed
             self.getYYbutton.layer.borderColor=color_BT_bg_ed.CGColor
             self.getYYbutton.setTitleColor(color_black, forState: .Normal)
