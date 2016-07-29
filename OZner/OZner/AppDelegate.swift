@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         
         
         
-        //注册微信
+        //注册微信//
         WXApi.registerApp("wx45a8cc642a2295b5", withDescription: "haoze")
         //百度推送
         // iOS8 下需要使用新的 API

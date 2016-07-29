@@ -2254,6 +2254,7 @@
 		B7F5B7551D49E9E000446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
 		B7F5B7591D49E9E900446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
 		B7F5B75F1D49F74300446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/drinKWaterCell.xib"; sourceTree = "<group>"; };
+		B7F5B7621D49FC0A00446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/TDSFooterCellzb.xib"; sourceTree = "<group>"; };
 		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
@@ -5794,6 +5795,7 @@
 			children = (
 				B7F5B7491D49D36D00446670 /* Base */,
 				B7F5B74D1D49D43900446670 /* en */,
+				B7F5B7621D49FC0A00446670 /* zh-Hans */,
 			);
 			name = TDSFooterCellzb.xib;
 			sourceTree = "<group>";
