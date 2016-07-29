@@ -425,7 +425,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     }
 
     //除了水杯的配对完成回掉事件
-    var deviceNameArr=[loadLanguage("智能水杯"),loadLanguage("水探头"),loadLanguage("净水器"),loadLanguage("台式空气净化器"),loadLanguage("立式空气净化器"),loadLanguage("智能补水仪")]
+    var deviceNameArr=["智能水杯","水探头","净水器","台式空气净化器","立式空气净化器","智能补水仪"]
     func otherFinishedAction()
     {
         if ((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
@@ -498,7 +498,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
 //            if(status.networkStatus == kSuccessStatus)
 //            {
                 device.settings.name = self.cupFinishedBgView?.myCupNameTextField?.text
-                device.settings.put("type", value: loadLanguage("我的杯子"))
+                device.settings.put("type", value: "我的杯子")
                 device.settings.put("weight", value: self.cupFinishedBgView?.myWeightTextField?.text!)
                 
                 OznerManager.instance().save(device)
@@ -680,7 +680,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 wCellView.titleLabel?.text = loadLanguage("立式空净")
             case 5:
                 wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
-                wCellView.titleLabel?.text = "补水仪"
+                wCellView.titleLabel?.text = loadLanguage("补水仪")
             default:
                 break
             }
