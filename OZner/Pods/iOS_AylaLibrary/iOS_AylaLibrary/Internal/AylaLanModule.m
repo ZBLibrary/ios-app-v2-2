@@ -232,7 +232,7 @@
         //save to cache
         NSMutableArray *arr = [NSMutableArray array];
         [arr addObject:self.lanConfig];
-        [AylaCache save:AML_CACHE_LAN_CONFIG withIdentifier:[[AylaLanMode device] dsn] andObject:arr];
+        [AylaCache save:AML_CACHE_LAN_CONFIG withIdentifier:self.device.dsn andObject:arr];
         [self.session didUpdateLanModeConfig:self.self.lanConfig];
         
         if(![_lanConfig isEnabled]) {
@@ -243,6 +243,18 @@
         if(completionBlock)
             completionBlock(self.lanConfig, AylaLanModeErrorCodeNoErr, nil);
     } failure:^(AylaHTTPOperation *operation, AylaError *error) {
+        if ([self isCurrentLanConfigValid]) {
+            saveToLog(@"%@, %@, %@, %@", @"I", @"LanConfig", @"readFromCache", @"getLanModeConfig");
+            if(![_lanConfig isEnabled]) {
+                saveToLog(@"%@, %@, %@:%@, %@", @"W", @"LanModule", @"config", @"isNotEnabled", @"getLanModeConfig");
+                completionBlock(_lanConfig, AylaLanModeErrorCodeLanConfigNotEnabled, nil);
+                return;
+            }
+            if(completionBlock) {
+                completionBlock(self.lanConfig, AylaLanModeErrorCodeNoErr, nil);
+            }
+            return;
+        }
         saveToLog(@"%@, %@, %@, %@", @"E", @"Devices", error.logDescription, @"getLanModeConfig");
         //Not a valid http error status code,
         if(operation.response.httpStatusCode > 300  &&

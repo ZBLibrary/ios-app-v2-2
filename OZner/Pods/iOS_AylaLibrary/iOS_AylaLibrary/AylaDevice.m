@@ -164,13 +164,12 @@ static NSString * const kAylaNodeType = @"node_type";
     NSString *path = [NSString stringWithFormat:@"%@", @"devices.json"];
     saveToLog(@"%@, %@, %@:%@, %@", @"I", @"Devices", @"path", path, @"getDevices");
   
-    if([AylaReachability isInternetReachable]){
-        
+//    if([AylaReachability isInternetReachable]){
+    
         // [AylaReachability determineServiceReachabilityWithBlock:^(int reachable){
         NSArray *devices = nil;
         
-        if([AylaSystemUtils slowConnection].boolValue &&
-           [[[AylaDeviceManager sharedManager] devices] count] > 0){
+        if([[[AylaDeviceManager sharedManager] devices] count] > 0 && [AylaSystemUtils slowConnection].boolValue){
 
             // Get copy of device list
             devices = [[AylaDeviceManager sharedManager] copyOfBufferedDeviceList];
@@ -216,7 +215,7 @@ static NSString * const kAylaNodeType = @"node_type";
                 // When service is not reachable
                 saveToLog(@"%@, %@, %@:%d, %@", @"I", @"Devices", @"serviceReachability", [AylaReachability getConnectivity], @"getDevices.getPath");
                 [AylaReachability determineServiceReachabilityWithBlock:nil];
-                devices = [AylaLanMode isEnabled]? [[AylaDeviceManager sharedManager] copyOfBufferedDeviceList]: [AylaCache get:AML_CACHE_DEVICE];
+                devices = [[AylaDeviceManager sharedManager] copyOfBufferedDeviceList];
                 if(devices) {
                     saveToLog(@"%@, %@, %@:%ld, %@", @"I", @"Devices", @"203", (unsigned long)devices.count, @"getDevices.getPath");
                     AylaResponse *resp = [AylaResponse new];
@@ -231,14 +230,14 @@ static NSString * const kAylaNodeType = @"node_type";
                 }
             }
         }
-    }
-    else{
-        saveToLog(@"%@, %@, %@:%d, %@", @"E", @"Devices", @"internetReachability", [AylaReachability isInternetReachable], @"getDevices.getPath");
-        AylaError *err = [AylaError new];
-        err.errorCode = AML_ERROR_NO_CONNECTIVITY; err.nativeErrorInfo = nil;
-        err.httpStatusCode = 0; err.errorInfo = nil;
-        failureBlock(err);
-    }
+//    }
+//    else{
+//        saveToLog(@"%@, %@, %@:%d, %@", @"E", @"Devices", @"internetReachability", [AylaReachability isInternetReachable], @"getDevices.getPath");
+//        AylaError *err = [AylaError new];
+//        err.errorCode = AML_ERROR_NO_CONNECTIVITY; err.nativeErrorInfo = nil;
+//        err.httpStatusCode = 0; err.errorInfo = nil;
+//        failureBlock(err);
+//    }
     return nil;
 }
 
@@ -448,8 +447,11 @@ static NSString * const kAylaNodeType = @"node_type";
       success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
       failure:(void (^)(AylaError *err))failureBlock
 {
-  [AylaRegistration registerNewDevice:device
-    success:^(AylaResponse *response, AylaDevice *registeredDevice) {
+    [self registerNewDevice:device latitude:nil longitude:nil success:successBlock failure:failureBlock];
+}
+
++ (void)registerNewDevice:(AylaDevice *)targetDevice latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude success:(void (^)(AylaResponse *, AylaDevice *))successBlock failure:(void (^)(AylaError *))failureBlock {
+  [AylaRegistration registerNewDevice:targetDevice latitude:latitude longitude:longitude success:^(AylaResponse *response, AylaDevice *registeredDevice) {
       [AylaCache clearAll];
       successBlock(response, registeredDevice);
     }
@@ -720,7 +722,7 @@ static const NSString *shareAttrResourceName = @"resource_name";
 //--------------------------------- Grant -----------------------------------
 - (BOOL)amOwner
 {
-    return self.grant? YES: NO;
+    return self.grant? NO: YES;
 }
 
 //---------------------------------NewDeviceConnected-----------------------------------
@@ -1217,7 +1219,7 @@ static const NSString *shareAttrResourceName = @"resource_name";
         _copy.productClass = [_productClass copy];
         _copy.ssid = [_ssid copy];
         _copy.swVersion = [_swVersion copy];
-        _copy.properties = [_properties copy];
+        _copy.properties = [[_properties copy] mutableCopy];
         _copy.property = [_property copy];
         _copy.features = [_features copy];
         _copy.lanModule = [[AylaLanModule alloc] initWithDevice:_copy];
@@ -1505,10 +1507,9 @@ static NSString *lastDsn = nil;
                 return operation;
             }
             else{
-                if([[AylaLanMode device] properties]!=nil && [[[AylaLanMode device] properties] count]!=0 &&
-                   [AylaLanMode.device.dsn isEqualToString:device.dsn] &&
+                if(device.properties!=nil && [device.properties count]!=0 &&
                    [AylaCache cachingEnabled:AML_CACHE_PROPERTY]){
-                    NSMutableDictionary *properties = [[AylaLanMode device] properties];
+                    NSMutableDictionary *properties = device.properties;
                     NSArray *respArr = [properties allValues];
                     
                     AylaResponse *resp = [AylaResponse new];

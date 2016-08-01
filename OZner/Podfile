@@ -1,6 +1,6 @@
 # Setting $AYLA_BUILD_REPO and/or $AYLA_LIB_BRANCH environment variables
 # will override to defaults for this release
-AYLA_LIB_BRANCH="release/4.4.00"
+AYLA_LIB_BRANCH="release/4.4.05"
 AYLA_BUILD_REPO='https://github.com/AylaNetworks/iOS_AylaLibrary_Public.git'
 
 

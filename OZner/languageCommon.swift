@@ -10,5 +10,5 @@ import Foundation
 
 func loadLanguage(text:String)->String
 {
-    return NSLocalizedString(text, comment: "")
+    return NSLocalizedString(text, comment: "")   
 }

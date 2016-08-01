@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5D1B26271B077DAC334E73E4'
+               BlueprintIdentifier = '302F9C9AA6517010CBA7BFEF'
                BlueprintName = 'iOS_AylaLibrary-AylaLibraryBundle'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AylaLibraryBundle.bundle'>

@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "HttpServer_Xu.h"
-//#import "MyHTTPConnection.h"
 #import "ConfigurationDevice.h"
 #import "MXChipIO.h"
 #import "AylaIO.h"
-#import <AylaNetworks.h>
+#import "AylaNetworks.h"
 #import <CoreLocation/CoreLocation.h>
 
 @class AylaNetworks;

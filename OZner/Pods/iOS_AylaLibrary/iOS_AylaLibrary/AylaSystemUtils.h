@@ -138,6 +138,7 @@ typedef NS_ENUM(NSUInteger, AylaServiceLocation) {
 + (NSString *) getLogFilePath;
 + (NSString *) getSupportMailAddress;
 + (NSString *) getLogMailSubjectWithAppId:(NSString *)appId;
++ (NSString *) getLogMailBody; // with diagnostic info
 
 /* Not available
  + (NSNumber *)refreshInterval;

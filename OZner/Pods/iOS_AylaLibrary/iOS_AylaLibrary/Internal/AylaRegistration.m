@@ -67,6 +67,11 @@
                    success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
                    failure:(void (^)(AylaError *err))failureBlock
 {
+    [AylaRegistration registerNewDevice:targetDevice latitude:nil longitude:nil success:successBlock failure:failureBlock];
+}
+
++ (void)registerNewDevice:(AylaDevice *)targetDevice latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude success:(void (^)(AylaResponse *, AylaDevice *))successBlock failure:(void (^)(AylaError *))failureBlock
+{
     AylaLogI(AYLA_THIS_CLASS, 0, @"%@:%@, %@", @"targetDsn", targetDevice.dsn, @"registerNewDevice");
     
     if(targetDevice == nil || targetDevice.registrationType == nil ||
@@ -78,8 +83,7 @@
              NSString *dsn = regCandidate1.dsn;
              [AylaRegistration getModuleRegistrationToken:lanIp
                   success:^(NSString *regToken) {
-                      [AylaRegistration registerDevice:(NSString *)dsn regToken:(NSString *)regToken setupToken:nil
-                         success:^(AylaResponse *response, AylaDevice *newRegisteredDevice) {
+                      [AylaRegistration registerDevice:(NSString *)dsn regToken:(NSString *)regToken setupToken:nil latitude:latitude longitude:longitude success:^(AylaResponse *response, AylaDevice *newRegisteredDevice) {
                            successBlock(response, newRegisteredDevice);
                          }
                          failure:^(AylaError *err) {
@@ -308,26 +312,40 @@ static NSInteger const defaultRegWindowDurationClose = 0;
           success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
           failure:(void (^)(AylaError *err))failureBlock
 {
+    return [self registerDevice:dsn regToken:regToken setupToken:setupToken latitude:nil longitude:nil success:successBlock failure:failureBlock];
+}
+
+// Register the device with the Ayla device service
++ (NSOperation *)registerDevice:(NSString *)dsn regToken:(NSString *)regToken setupToken:(NSString *)setupToken latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude
+                        success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
+                        failure:(void (^)(AylaError *err))failureBlock
+{
   //{"device":{"dsn":"AC000WT00000999","regtoken":"4d54f2"}}
-  NSDictionary *parameters;
+  NSMutableDictionary *parameters;
   if (setupToken != nil)
-      parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+      parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                     dsn, @"dsn",
                     setupToken, @"setup_token",
                     nil ];
   else if(regToken != nil)
-      parameters = dsn?[NSDictionary dictionaryWithObjectsAndKeys:
+      parameters = dsn?[NSMutableDictionary dictionaryWithObjectsAndKeys:
                    dsn, @"dsn",
                    regToken, @"regtoken",
                    nil ]:
-                  [NSDictionary dictionaryWithObjectsAndKeys:
+                    [NSMutableDictionary dictionaryWithObjectsAndKeys:
                    regToken, @"regtoken",
                    nil];
   else
-      parameters = dsn?[NSDictionary dictionaryWithObjectsAndKeys:
+      parameters = dsn?[NSMutableDictionary dictionaryWithObjectsAndKeys:
                         dsn, @"dsn", nil]:@{};
-     
-  NSDictionary *params =[NSDictionary dictionaryWithObjectsAndKeys:
+  if (latitude) {
+      [parameters setObject:latitude forKey:@"lat"];
+  }
+  if (longitude) {
+      [parameters setObject:longitude forKey:@"lng"];
+  }
+    
+  NSMutableDictionary *params =[NSMutableDictionary dictionaryWithObjectsAndKeys:
                          parameters, @"device", nil];
   NSString *path = [NSString stringWithFormat:@"%@", @"devices.json"];
   AylaLogD(AYLA_THIS_CLASS, 0, @"%@:%@, %@", @"params", params, @"registerDevice.postPath");

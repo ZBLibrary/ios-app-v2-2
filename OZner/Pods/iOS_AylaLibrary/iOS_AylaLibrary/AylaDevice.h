@@ -189,6 +189,23 @@ extern NSString * const kAylaDeviceTypeNode;
                    failure:(void (^)(AylaError *err))failureBlock;
 
 /**
+ * Device Registration provides a way to easily register a device once it has successfully completed the Setup process. Devices must be registered
+ * before they can be accessed by the Device Service methods.
+ * @param targetDevice The device users want to register to their account. If it is set to nil, Ayla Cloud Service will attempt to find most possible
+ *        one to try registraion.
+ * @param latitude    Latitude of the device.
+ * @param longitude   Longitude of the Device.
+ * @param successBlock Block which would be called with that registered device when request is succeeded.
+ * @param failureBlock Block which would be called with an AylaError object when request is failed.
+ * @warning please check iAyla Mobile Library document to find out how to handle returned AylaError object.
+ */
++ (void) registerNewDevice:(AylaDevice *)targetDevice
+                  latitude:(NSNumber *)latitude
+                 longitude:(NSNumber *)longitude
+                   success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
+                   failure:(void (^)(AylaError *err))failureBlock;
+
+/**
  * This method will unregister a device from a user account. There are no call parameters required for this method at this time, so supply nil for now.
  * @param callParams Not required.
  * @param successBlock Block which would be called with an array of retrieved device properties when request is succeeded.

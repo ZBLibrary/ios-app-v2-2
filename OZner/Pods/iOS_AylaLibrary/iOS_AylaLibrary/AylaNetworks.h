@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <Foundation/NSJSONSerialization.h>
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 
 #ifndef _AYLA_NETWORKS_H_
 #define _AYLA_NETWORKS_H_
@@ -72,7 +72,7 @@ extern NSString *gblAuthToken;     //Global Authentication Token
 extern NSString *deviceSsidRegex;  //Device Ssid Regular Expression
 
 // CONSTANTS
-#define amlVersion @"4.4.00"
+#define amlVersion @"4.4.05"
 
 #define SUCCESS 0
 #define FAIL    1
@@ -117,7 +117,7 @@ typedef enum {
 #define DEFAULT_SECURE_SETUP YES
 #define DEFAULT_SETUP_WIFI_HTTP_TIMEOUT 6
 #define DEFAULT_SETUP_TOKEN_LEN 8
-#define DEFAULT_NEW_DEVICE_TO_SERVICE_CONNECTION_RETRIES 7
+#define DEFAULT_NEW_DEVICE_TO_SERVICE_CONNECTION_RETRIES 10
 #define DEFAULT_NEW_DEVICE_TO_SERVICE_NO_INTERNET_CONNECTION_RETRIES 9
 #define DEFAULT_SETUP_STATUS_POLLING_INTERVAL 3
 

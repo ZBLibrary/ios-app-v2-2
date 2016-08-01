@@ -16,6 +16,7 @@
 #import "AylaErrorSupport.h"
 #import "AylaLogManager.h"
 #import "NSObject+AylaNetworks.h"
+#import "AylaDiagnosticHelper.h"
 
 #define AML_APP_ID_SUFFIX_US @"-id"
 #define AML_APP_ID_SUFFIX_CN @"-cn-id"
@@ -290,6 +291,11 @@ static AylaConnectivityListener *_monitor = nil;
 + (NSString *) getLogMailSubjectWithAppId:(NSString *)appId
 {
     return [NSString stringWithFormat:@"AppId:%@,LibVer:%@,OS:%@", appId, amlVersion, [[UIDevice currentDevice] systemVersion]];
+}
+
++ (NSString *) getLogMailBody
+{
+    return [AylaDiagnosticHelper generateDiagnostics];
 }
 
 //----------------------------- settings persistence -----------------------------

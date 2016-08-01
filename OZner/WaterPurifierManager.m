@@ -12,7 +12,7 @@
 #import "OznerManager.h"
 #import "Helper.h"
 #import "WaterPurifier_Ayla.h"
-#import <AylaNetWorks.h>
+//#import "AylaNetWorks.h"
 //#define WaterPurifier_Ayla_Type @"AY001MAB1"
 @implementation WaterPurifierManager
 

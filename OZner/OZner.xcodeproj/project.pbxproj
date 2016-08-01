@@ -373,6 +373,7 @@
 		8D756AC71C8E91D50022CF63 /* SetSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC51C8E91D50022CF63 /* SetSexViewController.xib */; };
 		8D756ACA1C8EC3950022CF63 /* SetRemindTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D756AC81C8EC3950022CF63 /* SetRemindTimeController.swift */; };
 		8D756ACB1C8EC3950022CF63 /* SetRemindTimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D756AC91C8EC3950022CF63 /* SetRemindTimeController.xib */; };
+		8D7C5DFD1D460C970049BEE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FF7DEC1C19F9E1005635F8 /* Foundation.framework */; };
 		8D7FEC771C746DE200DD01AF /* WaterPurifierHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FEC751C746DE200DD01AF /* WaterPurifierHeadCell.swift */; };
 		8D7FEC781C746DE200DD01AF /* WaterPurifierHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FEC761C746DE200DD01AF /* WaterPurifierHeadCell.xib */; };
 		8D88804F1C8DCC4D007391E1 /* setWaterReplenishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88804E1C8DCC4D007391E1 /* setWaterReplenishController.swift */; };
@@ -2224,6 +2225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7C5DFD1D460C970049BEE4 /* Foundation.framework in Frameworks */,
 				52ECBE581C0C60DF00A962E4 /* SystemConfiguration.framework in Frameworks */,
 				52ECBE611C0C638700A962E4 /* CoreLocation.framework in Frameworks */,
 				52ECBE5D1C0C636900A962E4 /* AudioToolbox.framework in Frameworks */,
@@ -4872,6 +4874,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE758461D41ED4300E721DA /* WaterPurifier_Ayla.m in Sources */,
+				8DE758331D41EBD700E721DA /* AylaIOManager.m in Sources */,
 				8DA4059D1C8441B500AD5E5E /* ZXISBNParsedResult.m in Sources */,
 				523DC3381C175E1B00595099 /* XMMessageCell.m in Sources */,
 				8DA405591C8441B500AD5E5E /* ZXBitArrayBuilder.m in Sources */,
@@ -5403,7 +5407,6 @@
 				8DA4036F1C843F8600AD5E5E /* LBXScanWrapper.m in Sources */,
 				8DA405851C8441B500AD5E5E /* ZXDimension.m in Sources */,
 				8DA405C11C8441B500AD5E5E /* ZXPDF417DetectorResult.m in Sources */,
-				8DE758461D41ED4300E721DA /* WaterPurifier_Ayla.m in Sources */,
 				8DA405ED1C8441B500AD5E5E /* ZXRSSDataCharacter.m in Sources */,
 				52F465F81C2D482A0052D7C8 /* smallStateXib.swift in Sources */,
 				521BF7C71C4A256300AD1EAB /* TDSFooterCellzb.swift in Sources */,
@@ -5415,7 +5418,6 @@
 				8DA4053E1C8441B500AD5E5E /* ZXAddressBookDoCoMoResultParser.m in Sources */,
 				8DA405681C8441B500AD5E5E /* ZXCode128Reader.m in Sources */,
 				8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */,
-				8DE758331D41EBD700E721DA /* AylaIOManager.m in Sources */,
 				52791B951C18844900C098B2 /* setCUPDeviceViewController.swift in Sources */,
 				4288C53D1C0F06FF00446D3E /* AddDeviceCell.swift in Sources */,
 				8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */,
@@ -5536,11 +5538,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PROVISIONING_PROFILE = "bf4f067c-a6f2-4b13-8098-0e66cd381dec";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5580,10 +5582,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
-				PROVISIONING_PROFILE = "bf4f067c-a6f2-4b13-8098-0e66cd381dec";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
@@ -5595,6 +5597,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 691E677C8DCB67A5D6A6916D /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -5605,13 +5608,23 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OZner",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "OZner/OZner-Prefix.pch";
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaHTTPServer\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/iOS_AylaLibrary\"",
+				);
 				INFOPLIST_FILE = OZner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5645,6 +5658,7 @@
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner/OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -5654,6 +5668,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F66CE8186A3B57C3082A568 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -5664,13 +5679,23 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OZner",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "OZner/OZner-Prefix.pch";
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaHTTPServer\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/iOS_AylaLibrary\"",
+				);
 				INFOPLIST_FILE = OZner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5704,6 +5729,7 @@
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner/OZner-Bridging-Header.h";
 			};
 			name = Release;

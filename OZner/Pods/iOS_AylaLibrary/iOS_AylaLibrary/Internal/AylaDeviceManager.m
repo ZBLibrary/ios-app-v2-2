@@ -107,6 +107,8 @@ static const NSTimeInterval DefaultBackgroundTimerInterval = 30;
                 [copiedDevice.nodes setObject:copiedNode forKey:copiedNode.dsn];
                 [copiedList addObject:copiedNode];
             }
+        } else {
+            [copiedList addObject:device];
         }
     }
     return copiedList;
@@ -240,7 +242,7 @@ static const NSTimeInterval DefaultBackgroundTimerInterval = 30;
         buffered = [self _deviceWithDsn:device.dsn];
         if(!buffered) {
             AylaDevice *copy = [device copy];
-            [_devices setObject:[device copy] forKey:[device.dsn copy]];
+            [_devices setObject:copy forKey:[device.dsn copy]];
             [self initializeDevice:copy];
         }
         else {

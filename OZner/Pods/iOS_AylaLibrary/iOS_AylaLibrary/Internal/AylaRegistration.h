@@ -15,6 +15,10 @@
                    success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
                    failure:(void (^)(AylaError *err))failureBlock;
 
++ (void) registerNewDevice:(AylaDevice *)targetDevice latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude
+                   success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
+                   failure:(void (^)(AylaError *err))failureBlock;
+
 + (void) getRegistrationCandidateWithDsn:(NSString *)targetDsn andRegistrationType:(NSString *)targetRegType
                                  params:(NSDictionary *)callParams
                                 success:(void (^)(AylaDevice *regCandidate))successBlock
@@ -40,6 +44,10 @@
 + (NSOperation *) registerDevice:(NSString *)dsn regToken:(NSString *)regToken setupToken:(NSString*) setupToken
                 success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
                 failure:(void (^)(AylaError *err))failureBlock;
+
++ (NSOperation *)registerDevice:(NSString *)dsn regToken:(NSString *)regToken setupToken:(NSString *)setupToken latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude
+                        success:(void (^)(AylaResponse *response, AylaDevice *registeredDevice))successBlock
+                        failure:(void (^)(AylaError *err))failureBlock;
 
 + (NSOperation *) unregisterDevice:(AylaDevice *)device callParams:(NSDictionary *)callParams
                   success:(void (^)(AylaResponse *response))successBlock

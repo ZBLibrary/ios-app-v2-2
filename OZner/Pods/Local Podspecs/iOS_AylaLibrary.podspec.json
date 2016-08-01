@@ -1,6 +1,6 @@
 {
   "name": "iOS_AylaLibrary",
-  "version": "4.4.00",
+  "version": "4.4.02",
   "summary": "iOS_AylaLibrary.",
   "homepage": "https://github.com/AylaNetworks/iOS_AylaLibrary_Public.git",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/AylaNetworks/iOS_AylaLibrary_Public.git",
-    "tag": "4.4.00"
+    "tag": "4.4.02"
   },
   "platforms": {
     "ios": "6.0"

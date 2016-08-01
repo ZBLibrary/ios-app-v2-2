@@ -21,6 +21,23 @@ For additional coding examples refer to the unit test code in <repoDir>/iOS_Ayla
 
 Release Notes
 =============
+iAML v4.4.05                                     06/10/16
+- LAN login bug fixes
+
+iAML v4.4.04                                     05/20/16
+- Update user email API
+
+iAML v4.4.03                                     05/11/16
+- Allow setting the longitude and latitude during registration
+
+iAML v4.4.02                                     03/30/16
+- Add diagnostic info to getLogMailBody()
+- Adds option to add coordinates to the registration method
+- Fix AylaDevice.amOwner issue
+- increase default new device to service connection retries
+- Adds "-field" infix for europe service URLs:
+  https://docs.google.com/document/d/1SkTll0D_zY41-cBgo3N6UBxzt_nh989vNDVe7J8us70/edit?ts=56ba2824
+- Increases DEFAULT_NEW_DEVICE_TO_SERVICE_CONNECTION_RETRIES to 16 to match the value used in Android
 
 iAML v4.4.00                                     01/25/16
 - Add sharing a device with a role feature

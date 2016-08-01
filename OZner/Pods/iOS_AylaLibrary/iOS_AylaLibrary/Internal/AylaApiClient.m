@@ -65,6 +65,7 @@ static NSString * const http = @"http://";
 static NSString * const serviceDomainUS = @".aylanetworks.com";
 static NSString * const serviceDomainCN = @".ayla.com.cn";
 static NSString * const serviceDomainEUSuffix = @"-eu";
+static NSString * const serviceDomainFieldInfix = @"-field";
 @synthesize deviceServicePath = _deviceServicePath;
 @synthesize userServicePath = _userServicePath;
 @synthesize applicationTriggerServicePath = _applicationTriggerServicePath;
@@ -114,6 +115,64 @@ static NSInteger logServiceLocation = -1;
     return newUrl;
 }
 
+/**
+ Adds the specified service infix to the given URL.
+ 
+ Europe services contain the infix "-field" in the URL, right before "-eu", make sure to call this method before calling `addLocation:toUrlPath:` since both use the first '.' as a reference to where to insert the text.
+ 
+ This method won't duplicate the infix if it's already contained in the base US URL
+ Examples
+ 
+ Device:
+ NSString *url = @"ads-field.aylanetworks.com"; (US base)
+
+ url = [AylaApiClient addServiceInfix:serviceDomainFieldInfix toUrlPath:url];
+ //value after calling addServiceInfix:toUrlPath: -> ads-field.aylanetworks.com remains the same for it already has the infix
+ 
+ url = [AylaApiClient addServiceLocation:AylaServiceLocationEU toUrlPath:url];
+  //value after calling addServiceLocation:AylaServiceLocationEU:toUrlPath: -> ads-field-eu.aylanetworks.com (EU URL)
+ 
+ Log:
+ Device:
+ NSString *url = @" log.aylanetworks.com"; (US base)
+ 
+ url = [AylaApiClient addServiceInfix:serviceDomainFieldInfix toUrlPath:url];
+ //value after calling addServiceInfix:toUrlPath: ->  log-field.aylanetworks.com
+ 
+ url = [AylaApiClient addServiceLocation:AylaServiceLocationEU toUrlPath:url];
+ //value after calling addServiceLocation:AylaServiceLocationEU:toUrlPath: ->  log-field-eu.aylanetworks.com
+ 
+ @param infix The infix to insert before the first '.'
+ @param url      the url to use as base
+ 
+ @return the url with the infix inserted before the first '.'
+ */
++ (NSString *)addServiceInfix:(NSString *)infix toUrlPath:(NSString *)url location:(AylaServiceLocation)location
+{
+    NSString *newUrl = url;
+    
+    switch (location) {
+        case AylaServiceLocationEU:
+        {
+            // Find if url already contains the infix, if it does skip and just return the url unchanged
+            if ([newUrl rangeOfString:infix].location == NSNotFound) {
+                NSRange rangeOfDot = [newUrl rangeOfString:@"."];
+                // Find first dot
+                if (rangeOfDot.location != NSNotFound) {
+                    NSMutableString *mutableUrl = [newUrl mutableCopy];
+                    [mutableUrl insertString:infix atIndex:rangeOfDot.location];
+                    
+                    newUrl = mutableUrl;
+                }
+            }
+            break;
+        }
+        default:
+            break;
+    }
+    return newUrl;
+}
+
 + (id)sharedDeviceServiceInstance
 {
   static AylaApiClient *__sharedDeviceServiceInstance = nil;;
@@ -144,7 +203,8 @@ static NSInteger logServiceLocation = -1;
                 deviceServicePath = [AylaApiClient addLocation:deviceServiceLocation toUrlPath:GBL_DEVICE_DEMO_URL];
                 break;
             default:
-                deviceServicePath = [AylaApiClient addLocation:deviceServiceLocation toUrlPath:GBL_DEVICE_SERVICE_URL];
+                deviceServicePath = [AylaApiClient addServiceInfix:serviceDomainFieldInfix toUrlPath:GBL_DEVICE_SERVICE_URL location:deviceServiceLocation];
+                deviceServicePath = [AylaApiClient addLocation:deviceServiceLocation toUrlPath:deviceServicePath];
         }
         __sharedDeviceServiceInstance = [[AylaApiClient alloc] initWithBaseURL:[NSURL URLWithString:deviceServicePath]];
         __sharedDeviceServiceInstance.clientDestination = AylaApiClientDestinationDeviceService;
@@ -183,7 +243,8 @@ static NSInteger logServiceLocation = -1;
                 deviceServicePath = [AylaApiClient addLocation:deviceNonSecureServiceLocation toUrlPath:GBL_NON_SECURE_DEVICE_DEMO_URL];
                 break;
             default:
-                deviceServicePath = [AylaApiClient addLocation:deviceNonSecureServiceLocation toUrlPath:GBL_NON_SECURE_DEVICE_SERVICE_URL];
+                deviceServicePath = [AylaApiClient addServiceInfix:serviceDomainFieldInfix toUrlPath:GBL_NON_SECURE_DEVICE_SERVICE_URL location:deviceNonSecureServiceLocation];
+                deviceServicePath = [AylaApiClient addLocation:deviceNonSecureServiceLocation toUrlPath:deviceServicePath];
         }
         __sharedNonSecureDeviceServiceInstance = [[AylaApiClient alloc] initWithBaseURL:[NSURL URLWithString:deviceServicePath]];
         __sharedNonSecureDeviceServiceInstance.clientDestination = AylaApiClientDestinationNonSecureDeviceService;
@@ -215,7 +276,8 @@ static NSInteger logServiceLocation = -1;
                 userServicePath = [AylaApiClient addLocation:userServiceLocation toUrlPath:GBL_USER_DEMO_URL];
                 break;
             default:
-                userServicePath = [AylaApiClient addLocation:userServiceLocation toUrlPath:GBL_USER_SERVICE_URL];
+                userServicePath = [AylaApiClient addServiceInfix:serviceDomainFieldInfix toUrlPath:GBL_USER_SERVICE_URL location:userServiceLocation];
+                userServicePath = [AylaApiClient addLocation:userServiceLocation toUrlPath:userServicePath];
         }
         __sharedUserServiceInstance = [[AylaApiClient alloc] initWithBaseURL:[NSURL URLWithString:userServicePath]];
         __sharedUserServiceInstance.clientDestination = AylaApiClientDestinationUserService;
@@ -255,7 +317,8 @@ static NSInteger logServiceLocation = -1;
                 appTriggerServicePath = [AylaApiClient addLocation:appTriggerServiceLocation toUrlPath:GBL_APPTRIGGER_DEMO_URL];
                 break;
             default:
-                appTriggerServicePath = [AylaApiClient addLocation:appTriggerServiceLocation toUrlPath:GBL_APPTRIGGER_SERVICE_URL];
+                appTriggerServicePath = [AylaApiClient addServiceInfix:serviceDomainFieldInfix toUrlPath:GBL_APPTRIGGER_SERVICE_URL location:appTriggerServiceLocation];
+                appTriggerServicePath = [AylaApiClient addLocation:appTriggerServiceLocation toUrlPath:appTriggerServicePath];
         }
         __sharedAppTriggerServiceInstance = [[AylaApiClient alloc] initWithBaseURL:[NSURL URLWithString:appTriggerServicePath]];
         __sharedAppTriggerServiceInstance.clientDestination = AylaApiClientDestinationTriggerAppService;
@@ -312,7 +375,8 @@ static NSInteger logServiceLocation = -1;
                 logServicePath = [AylaApiClient addLocation:logServiceLocation toUrlPath:GBL_LOG_DEMO_URL];
                 break;
             default:
-                logServicePath = [AylaApiClient addLocation:logServiceLocation toUrlPath:GBL_LOG_SERVICE_URL];
+                logServicePath = [AylaApiClient addServiceInfix:serviceDomainFieldInfix toUrlPath:GBL_LOG_SERVICE_URL location:logServiceLocation];
+                logServicePath = [AylaApiClient addLocation:logServiceLocation toUrlPath:logServicePath];
         }
         __sharedLogServiceInstance = [[AylaApiClient alloc] initWithBaseURL:[NSURL URLWithString:logServicePath]];
         __sharedLogServiceInstance.clientDestination = AylaApiClientDestinationLogService;

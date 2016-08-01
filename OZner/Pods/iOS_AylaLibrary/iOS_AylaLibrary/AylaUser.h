@@ -181,6 +181,20 @@
     failure:(void (^)(AylaError *err))failureBlock;
 
 /**
+ * Use this method to modify the user's email address.
+ * The user must be authenticated/logged-in before calling this method.
+ *
+ * @param email   New email address
+ * @param successBlock  Block to call when the request succeeds
+ * @param failureBlock  Block to call with an AylaError object when the request fails
+ *
+ * @warning  After a successful update, the user must be signed-out and will need to sign-in again with correct credentials
+ */
++ (NSOperation *)updateEmailAddress:(NSString *)email
+    success:(void (^)(AylaResponse *response))successBlock
+    failure:(void (^)(AylaError *err))failureBlock;
+
+/**
  * @deprecated This method has been deprecated. Use -logoutWithParams:success:failure: instead
  * @see -logoutWithParams:success:failure:
  */

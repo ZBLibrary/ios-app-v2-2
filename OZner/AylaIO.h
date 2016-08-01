@@ -6,12 +6,14 @@
 //  Copyright © 2016年 Ozner. All rights reserved.
 //
 
-#import "BaseDeviceIO.h"
 #import <Foundation/Foundation.h>
+#import "BaseDeviceIO.h"
+
+//#import <AylaDevice.h>
 
 //#import "AylaIO.h"
-#import <AylaNetworks.h>
-//@class AylaIO;
+
+@class AylaDevice;
 
 
 //@protocol AylaIOStatusDelegate <NSObject>

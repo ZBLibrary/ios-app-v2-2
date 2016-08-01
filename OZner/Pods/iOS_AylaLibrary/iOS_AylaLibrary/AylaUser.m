@@ -504,6 +504,43 @@ static AylaUser *_user = nil;
             }];
 }
 
++ (NSOperation *)updateEmailAddress:(NSString *)email
+                            success:(void (^)(AylaResponse *))successBlock
+                            failure:(void (^)(AylaError *))failureBlock {
+    NSString *token = gblAuthToken;
+    if (token == nil) {
+        AylaError *err = [AylaError new];
+        err.errorCode = AML_USER_NO_AUTH_TOKEN;
+        err.nativeErrorInfo = nil;
+        err.errorInfo = nil;
+        err.httpStatusCode = 0;
+        failureBlock(err);
+        return nil;
+    }
+    
+    NSError *error = nil;
+    if ([email ayla_validateAsEmail:&error]) {
+        failureBlock(error);
+        return nil;
+    }
+    
+    return [[AylaApiClient sharedUserServiceInstance]
+            putPath:@"/users/update_email.json"
+            parameters:@{
+                         @"email" : email
+                         }
+            success:^(AylaHTTPOperation *operation, id responseObject) {
+                saveToLog(@"%@, %@, %@, %@", @"I", @"User", @"none", @"updateEmailAddress");
+                successBlock(operation.response);
+            }
+            failure:^(AylaHTTPOperation *operation, AylaError *error) {
+                saveToLog(@"%@, %@, %@, %@", @"E", @"User", error.logDescription, @"updateEmailAddress");
+                error.errorCode = error.errorInfo ? AML_USER_INVALID_PARAMETERS : 1;
+                error.errorInfo = refactorCloudReturnedErrors(error.errorInfo);
+                failureBlock(error);
+            }];
+}
+
 + (NSOperation *)logout:(__unused NSString *)accessToken
                 success:(void (^)(AylaResponse *response))successBlock
                 failure:(void (^)(AylaError *err))failureBlock
