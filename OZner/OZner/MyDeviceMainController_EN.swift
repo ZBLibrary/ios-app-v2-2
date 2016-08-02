@@ -1760,8 +1760,8 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                    //     print("jlsjlkjlksjfkl\(dataFrom)") ---  并不是英文
                         StrongSelf.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
                     }
-                    StrongSelf.headView.cityName.text=cityname
-                    StrongSelf.headView.polution.text=pollution
+                    StrongSelf.headView.cityName.text=loadLanguage(cityname)
+                    StrongSelf.headView.polution.text=loadLanguage(pollution)
                     StrongSelf.headView.PM25.text=PM25
                 }
             }

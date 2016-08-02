@@ -40,7 +40,7 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
         mainView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: mainView.bounds.size.height)
         //loadDeviceData加载设备里面数据
         loadDeviceData()
-        mainView.nameValue.text=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
+        mainView.nameValue.text=(plistData.objectForKey("deviceName") as! String)+loadLanguage("("+(plistData.objectForKey("deviceAttrib") as! String)+")")
         mainView.toSetNameButton.addTarget(self, action: #selector(toSetDvName), forControlEvents: .TouchUpInside)
         mainView.operatingIntroducButton.addTarget(self, action: #selector(toOperatingIntroduc), forControlEvents: .TouchUpInside)
         //mainView.operatingDemoButton.addTarget(self, action: #selector(toOperatingDemo"), forControlEvents: .TouchUpInside)

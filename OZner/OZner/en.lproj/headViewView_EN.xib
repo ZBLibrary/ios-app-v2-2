@@ -60,17 +60,17 @@
                         <constraint firstAttribute="height" constant="1" id="ONH-qA-GgM"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="－" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woh-ny-bgk">
-                    <rect key="frame" x="0.0" y="403" width="54" height="43"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zhengzhou" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woh-ny-bgk">
+                    <rect key="frame" x="0.0" y="403" width="65" height="43"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="54" id="3YN-L9-Hjr"/>
+                        <constraint firstAttribute="width" constant="65" id="3YN-L9-Hjr"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="0.50429410460992907" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outdoor air:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpg-WY-bPg">
-                    <rect key="frame" x="59" y="403" width="80" height="43"/>
+                    <rect key="frame" x="70" y="403" width="80" height="43"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="1JL-T6-7yb"/>
                         <constraint firstAttribute="width" constant="30" id="2V6-ts-Jcn"/>
@@ -104,8 +104,8 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ckecking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgv-ZR-9fS">
-                    <rect key="frame" x="139" y="403" width="101" height="43"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="checking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgv-ZR-9fS">
+                    <rect key="frame" x="150" y="403" width="90" height="43"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="f6b-Hf-Iiq"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="jGo-3F-H3M"/>

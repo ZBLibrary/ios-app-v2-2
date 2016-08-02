@@ -517,3 +517,34 @@
 "暂无1" = "None";
 "空气净化器滤芯" = " Air Purifier Filter" ;
 "上海" = "shanghai";
+"北京" = "beijing";
+"海淀" = "haidian";
+"朝阳" = "chaoyang";
+"闵行" = "minhang";
+"宝山" = "baoshan";
+"嘉定" = "jiading";
+"天津" = "tianjin";
+"重庆" = "chongqing";
+"哈尔滨" = "haerbin";
+"吉林" = "jilin";
+"沈阳" = "shenyang";
+"大连" = "dalian";
+"包头" = "baotou";
+"保定" = "baoding";
+"太原" = "taiyuan";
+"西安" = "xian";
+"济南" = "jinan";
+"郑州" = "zhengzhou";
+"南京" = "nanjing";
+"武汉" = "wuhan";
+"广州" = "guangzhou";
+"深圳" = "shenzhen";
+"香港" = "hongkong";
+"澳门" = "macao";
+"台北" = "taibei";
+"高雄" = "gaoxiong";
+"台中" = "taizhong";
+"南子岛" = "nanzidao";
+
+
+

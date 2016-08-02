@@ -81,8 +81,8 @@ class CustomPopViewFirstCell: UITableViewCell {
         }
         
         self.connectStateLabel.frame = CGRectMake(self.connectImgView.frame.origin.x+self.connectImgView.frame.size.width+3, 21, self.connectStateLabel.frame.size.width, self.connectStateLabel.frame.size.height)
-        self.deviceNameLabel.frame = CGRectMake(self.connectImgView.frame.origin.x, self.connectStateLabel.frame.origin.y+self.connectStateLabel.frame.size.height+4, self.deviceNameLabel.frame.size.width, self.deviceNameLabel.frame.size.height)
-        self.deviceFromLabel.frame = CGRectMake(self.connectImgView.frame.origin.x, self.deviceNameLabel.frame.origin.y+self.deviceNameLabel.frame.size.height+3, self.deviceFromLabel.frame.size.width, self.deviceFromLabel.frame.size.height)
+        self.deviceNameLabel.frame = CGRectMake(self.connectImgView.frame.origin.x, self.connectStateLabel.frame.origin.y+self.connectStateLabel.frame.size.height+4, self.deviceNameLabel.frame.size.width, self.deviceNameLabel.frame.size.height + 2)
+        self.deviceFromLabel.frame = CGRectMake(self.connectImgView.frame.origin.x, self.deviceNameLabel.frame.origin.y+self.deviceNameLabel.frame.size.height+3, self.deviceFromLabel.frame.size.width, self.deviceFromLabel.frame.size.height + 2)
         self.deviceNameLabel.text = device.settings.name
         self.deviceFromLabel.text = loadLanguage((device.settings.get("type", default:"type") as? String)!)
     }
