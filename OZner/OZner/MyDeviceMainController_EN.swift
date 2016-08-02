@@ -1752,7 +1752,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 {
                     if StrongSelf.outAirView != nil
                     {
-                        StrongSelf.outAirView.cityname.text=cityname
+                        StrongSelf.outAirView.cityname.text=loadLanguage(cityname)
                         StrongSelf.outAirView.PM25.text=PM25+"ug/m3"
                         StrongSelf.outAirView.AQI.text=AQI
                         StrongSelf.outAirView.teampret.text=temperature+"℃"
