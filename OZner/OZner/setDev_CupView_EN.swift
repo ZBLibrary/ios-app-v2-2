@@ -147,6 +147,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         my_state4label.text=loadLanguage("大姨妈来了")
         YSTimeJLable.text = loadLanguage("饮水提醒时间间隔")
         YSTimeLable.text=loadLanguage("饮水提醒时间段")
+        //
         CupName.text=loadLanguage("我的智能杯")
         weight.text=loadLanguage("体重与饮水量")
         State.text=loadLanguage("今日状态")
@@ -174,7 +175,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
     func updateData()
     {
 
-        cup_name.text=(setCupStructdata["cup_name"]! as! String)+"("+(setCupStructdata["cup_Attrib"]! as! String)+")"
+        cup_name.text=(setCupStructdata["cup_name"]! as! String)+"("+loadLanguage(setCupStructdata["cup_Attrib"]! as! String)+")"
         my_weight.text=setCupStructdata["my_weight"] as? String
         my_weight.delegate=self
         my_drinkwater.delegate=self
@@ -227,7 +228,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         var nameStr=cup.settings.name
         if nameStr.characters.contains("(")==false
         {
-            nameStr=nameStr+loadLanguage("(办公室)")
+            nameStr=nameStr+"(办公室)"
         }
         setCupStructdata["cup_name"]=nameStr.substringToIndex(nameStr.characters.indexOf("(")!)
         

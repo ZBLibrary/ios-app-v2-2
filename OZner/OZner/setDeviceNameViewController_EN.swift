@@ -62,42 +62,37 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     
     //自定义函数
     //初始化控件
+    let textDic:NSMutableArray = [["洗手间","家","客厅","客厅","办公室"],["厨房","办公室","卧室","卧室","家"]]
     
     func initCustomView(){
-        var textstring=""
         switch(get_CurrSelectEquip())
         {
         //探头
         case 2:
             noticeName="setTanTouName"
-            textstring=loadLanguage("洗手间")
             setAdress1.text=loadLanguage("洗手间")
             setAdress2.text=loadLanguage("厨房")
             break
         //净水器
         case 3:
             noticeName="setShuiJiName"
-            textstring=loadLanguage("家")
             setAdress1.text=loadLanguage("家")
             setAdress2.text=loadLanguage("办公室")
             break
         //台式空气净化器
         case 4:
             noticeName="setSmallAirName"
-            textstring=loadLanguage("客厅")
             setAdress1.text=loadLanguage("客厅")
             setAdress2.text=loadLanguage("卧室")
             break
         //立式空气净化器
         case 5:
             noticeName="setBigAirName"
-            textstring=loadLanguage("客厅")
             setAdress1.text=loadLanguage("客厅")
             setAdress2.text=loadLanguage("卧室")
             break
         case 6:
             noticeName="setWaterReplenishName"
-            textstring=loadLanguage("办公室")
             setAdress1.text=loadLanguage("办公室")
             setAdress2.text=loadLanguage("家")
             break
@@ -105,12 +100,12 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
             break
         }
         let tmpstring=dataPlist.objectForKey("deviceAttrib") as! String
-        setAdressImage1.hidden=tmpstring==textstring ? false:true
-        setAdressImage2.hidden=tmpstring==textstring ? true:false
+        setAdressImage1.hidden=tmpstring==textDic.objectAtIndex(0).objectAtIndex(get_CurrSelectEquip()-2) as! String ? false:true
+        setAdressImage2.hidden=tmpstring==textDic.objectAtIndex(0).objectAtIndex(get_CurrSelectEquip()-2) as! String ? true:false
     }
     //返回
     func back(){
-        if (dataPlist.objectForKey("deviceName") as? String) != NameText.text!+"("+(setAdressImage1.hidden==false ? setAdress1.text:setAdress2.text)!+")"
+        if (dataPlist.objectForKey("deviceName") as? String) != NameText.text!+"("+(setAdressImage1.hidden==false ? textDic.objectAtIndex(0).objectAtIndex(get_CurrSelectEquip()-2) as! String:textDic.objectAtIndex(1).objectAtIndex(get_CurrSelectEquip()-2) as! String)+")"
         {
             let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
             alert.show()
@@ -134,8 +129,8 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     //保存
     func SaveClick()
     {
-        let attrtmp=setAdressImage1.hidden==false ? setAdress1.text:setAdress2.text
-        NSNotificationCenter.defaultCenter().postNotificationName(noticeName, object: nil, userInfo: ["name":NameText.text!,"attr":attrtmp!])
+        let attrtmp=setAdressImage1.hidden==false ? (textDic.objectAtIndex(0).objectAtIndex(get_CurrSelectEquip()-2) as! String):(textDic.objectAtIndex(1).objectAtIndex(get_CurrSelectEquip()-2) as! String)
+        NSNotificationCenter.defaultCenter().postNotificationName(noticeName, object: nil, userInfo: ["name":NameText.text!,"attr":attrtmp])
         self.navigationController?.popViewControllerAnimated(true)
     }
     

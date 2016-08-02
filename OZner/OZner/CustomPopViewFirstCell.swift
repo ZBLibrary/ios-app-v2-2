@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomPopViewFirstCell: UITableViewCell {
-
+    
     @IBOutlet var deviceStateImgView: UIImageView!
     @IBOutlet var connectImgView: UIImageView!
     @IBOutlet var connectStateLabel: UILabel!
@@ -19,10 +19,10 @@ class CustomPopViewFirstCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -83,7 +83,14 @@ class CustomPopViewFirstCell: UITableViewCell {
         self.connectStateLabel.frame = CGRectMake(self.connectImgView.frame.origin.x+self.connectImgView.frame.size.width+3, 21, self.connectStateLabel.frame.size.width, self.connectStateLabel.frame.size.height)
         self.deviceNameLabel.frame = CGRectMake(self.connectImgView.frame.origin.x, self.connectStateLabel.frame.origin.y+self.connectStateLabel.frame.size.height+4, self.deviceNameLabel.frame.size.width, self.deviceNameLabel.frame.size.height + 2)
         self.deviceFromLabel.frame = CGRectMake(self.connectImgView.frame.origin.x, self.deviceNameLabel.frame.origin.y+self.deviceNameLabel.frame.size.height+3, self.deviceFromLabel.frame.size.width, self.deviceFromLabel.frame.size.height + 2)
+        if device.settings.name.containsString("(") {
+            let nameValue = device.settings.name! as NSString
+            let nameArr = nameValue.componentsSeparatedByString("(")
+            //device.settings.name = nameArr[0] + "(" + loadLanguage(nameArr[1])
+            self.deviceNameLabel.text = nameArr[0] + "(" + loadLanguage(nameArr[1])
+        } else {
         self.deviceNameLabel.text = device.settings.name
+        }
         self.deviceFromLabel.text = loadLanguage((device.settings.get("type", default:"type") as? String)!)
     }
     

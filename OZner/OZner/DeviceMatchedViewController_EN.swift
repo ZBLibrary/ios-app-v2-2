@@ -452,7 +452,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 switch self.deviceCuttentType
                 {
                 case 5://补水仪
-                    device.settings.put("sex", value: self.otherDeviceFinishedView?.segmentControl?.selectedSegmentIndex==0 ? loadLanguage("女"):loadLanguage("男"))
+                    device.settings.put("sex", value: self.otherDeviceFinishedView?.segmentControl?.selectedSegmentIndex==0 ? "女":"男")
                 default:
                     break
                 }

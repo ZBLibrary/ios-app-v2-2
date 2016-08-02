@@ -1597,7 +1597,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             smallFooterView.frame=CGRect(x: 0, y: headView.bounds.size.height, width: Screen_Width, height: smallFooterView.bounds.size.height*(Screen_Hight/667))
             smallFooterView.blueTooth = self.myCurrentDevice as! AirPurifier_Bluetooth
             smallFooterView.initView()
-            
+            MainScrollView.backgroundColor = UIColor.whiteColor()
             MainScrollView.addSubview(smallFooterView)
             
             
