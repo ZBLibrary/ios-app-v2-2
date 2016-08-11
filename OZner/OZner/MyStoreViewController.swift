@@ -48,14 +48,14 @@ class MyStoreViewController: UIViewController,UIWebViewDelegate {
     }
     func webViewDidStartLoad(webView: UIWebView) {
         button.hidden=true
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     }
     func webViewDidFinishLoad(webView: UIWebView) {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        //MBProgressHUD.hideHUDForView(self.view, animated: true)
         button.hidden=true
     }
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        //MBProgressHUD.hideHUDForView(self.view, animated: true)
         button.hidden=false
     }
     func GoUrlBefore(url:String)->String
