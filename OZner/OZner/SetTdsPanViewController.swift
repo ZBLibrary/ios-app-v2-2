@@ -17,7 +17,7 @@ class SetTdsPanViewController: UIViewController,UIAlertViewDelegate,UITextFieldD
     @IBAction func AboutClick(sender: AnyObject) {
         
         let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
-        aboutDevice.title=loadLanguage("关于TDS笔")
+        aboutDevice.title=loadLanguage("关于检测笔")
         aboutDevice.urlstring="http://cup.ozner.net/app/gystt/gystt.html"
         self.navigationController?.pushViewController(aboutDevice, animated: true)
     }
@@ -41,7 +41,7 @@ class SetTdsPanViewController: UIViewController,UIAlertViewDelegate,UITextFieldD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title=loadLanguage("我的TDS笔")
+        self.title=loadLanguage("我的检测笔")
         NameTextField.delegate=self
         clearButton.layer.borderWidth=1
         clearButton.layer.borderColor=UIColor(red: 1, green: 92/255, blue: 102/255, alpha: 1).CGColor

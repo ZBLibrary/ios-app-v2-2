@@ -50,7 +50,7 @@
 "立式空净专用" = "Vertical-Purifier" ;
 "智能补水仪" = "smart moisturizing device" ;//
 
-"蓝牙连接" = "Bluetooth" ; // 连接
+"蓝牙连接" = "BT" ; // 连接
 "Wifi连接" = "Wifi" ;
 
 "中性" = "Normal skin" ; //皮肤
@@ -552,6 +552,7 @@
 "高雄" = "gaoxiong";
 "台中" = "taizhong";
 "南子岛" = "nanzidao";
-
-
-
+"水质检测笔" = "TDS";
+"我的检测笔" = "My TDS";
+"关于检测笔" = "About TDS";
+"输入检测笔名称" = "Input TDS Name";

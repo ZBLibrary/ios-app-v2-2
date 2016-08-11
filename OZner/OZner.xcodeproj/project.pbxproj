@@ -295,7 +295,7 @@
 		52FF7E081C1A043A005635F8 /* UIColor+Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7E041C1A043A005635F8 /* UIColor+Convert.m */; };
 		8D05EEC91CA10FB70095CF32 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D05EEC81CA10FB70095CF32 /* Bugly.framework */; };
 		8D08BD661D5C58C400E10F0F /* SetTdsPanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D08BD641D5C58C400E10F0F /* SetTdsPanViewController.swift */; };
-		8D08BD671D5C58C400E10F0F /* SetTdsPanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D08BD651D5C58C400E10F0F /* SetTdsPanViewController.xib */; };
+		8D08BD681D5C61EA00E10F0F /* SetTdsPanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D08BD6A1D5C61EA00E10F0F /* SetTdsPanViewController.xib */; };
 		8D09DBE01C5A698800D0432B /* loadFailedXib_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBDF1C5A698800D0432B /* loadFailedXib_EN.swift */; };
 		8D09DBE21C5A69D400D0432B /* LoadingXib_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBE11C5A69D400D0432B /* LoadingXib_EN.swift */; };
 		8D0C3E6A1C58E78C00EFBB22 /* tantouLvXinView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E681C58E78C00EFBB22 /* tantouLvXinView_EN.swift */; };
@@ -1391,7 +1391,8 @@
 		52FF7E041C1A043A005635F8 /* UIColor+Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Convert.m"; sourceTree = "<group>"; };
 		8D05EEC81CA10FB70095CF32 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		8D08BD641D5C58C400E10F0F /* SetTdsPanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTdsPanViewController.swift; sourceTree = "<group>"; };
-		8D08BD651D5C58C400E10F0F /* SetTdsPanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetTdsPanViewController.xib; sourceTree = "<group>"; };
+		8D08BD691D5C61EA00E10F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetTdsPanViewController.xib; sourceTree = "<group>"; };
+		8D08BD6D1D5C621300E10F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetTdsPanViewController.xib; sourceTree = "<group>"; };
 		8D09DBDF1C5A698800D0432B /* loadFailedXib_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadFailedXib_EN.swift; sourceTree = "<group>"; };
 		8D09DBE11C5A69D400D0432B /* LoadingXib_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingXib_EN.swift; sourceTree = "<group>"; };
 		8D0C3E681C58E78C00EFBB22 /* tantouLvXinView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tantouLvXinView_EN.swift; sourceTree = "<group>"; };
@@ -3849,7 +3850,7 @@
 			isa = PBXGroup;
 			children = (
 				8D08BD641D5C58C400E10F0F /* SetTdsPanViewController.swift */,
-				8D08BD651D5C58C400E10F0F /* SetTdsPanViewController.xib */,
+				8D08BD6A1D5C61EA00E10F0F /* SetTdsPanViewController.xib */,
 			);
 			name = setTDSPan;
 			sourceTree = "<group>";
@@ -4721,7 +4722,7 @@
 				8DB044891CC8CD4200B60DAB /* icon_peidui_jingshuiqi_watting.png in Resources */,
 				8DB044AE1CC8CD5500B60DAB /* device_jin_smallair_select.png in Resources */,
 				8DB043F51CC8CCE200B60DAB /* select_device_3zb.png in Resources */,
-				8D08BD671D5C58C400E10F0F /* SetTdsPanViewController.xib in Resources */,
+				8D08BD681D5C61EA00E10F0F /* SetTdsPanViewController.xib in Resources */,
 				8DB044B81CC8CD5500B60DAB /* device_icon_wifi.png in Resources */,
 				8DB044801CC8CD4200B60DAB /* icon_peidui_complete_smallair.png in Resources */,
 				528D773D1C27094000243986 /* indoorHead_SmallXib_EN.xib in Resources */,
@@ -5578,6 +5579,15 @@
 				522D66691C31139300BCA750 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8D08BD6A1D5C61EA00E10F0F /* SetTdsPanViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D08BD691D5C61EA00E10F0F /* en */,
+				8D08BD6D1D5C621300E10F0F /* Base */,
+			);
+			name = SetTdsPanViewController.xib;
 			sourceTree = "<group>";
 		};
 		B70CC63F1D0574BD002AE9A3 /* My_MainView.xib */ = {

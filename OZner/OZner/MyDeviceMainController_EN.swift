@@ -165,7 +165,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 
             }else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true){
                 //探头设置
-                if myCurrentDevice?.type==TDSPAN_TYPE {
+                
+                
+                if !NSNumber(integer: myCurrentDevice?.settings.get("istap", default: 1) as! Int).boolValue {
                     let controller=SetTdsPanViewController(currDevice:self.myCurrentDevice as? Tap)
                     self.navigationController?.pushViewController(controller, animated: true)
                 }else{
@@ -311,37 +313,41 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Bottom, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Bottom, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
-        case type == TDSPAN_TYPE:
-            //TDS笔 视图
-            dianliangContainView.hidden=false
-            lvxinContainView.hidden=true
-            set_CurrSelectEquip(7)
-            //头部视图
-            let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*100, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
-            self.myCircleView = circleView
-            circleView.delegate = self
-            circleView.backgroundColor = UIColor.clearColor()
-            deviceHeadView.addSubview(circleView)
             
-            //尾部视图
-            Height_DeviceFooter.constant=0
         case TapManager.isTap(type):
-            //Tap 视图
-            dianliangContainView.hidden=false
-            lvxinContainView.hidden=false
-            set_CurrSelectEquip(2)
-            //头部视图
-            let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*30, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
-            self.myCircleView = circleView
-            circleView.delegate = self
-            circleView.backgroundColor = UIColor.clearColor()
-            deviceHeadView.addSubview(circleView)
-            
-            //尾部视图
-            Height_DeviceFooter.constant=Screen_Hight*210/667
-            let tantouFooterView = MyDeviceCustomFitstView_EN.init(frame: CGRectMake(0, 0, Screen_Width, Screen_Hight*210/667))
-            self.myTanTouBgView = tantouFooterView
-            deviceFooterView.addSubview(self.myTanTouBgView!)
+            if NSNumber(integer: myCurrentDevice?.settings.get("istap", default: 1) as! Int).boolValue
+            {
+                //Tap 视图
+                dianliangContainView.hidden=false
+                lvxinContainView.hidden=false
+                set_CurrSelectEquip(2)
+                //头部视图
+                let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*30, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
+                self.myCircleView = circleView
+                circleView.delegate = self
+                circleView.backgroundColor = UIColor.clearColor()
+                deviceHeadView.addSubview(circleView)
+                
+                //尾部视图
+                Height_DeviceFooter.constant=Screen_Hight*210/667
+                let tantouFooterView = MyDeviceCustomFitstView_EN.init(frame: CGRectMake(0, 0, Screen_Width, Screen_Hight*210/667))
+                self.myTanTouBgView = tantouFooterView
+                deviceFooterView.addSubview(self.myTanTouBgView!)
+            }else{
+                //TDS笔 视图
+                dianliangContainView.hidden=false
+                lvxinContainView.hidden=true
+                //set_CurrSelectEquip(7)
+                //头部视图
+                let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*100, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
+                self.myCircleView = circleView
+                circleView.delegate = self
+                circleView.backgroundColor = UIColor.clearColor()
+                deviceHeadView.addSubview(circleView)
+                
+                //尾部视图
+                Height_DeviceFooter.constant=0
+            }
             
         case WaterPurifierManager.isWaterPurifier(type):
             //净水器视图
@@ -1141,7 +1147,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     self.myCircleView?.currentTDSValue = 0
                 }
                 
-                if(self.myCurrentDevice?.type == TDSPAN_TYPE)
+                if(!NSNumber(integer: myCurrentDevice?.settings.get("istap", default: 1) as! Int).boolValue)
                 {
                     if(self.currentTDS != tds)
                     {

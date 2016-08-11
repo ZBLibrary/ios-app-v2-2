@@ -119,7 +119,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 (deviceCuttentType == 1&&TapManager.isTap(deviceIo.type)) ||
                 (deviceCuttentType == 2&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
                 (deviceCuttentType == 3&&AirPurifierManager.isBluetoothAirPurifier(deviceIo.type)) ||
-                (deviceCuttentType == 4&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type)) || deviceCuttentType == 5&&deviceIo.type == TDSPAN_TYPE ||
+                (deviceCuttentType == 4&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type)) ||
+                    (deviceCuttentType == 5&&TapManager.isTap(deviceIo.type)) ||
                 (deviceCuttentType == 6&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
                 {
                         muArr .addObject(deviceIo)
@@ -215,7 +216,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             self.firstLabel.text = loadLanguage("长按下start按钮")
             self.circleIconImgView.image = UIImage(named: "icon_peidui_tantou_watting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_tan_tou.png")
-            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入TDS笔名称")
+            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入检测笔名称")
         case 6:
             self.secondLabel.hidden=true
             self.firstLabel.text = loadLanguage("正在进行蓝牙配对")
@@ -430,7 +431,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     }
 
     //除了水杯的配对完成回掉事件
-    var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","TDS笔","智能补水仪"]
+    var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","水质检测笔","智能补水仪"]
     func otherFinishedAction()
     {
         if ((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
@@ -446,6 +447,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
         let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
         //添加到服务器
+        //let strongSelf = self
+        
         let werservice = DeviceWerbservice()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
@@ -454,8 +457,11 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             {
                 device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
                 device.settings.put("type", value: self.deviceNameArr[self.deviceCuttentType])
+                //智能笔和水探头区分
                 switch self.deviceCuttentType
                 {
+                case 1,5://智能笔或水探头
+                    device.settings.put("istap", value: self.deviceCuttentType==1 ? 1:0)
                 case 6://补水仪
                     device.settings.put("sex", value: self.otherDeviceFinishedView?.segmentControl?.selectedSegmentIndex==0 ? "女":"男")
                 default:
@@ -687,7 +693,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 wCellView.titleLabel?.text = loadLanguage("立式空净")
             case 5:
                 wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_tan_tou.png")
-                wCellView.titleLabel?.text = loadLanguage("TDS笔")
+                wCellView.titleLabel?.text = loadLanguage("水质检测笔")
             case 6:
                 wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
                 wCellView.titleLabel?.text = loadLanguage("补水仪")

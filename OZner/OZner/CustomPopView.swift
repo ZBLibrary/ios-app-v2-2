@@ -14,7 +14,7 @@ import UIKit
     func addDeviceCallBack()
     optional func infomationClick()
 }
-let TDSPAN_TYPE = "SCP001"
+
 class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     
     let myView = UIView(frame: CGRectMake(0,0,0,100));
@@ -183,7 +183,14 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             wCell.deviceStateImgView.image = UIImage(named: "deveice_cup_select_state.png")
             
         case TapManager.isTap(device.type):
-            wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
+            
+            
+            if NSNumber(integer: device.settings.get("istap", default: 0) as! Int).boolValue {
+                wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
+            }else{
+                wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
+            }
+            
             
         case WaterPurifierManager.isWaterPurifier(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "device_jin_shui_qi_select.png")
@@ -199,8 +206,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         case  WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "WaterReplenish1_2")
             
-        case device.type==TDSPAN_TYPE:
-            wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
+        
         default:
             break
         }

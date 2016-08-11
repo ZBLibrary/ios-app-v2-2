@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "关于TDS笔"; ObjectID = "Hke-Pa-7pK"; */
+"Hke-Pa-7pK.text" = "关于TDS笔";
+
+/* Class = "UIButton"; normalTitle = "删除此设备"; ObjectID = "PCJ-Az-TOR"; */
+"PCJ-Az-TOR.normalTitle" = "删除此设备";
+
+/* Class = "UILabel"; text = "我的TDS笔"; ObjectID = "gBA-7a-x2v"; */
+"gBA-7a-x2v.text" = "我的TDS笔";
+
+/* Class = "UITextField"; text = "tds笔"; ObjectID = "mq4-XV-UYc"; */
+"mq4-XV-UYc.text" = "tds笔";
