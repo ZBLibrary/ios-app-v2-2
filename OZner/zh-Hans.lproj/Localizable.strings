@@ -14,9 +14,13 @@
  "Bedroom)" = "卧室)";
 "My Cup)" = "我的水杯)";
  "Family Cup)" = "家人水杯)";
-//"Family Cup" = ""；
+"My Cup" = "我的水杯";
 "Home" = "家";
+"Friend's Cup" = "朋友水杯";
 "Friend's Cup)" = "朋友水杯)" ;
 "(Living room)" = "(客厅)" ;
+"Living room" = "客厅";
  "Living room)" = "客厅)";
  "Bedroom)" = "卧室)";
+"Bedroom" = "卧室";
+"(Bedroom)" = "(卧室)";
