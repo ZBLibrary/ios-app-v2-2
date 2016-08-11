@@ -22,8 +22,8 @@
                                 <constraint firstAttribute="height" constant="43" id="lXP-MC-MWl"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立式空气净化器(客厅)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZK-YO-WXb">
-                            <rect key="frame" x="168" y="11" width="181" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="立式空气净化器(客厅)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZK-YO-WXb">
+                            <rect key="frame" x="153" y="11" width="196" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="18B-0H-Z2z"/>
                                 <constraint firstAttribute="width" constant="127" id="8Mt-Ub-jYS"/>
@@ -44,11 +44,10 @@
                                 <constraint firstAttribute="height" constant="18" id="wpo-oa-Ecz"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desk-top air purifier" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-vj-wCd">
-                            <rect key="frame" x="15" y="11" width="130" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Desk-top air purifier" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-vj-wCd">
+                            <rect key="frame" x="0.0" y="11" width="130" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="5rT-gg-x76"/>
-                                <constraint firstAttribute="width" constant="130" id="I7c-jp-n7Q"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                             <color key="textColor" red="0.22352941176470587" green="0.22745098039215686" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
@@ -257,7 +256,6 @@
                         <constraint firstItem="ogK-zg-cA8" firstAttribute="centerX" secondItem="fhM-vj-wCd" secondAttribute="centerX" constant="-6" id="IcW-GS-gX8"/>
                         <constraint firstAttribute="trailing" secondItem="giy-jJ-TOU" secondAttribute="trailing" id="K23-IP-fPb"/>
                         <constraint firstItem="dhx-g0-kQN" firstAttribute="top" secondItem="giy-jJ-TOU" secondAttribute="bottom" constant="20" id="LSq-fE-LcT"/>
-                        <constraint firstItem="eZK-YO-WXb" firstAttribute="leading" secondItem="fhM-vj-wCd" secondAttribute="trailing" constant="23" id="Lff-ku-HFq"/>
                         <constraint firstItem="opl-f8-g4c" firstAttribute="leading" secondItem="mnA-jK-Dvq" secondAttribute="leading" id="Okf-zD-qGj"/>
                         <constraint firstAttribute="trailing" secondItem="8tj-26-IMg" secondAttribute="trailing" id="Qy8-bk-42O"/>
                         <constraint firstItem="oo8-un-qur" firstAttribute="leading" secondItem="eZK-YO-WXb" secondAttribute="trailing" id="WdX-7i-Dkr"/>
@@ -268,7 +266,7 @@
                         <constraint firstItem="2hW-jH-fTq" firstAttribute="top" secondItem="mnA-jK-Dvq" secondAttribute="top" id="g0J-Tf-LGt"/>
                         <constraint firstItem="0R6-gn-q0E" firstAttribute="leading" secondItem="opl-f8-g4c" secondAttribute="leading" id="jx2-gS-pZo"/>
                         <constraint firstAttribute="trailing" secondItem="0R6-gn-q0E" secondAttribute="trailing" id="m2D-lJ-NPg"/>
-                        <constraint firstItem="fhM-vj-wCd" firstAttribute="leading" secondItem="mnA-jK-Dvq" secondAttribute="leading" constant="15" id="nVz-zw-TJR"/>
+                        <constraint firstItem="fhM-vj-wCd" firstAttribute="leading" secondItem="mnA-jK-Dvq" secondAttribute="leading" constant="14" id="nVz-zw-TJR"/>
                         <constraint firstItem="giy-jJ-TOU" firstAttribute="leading" secondItem="mnA-jK-Dvq" secondAttribute="leading" id="s8v-mA-CMW"/>
                         <constraint firstItem="0R6-gn-q0E" firstAttribute="leading" secondItem="mnA-jK-Dvq" secondAttribute="leading" id="sZu-7O-oyG"/>
                         <constraint firstItem="fhM-vj-wCd" firstAttribute="baseline" secondItem="eZK-YO-WXb" secondAttribute="baseline" id="u4Q-M5-QQ4"/>

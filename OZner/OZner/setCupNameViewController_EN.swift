@@ -64,11 +64,11 @@ class setCupNameViewController_EN: UIViewController,UITextFieldDelegate {
         CupName.delegate=self
         CupName.enabled=false
         CupName.text=setCupStructdata["cup_name"] as? String
-        if (setCupStructdata["cup_Attrib"] as? String)==loadLanguage("我的水杯")
+        if (setCupStructdata["cup_Attrib"] as? String)=="我的水杯"
         {
             currentSelected=0
         }
-        else if (setCupStructdata["cup_Attrib"] as? String)==loadLanguage("家人水杯")
+        else if (setCupStructdata["cup_Attrib"] as? String)=="家人水杯"
         {
             currentSelected=1
         }else
@@ -88,14 +88,14 @@ class setCupNameViewController_EN: UIViewController,UITextFieldDelegate {
         setCupStructdata["cup_name"]=CupName.text
         if currentSelected==0
         {
-            setCupStructdata["cup_Attrib"] = loadLanguage("我的水杯")
+            setCupStructdata["cup_Attrib"] = "我的水杯"
         }
         else if currentSelected==1
         {
-            setCupStructdata["cup_Attrib"] = loadLanguage("家人水杯")
+            setCupStructdata["cup_Attrib"] = "家人水杯"
         }else
         {
-            setCupStructdata["cup_Attrib"] = loadLanguage("朋友水杯")
+            setCupStructdata["cup_Attrib"] = "朋友水杯"
         }
         self.navigationController?.popViewControllerAnimated(true)
     }

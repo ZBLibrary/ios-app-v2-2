@@ -1597,7 +1597,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             smallFooterView.frame=CGRect(x: 0, y: headView.bounds.size.height, width: Screen_Width, height: smallFooterView.bounds.size.height*(Screen_Hight/667))
             smallFooterView.blueTooth = self.myCurrentDevice as! AirPurifier_Bluetooth
             smallFooterView.initView()
-            
+            MainScrollView.backgroundColor = UIColor.whiteColor()
             MainScrollView.addSubview(smallFooterView)
             
             
@@ -1752,7 +1752,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 {
                     if StrongSelf.outAirView != nil
                     {
-                        StrongSelf.outAirView.cityname.text=cityname
+                        StrongSelf.outAirView.cityname.text=loadLanguage(cityname)
                         StrongSelf.outAirView.PM25.text=PM25+"ug/m3"
                         StrongSelf.outAirView.AQI.text=AQI
                         StrongSelf.outAirView.teampret.text=temperature+"℃"
@@ -1760,8 +1760,8 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                    //     print("jlsjlkjlksjfkl\(dataFrom)") ---  并不是英文
                         StrongSelf.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
                     }
-                    StrongSelf.headView.cityName.text=cityname
-                    StrongSelf.headView.polution.text=pollution
+                    StrongSelf.headView.cityName.text=loadLanguage(cityname)
+                    StrongSelf.headView.polution.text=loadLanguage(pollution)
                     StrongSelf.headView.PM25.text=PM25
                 }
             }
