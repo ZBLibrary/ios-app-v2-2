@@ -119,8 +119,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 (deviceCuttentType == 1&&TapManager.isTap(deviceIo.type)) ||
                 (deviceCuttentType == 2&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
                 (deviceCuttentType == 3&&AirPurifierManager.isBluetoothAirPurifier(deviceIo.type)) ||
-                (deviceCuttentType == 4&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type)) ||
-                (deviceCuttentType == 5&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
+                (deviceCuttentType == 4&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type)) || deviceCuttentType == 5&&deviceIo.type == TDSPAN_TYPE ||
+                (deviceCuttentType == 6&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
                 {
                         muArr .addObject(deviceIo)
                 }
@@ -212,6 +212,11 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             controller.delegate = self
             self.presentViewController(controller, animated: true, completion: nil)
         case 5:
+            self.firstLabel.text = loadLanguage("长按下start按钮")
+            self.circleIconImgView.image = UIImage(named: "icon_peidui_tantou_watting.png")
+            animationImgView.image=UIImage(named: "icon_peidui_complete_tan_tou.png")
+            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入TDS笔名称")
+        case 6:
             self.secondLabel.hidden=true
             self.firstLabel.text = loadLanguage("正在进行蓝牙配对")
             self.circleIconImgView.image = UIImage(named: "WaterReplenish3")
@@ -315,15 +320,15 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             if(self.deveiceDataList?.count > 0)
             {
                 let muArr1:NSMutableArray = NSMutableArray(array: self.deveiceDataList!)
-                if(muArr.count > 0)
+                if(muArr.count > 0 && deveiceDataList?.count > 0)
                 {
-                    for var index = 0; index < self.deveiceDataList?.count; index += 1
+                    for  tmpio  in  deveiceDataList!
                     {
-                        let io = self.deveiceDataList?.objectAtIndex(index) as! BaseDeviceIO
+                        let io = tmpio as! BaseDeviceIO
                         var isEqual = false
-                        for index in 0 ..< muArr.count
+                        for tmpio1 in  muArr
                         {
-                            let io1 = muArr.objectAtIndex(index) as! BaseDeviceIO
+                            let io1 = tmpio1 as! BaseDeviceIO
                             if(io.identifier == io1.identifier)
                             {
                                 isEqual = true;
@@ -370,7 +375,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                     self.rightBtn.hidden = false;
                 }
             }
-
+            
         }
         
     }
@@ -425,7 +430,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     }
 
     //除了水杯的配对完成回掉事件
-    var deviceNameArr=["智能水杯","水探头","净水器","台式空气净化器","立式空气净化器","智能补水仪"]
+    var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","TDS笔","智能补水仪"]
     func otherFinishedAction()
     {
         if ((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
@@ -438,20 +443,20 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             return
         }
         
-        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex)
-        let device = OznerManager.instance().getDeviceByIO(deviceIo! as! BaseDeviceIO) as OznerDevice
+        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
+        let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
         //添加到服务器
-//        let werservice = DeviceWerbservice()
-//        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//        werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:loadLanguage("我的")+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-//            MBProgressHUD.hideHUDForView(self.view, animated: true)
-//            if(status.networkStatus == kSuccessStatus)
-//            {
+        let werservice = DeviceWerbservice()
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            if(status.networkStatus == kSuccessStatus)
+            {
                 device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
                 device.settings.put("type", value: self.deviceNameArr[self.deviceCuttentType])
                 switch self.deviceCuttentType
                 {
-                case 5://补水仪
+                case 6://补水仪
                     device.settings.put("sex", value: self.otherDeviceFinishedView?.segmentControl?.selectedSegmentIndex==0 ? "女":"男")
                 default:
                     break
@@ -461,20 +466,20 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
                 
                 self.navigationController!.view .removeFromSuperview()
-//            }
-//            else
-//            {
-//                let str:NSString = status.errDesc
-//                if(str.length > 0)
-//                {
-//                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
-//                }
-//                else
-//                {
-//                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
-//                }
-//            }
-//        })
+            }
+            else
+            {
+                let str:NSString = status.errDesc
+                if(str.length > 0)
+                {
+                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
+                }
+                else
+                {
+                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
+                }
+            }
+        })
     }
     //水杯配完对后的回掉事件
     func cupFinishedAction() {
@@ -491,12 +496,12 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
         let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
         //添加到服务器
-        //let werservice = DeviceWerbservice()
-        //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-       // werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:loadLanguage("我的杯子"),weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-            //MBProgressHUD.hideHUDForView(self.view, animated: true)
-//            if(status.networkStatus == kSuccessStatus)
-//            {
+        let werservice = DeviceWerbservice()
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的杯子",weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            if(status.networkStatus == kSuccessStatus)
+            {
                 device.settings.name = self.cupFinishedBgView?.myCupNameTextField?.text
                 device.settings.put("type", value: "我的杯子")
                 device.settings.put("weight", value: self.cupFinishedBgView?.myWeightTextField?.text!)
@@ -506,20 +511,20 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
                 
                 self.navigationController!.view .removeFromSuperview()
-//            }
-//            else
-//            {
-//                let str:NSString = status.errDesc
-//                if(str.length > 0)
-//                {
-//                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
-//                }
-//                else
-//                {
-//                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
-//                }
-//            }
-//        })
+            }
+            else
+            {
+                let str:NSString = status.errDesc
+                if(str.length > 0)
+                {
+                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
+                }
+                else
+                {
+                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
+                }
+            }
+        })
         
     }
     
@@ -638,6 +643,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             imageName = mIndex == row ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
             break
         case 5:
+            imageName = mIndex == row ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
+        case 6:
             imageName = mIndex == row ? "WaterReplenish4":"WaterReplenish5"
             break
         default:
@@ -679,6 +686,9 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_bigAir.png")
                 wCellView.titleLabel?.text = loadLanguage("立式空净")
             case 5:
+                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_tan_tou.png")
+                wCellView.titleLabel?.text = loadLanguage("TDS笔")
+            case 6:
                 wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
                 wCellView.titleLabel?.text = loadLanguage("补水仪")
             default:
@@ -710,22 +720,24 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 {
                 case 0:
                     imageName = mIndex == i ? "icon_peidui_select_cup.png":"icon_peidui_normal_cup.png"
-                    break
+                    
                 case 1:
                     imageName = mIndex == i ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
-                    break
+                    
                 case 2:
                     imageName = mIndex == i ? "icon_peidui_select_jingshuiqi.png":"icon_peidui_normal_jingshuiqi.png"
-                    break
+                    
                 case 3:
                     imageName = mIndex == i ? "icon_peidui_select_smallair.png":"icon_peidui_normal_smallair.png"
-                    break
+                    
                 case 4:
                     imageName = mIndex == i ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
-                    break
+                    
                 case 5:
+                    imageName = mIndex == i ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
+                case 6:
                     imageName = mIndex == i ? "WaterReplenish4":"WaterReplenish5"
-                    break
+                    
                 default:
                     break
                 }

@@ -124,7 +124,7 @@ class MyInfoViewController: UIViewController {
                     let data=userinfo.objectForKey("data")?.objectAtIndex(0)
                     print(data)
                     let mobile=data?.objectForKey("mobile") as! String
-                    var name=data!.objectForKey("nickname") as! String
+                    var name:String=(data!.objectForKey("nickname") ?? "") as! String
                     
                     name=name=="" ? mobile : name
                     
@@ -137,8 +137,8 @@ class MyInfoViewController: UIViewController {
                     
                     let tmpName=gradeName.stringByReplacingOccurrencesOfString("会员", withString: "代理会员")
                     StrongSelf.mainView.My_job.text = loadLanguage(tmpName)
-                    print(StrongSelf.mainView.My_job.text)
-                    if headimg == ""
+                    
+                    if !(headimg.containsString("http://") || headimg.containsString("https://"))
                     {
                         StrongSelf.mainView.My_head.image=UIImage(named: "DefaultHeadImage")
                     }

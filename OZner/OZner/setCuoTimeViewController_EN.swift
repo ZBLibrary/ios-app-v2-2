@@ -70,10 +70,13 @@ class setCuoTimeViewController_EN: UIViewController {
         nowStr=nowStr+" "+timeStr+":00"
         dateFormatter.dateFormat="YYYY-MM-DD hh:mm:ss"
         //print(nowStr)
-        let tmpDate=dateFormatter.dateFromString(nowStr)! as NSDate
+        if let tmpDate:NSDate=dateFormatter.dateFromString(nowStr)!
+        {
+            return tmpDate
+        }
         //print(tmpDate)
         
-        return tmpDate
+        return NSDate()
     }
     func getpikerdate()->String
     {

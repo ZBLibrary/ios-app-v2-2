@@ -165,9 +165,14 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 
             }else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true){
                 //探头设置
-                let controller=setTanTouViewController_EN(nibName: "setTanTouViewController_EN", bundle: nil)
-                controller.myCurrentDevice = self.myCurrentDevice
-                self.navigationController?.pushViewController(controller, animated: true)
+                if myCurrentDevice?.type==TDSPAN_TYPE {
+                    let controller=SetTdsPanViewController(currDevice:self.myCurrentDevice as? Tap)
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }else{
+                    let controller=setTanTouViewController_EN(nibName: "setTanTouViewController_EN", bundle: nil)
+                    controller.myCurrentDevice = self.myCurrentDevice
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
             }
             else if ( WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true){
                 //净水器设置
@@ -306,7 +311,20 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Bottom, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Bottom, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
+        case type == TDSPAN_TYPE:
+            //TDS笔 视图
+            dianliangContainView.hidden=false
+            lvxinContainView.hidden=true
+            set_CurrSelectEquip(7)
+            //头部视图
+            let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*100, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
+            self.myCircleView = circleView
+            circleView.delegate = self
+            circleView.backgroundColor = UIColor.clearColor()
+            deviceHeadView.addSubview(circleView)
             
+            //尾部视图
+            Height_DeviceFooter.constant=0
         case TapManager.isTap(type):
             //Tap 视图
             dianliangContainView.hidden=false
@@ -1123,19 +1141,27 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     self.myCircleView?.currentTDSValue = 0
                 }
                 
-                if(isNeedDownLXDate == false)
+                if(self.myCurrentDevice?.type == TDSPAN_TYPE)
                 {
-                    isNeedDownLXDate = true
-                    self.downLoadLvXinState()
+                    if(self.currentTDS != tds)
+                    {
+                        self.myCircleView?.update()
+                        self.currentTDS = tds
+                    }
                 }
-                
-                
-                if(self.currentTDS != tds)
-                {
-                    self.obtainTanTouTDS()
-                    self.myCircleView?.update()
-                    self.downLoadTDS(tds,tdsBefore: 0)
-                    self.currentTDS = tds
+                else{
+                    if(isNeedDownLXDate == false)
+                    {
+                        isNeedDownLXDate = true
+                        self.downLoadLvXinState()
+                    }
+                    if(self.currentTDS != tds)
+                    {
+                        self.obtainTanTouTDS()
+                        self.myCircleView?.update()
+                        self.downLoadTDS(tds,tdsBefore: 0)
+                        self.currentTDS = tds
+                    }
                 }
             }
             else if(self.myCurrentDevice?.isKindOfClass(WaterPurifier.classForCoder()) == true)

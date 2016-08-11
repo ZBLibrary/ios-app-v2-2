@@ -137,14 +137,10 @@ class indoorAirViewController_EN: UIViewController {
             if airPurifier_Bluetooth.status.filterStatus.lastTime != nil
             {
                 
-                //let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                //let stopTime:NSTimeInterval=(airPurifier_Bluetooth.status.filterStatus.lastTime+3.months).timeIntervalSince1970
-                //let starTime = airPurifier_Bluetooth.status.filterStatus.lastTime.timeIntervalSince1970
+                
                 let tmpTime = min(100, 100-airPurifier_Bluetooth.status.filterStatus.workTime/600)
                 let remindTime = max(tmpTime, 0)
-                //let dateFormatter = NSDateFormatter()
-                //dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
-                //let starDateStr=dateFormatter.stringFromDate(airPurifier_Bluetooth.status.filterStatus.lastTime)
+ 
                 mainview.starDatazb=""
                
                 mainview.state = Int(remindTime)
