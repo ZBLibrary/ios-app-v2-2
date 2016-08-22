@@ -49,12 +49,12 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         bgImgView.image = UIImage(named: "mydevice_bg.png")
         self.myBgImgView = bgImgView
         self.myView.addSubview(bgImgView)
-
-        if LoginManager.loginInstance().loginInfo.loginName.containsString("@") == false {
-            NSUserDefaults.standardUserDefaults().setObject(LoginByPhone, forKey: CURRENT_LOGIN_STYLE)
-        } else {
-            NSUserDefaults.standardUserDefaults().setObject(LoginByEmail, forKey: CURRENT_LOGIN_STYLE)
-        }
+        
+        //        if LoginManager.loginInstance().loginInfo.loginName.containsString("@") == false {
+        //            NSUserDefaults.standardUserDefaults().setObject(LoginByPhone, forKey: CURRENT_LOGIN_STYLE)
+        //        } else {
+        NSUserDefaults.standardUserDefaults().setObject(LoginByEmail, forKey: CURRENT_LOGIN_STYLE)
+        //        }
         
         if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail) {
             luangeHeight = 140
@@ -206,7 +206,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         case  WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(device.type):
             wCell.deviceStateImgView.image = UIImage(named: "WaterReplenish1_2")
             
-        
+            
         default:
             break
         }

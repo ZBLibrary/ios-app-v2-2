@@ -61,7 +61,7 @@ class MyInfoViewController: UIViewController {
         } else {
             
             //添加数据和事件
-            mainView_EN.My_Equids_button.addTarget(self, action: #selector(EquidsClick), forControlEvents: .TouchUpInside)
+            mainView_EN.My_Equids_button.addTarget(self, action: #selector(My_FriendsClick), forControlEvents: .TouchUpInside)
             //        mainView.My_Friends.addTarget(self, action: #selector(My_FriendsClick), forControlEvents: .TouchUpInside)
             mainView_EN.SuggestButton.addTarget(self, action: #selector(Suggest), forControlEvents: .TouchUpInside)
             mainView_EN.Set.addTarget(self, action: #selector(SetApp), forControlEvents: .TouchUpInside)

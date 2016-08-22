@@ -25,7 +25,7 @@ class My_MainView_EN: UIView {
     
     override func drawRect(rect: CGRect) {
         
-        MyEquidsLable .text=loadLanguage("我的设备")
+        MyEquidsLable .text=loadLanguage("我的好友")
         
         SuggestLable .text=loadLanguage ("我要提意见")
         SetLable .text=loadLanguage ("设置")
