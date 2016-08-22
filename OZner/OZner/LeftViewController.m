@@ -68,7 +68,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier=@"RoomCell";
+    //static NSString *identifier=@"RoomCell";
    
     return nil;
     

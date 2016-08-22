@@ -309,6 +309,11 @@
 		8D26136F1CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613671CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift */; };
 		8D2613701CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613681CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift */; };
 		8D2B50E11C7C43840019DE11 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */; };
+		8D2D68441D6AFC7E00CAAE8E /* icon_peidui_select_TDSPan.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D68431D6AFC7E00CAAE8E /* icon_peidui_select_TDSPan.png */; };
+		8D2D68461D6B002A00CAAE8E /* device_tdspan_select_state.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D68451D6B002A00CAAE8E /* device_tdspan_select_state.png */; };
+		8D2D68481D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D68471D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png */; };
+		8D2D684A1D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D68491D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png */; };
+		8D2D684C1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D684B1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png */; };
 		8D320BD01CC5D02D00DAC59A /* BluetoothIOMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */; };
 		8D320BD41CC61AD000DAC59A /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */; };
 		8D3B60E71C929C0F007857E9 /* CALayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */; };
@@ -1406,6 +1411,11 @@
 		8D2613671CFD3DF3002ADB0E /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
 		8D2613681CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendarUnit+Timepiece.swift"; sourceTree = "<group>"; };
 		8D2B50E01C7C43840019DE11 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		8D2D68431D6AFC7E00CAAE8E /* icon_peidui_select_TDSPan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_peidui_select_TDSPan.png; sourceTree = "<group>"; };
+		8D2D68451D6B002A00CAAE8E /* device_tdspan_select_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_tdspan_select_state.png; sourceTree = "<group>"; };
+		8D2D68471D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_TDSPAN_noamrl_state.png; sourceTree = "<group>"; };
+		8D2D68491D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_peidui_TDSPAN_watting.png; sourceTree = "<group>"; };
+		8D2D684B1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_peidui_complete_TDSPAN.png; sourceTree = "<group>"; };
 		8D320BCE1CC5D02D00DAC59A /* BluetoothIOMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIOMgr.h; sourceTree = "<group>"; };
 		8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIOMgr.m; sourceTree = "<group>"; };
 		8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
@@ -2578,6 +2588,8 @@
 				8DB0449E1CC8CD5500B60DAB /* deveice_cup_select_state.png */,
 				8DB0449F1CC8CD5500B60DAB /* device_cup_normal_state.png */,
 				8DB044A01CC8CD5500B60DAB /* device_tan_tou_noamrl_state.png */,
+				8D2D68451D6B002A00CAAE8E /* device_tdspan_select_state.png */,
+				8D2D68471D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png */,
 				8DB044A11CC8CD5500B60DAB /* device_tan_tou_select_state.png */,
 				8DB044A21CC8CD5500B60DAB /* device_jin_shui_qi_select.png */,
 				8DB044A31CC8CD5500B60DAB /* device_jin_shui_qi_normal.png */,
@@ -2604,8 +2616,11 @@
 			children = (
 				8DB0446A1CC8CD4200B60DAB /* icon_peidui_complete_smallair.png */,
 				8DB0446B1CC8CD4200B60DAB /* icon_peidui_complete_bigair.png */,
+				8D2D68491D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png */,
+				8D2D684B1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png */,
 				8DB0446C1CC8CD4200B60DAB /* icon_peidui_complete_jingshuiqi.png */,
 				8DB0446D1CC8CD4200B60DAB /* icon_peidui_complete_tan_tou.png */,
+				8D2D68431D6AFC7E00CAAE8E /* icon_peidui_select_TDSPan.png */,
 				8DB0446E1CC8CD4200B60DAB /* icon_peidui_select_tan_tou@2x.png */,
 				8DB0446F1CC8CD4200B60DAB /* icon_peidui_normal_tan_tou@2x.png */,
 				8DB044701CC8CD4200B60DAB /* icon_peidui_select_tan_tou@3x.png */,
@@ -4694,6 +4709,7 @@
 				E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */,
 				8DB0440F1CC8CCE200B60DAB /* tantou_dianliang_2.png in Resources */,
 				4288C5301C0F01A700446D3E /* SwiftFatherViewController.xib in Resources */,
+				8D2D68481D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png in Resources */,
 				8DB0444A1CC8CD1700B60DAB /* icon_jiare@3x.png in Resources */,
 				8DB044611CC8CD2C00B60DAB /* icon_lvxin_more_3.png in Resources */,
 				8DB0445D1CC8CD2C00B60DAB /* lvxin_icon_state.png in Resources */,
@@ -4768,6 +4784,7 @@
 				8DB043F11CC8CCE200B60DAB /* icon_no_device_logo@3x.png in Resources */,
 				8DB044AC1CC8CD5500B60DAB /* dot_guide_2.png in Resources */,
 				8DBD54EA1C567F4500D04B12 /* chatBarViewLiuyan.xib in Resources */,
+				8D2D684C1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png in Resources */,
 				8DB044B11CC8CD5500B60DAB /* deveice_cup_select_state.png in Resources */,
 				8DB044621CC8CD2C00B60DAB /* icon_lvxin_service_1.png in Resources */,
 				8DB043EC1CC8CCE200B60DAB /* yin_shui_liang_2.png in Resources */,
@@ -4791,6 +4808,7 @@
 				8DFB393F1C57730300A1641C /* WhatHtml_EN.plist in Resources */,
 				428FC6D01C2ECFEA001D4ACF /* db_ozner_uid.db in Resources */,
 				B7F5B7411D49BAF500446670 /* AmountOfDrinkingWaterViewController.xib in Resources */,
+				8D2D684A1D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png in Resources */,
 				E0AFF0BC1D054DE20042CF04 /* MyDeviceMainController_EN.xib in Resources */,
 				8DB043FD1CC8CCE200B60DAB /* left_row@2x.png in Resources */,
 				E0F32A321D4749B500D78EE5 /* RNModifyPasswordViewController.xib in Resources */,
@@ -4836,6 +4854,7 @@
 				8DB043EF1CC8CCE200B60DAB /* icon_buble_add_device@3x.png in Resources */,
 				B7D8C1C11D2376F60089C241 /* SetCup_EN.plist in Resources */,
 				52A4EF651C285E6E005F282D /* bigStateXib_EN.xib in Resources */,
+				8D2D68441D6AFC7E00CAAE8E /* icon_peidui_select_TDSPan.png in Resources */,
 				B7F5B7541D49E9E000446670 /* TDSDetailCellzb.xib in Resources */,
 				8DB044121CC8CCE200B60DAB /* 1_05.png in Resources */,
 				8DB044191CC8CCE200B60DAB /* device_left_btn.png in Resources */,
@@ -4864,6 +4883,7 @@
 				8DB043FF1CC8CCE200B60DAB /* device_share@2x.png in Resources */,
 				8DB044B71CC8CD5500B60DAB /* device_icon_blutooth.png in Resources */,
 				526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */,
+				8D2D68461D6B002A00CAAE8E /* device_tdspan_select_state.png in Resources */,
 				42CB9EBD1C353CD1006D95CD /* icon_bubble_shang.png in Resources */,
 				8DB0440D1CC8CCE200B60DAB /* tantou_dianliang_1.png in Resources */,
 				8DB0441B1CC8CCE200B60DAB /* device_setting_icon.png in Resources */,
@@ -6029,8 +6049,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -6077,8 +6097,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

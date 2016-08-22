@@ -214,8 +214,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             self.presentViewController(controller, animated: true, completion: nil)
         case 5:
             self.firstLabel.text = loadLanguage("长按下start按钮")
-            self.circleIconImgView.image = UIImage(named: "icon_peidui_tantou_watting.png")
-            animationImgView.image=UIImage(named: "icon_peidui_complete_tan_tou.png")
+            self.circleIconImgView.image = UIImage(named: "icon_peidui_TDSPAN_watting.png")
+            animationImgView.image=UIImage(named: "icon_peidui_complete_TDSPAN.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入检测笔名称")
         case 6:
             self.secondLabel.hidden=true
@@ -458,6 +458,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
                 device.settings.put("type", value: self.deviceNameArr[self.deviceCuttentType])
                 //智能笔和水探头区分
+                print(self.deviceCuttentType)
+                
                 switch self.deviceCuttentType
                 {
                 case 1,5://智能笔或水探头
@@ -565,7 +567,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         {
             if self.mSecond != 0
             {
-                self.angle += 15
+                self.angle -= 15
                 self.startAnimation()
             }
         }
@@ -649,7 +651,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             imageName = mIndex == row ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
             break
         case 5:
-            imageName = mIndex == row ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
+            imageName = mIndex == row ? "icon_peidui_select_TDSPan.png":"icon_peidui_select_TDSPan.png"
         case 6:
             imageName = mIndex == row ? "WaterReplenish4":"WaterReplenish5"
             break
@@ -692,7 +694,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_bigAir.png")
                 wCellView.titleLabel?.text = loadLanguage("立式空净")
             case 5:
-                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_tan_tou.png")
+                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_TDSPan.png")
                 wCellView.titleLabel?.text = loadLanguage("水质检测笔")
             case 6:
                 wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
@@ -740,7 +742,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                     imageName = mIndex == i ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
                     
                 case 5:
-                    imageName = mIndex == i ? "icon_peidui_select_tan_tou.png":"icon_peidui_normal_tan_tou.png"
+                    imageName = mIndex == i ? "icon_peidui_select_TDSPan.png":"icon_peidui_select_TDSPan.png"
                 case 6:
                     imageName = mIndex == i ? "WaterReplenish4":"WaterReplenish5"
                     

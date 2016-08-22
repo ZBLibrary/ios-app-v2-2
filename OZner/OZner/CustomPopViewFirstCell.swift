@@ -49,7 +49,12 @@ class CustomPopViewFirstCell: UITableViewCell {
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 7.5, 12.5)
             break
         case TapManager.isTap(device.type) : //水探头
-            self.deviceStateImgView.image = UIImage(named: "device_tan_tou_noamrl_state.png")
+            if NSNumber(integer: device.settings.get("istap", default: 0) as! Int).boolValue {
+                self.deviceStateImgView.image = UIImage(named: "device_tan_tou_noamrl_state.png")
+            }else{
+                self.deviceStateImgView.image = UIImage(named: "device_TDSPAN_noamrl_state.png")
+            }
+            
             
             self.connectImgView.image = UIImage(named: "device_icon_blutooth.png")
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 7.5, 12.5)

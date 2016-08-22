@@ -188,7 +188,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             if NSNumber(integer: device.settings.get("istap", default: 0) as! Int).boolValue {
                 wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
             }else{
-                wCell.deviceStateImgView.image = UIImage(named: "device_tan_tou_select_state.png")
+                wCell.deviceStateImgView.image = UIImage(named: "device_tdspan_select_state.png")
             }
             
             
