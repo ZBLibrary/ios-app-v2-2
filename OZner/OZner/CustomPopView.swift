@@ -26,6 +26,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     //显示设备数据
     var myTableView:UITableView?
     var clickBtn: UIButton?
+    //var addDeviceBtn: UIButton?
     var firstLabel:UILabel?
     var mySecondLabel:UILabel?
     var myBubbleImgView:UIImageView?
@@ -96,19 +97,21 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         
         let bubbleImgView:UIImageView = UIImageView(frame: CGRectMake(93*(width/375.0), logoImgView.frame.origin.y+logoImgView.frame.size.height+23*(height/667.0)-16, 113*(width/375.0), 110*(height/667.0)))
         bubbleImgView.image = UIImage(named: loadLanguage("icon_buble_add_device.png"))
-        
         self.myBubbleImgView = bubbleImgView
         self.myView.addSubview(bubbleImgView)
-        print(width)
+        
         let addBtn:UIButton = UIButton(frame: CGRectMake(20*(width/375.0),bubbleImgView.frame.origin.y+bubbleImgView.frame.size.height-5-16,71*(width/375.0),71*(width/375.0)))
         addBtn.setBackgroundImage(UIImage(named: "icon_add_device_btn.png"), forState: UIControlState.Normal)
         addBtn.addTarget(self, action:#selector(addDeviceAction), forControlEvents:UIControlEvents.TouchUpInside)
+        
+        //addDeviceBtn=addBtn
         self.myView.addSubview(addBtn)
         let tmpframezb=addBtn.frame
         addLabel=UILabel(frame: CGRect(x: tmpframezb.origin.x+tmpframezb.size.width+5, y: tmpframezb.origin.y, width: 140, height: tmpframezb.size.height))
         addLabel!.text=loadLanguage("添加新设备")
         addLabel!.font=UIFont.systemFontOfSize(18)
         addLabel!.textColor=UIColor(red: 65/255, green: 105/255, blue: 143/255, alpha: 1)
+        //addLabel?.backgroundColor=UIColor.blackColor()
         addLabel!.hidden=true
         self.myView.addSubview(addLabel!)
         //创建tableview

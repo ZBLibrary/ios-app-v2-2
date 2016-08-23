@@ -141,7 +141,9 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         //circleBottomBgView.backgroundColor=UIColor.blackColor()
         let animationTransForm = CGAffineTransformScale(self.circleBgVIew.transform,0.1, 0.1);
         self.animationImgView.transform = animationTransForm;
-        self.animationImgView.frame = CGRectMake((self.circleBottomBgView.frame.size.width-self.animationImgView.frame.size.width)/2, (self.circleBottomBgView.frame.size.height-self.animationImgView.frame.size.height)/2, self.animationImgView.frame.size.width, self.animationImgView.frame.size.height)
+        let kSize = self.animationImgView.frame.size.width/self.animationImgView.frame.size.height
+        
+        self.animationImgView.frame = CGRectMake((self.circleBottomBgView.frame.size.width-self.animationImgView.frame.size.width)/2-1*kSize, (self.circleBottomBgView.frame.size.height-self.animationImgView.frame.size.height)/2-1, self.animationImgView.frame.size.width+2*kSize, self.animationImgView.frame.size.height+2)
         //animationImgView.backgroundColor=UIColor.redColor()
         self.circleBgVIew.frame = CGRectMake((width-130*(width/375.0))/2, (122-64)*(height/667.0), 130*(width/375.0), 130*(width/375.0))
         

@@ -16,6 +16,8 @@ import UIKit
 class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,CustomOCCircleView_ENDelegate,OznerDeviceDelegate,UIScrollViewDelegate,UIAlertViewDelegate{
     
     
+    @IBOutlet var mainBottomEn: NSLayoutConstraint!
+    @IBOutlet var bgBottomEn: NSLayoutConstraint!
     //
     //---------------airCleaner------------
     //主滚动视图
@@ -34,7 +36,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     var IAW_TempView:indoorAirWarn_Air_EN!
     //是否开启跑马效果
     var isPaoMa=0 //0未开启过，1开启中，2开启完成
-    //var pagecontrol:UIPageControl!
+    
     //台式空气净化器
     //尾部视图
     var smallFooterView:smallFooterViewXib_EN!
@@ -201,6 +203,13 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if ((NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE)?.isEqualToString(LoginByEmail)) == true) {
+            mainBottomEn.constant=0
+            bgBottomEn.constant=0
+        }else{
+            mainBottomEn.constant=65
+            bgBottomEn.constant=65
+        }
         //加载默认主视图
         loadWhitchView("default")
         //设备切换通知
@@ -337,7 +346,6 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 //TDS笔 视图
                 dianliangContainView.hidden=false
                 lvxinContainView.hidden=true
-                //set_CurrSelectEquip(7)
                 //头部视图
                 let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*100, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
                 self.myCircleView = circleView

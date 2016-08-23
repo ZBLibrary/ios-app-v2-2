@@ -313,7 +313,6 @@
 		8D2D68461D6B002A00CAAE8E /* device_tdspan_select_state.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D68451D6B002A00CAAE8E /* device_tdspan_select_state.png */; };
 		8D2D68481D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D68471D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png */; };
 		8D2D684A1D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D68491D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png */; };
-		8D2D684C1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D684B1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png */; };
 		8D320BD01CC5D02D00DAC59A /* BluetoothIOMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */; };
 		8D320BD41CC61AD000DAC59A /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */; };
 		8D3B60E71C929C0F007857E9 /* CALayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */; };
@@ -767,6 +766,7 @@
 		8DD51FE21C7DA7CD00F95695 /* DeviceMatchedViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController_EN.swift */; };
 		8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */; };
 		8DE5FD7B1C56745D0092242F /* UserInfoClasszb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */; };
+		8DEAC0801D6BE7630080A38E /* icon_peidui_complete_TDSPAN.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEAC07F1D6BE7630080A38E /* icon_peidui_complete_TDSPAN.png */; };
 		8DF060A51CC90F6100EC05D9 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060981CC90F6100EC05D9 /* Constraint.swift */; };
 		8DF060A61CC90F6100EC05D9 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */; };
 		8DF060A71CC90F6100EC05D9 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */; };
@@ -1415,7 +1415,6 @@
 		8D2D68451D6B002A00CAAE8E /* device_tdspan_select_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_tdspan_select_state.png; sourceTree = "<group>"; };
 		8D2D68471D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_TDSPAN_noamrl_state.png; sourceTree = "<group>"; };
 		8D2D68491D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_peidui_TDSPAN_watting.png; sourceTree = "<group>"; };
-		8D2D684B1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_peidui_complete_TDSPAN.png; sourceTree = "<group>"; };
 		8D320BCE1CC5D02D00DAC59A /* BluetoothIOMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIOMgr.h; sourceTree = "<group>"; };
 		8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIOMgr.m; sourceTree = "<group>"; };
 		8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
@@ -2143,6 +2142,7 @@
 		8DD51FE01C7DA7CD00F95695 /* DeviceMatchedViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMatchedViewController_EN.swift; sourceTree = "<group>"; };
 		8DE2CC8A1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothAirPurifierSensor.m; sourceTree = "<group>"; };
 		8DE5FD7A1C56745D0092242F /* UserInfoClasszb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoClasszb.swift; sourceTree = "<group>"; };
+		8DEAC07F1D6BE7630080A38E /* icon_peidui_complete_TDSPAN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_peidui_complete_TDSPAN.png; sourceTree = "<group>"; };
 		8DF060981CC90F6100EC05D9 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		8DF060991CC90F6100EC05D9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
 		8DF0609A1CC90F6100EC05D9 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -2292,7 +2292,6 @@
 		E066B9561D2A016200810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/outAirXib_EN.xib; sourceTree = "<group>"; };
 		E066B9581D2A016400810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/outAirXib_EN.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController_EN.xib; sourceTree = "<group>"; };
-		E0EFFEDE1D0558D500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyDeviceMainController_EN.strings; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView_EN.xib; sourceTree = "<group>"; };
 		E0EFFEE41D0570E500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/headViewView_EN.xib; sourceTree = "<group>"; };
 		E0EFFEE61D05944E00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CenterChartCell_EN.xib; sourceTree = "<group>"; };
@@ -2617,10 +2616,10 @@
 				8DB0446A1CC8CD4200B60DAB /* icon_peidui_complete_smallair.png */,
 				8DB0446B1CC8CD4200B60DAB /* icon_peidui_complete_bigair.png */,
 				8D2D68491D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png */,
-				8D2D684B1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png */,
 				8DB0446C1CC8CD4200B60DAB /* icon_peidui_complete_jingshuiqi.png */,
 				8DB0446D1CC8CD4200B60DAB /* icon_peidui_complete_tan_tou.png */,
 				8D2D68431D6AFC7E00CAAE8E /* icon_peidui_select_TDSPan.png */,
+				8DEAC07F1D6BE7630080A38E /* icon_peidui_complete_TDSPAN.png */,
 				8DB0446E1CC8CD4200B60DAB /* icon_peidui_select_tan_tou@2x.png */,
 				8DB0446F1CC8CD4200B60DAB /* icon_peidui_normal_tan_tou@2x.png */,
 				8DB044701CC8CD4200B60DAB /* icon_peidui_select_tan_tou@3x.png */,
@@ -4784,7 +4783,7 @@
 				8DB043F11CC8CCE200B60DAB /* icon_no_device_logo@3x.png in Resources */,
 				8DB044AC1CC8CD5500B60DAB /* dot_guide_2.png in Resources */,
 				8DBD54EA1C567F4500D04B12 /* chatBarViewLiuyan.xib in Resources */,
-				8D2D684C1D6B087E00CAAE8E /* icon_peidui_complete_TDSPAN.png in Resources */,
+				8DEAC0801D6BE7630080A38E /* icon_peidui_complete_TDSPAN.png in Resources */,
 				8DB044B11CC8CD5500B60DAB /* deveice_cup_select_state.png in Resources */,
 				8DB044621CC8CD2C00B60DAB /* icon_lvxin_service_1.png in Resources */,
 				8DB043EC1CC8CCE200B60DAB /* yin_shui_liang_2.png in Resources */,
@@ -5960,7 +5959,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E0EFFEDA1D05576400E43C20 /* Base */,
-				E0EFFEDE1D0558D500E43C20 /* en */,
 			);
 			name = MyDeviceMainController_EN.xib;
 			sourceTree = "<group>";

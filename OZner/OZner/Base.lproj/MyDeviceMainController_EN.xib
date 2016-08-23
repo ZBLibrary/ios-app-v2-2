@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyDeviceMainController_EN">
             <connections>
                 <outlet property="Height_DeviceFooter" destination="6Pd-Ds-G0f" id="4p2-UV-9dA"/>
+                <outlet property="bgBottomEn" destination="eEY-T5-q0v" id="5Vs-xh-noK"/>
                 <outlet property="deviceFooterView" destination="eiq-hO-oak" id="vUb-Lj-XjI"/>
                 <outlet property="deviceHeadView" destination="gkH-mc-bek" id="3fv-Gc-PQI"/>
                 <outlet property="deviceStateViewBG" destination="700-Ay-nUV" id="3Sh-l8-Yah"/>
@@ -19,6 +20,7 @@
                 <outlet property="lvxinImg" destination="5dH-yy-y6C" id="U0a-bv-NnF"/>
                 <outlet property="lvxinState" destination="dQI-OZ-XCG" id="BOA-d6-GHr"/>
                 <outlet property="lvxinValue" destination="Qtn-yZ-p0e" id="pN5-Fl-Pb8"/>
+                <outlet property="mainBottomEn" destination="hCV-Tf-DIl" id="hpC-Kb-8p0"/>
                 <outlet property="titleLabel" destination="Ses-Xu-rq1" id="gfZ-1x-kO8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -101,7 +103,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtn-yZ-p0e">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtn-yZ-p0e">
                                             <rect key="frame" x="21" y="0.0" width="84" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="hjO-PZ-ILN"/>
@@ -138,7 +140,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-cA-kfM">
                                     <rect key="frame" x="20" y="0.0" width="60" height="37"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMO-bk-vIf">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMO-bk-vIf">
                                             <rect key="frame" x="20" y="27" width="40" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="Ds7-Rl-aH1"/>
