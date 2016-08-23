@@ -60,10 +60,10 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             luangeHeight = 140
             let btn = UIButton(type: UIButtonType.Custom)
             btn.frame = CGRect(x: 0, y: 20, width: self.myView.frame.size.width, height: 90*(height/667.0))
-            btn.setTitle("Ozner", forState: UIControlState.Normal)
+            btn.setTitle("Ines", forState: UIControlState.Normal)
             btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             btn.setImage(UIImage(named:"My_Unlogin_head" ), forState: UIControlState.Normal)
-            btn.titleEdgeInsets = UIEdgeInsetsMake(100, -85, 0, 0)
+            btn.titleEdgeInsets = UIEdgeInsetsMake(100, -70, 0, 0)
             btn.imageEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0)
             btn.addTarget(self, action: #selector(CustomPopView.btnClick), forControlEvents: UIControlEvents.TouchUpInside)
             self.clickBtn = btn
@@ -241,10 +241,10 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail) {
             let btn = UIButton(type: UIButtonType.Custom)
             btn.frame = CGRect(x: 0, y: 0, width: self.myView.frame.size.width, height: 90*(height/667.0))
-            btn.setTitle("Ozner", forState: UIControlState.Normal)
+            btn.setTitle("Ines", forState: UIControlState.Normal)
             btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             btn.setImage(UIImage(named:"My_Unlogin_head" ), forState: UIControlState.Normal)
-            btn.titleEdgeInsets = UIEdgeInsetsMake(100, -90, 0, 0)
+            btn.titleEdgeInsets = UIEdgeInsetsMake(100, -70, 0, 0)
             btn.imageEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0)
             btn.addTarget(self, action: #selector(CustomPopView.btnClick), forControlEvents: UIControlEvents.TouchUpInside)
             tableView.tableHeaderView = btn

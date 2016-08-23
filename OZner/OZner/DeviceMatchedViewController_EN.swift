@@ -115,13 +115,12 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             let deviceIo = arr.objectAtIndex(i) as! BaseDeviceIO
             if OznerManager.instance().checkisBindMode(deviceIo) == true
             {
-                if(deviceCuttentType == 0&&CupManager.isCup(deviceIo.type)) ||
-                (deviceCuttentType == 1&&TapManager.isTap(deviceIo.type)) ||
-                (deviceCuttentType == 2&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
-                (deviceCuttentType == 3&&AirPurifierManager.isBluetoothAirPurifier(deviceIo.type)) ||
-                (deviceCuttentType == 4&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type)) ||
-                    (deviceCuttentType == 5&&TapManager.isTap(deviceIo.type)) ||
-                (deviceCuttentType == 6&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
+                // ||(deviceCuttentType == 5&&TapManager.isTap(deviceIo.type)) ||(deviceCuttentType == 6&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type)) (deviceCuttentType == 0&&CupManager.isCup(deviceIo.type)) ||
+                if
+                (deviceCuttentType == 0&&TapManager.isTap(deviceIo.type)) ||
+                (deviceCuttentType == 1&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
+                (deviceCuttentType == 2&&AirPurifierManager.isBluetoothAirPurifier(deviceIo.type)) ||
+                (deviceCuttentType == 3&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type))
                 {
                         muArr .addObject(deviceIo)
                 }
@@ -173,18 +172,18 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         otherDeviceFinishedView?.hidden = false
         switch deviceCuttentType
         {
+//        case 0:
+//            self.firstLabel.text = loadLanguage("请将智能水杯倒置")
+//            self.circleIconImgView.image = UIImage(named: "icon_peidui_watting.png")
+//            animationImgView.image=UIImage(named: "yin_shui_liang_0.png")
+//            self.cupFinishedBgView?.hidden = false
+//            self.otherDeviceFinishedView?.hidden = true
         case 0:
-            self.firstLabel.text = loadLanguage("请将智能水杯倒置")
-            self.circleIconImgView.image = UIImage(named: "icon_peidui_watting.png")
-            animationImgView.image=UIImage(named: "yin_shui_liang_0.png")
-            self.cupFinishedBgView?.hidden = false
-            self.otherDeviceFinishedView?.hidden = true
-        case 1:
             self.firstLabel.text = loadLanguage("长按下start按钮")
             self.circleIconImgView.image = UIImage(named: "icon_peidui_tantou_watting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_tan_tou.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入水探头名称")
-        case 2://如果是净水器弹出输入Wi-Fi密码的界面
+        case 1://如果是净水器弹出输入Wi-Fi密码的界面
             self.firstLabel.text = loadLanguage("请同时按下净水器加热与制冷两个按钮")
             self.secondLabel.text = loadLanguage("正在进行WIFI配对")
             self.firstLabel.font=UIFont.systemFontOfSize(15)
@@ -194,14 +193,14 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             let controller = JingShuiWifiViewController_EN(nibName: "JingShuiWifiViewController_EN", bundle: nil)
             controller.delegate = self
             self.presentViewController(controller, animated: true, completion: nil)
-        case 3:
+        case 2:
             self.secondLabel.hidden=true
             self.firstLabel.text = loadLanguage("正在进行蓝牙配对")
             self.circleIconImgView.image = UIImage(named: "icon_smallair_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_smallair.png")
             
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("台式空净名称")
-        case 4://如果是空气净化器，弹出输入Wi-Fi密码的界面
+        case 3://如果是空气净化器，弹出输入Wi-Fi密码的界面
             self.secondLabel.hidden=false
             self.firstLabel.text = loadLanguage("同时按下电源和风速键，WIFI指示灯闪烁。")
             self.firstLabel.font=UIFont.systemFontOfSize(15)
@@ -691,12 +690,12 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             case 4:
                 wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_bigAir.png")
                 wCellView.titleLabel?.text = loadLanguage("立式空净")
-            case 5:
-                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_tan_tou.png")
-                wCellView.titleLabel?.text = loadLanguage("水质检测笔")
-            case 6:
-                wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
-                wCellView.titleLabel?.text = loadLanguage("补水仪")
+//            case 5:
+//                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_tan_tou.png")
+//                wCellView.titleLabel?.text = loadLanguage("水质检测笔")
+//            case 6:
+//                wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
+//                wCellView.titleLabel?.text = loadLanguage("补水仪")
             default:
                 break
             }

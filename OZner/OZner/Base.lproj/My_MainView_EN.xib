@@ -33,7 +33,7 @@
                                 <constraint firstAttribute="height" constant="30" id="ZvB-MO-PlF"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="Ozner">
+                            <state key="normal" title="Ines">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </state>
                         </button>
