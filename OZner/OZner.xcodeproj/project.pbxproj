@@ -315,6 +315,8 @@
 		8D2D684A1D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2D68491D6B04EF00CAAE8E /* icon_peidui_TDSPAN_watting.png */; };
 		8D320BD01CC5D02D00DAC59A /* BluetoothIOMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */; };
 		8D320BD41CC61AD000DAC59A /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */; };
+		8D39A6E51D6C5795000D1D44 /* ShareMoneyToWeChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D39A6E41D6C5795000D1D44 /* ShareMoneyToWeChat.swift */; };
+		8D39A6E71D6C57A8000D1D44 /* ShareMoneyToWeChat.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D39A6E61D6C57A8000D1D44 /* ShareMoneyToWeChat.xib */; };
 		8D3B60E71C929C0F007857E9 /* CALayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */; };
 		8D4354F61C75A049007F83DA /* WaterPurTDSDetailController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354F51C75A049007F83DA /* WaterPurTDSDetailController_EN.swift */; };
 		8D4354F91C75A410007F83DA /* WaterPurFooterCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4354F71C75A410007F83DA /* WaterPurFooterCell_EN.swift */; };
@@ -1418,6 +1420,8 @@
 		8D320BCE1CC5D02D00DAC59A /* BluetoothIOMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothIOMgr.h; sourceTree = "<group>"; };
 		8D320BCF1CC5D02D00DAC59A /* BluetoothIOMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothIOMgr.m; sourceTree = "<group>"; };
 		8D320BD31CC61AD000DAC59A /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		8D39A6E41D6C5795000D1D44 /* ShareMoneyToWeChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareMoneyToWeChat.swift; sourceTree = "<group>"; };
+		8D39A6E61D6C57A8000D1D44 /* ShareMoneyToWeChat.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareMoneyToWeChat.xib; sourceTree = "<group>"; };
 		8D3B60E61C929C0F007857E9 /* CALayer+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CALayer+extension.swift"; path = "OZner/CALayer+extension.swift"; sourceTree = "<group>"; };
 		8D4354F51C75A049007F83DA /* WaterPurTDSDetailController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurTDSDetailController_EN.swift; sourceTree = "<group>"; };
 		8D4354F71C75A410007F83DA /* WaterPurFooterCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPurFooterCell_EN.swift; sourceTree = "<group>"; };
@@ -3509,6 +3513,8 @@
 				8DBD54D21C567F4500D04B12 /* chatBarViewLiuyan.xib */,
 				B711216B1D45E2020098C31C /* My_MainView_EN.swift */,
 				B71121731D45FD510098C31C /* My_MainView_EN.xib */,
+				8D39A6E61D6C57A8000D1D44 /* ShareMoneyToWeChat.xib */,
+				8D39A6E41D6C5795000D1D44 /* ShareMoneyToWeChat.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -4768,6 +4774,7 @@
 				8DBD54D81C567F4500D04B12 /* MyRankTableViewCell.xib in Resources */,
 				B7D8C1A11D2376680089C241 /* SetSexViewController_EN.xib in Resources */,
 				8DA4062A1C8446FD00AD5E5E /* ScanResultViewController.xib in Resources */,
+				8D39A6E71D6C57A8000D1D44 /* ShareMoneyToWeChat.xib in Resources */,
 				8DB044AF1CC8CD5500B60DAB /* device_jin_smallair_normal.png in Resources */,
 				4288C52C1C0EF80A00446D3E /* icon_back@3x.png in Resources */,
 				B7D8C1D71D23A76D0089C241 /* WaterPurTDSDetailCell1_EN.xib in Resources */,
@@ -5389,6 +5396,7 @@
 				8DA405C61C8441B500AD5E5E /* ZXPDF417Reader.m in Sources */,
 				8DF060AC1CC90F6100EC05D9 /* EdgeInsets.swift in Sources */,
 				8DA405621C8441B500AD5E5E /* ZXCalendarParsedResult.m in Sources */,
+				8D39A6E51D6C5795000D1D44 /* ShareMoneyToWeChat.swift in Sources */,
 				523DC3701C175E9B00595099 /* AFURLResponseSerialization.m in Sources */,
 				42A7BB661C0C2A0A008DB6E5 /* UIImageAdditions.mm in Sources */,
 				B7F5B72D1D49B8AA00446670 /* AmountOfDrinkingCell.m in Sources */,
