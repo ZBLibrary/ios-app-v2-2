@@ -7,9 +7,7 @@
 //
 
 import UIKit
-let airViewColor_state1:UIColor=UIColor(red: 94/255, green: 207/255, blue: 254/255, alpha: 1)//蓝
-let airViewColor_state2:UIColor=UIColor(red: 163/255, green: 129/255, blue: 251/255, alpha: 1)//紫
-let airViewColor_state3:UIColor=UIColor(red: 254/255, green: 101/255, blue: 101/255, alpha: 1)//红
+
 class headViewView_EN: UIView {
 
     
@@ -37,6 +35,11 @@ class headViewView_EN: UIView {
     @IBOutlet var centerViewzb: UIView!
     
     @IBOutlet var LvXinStateImage: UIImageView!
+    
+    let airViewColor_state1:UIColor=UIColor(red: 94/255, green: 207/255, blue: 254/255, alpha: 1)//蓝
+    let airViewColor_state2:UIColor=UIColor(red: 163/255, green: 129/255, blue: 251/255, alpha: 1)//紫
+    let airViewColor_state3:UIColor=UIColor(red: 254/255, green: 101/255, blue: 101/255, alpha: 1)//红
+    
     var bgColorIndex:Int=1 {
         didSet{
             print(bgColorIndex)

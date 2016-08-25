@@ -267,26 +267,27 @@
 -(void)mxChipComplete:(MXChipIO*)io
 {
     [self endTimer];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if(m_bIsAgree)
-        {
-            VersionSettingDBManager* dbManager = [[VersionSettingDBManager alloc]init];
-            [dbManager addWifi:self.accountTF.text psw:self.pswTF.text];
-        }
+    if(m_bIsAgree)
+    {
+        VersionSettingDBManager* dbManager = [[VersionSettingDBManager alloc]init];
+        [dbManager addWifi:self.accountTF.text psw:self.pswTF.text];
+    }
+    //dispatch_async(dispatch_get_main_queue(), ^{
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             if([self.delegate respondsToSelector:@selector(jinshuiqiConnectComplete:)])
             {
                 NSMutableArray* muArr = [[NSMutableArray alloc]init];
                 [muArr addObject:io];
-                [self.delegate jinshuiqiConnectComplete:muArr];
+                
                 
                 [self dismissViewControllerAnimated:YES completion:^{
-                    
+                    [self.delegate jinshuiqiConnectComplete:muArr];
                 }];
             }
         });
         
-    });
+    //});
 }
 
 //配网失败

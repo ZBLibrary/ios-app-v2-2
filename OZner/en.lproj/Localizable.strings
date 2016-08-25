@@ -91,10 +91,10 @@
 "该补水了,亲" = "Should moisturize,dear" ;
 
 "已关机" = "Power-off" ; // 机器连接状态
-"设备已断开" = "Device disconnected" ;
-"设备已连接" = "Device connected" ;
-"设备连接中" = "Device being connected" ;
-"设备没有连接上" = "Device connection fails" ;
+"设备已断开" = "Disconnected" ;
+"设备已连接" = "Connected" ;
+"设备连接中" = "Connectting" ;
+"设备没有连接上" = "Disconnected" ;
 "连接中" = "Connecting";
 "已连接" = "Connected";
 "已断开" = "Disconnected";
@@ -556,3 +556,7 @@
 "我的检测笔" = "My TDS";
 "关于检测笔" = "About TDS";
 "输入检测笔名称" = "Input TDS Name";
+//3.Press the power and wind speed at the same time, the WIFI light flashing, match again
+"3.同时按下" = "3.Press the ";
+"和" = " and ";
+"，WIFI指示灯闪烁，重新配对" = "at the same time, the WIFI light flashing, match again";

@@ -35,26 +35,26 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             if TdsBefore==65535
             {
                 RedrawCicle(0, TDS: 0)
+                beforeSpaceLine.hidden=true
                 return
             }
             else
             {
+                beforeSpaceLine.hidden=false
                 RedrawCicle(0, TDS:TdsBefore)
             }
             purifiedBefore.text=TdsBefore==0 ? "1":"\(TdsBefore)"
             purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: (TdsBefore==0 ? 40:52)*Screen_Width/375)
-            //RedrawCicle(0, TDS: TdsBefore)
+            
         }
     }
     //净化后数据
     var TdsAfter:Int = 0{
         didSet{
-            print("TdsAfter:\(TdsAfter)")
             if TdsAfter==oldValue//&&firstLoadTwo<0
             {
                 return
             }
-            //firstLoadTwo--
             if TdsAfter==65535||TdsAfter==0
             {
                 NoRecord()
@@ -95,13 +95,11 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
         faceImgView.hidden=true
         faceTextLabel.text=loadLanguage("健康")
         purifiedBefore.text="1"
-        
-        //purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*Screen_Width/375)
+
         purifiedAfter.text="1"
-        //purifiedAfter.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*Screen_Width/375)
+        
         drinkingSuggest.text=loadLanguage("经过净化后的水质健康，适合您直饮")
-        //RedrawCicle(0, TDS: 0)
-        //RedrawCicle(1, TDS: 0)
+        
     }
     /*重绘半圆 
       type:0 净化前
@@ -212,6 +210,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    var beforeSpaceLine:CAShapeLayer!
     
     func drawSpaceLine()
     {
@@ -259,6 +258,10 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             mcashapelayer.lineCap=kCALineCapRound
             mcashapelayer.lineJoin=kCALineJoinRound
             cicleContainerView.layer.addSublayer(mcashapelayer)
+            if i==0 {
+                beforeSpaceLine=mcashapelayer
+                beforeSpaceLine.hidden=true
+            }
             let anim=CABasicAnimation(keyPath: "strokeEnd")
             anim.duration = 0.0
           

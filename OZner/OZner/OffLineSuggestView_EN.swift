@@ -13,6 +13,7 @@ class OffLineSuggestView_EN: UIView {
     @IBOutlet weak var thirdItem: UIView!
     @IBOutlet weak var fourthLabel: UILabel!
     @IBOutlet weak var IKnowButton: UIButton!
+    @IBOutlet var thirdLabel: UILabel!
     
     @IBOutlet weak var thirdItem_Height: NSLayoutConstraint!
     
@@ -29,12 +30,30 @@ class OffLineSuggestView_EN: UIView {
         }
     }
     
-    /*
+    
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // Drawing code
+        // 创建一个富文本
+        //同时按下电源和风速，WIFI指示灯闪烁，重新配对
+        
+        let attri1 = NSMutableAttributedString(string: loadLanguage("3.同时按下"))
+        let attri2 = NSAttributedString(string: loadLanguage("，WIFI指示灯闪烁，重新配对"))
+        let attri3 = NSAttributedString(string: loadLanguage("和"))
+        let image1 = NSTextAttachment()
+        image1.image=UIImage(named: "airPowerIcon")
+        image1.bounds=CGRectMake(0, 0, 22, 22)
+        let str1=NSAttributedString(attachment: image1)
+        let image2 = NSTextAttachment()
+        image2.image=UIImage(named: "airSpeedIcon")
+        image2.bounds=CGRectMake(0, 0, 22, 22)
+        let str2=NSAttributedString(attachment: image2)
+        attri1.appendAttributedString(str1)
+        attri1.appendAttributedString(attri3)
+        attri1.appendAttributedString(str2)
+        attri1.appendAttributedString(attri2)
+        thirdLabel.attributedText=attri1
     }
-    */
+ 
 
 }
