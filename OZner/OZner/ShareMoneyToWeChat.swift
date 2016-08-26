@@ -10,21 +10,21 @@ import UIKit
 
 class ShareMoneyToWeChat: UIView {
 
-    var didRemoved:(()->Void)?
+    //var didRemoved:(()->Void)?
     
     //WXSceneSession  = 0,        /**< 聊天界面    */
     //WXSceneTimeline = 1,
     
     @IBOutlet var bottomConstraint: NSLayoutConstraint!
     @IBAction func shareClick(sender: UIButton) {
-        let shareStr="http://www.oznerwater.com/lktnew/wapnew/Member/GrapRedPackages.aspx"
+        let shareStr="http://www.oznerwater.com/lktnew/wap/wxoauth.aspx?gourl=http://www.oznerwater.com/lktnew/wap/Member/InvitedMemberBrand.aspx"
         ShareManager.shareManagerInstance().ShareLinkToWeChat([WXSceneSession,WXSceneTimeline][sender.tag], link: shareStr, title: "疯了疯了，注册浩泽会员就送微信红包", titleImg: UIImage(named: "loginLogo"), linkDes: "点击即可领取浩泽大红包")
         self.removeFromSuperview()
-        didRemoved!()
+        //didRemoved!()
     }
     @IBAction func cancelClick(sender: AnyObject) {
         self.removeFromSuperview()
-        didRemoved!()
+        //didRemoved!()
     }
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

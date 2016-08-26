@@ -474,7 +474,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 OznerManager.instance().save(device)
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-                
+                NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object:device)
                 self.navigationController!.view .removeFromSuperview()
             }
             else
@@ -519,7 +519,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 OznerManager.instance().save(device)
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-                
+                NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object:device)
                 self.navigationController!.view .removeFromSuperview()
             }
             else

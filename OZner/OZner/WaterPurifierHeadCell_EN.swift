@@ -43,8 +43,8 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
                 beforeSpaceLine.hidden=false
                 RedrawCicle(0, TDS:TdsBefore)
             }
-            purifiedBefore.text=TdsBefore==0 ? "1":"\(TdsBefore)"
-            purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: (TdsBefore==0 ? 40:52)*Screen_Width/375)
+            purifiedBefore.text=TdsBefore==0 ? "暂无":"\(TdsBefore)"
+            purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: (TdsBefore==0 ? 32:52)*Screen_Width/320)
             
         }
     }
@@ -94,10 +94,11 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
     {
         faceImgView.hidden=true
         faceTextLabel.text=loadLanguage("健康")
-        purifiedBefore.text="1"
+        purifiedBefore.text="暂无"
 
-        purifiedAfter.text="1"
-        
+        purifiedAfter.text="暂无"
+        purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*Screen_Width/320)
+        purifiedAfter.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*Screen_Width/320)
         drinkingSuggest.text=loadLanguage("经过净化后的水质健康，适合您直饮")
         
     }
@@ -201,7 +202,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
         //初始化视图
         drawSpaceLine()
         NoRecord()
-        
+        deviceStateLabel.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

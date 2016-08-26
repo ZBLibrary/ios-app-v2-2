@@ -237,15 +237,21 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     
     }
     //接收到网络变化后处理事件
+    var phoneIsOffLine=false
     func reachabilityChanged(){
         //wifi设备
         if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)||WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) {
             //手机网络状况
             if appDelegate.reachOfNetwork?.currentReachabilityStatus().hashValue==0&&LoadingView != nil {
                 LoadingView.state=2//手机网络不可用
+                phoneIsOffLine=true
+                OznerDeviceStatusUpdate(self.myCurrentDevice)
+                
             }
             else{
                 LoadingView.state = -1//手机网络可用
+                phoneIsOffLine=false
+                OznerDeviceStatusUpdate(self.myCurrentDevice)
             }
         }
     }
@@ -1426,8 +1432,11 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     }
     
     //跑马end  赵兵
-    func OznerDeviceStatusUpdate(device: OznerDevice!) {
-        if myCurrentDevice==nil||device==nil||device.identifier != myCurrentDevice?.identifier
+    func OznerDeviceStatusUpdate(device: OznerDevice?) {
+        if myCurrentDevice==nil||device==nil {
+            return
+        }
+        if device!.identifier != myCurrentDevice?.identifier
         {
             return
         }
@@ -1438,7 +1447,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             if AirHeadView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
             {
                 let airPurifier = self.myCurrentDevice as! AirPurifier_MxChip
-                if airPurifier.isOffline==true{
+                if airPurifier.isOffline==true||phoneIsOffLine==true{
                     IAW_TempView.PM25.text=loadLanguage("设备已断开")
                     IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
                     //设备数据清空
@@ -1457,6 +1466,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     initBigClickButton()
                     
                 }
+                
                
             }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
             {
@@ -1472,6 +1482,11 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     }
                     
                 }
+                if phoneIsOffLine {
+                
+                    WaterPurfHeadView?.deviceStateLabel.hidden = false
+                    WaterPurfHeadView?.deviceValueContainer.hidden=true
+                }
                 
             }
             
@@ -1479,7 +1494,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             
         }else{ //蓝牙设备
             
-            if(device.connectStatus() == Connected)
+            if(device!.connectStatus() == Connected)
             {
                 
                 LoadingView.state = -1//已连接
@@ -1488,7 +1503,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     
                 }
             }
-            else if (device.connectStatus() == Connecting)
+            else if (device!.connectStatus() == Connecting)
             {
                 LoadingView.state=0
             }
