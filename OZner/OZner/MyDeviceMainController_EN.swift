@@ -1244,9 +1244,18 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 }
                 else
                 {
-                    IAW_TempView.PM25.text=loadLanguage("已关机")
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*SCREEN_WIDTH/320)
                     smallFooterView.upDateFrame(0, gesture: nil)
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
+                    IAW_TempView.PM25.text=loadLanguage("已关机")
+                    if airPurifier_Bluetooth.connectStatus() == Disconnect {
+                        IAW_TempView.PM25.text=loadLanguage("设备已断开")
+                        
+                        smallFooterView.isOffLine=true
+                    }else{
+                        smallFooterView.isOffLine=false
+                        isNeedDownLXDate = false
+                    }   
+                    
                 }
                 
                 
@@ -1476,6 +1485,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 LoadingView.state = -1//已连接
                 if AirHeadView != nil&&AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) {
                     smallFooterView.isOffLine = false
+                    
                 }
             }
             else if (device.connectStatus() == Connecting)
@@ -1906,12 +1916,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*SCREEN_WIDTH/320)
             bigFooterViews[1].ison=false
             bigFooterViews[2].ison=false
-            //bigFooterViews[3].ison=false
-            //bigFooterViews[4].ison=false
-            //bigFooterViews[5].ison=false
-            //bigFooterViews[6].ison=false
             
-            //return
         }else
         {
             IAW_TempView.PM25.text="\(tmpbigDevice.sensor.PM25)"

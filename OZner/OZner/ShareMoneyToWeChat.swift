@@ -17,8 +17,8 @@ class ShareMoneyToWeChat: UIView {
     
     @IBOutlet var bottomConstraint: NSLayoutConstraint!
     @IBAction func shareClick(sender: UIButton) {
-        let shareStr="http://www.oznerwater.com/lktnew/wap/app/Oauth2.aspx?mobile="+get_Phone()+"&UserTalkCode="+get_UserToken()+"&Language=zh&Area=zh&goUrl=http://www.oznerwater.com/lktnew/wapnew/Member/GrapRedPackages.aspx"
-        ShareManager.shareManagerInstance().ShareLinkToWeChat([WXSceneSession,WXSceneTimeline][sender.tag], link: shareStr, title: "浩泽净水家", titleImg: UIImage(named: "loginLogo"), linkDes: "点击即可领取浩泽大红包")
+        let shareStr="http://www.oznerwater.com/lktnew/wapnew/Member/GrapRedPackages.aspx"
+        ShareManager.shareManagerInstance().ShareLinkToWeChat([WXSceneSession,WXSceneTimeline][sender.tag], link: shareStr, title: "疯了疯了，注册浩泽会员就送微信红包", titleImg: UIImage(named: "loginLogo"), linkDes: "点击即可领取浩泽大红包")
         self.removeFromSuperview()
         didRemoved!()
     }
