@@ -694,12 +694,12 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             case 4:
                 wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_bigAir.png")
                 wCellView.titleLabel?.text = loadLanguage("立式空净")
-//            case 5:
-//                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_TDSPan.png")
-//                wCellView.titleLabel?.text = loadLanguage("水质检测笔")
-//            case 6:
-//                wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
-//                wCellView.titleLabel?.text = loadLanguage("补水仪")
+            case 5:
+                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_TDSPan.png")
+                wCellView.titleLabel?.text = loadLanguage("水质检测笔")
+            case 6:
+                wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
+                wCellView.titleLabel?.text = loadLanguage("补水仪")
             default:
                 break
             }

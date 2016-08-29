@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeiXinURLViewController_EN" customModule="OZner" customModuleProvider="target">
             <connections>
+                <outlet property="shareButton" destination="zQ7-ph-Ev5" id="3Wf-8L-I7f"/>
                 <outlet property="titleOfURL" destination="Cdd-MF-pTX" id="iZh-nd-xsq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="R0H-dl-9Ld" id="VNG-2m-Z6O"/>
@@ -42,10 +43,23 @@
                                         <action selector="BackClick:" destination="-1" eventType="touchUpInside" id="j0X-38-C2L"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQ7-ph-Ev5">
+                                    <rect key="frame" x="315" y="0.0" width="60" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="9Hq-Rb-mJ2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="分享"/>
+                                    <connections>
+                                        <action selector="shareClick:" destination="-1" eventType="touchUpInside" id="tga-dF-D8H"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="PZO-O0-5nJ" firstAttribute="centerY" secondItem="ajE-6A-mPw" secondAttribute="centerY" id="1j8-To-Ddk"/>
+                                <constraint firstAttribute="trailing" secondItem="zQ7-ph-Ev5" secondAttribute="trailing" id="2Hz-da-CNb"/>
+                                <constraint firstAttribute="bottom" secondItem="zQ7-ph-Ev5" secondAttribute="bottom" id="3Tg-Ko-kP3"/>
                                 <constraint firstItem="Cdd-MF-pTX" firstAttribute="leading" secondItem="PZO-O0-5nJ" secondAttribute="trailing" constant="20" id="DpC-S4-ch3"/>
                                 <constraint firstAttribute="bottom" secondItem="GJa-V3-PX6" secondAttribute="bottom" id="HFW-Xu-Lo2"/>
                                 <constraint firstItem="PZO-O0-5nJ" firstAttribute="centerY" secondItem="GJa-V3-PX6" secondAttribute="centerY" id="Muz-bp-lXd"/>
@@ -55,6 +69,7 @@
                                 <constraint firstItem="GJa-V3-PX6" firstAttribute="leading" secondItem="ajE-6A-mPw" secondAttribute="leading" id="e9u-BF-wdB"/>
                                 <constraint firstItem="Cdd-MF-pTX" firstAttribute="leading" secondItem="GJa-V3-PX6" secondAttribute="trailing" id="erq-32-YSM"/>
                                 <constraint firstItem="Cdd-MF-pTX" firstAttribute="centerX" secondItem="ajE-6A-mPw" secondAttribute="centerX" id="gd0-dH-x0S"/>
+                                <constraint firstItem="zQ7-ph-Ev5" firstAttribute="top" secondItem="ajE-6A-mPw" secondAttribute="top" id="kfK-Jb-5Jr"/>
                                 <constraint firstItem="Cdd-MF-pTX" firstAttribute="top" secondItem="ajE-6A-mPw" secondAttribute="top" id="rps-en-WIo"/>
                                 <constraint firstAttribute="height" constant="44" id="sez-JT-H7w"/>
                                 <constraint firstAttribute="bottom" secondItem="Cdd-MF-pTX" secondAttribute="bottom" id="tdH-4f-MlU"/>

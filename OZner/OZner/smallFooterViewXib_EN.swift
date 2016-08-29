@@ -57,17 +57,12 @@ class smallFooterViewXib_EN: UIView {
     }
     func panImage(gesture:UIPanGestureRecognizer)
     {  
-        let tapPoint:CGPoint = gesture.locationInView(targertView) //.locationOfTouch(0, inView: targertView)
-        //let tapPoint2:CGPoint=gesture.locationInView(targertView)
-        
-//        if tapPoint.x<30||tapPoint.x>(SCREEN_WIDTH-78) {
-//            return
-//        }
+        let tapPoint:CGPoint = gesture.locationInView(targertView)
         var tmpValue = (tapPoint.x-30)
         tmpValue=tmpValue<=0 ? 0:tmpValue
         tmpValue = tmpValue>=(SCREEN_WIDTH-108) ? (SCREEN_WIDTH-108):tmpValue
         upDateFrame(tmpValue,gesture: gesture)
-        print(gesture.state.rawValue)
+        
       
     }
     func tapImage(gesture:UITapGestureRecognizer)
@@ -85,10 +80,13 @@ class smallFooterViewXib_EN: UIView {
             upDateFrame(tapPoint.x-30,gesture: gesture)
         }
     }
+    var isOffLine = false
     
     func upDateFrame(x:CGFloat,gesture:UIGestureRecognizer?)
     {
-        
+        if isOffLine {
+            return
+        }
         img0Width.constant = -x
         let tmpValue = x/(SCREEN_WIDTH-108)
         

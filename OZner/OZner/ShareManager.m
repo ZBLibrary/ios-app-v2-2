@@ -59,7 +59,36 @@ static ShareManager* g_StaticManagerInstance = nil;
         [UITool showSampleMsg:@"" message:@"您还没有安装手机微信"];
     }
 }
-
+//分享链接到微信
+- (void)ShareLinkToWeChat:(enum WXScene)sence Link:(NSString*)url title:(NSString*)title titleImg:(UIImage*)titleImg LinkDes:(NSString*)LinkDes
+{
+    if([WXApi isWXAppInstalled])
+    {
+        //创建发送对象实例
+        SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+        req.bText = NO;
+        req.scene = sence;
+        //创建分享内容对象
+        WXMediaMessage *message = [WXMediaMessage message];
+        message.title = title;
+        message.description=LinkDes;
+        [message setThumbImage:titleImg];
+        //创建多媒体对象
+        WXWebpageObject* webObject=[[WXWebpageObject alloc] init];
+        webObject.webpageUrl=url;
+        
+        //完成发送对象实例
+        message.mediaObject=webObject;
+        req.message = message;
+        
+        //发送分享信息
+        [WXApi sendReq:req];
+    }
+    else
+    {
+        [UITool showSampleMsg:@"" message:@"您还没有安装手机微信"];
+    }
+}
 #pragma mark- WXApiDelegate
 /*! @brief 发送一个sendReq后，收到微信的回应
  *

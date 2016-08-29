@@ -39,6 +39,10 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
     }
     var goUrlOfOut:String?
     
+    @IBOutlet var shareButton: UIButton!
+    @IBAction func shareClick(sender: AnyObject) {
+        self.view!.addSubview(shareView!)
+    }
     convenience  init(goUrl:String) {
         
         var nibNameOrNil = String?("WeiXinURLViewController_EN")
@@ -65,9 +69,15 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
     var Area="zh"
     var button:UIButton!
     var tmpURL=""
+    var shareView:ShareMoneyToWeChat!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        shareButton.hidden=true
+        shareView = NSBundle.mainBundle().loadNibNamed("ShareMoneyToWeChat", owner: self, options: nil).last as! ShareMoneyToWeChat
+        shareView.frame=CGRectMake(0, 0, SCREEN_WIDTH, Screen_Hight)
+        shareView.backgroundColor=UIColor.blackColor().colorWithAlphaComponent(0.3)
+        
         titleOfURL.text=self.title
         
         //重新加载按钮
@@ -96,6 +106,7 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
             
         //领红包
         case weiXinUrl.callFriend:
+            shareButton.hidden=false
             tmpURL = GoUrlBefore("http://www.oznerwater.com/lktnew/wapnew/Member/GrapRedPackages.aspx")
             break
         //我的券
@@ -205,7 +216,7 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 

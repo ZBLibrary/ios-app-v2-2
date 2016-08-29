@@ -16,25 +16,27 @@ import UIKit
 class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,CustomOCCircleView_ENDelegate,OznerDeviceDelegate,UIScrollViewDelegate,UIAlertViewDelegate{
     
     
-    
+    @IBOutlet var mainBottomEn: NSLayoutConstraint!
+    @IBOutlet var bgBottomEn: NSLayoutConstraint!
+    //
     //---------------airCleaner------------
     //主滚动视图
     var MainScrollView: UIScrollView!
     var airCurrentdevice:Int=0
     //公共部分
-    var headView:headViewView_EN!
+    var AirHeadView:headViewView_EN!
     var outAirView:outAirXib_EN!
     //单机设备断网弹出的提示框
     lazy var offLineSuggestView: OffLineSuggestView_EN = {
         let tmpOffLine = NSBundle.mainBundle().loadNibNamed("OffLineSuggestView_EN", owner: nil, options: nil).last as? OffLineSuggestView_EN
         tmpOffLine?.IKnowButton.addTarget(self, action: #selector(IKnow), forControlEvents: .TouchUpInside)
         return tmpOffLine!
-        }()
+    }()
     
     var IAW_TempView:indoorAirWarn_Air_EN!
     //是否开启跑马效果
     var isPaoMa=0 //0未开启过，1开启中，2开启完成
-    //var pagecontrol:UIPageControl!
+    
     //台式空气净化器
     //尾部视图
     var smallFooterView:smallFooterViewXib_EN!
@@ -146,7 +148,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             self.leftSlideBG_gray.hidden=false
         }
     }
-
+    
     //设备设置
     @IBAction func deviceSetting(sender: AnyObject) {
         if(self.myCurrentDevice == nil)
@@ -165,9 +167,16 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 
             }else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true){
                 //探头设置
-                let controller=setTanTouViewController_EN(nibName: "setTanTouViewController_EN", bundle: nil)
-                controller.myCurrentDevice = self.myCurrentDevice
-                self.navigationController?.pushViewController(controller, animated: true)
+                
+                
+                if !NSNumber(integer: myCurrentDevice?.settings.get("istap", default: 1) as! Int).boolValue {
+                    let controller=SetTdsPanViewController(currDevice:self.myCurrentDevice as? Tap)
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }else{
+                    let controller=setTanTouViewController_EN(nibName: "setTanTouViewController_EN", bundle: nil)
+                    controller.myCurrentDevice = self.myCurrentDevice
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
             }
             else if ( WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true){
                 //净水器设置
@@ -182,22 +191,25 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         OznerDeviceSensorUpdate(self.myCurrentDevice)
         self.navigationController?.navigationBarHidden=true
         
-<<<<<<< HEAD
         // 判断登陆方式
-        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(CHINESE){
-=======
-        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
->>>>>>> master_English_EN
-            CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
-        }else{
-            CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
-        }
+        //       if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
+        //            CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        //        }else{
+        CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
+        //        }
         
         setBartteryImg()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if ((NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE)?.isEqualToString(LoginByEmail)) == true) {
+            mainBottomEn.constant=0
+            bgBottomEn.constant=0
+        }else{
+            mainBottomEn.constant=65
+            bgBottomEn.constant=65
+        }
         //加载默认主视图
         loadWhitchView("default")
         //设备切换通知
@@ -219,21 +231,27 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             self.myCurrentDevice = muArr.objectAtIndex(0) as? OznerDevice
             self.myCurrentDevice?.delegate = self;
             NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-           //当前设备
-       NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: self.myCurrentDevice)
+            //当前设备
+            NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: self.myCurrentDevice)
         }
-    
+        
     }
     //接收到网络变化后处理事件
+    var phoneIsOffLine=false
     func reachabilityChanged(){
         //wifi设备
         if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)||WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) {
             //手机网络状况
             if appDelegate.reachOfNetwork?.currentReachabilityStatus().hashValue==0&&LoadingView != nil {
                 LoadingView.state=2//手机网络不可用
+                phoneIsOffLine=true
+                OznerDeviceStatusUpdate(self.myCurrentDevice)
+                
             }
             else{
                 LoadingView.state = -1//手机网络可用
+                phoneIsOffLine=false
+                OznerDeviceStatusUpdate(self.myCurrentDevice)
             }
         }
     }
@@ -244,7 +262,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     var defaultFooterView:Main_FooterView_zb_EN!
     //Cup页面视图
     var cupHeadView:UIView!
-    var cupFooterView:CupView_Footer_EN!
+    var cupFooterView:CupView_Footer!
     //Tap页面视图
     //净水器页面视图
     //加载哪个设备视图
@@ -298,10 +316,10 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             circleView.delegate = self
             circleView.backgroundColor = UIColor.clearColor()
             deviceHeadView.addSubview(circleView)
-
+            
             //尾部视图
             Height_DeviceFooter.constant=Screen_Hight*160/667
-            cupFooterView=NSBundle.mainBundle().loadNibNamed("CupView_Footer_EN", owner: self, options: nil).last as! CupView_Footer_EN
+            cupFooterView=NSBundle.mainBundle().loadNibNamed("CupView_Footer", owner: self, options: nil).last as! CupView_Footer
             cupFooterView.drinkButton.addTarget(self, action: #selector(amoutOfWaterAction), forControlEvents: .TouchUpInside)
             cupFooterView.tempButton.addTarget(self, action: #selector(temperatureAction), forControlEvents: .TouchUpInside)
             cupFooterView.translatesAutoresizingMaskIntoConstraints = false
@@ -312,22 +330,38 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             deviceFooterView.addConstraint(NSLayoutConstraint(item: cupFooterView, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
             
         case TapManager.isTap(type):
-            //Tap 视图
-            dianliangContainView.hidden=false
-            lvxinContainView.hidden=false
-            set_CurrSelectEquip(2)
-            //头部视图
-            let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*30, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
-            self.myCircleView = circleView
-            circleView.delegate = self
-            circleView.backgroundColor = UIColor.clearColor()
-            deviceHeadView.addSubview(circleView)
-            
-            //尾部视图
-            Height_DeviceFooter.constant=Screen_Hight*210/667
-            let tantouFooterView = MyDeviceCustomFitstView_EN.init(frame: CGRectMake(0, 0, Screen_Width, Screen_Hight*210/667))
-            self.myTanTouBgView = tantouFooterView
-            deviceFooterView.addSubview(self.myTanTouBgView!)
+            if NSNumber(integer: myCurrentDevice?.settings.get("istap", default: 1) as! Int).boolValue
+            {
+                //Tap 视图
+                dianliangContainView.hidden=false
+                lvxinContainView.hidden=false
+                set_CurrSelectEquip(2)
+                //头部视图
+                let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*30, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
+                self.myCircleView = circleView
+                circleView.delegate = self
+                circleView.backgroundColor = UIColor.clearColor()
+                deviceHeadView.addSubview(circleView)
+                
+                //尾部视图
+                Height_DeviceFooter.constant=Screen_Hight*210/667
+                let tantouFooterView = MyDeviceCustomFitstView_EN.init(frame: CGRectMake(0, 0, Screen_Width, Screen_Hight*210/667))
+                self.myTanTouBgView = tantouFooterView
+                deviceFooterView.addSubview(self.myTanTouBgView!)
+            }else{
+                //TDS笔 视图
+                dianliangContainView.hidden=false
+                lvxinContainView.hidden=true
+                //头部视图
+                let circleView = CustomOCCircleView_EN.init(frame: CGRectMake((Screen_Width/375.0)*32, (Screen_Width/375.0)*100, Screen_Width-2*(Screen_Width/375.0)*32, CGFloat((Screen_Width-2*(Screen_Width/375.0)*32)/2)+20*(Screen_Hight/667.0)),tdsValue:0,beatValue:Int32(self.currentDefeat!),rankValue:0)
+                self.myCircleView = circleView
+                circleView.delegate = self
+                circleView.backgroundColor = UIColor.clearColor()
+                deviceHeadView.addSubview(circleView)
+                
+                //尾部视图
+                Height_DeviceFooter.constant=0
+            }
             
         case WaterPurifierManager.isWaterPurifier(type):
             //净水器视图
@@ -339,12 +373,12 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             WaterPurfHeadView=NSBundle.mainBundle().loadNibNamed("WaterPurifierHeadCell_EN", owner: self, options: nil).last as? WaterPurifierHeadCell_EN
             WaterPurfHeadView!.translatesAutoresizingMaskIntoConstraints = false
             WaterPurfHeadView?.toTDSDetailButton.addTarget(self, action: #selector(TDSDetailOfWaterPurf), forControlEvents: .TouchUpInside)
-           
+            
             deviceHeadView.addSubview(WaterPurfHeadView!)
             
             deviceHeadView.addConstraint(NSLayoutConstraint(item: WaterPurfHeadView!, attribute: .Trailing, relatedBy: .Equal, toItem: deviceHeadView, attribute: .Trailing, multiplier: 1, constant: 0))
             deviceHeadView.addConstraint(NSLayoutConstraint(item: WaterPurfHeadView!, attribute: .Leading, relatedBy: .Equal, toItem: deviceHeadView, attribute: .Leading, multiplier: 1, constant: 0))
- 
+            
             deviceHeadView.addConstraint(NSLayoutConstraint(item: WaterPurfHeadView!, attribute: .Top, relatedBy: .Equal, toItem: deviceHeadView, attribute: .Top, multiplier: 1, constant: 0))
             deviceHeadView.addConstraint(NSLayoutConstraint(item: WaterPurfHeadView!, attribute: .Bottom, relatedBy: .Equal, toItem: deviceHeadView, attribute: .Bottom, multiplier: 1, constant: 0))
             
@@ -375,7 +409,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             isPaoMa=0
             loadAirCleanerView()
             currentSpeedModel=0
-
+            
         case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
             set_CurrSelectEquip(6)
             MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
@@ -388,16 +422,16 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             MainScrollView.contentSize=CGSize(width: 0, height: Screen_Hight-65)
             MainScrollView.addSubview(waterReplenishMainView!)
             self.view.addSubview(MainScrollView)
-           //
+            //
             if myCurrentDevice != nil
             {
                 waterReplenishMainView?.initView(myCurrentDevice!)
             }
-
+            
         default://"default"
             //默认主页视图
             myCurrentDevice=nil
-             set_CurrSelectEquip(0)
+            set_CurrSelectEquip(0)
             
             deviceStateViewBG.hidden=true
             
@@ -428,7 +462,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         }
         LoadingView=NSBundle.mainBundle().loadNibNamed("LoadingXib_EN", owner: self, options: nil).last as! LoadingXib_EN
         //LoadingView.backgroundColor=UIColor.redColor()
-       // LoadingView.frame = CGRectMake(0,68,Screen_Width,15)
+        // LoadingView.frame = CGRectMake(0,68,Screen_Width,15)
         //0正在连接,1断开,2已连接
         if self.myCurrentDevice==nil
         {
@@ -439,16 +473,16 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             switch self.myCurrentDevice!.connectStatus()
             {
             case Connected:
-                 LoadingView.state = -1
+                LoadingView.state = -1
                 break
             case Connecting:
-                 LoadingView.state=0
+                LoadingView.state=0
                 break
             default:
-                 LoadingView.state=1
+                LoadingView.state=1
                 break
             }
-           
+            
         }
         
         self.view.addSubview(LoadingView)
@@ -457,7 +491,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             make.left.equalTo(LoadingView.superview!).offset(0)
             make.height.equalTo(15)
             make.right.equalTo(LoadingView.superview!).offset(0)
-        
+            
         }
         reachabilityChanged()//初始化网络状态
         //侧滑感应区视图
@@ -481,7 +515,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         leftSlideBG_gray.hidden=true
         self.view.addSubview(leftSlideBG_gray)
         setBartteryImg()
-   
+        
         
     }
     //进入补水仪其他controller，0设置，1肤质查询，2详情
@@ -604,7 +638,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             self.navigationController?.pushViewController(tdsController, animated: true)
         }
     }
-
+    
     func leftMenuShouqiClick()
     {
         UIView.animateWithDuration(0.5, animations: { () in
@@ -645,9 +679,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     }
     
     //CustomNoDeviceViewDelegate
-//    func customNodeviceAddDeviceAction() {
-//        self.addDeviceAction()
-//    }
+    //    func customNodeviceAddDeviceAction() {
+    //        self.addDeviceAction()
+    //    }
     
     //添加设备
     func addDeviceAction()
@@ -702,7 +736,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                             self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
                             break
                         }
-                        self.lvxinState.text=value<=30 ? "请及时更换滤芯":"滤芯状态"
+                        self.lvxinState.text=value<=30 ? loadLanguage("请及时更换滤芯"):loadLanguage("滤芯状态")
                         value=value<=0 ? 0:value
                         self.lvxinValue.text = "\(value)%"
                         if value==0&&(maxUserDay-userDay.floatValue)>0
@@ -752,7 +786,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                         let state=responseObject.objectForKey("state") as! Int
                         if(state>=0)
                         {
-                           
+                            
                             
                             if (responseObject.objectForKey("time")!.isKindOfClass(NSNull) == false)&&(responseObject.objectForKey("nowtime")!.isKindOfClass(NSNull) == false)
                             {
@@ -831,7 +865,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         }
     }
     
-
+    
     //取探头一个月的水纯净值
     func obtainTanTouTDS()
     {
@@ -933,16 +967,16 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             }
             else if AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) == true
             {
-                if headView != nil
+                if AirHeadView != nil
                 {
-                    headView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                    AirHeadView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
                 }
             }
             else if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type) == true
             {
-                if headView != nil
+                if AirHeadView != nil
                 {
-                    headView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                    AirHeadView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
                 }
             }else if WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(self.myCurrentDevice?.type) == true
             {
@@ -985,7 +1019,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         }
         NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: self.myCurrentDevice)
     }
-
+    
     
     //更换设备界面
     func updateCurrentDeviceData(notication:NSNotification)
@@ -996,7 +1030,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         if(self.myCurrentDevice != nil)
         {
             loadWhitchView((self.myCurrentDevice?.type)!)
-                        //更新数据
+            //更新数据
             OznerDeviceSensorUpdate(self.myCurrentDevice)
         }
         else
@@ -1007,7 +1041,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         
     }
     
-
+    
     
     func downLoadTDS(tds:Int,tdsBefore:Int)
     {
@@ -1087,7 +1121,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 if(record != nil)
                 {
                     cupFooterView.water=Int(record!.volume)
-
+                    
                     if(Int32(self.currentVolumeValue!) != record!.volume)
                     {
                         self.currentVolumeValue = Int(record!.volume)
@@ -1127,19 +1161,27 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     self.myCircleView?.currentTDSValue = 0
                 }
                 
-                if(isNeedDownLXDate == false)
+                if(!NSNumber(integer: myCurrentDevice?.settings.get("istap", default: 1) as! Int).boolValue)
                 {
-                    isNeedDownLXDate = true
-                    self.downLoadLvXinState()
+                    if(self.currentTDS != tds)
+                    {
+                        self.myCircleView?.update()
+                        self.currentTDS = tds
+                    }
                 }
-                
-                
-                if(self.currentTDS != tds)
-                {
-                    self.obtainTanTouTDS()
-                    self.myCircleView?.update()
-                    self.downLoadTDS(tds,tdsBefore: 0)
-                    self.currentTDS = tds
+                else{
+                    if(isNeedDownLXDate == false)
+                    {
+                        isNeedDownLXDate = true
+                        self.downLoadLvXinState()
+                    }
+                    if(self.currentTDS != tds)
+                    {
+                        self.obtainTanTouTDS()
+                        self.myCircleView?.update()
+                        self.downLoadTDS(tds,tdsBefore: 0)
+                        self.currentTDS = tds
+                    }
                 }
             }
             else if(self.myCurrentDevice?.isKindOfClass(WaterPurifier.classForCoder()) == true)
@@ -1157,7 +1199,6 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     isNeedDownLXDate = true
                     self.downLoadLvXinState()
                 }
-                //print(self.currentTDS)
                 if(self.currentTDS > tds&&(tds > 0))
                 {
                     
@@ -1209,8 +1250,18 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 }
                 else
                 {
+                    smallFooterView.upDateFrame(0, gesture: nil)
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
                     IAW_TempView.PM25.text=loadLanguage("已关机")
-                    //IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
+                    if airPurifier_Bluetooth.connectStatus() == Disconnect {
+                        IAW_TempView.PM25.text=loadLanguage("设备已断开")
+                        
+                        smallFooterView.isOffLine=true
+                    }else{
+                        smallFooterView.isOffLine=false
+                        isNeedDownLXDate = false
+                    }   
+                    
                 }
                 
                 
@@ -1223,12 +1274,6 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 let airPurifier_MxChip = self.myCurrentDevice as! AirPurifier_MxChip
                 if airPurifier_MxChip.status.power==true&&airPurifier_MxChip.sensor.PM25 != 65535
                 {
-//                    if #available(iOS 8.2, *) {
-//                        IAW_TempView.PM25.font=UIFont.systemFontOfSize(60, weight: 0.5)
-//                    } else {
-//                        IAW_TempView.PM25.font=UIFont.systemFontOfSize(50)
-//                        // Fallback on earlier versions
-//                    }
                     //跑马效果 0没有跑过，1正在跑马，2跑过马了
                     if isPaoMa != 1
                     {
@@ -1271,23 +1316,23 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                         //滤芯状态
                         let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
                         let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
-                        headView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(365*24*3600)*100)))%":"0%"
+                        AirHeadView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(365*24*3600)*100)))%":"0%"
                         switch ceil((stopTime-nowTime)/(365*24*3600)*100)
                         {
                         case 0:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
+                            AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
                             break
                         case 1..<40:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
+                            AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
                             break
                         case 40..<60:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
+                            AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
                             break
                         case 60..<100:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
+                            AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
                             break
                         default:
-                            headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
+                            AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
                             break
                         }
                         if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
@@ -1303,9 +1348,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 }else
                 {
                     IAW_TempView.PM25.text=loadLanguage(loadLanguage("已关机"))
-                    //IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*SCREEN_WIDTH/320)
                 }
-
+                
             }
             
             
@@ -1330,23 +1375,23 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             let remain=min(100, 100-airPurifier_Bluetooth.status.filterStatus.workTime/600)
             let remain1 = max(remain, 0)
             
-            headView.lvxinState.text = "\(remain1)%"
+            AirHeadView.lvxinState.text = "\(remain1)%"
             switch remain1
             {
             case 0..<15:
-                headView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
+                AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
                 break
             case 15..<40:
-                headView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
+                AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState1")
                 break
             case 40..<60:
-                headView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
+                AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState2")
                 break
             case 60..<85:
-                headView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
+                AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState3")
                 break
             default:
-                headView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
+                AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
                 break
             }
             if (remain1<=0)
@@ -1354,7 +1399,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 let alert=UIAlertView(title: loadLanguage("温馨提示"), message:  loadLanguage("你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用"), delegate: self, cancelButtonTitle:loadLanguage("确定"))
                 alert.show()
             }
-
+            
             
         }
     }
@@ -1387,8 +1432,11 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     }
     
     //跑马end  赵兵
-    func OznerDeviceStatusUpdate(device: OznerDevice!) {
-        if myCurrentDevice==nil||device==nil||device.identifier != myCurrentDevice?.identifier
+    func OznerDeviceStatusUpdate(device: OznerDevice?) {
+        if myCurrentDevice==nil||device==nil {
+            return
+        }
+        if device!.identifier != myCurrentDevice?.identifier
         {
             return
         }
@@ -1396,19 +1444,29 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)||WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) {
             //空净
              StopLoadAnimal()
-            if headView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
+            if AirHeadView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
             {
                 let airPurifier = self.myCurrentDevice as! AirPurifier_MxChip
-                if airPurifier.isOffline==true{
+                if airPurifier.isOffline==true||phoneIsOffLine==true{
                     IAW_TempView.PM25.text=loadLanguage("设备已断开")
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 24)
-                    print(IAW_TempView.PM25.font)
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
+                    //设备数据清空
+                    AirHeadView.lvxinState.text = "-"
+                    IAW_TempView.airText.text="-"
+                    bigStateView.VOC.text="-"
+                    bigStateView.teampre.text="-"
+                    bigStateView.himida.text="-"
+                    bigFooterViews[0].ison=false
+                    bigFooterViews[1].ison=false
+                    bigFooterViews[2].ison=false
+                    isNeedDownLXDate = false
                 }
                 else{
                     IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 45)
                     initBigClickButton()
                     
                 }
+                
                
             }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
             {
@@ -1424,23 +1482,48 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     }
                     
                 }
+                if phoneIsOffLine {
+                
+                    WaterPurfHeadView?.deviceStateLabel.hidden = false
+                    WaterPurfHeadView?.deviceValueContainer.hidden=true
+                }
                 
             }
             
             //设备网络状况
             
         }else{ //蓝牙设备
-            if(device.connectStatus() == Connected)
+            
+            if(device!.connectStatus() == Connected)
             {
+                
                 LoadingView.state = -1//已连接
+                if AirHeadView != nil&&AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) {
+                    smallFooterView.isOffLine = false
+                    
+                }
             }
-            else if (device.connectStatus() == Connecting)
+            else if (device!.connectStatus() == Connecting)
             {
                 LoadingView.state=0
             }
             else
             {
-                LoadingView.state=1
+                if AirHeadView != nil&&AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) {
+                    IAW_TempView.PM25.text=loadLanguage("设备已断开")
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
+                    //设备数据清空
+                    AirHeadView.lvxinState.text = "-"
+                    IAW_TempView.airText.text="-"
+                    smallStateView.Humidity.text="-"
+                    smallStateView.temperature.text="-"
+                    isNeedDownLXDate = false
+                    smallFooterView.upDateFrame(0, gesture: nil)
+                    smallFooterView.isOffLine = true
+                    
+                }else{
+                     LoadingView.state=1
+                }
             }
             //补水仪设备检测中，检测完成回掉
             if WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(myCurrentDevice?.type)
@@ -1458,7 +1541,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     func temperatureAction()
     {
         self.m_bIsHideTableBar = true
-        let controller = AmountOfDrinkingWaterViewController_EN(nibName: "AmountOfDrinkingWaterViewController_EN", bundle: nil)
+        let controller = AmountOfDrinkingWaterViewController(nibName: "AmountOfDrinkingWaterViewController", bundle: nil)
         controller.currentType = 1
         controller.myCurrentDevice = self.myCurrentDevice as! Cup
         controller.defeatValue = Int32(self.currentDefeat!)
@@ -1470,7 +1553,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     {
         //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         self.m_bIsHideTableBar = true
-        let controller = AmountOfDrinkingWaterViewController_EN(nibName: "AmountOfDrinkingWaterViewController_EN", bundle: nil)
+        let controller = AmountOfDrinkingWaterViewController(nibName: "AmountOfDrinkingWaterViewController", bundle: nil)
         controller.currentType = 0
         controller.myCurrentDevice = self.myCurrentDevice as! Cup
         let cup = self.myCurrentDevice as! Cup
@@ -1492,26 +1575,26 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             
         }
         controller.currentType = 0
-//        let werbservice = DeviceWerbservice();
-//        werbservice.volumeFriendRank { (rank:NSNumber!, arr:NSMutableArray!, status:StatusManager!) -> Void in
-//            if(status.networkStatus == kSuccessStatus)
-//            {
-//                self.currentVolumeValue = Int(rank)
-//                controller.todayRank=Int32(self.currentVolumeValue!)
-//            }
-//            else
-//            {
-//                self.currentVolumeValue=0
-//                controller.todayRank=Int32(0)
-//                
-//            }
-//            MBProgressHUD.hideHUDForView(self.view, animated: true)
-//            self.navigationController?.pushViewController(controller, animated: true)
-//            
-//        }
- 
+        //        let werbservice = DeviceWerbservice();
+        //        werbservice.volumeFriendRank { (rank:NSNumber!, arr:NSMutableArray!, status:StatusManager!) -> Void in
+        //            if(status.networkStatus == kSuccessStatus)
+        //            {
+        //                self.currentVolumeValue = Int(rank)
+        //                controller.todayRank=Int32(self.currentVolumeValue!)
+        //            }
+        //            else
+        //            {
+        //                self.currentVolumeValue=0
+        //                controller.todayRank=Int32(0)
+        //                
+        //            }
+        //            MBProgressHUD.hideHUDForView(self.view, animated: true)
+        //            self.navigationController?.pushViewController(controller, animated: true)
+        //            
+        //        }
+        
         self.navigationController?.pushViewController(controller, animated: true)
-
+        
     }
     //Cup点击引水量
     func amoutOfWaterAction()
@@ -1519,16 +1602,16 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         FriendVolumeRank()
     }
     
-
+    
     /**
-    水杯TDS详情页----CustomOCCircleViewDelegate
-    */
+     水杯TDS详情页----CustomOCCircleViewDelegate
+     */
     func seeTdsDetail()
     {
         self.m_bIsHideTableBar = true
         if((self.myCurrentDevice?.isKindOfClass(Cup.classForCoder())) == true)
         {
-            let controller = TDSDetailViewController_EN(nibName: "TDSDetailViewController_EN", bundle: nil)
+            let controller = TDSDetailViewController(nibName: "TDSDetailViewController", bundle: nil)
             controller.myCurrentDevice = self.myCurrentDevice
             let cup = self.myCurrentDevice as! Cup
             controller.tdsValue = cup.sensor.TDS
@@ -1537,24 +1620,24 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             
             //controller.defeatValue = Int32(self.currentDefeat!)
             self.navigationController?.pushViewController(controller, animated: true)
-//            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//            let werbservice = DeviceWerbservice()
-//            werbservice.TdsFriendRank(myCurrentDevice?.type, returnBlock: { (rank:NSNumber!, total:NSMutableArray!, status:StatusManager!) -> Void in
-//                MBProgressHUD.hideHUDForView(self.view, animated: true)
-//                if(status.networkStatus == kSuccessStatus)
-//                {
-//                    controller.tdsRankValue = rank.intValue
-//                    
-//                }
-//                else
-//                {
-//                    controller.tdsRankValue = 1
-//                }
-//                self.navigationController?.pushViewController(controller, animated: true)
-//            })
-
+            //            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            //            let werbservice = DeviceWerbservice()
+            //            werbservice.TdsFriendRank(myCurrentDevice?.type, returnBlock: { (rank:NSNumber!, total:NSMutableArray!, status:StatusManager!) -> Void in
+            //                MBProgressHUD.hideHUDForView(self.view, animated: true)
+            //                if(status.networkStatus == kSuccessStatus)
+            //                {
+            //                    controller.tdsRankValue = rank.intValue
+            //                    
+            //                }
+            //                else
+            //                {
+            //                    controller.tdsRankValue = 1
+            //                }
+            //                self.navigationController?.pushViewController(controller, animated: true)
+            //            })
+            
         }
-   
+        
     }
     
     
@@ -1563,29 +1646,29 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     {
         MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
         MainScrollView.backgroundColor=UIColor(red: 238/255, green: 239/255, blue: 240/255, alpha: 1)
-        headView=NSBundle.mainBundle().loadNibNamed("headViewView_EN", owner: nil, options: nil).last as! headViewView_EN
-        headView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: headView.bounds.size.height*(Screen_Hight/667))
-        headView.initView()
-        headView.bgColorIndex=1
-        headView.toLeftMenu.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
+        AirHeadView=NSBundle.mainBundle().loadNibNamed("headViewView_EN", owner: nil, options: nil).last as! headViewView_EN
+        AirHeadView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: AirHeadView.bounds.size.height*(Screen_Hight/667))
+        AirHeadView.initView()
+        AirHeadView.bgColorIndex=1
+        AirHeadView.toLeftMenu.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
         //查看室内空气质量
         let tapGesture=UITapGestureRecognizer(target: self, action: #selector(toSeeIndoor))
-        headView.LvXinState.addTarget(self, action: #selector(toSeeIndoor), forControlEvents: .TouchUpInside)
+        AirHeadView.LvXinState.addTarget(self, action: #selector(toSeeIndoor), forControlEvents: .TouchUpInside)
         tapGesture.numberOfTapsRequired=1//设置点按次数
-        headView.seeIndoorAir.addGestureRecognizer(tapGesture)
-        headView.toSetting.addTarget(self, action: #selector(toSettingClick), forControlEvents: .TouchUpInside)
-        headView.seeOutAir.addTarget(self, action: #selector(seeOutAirClick), forControlEvents: .TouchUpInside)
-        MainScrollView.addSubview(headView)
+        AirHeadView.seeIndoorAir.addGestureRecognizer(tapGesture)
+        AirHeadView.toSetting.addTarget(self, action: #selector(toSettingClick), forControlEvents: .TouchUpInside)
+        AirHeadView.seeOutAir.addTarget(self, action: #selector(seeOutAirClick), forControlEvents: .TouchUpInside)
+        MainScrollView.addSubview(AirHeadView)
         updateOutAirData()
         //室内空气提醒
         IAW_TempView=NSBundle.mainBundle().loadNibNamed("indoorAirWarn_Air_EN", owner: nil, options: nil).last as! indoorAirWarn_Air_EN
         
-        headView.seeIndoorAir.addSubview(IAW_TempView)
+        AirHeadView.seeIndoorAir.addSubview(IAW_TempView)
         IAW_TempView.translatesAutoresizingMaskIntoConstraints = false
-        headView.seeIndoorAir.addConstraint(NSLayoutConstraint(item: IAW_TempView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: headView.seeIndoorAir, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
-        headView.seeIndoorAir.addConstraint(NSLayoutConstraint(item: IAW_TempView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: headView.seeIndoorAir, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
-        headView.seeIndoorAir.addConstraint(NSLayoutConstraint(item: IAW_TempView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: headView.seeIndoorAir, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
-        headView.seeIndoorAir.addConstraint(NSLayoutConstraint(item: IAW_TempView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: headView.seeIndoorAir, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
+        AirHeadView.seeIndoorAir.addConstraint(NSLayoutConstraint(item: IAW_TempView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: AirHeadView.seeIndoorAir, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
+        AirHeadView.seeIndoorAir.addConstraint(NSLayoutConstraint(item: IAW_TempView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: AirHeadView.seeIndoorAir, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
+        AirHeadView.seeIndoorAir.addConstraint(NSLayoutConstraint(item: IAW_TempView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: AirHeadView.seeIndoorAir, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
+        AirHeadView.seeIndoorAir.addConstraint(NSLayoutConstraint(item: IAW_TempView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: AirHeadView.seeIndoorAir, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
         
         if AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) == true
         {
@@ -1593,15 +1676,15 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             smallStateView=NSBundle.mainBundle().loadNibNamed("smallStateXib_EN", owner: nil, options: nil).last as! smallStateXib_EN
             smallStateView.frame=CGRect(x: 0, y: 10, width: Screen_Width, height: smallStateView.bounds.size.height)
             
-            headView.centerViewzb.addSubview(smallStateView)
+            AirHeadView.centerViewzb.addSubview(smallStateView)
             
             //footerView
             
             smallFooterView=NSBundle.mainBundle().loadNibNamed("smallFooterViewXib_EN", owner: nil, options: nil).last as! smallFooterViewXib_EN
-            smallFooterView.frame=CGRect(x: 0, y: headView.bounds.size.height, width: Screen_Width, height: smallFooterView.bounds.size.height*(Screen_Hight/667))
+            smallFooterView.frame=CGRect(x: 0, y: AirHeadView.bounds.size.height, width: Screen_Width, height: smallFooterView.bounds.size.height*(Screen_Hight/667))
             smallFooterView.blueTooth = self.myCurrentDevice as! AirPurifier_Bluetooth
             smallFooterView.initView()
-            
+            MainScrollView.backgroundColor = UIColor.whiteColor()
             MainScrollView.addSubview(smallFooterView)
             
             
@@ -1610,10 +1693,10 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         {
             bigStateView=NSBundle.mainBundle().loadNibNamed("bigStateXib_EN", owner: nil, options: nil).last as! bigStateXib_EN
             bigStateView.frame=CGRect(x: 0, y: 10, width: Screen_Width, height: bigStateView.bounds.size.height)
-            headView.centerViewzb.addSubview(bigStateView)
-            headView.FuLiZiOfSmallAir.hidden=true
+            AirHeadView.centerViewzb.addSubview(bigStateView)
+            AirHeadView.FuLiZiOfSmallAir.hidden=true
             //滚动视图
-            let footerScroll=UIScrollView(frame: CGRect(x: 0, y: headView.bounds.size.height, width: Screen_Width, height: Screen_Hight-65-headView.height))
+            let footerScroll=UIScrollView(frame: CGRect(x: 0, y: AirHeadView.bounds.size.height, width: Screen_Width, height: Screen_Hight-65-AirHeadView.height))
             footerScroll.pagingEnabled = true
             footerScroll.delegate=self
             footerScroll.showsHorizontalScrollIndicator=false
@@ -1625,7 +1708,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             bigModelBgView=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: (Screen_Hight>(667-65-20) ? Screen_Hight:(667-65-20))))
             bigModelBgView.backgroundColor=UIColor(white: 0, alpha: 0.5)
             tmpbigmodel=NSBundle.mainBundle().loadNibNamed("bigautoModelView_EN", owner: nil, options: nil).last as! bigautoModelView_EN
-            let tmpOrigin_y=154-33+headView.bounds.size.height-tmpbigmodel.frame.height
+            let tmpOrigin_y=154-33+AirHeadView.bounds.size.height-tmpbigmodel.frame.height
             let tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2
             tmpbigmodel.frame=CGRect(x: tmpOrigin_x, y: tmpOrigin_y, width: tmpbigmodel.frame.width, height: tmpbigmodel.frame.height)
             tmpbigmodel.leftButton.addTarget(self, action: #selector(selectWhichModelbig), forControlEvents: .TouchUpInside)
@@ -1657,9 +1740,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             footerScroll.backgroundColor=UIColor.whiteColor()
             
             MainScrollView.addSubview(footerScroll)
-//            footerScroll.updateConstraintsIfNeeded()
-//            headView.updateConstraints()
-//            headView.updateConstraintsIfNeeded()
+            //            footerScroll.updateConstraintsIfNeeded()
+            //            headView.updateConstraints()
+            //            headView.updateConstraintsIfNeeded()
             //pageView
             //pagecontrol=UIPageControl(frame: CGRect(x: SCREEN_WIDTH/2-30, y: headView.bounds.size.height+140, width: 60, height: 6))
             //pagecontrol.numberOfPages=2
@@ -1679,16 +1762,16 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         
     }
     //
-//    func toLeftMenuClick()
-//    {
-//        NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: self)
-//        delegate?.leftActionCallBack()
-//        UIView.animateWithDuration(0.5) { () -> Void in
-//            self.leftSlideBG_gray.backgroundColor=UIColor(white: 0, alpha: 0.5)
-//            self.leftSlideBG_gray.hidden=false
-//        }
-//        
-//    }
+    //    func toLeftMenuClick()
+    //    {
+    //        NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: self)
+    //        delegate?.leftActionCallBack()
+    //        UIView.animateWithDuration(0.5) { () -> Void in
+    //            self.leftSlideBG_gray.backgroundColor=UIColor(white: 0, alpha: 0.5)
+    //            self.leftSlideBG_gray.hidden=false
+    //        }
+    //        
+    //    }
     //室内空气
     func toSeeIndoor()
     {
@@ -1715,7 +1798,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     {
         if self.myCurrentDevice==nil
         {
-             let alert=UIAlertView(title: loadLanguage("温馨提示"), message:  loadLanguage("设备没有连接上"), delegate: self, cancelButtonTitle:loadLanguage("确定"))
+            let alert=UIAlertView(title: loadLanguage("温馨提示"), message:  loadLanguage("设备没有连接上"), delegate: self, cancelButtonTitle:loadLanguage("确定"))
             alert.show()
             return
         }
@@ -1756,17 +1839,17 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 {
                     if StrongSelf.outAirView != nil
                     {
-                        StrongSelf.outAirView.cityname.text=cityname
+                        StrongSelf.outAirView.cityname.text=loadLanguage(cityname)
                         StrongSelf.outAirView.PM25.text=PM25+"ug/m3"
                         StrongSelf.outAirView.AQI.text=AQI
                         StrongSelf.outAirView.teampret.text=temperature+"℃"
                         StrongSelf.outAirView.hubit.text=humidity+"%"
-                   //     print("jlsjlkjlksjfkl\(dataFrom)") ---  并不是英文
+                        //     print("jlsjlkjlksjfkl\(dataFrom)") ---  并不是英文
                         StrongSelf.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
                     }
-                    StrongSelf.headView.cityName.text=cityname
-                    StrongSelf.headView.polution.text=pollution
-                    StrongSelf.headView.PM25.text=PM25
+                    StrongSelf.AirHeadView.cityName.text=loadLanguage(cityname)
+                    StrongSelf.AirHeadView.polution.text=loadLanguage(pollution)
+                    StrongSelf.AirHeadView.PM25.text=PM25
                 }
             }
         }
@@ -1774,7 +1857,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     func IKnow()
     {
         bgairView.removeFromSuperview()
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
+            CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        }
     }
     
     //设备未联网信息显示
@@ -1838,29 +1923,18 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         let tmpbigDevice=self.myCurrentDevice as! AirPurifier_MxChip
         
         bigFooterViews[0].ison = tmpbigDevice.status.power
-        print(tmpbigDevice.status.power)
+        
         if bigFooterViews[0].ison==false
         {
-            print(IAW_TempView.PM25.font)
+            
             IAW_TempView.PM25.text=loadLanguage("已关机")
-            //IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40)
+            IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*SCREEN_WIDTH/320)
             bigFooterViews[1].ison=false
             bigFooterViews[2].ison=false
-            //bigFooterViews[3].ison=false
-            //bigFooterViews[4].ison=false
-            //bigFooterViews[5].ison=false
-            //bigFooterViews[6].ison=false
             
-            //return
         }else
         {
             IAW_TempView.PM25.text="\(tmpbigDevice.sensor.PM25)"
-//            if #available(iOS 8.2, *) {
-//                IAW_TempView.PM25.font=UIFont.systemFontOfSize(60, weight: 0.5)
-//            } else {
-//                IAW_TempView.PM25.font=UIFont.systemFontOfSize(50)
-//                // Fallback on earlier versions
-//            }
             if currentSpeedModel != tmpbigDevice.status.speed
             {
                 currentSpeedModel=tmpbigDevice.status.speed
@@ -1881,6 +1955,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         {
             return
         }
+        if airPurifier_MxChip.isOffline {
+            return
+        }
         switch button.tag
         {
         case 1:
@@ -1889,14 +1966,14 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             print(!bigFooterViews[0].ison)
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             airPurifier_MxChip.status.setPower(!bigFooterViews[0].ison, callback: { (error:NSError!) -> Void in
-//                if error==nil
-//                {
-               self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
-//                }
-//                else
-//                {
-//                    MBProgressHUD.hideHUDForView(self.view, animated: true)
-//                }
+                //                if error==nil
+                //                {
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
+                //                }
+                //                else
+                //                {
+                //                    MBProgressHUD.hideHUDForView(self.view, animated: true)
+                //                }
             })
             
             
@@ -1926,23 +2003,23 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             //            let setTimingController=setTimingViewController()
             //            setTimingController.myCurrentDevice=self.myCurrentDevice
             //            self.navigationController?.pushViewController(setTimingController, animated: true)
-            //            break
+        //            break
         case 3:
             //童锁
             print(!bigFooterViews[2].ison)
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             airPurifier_MxChip.status.setLock(!bigFooterViews[2].ison, callback: {
                 (error:NSError!) in
-//                if error==nil
-//                {
+                //                if error==nil
+                //                {
                 
-                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
-                    
-//                }
-//                else
-//                {
-//                    MBProgressHUD.hideHUDForView(self.view, animated: true)
-//                }
+                self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
+                
+                //                }
+                //                else
+                //                {
+                //                    MBProgressHUD.hideHUDForView(self.view, animated: true)
+                //                }
             })
             //bigFooterViews[2].ison = !bigFooterViews[2].ison
             break
@@ -1957,7 +2034,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             //            break
             //        case 7:
             //            currentSpeedModel=1
-            //            break
+        //            break
         default:
             break
             
@@ -1995,27 +2072,27 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     func setAirStandart(pm25:Int)
     {
         /*
-        一级：空气污染指数≤75优级
-        二级：空气污染指数≤150良好
-        三级：空气污染指数>150差
-        */
+         一级：空气污染指数≤75优级
+         二级：空气污染指数≤150良好
+         三级：空气污染指数>150差
+         */
         switch pm25
         {
         case 0..<75 :
             IAW_TempView.airText.text=loadLanguage("优")
-            headView.bgColorIndex = 1
+            AirHeadView.bgColorIndex = 1
             break
         case 75..<150:
             IAW_TempView.airText.text=loadLanguage("良")
-            headView.bgColorIndex = 2
+            AirHeadView.bgColorIndex = 2
             break
         case 150...100000000:
             IAW_TempView.airText.text=loadLanguage("差")
-            headView.bgColorIndex = 3
+            AirHeadView.bgColorIndex = 3
             break
         default:
             IAW_TempView.airText.text=loadLanguage("优")
-            headView.bgColorIndex = 1
+            AirHeadView.bgColorIndex = 1
             break
             
         }
@@ -2060,15 +2137,15 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

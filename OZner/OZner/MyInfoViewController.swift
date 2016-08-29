@@ -15,6 +15,8 @@ class MyInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.navigationController?.navigationBar.barTintColor=UIColor(red: 248/255, green: 249/255, blue: 250/255, alpha: 1)
         
         
@@ -154,29 +156,7 @@ class MyInfoViewController: UIViewController {
         }
         
     }
-    //设备信息
-    //    func loadDevices()
-    //    {
-    //        let manager = AFHTTPRequestOperationManager()
-    //        let url = StarURL_New+"/OznerServer/GetDeviceList"
-    //        let params:NSDictionary = ["usertoken":get_UserToken()]
-    //        manager.POST(url,
-    //            parameters: params,
-    //            success: { (operation: AFHTTPRequestOperation!,
-    //                responseObject: AnyObject!) in
-    //                print(responseObject)
-    //                let state=responseObject.objectForKey("state") as! Int
-    //                if state >= 0
-    //                {
-    //                    self.mainView.My_EquipCount.text="\(state)"
-    //                }
-    //                
-    //            },
-    //            failure: { (operation: AFHTTPRequestOperation!,
-    //                error: NSError!) in
-    //                print("Error: " + error.localizedDescription)
-    //        })
-    //    }
+    
     
     //跳转
     func toURL(button:UIButton)
@@ -187,25 +167,28 @@ class MyInfoViewController: UIViewController {
         {
         case 0:
             tmpURLController.title=weiXinUrl.myMoney
-            break
+            
         case 1:
             tmpURLController.title=weiXinUrl.shareLiKa
-            break
+            
         case 2:
             tmpURLController.title=weiXinUrl.callFriend
-            break
+            
         case 3:
             tmpURLController.title=weiXinUrl.awardInfo
-            break
+            
         case 4:
             tmpURLController.title=weiXinUrl.waterReport
-            break
+            
         default:
             break
         }
         self.presentViewController(tmpURLController, animated: true, completion: nil)
         
     }
+    
+    
+    
     func toLogin()
     {
         LogInOut.loginInOutInstance().loginOutUser()

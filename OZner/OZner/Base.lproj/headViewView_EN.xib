@@ -182,7 +182,7 @@
                                         </mask>
                                     </variation>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sau-CH-C9a">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sau-CH-C9a">
                                     <rect key="frame" x="27" y="0.0" width="73" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="56" id="3Ac-Rn-hk3"/>
@@ -271,7 +271,7 @@
                     <rect key="frame" x="26" y="403" width="323" height="43"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dn-xR-Zjk">
-                    <rect key="frame" x="107" y="166" width="162" height="100"/>
+                    <rect key="frame" x="88" y="156" width="200" height="110"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQh-Kp-Qds">
@@ -336,7 +336,7 @@
                 <constraint firstItem="9d6-yk-DfL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Z2y-2f-pBz"/>
                 <constraint firstItem="9d6-yk-DfL" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="312/375" id="ZC1-J7-BgO"/>
                 <constraint firstItem="E3o-x2-irl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="ZGf-qU-Bfc"/>
-                <constraint firstItem="9Dn-xR-Zjk" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="162:375" id="ZWP-AF-0XH"/>
+                <constraint firstItem="9Dn-xR-Zjk" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="200:375" id="ZWP-AF-0XH"/>
                 <constraint firstAttribute="bottom" secondItem="5kV-oL-mky" secondAttribute="bottom" id="byj-Ru-Qtm"/>
                 <constraint firstAttribute="bottom" secondItem="dFE-Ay-Ylb" secondAttribute="bottom" id="d1u-g4-VE7"/>
                 <constraint firstItem="ShS-nL-ao7" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="200:375" id="eIL-Di-BjY"/>
@@ -361,7 +361,7 @@
                 <constraint firstItem="gFN-F8-TMt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="qqp-dI-5RM"/>
                 <constraint firstItem="mZJ-OD-33s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rCi-cz-XWK"/>
                 <constraint firstItem="1yq-6b-xOI" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="280:375" id="s07-2g-UqB"/>
-                <constraint firstItem="9Dn-xR-Zjk" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="100:375" id="tCI-TZ-uJN"/>
+                <constraint firstItem="9Dn-xR-Zjk" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="110:375" id="tCI-TZ-uJN"/>
                 <constraint firstItem="dgv-ZR-9fS" firstAttribute="leading" secondItem="Rpg-WY-bPg" secondAttribute="trailing" id="tWr-lR-Mrp"/>
                 <constraint firstItem="5kV-oL-mky" firstAttribute="top" secondItem="mK4-ke-14C" secondAttribute="bottom" id="tkP-H5-eW4"/>
                 <constraint firstItem="woh-ny-bgk" firstAttribute="top" secondItem="mK4-ke-14C" secondAttribute="bottom" id="tm0-2V-P1C"/>

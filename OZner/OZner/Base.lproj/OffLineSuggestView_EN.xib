@@ -73,9 +73,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm5-8u-fG5">
                     <rect key="frame" x="0.0" y="148" width="375" height="44"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.同时按下电源和风速，WIFI指示灯闪烁，重新配对" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7K-BT-Pco">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.同时按下电源和风速，WIFI指示灯闪烁，重新配对" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7K-BT-Pco">
                             <rect key="frame" x="15" y="0.0" width="345" height="44"/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -148,6 +148,7 @@
                 <outlet property="fourthLabel" destination="fAy-Sq-cOG" id="wrz-du-nK3"/>
                 <outlet property="thirdItem" destination="vm5-8u-fG5" id="R9O-wx-jq7"/>
                 <outlet property="thirdItem_Height" destination="XqT-Pd-20f" id="GNb-Kh-TnP"/>
+                <outlet property="thirdLabel" destination="P7K-BT-Pco" id="L4v-iL-aPY"/>
             </connections>
             <point key="canvasLocation" x="213.5" y="287.5"/>
         </view>
