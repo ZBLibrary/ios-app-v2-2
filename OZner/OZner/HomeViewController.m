@@ -55,12 +55,12 @@
     // 默认第一个 可以修改
     m_Index = 0;
     CustomPopView* cutomView;
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_LOGIN_STYLE] isEqualToString:LoginByEmail]) {
+    //if ([[[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_LOGIN_STYLE] isEqualToString:LoginByEmail]) {
         cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    }
-    else{
-        cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT-65)];
-    }
+//    }
+//    else{
+//        cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT-65)];
+//    }
     
     self.myCustomView = cutomView;
     self.myCustomView.delegate = self;
