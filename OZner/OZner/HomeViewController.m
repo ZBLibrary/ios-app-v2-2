@@ -40,7 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor clearColor];
     NSLog(@"homecontroller.frame:%@",NSStringFromCGRect(self.view.frame));
     UIViewController* controller = (UIViewController* )[self.items objectAtIndex:0];
@@ -56,17 +56,17 @@
     m_Index = 0;
     CustomPopView* cutomView;
     //if ([[[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_LOGIN_STYLE] isEqualToString:LoginByEmail]) {
-        cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-//    }
-//    else{
-//        cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT-65)];
-//    }
+    //        cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    //    }
+    //    else{
+    cutomView = [[CustomPopView alloc]initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT-65)];
+    //    }
     
     self.myCustomView = cutomView;
     self.myCustomView.delegate = self;
     self.myCustomView.myDevices = (NSMutableArray*)[[OznerManager instance]getDevices];
     self.myCustomView.myView.frame = CGRectMake(0, 0, SCREEN_WIDTH-50, cutomView.frame.size.height);
-
+    
     [self.view addSubview:cutomView];
     [self.myCustomView relaodData];
     
@@ -77,11 +77,11 @@
     NSNumber* point = notification.object;
     
     self.myCustomView.frame = CGRectMake(-SCREEN_WIDTH+[point intValue], 0, self.myCustomView.frame.size.width, self.myCustomView.frame.size.height);
-        
+    
     //CGFloat alpha = [point floatValue]/SCREEN_WIDTH * 0.8;
-       // self.myCustomView.alpha = alpha;
-       // NSLog(@"alpha = %f frame.x = %f",alpha,self.myCustomView.frame.origin.x);
-  
+    // self.myCustomView.alpha = alpha;
+    // NSLog(@"alpha = %f frame.x = %f",alpha,self.myCustomView.frame.origin.x);
+    
 }
 
 //更新设备
@@ -145,16 +145,16 @@
 {
     // 移动到另一边
     //[self moveToOtherSide:YES];
-//    [UIView animateWithDuration:0.5 animations:^{
-//        self.myCustomView.frame = CGRectMake(0, 0, self.myCustomView.frame.size.width, self.myCustomView.frame.size.height);
-//    }];
+    //    [UIView animateWithDuration:0.5 animations:^{
+    //        self.myCustomView.frame = CGRectMake(0, 0, self.myCustomView.frame.size.width, self.myCustomView.frame.size.height);
+    //    }];
 }
 
 #pragma mark - Father Method 手势是否有效 //cxm 2014-5-28
 - (BOOL)gestureValid
 {
-//    ExtendViewController* controller = (ExtendViewController* )[self.items objectAtIndex:m_Index];
-//    int count = [controller checkControllers];
+    //    ExtendViewController* controller = (ExtendViewController* )[self.items objectAtIndex:m_Index];
+    //    int count = [controller checkControllers];
     return (false);
 }
 

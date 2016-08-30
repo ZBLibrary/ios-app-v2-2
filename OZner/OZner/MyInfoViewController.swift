@@ -224,18 +224,18 @@ class MyInfoViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //我的设备数量
-        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
-            let devices=OznerManager.instance().getDevices() as [AnyObject!]
-            mainView.My_EquipCount.text="\(devices.count)"
-            self.navigationController?.navigationBarHidden=true
-            CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
-        } else {
-            self.navigationController?.navigationBarHidden=false
-            self.title = loadLanguage("个人设置")
-            let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back@2x"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(leftMethod))
-            leftButton.tintColor = UIColor.darkGrayColor()
-            self.navigationItem.leftBarButtonItem = leftButton;
-        }
+        //        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
+        let devices=OznerManager.instance().getDevices() as [AnyObject!]
+        mainView.My_EquipCount.text="\(devices.count)"
+        self.navigationController?.navigationBarHidden=true
+        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        //        } else {
+        //            self.navigationController?.navigationBarHidden=false
+        //            self.title = loadLanguage("个人设置")
+        //            let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back@2x"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(leftMethod))
+        //            leftButton.tintColor = UIColor.darkGrayColor()
+        //            self.navigationItem.leftBarButtonItem = leftButton;
+        //    }
     }
     
     

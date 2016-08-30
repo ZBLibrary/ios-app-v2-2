@@ -65,9 +65,9 @@
     [nav0.navigationBar loadNavigationBar];
     
     //商城
-    MyStoreViewController* storeController = [[MyStoreViewController alloc] init];
-    UINavigationController* nav1 = [[UINavigationController alloc] initWithRootViewController:storeController];
-    [nav1.navigationBar loadNavigationBar];
+//    MyStoreViewController* storeController = [[MyStoreViewController alloc] init];
+//    UINavigationController* nav1 = [[UINavigationController alloc] initWithRootViewController:storeController];
+//    [nav1.navigationBar loadNavigationBar];
     //聊天ChatViewController.h
     ChatViewController* communicationContr0ller = [[ChatViewController alloc] init];
     UINavigationController* nav2 = [[UINavigationController alloc] initWithRootViewController:communicationContr0ller];
@@ -79,7 +79,7 @@
     UINavigationController* nav3 = [[UINavigationController alloc] initWithRootViewController:infoController];
     [nav3.navigationBar loadNavigationBar];
     
-    NSArray* array = [[NSArray alloc] initWithObjects:nav0,nav1,nav2,nav3, nil];
+    NSArray* array = [[NSArray alloc] initWithObjects:nav0,nav2,nav3, nil];
     
     myTabController = [[CustomTabBarController alloc] initWithControllers:array];
     NSArray* items = [NSArray arrayWithObjects:myTabController, nil];

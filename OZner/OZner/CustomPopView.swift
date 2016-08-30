@@ -57,7 +57,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         NSUserDefaults.standardUserDefaults().setObject(LoginByEmail, forKey: CURRENT_LOGIN_STYLE)
         //        }
         
-        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail) {
+        if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
             luangeHeight = 140
             let btn = UIButton(type: UIButtonType.Custom)
             btn.frame = CGRect(x: 0, y: 20, width: self.myView.frame.size.width, height: 90*(height/667.0))
@@ -115,7 +115,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         addLabel!.hidden=true
         self.myView.addSubview(addLabel!)
         //创建tableview
-        let table = UITableView(frame: CGRectMake(0, 20, self.myView.frame.size.width, addBtn.frame.origin.y))
+        let table = UITableView(frame: CGRectMake(0, 0, self.myView.frame.size.width, addBtn.frame.origin.y))
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = UIColor.clearColor()

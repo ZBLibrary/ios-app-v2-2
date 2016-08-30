@@ -52,7 +52,7 @@ static CustomTabBarView*    g_CustomTabBar;
     self = [super init];
     if (self) {
         // Initialization code
-        NSArray* itemArray = [NSArray arrayWithObjects:@"我的设备",@"商城", @"咨询", @"我", nil];
+        NSArray* itemArray = [NSArray arrayWithObjects:@"我的设备", @"咨询", @"我", nil];
         int count = (int)[itemArray count];
         int widthScreen = [UIScreen mainScreen].bounds.size.width;
         self.frame = CGRectMake(0, UI_SCREEN_HEIGHT - UI_STATUS_BAR_HEIGHT - UI_TAB_BAR_HEIGHT, widthScreen, UI_TAB_BAR_HEIGHT);

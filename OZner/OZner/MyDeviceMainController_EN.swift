@@ -193,9 +193,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         
         // 判断登陆方式
         //       if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
-        //            CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         //        }else{
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
+        //        CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
         //        }
         
         setBartteryImg()
@@ -203,7 +203,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if ((NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE)?.isEqualToString(LoginByEmail)) == true) {
+        if ((NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE)?.isEqualToString(LoginByPhone)) == true) {
             mainBottomEn.constant=0
             bgBottomEn.constant=0
         }else{
@@ -1443,7 +1443,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         //wifi设备
         if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)||WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) {
             //空净
-             StopLoadAnimal()
+            StopLoadAnimal()
             if AirHeadView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
             {
                 let airPurifier = self.myCurrentDevice as! AirPurifier_MxChip
@@ -1482,7 +1482,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     
                 }
                 if phoneIsOffLine {
-                
+                    
                     WaterPurfHeadView?.deviceStateLabel.hidden = false
                     WaterPurfHeadView?.deviceValueContainer.hidden=true
                 }
@@ -1521,7 +1521,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     smallFooterView.isOffLine = true
                     
                 }else{
-                     LoadingView.state=1
+                    LoadingView.state=1
                 }
             }
             //补水仪设备检测中，检测完成回掉
