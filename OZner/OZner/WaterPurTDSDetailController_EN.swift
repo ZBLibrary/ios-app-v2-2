@@ -178,7 +178,7 @@ class WaterPurTDSDetailController_EN: UITableViewController {
         let image = shareImgClass.getshareImagezb(3, type: 1, value: 8, beat: 18, maxWater: 0) //getshareImagezb:self.defeatRank type:1 value:self.tdsValue beat:beatzb maxWater:0];
         
         //微信朋友圈
-        ShareManager.shareManagerInstance().sendShareToWeChat(WXSceneTimeline, urt: "", title: "浩泽净水家", shareImg: image)
+        ShareManager.shareManagerInstance().sendShareToWeChat(WXSceneTimeline, urt: "", title: "伊泉净品", shareImg: image)
         
     }
     //水质纯净值说明

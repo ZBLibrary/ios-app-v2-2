@@ -80,7 +80,7 @@ class SendYanZHViewController: UIViewController,UITextFieldDelegate {
                 }
                 else if isSuccess == -10017
                 {
-                    let successalert = UIAlertView(title: "", message:loadLanguage("对方不是浩泽用户"), delegate: self, cancelButtonTitle: "ok")
+                    let successalert = UIAlertView(title: "", message:loadLanguage("对方不是伊泉用户"), delegate: self, cancelButtonTitle: "ok")
                     successalert.show()
                 }
                 

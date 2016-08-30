@@ -95,7 +95,7 @@
     getshareImageClass* getClass = [[getshareImageClass alloc]init];
     UIImage* image = [getClass getshareImagezb:self.defeatRank type:0 value:record.volume beat:beatzb maxWater:maxValue];
     //微信朋友圈
-    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"浩泽净水家") shareImg:image];
+    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"伊泉净品") shareImg:image];
 }
 
 #pragma mark-AmountOfDrinkingWaterFirstCellDelegate

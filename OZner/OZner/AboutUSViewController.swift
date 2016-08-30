@@ -19,10 +19,10 @@ class AboutUSViewController: UIViewController {
     @IBOutlet var HaozeLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-     self.title=loadLanguage("关于浩泽净水家" )
+     self.title=loadLanguage("关于伊泉净品" )
         //UpdateLable.text=loadLanguage("检查更新版本" )
         ScoreLable.text=loadLanguage("评个分吧")
-      HaozeLable.text=loadLanguage("浩泽净水家")
+      HaozeLable.text=loadLanguage("伊泉净品")
         // Do any additional setup after loading the view.
     }
     //评个分吧

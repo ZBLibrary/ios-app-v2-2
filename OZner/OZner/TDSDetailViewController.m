@@ -98,7 +98,7 @@
     UIImage* image = [getClass getshareImagezb:self.defeatRank type:1 value:self.tdsValue beat:beatzb maxWater:0];
     
     //微信朋友圈
-    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"浩泽净水家") shareImg:image];
+    [[ShareManager shareManagerInstance]sendShareToWeChat:WXSceneTimeline urt:@"" title:loadLanguage(@"伊泉净品") shareImg:image];
 }
 - (void)toWhatTDS
 {
