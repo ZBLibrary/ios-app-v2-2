@@ -103,7 +103,7 @@
     
     [self loadFirstView];
     
-    //[self isFirstOpenApp];
+    [self isFirstOpenApp];
     
 }
 
