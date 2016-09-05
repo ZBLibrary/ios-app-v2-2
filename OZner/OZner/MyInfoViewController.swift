@@ -63,6 +63,7 @@ class MyInfoViewController: UIViewController {
         } else {
             
             //添加数据和事件
+            mainView_EN.deviceBtn.addTarget(self, action: #selector(EquidsClick), forControlEvents: .TouchUpInside)
             mainView_EN.My_Equids_button.addTarget(self, action: #selector(My_FriendsClick), forControlEvents: .TouchUpInside)
             //        mainView.My_Friends.addTarget(self, action: #selector(My_FriendsClick), forControlEvents: .TouchUpInside)
             mainView_EN.SuggestButton.addTarget(self, action: #selector(Suggest), forControlEvents: .TouchUpInside)
@@ -76,8 +77,11 @@ class MyInfoViewController: UIViewController {
             ScrollView.addSubview(mainView_EN)
             self.view.addSubview(ScrollView)
             
-            //初始化加载数据
+            //初始化加载数据 我的个人信息
             //            loadMyInfo()
+            
+            //更新朋友数量
+            updateFriendCount()
         }
     }
     
@@ -226,7 +230,7 @@ class MyInfoViewController: UIViewController {
         //我的设备数量
         //        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone) {
         let devices=OznerManager.instance().getDevices() as [AnyObject!]
-        mainView.My_EquipCount.text="\(devices.count)"
+        mainView_EN.deviceNumLabel.text="\(devices.count)"
         self.navigationController?.navigationBarHidden=true
         CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         //        } else {

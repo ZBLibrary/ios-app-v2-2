@@ -2179,7 +2179,6 @@
 		B70CC64E1D057E48002AE9A3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		B711216B1D45E2020098C31C /* My_MainView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_MainView_EN.swift; sourceTree = "<group>"; };
 		B711216F1D45F5900098C31C /* MyInfoViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewController_EN.swift; sourceTree = "<group>"; };
-		B71121721D45FD510098C31C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/My_MainView_EN.xib; sourceTree = "<group>"; };
 		B71121741D45FD5A0098C31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/My_MainView_EN.xib; sourceTree = "<group>"; };
 		B72BDB761D7D011A00C05E40 /* new_help_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_0@2x.png"; sourceTree = "<group>"; };
 		B72BDB771D7D011A00C05E40 /* new_help_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_0@3x.png"; sourceTree = "<group>"; };
@@ -5642,7 +5641,6 @@
 		B71121731D45FD510098C31C /* My_MainView_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B71121721D45FD510098C31C /* en */,
 				B71121741D45FD5A0098C31C /* Base */,
 			);
 			name = My_MainView_EN.xib;

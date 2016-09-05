@@ -23,7 +23,12 @@ class My_MainView_EN: UIView {
     
     @IBOutlet weak var SetLable: UILabel!
     
+
+    @IBOutlet weak var deviceNumLabel: UILabel!
+    @IBOutlet weak var deviceBtn: UIButton!
+    
     override func drawRect(rect: CGRect) {
+        
         
         MyEquidsLable .text=loadLanguage("我的好友")
         
