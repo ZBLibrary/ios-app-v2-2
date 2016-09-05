@@ -70,7 +70,7 @@ class setCuoTimeViewController_EN: UIViewController {
         nowStr=nowStr+" "+timeStr+":00"
         dateFormatter.dateFormat="YYYY-MM-DD hh:mm:ss"
         //print(nowStr)
-        if let tmpDate:NSDate=dateFormatter.dateFromString(nowStr)!
+        if let tmpDate=dateFormatter.dateFromString(nowStr)
         {
             return tmpDate
         }

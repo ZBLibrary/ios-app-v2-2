@@ -28,7 +28,7 @@ class ToWhatViewController_EN: UIViewController {
     @IBOutlet var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text=self.title
+        titleLabel.text=loadLanguage(self.title!)
         let filePath = NSBundle.mainBundle().pathForResource("WhatHtml", ofType: "plist")
         let tmpstr = NSDictionary(contentsOfFile: filePath!)
 

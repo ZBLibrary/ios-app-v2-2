@@ -103,7 +103,8 @@
 - (void)toWhatTDS
 {
     ToWhatViewController_EN* tdsState=[[ToWhatViewController_EN alloc] initWithNibName:@"ToWhatViewController_EN" bundle:nil];
-    [tdsState setTitle:loadLanguage(@"什么是TDS?")];
+    [tdsState setTitle:@"什么是TDS?"];
+    
     [self.navigationController pushViewController:tdsState animated:YES];
 }
 //#pragma mark-AmountOfDrinkingWaterFirstCellDelegate

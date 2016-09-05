@@ -94,7 +94,8 @@ class headViewView_EN: UIView {
         gitWebView.scalesPageToFit = true
         gitWebView.loadData(gif, MIMEType: "image/gif", textEncodingName: "utf-8", baseURL: NSURL(string: "")!)
         //旋转动画
-        startAnimation(0,angle1: 0)
+        startAnimation(0, angle1: 0)
+        
         loadingView.hidden=true
         setNeedsLayout()
         layoutIfNeeded()

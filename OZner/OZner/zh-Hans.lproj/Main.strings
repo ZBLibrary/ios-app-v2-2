@@ -38,8 +38,8 @@
 /* Class = "UILabel"; text = "智能水杯1"; ObjectID = "IBd-hm-gNO"; */
 "IBd-hm-gNO.text" = "智能水杯1";
 
-/* Class = "UILabel"; text = "3.0.2"; ObjectID = "Kca-Fp-5tA"; */
-"Kca-Fp-5tA.text" = "3.0.5";
+/* Class = "UILabel"; text = "3.0.6"; ObjectID = "Kca-Fp-5tA"; */
+"Kca-Fp-5tA.text" = "3.0.6";
 
 /* Class = "UIBarButtonItem"; title = "发送"; ObjectID = "Mlg-eK-gUF"; */
 "Mlg-eK-gUF.title" = "发送";

@@ -47,8 +47,8 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     var bigStateView:bigStateXib_EN!
     var bigModelBgView:UIView!//auto点击后视图
     var tmpbigmodel:bigautoModelView_EN!
-    //0 auto ,1 三级,2 二级,3一级，4 night，5 day
-    var currentSpeedModel:UInt8=0{
+    //0 auto ，4 night，5 power 6 关机
+    var currentSpeedModel:UInt8 = 6{
         didSet{
             updateSpeedModel(currentSpeedModel)
         }
@@ -408,7 +408,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             set_CurrSelectEquip(5)
             isPaoMa=0
             loadAirCleanerView()
-            currentSpeedModel=0
+            currentSpeedModel=6
 
         case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
             set_CurrSelectEquip(6)
@@ -1719,15 +1719,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             for i in 1...3 //7
             {
                 let tmpbigFooter=NSBundle.mainBundle().loadNibNamed("bigFooterViewXib_EN", owner: nil, options: nil).last as! bigFooterViewXib_EN
-                //if i<=4
-                //{
+                
                 tmpbigFooter.frame=CGRect(x:spaceValue*CGFloat(i)+bigViewWidth*CGFloat(i-1), y: 0, width: bigViewWidth + 5, height: footerScroll.bounds.height)
-                //                }
-                //                else
-                //                {
-                //                    tmpbigFooter.frame=CGRect(x:spaceValue*CGFloat(i+1)+bigViewWidth*CGFloat(i-1), y: 0, width: bigViewWidth, height: tmpbigFooter.bounds.size.height)
-                //
-                //                }
+                
                 tmpbigFooter.switchButton.tag=i
                 tmpbigFooter.switchButton.addTarget(self, action: #selector(switchButtonClick), forControlEvents: .TouchUpInside)
                 tmpbigFooter.index=i
@@ -1740,19 +1734,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             footerScroll.backgroundColor=UIColor.whiteColor()
             
             MainScrollView.addSubview(footerScroll)
-//            footerScroll.updateConstraintsIfNeeded()
-//            headView.updateConstraints()
-//            headView.updateConstraintsIfNeeded()
-            //pageView
-            //pagecontrol=UIPageControl(frame: CGRect(x: SCREEN_WIDTH/2-30, y: headView.bounds.size.height+140, width: 60, height: 6))
-            //pagecontrol.numberOfPages=2
-            //pagecontrol.currentPage=0
-            //pagecontrol.currentPageIndicatorTintColor=color_sblue
-            //pagecontrol.pageIndicatorTintColor=color_gray
-            //MainScrollView.addSubview(pagecontrol)
-            
-            //let tmpbigDevice1=self.myCurrentDevice as! AirPurifier_MxChip
-            //bigFooterViews[0].ison=tmpbigDevice1.status.power
+
             initBigClickButton()
             
         }
@@ -1761,17 +1743,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         self.view.addSubview(MainScrollView)
         
     }
-    //
-//    func toLeftMenuClick()
-//    {
-//        NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: self)
-//        delegate?.leftActionCallBack()
-//        UIView.animateWithDuration(0.5) { () -> Void in
-//            self.leftSlideBG_gray.backgroundColor=UIColor(white: 0, alpha: 0.5)
-//            self.leftSlideBG_gray.hidden=false
-//        }
-//        
-//    }
+
     //室内空气
     func toSeeIndoor()
     {
@@ -1830,27 +1802,24 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     }
     func updateOutAirData()
     {
-        
+        weak var weakSelf = self
         let werbservice = DeviceWerbservice()
-        werbservice.getWeather(""){[weak self](pollution:String!,cityname:String!,PM25:String!,AQI:String!,temperature:String!,humidity:String!,dataFrom:String!,status:StatusManager!) -> Void in
+        werbservice.getWeather(""){(pollution:String!,cityname:String!,PM25:String!,AQI:String!,temperature:String!,humidity:String!,dataFrom:String!,status:StatusManager!) -> Void in
             if(status.networkStatus == kSuccessStatus)
             {
-                if let StrongSelf=self
-                {
-                    if StrongSelf.outAirView != nil
+                    if weakSelf!.outAirView != nil
                     {
-                        StrongSelf.outAirView.cityname.text=loadLanguage(cityname)
-                        StrongSelf.outAirView.PM25.text=PM25+"ug/m3"
-                        StrongSelf.outAirView.AQI.text=AQI
-                        StrongSelf.outAirView.teampret.text=temperature+"℃"
-                        StrongSelf.outAirView.hubit.text=humidity+"%"
-                   //     print("jlsjlkjlksjfkl\(dataFrom)") ---  并不是英文
-                        StrongSelf.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
+                        weakSelf!.outAirView.cityname.text = cityname ?? ""
+                        weakSelf!.outAirView.PM25.text=PM25+"ug/m3"
+                        weakSelf!.outAirView.AQI.text=AQI
+                        weakSelf!.outAirView.teampret.text=temperature+"℃"
+                        weakSelf!.outAirView.hubit.text=humidity+"%"
+                        weakSelf!.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
                     }
-                    StrongSelf.AirHeadView.cityName.text=loadLanguage(cityname)
-                    StrongSelf.AirHeadView.polution.text=loadLanguage(pollution)
-                    StrongSelf.AirHeadView.PM25.text=PM25
-                }
+                    weakSelf!.AirHeadView.cityName.text = cityname ?? ""
+                    weakSelf!.AirHeadView.polution.text=loadLanguage(pollution)
+                    weakSelf!.AirHeadView.PM25.text=PM25
+                
             }
         }
     }
@@ -1887,14 +1856,14 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     let imgOn_0_5_4=["0":"air01002","5":"airdayOn","4":"airnightOn"]//0,5,4在on状态下对应的图片
     func  updateSpeedModel(tmpSpeed:UInt8)
     {
-        if myCurrentDevice==nil
+        if myCurrentDevice==nil||tmpSpeed==6
         {
             return
         }
-        bigFooterViews[1].ison = (tmpSpeed==0||tmpSpeed==4||tmpSpeed==5) ? true :false
-        bigFooterViews[1].ison = bigFooterViews[0].ison==true ? bigFooterViews[1].ison:false
+       
+        bigFooterViews[1].ison = bigFooterViews[0].ison
         
-        if bigFooterViews[1].ison==true
+        if bigFooterViews[1].ison
         {
             bigFooterViews[1].switchImage.image=UIImage(named: imgOn_0_5_4["\(tmpSpeed)"]!)
         }

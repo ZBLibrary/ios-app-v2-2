@@ -128,66 +128,72 @@
 
 + (ASIFormDataRequest*) execNormalkRequest:(NetworkEntrance*)entrance bodyBlock:(void(^)(NSDictionary* dicBody, StatusManager* status))bodyHandler failedBlock:(void(^)(StatusManager* status))failedHandler
 {
-    ASIFormDataRequest* request = [ConnectUtil request:kNormalRequest NetworkEntrance:entrance returnBlock:^(NSData *data, BOOL bISsuccess) {
+    [ConnectUtil request:kNormalRequest NetworkEntrance:entrance returnBlock:^(NSData *data, BOOL bISsuccess) {
         HHTP_NetworkStatus status;
         if(bISsuccess)
         {
-            NSDictionary* dic = [data JSONObject];
-            NSLog(@"%@",dic);
-            if(dic != nil)
-            {
-                if([[dic objectForKey:@"state"] intValue] > 0)
+            NSDictionary* dic;
+            @try {
+                dic = [data JSONObject];
+                if(dic != nil)
                 {
-                    status = kSuccessStatus;
-                    bodyHandler(dic,[StatusManager statusHead:[dic objectForKey:@"msg"] networkStatus:status errorCode:[[dic objectForKey:@"state"] intValue]]);
-                    NSLog(@"webservice success!");
-                    NSLog(@"url:%@",[entrance urlStringFromEntrance]);
-                    NSLog(@"post body:%@",[entrance postStringFromEntrance]);
-                    
-                }else if (([[dic objectForKey:@"state"] intValue] == -10007)||([[dic objectForKey:@"state"] intValue] == -10006))
-                {
-                    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"账号已被登录，请重新登录" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-                    [alert show];
-                    [[LogInOut loginInOutInstance] loginOutUser];
-                }
-                else
-                {
-                    NSLog(@"error code:%d",[[dic objectForKey:@"state"] intValue]);
-                    NSLog(@"webservice error!");
-                    NSLog(@"st error msg:%@",[dic objectForKey:@"msg"]);
-                    NSLog(@"url:%@",[entrance urlStringFromEntrance]);
-                    NSLog(@"post body:%@",[entrance postStringFromEntrance]);
-                    status =kHeadStError;
-                    if([[dic objectForKey:@"msg"] isKindOfClass:[NSNull class]])
+                    if([[dic objectForKey:@"state"] intValue] > 0)
                     {
-                        failedHandler([StatusManager statusHead:@"请求失败" networkStatus:status errorCode:[[dic objectForKey:@"state"] intValue]]);
+                        status = kSuccessStatus;
+                        bodyHandler(dic,[StatusManager statusHead:[dic objectForKey:@"msg"] networkStatus:status errorCode:[[dic objectForKey:@"state"] intValue]]);
+                        NSLog(@"webservice success!");
+                        NSLog(@"url:%@",[entrance urlStringFromEntrance]);
+                        NSLog(@"post body:%@",[entrance postStringFromEntrance]);
+                        
+                    }else if (([[dic objectForKey:@"state"] intValue] == -10007)||([[dic objectForKey:@"state"] intValue] == -10006))
+                    {
+                        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"账号已被登录，请重新登录" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                        [alert show];
+                        [[LogInOut loginInOutInstance] loginOutUser];
                     }
                     else
                     {
-                        failedHandler([StatusManager statusHead:[dic objectForKey:@"msg"] networkStatus:status errorCode:[[dic objectForKey:@"state"] intValue]]);
+                        NSLog(@"error code:%d",[[dic objectForKey:@"state"] intValue]);
+                        NSLog(@"webservice error!");
+                        NSLog(@"st error msg:%@",[dic objectForKey:@"msg"]);
+                        NSLog(@"url:%@",[entrance urlStringFromEntrance]);
+                        NSLog(@"post body:%@",[entrance postStringFromEntrance]);
+                        status =kHeadStError;
+                        if([[dic objectForKey:@"msg"] isKindOfClass:[NSNull class]])
+                        {
+                            failedHandler([StatusManager statusHead:@"请求失败" networkStatus:status errorCode:[[dic objectForKey:@"state"] intValue]]);
+                        }
+                        else
+                        {
+                            failedHandler([StatusManager statusHead:[dic objectForKey:@"msg"] networkStatus:status errorCode:[[dic objectForKey:@"state"] intValue]]);
+                        }
+                        
+                        NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                  [NSString stringWithFormat:@"%d",[[dic objectForKey:@"state"] intValue]],@"errorCode",
+                                                  nil];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"networkFailedInfoNotice" object:nil userInfo:userInfo];
+                        
                     }
                     
+                }
+                else
+                {
+                    NSLog(@"webservice error!");
+                    NSLog(@"url:%@",[entrance urlStringFromEntrance]);
+                    NSLog(@"post body:%@",[entrance postStringFromEntrance]);
+                    status = kParseFailedStatus;
+                    
+                    failedHandler([StatusManager statusHead:[dic objectForKey:@"ResultDescription"] networkStatus:status errorCode:[[dic objectForKey:@"ResultNo"] intValue]]);
                     NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                              [NSString stringWithFormat:@"%d",[[dic objectForKey:@"state"] intValue]],@"errorCode",
+                                              @"-10004",@"errorCode",
                                               nil];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"networkFailedInfoNotice" object:nil userInfo:userInfo];
-                    
                 }
-                
+            } @catch (NSException *exception) {
+        
             }
-            else
-            {
-                NSLog(@"webservice error!");
-                NSLog(@"url:%@",[entrance urlStringFromEntrance]);
-                NSLog(@"post body:%@",[entrance postStringFromEntrance]);
-                status = kParseFailedStatus;
-                
-                failedHandler([StatusManager statusHead:[dic objectForKey:@"ResultDescription"] networkStatus:status errorCode:[[dic objectForKey:@"ResultNo"] intValue]]);
-                NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                           @"-10004",@"errorCode",
-                                          nil];
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"networkFailedInfoNotice" object:nil userInfo:userInfo];
-            }
+            
+            
         }
         else
         {
