@@ -24,11 +24,11 @@
         return device;
     } else if([type isEqualToString:@"AY001MAB1"]){
         WaterPurifier_Ayla* waterPurifier = [[WaterPurifier_Ayla alloc] init:identifier Type:type Settings:json];
-//        AylaDevice* tmpDev=[Helper getAylaDeviceFromLocal:identifier];
-//        if (tmpDev==nil) {
-//            return nil;
-//        }
-//        [[OznerManager instance].ioManager.aylaIOManager createAylaIO:tmpDev];
+        AylaDevice* device=[[[[OznerManager instance] ioManager] aylaIOManager] getAylaDevice:identifier];
+        if (device==nil) {
+            return nil;
+        }
+        [[[[OznerManager instance] ioManager] aylaIOManager] createAylaIO:device];
         return waterPurifier;
     }else{
         return nil;

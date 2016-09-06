@@ -41,48 +41,54 @@ NSString* gblAmlDeviceSsidRegex = @"^OZNER_WATER-[0-9A-Fa-f]{12}";
     if (dev==nil) {
         return;
     }
+    
     [dev unregisterDevice:nil success:^(AylaResponse *response) {
         NSLog(@"Ayla unregisterDevice complete%@",response);
     } failure:^(AylaError *err) {
         NSLog(@"Ayla unregisterDevice Error:%@",err);
     }];
 }
-
--(BOOL) isAylaSSID:(NSString*) ssid {
+-(AylaDevice*) getAylaDevice:(NSString*) identifier{
+    return [listenDeviceList objectForKey:identifier];
+}
++(BOOL) isAylaSSID:(NSString*) ssid {
     
     NSPredicate *ssidPre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", gblAmlDeviceSsidRegex];
     return [ssidPre evaluateWithObject:ssid];
     
 }
--(void) Start:(NSString*) user Token:(NSString*)Token {
-    
+-(void) Start:(NSString*) user Token:(NSString*)Token CallBack: (AylaLoginSuccess)callback {
+    [AylaCache clearAll];
     [AylaUser ssoLogin:user password:@"" token:Token appId:@"a_ozner_water_mobile-cn-id" appSecret:@"a_ozner_water_mobile-cn-7331816" success:^(AylaResponse *response, AylaUser *user) {
         
         NSLog(@"AylaUser Login Success:%@,%@,%@",response,user,AylaUser.currentUser.accessToken);
         
+        
         [AylaDevice getDevices:nil success:^(AylaResponse *response, NSArray *devices) {
             for (int i=0; i<devices.count; i++) {
+                NSLog(@"%lu",(unsigned long)devices.count);
                 AylaDevice* device=(AylaDevice*)[devices objectAtIndex:i];
-                //NSLog(@"%@",device);
-                AylaIO* io=[[[[OznerManager instance] ioManager] aylaIOManager] createAylaIO:device];
+                AylaIO* io = [[[[OznerManager instance] ioManager] aylaIOManager] createAylaIO:device];//[[AylaIO alloc] init:device];
+                [listenDeviceList setValue:device forKey:io.identifier];
                 
-                OznerDevice* ioDevice=[[OznerManager instance] getDeviceByIO:io];
-                [[OznerManager instance] save:ioDevice];
+                //OznerDevice* ioDevice=[[OznerManager instance] getDeviceByIO:io];
+                //[[OznerManager instance] save:ioDevice];
             }
+            callback(true);
             
-            //NSLog(@"%@,%@",response,devices);
         } failure:^(AylaError *err) {
             NSLog(@"%@",err);
+            callback(false);
         }];
     } failure:^(AylaError *err) {
+        callback(false);
         NSLog(@"%@",err);
-        //NSLog(@"%@",err);
     }];
 }
 -(AylaIO*) createAylaIO:(AylaDevice*)device
 {
     AylaIO* io = [[AylaIO alloc] init:device];
-    [listenDeviceList setObject:device forKey:io.identifier];
+    //[listenDeviceList setObject:device forKey:io.identifier];
     [self doAvailable:io];
     return io;
 }

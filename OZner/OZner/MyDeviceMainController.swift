@@ -207,16 +207,17 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UpDateLvXinOfSmallAir), name: "UpDateLvXinOfSmallAir", object: nil)
         //网络变化通知，在需要知道的地方加上此通知即可
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityChanged), name: kReachabilityChangedNotification, object: nil)
-        //查询是否有设备
-        let muArr = NSMutableArray(array: OznerManager.instance().getDevices()) as NSMutableArray;
-        if muArr.count > 0
-        {
-            self.myCurrentDevice = muArr.objectAtIndex(0) as? OznerDevice
-            self.myCurrentDevice?.delegate = self;
-            NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-           //当前设备
-       NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: self.myCurrentDevice)
-        }
+        
+//        //查询是否有设备
+//        let muArr = NSMutableArray(array: OznerManager.instance().getDevices()) as NSMutableArray;
+//        if muArr.count > 0
+//        {
+//            self.myCurrentDevice = muArr.objectAtIndex(0) as? OznerDevice
+//            self.myCurrentDevice?.delegate = self;
+//            NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
+//           //当前设备
+//       NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: self.myCurrentDevice)
+//        }
     
     }
     //接收到网络变化后处理事件
@@ -2081,7 +2082,9 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
     func StopLoadAnimal()
     {
         MBProgressHUD.hideHUDForView(self.view, animated: false)
-        waterPurFooter.updateSwitchState()
+        if waterPurFooter != nil {
+            waterPurFooter.updateSwitchState()
+        }
     }
     //风速模式选择函数
     func selectWhichModelbig(button:UIButton)

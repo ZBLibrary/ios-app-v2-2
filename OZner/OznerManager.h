@@ -52,6 +52,7 @@
     NSString* token;
     SqlLiteDB* db;
     NSArray* deviceMgrList;
+    BOOL IsAylaLoginSuccess;
 }
 @property (nonatomic, weak) id<OznerManagerDelegate> delegate;
 //@property (nonatomic, weak) NSString* token;

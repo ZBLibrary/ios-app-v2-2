@@ -31,21 +31,19 @@
         properties=[[NSMutableDictionary alloc] init];
         
         self->_aylaDevice=device;
-        //privatAylaDevice=device;
-        //NSLog(@"");
+
         [device getProperties:nil success:^(AylaResponse *response, NSArray *Properties) {
-            //NSLog(@"%@,%@",response,Properties);
             @synchronized(properties) {
                 for (int i=0; i<Properties.count; i++) {
                     AylaProperty* tmpPro=(AylaProperty*)[Properties objectAtIndex:i];
-                    [properties setValue:tmpPro forKey:tmpPro.name];
+                    [properties setValue:NULL forKey:tmpPro.name];
                 }
             }
-            [self doConnected];
+            //[self doConnected];
             [self doInit];
             [self doReady];
         } failure:^(AylaError *err) {
-            NSLog(@"%@",err);
+            [self doDisconnect];
         }];
         
         
@@ -70,7 +68,6 @@
 //私有的
 -(AylaProperty*)getAylaProperty:(NSString*) name
 {
-    NSLog(@"%@",properties);
     @synchronized(properties) {
         return (AylaProperty*)[properties objectForKey:name];
     }
@@ -122,19 +119,15 @@
 
 -(BOOL)postSend:(OperateData*)data
 {
-    NSLog(@"%@",data.data);
     AylaProperty* tmpPros=[self getAylaProperty:[(id)data.data objectForKey:@"name"]];
     if (tmpPros != nil)
     {
-        if (data.callback)
-            data.callback(nil);
         AylaDatapoint* datapoint=[[AylaDatapoint alloc] init];
         NSString* tmpValue=[(id)data.data objectForKey:@"value"];
         [datapoint setNValue:[NSNumber numberWithInt:tmpValue.intValue]];
         [datapoint setSValue:tmpValue];
-
         [tmpPros createDatapoint:datapoint success:^(AylaResponse *response, AylaDatapoint *datapointCreated) {
-            NSLog(@"postSend:Send Data Success");
+            
             if (data.callback)
                 data.callback([NSError errorWithDomain:@"Ayla send success" code:100 userInfo:nil]);
             
@@ -155,42 +148,50 @@
 //第一关键
 -(void)updateProperty
 {
-    //NSLog(@"_aylaDeviceName:%@",_aylaDevice.productName);
     if ([[_aylaDevice connectionStatus] isEqualToString:@"OffLine"])
     {
-        [self doDisconnect];
+        if (self->connectStatus != Disconnect ) {
+            [self doDisconnect];
+        }
         return ;
     }
     else
     {
-        [self doConnected];
+        if (self->connectStatus != Connected ) {
+            [self doConnected];
+        }
     }
     [_aylaDevice getProperties:nil success:^(AylaResponse *response, NSArray *Properties) {
-        //NSLog(@"%@,%@",response,Properties);
         NSMutableArray* apArr=[[NSMutableArray alloc] init];
         @synchronized(properties) {
             for (int i=0; i<Properties.count; i++) {
                 AylaProperty* tmpP=[Properties objectAtIndex:i];
-                AylaProperty* property = [properties objectForKey:tmpP.name];
-                if (property != nil) {
-                    if (property.value != nil) {
+                
+                //AylaProperty* property = [properties objectForKey:tmpP.name];
+                //if (property != nil) {
+                    //if (property.value != nil) {
                         
-                        if (![[property value] isEqual:tmpP.value]) {
+                        //if (![[property value] isEqual:tmpP.value]) {
                             [apArr addObject:tmpP];
-                        }
-                    }
-                }
+                        //}
+                    //}
+                //}
                 [properties setObject:tmpP forKey:tmpP.name];
             }
             
             NSMutableDictionary *json=[[NSMutableDictionary alloc] init];
             if (apArr.count > 0) {
                 for (AylaProperty* p in apArr) {
-                    [json setObject:p.value forKey:p.name];
+                    if (p.value != nil) {
+                        [json setObject:p.value forKey:p.name];
+                    }
+                    
                 }
+                //第二关键
+                NSData* data=[NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:nil];
+                [self doRecv:data];
             }
-            //第二关键
-            [self doRecv:(NSData*)json];
+            
             
         }
     } failure:^(AylaError *err) {
@@ -219,29 +220,11 @@
         {
             [self doConnected];
             return ;
+        }else{
+            [self doDisconnect];
         }
         
-//        [self doConnecting];
-//        
-//        
-//        [AylaDevice registerNewDevice:_aylaDevice success:^(AylaResponse *response, AylaDevice *registeredDevice) {
-//            NSLog(@"Ayla Device Register Success%@",registeredDevice);
-//            AylaIO* tmpIo= [[[[OznerManager instance] ioManager] aylaIOManager] createAylaIO:registeredDevice];
-//            tmpIo.name=registeredDevice.productName;
-//            OznerDevice* device=[[OznerManager instance] getDeviceByIO:tmpIo];
-//            //[[OznerManager instance] save:device];
-//        } failure:^(AylaError *err) {
-//            NSLog(@"%@",err);
-//            //runThread=nil;
-//            //[self.delegate PairFailure];
-//        }];
-//        
-//        [self doConnected];
-//        
-//        if (![self doInit])
-//            return;
-//        
-//        [self doReady];
+
         while (![[NSThread currentThread] isCancelled]) {
             [[NSRunLoop currentRunLoop] run];
         }
@@ -249,19 +232,10 @@
     @catch (NSException *exception) {
         NSLog(@"exception:%@",[exception debugDescription]);
     }
-    @finally {
-        //[proxy unsubscribe:outKey];
-        //[self->proxy unregisterOnPublish:msgId];
-        //[self doDisconnect];
-    }
+  
 }
 
-//-(void)doDisconnect
-//{
-//    [self.statusDelegate IOClosed:self];
-//    [super doDisconnect];
-//    
-//}
+
 
 -(void)open
 {

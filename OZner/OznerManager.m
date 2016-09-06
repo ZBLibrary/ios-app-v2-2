@@ -75,14 +75,14 @@ OznerManager* oznerManager=nil;
         [devices removeAllObjects];
     }
     [self closeAll];
-    [[[[OznerManager instance] ioManager] aylaIOManager] Start:aOwner Token:Token];
-    //AylaIOManager* tmpIO=[[AylaIOManager alloc] init];
-    //[tmpIO Start:aOwner Token:Token];
     NSString* sql=[NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (identifier VARCHAR PRIMARY KEY NOT NULL,Type Text NOT NULL,JSON TEXT)",[self getOwnerTableName]];
     [db ExecSQLNonQuery:sql params:nil];
     [self.delegate OznerManagerDidOwnerChanged:[OznerManager instance]->user];
-    [self loadDevices];
     
+    [[[[OznerManager instance] ioManager] aylaIOManager] Start:aOwner Token:Token CallBack:^(BOOL success) {
+        IsAylaLoginSuccess=success;
+        [self loadDevices];
+    }];
 }
 -(BOOL)hashDevice:(NSString*)identifier
 {
@@ -103,13 +103,7 @@ OznerManager* oznerManager=nil;
     OznerDevice* device=nil;
     @synchronized(devices) {
         device=[devices objectForKey:io.identifier];
-        if ([WaterPurifierManager isWaterPurifier_Ayla:io.type]) {
-            
-        }
-        else
-        {
             if (device) return device;
-        }
     }
 
     for (BaseDeviceManager* mgr in deviceMgrList)
@@ -149,8 +143,7 @@ OznerManager* oznerManager=nil;
 -(void)save:(OznerDevice*)device Callback:(OperateCallback)cb;
 {
     if (!devices) return;
-    NSString* tasa = [OznerManager instance]->user;
-    //if (StringIsNullOrEmpty([[OznerManager instance] user])) return;
+   
     bool isNew=false;
     
     @synchronized(devices) {
@@ -187,6 +180,7 @@ OznerManager* oznerManager=nil;
 {
     NSString* sql=[NSString stringWithFormat:@"select identifier,Type,JSON from %@",[self getOwnerTableName]];
     NSArray* arrays=[db ExecSQL:sql params:nil];
+    
     @synchronized(devices) {
         for (NSArray* row in arrays)
         {
@@ -212,6 +206,9 @@ OznerManager* oznerManager=nil;
                     }
                 }
             }
+        }
+        if (devices.count>0) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"currentSelectedDevice" object:[devices objectForKey:[[arrays objectAtIndex:0] objectAtIndex:0]]];
         }
     }
 }

@@ -9,7 +9,7 @@
 #import "WifiPair.h"
 #import "EasyLinkSender.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
-//#import "HTTPServer.h"
+#import "AylaIOManager.h"
 #import "HttpServer_Xu.h"
 #import "OznerManager.h"
 
@@ -18,6 +18,9 @@
 //#import "AylaUser+AylaControl.h"
 
 #define Timeout 120
+//userdefault里面记录上次用的用户名密码
+#define LastWiFiName @"LastWiFiName"
+
 @implementation WifiPair
 +(NSString*)getWifiSSID
 {
@@ -31,6 +34,10 @@
     }
     NSDictionary *dctySSID = (NSDictionary *)info;
     NSString *ssid = [dctySSID objectForKey:@"SSID"];
+    if ([AylaIOManager isAylaSSID:ssid]) {
+        NSString* lWiFiName=[[NSUserDefaults standardUserDefaults] objectForKey:LastWiFiName];
+        ssid=lWiFiName;
+    }
     return ssid;
 }
 -(void) startMDNS
@@ -260,14 +267,16 @@
     
     runThread=nil;
 }
--(void) start:(NSString*)Ssid Password:(NSString*)Password;
+
+//有庆科和Ayla的配对模式
+-(void) start:(NSString*)Ssid Password:(NSString*)Password
 {
 
-    
     if (runThread)
     {
         return;
     }
+    [[NSUserDefaults standardUserDefaults] setObject:Ssid forKey:LastWiFiName];
     self->services=[[NSMutableArray alloc] init];
     self->ssid=[NSString stringWithString:Ssid];
     self->password=[NSString stringWithString:Password];
@@ -282,8 +291,22 @@
     runPairCount++;
     [runThread start];
     startRunTime=[NSDate dateWithTimeIntervalSinceNow:0];
-    //[self runNext];
+   
     
+}
+//只有庆科的配对模式
+-(void) startQK:(NSString*)Ssid Password:(NSString*)Password
+{
+    if (runThread)
+    {
+        return;
+    }
+    self->services=[[NSMutableArray alloc] init];
+    self->ssid=[NSString stringWithString:Ssid];
+    self->password=[NSString stringWithString:Password];
+    runThread=[[NSThread alloc] initWithTarget:self selector:@selector(run_QK) object:NULL];
+    [runThread start];
+    startRunTime=[NSDate dateWithTimeIntervalSinceNow:0];
 }
 
 //ayla所用--获取位置信息

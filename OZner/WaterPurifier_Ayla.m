@@ -26,7 +26,7 @@ NSString* Property_Power = @"Power";
 NSString* Property_Heating = @"Heating";
 NSString* Property_Cooling = @"Cooling";
 NSString* Property_Sterilization = @"Sterilization";
-NSString* Property_Status = @"Sterilization";
+NSString* Property_Status = @"Status";
 int requestCount = 0;
 
 -(instancetype)init:(NSString *)identifier Type:(NSString *)type Settings:(NSString *)json
@@ -135,20 +135,17 @@ int requestCount = 0;
     if (value != _isOffline) {
         _isOffline = value;
         [self doStatusUpdate];
-        
     }
 }
 
 
 -(void) updateStatus:(OperateCallback)cb {
     if (io == nil) {
-//        if (cb != nil&cb != NULL)
-//            cb([NSError errorWithDomain:@"Connection Closed" code:0 userInfo:nil]);
+        [self setOffline:true];
+        //if (cb != nil&cb != NULL)
+            //cb([NSError errorWithDomain:@"Connection Closed" code:0 userInfo:nil]);
+        
     } else {
-//        requestCount++;
-//        if (requestCount > 3) {
-//            [self setOffline:true];
-//        }
         [(AylaIO*)io updateProperty];
     }
 }
@@ -175,16 +172,24 @@ int requestCount = 0;
 
 -(void)loadAylaStatus:(NSString*)Value
 {
+    if (Value==nil) {
+        return;
+    }
+    
+    NSData* valueData=[Helper getBinaryByhex:Value];
     @try {
-        NSData* valueData = [Value dataUsingEncoding:NSUTF8StringEncoding];
+        //NSData* valueData = [Value dataUsingEncoding:NSUTF8StringEncoding];
         BytePtr bytes=(BytePtr)[valueData bytes];
         @try {
             [self->_info load_Ayla:bytes];
         } @catch (NSException *exception) {
             
         }
+        NSString* tds1=[[NSString alloc] initWithBytes:bytes+104 length:2 encoding:NSASCIIStringEncoding];
+        NSString* tds2=[[NSString alloc] initWithBytes:bytes+106 length:2 encoding:NSASCIIStringEncoding];
         _TDS1 = *((short*)(bytes+104));
         _TDS2 = *((short*)(bytes+106));
+        NSLog(@"tds1:%d,tds2:%d",tds1.intValue,tds2.intValue);
     } @catch (NSException *exception) {
         NSLog(@"%@",exception);
     } 
@@ -199,22 +204,19 @@ int requestCount = 0;
         _isOffline=false;
         [self doStatusUpdate];
     }
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     
-    if (data==nil) return;
-    if (data.length > 0) {
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            if (dic.count > 0) {
-                for (NSString* key in [dic allKeys]) {
-                    
-                    if ([key isEqualToString:Property_Status]) {
-                        [self loadAylaStatus:[dic objectForKey:key]];
-                        break;
-                    }
-                }
-                [self doStatusUpdate];
+    if (dict.count > 0) {
+        for (NSString* key in [dict allKeys]) {
+            
+            if ([key isEqualToString:Property_Status]) {
+                NSLog(@"%@",[dict objectForKey:key]);
+                [self loadAylaStatus:[dict objectForKey:key]];
+                break;
             }
-        
-        
+        }
+        [self doSensorUpdate];
+        [self doStatusUpdate];
     }
 }
 
@@ -273,7 +275,7 @@ int requestCount = 0;
     if (!updateTimer)
     {
         
-        updateTimer=[NSTimer scheduledTimerWithTimeInterval:5 target:self
+        updateTimer=[NSTimer scheduledTimerWithTimeInterval:2.5 target:self
                                                    selector:@selector(updateStatus:)
                                                    userInfo:nil repeats:YES];
         [updateTimer fire];

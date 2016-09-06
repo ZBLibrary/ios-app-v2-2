@@ -8,12 +8,16 @@
 
 #import "IOManager.h"
 #import "AylaIO.h"
+ typedef void (^AylaLoginSuccess)(BOOL);
 @interface AylaIOManager : IOManager
 {
     //MQTTProxy* proxy;
     NSMutableDictionary* listenDeviceList;
 }
--(void) Start:(NSString*) user Token:(NSString*)Token;
+
+-(void) Start:(NSString*) user Token:(NSString*)Token CallBack: (AylaLoginSuccess)callback;
 -(AylaIO*) createAylaIO:(AylaDevice*)device;
 -(void) removeDevice:(NSString*) identifier;
+-(AylaDevice*) getAylaDevice:(NSString*) identifier;
++(BOOL) isAylaSSID:(NSString*) ssid;
 @end

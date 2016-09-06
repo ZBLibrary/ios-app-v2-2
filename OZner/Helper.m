@@ -131,6 +131,25 @@ bool StringIsNullOrEmpty(NSString* str)
     if ([str isEqualToString:@""]) return true;
     return false;
 }
-
+//十六进制转2进制
++(NSData *)getBinaryByhex:(NSString *)hex
+{
+    int len = (int)hex.length/2;//[hex length] / 2;    // Target length
+    unsigned char *buf = malloc(len);
+    unsigned char *whole_byte = buf;
+    char byte_chars[3] = {'\0','\0','\0'};
+    
+    int i;
+    for (i=0; i < len; i++) {
+        byte_chars[0] = [hex characterAtIndex:i*2];
+        byte_chars[1] = [hex characterAtIndex:i*2+1];
+        *whole_byte = strtol(byte_chars, NULL, 16);
+        whole_byte++;
+    }
+    
+    NSData *data = [NSData dataWithBytes:buf length:len];
+    free( buf );
+    return data;   
+}
 
 @end

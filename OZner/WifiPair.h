@@ -25,7 +25,7 @@
 /*!
  @function 开始配对
  */
--(void)StartPair;
+//-(void)StartPair;
 
 /*!
  @function 开始发送Wifi信息
@@ -73,9 +73,10 @@
  @result 返回null说明当前没有连接wifi
  */
 +(NSString*)getWifiSSID;
-
+//有庆科和Ayla的配对模式
 -(void) start:(NSString*)ssid Password:(NSString*)password;
-
+//只有庆科的配对模式
+-(void) startQK:(NSString*)Ssid Password:(NSString*)Password;
 -(BOOL)isRuning;
 -(void)cancel;
 

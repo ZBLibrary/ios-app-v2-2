@@ -16,4 +16,6 @@ bool StringIsNullOrEmpty(NSString* str);
 +(NSString*)rndString:(int)len;
 +(uint8_t)Crc8:(uint8_t*) inBuffer inLen:(uint16_t)inLen;
 + (NSData *) stringToHexData:(NSString*)str;
+//十六进制转2进制
++(NSData *)getBinaryByhex:(NSString *)hex;
 @end

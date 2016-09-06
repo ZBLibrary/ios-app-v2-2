@@ -149,7 +149,7 @@
         mHomeController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [self.view addSubview:mHomeController.view];
         [[OznerManager instance] setOwner:[[LoginManager loginInstance]loginInfo].loginName Token:[[LoginManager loginInstance]loginInfo].sessionToken];
-        //[[OznerManager instance]setOwner:[[LoginManager loginInstance]loginInfo].loginName];
+        
         [[NetworkManager sharedInstance] startWithAid:nil sesToken:[[LoginManager loginInstance]loginInfo].sessionToken httpAdress:HTTP_ADDRESS];
         //创建数据库，如果存在就直接打开，如果不存在就关闭
         [[LoginManager loginInstance]decodeParamObject];
@@ -194,7 +194,7 @@
     //大头库初始化
     NSLog(@"%@",[[[LoginManager loginInstance]loginInfo]loginName]);
     [[OznerManager instance] setOwner:[[[LoginManager loginInstance]loginInfo]loginName] Token:[[[LoginManager loginInstance]loginInfo]sessionToken]];
-    //[[OznerManager instance] setOwner:[[[LoginManager loginInstance]loginInfo]loginName]];
+    
     if(mLoginNavController && [mLoginNavController.view superview])
     {
         if (mHomeController==nil) {
@@ -242,27 +242,7 @@
     [[LoginManager loginInstance]loginInfo].avatarUrl = nil;   //上传文件的随机值
     [[LoginManager loginInstance]loginInfo].gender = nil;
     [[OznerManager instance] setOwner:nil Token:nil];
-    //[[OznerManager instance]setOwner:@"LoginOut"];
-//    [[LoginManager loginInstance]loginInfo].version = nil;
-//    [[LoginManager loginInstance]loginInfo].longitude = nil;
-//    [[LoginManager loginInstance]loginInfo].latitude = nil;
-//    [[LoginManager loginInstance]loginInfo].targetGender = nil;
-//    [[LoginManager loginInstance]loginInfo].updateTime = nil;
-//    [[LoginManager loginInstance]loginInfo].profileUpdateTime = nil;
-//    [[LoginManager loginInstance]loginInfo].easePassWord = nil;
-//    [[LoginManager loginInstance]loginInfo].signature = nil;
-//    [[LoginManager loginInstance]loginInfo].birthday = nil;
-//    [[LoginManager loginInstance]loginInfo].location = nil;
-//    [[LoginManager loginInstance]loginInfo].tags = nil;
-//    [[LoginManager loginInstance]loginInfo].userHeight = nil;
-//    [[LoginManager loginInstance]loginInfo].identifierState = nil;
-//    [[LoginManager loginInstance]loginInfo].identifier = nil;
-//    [[LoginManager loginInstance]loginInfo].stature = nil;
-//    [[LoginManager loginInstance]loginInfo].age = nil;
-//    [[LoginManager loginInstance]loginInfo].constellation = nil;
-//    [[LoginManager loginInstance]loginInfo].commentLevel = nil;
-//    [[LoginManager loginInstance]loginInfo].balance = nil;
-//    [[LoginManager loginInstance]loginInfo].officialUserId = nil;
+  
     
     [[LoginManager loginInstance]encodeParamObject];
     

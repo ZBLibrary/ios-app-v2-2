@@ -98,7 +98,7 @@
 -(void)doRecv:(NSData*)data
 {
     @synchronized(self) {
-        lastRecvPacket=[NSData dataWithData:data];
+        lastRecvPacket=data;
     }
     @try {
         [self.delegate DeviceIO:self recv:lastRecvPacket];
@@ -120,7 +120,7 @@
 -(NSData *)lastRecvPacket
 {
     @synchronized(self) {
-        return [NSData dataWithData:lastRecvPacket];
+        return lastRecvPacket;
     }
 }
 

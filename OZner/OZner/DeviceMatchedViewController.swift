@@ -448,7 +448,7 @@ class DeviceMatchedViewController: SwiftFatherViewController,iCarouselDataSource
         }
         print(self.mIndex)
         let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
-        print(deviceIo.type)
+        //print(deviceIo.type)
         
         let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
         //添加到服务器
