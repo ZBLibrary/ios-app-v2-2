@@ -193,9 +193,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         
         // 判断登陆方式
         //       if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+//        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         //        }else{
-        //        CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
+                CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
         //        }
         
         setBartteryImg()
