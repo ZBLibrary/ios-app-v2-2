@@ -48,14 +48,17 @@ int requestCount = 0;
     return [(AylaIO*)io getProperty:name];
 }
 
--(bool)getPower
+-(BOOL)getPower
 {
+    if (_isOffline) {
+        return false;
+    }
     NSString* value = [self getProperty:Property_Power];
     if (!StringIsNullOrEmpty(value))
         return [NSNumber numberWithInt:value.intValue].boolValue;
     return false;
 }
--(void)setPower:(bool)Power Callback:(OperateCallback)cb
+-(void)setPower:(BOOL)Power Callback:(OperateCallback)cb
 {
     if (io == nil) {
         if (cb != nil)
@@ -67,16 +70,18 @@ int requestCount = 0;
     [object setValue:[NSNumber numberWithBool:Power].stringValue forKey:@"value"];
     [io send:(NSData *)object Callback:cb];
 }
--(bool)getHot
+-(BOOL)getHot
 {
-    
+    if (_isOffline) {
+        return false;
+    }
     NSString* value = [self getProperty:Property_Heating];
     
     if (!StringIsNullOrEmpty(value))
         return [NSNumber numberWithInt:value.intValue].boolValue;
     return false;
 }
--(void)setHot:(bool)Hot Callback:(OperateCallback)cb
+-(void)setHot:(BOOL)Hot Callback:(OperateCallback)cb
 {
     if (io == nil) {
         if (cb != nil)
@@ -88,16 +93,18 @@ int requestCount = 0;
     [object setValue:[NSNumber numberWithBool:Hot].stringValue forKey:@"value"];
     [io send:(NSData *)object Callback:cb];
 }
--(bool)getCool
+-(BOOL)getCool
 {
-    
+    if (_isOffline) {
+        return false;
+    }
     NSString* value = [self getProperty:Property_Cooling];
     
     if (!StringIsNullOrEmpty(value))
         return [NSNumber numberWithInt:value.intValue].boolValue;
     return false;
 }
--(void)setCool:(bool)Cool Callback:(OperateCallback)cb
+-(void)setCool:(BOOL)Cool Callback:(OperateCallback)cb
 {
     if (io == nil) {
         if (cb != nil)
@@ -109,16 +116,18 @@ int requestCount = 0;
     [object setValue:[NSNumber numberWithBool:Cool].stringValue forKey:@"value"];
     [io send:(NSData *)object Callback:cb];
 }
--(bool)getSterilization
+-(BOOL)getSterilization
 {
-    
+    if (_isOffline) {
+        return false;
+    }
     NSString* value = [self getProperty:Property_Sterilization];
     
     if (!StringIsNullOrEmpty(value))
         return [NSNumber numberWithInt:value.intValue].boolValue;
     return false;
 }
--(void)setSterilization:(bool)Sterilization Callback:(OperateCallback)cb
+-(void)setSterilization:(BOOL)Sterilization Callback:(OperateCallback)cb
 {
     if (io == nil) {
         if (cb != nil)
@@ -146,7 +155,15 @@ int requestCount = 0;
             //cb([NSError errorWithDomain:@"Connection Closed" code:0 userInfo:nil]);
         
     } else {
-        [(AylaIO*)io updateProperty];
+        
+        if ([self isOffline] != [(AylaIO*)io isOffLine]) {
+            [self setOffline:[(AylaIO*)io isOffLine]];
+            
+        }
+        //if ([self isOffline] == false) {
+            [(AylaIO*)io updateProperty];
+        //}
+        
     }
 }
 
@@ -210,7 +227,6 @@ int requestCount = 0;
         for (NSString* key in [dict allKeys]) {
             
             if ([key isEqualToString:Property_Status]) {
-                NSLog(@"%@",[dict objectForKey:key]);
                 [self loadAylaStatus:[dict objectForKey:key]];
                 break;
             }
@@ -251,7 +267,8 @@ int requestCount = 0;
 //
 -(void)DeviceIODidDisconnected:(BaseDeviceIO *)Io
 {
-    [self stop_auto_update];
+    //[self stop_auto_update];
+    [self doSensorUpdate];
     @try {
         [super DeviceIODidDisconnected:Io];
     }

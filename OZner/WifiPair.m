@@ -340,7 +340,7 @@ static AylaModule *foundDevice_Ayla = nil;
         NSLog(@"%@",err);
         sleep(2.0f);
         int t=abs((int)[startRunTime timeIntervalSinceNow]);
-        if (t<30) {
+        if (t<60) {
             [self connectToNewDevice];
         }else{
             [self run_QK];
@@ -373,31 +373,50 @@ static AylaModule *foundDevice_Ayla = nil;
                   [NSNumber numberWithDouble:locationManager.location.coordinate.latitude], AML_SETUP_LOCATION_LATITUDE,
                   [NSNumber numberWithDouble:locationManager.location.coordinate.longitude], AML_SETUP_LOCATION_LONGTITUDE,
                   nil];
-    NSLog(@"Params: %@", params);
     [AylaSetup connectNewDeviceToService:ssid password:password optionalParams:params success:^(AylaResponse *resp) {
         /**
          * Confirm whether device has successfully connected to service.
          */
-        [AylaSetup confirmNewDeviceToServiceConnection:^(AylaResponse *response, NSDictionary *result) {
-            NSString * success = [result valueForKeyPath:@"success"];
-            NSLog(@"%@",success );
-            if([success isEqualToString:@"success"]){
-                // success then then try to register
-                newDevice = [result objectForKey: @"device"];
-                // wifi setup completed, try to register
-                [self registerStar];
-            }
-        } failure:^(AylaError *err) {
-            NSLog(@"%@",err);
-            runThread=nil;
-            [self.delegate PairFailure];
-        }];
+        [self confirmNewDeviceToService];
+        
     } failure:^(AylaError *err) {
         NSLog(@"%@",err);
-        runThread=nil;
-        [self.delegate PairFailure];
+        sleep(2.0f);
+        int t=abs((int)[startRunTime timeIntervalSinceNow]);
+        if (t<60) {
+            [self connectNewDeviceToService];
+        }else{
+            runThread=nil;
+            [self.delegate PairFailure];
+        }
     }];
 }
+//3.1
+-(void)confirmNewDeviceToService{
+    [AylaSetup confirmNewDeviceToServiceConnection:^(AylaResponse *response, NSDictionary *result) {
+        NSString * success = [result valueForKeyPath:@"success"];
+        NSLog(@"%@",success );
+        if([success isEqualToString:@"success"]){
+            // success then then try to register
+            newDevice = [result objectForKey: @"device"];
+            // wifi setup completed, try to register
+            [self registerStar];
+        }
+    } failure:^(AylaError *err) {
+        NSLog(@"%@",err);
+        sleep(2.0f);
+        int t=abs((int)[startRunTime timeIntervalSinceNow]);
+        if (t<60) {
+            [self confirmNewDeviceToService];
+        }else{
+            runThread=nil;
+            [self.delegate PairFailure];
+        }
+        
+    }];
+
+}
+
 //4
 -(void)registerStar{
     [self.delegate ActivateDevice];
@@ -433,8 +452,14 @@ static AylaModule *foundDevice_Ayla = nil;
         
     } failure:^(AylaError *err) {
         NSLog(@"%@",err);
-        runThread=nil;
-        [self.delegate PairFailure];
+        sleep(2.0f);
+        int t=abs((int)[startRunTime timeIntervalSinceNow]);
+        if (t<60) {
+            [self registerStar];
+        }else{
+            runThread=nil;
+            [self.delegate PairFailure];
+        }
     }];
 }
 @end

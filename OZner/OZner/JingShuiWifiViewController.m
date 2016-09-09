@@ -265,26 +265,24 @@
 -(void)PairComplete:(BaseDeviceIO*)io
 {
     [self endTimer];
+    
+    if(m_bIsAgree)
+    {
+        VersionSettingDBManager* dbManager = [[VersionSettingDBManager alloc]init];
+        [dbManager addWifi:self.accountTF.text psw:self.pswTF.text];
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
-        if(m_bIsAgree)
+        if([self.delegate respondsToSelector:@selector(jinshuiqiConnectComplete:)])
         {
-            VersionSettingDBManager* dbManager = [[VersionSettingDBManager alloc]init];
-            [dbManager addWifi:self.accountTF.text psw:self.pswTF.text];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if([self.delegate respondsToSelector:@selector(jinshuiqiConnectComplete:)])
-            {
-                NSMutableArray* muArr = [[NSMutableArray alloc]init];
-                [muArr addObject:io];
+            NSMutableArray* muArr = [[NSMutableArray alloc]init];
+            [muArr addObject:io];
+            [self dismissViewControllerAnimated:YES completion:^{
                 [self.delegate jinshuiqiConnectComplete:muArr];
-                
-                [self dismissViewControllerAnimated:YES completion:^{
-                    
-                }];
-            }
-        });
-        
+            }];
+        }
     });
+    
+   
 }
 
 //配网失败

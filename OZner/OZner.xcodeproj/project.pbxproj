@@ -4499,7 +4499,7 @@
 				TargetAttributes = {
 					428141001C0B072C006FEDDE = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = UZZG6NM74T;
+						DevelopmentTeam = FXP5H562PT;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -5542,7 +5542,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PROVISIONING_PROFILE = "4d469a20-af3c-4761-9436-bcef479ced35";
+				PROVISIONING_PROFILE = "29e0d8b1-f050-4af8-8f94-4c98e7b037e3";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5585,7 +5585,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
-				PROVISIONING_PROFILE = "4d469a20-af3c-4761-9436-bcef479ced35";
+				PROVISIONING_PROFILE = "29e0d8b1-f050-4af8-8f94-4c98e7b037e3";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
@@ -5654,7 +5654,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = net.ozner.hoyoservicer1;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
@@ -5682,6 +5682,7 @@
 					"$(PROJECT_DIR)/OZner",
 				);
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "OZner/OZner-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -5725,7 +5726,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = net.ozner.hoyoservicer1;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";

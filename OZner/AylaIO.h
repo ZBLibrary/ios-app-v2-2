@@ -27,14 +27,15 @@
     enum ConnectStatus connectStatus;
     NSString* address;
     NSMutableDictionary* properties;
-    //AylaDevice* privatAylaDevice;
+    AylaDevice* aylaDevice;
 }
 
-@property (weak,nonatomic) AylaDevice* aylaDevice;
+//@property (nonatomic) AylaDevice* aylaDevice;
 
 -(instancetype)init:(AylaDevice*)device;
 //-(BOOL)runJob:(nonnull SEL)aSelector withObject:(nullable id)arg waitUntilDone:(BOOL)wait;
 -(NSString*)getAddress;
 -(void)updateProperty;
 -(NSString*) getProperty:(NSString*) name;
+-(BOOL)isOffLine;
 @end

@@ -30,9 +30,9 @@
         [self doConnecting];
         properties=[[NSMutableDictionary alloc] init];
         
-        self->_aylaDevice=device;
+        aylaDevice=device;
 
-        [device getProperties:nil success:^(AylaResponse *response, NSArray *Properties) {
+        [aylaDevice getProperties:nil success:^(AylaResponse *response, NSArray *Properties) {
             @synchronized(properties) {
                 for (int i=0; i<Properties.count; i++) {
                     AylaProperty* tmpPro=(AylaProperty*)[Properties objectAtIndex:i];
@@ -145,12 +145,38 @@
         return false;
     }
 }
+-(BOOL)isOffLine
+{
+    return self->connectStatus == Disconnect;
+}
+-(void)relinkNetwork{
+    //NSLog(@"Ayla正在尝试重新连接断网设备");
+    [AylaDevice getDevices:nil success:^(AylaResponse *response, NSArray *devices) {
+        for (int i=0; i<devices.count; i++) {
+            AylaDevice* device=(AylaDevice*)[devices objectAtIndex:i];
+            NSString* newMac=[device.mac stringByReplacingOccurrencesOfString:@":" withString:@""];
+            NSString* oldMac=[aylaDevice.mac stringByReplacingOccurrencesOfString:@":" withString:@""];
+            if ([newMac isEqualToString:oldMac] || oldMac == nil) {
+                aylaDevice=device;
+                break;
+            }
+    }
+    } failure:^(AylaError *err) {
+    }];
+
+
+}
 //第一关键
+int IsNeedReline=0;
 -(void)updateProperty
 {
-    if ([[_aylaDevice connectionStatus] isEqualToString:@"OffLine"])
+    IsNeedReline=(IsNeedReline+1)%3;
+    if (IsNeedReline==2) {
+        [self relinkNetwork];
+    }
+    if (![[aylaDevice connectionStatus] isEqualToString:@"Online"])
     {
-        if (self->connectStatus != Disconnect ) {
+        if (IsNeedReline==2) {
             [self doDisconnect];
         }
         return ;
@@ -161,7 +187,7 @@
             [self doConnected];
         }
     }
-    [_aylaDevice getProperties:nil success:^(AylaResponse *response, NSArray *Properties) {
+    [aylaDevice getProperties:nil success:^(AylaResponse *response, NSArray *Properties) {
         NSMutableArray* apArr=[[NSMutableArray alloc] init];
         @synchronized(properties) {
             for (int i=0; i<Properties.count; i++) {
@@ -216,12 +242,13 @@
 -(void)runThreadProc
 {
     @try {
-        if (![[_aylaDevice connectionStatus] isEqualToString:@"OffLine"])
+        if (![[aylaDevice connectionStatus] isEqualToString:@"Offline"])
         {
-            [self doConnected];
+            [self doDisconnect];
+            
             return ;
         }else{
-            [self doDisconnect];
+            [self doConnected];
         }
         
 

@@ -43,7 +43,9 @@
 {
     return [type isEqualToString:@"AY001MAB1"];
 }
-
++(BOOL)isWaterPurifier_QK:(NSString*)type{
+    return [type isEqualToString:@"MXCHIP_HAOZE_Water"];
+}
 -(BOOL)isMyDevice:(NSString *)type
 {
     return [WaterPurifierManager isWaterPurifier:type];

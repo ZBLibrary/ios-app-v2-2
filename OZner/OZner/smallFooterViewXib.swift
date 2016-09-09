@@ -9,7 +9,7 @@
 import UIKit
 
 class smallFooterViewXib: UIView {
-
+    
     var blueTooth: AirPurifier_Bluetooth!
     @IBOutlet var JinDuImage_0: UIImageView!
     @IBOutlet var SlideView: UIView!
@@ -21,13 +21,13 @@ class smallFooterViewXib: UIView {
     @IBOutlet weak var img0Width: NSLayoutConstraint!
     
     /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override drawRect: if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func drawRect(rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
     func initView()
     {
         SlideView.layer.borderWidth=1
@@ -56,19 +56,14 @@ class smallFooterViewXib: UIView {
         
     }
     func panImage(gesture:UIPanGestureRecognizer)
-    {  
-        let tapPoint:CGPoint = gesture.locationInView(targertView) //.locationOfTouch(0, inView: targertView)
-        //let tapPoint2:CGPoint=gesture.locationInView(targertView)
-        
-//        if tapPoint.x<30||tapPoint.x>(SCREEN_WIDTH-78) {
-//            return
-//        }
+    {
+        let tapPoint:CGPoint = gesture.locationInView(targertView)
         var tmpValue = (tapPoint.x-30)
         tmpValue=tmpValue<=0 ? 0:tmpValue
         tmpValue = tmpValue>=(SCREEN_WIDTH-108) ? (SCREEN_WIDTH-108):tmpValue
         upDateFrame(tmpValue,gesture: gesture)
-        print(gesture.state.rawValue)
-      
+        
+        
     }
     func tapImage(gesture:UITapGestureRecognizer)
     {
@@ -85,24 +80,27 @@ class smallFooterViewXib: UIView {
             upDateFrame(tapPoint.x-30,gesture: gesture)
         }
     }
+    var isOffLine = false
     
     func upDateFrame(x:CGFloat,gesture:UIGestureRecognizer?)
     {
-        
+        if isOffLine {
+            return
+        }
         img0Width.constant = -x
         let tmpValue = x/(SCREEN_WIDTH-108)
         
         speedValue.text="\(Int(tmpValue*100))"
         if tmpValue<1/3
         {
-            speedText.text="低速"
+            speedText.text=loadLanguage("低速")
         }
         else if tmpValue>2/3
         {
-            speedText.text="高速"
+            speedText.text=loadLanguage("高速")
         }
         else{
-            speedText.text="中速"
+            speedText.text=loadLanguage("中速")
         }
         
         if gesture != nil {
@@ -115,6 +113,6 @@ class smallFooterViewXib: UIView {
                 })
             }
         }
-
+        
     }
 }

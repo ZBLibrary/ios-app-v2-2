@@ -177,7 +177,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
             }
             else if ( WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true){
                 //净水器设置
-                let controller=setShuiJiViewController(mac: self.myCurrentDevice?.identifier)
+                let controller=setShuiJiViewController(nibName: "setShuiJiViewController", bundle: nil)//(mac: self.myCurrentDevice?.identifier)
                 controller.myCurrentDevice = self.myCurrentDevice
                 self.navigationController?.pushViewController(controller, animated: true)
             }
@@ -555,7 +555,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         {
             return
         }
-        let StrongSelf = self
+        //let StrongSelf = self
         
         if WaterPurifierManager.isWaterPurifier_Ayla(myCurrentDevice?.type) {
             let waterPur=myCurrentDevice as! WaterPurifier_Ayla
@@ -565,7 +565,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 
                 MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                 waterPur.setPower(!waterPur.getPower(), callback: { (error:NSError!) in
-                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
                 })
                 
             case 1://制冷
@@ -581,7 +581,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 }
                 MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                 waterPur.setCool(!waterPur.getCool(), callback: { (error:NSError!) in
-                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
                 })
                
             case 2://加热
@@ -597,7 +597,7 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
                 }
                 MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                 waterPur.setHot(!waterPur.getHot(), callback: { (error:NSError!) in
-                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
+                    self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
                 })
             default:
                 break
@@ -1486,78 +1486,107 @@ class MyDeviceMainController: UIViewController,CustomNoDeviceViewDelegate,Custom
         
     }
     
-    //跑马end  赵兵
-    func OznerDeviceStatusUpdate(device: OznerDevice!) {
-        if myCurrentDevice==nil||device==nil||device.identifier != myCurrentDevice?.identifier
+    func OznerDeviceStatusUpdate(device: OznerDevice?) {
+        if myCurrentDevice==nil||device==nil {
+            return
+        }
+        if device!.identifier != myCurrentDevice?.identifier
         {
             return
         }
         //wifi设备
         if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type)||WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) {
             //空净
-             StopLoadAnimal()
+            
+            StopLoadAnimal()
             if headView != nil&&(AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type))
             {
                 let airPurifier = self.myCurrentDevice as! AirPurifier_MxChip
                 if airPurifier.isOffline==true{
-                    IAW_TempView.PM25.text="设备已断开"
-                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 24)
-                    print(IAW_TempView.PM25.font)
+                    IAW_TempView.PM25.text=loadLanguage("设备已断开")
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
+                    //设备数据清空
+                    headView.lvxinState.text = "-"
+                    IAW_TempView.airText.text="-"
+                    bigStateView.VOC.text="-"
+                    bigStateView.teampre.text="-"
+                    bigStateView.himida.text="-"
+                    bigFooterViews[0].ison=false
+                    bigFooterViews[1].ison=false
+                    bigFooterViews[2].ison=false
+                    isNeedDownLXDate = false
                 }
                 else{
                     IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 45)
                     initBigClickButton()
                     
                 }
-               
-            }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
-            {
-                if WaterPurifierManager.isWaterPurifier_Ayla(myCurrentDevice?.type) {
-                    let waterPurif = self.myCurrentDevice as! WaterPurifier_Ayla
-                    WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurif.isOffline
-                    WaterPurfHeadView?.deviceValueContainer.hidden=waterPurif.isOffline
-                    if waterPurif.isOffline==false {
-                        waterPurFooter.updateSwitchState()
-                        if waterPurif.getPower()==false
-                        {
-                            WaterPurfHeadView?.TdsBefore=0
-                            WaterPurfHeadView?.TdsAfter=0
-                        }
-                        
+                
+                
+            }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier_Ayla(self.myCurrentDevice?.type))
+            {//Ayla水机
+                let waterPurifier = self.myCurrentDevice as! WaterPurifier_Ayla
+                WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurifier.isOffline
+                WaterPurfHeadView?.deviceValueContainer.hidden=waterPurifier.isOffline
+                if waterPurifier.isOffline==false {
+                    waterPurFooter.updateSwitchState()
+                    if (waterPurifier.getPower()==false)
+                    {
+                        WaterPurfHeadView?.TdsBefore=0
+                        WaterPurfHeadView?.TdsAfter=0
                     }
                     
                 }
-                else{
-                    let waterPurif = self.myCurrentDevice as! WaterPurifier
-                    WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurif.isOffline
-                    WaterPurfHeadView?.deviceValueContainer.hidden=waterPurif.isOffline
-                    if waterPurif.isOffline==false {
-                        waterPurFooter.updateSwitchState()
-                        if waterPurif.status.power==false
-                        {
-                            WaterPurfHeadView?.TdsBefore=0
-                            WaterPurfHeadView?.TdsAfter=0
-                        }
-                        
+            }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier_QK(self.myCurrentDevice?.type))
+            {//庆科水机
+                let waterPurifier = self.myCurrentDevice as! WaterPurifier
+                WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurifier.isOffline
+                WaterPurfHeadView?.deviceValueContainer.hidden=waterPurifier.isOffline
+                if waterPurifier.isOffline==false {
+                    waterPurFooter.updateSwitchState()
+                    if (self.myCurrentDevice as! WaterPurifier).status.power==false
+                    {
+                        WaterPurfHeadView?.TdsBefore=0
+                        WaterPurfHeadView?.TdsAfter=0
                     }
+                    
                 }
-                
             }
             
-            //设备网络状况
             
+            //蓝牙设备
         }else{ //蓝牙设备
-            if(device.connectStatus() == Connected)
+            
+            if(device!.connectStatus() == Connected)
             {
+                
                 LoadingView.state = -1//已连接
+                if headView != nil&&AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) {
+                    smallFooterView.isOffLine = false
+                    
+                }
             }
-            else if (device.connectStatus() == Connecting)
+            else if (device!.connectStatus() == Connecting)
             {
                 LoadingView.state=0
             }
             else
             {
-                LoadingView.state=1
+                if headView != nil&&AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) {
+                    IAW_TempView.PM25.text=loadLanguage("设备已断开")
+                    IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
+                    //设备数据清空
+                    headView.lvxinState.text = "-"
+                    IAW_TempView.airText.text="-"
+                    smallStateView.Humidity.text="-"
+                    smallStateView.temperature.text="-"
+                    isNeedDownLXDate = false
+                    smallFooterView.upDateFrame(0, gesture: nil)
+                    smallFooterView.isOffLine = true
+                    
+                }else{
+                    LoadingView.state=1
+                }
             }
             //补水仪设备检测中，检测完成回掉
             if WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(myCurrentDevice?.type)

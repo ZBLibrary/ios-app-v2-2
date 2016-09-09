@@ -42,6 +42,7 @@ class WaterPurFooterCell: UITableViewCell {
             let tmpDev = waterDevice as! WaterPurifier_Ayla
             
             powerLabel.textColor = tmpDev.getPower()==false ? color_normol:color_select
+            print("Ayla水机电源实时数值为:\(tmpDev.getPower() ? "true":"false")")
             powerImg.image=UIImage(named: tmpDev.getPower()==false ? "icon_power_normal.png":"icon_power.png")
             if ishaveCoolAblity==true&&tmpDev.getPower()==true
             {

@@ -12,4 +12,5 @@
 @interface WaterPurifierManager : BaseDeviceManager
 +(BOOL)isWaterPurifier:(NSString*)type;
 +(BOOL)isWaterPurifier_Ayla:(NSString*)type;
++(BOOL)isWaterPurifier_QK:(NSString*)type;
 @end

@@ -41,8 +41,8 @@ class WaterPurifierHeadCell: UITableViewCell {
             {
                 RedrawCicle(0, TDS:TdsBefore)
             }
-            purifiedBefore.text=TdsBefore==0 ? "1":"\(TdsBefore)"
-            purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: (TdsBefore==0 ? 40:52)*Screen_Width/375)
+            purifiedBefore.text="\(TdsBefore)"//==0 ? "1":"\(TdsBefore)"
+            purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*Screen_Width/375)
             //RedrawCicle(0, TDS: TdsBefore)
         }
     }
@@ -67,7 +67,7 @@ class WaterPurifierHeadCell: UITableViewCell {
             }
             
             purifiedAfter.text="\(TdsAfter)"
-            purifiedAfter.font=UIFont(name: ".SFUIDisplay-Thin", size: 52*Screen_Width/375)
+            purifiedAfter.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*Screen_Width/375)
             faceImgView.hidden=false
             switch TdsAfter
             {
@@ -94,10 +94,10 @@ class WaterPurifierHeadCell: UITableViewCell {
     {
         faceImgView.hidden=true
         faceTextLabel.text="健康"
-        purifiedBefore.text="1"
+        purifiedBefore.text="0"
         
         //purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*Screen_Width/375)
-        purifiedAfter.text="1"
+        purifiedAfter.text="0"
         //purifiedAfter.font=UIFont(name: ".SFUIDisplay-Thin", size: 40*Screen_Width/375)
         drinkingSuggest.text="经过净化后的水质健康，适合您直饮"
         //RedrawCicle(0, TDS: 0)

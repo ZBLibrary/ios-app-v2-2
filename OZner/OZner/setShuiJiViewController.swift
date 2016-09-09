@@ -10,36 +10,36 @@ import UIKit
 
 class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        
-        fatalError("init(coder:) has not been implemented")
-        
-    }
-    var macAdress:String?
-    
-    convenience  init(mac:String?) {
-        
-        var nibNameOrNil = String?("setShuiJiViewController")
-        
-        //考虑到xib文件可能不存在或被删，故加入判断
-        
-        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
-            
-        {
-            
-            nibNameOrNil = nil
-            
-        }
-        
-        self.init(nibName: nibNameOrNil, bundle: nil)
-        self.macAdress = mac ?? ""
-    }
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+//        
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//        
+//    }
+//    
+//    required init(coder aDecoder: NSCoder) {
+//        
+//        fatalError("init(coder:) has not been implemented")
+//        
+//    }
+//    var macAdress:String?
+//    
+//    convenience  init(mac:String?) {
+//        
+//        var nibNameOrNil = String?("setShuiJiViewController")
+//        
+//        //考虑到xib文件可能不存在或被删，故加入判断
+//        
+//        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+//            
+//        {
+//            
+//            nibNameOrNil = nil
+//            
+//        }
+//        
+//        self.init(nibName: nibNameOrNil, bundle: nil)
+//        //self.macAdress = mac ?? ""
+//    }
     var plistData:NSMutableDictionary=getPlistData("setShuiJi")
    
     var myCurrentDevice:OznerDevice?
@@ -78,7 +78,7 @@ class setShuiJiViewController: UIViewController,UIAlertViewDelegate {
     @IBOutlet var DeviceNameLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        macAdressLabel.text=macAdress
+        macAdressLabel.text = self.myCurrentDevice?.identifier ?? ""
         DeviceNameLable.text=loadLanguage("我的净水器" )
        deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
         self.title=loadLanguage("净水器")

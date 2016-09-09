@@ -48,6 +48,7 @@ NSString* gblAmlDeviceSsidRegex = @"^OZNER_WATER-[0-9A-Fa-f]{12}";
         NSLog(@"Ayla unregisterDevice Error:%@",err);
     }];
 }
+
 -(AylaDevice*) getAylaDevice:(NSString*) identifier{
     return [listenDeviceList objectForKey:identifier];
 }
@@ -88,7 +89,7 @@ NSString* gblAmlDeviceSsidRegex = @"^OZNER_WATER-[0-9A-Fa-f]{12}";
 -(AylaIO*) createAylaIO:(AylaDevice*)device
 {
     AylaIO* io = [[AylaIO alloc] init:device];
-    //[listenDeviceList setObject:device forKey:io.identifier];
+    [listenDeviceList setObject:device forKey:io.identifier];
     [self doAvailable:io];
     return io;
 }
