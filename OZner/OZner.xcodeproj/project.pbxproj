@@ -4499,7 +4499,7 @@
 				TargetAttributes = {
 					428141001C0B072C006FEDDE = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = FXP5H562PT;
+						DevelopmentTeam = UZZG6NM74T;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -5518,8 +5518,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5542,7 +5542,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PROVISIONING_PROFILE = "29e0d8b1-f050-4af8-8f94-4c98e7b037e3";
+				PROVISIONING_PROFILE = "6fdc1698-6474-4d45-94be-830d831f6d30";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5568,8 +5568,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongzhi Cui (ZSZ9J57XLQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -5585,7 +5585,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
-				PROVISIONING_PROFILE = "29e0d8b1-f050-4af8-8f94-4c98e7b037e3";
+				PROVISIONING_PROFILE = "6fdc1698-6474-4d45-94be-830d831f6d30";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
@@ -5654,7 +5654,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.ozner.hoyoservicer1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoze.jingshuijiaV2;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
@@ -5726,7 +5726,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.ozner.hoyoservicer1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoze.jingshuijiaV2;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";

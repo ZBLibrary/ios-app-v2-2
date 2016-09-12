@@ -45,11 +45,12 @@
 
 @interface OznerManager : NSObject<IOManagerDelegate>
 {
+    @public
+    NSString* user;
+    NSString* token;
     @private
     NSMutableDictionary* devices;
     BluetoothIOMgr* bluetoothMgr;
-    NSString* user;
-    NSString* token;
     SqlLiteDB* db;
     NSArray* deviceMgrList;
     BOOL IsAylaLoginSuccess;

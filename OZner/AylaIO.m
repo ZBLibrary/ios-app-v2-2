@@ -151,13 +151,19 @@
 }
 -(void)relinkNetwork{
     //NSLog(@"Ayla正在尝试重新连接断网设备");
+//    [[[[OznerManager instance] ioManager] aylaIOManager] Start:[OznerManager instance]->user Token:[OznerManager instance]->token CallBack:^(BOOL success) {
+//    }];
+    [AylaCache clearAll];
     [AylaDevice getDevices:nil success:^(AylaResponse *response, NSArray *devices) {
         for (int i=0; i<devices.count; i++) {
             AylaDevice* device=(AylaDevice*)[devices objectAtIndex:i];
             NSString* newMac=[device.mac stringByReplacingOccurrencesOfString:@":" withString:@""];
             NSString* oldMac=[aylaDevice.mac stringByReplacingOccurrencesOfString:@":" withString:@""];
-            if ([newMac isEqualToString:oldMac] || oldMac == nil) {
-                aylaDevice=device;
+            if (([newMac isEqualToString:oldMac] || oldMac == nil)&&![device.connectionStatus isEqualToString:aylaDevice.connectionStatus]) {
+                if (device.connectionStatus != nil) {
+                    aylaDevice=device;
+                }
+                
                 break;
             }
     }
@@ -176,9 +182,14 @@ int IsNeedReline=0;
     }
     if (![[aylaDevice connectionStatus] isEqualToString:@"Online"])
     {
-        if (IsNeedReline==2) {
+       
+//        if (IsNeedReline==2) {
+//            [[[[OznerManager instance] ioManager] aylaIOManager] Start:[OznerManager instance]->user Token:[OznerManager instance]->token CallBack:^(BOOL success) {
+//            }];
+//        }
+        //if (self->connectStatus != Disconnect ) {
             [self doDisconnect];
-        }
+        //}
         return ;
     }
     else
