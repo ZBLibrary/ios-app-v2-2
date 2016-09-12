@@ -43,32 +43,12 @@ static LogInOut* g_LoginInOutManager = nil;
             [[NetworkManager sharedInstance] startWithAid:nil sesToken:userInfo.sessionToken httpAdress:HTTP_ADDRESS];
             [[NSUserDefaults standardUserDefaults] setObject:userInfo.sessionToken forKey:@"UserToken"];
             updateUserInfozb* update=[[updateUserInfozb alloc] init];
-            [update bindBaiDu:^(BOOL istrue) {
-                if (istrue) {
-                    NSLog(@"%@",self.logInoutDelegate);
-                    if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginSuccess: currentView:)])
-                    {
-                        
-                        [self.logInoutDelegate onLoginSuccess:userInfo currentView:currentView];
-                        
-                    }
-                    
-                }
-                else
-                {
-                    if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginFailed:currentView:)])
-                    {
-                        [LoginManager loginInstance].loginInfo.loginName = nil;
-                        [LoginManager loginInstance].loginInfo.password = nil;
-                        [LoginManager loginInstance].loginInfo.sessionToken = nil;
-                        [LoginManager loginInstance].loginInfo.userID = nil;
-                        [[LoginManager loginInstance]encodeParamObject];
-                        
-                        
-                        [self.logInoutDelegate onLoginFailed:status.errDesc currentView:currentView];
-                    }
-                }
-            }];
+            [update bindBaiDu:^(BOOL istrue) {}];
+            NSLog(@"%@",self.logInoutDelegate);
+            if(self.logInoutDelegate && [self.logInoutDelegate respondsToSelector:@selector(onLoginSuccess: currentView:)])
+            {
+                [self.logInoutDelegate onLoginSuccess:userInfo currentView:currentView];
+            }
         }
         else
         {

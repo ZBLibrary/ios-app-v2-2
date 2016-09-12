@@ -46,7 +46,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         let width = UIScreen.mainScreen().bounds.width
         let height = UIScreen.mainScreen().bounds.height
         
-        let bgImgView:UIImageView = UIImageView(frame: CGRectMake(0, 0, self.myView.frame.size.width, self.myView.frame.size.height))
+        let bgImgView:UIImageView = UIImageView(frame: CGRectMake(0, 0, self.myView.frame.size.width, self.frame.size.height))
         bgImgView.image = UIImage(named: "mydevice_bg.png")
         self.myBgImgView = bgImgView
         self.myView.addSubview(bgImgView)

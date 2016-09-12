@@ -36,29 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         WXApi.registerApp("wx45a8cc642a2295b5", withDescription: "haoze")
         //百度推送
         // iOS8 下需要使用新的 API
-        let tmpStr=UIDevice.currentDevice().systemVersion
         
-        let fullNameArr = (tmpStr as NSString).substringToIndex(1)
+        //3.创建UIUserNotificationSettings，并设置消息的显示类类型
+        var myTypes=UIUserNotificationType()
+        myTypes.insert(UIUserNotificationType.Sound)
+        myTypes.insert(UIUserNotificationType.Badge)
+        myTypes.insert(UIUserNotificationType.Alert)
+        let userSetting = UIUserNotificationSettings(forTypes:myTypes, categories:nil)
         
-        print(fullNameArr)
-        if (Float(fullNameArr) >= 8.0){
-            //3.创建UIUserNotificationSettings，并设置消息的显示类类型
-            var myTypes=UIUserNotificationType()
-            myTypes.insert(UIUserNotificationType.Sound)
-            myTypes.insert(UIUserNotificationType.Badge)
-            myTypes.insert(UIUserNotificationType.Alert)
-            let userSetting = UIUserNotificationSettings(forTypes:myTypes, categories:nil)
-            
-            UIApplication.sharedApplication().registerUserNotificationSettings(userSetting)
-        }
-        else {
-            
-            var myTypes:UIRemoteNotificationType = UIRemoteNotificationType()
-            myTypes.insert(UIRemoteNotificationType.Alert)
-            myTypes.insert(UIRemoteNotificationType.Sound)
-            
-            UIApplication.sharedApplication().registerForRemoteNotificationTypes(myTypes)
-        }
+        UIApplication.sharedApplication().registerUserNotificationSettings(userSetting)
+       
 
         
         BPush.registerChannel(launchOptions, apiKey: "7nGBGzSxkIgjpEHHusrgdobS", pushMode: BPushMode.Production, withFirstAction: nil, withSecondAction: nil, withCategory: nil, isDebug: true)

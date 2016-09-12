@@ -149,9 +149,10 @@
     [mNewUserHelpNavController.view removeFromSuperview];
      mNewUserHelpNavController = nil;
     
-    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+    //NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
     
-    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+    
+    if ([loadLanguage(@"CurrentLanguage")  isEqualToString:@"CN"]){
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
@@ -192,11 +193,11 @@
     else
     {
         //
-        NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+        //NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
         
        // NSLog(@"jjhjkjjjj;%@",currentLanguage) ;
         
-        if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+        if ([loadLanguage(@"CurrentLanguage")  isEqualToString:@"CN"]){
             UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
             mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
@@ -330,9 +331,9 @@
     }
     
     //[self deallocTimer];
-    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+   // NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
     
-    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+    if ([loadLanguage(@"CurrentLanguage")  isEqualToString:@"CN"]){
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
