@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -29,7 +29,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIp-hH-DnR">
                                     <rect key="frame" x="68" y="48" width="240" height="40"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWq-92-uH8">
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWq-92-uH8">
                                             <rect key="frame" x="120" y="0.0" width="120" height="40"/>
                                             <subviews>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="device_puucashezb" translatesAutoresizingMaskIntoConstraints="NO" id="5jU-dQ-eKB">
@@ -63,7 +63,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMf-Np-82S">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                            <rect key="frame" x="80" y="0.0" width="80" height="40"/>
                                             <subviews>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="zixunIconzb" translatesAutoresizingMaskIntoConstraints="NO" id="3AF-MX-KY2">
                                                     <rect key="frame" x="10" y="11" width="23" height="18"/>
@@ -120,12 +120,18 @@
                                         <constraint firstItem="jMf-Np-82S" firstAttribute="top" secondItem="PIp-hH-DnR" secondAttribute="top" id="26r-sM-bxV"/>
                                         <constraint firstItem="jMf-Np-82S" firstAttribute="leading" secondItem="PIp-hH-DnR" secondAttribute="leading" id="99A-5A-hHR"/>
                                         <constraint firstAttribute="bottom" secondItem="WWq-92-uH8" secondAttribute="bottom" id="9XN-9J-xPt"/>
+                                        <constraint firstItem="jMf-Np-82S" firstAttribute="centerX" secondItem="PIp-hH-DnR" secondAttribute="centerX" id="AhM-1r-kE4"/>
                                         <constraint firstAttribute="trailing" secondItem="WWq-92-uH8" secondAttribute="trailing" id="Z5Z-W6-vTC"/>
                                         <constraint firstAttribute="bottom" secondItem="jMf-Np-82S" secondAttribute="bottom" id="aSL-aj-Gt2"/>
                                         <constraint firstItem="WWq-92-uH8" firstAttribute="top" secondItem="PIp-hH-DnR" secondAttribute="top" id="idL-Eq-xHe"/>
                                         <constraint firstAttribute="width" constant="240" id="jiF-Zp-h3E"/>
                                         <constraint firstAttribute="height" constant="40" id="l5C-Zb-2a3"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="99A-5A-hHR"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,7 +152,7 @@
                                 </mask>
                             </variation>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rON-kb-Lks">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rON-kb-Lks">
                             <rect key="frame" x="0.0" y="325" width="375" height="118"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描包装上的二维码，激活APP并启动滤芯复位。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGa-Qt-ZNh">
@@ -517,7 +523,7 @@
                                 </mask>
                             </variation>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcw-mD-ddy">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcw-mD-ddy">
                             <rect key="frame" x="0.0" y="463" width="375" height="202"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多产品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtD-hT-woj">

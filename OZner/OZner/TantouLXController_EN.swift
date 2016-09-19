@@ -9,7 +9,7 @@
 import UIKit
 
 class TantouLXController_EN: UIViewController {
-
+    
     //当前选中的device
     var myCurrentDevice:OznerDevice?
     var mainView:tantouLvXinView_EN!
@@ -17,7 +17,7 @@ class TantouLXController_EN: UIViewController {
     var IsShowScanOfWater=false
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title=loadLanguage("当前滤芯状态")
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
@@ -40,16 +40,17 @@ class TantouLXController_EN: UIViewController {
         if WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true
         {
             
-            let tmpImg=UIImage(named: "WaterPurLvXinService")
-            let serviceImg=UIImageView(frame: CGRect(x: 0, y: mainView.bounds.size.height-140, width: Screen_Width, height: (tmpImg?.size.height)!*Screen_Width/(tmpImg?.size.width)!))
-            serviceImg.image=tmpImg
-            ScrollView.addSubview(serviceImg)
+//            let tmpImg=UIImage(named: "WaterPurLvXinService")
+//            let serviceImg=UIImageView(frame: CGRect(x: 0, y: mainView.bounds.size.height-140, width: Screen_Width, height: (tmpImg?.size.height)!*Screen_Width/(tmpImg?.size.width)!))
+//            serviceImg.image=tmpImg
+//            ScrollView.addSubview(serviceImg)
             
+            ScrollView.contentSize=CGSize(width: 0, height: mainView.bounds.size.height)
             mainView.maxUserDay=365
             
-            mainView.ErWeiMaContainView.hidden = !IsShowScanOfWater
-            mainView.frame = CGRect(x: 0, y: 0, width: Screen_Width, height: IsShowScanOfWater ? mainView.bounds.size.height:(mainView.bounds.size.height-140))
-            ScrollView.contentSize=CGSize(width: 0, height: mainView.bounds.size.height+(tmpImg?.size.height)!*Screen_Width/(tmpImg?.size.width)!)
+//            mainView.ErWeiMaContainView.hidden = !IsShowScanOfWater
+//            mainView.frame = CGRect(x: 0, y: 0, width: Screen_Width, height: IsShowScanOfWater ? mainView.bounds.size.height:(mainView.bounds.size.height-140))
+//            ScrollView.contentSize=CGSize(width: 0, height: mainView.bounds.size.height+(tmpImg?.size.height)!*Screen_Width/(tmpImg?.size.width)!)
         }else
         {
             ScrollView.contentSize=CGSize(width: 0, height: mainView.bounds.size.height)
@@ -61,7 +62,7 @@ class TantouLXController_EN: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setLvXinState), name: "updateLVXinTimeByScan", object: nil)
         // Do any additional setup after loading the view.
     }
-
+    
     func MoreDeviceClick(button:UIButton)
     {
         let weiXinUrl=weiXinUrlNamezb()
@@ -86,9 +87,18 @@ class TantouLXController_EN: UIViewController {
     }
     func zixun()
     {
-        let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
-        let button=array.objectAtIndex(2) as! UIButton
-        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+        //        let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
+        //        let button=array.objectAtIndex(2) as! UIButton
+        //        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+        let phoneNum = NSMutableString.init(string: "tel:4008209667")
+        
+        let callWebView = UIWebView()
+        
+        callWebView.loadRequest(NSURLRequest(URL: NSURL.init(string: phoneNum as String)!))
+        
+        self.view.addSubview(callWebView)
+        
+        
     }
     func buyLX()
     {
@@ -132,7 +142,7 @@ class TantouLXController_EN: UIViewController {
         self.navigationController?.pushViewController(scan, animated: true)
         
     }
-   
+    
     func setLvXinStateWater()
     {
         //获取滤芯服务时间
@@ -142,38 +152,38 @@ class TantouLXController_EN: UIViewController {
         print(url)
         print(params)
         manager.POST(url,
-            parameters: params,
-            success: { (operation: AFHTTPRequestOperation!,
-                responseObject: AnyObject!) in
-                print(responseObject)
-                let state=responseObject.objectForKey("state") as! Int
-                if(state>=0)
-                {
-                    
-                    if (responseObject.objectForKey("time")!.isKindOfClass(NSNull) == false)&&(responseObject.objectForKey("nowtime")!.isKindOfClass(NSNull) == false)
-                    {
-                        let format=NSDateFormatter()
-                        format.dateFormat="yyyy/MM/dd HH:mm:ss"
-                        
-                        let endDate=responseObject.objectForKey("time") as! String
-                        let nowDate=responseObject.objectForKey("nowtime") as! String
-                        let endTime=format.dateFromString(endDate)!.timeIntervalSince1970
-                        let nowTime=format.dateFromString(nowDate)!.timeIntervalSince1970
-                        let value = Int((endTime-nowTime)/(24*3600))
-                        format.dateFormat="yyyy-MM-dd HH:mm:ss"
-                        let stardate = NSDate(timeIntervalSince1970: (endTime-365*24*3600))
-                        self.mainView.starDate=format.stringFromDate(stardate)
-                        self.mainView.useDay=(value<0 ? 365:(365-value))
-                    }
-                }
+                     parameters: params,
+                     success: { (operation: AFHTTPRequestOperation!,
+                        responseObject: AnyObject!) in
+                        print(responseObject)
+                        let state=responseObject.objectForKey("state") as! Int
+                        if(state>=0)
+                        {
+                            
+                            if (responseObject.objectForKey("time")!.isKindOfClass(NSNull) == false)&&(responseObject.objectForKey("nowtime")!.isKindOfClass(NSNull) == false)
+                            {
+                                let format=NSDateFormatter()
+                                format.dateFormat="yyyy/MM/dd HH:mm:ss"
+                                
+                                let endDate=responseObject.objectForKey("time") as! String
+                                let nowDate=responseObject.objectForKey("nowtime") as! String
+                                let endTime=format.dateFromString(endDate)!.timeIntervalSince1970
+                                let nowTime=format.dateFromString(nowDate)!.timeIntervalSince1970
+                                let value = Int((endTime-nowTime)/(24*3600))
+                                format.dateFormat="yyyy-MM-dd HH:mm:ss"
+                                let stardate = NSDate(timeIntervalSince1970: (endTime-365*24*3600))
+                                self.mainView.starDate=format.stringFromDate(stardate)
+                                self.mainView.useDay=(value<0 ? 365:(365-value))
+                            }
+                        }
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
-                print("Error: " + error.localizedDescription)
+                     failure: { (operation: AFHTTPRequestOperation!,
+                        error: NSError!) in
+                        print("Error: " + error.localizedDescription)
         })
         
         
-                    
+        
         
         
     }
@@ -227,15 +237,15 @@ class TantouLXController_EN: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

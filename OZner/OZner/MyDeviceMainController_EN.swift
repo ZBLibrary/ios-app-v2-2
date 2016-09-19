@@ -130,7 +130,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             let controller=TantouLXController_EN()
             controller.buyWaterLVXinUrl=BuyWaterUrlString
             controller.myCurrentDevice = self.myCurrentDevice as! WaterPurifier
-            controller.IsShowScanOfWater=IsShowScanOfWater
+            //            controller.IsShowScanOfWater=IsShowScanOfWater
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
@@ -193,9 +193,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         
         // 判断登陆方式
         //       if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
-//        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        //        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
         //        }else{
-                CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
+        CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
         //        }
         
         setBartteryImg()
@@ -412,7 +412,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             
         case WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(type):
             set_CurrSelectEquip(6)
-            MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
+            MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight - 65))
             waterReplenishMainView = NSBundle.mainBundle().loadNibNamed("WaterReplenishMainView_EN", owner: nil, options: nil).last as? WaterReplenishMainView_EN
             waterReplenishMainView?.frame=CGRectMake(0, 0, Screen_Width, Screen_Hight-65)
             waterReplenishMainView?.toLeftMenuButton.addTarget(self, action: #selector(addDeviceAction), forControlEvents: .TouchUpInside)
@@ -1994,6 +1994,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             {
                 tmpbigmodel.setWhitchIsBottom(0)
             }
+            
             
             MainScrollView.addSubview(bigModelBgView)
             break

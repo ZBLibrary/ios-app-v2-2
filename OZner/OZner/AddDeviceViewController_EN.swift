@@ -38,17 +38,17 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
     }
     //测试设备数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 4
+        return 6
     }
     
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        switch indexPath.row {
-//        case 0,5,6:
-//            return 0
-//        default:
-//            return 120
-//        }
-//    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0,5,6:
+            return 0
+        default:
+            return 120
+        }
+    }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -57,37 +57,36 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
         
         switch indexPath.row
         {
-//        case 0:
-////            cell.layOutAddDeviceCell("select_device_0", content: loadLanguage("智能水杯"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-//            break
-            
         case 0:
+            //            cell.layOutAddDeviceCell("select_device_0", content: loadLanguage("智能水杯"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+            return UITableViewCell()
+        case 1:
             
             cell.layOutAddDeviceCell("select_device_1", content: loadLanguage("水探头"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
             
-        case 1:
+        case 2:
             
             cell.layOutAddDeviceCell("select_device_2", content: loadLanguage("净水器"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
             
-        case 2:
+        case 3:
             
             cell.layOutAddDeviceCell("select_device_3zb", content: loadLanguage("台式空净专用"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
             
-        case 3:
+        case 4:
             
             cell.layOutAddDeviceCell("select_device_4zb", content: loadLanguage("立式空净专用"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
         case 5:
             
-//            cell.layOutAddDeviceCell("TDSPAN_ICON", content: loadLanguage("水质检测笔"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-            break
+            //            cell.layOutAddDeviceCell("TDSPAN_ICON", content: loadLanguage("水质检测笔"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+            return UITableViewCell()
         case 6:
             
-//            cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-            break
+            //            cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+            return UITableViewCell()
         default :
             break
         }
-
+        
         return cell
     }
     
@@ -99,19 +98,19 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
