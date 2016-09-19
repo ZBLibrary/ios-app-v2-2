@@ -583,10 +583,8 @@
 		8DB043EB1CC8CCE200B60DAB /* yin_shui_liang_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043B21CC8CCE200B60DAB /* yin_shui_liang_1.png */; };
 		8DB043EC1CC8CCE200B60DAB /* yin_shui_liang_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043B31CC8CCE200B60DAB /* yin_shui_liang_2.png */; };
 		8DB043ED1CC8CCE200B60DAB /* yin_shui_liang_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043B41CC8CCE200B60DAB /* yin_shui_liang_3.png */; };
-		8DB043EE1CC8CCE200B60DAB /* icon_no_device_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043B51CC8CCE200B60DAB /* icon_no_device_logo@2x.png */; };
 		8DB043EF1CC8CCE200B60DAB /* icon_buble_add_device@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043B61CC8CCE200B60DAB /* icon_buble_add_device@3x.png */; };
 		8DB043F01CC8CCE200B60DAB /* icon_add_device_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043B71CC8CCE200B60DAB /* icon_add_device_btn@3x.png */; };
-		8DB043F11CC8CCE200B60DAB /* icon_no_device_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043B81CC8CCE200B60DAB /* icon_no_device_logo@3x.png */; };
 		8DB043F21CC8CCE200B60DAB /* select_device_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043B91CC8CCE200B60DAB /* select_device_0.png */; };
 		8DB043F31CC8CCE200B60DAB /* select_device_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043BA1CC8CCE200B60DAB /* select_device_1.png */; };
 		8DB043F41CC8CCE200B60DAB /* select_device_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB043BB1CC8CCE200B60DAB /* select_device_2.png */; };
@@ -797,6 +795,8 @@
 		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
 		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
 		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
+		B7A045231D8FBCF7002A00ED /* icon_no_device_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */; };
+		B7A045251D8FBD04002A00ED /* icon_no_device_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */; };
 		B7D8C1791D2373AB0089C241 /* AboutDeviceViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */; };
 		B7D8C17A1D2373AB0089C241 /* AboutDeviceViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */; };
 		B7D8C17B1D2373AB0089C241 /* setCommon_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1751D2373AB0089C241 /* setCommon_EN.swift */; };
@@ -1954,10 +1954,8 @@
 		8DB043B21CC8CCE200B60DAB /* yin_shui_liang_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yin_shui_liang_1.png; sourceTree = "<group>"; };
 		8DB043B31CC8CCE200B60DAB /* yin_shui_liang_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yin_shui_liang_2.png; sourceTree = "<group>"; };
 		8DB043B41CC8CCE200B60DAB /* yin_shui_liang_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yin_shui_liang_3.png; sourceTree = "<group>"; };
-		8DB043B51CC8CCE200B60DAB /* icon_no_device_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@2x.png"; sourceTree = "<group>"; };
 		8DB043B61CC8CCE200B60DAB /* icon_buble_add_device@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_buble_add_device@3x.png"; sourceTree = "<group>"; };
 		8DB043B71CC8CCE200B60DAB /* icon_add_device_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_add_device_btn@3x.png"; sourceTree = "<group>"; };
-		8DB043B81CC8CCE200B60DAB /* icon_no_device_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@3x.png"; sourceTree = "<group>"; };
 		8DB043B91CC8CCE200B60DAB /* select_device_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_device_0.png; sourceTree = "<group>"; };
 		8DB043BA1CC8CCE200B60DAB /* select_device_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_device_1.png; sourceTree = "<group>"; };
 		8DB043BB1CC8CCE200B60DAB /* select_device_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_device_2.png; sourceTree = "<group>"; };
@@ -2191,6 +2189,8 @@
 		B76E77901D069B3F008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
 		B76E77921D06A236008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendSearch.xib; sourceTree = "<group>"; };
 		B76E77951D06A23A008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FriendSearch.strings; sourceTree = "<group>"; };
+		B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@2x.png"; sourceTree = "<group>"; };
+		B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@3x.png"; sourceTree = "<group>"; };
 		B7B199A51D5036E000DAA771 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/smallFooterViewXib_EN.xib"; sourceTree = "<group>"; };
 		B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDeviceViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutDeviceViewController_EN.xib; sourceTree = "<group>"; };
@@ -2741,13 +2741,13 @@
 				8DB043AF1CC8CCE200B60DAB /* wen_du_1.png */,
 				8DB043B01CC8CCE200B60DAB /* wen_du_2.png */,
 				8DB043B11CC8CCE200B60DAB /* wen_du_3.png */,
+				B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */,
 				8DB043B21CC8CCE200B60DAB /* yin_shui_liang_1.png */,
+				B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */,
 				8DB043B31CC8CCE200B60DAB /* yin_shui_liang_2.png */,
 				8DB043B41CC8CCE200B60DAB /* yin_shui_liang_3.png */,
-				8DB043B51CC8CCE200B60DAB /* icon_no_device_logo@2x.png */,
 				8DB043B61CC8CCE200B60DAB /* icon_buble_add_device@3x.png */,
 				8DB043B71CC8CCE200B60DAB /* icon_add_device_btn@3x.png */,
-				8DB043B81CC8CCE200B60DAB /* icon_no_device_logo@3x.png */,
 				8DB043B91CC8CCE200B60DAB /* select_device_0.png */,
 				8DB043BA1CC8CCE200B60DAB /* select_device_1.png */,
 				8DB043BB1CC8CCE200B60DAB /* select_device_2.png */,
@@ -4689,7 +4689,6 @@
 				528D773F1C270D2800243986 /* indoorHead_BigXib_EN.xib in Resources */,
 				B7D8C1CA1D2376F60089C241 /* setWaterReplenish_EN.plist in Resources */,
 				8DB044B91CC8CD5500B60DAB /* cha.png in Resources */,
-				8DB043EE1CC8CCE200B60DAB /* icon_no_device_logo@2x.png in Resources */,
 				8DB0440B1CC8CCE200B60DAB /* device_cup@2x.png in Resources */,
 				8DB044091CC8CCE200B60DAB /* device_smil@3x.png in Resources */,
 				8DBD54E21C567F4500D04B12 /* EquidsCollectionViewCell.xib in Resources */,
@@ -4702,6 +4701,7 @@
 				52FEC0401C35961B00B6D0F1 /* userAgreeMentsController.xib in Resources */,
 				E066B94D1D24C28500810566 /* SkinHeadTableViewCell_EN.xib in Resources */,
 				8DB044641CC8CD2C00B60DAB /* icon_lvxin_service_7.png in Resources */,
+				B7A045251D8FBD04002A00ED /* icon_no_device_logo@3x.png in Resources */,
 				8DB043F71CC8CCE200B60DAB /* select_device_3.png in Resources */,
 				B7D8C1D11D23A5C70089C241 /* WaterPurFooterCell_EN.xib in Resources */,
 				8D7CA8F21D1150C0002C1196 /* icon_buble_add_device.png in Resources */,
@@ -4714,6 +4714,7 @@
 				E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */,
 				8DB0440F1CC8CCE200B60DAB /* tantou_dianliang_2.png in Resources */,
 				4288C5301C0F01A700446D3E /* SwiftFatherViewController.xib in Resources */,
+				B7A045231D8FBCF7002A00ED /* icon_no_device_logo@2x.png in Resources */,
 				8D2D68481D6B012E00CAAE8E /* device_TDSPAN_noamrl_state.png in Resources */,
 				8DB0444A1CC8CD1700B60DAB /* icon_jiare@3x.png in Resources */,
 				8DB044611CC8CD2C00B60DAB /* icon_lvxin_more_3.png in Resources */,
@@ -4787,7 +4788,6 @@
 				8DB044A91CC8CD5500B60DAB /* icon_bigair_peidui_waitting.png in Resources */,
 				8DB044151CC8CCE200B60DAB /* dian_liang_0.png in Resources */,
 				8DB044401CC8CD1700B60DAB /* icon_pullDown.png in Resources */,
-				8DB043F11CC8CCE200B60DAB /* icon_no_device_logo@3x.png in Resources */,
 				8DB044AC1CC8CD5500B60DAB /* dot_guide_2.png in Resources */,
 				8DBD54EA1C567F4500D04B12 /* chatBarViewLiuyan.xib in Resources */,
 				8DEAC0801D6BE7630080A38E /* icon_peidui_complete_TDSPAN.png in Resources */,
