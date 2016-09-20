@@ -1643,7 +1643,8 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     //--------------------airCleaner----------------
     func loadAirCleanerView()
     {
-        MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
+        //透明背景色
+        MainScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: SCREEN_HEIGHT))
         MainScrollView.backgroundColor=UIColor(red: 238/255, green: 239/255, blue: 240/255, alpha: 1)
         AirHeadView=NSBundle.mainBundle().loadNibNamed("headViewView_EN", owner: nil, options: nil).last as! headViewView_EN
         AirHeadView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: AirHeadView.bounds.size.height*(Screen_Hight/667))
@@ -1695,7 +1696,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             AirHeadView.centerViewzb.addSubview(bigStateView)
             AirHeadView.FuLiZiOfSmallAir.hidden=true
             //滚动视图
-            let footerScroll=UIScrollView(frame: CGRect(x: 0, y: AirHeadView.bounds.size.height, width: Screen_Width, height: Screen_Hight-65-AirHeadView.height))
+            let footerScroll=UIScrollView(frame: CGRect(x: 0, y: AirHeadView.bounds.size.height, width: Screen_Width, height: Screen_Hight+65-AirHeadView.height))
             footerScroll.pagingEnabled = true
             footerScroll.delegate=self
             footerScroll.showsHorizontalScrollIndicator=false
@@ -1704,12 +1705,38 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             
             let bigViewWidth:CGFloat=60/375*Screen_Width>60 ? 60:60/375*Screen_Width
             let spaceValue:CGFloat=(Screen_Width-bigViewWidth*3)/4            //auto点击视图加载
+            //            bigModelBgView=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: (Screen_Hight>(667-65-20) ? Screen_Hight:(667-65-20))))
+            
             bigModelBgView=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: (Screen_Hight>(667-65-20) ? Screen_Hight:(667-65-20))))
             bigModelBgView.backgroundColor=UIColor(white: 0, alpha: 0.5)
             tmpbigmodel=NSBundle.mainBundle().loadNibNamed("bigautoModelView_EN", owner: nil, options: nil).last as! bigautoModelView_EN
-            let tmpOrigin_y=154-33+AirHeadView.bounds.size.height-tmpbigmodel.frame.height
-            let tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2
-            tmpbigmodel.frame=CGRect(x: tmpOrigin_x, y: tmpOrigin_y, width: tmpbigmodel.frame.width, height: tmpbigmodel.frame.height)
+            //iPhone5
+            //            let tmpOrigin_y=154-33+AirHeadView.bounds.size.height-tmpbigmodel.frame.height + 7
+            //            let tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2 + 1
+            var tmpOrigin_x:CGFloat?
+            var tmpOrigin_y: CGFloat?
+            
+            
+            //iPhone6
+            //            let tmpOrigin_y=154-33+AirHeadView.bounds.size.height-tmpbigmodel.frame.height - 2
+            //            let tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2 + 2
+            //模式设置 ==
+            switch SCREEN_HEIGHT {
+            case 568,480:
+                tmpOrigin_y=154-33+AirHeadView.bounds.size.height-tmpbigmodel.frame.height + 7
+                tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2 + 1
+            case 667:
+                tmpOrigin_y=154-33+AirHeadView.bounds.size.height-tmpbigmodel.frame.height + 21
+                tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2 + 2
+            case 736:
+                tmpOrigin_y=154-33+AirHeadView.bounds.size.height-tmpbigmodel.frame.height + 30
+                tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2 + 4
+            default:
+                tmpOrigin_y=154-33+AirHeadView.bounds.size.height-tmpbigmodel.frame.height + 7
+                tmpOrigin_x=bigViewWidth*3/2+2*spaceValue-tmpbigmodel.frame.width/2 + 1
+            }
+            tmpbigmodel.frame=CGRect(x: tmpOrigin_x!, y: tmpOrigin_y!, width: tmpbigmodel.frame.width, height: tmpbigmodel.frame.height)
+            
             tmpbigmodel.leftButton.addTarget(self, action: #selector(selectWhichModelbig), forControlEvents: .TouchUpInside)
             tmpbigmodel.rightButton.addTarget(self, action: #selector(selectWhichModelbig), forControlEvents: .TouchUpInside)
             tmpbigmodel.bottomButton.addTarget(self, action: #selector(selectWhichModelbig), forControlEvents: .TouchUpInside)
@@ -1720,7 +1747,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 let tmpbigFooter=NSBundle.mainBundle().loadNibNamed("bigFooterViewXib_EN", owner: nil, options: nil).last as! bigFooterViewXib_EN
                 //if i<=4
                 //{
-                tmpbigFooter.frame=CGRect(x:spaceValue*CGFloat(i)+bigViewWidth*CGFloat(i-1), y: 0, width: bigViewWidth + 5, height: footerScroll.bounds.height)
+                tmpbigFooter.frame=CGRect(x:spaceValue*CGFloat(i)+bigViewWidth*CGFloat(i-1), y: 0, width: bigViewWidth + 5, height: footerScroll.bounds.height - 65 - 20)
                 //                }
                 //                else
                 //                {
@@ -1970,7 +1997,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 2);
                 //                }
                 //                else
-                //                {
+                //                {f
                 //                    MBProgressHUD.hideHUDForView(self.view, animated: true)
                 //                }
             })
@@ -1997,6 +2024,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             
             
             MainScrollView.addSubview(bigModelBgView)
+            
             break
             //        case 3:
             //            //定时
