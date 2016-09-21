@@ -11,8 +11,8 @@ import UIKit
 class LoginViewController: UIViewController,UITextFieldDelegate {
     //倒计时时间
     var shuttime=60
-    var counttime:NSTimer!
-    @IBAction func passToNextclick(sender: UIButton) {
+    var counttime:Timer!
+    @IBAction func passToNextclick(_ sender: UIButton) {
 
     }
     
@@ -22,18 +22,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var YZMbutton: UIButton!
     
     @IBOutlet var YZMTextLabel: UILabel!
-    @IBAction func getYZMclick(sender: AnyObject) {
-        let istrue=checkTel(phoneTextField.text!)
+    @IBAction func getYZMclick(_ sender: AnyObject) {
+        let istrue=checkTel(phoneTextField.text! as NSString)
         if istrue
         {
             errorLabel.text=loadLanguage("验证码将以短信形式发送给您,请注意查收。")
-            YZMbutton.enabled=false
+            YZMbutton.isEnabled=false
             YZMbutton.backgroundColor=color_BT_bg_ed
-            YZMbutton.layer.borderColor=color_BT_bg_ed.CGColor
+            YZMbutton.layer.borderColor=color_BT_bg_ed.cgColor
             
             YZMTextLabel.textColor=color_black
             shuttime=60
-            counttime=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(rushtime), userInfo: nil, repeats: true)
+            counttime=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(rushtime), userInfo: nil, repeats: true)
             yanzhengfunc()
         }
         else
@@ -45,12 +45,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     func rushtime(){
         if shuttime==0
         {
-            YZMbutton.backgroundColor=UIColor.whiteColor()
-            YZMbutton.layer.borderColor=color_main.CGColor
+            YZMbutton.backgroundColor=UIColor.white
+            YZMbutton.layer.borderColor=color_main.cgColor
             
             YZMTextLabel.textColor=color_main
             YZMTextLabel.text=loadLanguage("短信验证码")
-            YZMbutton.enabled=true
+            YZMbutton.isEnabled=true
             counttime.invalidate()
         }else
         {
@@ -65,13 +65,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         let manager = AFHTTPRequestOperationManager()
         let url = StarURL_New+"/OznerServer/GetPhoneCode"
         let params:NSDictionary = ["phone":Phone]
-        manager.POST(url,
+        manager.post(url,
             parameters: params,
-            success: { (operation: AFHTTPRequestOperation!,
-                responseObject: AnyObject!) in
+            success: { (operation,
+                responseObject) in
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
+            failure: { (operation,
+                error) in
                 self.errorLabel.text=loadLanguage("网络连接失败,请重试。")
                 self.shuttime=0
         })
@@ -83,7 +83,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var loginButton: UIButton!
     
-    @IBAction func loginClick(sender: AnyObject) {
+    @IBAction func loginClick(_ sender: AnyObject) {
         
 
         let phone:String=phoneTextField.text!
@@ -93,7 +93,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             errorLabel.text=loadLanguage("请阅读《浩泽净水家免责条款》并勾选")
             return
         }
-        if !checkTel(phone)
+        if !checkTel(phone as NSString)
         {
             errorLabel.text=loadLanguage("请输入11位手机号")
             return
@@ -110,8 +110,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }
 
         set_Phone(phoneTextField.text!)
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        LogInOut.loginInOutInstance().loginWithAccount(phone, password: YZM, currentView: self.view)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        LogInOut.loginInOutInstance().login(withAccount: phone, password: YZM, currentView: self.view)
         
     }
     
@@ -119,58 +119,54 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet var agreeImageView: UIButton!
     @IBOutlet var agreeButton: UIButton!
-    @IBAction func agreeButtonClick(sender: AnyObject) {
+    @IBAction func agreeButtonClick(_ sender: AnyObject) {
         let imagename = isAgree ? "agree" : "agreeSelected"
-        agreeImageView.setBackgroundImage(UIImage(named: imagename), forState: .Normal)
+        agreeImageView.setBackgroundImage(UIImage(named: imagename), for: UIControlState())
         
         isAgree = !isAgree
         errorLabel.text=""
     }
     
-    @IBAction func agreeTextClick(sender: UIButton) {
+    @IBAction func agreeTextClick(_ sender: UIButton) {
         let agreeMentController=userAgreeMentsController(nibName: "userAgreeMentsController", bundle: nil)
-        self.presentViewController(agreeMentController, animated: true, completion: nil)
+        self.present(agreeMentController, animated: true, completion: nil)
     }
     
     @IBOutlet var TishiLabel: UILabel!
     @IBOutlet var getYYbutton: UIButton!
-    @IBAction func getYYbuttonclick(sender: UIButton) {
-        let istrue=checkTel(phoneTextField.text!)
+    @IBAction func getYYbuttonclick(_ sender: UIButton) {
+        let istrue=checkTel(phoneTextField.text! as NSString)
         if istrue
         {
             
             //调用语音接口
-            self.getYYbutton.enabled=false
+            self.getYYbutton.isEnabled=false
             self.errorLabel.text=loadLanguage("您将会收到语音电话,请注意接听。")
             self.getYYbutton.backgroundColor=color_BT_bg_ed
-            self.getYYbutton.layer.borderColor=color_BT_bg_ed.CGColor
-            self.getYYbutton.setTitleColor(color_black, forState: .Normal)
+            self.getYYbutton.layer.borderColor=color_BT_bg_ed.cgColor
+            self.getYYbutton.setTitleColor(color_black, for: UIControlState())
             let WerbService=UserInfoActionWerbService()
-            WerbService.GetVoicePhoneCode(phoneTextField.text!, returnBlock: { (respose:AnyObject!,status:StatusManager!) -> Void in
-                if  status.networkStatus == kSuccessStatus
+            WerbService.getVoicePhoneCode(phoneTextField.text!, return: { (respose,status) -> Void in
+                if  status?.networkStatus == kSuccessStatus
                 {
                     
-                    if (respose.objectForKey("state") as! Int)>0
-                    {
-            
-                    }
-                    else
+                    if ((respose as AnyObject).object(forKey: "state") as! Int)<=0
                     {
                         self.errorLabel.text=loadLanguage("请求失败,请检查网络。")
-                        self.getYYbutton.enabled=true
-                        self.getYYbutton.backgroundColor=UIColor.whiteColor()
-                        self.getYYbutton.layer.borderColor=color_main.CGColor
-                        self.getYYbutton.setTitleColor(color_main, forState: .Normal)
+                        self.getYYbutton.isEnabled=true
+                        self.getYYbutton.backgroundColor=UIColor.white
+                        self.getYYbutton.layer.borderColor=color_main.cgColor
+                        self.getYYbutton.setTitleColor(color_main, for: UIControlState())
                         
                     }
                 }
                 else
                 {
                     self.errorLabel.text=loadLanguage("请求失败,请检查网络。")
-                    self.getYYbutton.enabled=true
-                    self.getYYbutton.backgroundColor=UIColor.whiteColor()
-                    self.getYYbutton.layer.borderColor=color_main.CGColor
-                    self.getYYbutton.setTitleColor(color_main, forState: .Normal)
+                    self.getYYbutton.isEnabled=true
+                    self.getYYbutton.backgroundColor=UIColor.white
+                    self.getYYbutton.layer.borderColor=color_main.cgColor
+                    self.getYYbutton.setTitleColor(color_main, for: UIControlState())
                 }
             })
         }
@@ -180,23 +176,23 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         
     }
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
-    func loginFailed(notice:NSNotification)
+    func loginFailed(_ notice:Notification)
     {
-        print(notice.userInfo)
-        let errorCode =  (notice.userInfo!["errorCode"] as! NSString).intValue
+        print((notice as NSNotification).userInfo)
+        let errorCode =  ((notice as NSNotification).userInfo!["errorCode"] as! NSString).intValue
         
         switch errorCode
         {
@@ -214,24 +210,24 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginFailed), name: "networkFailedInfoNotice", object: nil)
-       loginButton.setTitle(loadLanguage("登录"), forState: .Normal)
-        getYYbutton.setTitle(loadLanguage("获取语音验证码"), forState: .Normal)
-        agreeButton.setTitle(loadLanguage("我已阅读并同意《浩泽净水家免责条款》"), forState: .Normal)
+       NotificationCenter.default.addObserver(self, selector: #selector(loginFailed), name: NSNotification.Name(rawValue: "networkFailedInfoNotice"), object: nil)
+       loginButton.setTitle(loadLanguage("登录"), for: UIControlState())
+        getYYbutton.setTitle(loadLanguage("获取语音验证码"), for: UIControlState())
+        agreeButton.setTitle(loadLanguage("我已阅读并同意《浩泽净水家免责条款》"), for: UIControlState())
         phoneTextField.placeholder=loadLanguage("请输入手机号")
         YZMTextField.placeholder=loadLanguage("输入验证码")
         TishiLabel.text=loadLanguage("未收到短信验证码？")
         set_islogin(false)
         
-        YZMbutton.layer.borderColor=color_main.CGColor
-        getYYbutton.layer.borderColor=color_main.CGColor
+        YZMbutton.layer.borderColor=color_main.cgColor
+        getYYbutton.layer.borderColor=color_main.cgColor
         errorLabel.text=""
         phoneTextField.delegate=self
         YZMTextField.delegate=self
        
         if Screen_Width<=320
         {
-            errorLabel.font=UIFont.systemFontOfSize(10)
+            errorLabel.font=UIFont.systemFont(ofSize: 10)
         }
  
         
@@ -242,11 +238,11 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         errorLabel.text=""
     }
    

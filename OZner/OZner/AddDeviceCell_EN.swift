@@ -22,31 +22,31 @@ class AddDeviceCell_EN: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    func layOutAddDeviceCell(imgViewName:String, content:String, iconImgName:String,funcContent:String)
+    func layOutAddDeviceCell(_ imgViewName:String, content:String, iconImgName:String,funcContent:String)
     {
-        let width = UIScreen.mainScreen().bounds.width
+        let width = UIScreen.main.bounds.width
         self.iconImgView.image = UIImage(named: imgViewName)
-        self.iconImgView.frame = CGRectMake(28, 23, 75, 75)
+        self.iconImgView.frame = CGRect(x: 28, y: 23, width: 75, height: 75)
         
-        let dic = [NSFontAttributeName:UIFont.systemFontOfSize(19*(width/375.0))];
-        let size = content.boundingRectWithSize(CGSizeMake(width, 19*(width/375.0)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: dic, context:nil).size;
+        let dic = [NSFontAttributeName:UIFont.systemFont(ofSize: 19*(width/375.0))];
+        let size = content.boundingRect(with: CGSize(width: width, height: 19*(width/375.0)), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: dic, context:nil).size;
         self.titleLabel.text = content;
-        self.titleLabel.font = UIFont.systemFontOfSize(19*(width/375.0))
-        self.titleLabel.frame = CGRectMake(self.iconImgView.frame.size.width+self.iconImgView.frame.origin.x+21, (120-size.height)/2, size.width, size.height)
+        self.titleLabel.font = UIFont.systemFont(ofSize: 19*(width/375.0))
+        self.titleLabel.frame = CGRect(x: self.iconImgView.frame.size.width+self.iconImgView.frame.origin.x+21, y: (120-size.height)/2, width: size.width, height: size.height)
         
-        let contentDic = [NSFontAttributeName:UIFont.systemFontOfSize(14)];
-        let contentSize = funcContent.boundingRectWithSize(CGSizeMake(width, 14), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: contentDic, context: nil).size;
-        self.contentLabel.frame = CGRectMake(width-15-11-31*(width/375.0)-contentSize.width, (120-contentSize.height)/2, contentSize.width, contentSize.height)
+        let contentDic = [NSFontAttributeName:UIFont.systemFont(ofSize: 14)];
+        let contentSize = funcContent.boundingRect(with: CGSize(width: width, height: 14), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: contentDic, context: nil).size;
+        self.contentLabel.frame = CGRect(x: width-15-11-31*(width/375.0)-contentSize.width, y: (120-contentSize.height)/2, width: contentSize.width, height: contentSize.height)
         self.contentLabel.text = funcContent
         
         let iconImg = UIImage(named: iconImgName)
-        self.smallIconImgVIew.frame = CGRectMake(self.contentLabel.frame.origin.x-5*(width/375.0)-((iconImg?.size.width)!/2), (120-((iconImg?.size.height)!)/2)/2, ((iconImg?.size.width)!/2), ((iconImg?.size.height)!/2))
+        self.smallIconImgVIew.frame = CGRect(x: self.contentLabel.frame.origin.x-5*(width/375.0)-((iconImg?.size.width)!/2), y: (120-((iconImg?.size.height)!)/2)/2, width: ((iconImg?.size.width)!/2), height: ((iconImg?.size.height)!/2))
         self.smallIconImgVIew.image = iconImg
     }
     

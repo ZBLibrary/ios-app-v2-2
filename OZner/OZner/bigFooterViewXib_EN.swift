@@ -37,19 +37,19 @@ class bigFooterViewXib_EN: UIView {
     let OffName=["1":loadLanguage("关"),"2":loadLanguage("模式"),"3":loadLanguage("童锁")]
     let OnColor=UIColor(red: 0, green: 111/255, blue: 246/255, alpha: 1)
     let OffColor=UIColor(red: 159/255, green: 160/255, blue: 162/255, alpha: 1)
-    func updateView(isOn:Bool)
+    func updateView(_ isOn:Bool)
     {
         if isOn==true
         {
             switchName.text=OnName["\(index)"]
             switchName.textColor=OnColor
             switchImage.image=UIImage(named: OnImage["\(index)"]!)
-            switchButton.layer.borderColor=OnColor.CGColor
+            switchButton.layer.borderColor=OnColor.cgColor
             switchButton.layer.masksToBounds=false
-            switchButton.layer.shadowOffset=CGSizeMake(0, 0)//阴影偏移量
+            switchButton.layer.shadowOffset=CGSize(width: 0, height: 0)//阴影偏移量
             switchButton.layer.shadowRadius=3//阴影半径
             switchButton.layer.shadowOpacity=0.8//透明度
-            switchButton.layer.shadowColor=OnColor.CGColor
+            switchButton.layer.shadowColor=OnColor.cgColor
         }
         else
         {
@@ -57,7 +57,7 @@ class bigFooterViewXib_EN: UIView {
             switchName.text=OffName["\(index)"]
             switchName.textColor=OffColor
             switchImage.image=UIImage(named: OffImage["\(index)"]!)
-            switchButton.layer.borderColor=OffColor.CGColor
+            switchButton.layer.borderColor=OffColor.cgColor
         }
     }
 }

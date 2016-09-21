@@ -32,7 +32,7 @@ struct weiXinUrlNamezb {
 }
 class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -40,13 +40,13 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
     var goUrlOfOut:String?
     
     @IBOutlet var shareButton: UIButton!
-    @IBAction func shareClick(sender: AnyObject) {
+    @IBAction func shareClick(_ sender: AnyObject) {
         self.view!.addSubview(shareView!)
     }
     convenience  init(goUrl:String) {
         
         var nibNameOrNil = String?("WeiXinURLViewController_EN")
-        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+        if Bundle.main.path(forResource: nibNameOrNil, ofType: "xib") == nil
         {
             nibNameOrNil = nil
         }
@@ -58,8 +58,8 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
         fatalError("init(coder:) has not been implemented")
         
     }
-    @IBAction func BackClick(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func BackClick(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     @IBOutlet var titleOfURL: UILabel!
     @IBOutlet var webView: UIWebView!
@@ -73,19 +73,19 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        shareButton.hidden=true
-        shareView = NSBundle.mainBundle().loadNibNamed("ShareMoneyToWeChat", owner: self, options: nil).last as! ShareMoneyToWeChat
-        shareView.frame=CGRectMake(0, 0, SCREEN_WIDTH, Screen_Hight)
-        shareView.backgroundColor=UIColor.blackColor().colorWithAlphaComponent(0.3)
+        shareButton.isHidden=true
+        shareView = Bundle.main.loadNibNamed("ShareMoneyToWeChat", owner: self, options: nil)?.last as! ShareMoneyToWeChat
+        shareView.frame=CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: Screen_Hight)
+        shareView.backgroundColor=UIColor.black.withAlphaComponent(0.3)
         
         titleOfURL.text=self.title
         
         //重新加载按钮
         button=UIButton(frame: CGRect(x: 0, y: Screen_Hight/2-40, width: SCREEN_WIDTH, height: 40))
-        button.addTarget(self, action: #selector(loadAgain), forControlEvents: .TouchUpInside)
-        button.setTitleColor(UIColor.grayColor(), forState: .Normal)
-        button.setTitle(loadLanguage("加载失败点击继续加载！"), forState: .Normal)
-        button.hidden=true
+        button.addTarget(self, action: #selector(loadAgain), for: .touchUpInside)
+        button.setTitleColor(UIColor.gray, for: UIControlState())
+        button.setTitle(loadLanguage("加载失败点击继续加载！"), for: UIControlState())
+        button.isHidden=true
         webView.addSubview(button)
         
         let weiXinUrl=weiXinUrlNamezb()
@@ -106,7 +106,7 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
             
         //领红包
         case weiXinUrl.callFriend:
-            shareButton.hidden=false
+            shareButton.isHidden=false
             tmpURL = GoUrlBefore("http://www.oznerwater.com/lktnew/wapnew/Member/GrapRedPackages.aspx")
             break
         //我的券
@@ -146,8 +146,8 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
         case weiXinUrl.WaterLvXinUrl1://365安心服务
             titleOfURL.text=loadLanguage("净水器滤芯")
             var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=9"
-            let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
-            tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
+            let whitespace = CharacterSet.whitespacesAndNewlines
+            tmpUrl = tmpUrl.trimmingCharacters(in: whitespace)
             tmpURL = GoUrlBefore(tmpUrl)
             
             
@@ -155,16 +155,16 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
         case weiXinUrl.WaterLvXinUrl2://迷你净水器滤芯购买链接
             titleOfURL.text=loadLanguage("净水器滤芯")
             var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=68"
-            let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
-            tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
+            let whitespace = CharacterSet.whitespacesAndNewlines
+            tmpUrl = tmpUrl.trimmingCharacters(in: whitespace)
             tmpURL = GoUrlBefore(tmpUrl)
            
             break
         case weiXinUrl.WaterLvXinUrl3://台式净水器滤芯购买链接
             titleOfURL.text=loadLanguage("净水器滤芯")
             var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=69"
-            let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
-            tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
+            let whitespace = CharacterSet.whitespacesAndNewlines
+            tmpUrl = tmpUrl.trimmingCharacters(in: whitespace)
             tmpURL = GoUrlBefore(tmpUrl)
             break
         case weiXinUrl.WaterReplenishOperation://补水仪使用说明
@@ -177,36 +177,36 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
         }
         webView.delegate=self
         webView.scalesPageToFit = true
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: tmpURL)!))
+        webView.loadRequest(URLRequest(url: URL(string: tmpURL)!))
         
         // Do any additional setup after loading the view.
     }
 
     
     //继续加载
-    func loadAgain(button:UIButton)
+    func loadAgain(_ button:UIButton)
     {
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: tmpURL)!))
+        webView.loadRequest(URLRequest(url: URL(string: tmpURL)!))
         
     }
-    func webViewDidStartLoad(webView: UIWebView) {
-        button.hidden=true
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        self.performSelector(#selector(hideMbProgressHUD), withObject: nil, afterDelay: 3);
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        button.isHidden=true
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.perform(#selector(hideMbProgressHUD), with: nil, afterDelay: 3);
     }
     func hideMbProgressHUD()
     {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
-    func webViewDidFinishLoad(webView: UIWebView) {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
-        button.hidden=true
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        MBProgressHUD.hide(for: self.view, animated: true)
+        button.isHidden=true
     }
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
-        button.hidden=false
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        MBProgressHUD.hide(for: self.view, animated: true)
+        button.isHidden=false
     }
-    func GoUrlBefore(url:String)->String
+    func GoUrlBefore(_ url:String)->String
     {
         
         return "http://www.oznerwater.com/lktnew/wap/app/Oauth2.aspx?mobile="+mobile+"&UserTalkCode="+UserTalkCode+"&Language="+Language+"&Area="+Area+"&goUrl="+url

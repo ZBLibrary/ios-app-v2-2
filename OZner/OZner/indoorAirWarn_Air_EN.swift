@@ -13,7 +13,7 @@ class indoorAirWarn_Air_EN: UIView {
     @IBOutlet var PM25: UILabel!
     @IBOutlet var airText: UILabel!
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
     }
     

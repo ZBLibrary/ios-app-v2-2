@@ -13,14 +13,14 @@ class SwiftFatherViewController: UIViewController {
     
     var heightValue:CGFloat = 0.0;
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.addkeyBoardNotification()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class SwiftFatherViewController: UIViewController {
 //            self.edgesForExtendedLayout = UIRectEdge.None
 //        }
         
-        if(UIScreen.mainScreen().bounds.height <= 568)
+        if(UIScreen.main.bounds.height <= 568)
         {
             heightValue = 150;
         }
@@ -45,15 +45,15 @@ class SwiftFatherViewController: UIViewController {
     
     func addkeyBoardNotification()
     {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(keyboardWillShow), name:UIKeyboardWillShowNotification, object:nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object:nil);
     }
     
-    func keyboardWillHide(note:NSNotification)
+    func keyboardWillHide(_ note:Notification)
     {
         self.viewAnmiatonMethod(2)
     }
-    func keyboardWillShow(note:NSNotification)
+    func keyboardWillShow(_ note:Notification)
     {
         self.viewAnmiatonMethod(1)
     }
@@ -62,7 +62,7 @@ class SwiftFatherViewController: UIViewController {
     *键盘显示隐藏状态
     *index : 方式
     */
-    func viewAnmiatonMethod(index:Int)
+    func viewAnmiatonMethod(_ index:Int)
     {
         UIView.beginAnimations("", context: nil)
         UIView.setAnimationDuration(0.5)
@@ -72,13 +72,13 @@ class SwiftFatherViewController: UIViewController {
         case 1:
             if (self.view.frame.origin.y == 64)
             {
-                self.view.frame = CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y - heightValue,self.view.frame.size.width,self.view.frame.size.height);
+                self.view.frame = CGRect(x: self.view.frame.origin.x,y: self.view.frame.origin.y - heightValue,width: self.view.frame.size.width,height: self.view.frame.size.height);
             }
             
         case 2:
             if (self.view.frame.origin.y != 64)
             {
-                self.view.frame = CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y + heightValue,self.view.frame.size.width,self.view.frame.size.height);
+                self.view.frame = CGRect(x: self.view.frame.origin.x,y: self.view.frame.origin.y + heightValue,width: self.view.frame.size.width,height: self.view.frame.size.height);
                 
             }
         default:

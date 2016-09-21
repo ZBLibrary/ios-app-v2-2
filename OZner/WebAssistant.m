@@ -11,7 +11,7 @@
 
 + (ASIFormDataRequest*) execRequest:(NetworkEntrance*)entrance bodyBlock:(void(^)(NSDictionary* dicBody, StatusManager* status))bodyHandler failedBlock:(void(^)(StatusManager* status))failedHandler
 {
-    ASIFormDataRequest* request = [ConnectUtil request:kCustomRequest NetworkEntrance:entrance returnBlock:^(NSData *data, BOOL bISsuccess) {
+    [ConnectUtil request:kCustomRequest NetworkEntrance:entrance returnBlock:^(NSData *data, BOOL bISsuccess) {
 
         HHTP_NetworkStatus status;
         if(bISsuccess)
@@ -66,7 +66,7 @@
 
 + (ASIFormDataRequest*) execErrorRequest:(NetworkEntrance*)entrance bodyBlock:(void(^)(NSDictionary* dicBody, StatusManager* status))bodyHandler failedBlock:(void(^)(NSDictionary* dicBody, StatusManager* status))failedHandler
 {
-    ASIFormDataRequest* request = [ConnectUtil request:kCustomRequest NetworkEntrance:entrance returnBlock:^(NSData *data, BOOL bISsuccess) {
+     [ConnectUtil request:kCustomRequest NetworkEntrance:entrance returnBlock:^(NSData *data, BOOL bISsuccess) {
         
         HHTP_NetworkStatus status;
         if(bISsuccess)

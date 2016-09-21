@@ -11,7 +11,7 @@ import UIKit
 class userAgreeMentsController: UIViewController {
 
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -21,15 +21,15 @@ class userAgreeMentsController: UIViewController {
         fatalError("init(coder:) has not been implemented")
         
     }
-    @IBAction func BackToLogin(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func BackToLogin(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: "http://cup.ozner.net/app/cn/mzsm.html")!))
+        webView.loadRequest(URLRequest(url: URL(string: "http://cup.ozner.net/app/cn/mzsm.html")!))
         webView.scalesPageToFit = true
         // Do any additional setup after loading the view.
     }

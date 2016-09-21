@@ -67,7 +67,7 @@
 #import "waterReplenishChartView_EN.h"
 
 //bug记录第三方库
-#import "Bugly/CrashReporter.h"
+//#import "Bugly/CrashReporter.h"
 //#import <Bugly/CrashReporter.h>
 //取色板
 #import "YJHColorPickerHSWheel2.h"

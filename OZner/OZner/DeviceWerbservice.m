@@ -215,7 +215,7 @@
         
         id jsonObject = [NSJSONSerialization JSONObjectWithData:tmpdata options:NSJSONReadingAllowFragments error:&error];
         
-        if ([jsonObject isKindOfClass:[NSMutableDictionary class]]){
+        //if ([jsonObject isKindOfClass:[NSMutableDictionary class]]){
             
             id tmpdictionary = [[jsonObject objectForKey:@"HeWeather data service 3.0"] objectAtIndex:0];
             id tmpdic=[[tmpdictionary objectForKey:@"aqi"] objectForKey:@"city"];
@@ -233,11 +233,11 @@
            
             handle(pollution,cityname,PM25,AQI,temperature,humidity,dataFrom,status);
             
-        }else {
+        //}else {
             
-            handle(@"",@"",@"",@"",@"",@"",@"",status);
+            //handle(@"",@"",@"",@"",@"",@"",@"",status);
             
-        }
+        //}
         
         
         

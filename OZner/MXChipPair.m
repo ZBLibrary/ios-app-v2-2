@@ -264,15 +264,15 @@
     
     runThread=nil;
 }
--(void) start:(NSString*)ssid Password:(NSString*)password;
+-(void) start:(NSString*)Ssid Password:(NSString*)Password;
 {
     if (runThread)
     {
         return;
     }
     self->services=[[NSMutableArray alloc] init];
-    self->ssid=[NSString stringWithString:ssid];
-    self->password=[NSString stringWithString:password];
+    self->ssid=[NSString stringWithString:Ssid];
+    self->password=[NSString stringWithString:Password];
     runThread=[[NSThread alloc] initWithTarget:self selector:@selector(run) object:NULL];
     [runThread start];
 }

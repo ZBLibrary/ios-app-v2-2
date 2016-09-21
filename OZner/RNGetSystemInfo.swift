@@ -16,7 +16,7 @@ import UIKit
 class RNGetSystemInfo: NSObject {
     
     // 单例
-    private static let sharedInstance = RNGetSystemInfo()
+    fileprivate static let sharedInstance = RNGetSystemInfo()
     class var sharedManager: RNGetSystemInfo {
         
         return sharedInstance
@@ -27,7 +27,7 @@ class RNGetSystemInfo: NSObject {
     
     func getCurrentSystemLanguage() -> String{
         
-        let languages = NSLocale.preferredLanguages()
+        let languages = Locale.preferredLanguages
         let currentLanguage = languages[0]
         
         return currentLanguage

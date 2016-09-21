@@ -26,8 +26,8 @@ class YZNewsTableViewController: UITableViewController {
         self.title=loadLanguage("验证消息")
         YZMess()
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.tableView.rowHeight = 102
         // Uncomment the following line to preserve selection between presentations
@@ -37,13 +37,13 @@ class YZNewsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.hidden=true
+        self.tabBarController?.tabBar.isHidden=true
     }
     func back()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,30 +52,30 @@ class YZNewsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return YZNews.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = NSBundle.mainBundle().loadNibNamed("YanZhengCell", owner: self, options: nil).last as! YanZhengCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("YanZhengCell", owner: self, options: nil)?.last as! YanZhengCell
 
-        cell.AddButton.addTarget(self, action: #selector(AddClick), forControlEvents: .TouchUpInside)
-        cell.AddButton.tag=indexPath.row
-        cell.headimage.image=YZNews[indexPath.row].FriendimgUrl=="" ? UIImage(named: "DefaultHeadImage") : UIImage(data: NSData(contentsOfURL: NSURL(string: YZNews[indexPath.row].FriendimgUrl)!)!)
-        cell.name.text=YZNews[indexPath.row].FriendName=="" ? YZNews[indexPath.row].FriendMobile : YZNews[indexPath.row].FriendName
-        cell.YZmess.text=YZNews[indexPath.row].RequestContent
-        switch (YZNews[indexPath.row].Status)
+        cell.AddButton.addTarget(self, action: #selector(AddClick), for: .touchUpInside)
+        cell.AddButton.tag=(indexPath as NSIndexPath).row
+        cell.headimage.image=YZNews[(indexPath as NSIndexPath).row].FriendimgUrl=="" ? UIImage(named: "DefaultHeadImage") : UIImage(data: try! Data(contentsOf: URL(string: YZNews[(indexPath as NSIndexPath).row].FriendimgUrl)!))
+        cell.name.text=YZNews[(indexPath as NSIndexPath).row].FriendName=="" ? YZNews[(indexPath as NSIndexPath).row].FriendMobile : YZNews[(indexPath as NSIndexPath).row].FriendName
+        cell.YZmess.text=YZNews[(indexPath as NSIndexPath).row].RequestContent
+        switch (YZNews[(indexPath as NSIndexPath).row].Status)
         {
         case 1:
-            cell.AddButton.enabled=true
-            cell.AddButton.setTitle(loadLanguage("添加"), forState: .Normal)
+            cell.AddButton.isEnabled=true
+            cell.AddButton.setTitle(loadLanguage("添加"), for: UIControlState())
             break
 //        case 1:
 //            cell.AddButton.enabled=false
@@ -84,10 +84,10 @@ class YZNewsTableViewController: UITableViewController {
 //            cell.AddButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
 //            break
         case 2:
-            cell.AddButton.enabled=false
-            cell.AddButton.setTitle(loadLanguage("已添加"), forState: .Normal)
-            cell.AddButton.backgroundColor=UIColor.clearColor()
-            cell.AddButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+            cell.AddButton.isEnabled=false
+            cell.AddButton.setTitle(loadLanguage("已添加"), for: UIControlState())
+            cell.AddButton.backgroundColor=UIColor.clear
+            cell.AddButton.setTitleColor(UIColor.gray, for: UIControlState())
             break
         default:
             break
@@ -95,28 +95,28 @@ class YZNewsTableViewController: UITableViewController {
         }
         // Configure the cell...
 
-        cell.selectionStyle=UITableViewCellSelectionStyle.None
+        cell.selectionStyle=UITableViewCellSelectionStyle.none
         
         return cell
     }
-    func AddClick(button:UIButton)
+    func AddClick(_ button:UIButton)
     {
         let werbservice = UserInfoActionWerbService()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let tmpid = String(YZNews[button.tag].ID)
         print(tmpid)
-        werbservice.acceptUserVerify(tmpid){ (data:AnyObject!,statusManager: StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if statusManager.networkStatus==kSuccessStatus
+        werbservice.acceptUserVerify(tmpid){ (data,statusManager) -> Void in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if statusManager?.networkStatus==kSuccessStatus
             {
-                let state=data.objectForKey("state") as! Int
+                let state=(data as AnyObject).object(forKey: "state") as! Int
                 if state>0
                 {
-                    button.backgroundColor=UIColor.clearColor()
-                    button.enabled=false
-                    button.setTitle(loadLanguage("已添加"), forState: .Normal)
-                    button.setTitleColor(UIColor(red: 109/255, green: 110/255, blue: 111/255, alpha: 1), forState: .Normal)
-                    NSNotificationCenter.defaultCenter().postNotificationName("OtherAcceptMeNews", object: nil)//.addObserver(self, selector: Selector("updateFriendList"), name: "OtherAcceptMeNews", object: nil)
+                    button.backgroundColor=UIColor.clear
+                    button.isEnabled=false
+                    button.setTitle(loadLanguage("已添加"), for: UIControlState())
+                    button.setTitleColor(UIColor(red: 109/255, green: 110/255, blue: 111/255, alpha: 1), for: UIControlState())
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "OtherAcceptMeNews"), object: nil)//.addObserver(self, selector: Selector("updateFriendList"), name: "OtherAcceptMeNews", object: nil)
                 }
                 else
                 {
@@ -181,41 +181,43 @@ class YZNewsTableViewController: UITableViewController {
     func YZMess()
     {
         let werbservice = UserInfoActionWerbService()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werbservice.getUserVerifMessage({ (responseObject:AnyObject!,statusManager: StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if statusManager.networkStatus==kSuccessStatus
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        werbservice.getUserVerifMessage({ (response,statusManager) -> Void in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if statusManager?.networkStatus==kSuccessStatus
             {
-                let state=responseObject.objectForKey("state") as! Int
-                print(responseObject)
+                let responseObject = response as AnyObject
+                let state=responseObject.object(forKey: "state") as! Int
+                
                 if state>0
                 {
-                    let YZmsg=responseObject.objectForKey("msglist") as! NSMutableArray
+                    let YZmsg=responseObject.object(forKey: "msglist") as! NSMutableArray
                     for i in 0...(YZmsg.count-1)
                     {
                         var myYZNewss = myYZNews()
                         myYZNewss.mobile=get_Phone()
                         myYZNewss.FriendimgUrl=""
-                        myYZNewss.FriendMobile=YZmsg[i].objectForKey("FriendMobile") as! String
-                        if YZmsg[i].objectForKey("Nickname")?.isKindOfClass(NSNull)==false
+                        let tmpMsg = YZmsg[i] as AnyObject
+                        myYZNewss.FriendMobile=tmpMsg.object(forKey: "FriendMobile") as! String
+                        if tmpMsg.object(forKey: "Nickname") != nil
                         {
-                            myYZNewss.FriendName=YZmsg[i].objectForKey("Nickname") as! String
+                            myYZNewss.FriendName=tmpMsg.object(forKey: "Nickname") as! String
                         }
-                        if YZmsg[i].objectForKey("Icon")?.isKindOfClass(NSNull)==false
+                        if tmpMsg.object(forKey: "Icon") != nil
                         {
-                            myYZNewss.FriendimgUrl=YZmsg[i].objectForKey("Icon") as! String
+                            myYZNewss.FriendimgUrl=tmpMsg.object(forKey: "Icon") as! String
                         }
                         
-                        myYZNewss.ID=YZmsg[i].objectForKey("ID") as! Int
-                        let tmpphone=YZmsg[i].objectForKey("Mobile") as! String
+                        myYZNewss.ID=tmpMsg.object(forKey: "ID") as! Int
+                        let tmpphone=tmpMsg.object(forKey: "Mobile") as! String
                         if tmpphone != myYZNewss.mobile
                         {
-                            myYZNewss.FriendMobile=YZmsg[i].objectForKey("Mobile") as! String
+                            myYZNewss.FriendMobile=tmpMsg.object(forKey: "Mobile") as! String
                         }
                         
                         
-                    myYZNewss.RequestContent=YZmsg[i].objectForKey("RequestContent") as! String
-                        myYZNewss.Status = YZmsg[i].objectForKey("Status") as! Int
+                    myYZNewss.RequestContent=tmpMsg.object(forKey: "RequestContent") as! String
+                        myYZNewss.Status = tmpMsg.object(forKey: "Status") as! Int
                         self.YZNews.append(myYZNewss)
                     }
                     self.tableView.reloadData()

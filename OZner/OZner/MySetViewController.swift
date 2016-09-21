@@ -10,23 +10,23 @@ import UIKit
 
 class MySetViewController: UIViewController,UIAlertViewDelegate {
 
-    @IBAction func BackClick(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func BackClick(_ sender: AnyObject) {
+        _ = navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func SetMeter(sender: AnyObject) {
-        self.performSegueWithIdentifier("showsetmeter", sender: self)
+    @IBAction func SetMeter(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "showsetmeter", sender: self)
     }
     
-    @IBAction func AboutUs(sender: AnyObject) {
-        self.performSegueWithIdentifier("showaboutus", sender: self)
+    @IBAction func AboutUs(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "showaboutus", sender: self)
     }
-    @IBAction func loginOut(sender: AnyObject) {
+    @IBAction func loginOut(_ sender: AnyObject) {
         let alert=UIAlertView(title: "", message:loadLanguage("是否退出登录？"), delegate: self, cancelButtonTitle:loadLanguage( "否"), otherButtonTitles: loadLanguage("是"))
         alert.show()
         
     }
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if alertView.message==loadLanguage("是否退出登录？")&&buttonIndex==1
         {
             LogInOut.loginInOutInstance().loginOutUser()
@@ -35,8 +35,8 @@ class MySetViewController: UIViewController,UIAlertViewDelegate {
     @IBOutlet var allowTS: UISwitch!
     
     @IBOutlet var AllowedpushLable: UILabel!
-    @IBAction func allowPushClick(sender: AnyObject) {
-        NSUserDefaults.standardUserDefaults().setBool(allowTS.on, forKey: "IsAlowTuiSong")
+    @IBAction func allowPushClick(_ sender: AnyObject) {
+        UserDefaults.standard.set(allowTS.isOn, forKey: "IsAlowTuiSong")
     }
     @IBOutlet var AboutLable: UILabel!
     @IBOutlet var UnitLable: UILabel!
@@ -46,8 +46,8 @@ class MySetViewController: UIViewController,UIAlertViewDelegate {
          AllowedpushLable.text=loadLanguage("允许推送消息")
         AboutLable.text=loadLanguage("关于浩泽净水家")
         UnitLable.text=loadLanguage("计量单位")
-        let userDef=NSUserDefaults.standardUserDefaults().objectForKey("IsAlowTuiSong")
-        allowTS.on=userDef==nil ? true:(userDef as! Bool)
+        let userDef=UserDefaults.standard.object(forKey: "IsAlowTuiSong")
+        allowTS.isOn=userDef==nil ? true:(userDef as! Bool)
         // Do any additional setup after loading the view.
     }
 
@@ -56,14 +56,14 @@ class MySetViewController: UIViewController,UIAlertViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.navigationBarHidden=false
+        self.navigationController?.isNavigationBarHidden=false
         //allowTS.on=get_allowTS()
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         //set_allowTS(allowTS.on)
     }

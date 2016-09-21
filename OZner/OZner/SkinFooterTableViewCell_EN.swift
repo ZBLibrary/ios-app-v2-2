@@ -15,7 +15,7 @@ class  SkinFooterTableViewCell_EN: UITableViewCell {
     @IBOutlet weak var widthOfButtonBG2: NSLayoutConstraint!
     @IBOutlet weak var widthOfButtonBG3: NSLayoutConstraint!
 
-    private let buttonContainWidth=(375-50)*Screen_Width/375
+    fileprivate let buttonContainWidth=(375-50)*Screen_Width/375
     //五个按钮
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -35,28 +35,28 @@ class  SkinFooterTableViewCell_EN: UITableViewCell {
 
         for button in [button1,button2,button3]
         {
-            button.addTarget(self, action: #selector(skinButtonClick), forControlEvents: .TouchUpInside)
+            button?.addTarget(self, action: #selector(skinButtonClick), for: .touchUpInside)
         }
     }
-    private let selectColor=UIColor(red: 64/255.0, green: 140/255.0, blue: 241/255.0, alpha: 1)
-    private var sexImgHeadStr="woman"
-    private var skinStateArr=[
+    fileprivate let selectColor=UIColor(red: 64/255.0, green: 140/255.0, blue: 241/255.0, alpha: 1)
+    fileprivate var sexImgHeadStr="woman"
+    fileprivate var skinStateArr=[
        loadLanguage("干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱，定期使用适量精华补水也能改善您的干性特质哦！"),
        loadLanguage("皮肤通道是先吸收水，再吸收油。当肌底极度缺水干燥的时候，为保护皮肤，油脂才会分泌过盛。水油已严重失衡啦，请注意控油补水！"),
       loadLanguage("干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱！")
     ]
-    func skinButtonClick(button:UIButton)
+    func skinButtonClick(_ button:UIButton)
     {
         //设置按钮背景色
         for tmpButton in [button1,button2,button3]
         {
-            tmpButton.backgroundColor=UIColor.clearColor()
+            tmpButton?.backgroundColor=UIColor.clear
         }
         button.backgroundColor=selectColor
         //设置选中按钮对应图片
         skinImg.image=UIImage(named: sexImgHeadStr+"SkinOfChaXun\(button.tag)")
         skinState.text=skinStateArr[button.tag-1]
-        skinState.textColor=UIColor.whiteColor()
+        skinState.textColor=UIColor.white
     }
     
     /**
@@ -64,7 +64,7 @@ class  SkinFooterTableViewCell_EN: UITableViewCell {
      
      - parameter myFuZhi: 0：无，1油，2干，3中，4混合，5敏感
      */
-    func MyCurrentFuZhi(myFuZhi:Int,sex:SexType)
+    func MyCurrentFuZhi(_ myFuZhi:Int,sex:SexType)
     {
         sexImgHeadStr=sex==SexType.Man ? "man":"woman"
         let tmpwidth = myFuZhi==0 ? buttonContainWidth/3:buttonContainWidth/2
@@ -81,7 +81,7 @@ class  SkinFooterTableViewCell_EN: UITableViewCell {
         skinButtonClick(myFuZhi==1 ? button2:button1)
         
     }
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

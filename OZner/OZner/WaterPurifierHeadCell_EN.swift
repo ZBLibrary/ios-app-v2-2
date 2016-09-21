@@ -35,12 +35,12 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             if TdsBefore==65535
             {
                 RedrawCicle(0, TDS: 0)
-                beforeSpaceLine.hidden=true
+                beforeSpaceLine.isHidden=true
                 return
             }
             else
             {
-                beforeSpaceLine.hidden=false
+                beforeSpaceLine.isHidden=false
                 RedrawCicle(0, TDS:TdsBefore)
             }
             purifiedBefore.text=TdsBefore==0 ? "暂无":"\(TdsBefore)"
@@ -68,7 +68,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             
             purifiedAfter.text="\(TdsAfter)"
             purifiedAfter.font=UIFont(name: ".SFUIDisplay-Thin", size: 52*Screen_Width/375)
-            faceImgView.hidden=false
+            faceImgView.isHidden=false
             switch TdsAfter
             {
             case 0..<TDS_Good_Int:
@@ -92,7 +92,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
     }
     func NoRecord()
     {
-        faceImgView.hidden=true
+        faceImgView.isHidden=true
         faceTextLabel.text=loadLanguage("健康")
         purifiedBefore.text="暂无"
 
@@ -108,7 +108,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
     **/
     var currentShapeLayer_before:CAGradientLayer?
     var currentShapeLayer_after:CAGradientLayer?
-    func RedrawCicle(type:Int,TDS:Int)
+    func RedrawCicle(_ type:Int,TDS:Int)
     {
         setNeedsLayout()
         layoutIfNeeded()
@@ -119,7 +119,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
         case 0:
             
             radius=315*Screen_Width/375/2-4
-            if currentShapeLayer_before != Optional.None
+            if currentShapeLayer_before != Optional.none
             {
                 currentShapeLayer_before?.removeFromSuperlayer()
             }
@@ -127,7 +127,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
         case 1:
             
             radius=315*Screen_Width/375/2-16
-            if currentShapeLayer_after != Optional.None
+            if currentShapeLayer_after != Optional.none
             {
                 currentShapeLayer_after?.removeFromSuperlayer()
             }
@@ -154,35 +154,35 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
         }
         
         print(315*Screen_Width/375/2)
-        beierpath.addArcWithCenter(CGPoint(x: 315*Screen_Width/375/2, y: 315*Screen_Width/375/2), radius: radius, startAngle: CGFloat(-M_PI), endAngle: tmpAng, clockwise: true)
+        beierpath.addArc(withCenter: CGPoint(x: 315*Screen_Width/375/2, y: 315*Screen_Width/375/2), radius: radius, startAngle: CGFloat(-M_PI), endAngle: tmpAng, clockwise: true)
  
         let arc = CAShapeLayer()
-        arc.path = beierpath.CGPath
+        arc.path = beierpath.cgPath
         arc.lineCap = "round"
-        arc.fillColor = UIColor.clearColor().CGColor
-        arc.strokeColor = UIColor.purpleColor().CGColor
+        arc.fillColor = UIColor.clear.cgColor
+        arc.strokeColor = UIColor.purple.cgColor
         arc.lineWidth = 8
         
         let drawAnimation = CABasicAnimation(keyPath: "strokeEnd")
         drawAnimation.duration            = 5.0
         
         drawAnimation.repeatCount         = 0
-        drawAnimation.removedOnCompletion = false
+        drawAnimation.isRemovedOnCompletion = false
         drawAnimation.fromValue = 0.0
         drawAnimation.toValue   = 10.0
         drawAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        arc.addAnimation(drawAnimation, forKey: "drawCircleAnimation")
+        arc.add(drawAnimation, forKey: "drawCircleAnimation")
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = cicleContainerView.bounds;
         gradientLayer.colors = [
-            UIColor(red: 9.0/255, green: 142.0/255, blue: 254.0/255, alpha: 1.0).CGColor,
-            UIColor(red: 134.0/255, green: 102.0/255, blue: 255.0/255, alpha: 1.0).CGColor,
+            UIColor(red: 9.0/255, green: 142.0/255, blue: 254.0/255, alpha: 1.0).cgColor,
+            UIColor(red: 134.0/255, green: 102.0/255, blue: 255.0/255, alpha: 1.0).cgColor,
             
-            UIColor(red: 215.0/255, green: 67.0/255, blue: 113.0/255, alpha: 1.0).CGColor]
+            UIColor(red: 215.0/255, green: 67.0/255, blue: 113.0/255, alpha: 1.0).cgColor]
         
-        gradientLayer.startPoint = CGPointMake(0,0.5);
-        gradientLayer.endPoint = CGPointMake(1,0.5);
+        gradientLayer.startPoint = CGPoint(x: 0,y: 0.5);
+        gradientLayer.endPoint = CGPoint(x: 1,y: 0.5);
         if type==0
         {
             currentShapeLayer_before=gradientLayer
@@ -205,7 +205,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
         deviceStateLabel.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -223,7 +223,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             {
             case 0:
                 radius=315*Screen_Width/375/2-4
-                if currentShapeLayer_before != Optional.None
+                if currentShapeLayer_before != Optional.none
                 {
                     currentShapeLayer_before?.removeFromSuperlayer()
                 }
@@ -231,7 +231,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             case 1:
                
                 radius=315*Screen_Width/375/2-16
-                if currentShapeLayer_after != Optional.None
+                if currentShapeLayer_after != Optional.none
                 {
                     currentShapeLayer_after?.removeFromSuperlayer()
                 }
@@ -241,14 +241,14 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             }
             let beierpath=UIBezierPath.init()
         
-            beierpath.addArcWithCenter(CGPoint(x: 315*Screen_Width/375/2, y: 315*Screen_Width/375/2), radius: radius, startAngle: CGFloat(-M_PI), endAngle: 0, clockwise: true)
-            beierpath.lineCapStyle=CGLineCap.Round
-            beierpath.lineJoinStyle=CGLineJoin.Round
+            beierpath.addArc(withCenter: CGPoint(x: 315*Screen_Width/375/2, y: 315*Screen_Width/375/2), radius: radius, startAngle: CGFloat(-M_PI), endAngle: 0, clockwise: true)
+            beierpath.lineCapStyle=CGLineCap.round
+            beierpath.lineJoinStyle=CGLineJoin.round
             beierpath.lineWidth=2.0
             
             let mcashapelayer=CAShapeLayer()
-            mcashapelayer.path=beierpath.CGPath
-            mcashapelayer.strokeColor=lineColor.CGColor
+            mcashapelayer.path=beierpath.cgPath
+            mcashapelayer.strokeColor=lineColor.cgColor
             mcashapelayer.fillColor=nil
             
             //mcashapelayer.opacity=0.5
@@ -261,18 +261,18 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
             cicleContainerView.layer.addSublayer(mcashapelayer)
             if i==0 {
                 beforeSpaceLine=mcashapelayer
-                beforeSpaceLine.hidden=true
+                beforeSpaceLine.isHidden=true
             }
             let anim=CABasicAnimation(keyPath: "strokeEnd")
             anim.duration = 0.0
           
-            anim.delegate=self
-            anim.removedOnCompletion=false
-            anim.additive=true
+            //anim.delegate=self
+            anim.isRemovedOnCompletion=false
+            anim.isAdditive=true
             anim.fillMode=kCAFillModeForwards
             anim.fromValue=0
             anim.toValue=1
-            mcashapelayer.addAnimation(anim, forKey: "strokeEnd")
+            mcashapelayer.add(anim, forKey: "strokeEnd")
         }
         setNeedsLayout()
         layoutIfNeeded()

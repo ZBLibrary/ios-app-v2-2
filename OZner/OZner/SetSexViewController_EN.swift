@@ -10,7 +10,7 @@ import UIKit
 //typealias InputClosureType = (String) -> Void   //定义闭包类型（特定的函数类型函数类型）
 class SetSexViewController_EN: UIViewController,UIAlertViewDelegate {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -23,28 +23,28 @@ class SetSexViewController_EN: UIViewController,UIAlertViewDelegate {
     var backClosure:((String) -> Void)?           //接收上个页面穿过来的闭包块
     @IBOutlet weak var womenImg: UIImageView!
     @IBOutlet weak var manImg: UIImageView!
-    @IBAction func womenClick(sender: AnyObject) {
+    @IBAction func womenClick(_ sender: AnyObject) {
         sex=loadLanguage("女")
     }
-    @IBAction func manClick(sender: AnyObject) {
+    @IBAction func manClick(_ sender: AnyObject) {
         sex=loadLanguage("男")
     }
     var tmpSex:String?//初始化时外部传入的值
-    private var sex=loadLanguage("女") {
+    fileprivate var sex=loadLanguage("女") {
         didSet{
             print(sex)
-            womenImg.hidden = sex==loadLanguage("男")
-            manImg.hidden = sex==loadLanguage("女")
+            womenImg.isHidden = sex==loadLanguage("男")
+            manImg.isHidden = sex==loadLanguage("女")
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         print(tmpSex)
         sex=tmpSex ?? loadLanguage("女")
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         // Do any additional setup after loading the view.
@@ -59,7 +59,7 @@ class SetSexViewController_EN: UIViewController,UIAlertViewDelegate {
         }
         else
         {
-            self.navigationController?.popViewControllerAnimated(true)
+            _=self.navigationController?.popViewController(animated: true)
         }
         
     }
@@ -70,15 +70,15 @@ class SetSexViewController_EN: UIViewController,UIAlertViewDelegate {
             print(sex)
             backClosure!(sex)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        _=self.navigationController?.popViewController(animated: true)
     }
     //alert 点击事件
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if alertView.message==loadLanguage("是否保存？")
         {
             if buttonIndex==0
             {
-                self.navigationController?.popViewControllerAnimated(true)
+                _=self.navigationController?.popViewController(animated: true)
             }
             else
             {
@@ -91,12 +91,12 @@ class SetSexViewController_EN: UIViewController,UIAlertViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), for: UIBarMetrics.default)
         self.navigationController!.navigationBar.shadowImage =  UIImage(named: "bg_clear_black")
-        self.navigationController?.navigationBarHidden=false
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        self.navigationController?.isNavigationBarHidden=false
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     /*
     // MARK: - Navigation

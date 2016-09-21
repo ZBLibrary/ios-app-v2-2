@@ -15,9 +15,9 @@ class chatBarViewLiuyan: UIView {
     @IBOutlet var ReplyLable: UILabel!
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
-        sendButton.setTitle(loadLanguage("发送"), forState: .Normal)
+        sendButton.setTitle(loadLanguage("发送"), for: UIControlState())
         ReplyLable.text=loadLanguage("回复")
         
     }

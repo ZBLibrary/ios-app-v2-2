@@ -10,7 +10,7 @@ import UIKit
 
 class ToWhatViewController_EN: UIViewController {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -21,18 +21,18 @@ class ToWhatViewController_EN: UIViewController {
         fatalError("init(coder:) has not been implemented")
         
     }
-    @IBAction func Back(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func Back(_ sender: AnyObject) {
+        _ = navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text=loadLanguage(self.title!)
-        let filePath = NSBundle.mainBundle().pathForResource("WhatHtml", ofType: "plist")
+        let filePath = Bundle.main.path(forResource: "WhatHtml", ofType: "plist")
         let tmpstr = NSDictionary(contentsOfFile: filePath!)
 
-        let htmlString = tmpstr?.objectForKey((self.title)!) as! String
+        let htmlString = tmpstr?.object(forKey: (self.title)!) as! String
         webView.loadHTMLString(htmlString, baseURL: nil)
         webView.scalesPageToFit = true
     }

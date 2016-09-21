@@ -11,17 +11,17 @@ import Foundation
 //存取plist文件
 func getChatMessage()->NSMutableDictionary
 {
-    let documentpaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+    let documentpaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
     //获取完整路径
     let documentsDirectory=documentpaths[0] as NSString
-    let plistPath = documentsDirectory.stringByAppendingPathComponent("ChatMessagePlist.plist")
+    let plistPath = documentsDirectory.appendingPathComponent("ChatMessagePlist.plist")
     let tmpData=NSMutableDictionary(contentsOfFile: plistPath)
-    let fileManager:NSFileManager = NSFileManager.defaultManager()
-    if fileManager.fileExistsAtPath(plistPath)
+    let fileManager:FileManager = FileManager.default
+    if fileManager.fileExists(atPath: plistPath)
     {
         do
         {
-          try fileManager.removeItemAtPath(plistPath)
+          try fileManager.removeItem(atPath: plistPath)
         }catch
         {}
     }else
@@ -31,13 +31,13 @@ func getChatMessage()->NSMutableDictionary
     return tmpData!
 }
 
-func saveChatMessage(mess:String)
+func saveChatMessage(_ mess:String)
 {
-    let documentpaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+    let documentpaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
     //获取完整路径
     let documentsDirectory=documentpaths[0] as NSString
-    let plistPath = documentsDirectory.stringByAppendingPathComponent("ChatMessagePlist.plist")
+    let plistPath = documentsDirectory.appendingPathComponent("ChatMessagePlist.plist")
     let tmpdic:NSMutableDictionary=getChatMessage()
     tmpdic.setValue(mess, forKey: "\(tmpdic.count)")
-    tmpdic.writeToFile(plistPath, atomically: false)
+    tmpdic.write(toFile: plistPath, atomically: false)
 }

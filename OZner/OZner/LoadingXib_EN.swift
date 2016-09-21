@@ -18,31 +18,31 @@ class LoadingXib_EN: UIView {
             switch state
             {
             case 0:
-                loadIcon.hidden=false
-                loadText.hidden=false
+                loadIcon.isHidden=false
+                loadText.isHidden=false
                 loadIcon.image=UIImage(named: "airloding")
                 loadText.text=loadLanguage("设备连接中")
                 isEnd=false
                 starAnima()
                 break
             case 1:
-                loadIcon.hidden=false
-                loadText.hidden=false
+                loadIcon.isHidden=false
+                loadText.isHidden=false
                 loadIcon.image=UIImage(named: "air007")
                 loadText.text=loadLanguage("设备已断开")
                 isEnd=true
                 break
             case 2:
-                loadIcon.hidden=false
-                loadText.hidden=false
+                loadIcon.isHidden=false
+                loadText.isHidden=false
                 loadIcon.image=UIImage(named: "air007")
                 loadText.text=loadLanguage("手机网络不可用，请检查网络")
                 isEnd=true
                 break
             default://-1已连接
                 isEnd=true
-                loadIcon.hidden=true
-                loadText.hidden=true
+                loadIcon.isHidden=true
+                loadText.isHidden=true
                 break
             }
             
@@ -54,11 +54,11 @@ class LoadingXib_EN: UIView {
     {
         if isEnd==true
         {
-            self.loadIcon.transform=CGAffineTransformMakeRotation(0)
+            self.loadIcon.transform=CGAffineTransform(rotationAngle: 0)
             return
         }
-        let endAngle = CGAffineTransformMakeRotation(CGFloat(imageViewAngle*(M_PI / 180.0)))
-        UIView.animateWithDuration(0.01, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+        let endAngle = CGAffineTransform(rotationAngle: CGFloat(imageViewAngle*(M_PI / 180.0)))
+        UIView.animate(withDuration: 0.01, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
             self.loadIcon.transform=endAngle
             }) { (finished:Bool) -> Void in
                 self.imageViewAngle += 10

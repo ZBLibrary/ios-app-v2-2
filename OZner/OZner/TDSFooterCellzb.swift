@@ -16,11 +16,11 @@ class TDSFooterCellzb: UITableViewCell {
     @IBOutlet var toStoreButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        waterKnowView.layer.borderColor=UIColor(red: 0, green: 99/255, blue: 246/255, alpha: 1).CGColor
+        waterKnowView.layer.borderColor=UIColor(red: 0, green: 99/255, blue: 246/255, alpha: 1).cgColor
         waterKnowView.layer.borderWidth=1
         waterKnowView.layer.cornerRadius=20
         waterKnowView.layer.masksToBounds=true
-        bugView.layer.borderColor=UIColor(red: 0/255, green:99/255, blue: 246/255, alpha: 1).CGColor
+        bugView.layer.borderColor=UIColor(red: 0/255, green:99/255, blue: 246/255, alpha: 1).cgColor
         bugView.layer.borderWidth=1
         bugView.layer.cornerRadius=20
         bugView.layer.masksToBounds=true
@@ -28,7 +28,7 @@ class TDSFooterCellzb: UITableViewCell {
         
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

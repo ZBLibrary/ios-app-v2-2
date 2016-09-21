@@ -11,7 +11,7 @@ import UIKit
 class WaterPurTDSDetailCell2_EN: UITableViewCell {
 
     @IBOutlet var segmentControl: UISegmentedControl!
-    @IBAction func segmentClick(sender: UISegmentedControl) {
+    @IBAction func segmentClick(_ sender: UISegmentedControl) {
         updateChartView(sender.selectedSegmentIndex)
     }
     //折线图容器
@@ -23,13 +23,13 @@ class WaterPurTDSDetailCell2_EN: UITableViewCell {
         // Initialization code
         segmentControl.layer.cornerRadius=12.5
         segmentControl.layer.borderWidth=1
-        segmentControl.layer.borderColor=UIColor(red: 56/255, green: 127/255, blue: 247/255, alpha: 1).CGColor
+        segmentControl.layer.borderColor=UIColor(red: 56/255, green: 127/255, blue: 247/255, alpha: 1).cgColor
         segmentControl.layer.masksToBounds=true
         updateChartView(0)
     }
     
     //dateType:0 week,1 month
-    func updateChartView(dateType:Int)
+    func updateChartView(_ dateType:Int)
     {
         for view in lineChartContainerView.subviews
         {
@@ -43,7 +43,7 @@ class WaterPurTDSDetailCell2_EN: UITableViewCell {
         setNeedsLayout()
         layoutIfNeeded()
     }
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

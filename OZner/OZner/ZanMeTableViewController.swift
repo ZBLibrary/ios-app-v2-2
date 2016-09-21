@@ -16,8 +16,8 @@ class ZanMeTableViewController: UITableViewController {
         super.viewDidLoad()
 
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.tableView.rowHeight = 75
         self.loadDatafunc()
@@ -27,63 +27,61 @@ class ZanMeTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
  
     func back()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return ZanMeArrayCell.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return ZanMeArrayCell[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return ZanMeArrayCell[(indexPath as NSIndexPath).row]
     }
     
 
     func loadDatafunc()
     {
         let werbservice = UserInfoActionWerbService()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werbservice.WhoLikeMe(deviceType, returnBlock: { (data:AnyObject!, status:StatusManager!) -> Void in
-            if status.networkStatus == kSuccessStatus
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        werbservice.whoLikeMe(deviceType, return: { (data1, status) -> Void in
+            if status?.networkStatus == kSuccessStatus
             {
-                if data==nil
-                {
-                    return
-                }
-                let state=data.objectForKey("state") as! Int
+                let data = data1 as AnyObject
+                
+                let state=data.object(forKey: "state") as! Int
                 if state>0
                 {
                     
-                    let rankcount=data.objectForKey("data") as! NSMutableArray
+                    let rankcount=data.object(forKey: "data") as! NSMutableArray
                     print(rankcount)
                     for i in 0...(rankcount.count-1)
                     {
-                        let tmpZanCell=NSBundle.mainBundle().loadNibNamed("ZanMeTableViewCell", owner: self, options: nil).last as! ZanMeTableViewCell
+                        let tmpZanCell=Bundle.main.loadNibNamed("ZanMeTableViewCell", owner: self, options: nil)?.last as! ZanMeTableViewCell
                         
                         let tmprankData=rankcount[i] as! NSMutableDictionary
                         
                         
                         
                         
-                        tmpZanCell.zanMeName.text=tmprankData.objectForKey("Nickname")?.isKindOfClass(NSNull)==true ? "无名" : (tmprankData.objectForKey("Nickname") as! String)
+                        tmpZanCell.zanMeName.text=tmprankData.object(forKey: "Nickname")==nil ? "无名" : (tmprankData.object(forKey: "Nickname") as! String)
                         
-                        var likeTime=tmprankData.objectForKey("liketime") as! NSString
-                        likeTime=dateStampToString(likeTime, format: "MM-dd")
+                        var likeTime=tmprankData.object(forKey: "liketime") as! NSString
+                        likeTime=dateStampToString(likeTime as String, format: "MM-dd")
 //                        likeTime=likeTime.substringFromIndex(6)
 //                        likeTime=likeTime.substringToIndex(likeTime.length-2)
 //                        let  formatter = NSDateFormatter()
@@ -94,23 +92,23 @@ class ZanMeTableViewController: UITableViewController {
 //                        let date = formatter.dateFromString(likeTime as String)
                         tmpZanCell.zanMeTime.text="\(likeTime)"
                         
-                        let imgUrl=tmprankData.objectForKey("Icon")?.isKindOfClass(NSNull)==true ? "" : (tmprankData.objectForKey("Icon") as! String)
-                        if tmprankData.objectForKey("Icon")?.isKindOfClass(NSNull)==true
+                        let imgUrl=tmprankData.object(forKey: "Icon")==nil ? "" : (tmprankData.object(forKey: "Icon") as! String)
+                        if tmprankData.object(forKey: "Icon")==nil
                         {
                             tmpZanCell.zanMeImage.image=UIImage(named: "DefaultHeadImage")
                         }
                         else
                         {
-                            tmpZanCell.zanMeImage.image=UIImage(data: NSData(contentsOfURL: NSURL(string: imgUrl)!)!)
+                            tmpZanCell.zanMeImage.image=UIImage(data: try! Data(contentsOf: URL(string: imgUrl)!))
                         }
-                        tmpZanCell.selectionStyle=UITableViewCellSelectionStyle.None
+                        tmpZanCell.selectionStyle=UITableViewCellSelectionStyle.none
                         self.ZanMeArrayCell.append(tmpZanCell)
                     }
                     self.tableView.reloadData()
                 }
                 
             }
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            MBProgressHUD.hide(for: self.view, animated: true)
         })
         
     }

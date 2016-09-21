@@ -14,18 +14,18 @@ class SetTdsPanViewController: UIViewController,UIAlertViewDelegate,UITextFieldD
     
     @IBOutlet weak var NameTextField: UITextField!
     @IBOutlet weak var clearButton: UIButton!
-    @IBAction func AboutClick(sender: AnyObject) {
+    @IBAction func AboutClick(_ sender: AnyObject) {
         
         let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
         aboutDevice.title=loadLanguage("关于检测笔")
         aboutDevice.urlstring="http://cup.ozner.net/app/gystt/gystt.html"
         self.navigationController?.pushViewController(aboutDevice, animated: true)
     }
-    @IBAction func DeleteDeviceClick(sender: AnyObject) {
+    @IBAction func DeleteDeviceClick(_ sender: AnyObject) {
         let alert=UIAlertView(title: "", message: loadLanguage("删除此设备"), delegate: self, cancelButtonTitle: loadLanguage("否"), otherButtonTitles: loadLanguage("是"))
         alert.show()
     }
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         
         if alertView.message==loadLanguage("删除此设备")
         {
@@ -33,8 +33,8 @@ class SetTdsPanViewController: UIViewController,UIAlertViewDelegate,UITextFieldD
             {
                 OznerManager.instance().remove(myCurrentDevice)
                 //发出通知
-                NSNotificationCenter.defaultCenter().postNotificationName("removDeviceByZB", object: nil)
-                self.navigationController?.popViewControllerAnimated(true)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "removDeviceByZB"), object: nil)
+                _ = navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -44,33 +44,33 @@ class SetTdsPanViewController: UIViewController,UIAlertViewDelegate,UITextFieldD
         self.title=loadLanguage("我的检测笔")
         NameTextField.delegate=self
         clearButton.layer.borderWidth=1
-        clearButton.layer.borderColor=UIColor(red: 1, green: 92/255, blue: 102/255, alpha: 1).CGColor
+        clearButton.layer.borderColor=UIColor(red: 1, green: 92/255, blue: 102/255, alpha: 1).cgColor
         clearButton.layer.cornerRadius=20
         clearButton.layer.masksToBounds=true
         // Do any additional setup after loading the view.
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         NameTextField.resignFirstResponder()
         if NameTextField.text != ""
         {
             myCurrentDevice?.settings.name=NameTextField.text
             OznerManager.instance().save(myCurrentDevice)
-            NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "updateDeviceInfo"), object: nil)
         }
         return true
     }
     convenience  init(currDevice:Tap?) {
         var nibNameOrNil = String?("SetTdsPanViewController")
         //考虑到xib文件可能不存在或被删，故加入判断
-        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+        if Bundle.main.path(forResource: nibNameOrNil, ofType: "xib") == nil
         {
             nibNameOrNil = nil
         }
         self.init(nibName: nibNameOrNil, bundle: nil)
         myCurrentDevice=currDevice
     }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     required init(coder aDecoder: NSCoder) {
@@ -84,12 +84,12 @@ class SetTdsPanViewController: UIViewController,UIAlertViewDelegate,UITextFieldD
     }
     
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden=false
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.isNavigationBarHidden=false
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), for: UIBarMetrics.default)
         self.navigationController!.navigationBar.shadowImage =  UIImage(named: "bg_clear_black")
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     /*
     // MARK: - Navigation

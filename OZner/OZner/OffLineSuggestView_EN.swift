@@ -33,7 +33,7 @@ class OffLineSuggestView_EN: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // 创建一个富文本
         //同时按下电源和风速，WIFI指示灯闪烁，重新配对
         
@@ -42,16 +42,16 @@ class OffLineSuggestView_EN: UIView {
         let attri3 = NSAttributedString(string: loadLanguage("和"))
         let image1 = NSTextAttachment()
         image1.image=UIImage(named: "airPowerIcon")
-        image1.bounds=CGRectMake(0, -6, 22, 22)
+        image1.bounds=CGRect(x: 0, y: -6, width: 22, height: 22)
         let str1=NSAttributedString(attachment: image1)
         let image2 = NSTextAttachment()
         image2.image=UIImage(named: "airSpeedIcon")
-        image2.bounds=CGRectMake(0, -6, 22, 22)
+        image2.bounds=CGRect(x: 0, y: -6, width: 22, height: 22)
         let str2=NSAttributedString(attachment: image2)
-        attri1.appendAttributedString(str1)
-        attri1.appendAttributedString(attri3)
-        attri1.appendAttributedString(str2)
-        attri1.appendAttributedString(attri2)
+        attri1.append(str1)
+        attri1.append(attri3)
+        attri1.append(str2)
+        attri1.append(attri2)
         thirdLabel.attributedText=attri1
     }
  

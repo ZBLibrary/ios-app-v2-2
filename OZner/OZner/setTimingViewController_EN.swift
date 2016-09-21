@@ -10,7 +10,7 @@ import UIKit
 
 class setTimingViewController_EN: UIViewController {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -39,7 +39,7 @@ class setTimingViewController_EN: UIViewController {
     
     
     
-    @IBAction func leftUPbutton(sender: AnyObject) {
+    @IBAction func leftUPbutton(_ sender: AnyObject) {
         var tmp=Int(star_hour.text!)!+1
         if tmp==24
         {
@@ -62,7 +62,7 @@ class setTimingViewController_EN: UIViewController {
             APorPM.text="PM"
         }
     }
-    @IBAction func rightUPButton(sender: AnyObject) {
+    @IBAction func rightUPButton(_ sender: AnyObject) {
         var tmp=Int(star_mins.text!)!+1
         if tmp==60
         {
@@ -78,7 +78,7 @@ class setTimingViewController_EN: UIViewController {
         }
       
     }
-    @IBAction func leftDownButton(sender: AnyObject) {
+    @IBAction func leftDownButton(_ sender: AnyObject) {
         var tmp=Int(star_hour.text!)!-1
         if tmp == -1
         {
@@ -102,7 +102,7 @@ class setTimingViewController_EN: UIViewController {
         }
     }
     
-    @IBAction func rightDownButton(sender: AnyObject) {
+    @IBAction func rightDownButton(_ sender: AnyObject) {
         var tmp=Int(star_mins.text!)!-1
         if tmp == -1
         {
@@ -121,7 +121,7 @@ class setTimingViewController_EN: UIViewController {
     @IBOutlet var end_mins: UILabel!
     @IBOutlet var endAPorPM: UILabel!
     
-    @IBAction func endleftUPbutton(sender: AnyObject) {
+    @IBAction func endleftUPbutton(_ sender: AnyObject) {
 
         var tmp=Int(end_hour.text!)!+1
         if tmp==24
@@ -145,7 +145,7 @@ class setTimingViewController_EN: UIViewController {
             endAPorPM.text="PM"
         }
     }
-    @IBAction func endrightUPbutton(sender: AnyObject) {
+    @IBAction func endrightUPbutton(_ sender: AnyObject) {
         var tmp=Int(end_mins.text!)!+1
         if tmp==60
         {
@@ -160,7 +160,7 @@ class setTimingViewController_EN: UIViewController {
             end_mins.text="\(tmp)"
         }
     }
-    @IBAction func endleftDownbutton(sender: AnyObject) {
+    @IBAction func endleftDownbutton(_ sender: AnyObject) {
         var tmp=Int(end_hour.text!)!-1
         if tmp == -1
         {
@@ -183,7 +183,7 @@ class setTimingViewController_EN: UIViewController {
             endAPorPM.text="PM"
         }
     }
-    @IBAction func endrightDownbutton(sender: AnyObject) {
+    @IBAction func endrightDownbutton(_ sender: AnyObject) {
         var tmp=Int(end_mins.text!)!-1
         if tmp == -1
         {
@@ -215,7 +215,7 @@ class setTimingViewController_EN: UIViewController {
         selecttime.text = loadLanguage("选择周重复时间");
         
         
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .plain, target: self, action: #selector(SaveClick))
         self.navigationItem.rightBarButtonItem=savebutton
         var viewwidth:CGFloat=Screen_Width*36/375
         if viewwidth>36
@@ -226,15 +226,15 @@ class setTimingViewController_EN: UIViewController {
         for i in 1...7
         {
             let  tmpbutton=UIButton(frame: CGRect(x: spacewidth*CGFloat(i)+viewwidth*CGFloat(i-1), y: (36-viewwidth)/2, width: viewwidth, height: viewwidth))
-            tmpbutton.setTitle(arrayWeek["\(i)"], forState: .Normal)
-            tmpbutton.setTitleColor(color_select, forState: .Normal)
-            tmpbutton.backgroundColor=UIColor.whiteColor()
+            tmpbutton.setTitle(arrayWeek["\(i)"], for: UIControlState())
+            tmpbutton.setTitleColor(color_select, for: UIControlState())
+            tmpbutton.backgroundColor=UIColor.white
             tmpbutton.layer.borderWidth=1
             tmpbutton.layer.cornerRadius=viewwidth/2
             
             tmpbutton.tag=0//0未选中 1选中
-            tmpbutton.layer.borderColor=color_select.CGColor
-            tmpbutton.addTarget(self, action: #selector(weakClick), forControlEvents: .TouchUpInside)
+            tmpbutton.layer.borderColor=color_select.cgColor
+            tmpbutton.addTarget(self, action: #selector(weakClick), for: .touchUpInside)
             weakView.addSubview(tmpbutton)
             weakbuttons.append(tmpbutton)
         }
@@ -260,23 +260,23 @@ class setTimingViewController_EN: UIViewController {
         {
             if weakbuttons[i-1].tag==1
             {
-                tmpweek+=sendairWeekValue.objectForKey("\(i)") as! Int
+                tmpweek+=sendairWeekValue.object(forKey: "\(i)") as! Int
                 
             }
         }
         airPurifier_MxChip.powerTimer.week=Int32(tmpweek)
         airPurifier_MxChip.powerTimer.enable=true
-        OznerManager.instance().save(myCurrentDevice) { (error:NSError!) -> Void in
+        OznerManager.instance().save(myCurrentDevice) { (error) -> Void in
             print("保存失败！")
         }
         
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     
-    func weakClick(button:UIButton){
+    func weakClick(_ button:UIButton){
         button.tag=button.tag==0 ? 1:0
-        button.setTitleColor(button.tag==0 ? color_select:UIColor.whiteColor(), forState: .Normal)
-        button.backgroundColor=button.tag==0 ? UIColor.whiteColor():color_select
+        button.setTitleColor(button.tag==0 ? color_select:UIColor.white, for: UIControlState())
+        button.backgroundColor=button.tag==0 ? UIColor.white:color_select
     }
     
     func loadDataFromLocal() {
@@ -297,7 +297,7 @@ class setTimingViewController_EN: UIViewController {
         for i in 1...7
         {
            
-            if (Int((sendairWeekValue.objectForKey("\(i)") as! Int)^Int(weekon))) < Int(weekon)
+            if (Int((sendairWeekValue.object(forKey: "\(i)") as! Int)^Int(weekon))) < Int(weekon)
             {
                 weakClick(weakbuttons[i-1])
             }

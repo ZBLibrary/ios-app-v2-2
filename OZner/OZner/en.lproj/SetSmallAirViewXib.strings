@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Light signal for air quality"; ObjectID = "NdC-4V-0Sq"; */
+"NdC-4V-0Sq.text" = "Light signal for air quality";
+
+/* Class = "UILabel"; text = "Heavy pollution"; ObjectID = "PXJ-vy-nCW"; */
+"PXJ-vy-nCW.text" = "Heavy pollution";
+
+/* Class = "UILabel"; text = "Less pollution"; ObjectID = "cOg-QH-SbF"; */
+"cOg-QH-SbF.text" = "Less pollution";
+
+/* Class = "UIButton"; normalTitle = "Delete the device"; ObjectID = "dhx-g0-kQN"; */
+"dhx-g0-kQN.normalTitle" = "Delete the device";
+
+/* Class = "UILabel"; text = "立式空气净化器(客厅)"; ObjectID = "eZK-YO-WXb"; */
+"eZK-YO-WXb.text" = "立式空气净化器(客厅)";
+
+/* Class = "UILabel"; text = "Desk-top air purifier"; ObjectID = "fhM-vj-wCd"; */
+"fhM-vj-wCd.text" = "Desk-top air purifier";
+
+/* Class = "UILabel"; text = "Show LED ring color"; ObjectID = "ogK-zg-cA8"; */
+"ogK-zg-cA8.text" = "Show LED ring color";
+
+/* Class = "UILabel"; text = "Excellent"; ObjectID = "p6L-jJ-Bqg"; */
+"p6L-jJ-Bqg.text" = "Excellent";
+
+/* Class = "UILabel"; text = "FAQ"; ObjectID = "pIF-3N-zwb"; */
+"pIF-3N-zwb.text" = "FAQ";
+
+/* Class = "UILabel"; text = "Instruction of air purifier"; ObjectID = "vZI-pg-WX1"; */
+"vZI-pg-WX1.text" = "Instruction of air purifier";

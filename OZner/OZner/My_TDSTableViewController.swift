@@ -28,8 +28,8 @@ class My_TDSTableViewController: UITableViewController {
         super.viewDidLoad()
        
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.tableView.rowHeight = 82
         // Uncomment the following line to preserve selection between presentations
@@ -47,48 +47,48 @@ class My_TDSTableViewController: UITableViewController {
     }
     func back()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return tdsarray.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = NSBundle.mainBundle().loadNibNamed("My_Rank_TDSCell", owner: self, options: nil).last as! My_Rank_TDSCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("My_Rank_TDSCell", owner: self, options: nil)?.last as! My_Rank_TDSCell
         //加载数据
-        cell.tdsrank.text=tdsarray[indexPath.row].rank
-        cell.tdsName.text=tdsarray[indexPath.row].Nickname
-        if tdsarray[indexPath.row].Icon != ""
+        cell.tdsrank.text=tdsarray[(indexPath as NSIndexPath).row].rank
+        cell.tdsName.text=tdsarray[(indexPath as NSIndexPath).row].Nickname
+        if tdsarray[(indexPath as NSIndexPath).row].Icon != ""
         {
-            cell.tdsHeadImg.image=UIImage(data: NSData(contentsOfURL: NSURL(fileURLWithPath: tdsarray[indexPath.row].Nickname))!)
+            cell.tdsHeadImg.image=UIImage(data: try! Data(contentsOf: URL(fileURLWithPath: tdsarray[(indexPath as NSIndexPath).row].Nickname)))
         }
-        cell.tds.text=tdsarray[indexPath.row].volume
+        cell.tds.text=tdsarray[(indexPath as NSIndexPath).row].volume
         let tmpframe=cell.jinduImage.frame
         let tmpwidth=(cell.jinduImage.superview?.frame.width)!*CGFloat(Int(cell.tds.text!)!/tds_Maxzb)
         cell.jinduImage.frame=CGRect(x: 0, y: tmpframe.origin.y, width: tmpwidth, height: tmpframe.size.height)
-        cell.zancount.text=tdsarray[indexPath.row].zanCount
-        cell.zanimg.image=UIImage(named: tdsarray[indexPath.row].iszan==true ? "Rank_Zaned":"Rank_Zan")
-        cell.zanButton.addTarget(self, action: #selector(zanClick), forControlEvents: .TouchUpInside)
-        cell.zanButton.enabled = !tdsarray[indexPath.row].iszan
-        cell.zanButton.tag=indexPath.row
-        cell.selectionStyle=UITableViewCellSelectionStyle.None
+        cell.zancount.text=tdsarray[(indexPath as NSIndexPath).row].zanCount
+        cell.zanimg.image=UIImage(named: tdsarray[(indexPath as NSIndexPath).row].iszan==true ? "Rank_Zaned":"Rank_Zan")
+        cell.zanButton.addTarget(self, action: #selector(zanClick), for: .touchUpInside)
+        cell.zanButton.isEnabled = !tdsarray[(indexPath as NSIndexPath).row].iszan
+        cell.zanButton.tag=(indexPath as NSIndexPath).row
+        cell.selectionStyle=UITableViewCellSelectionStyle.none
         return cell
     }
-    func zanClick(button:UIButton)
+    func zanClick(_ button:UIButton)
     {
         let werbservice = UserInfoActionWerbService()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werbservice.LikeOtherUser(deviceTypezb, type: tdsarray[button.tag].userid, returnBlock:{ (status:StatusManager!) -> Void in
-            if status.networkStatus == kSuccessStatus
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        werbservice.likeOtherUser(deviceTypezb, type: tdsarray[button.tag].userid, return:{ (status) -> Void in
+            if status?.networkStatus == kSuccessStatus
             {
                 //let state=data.objectForKey("state") as! Int
                 //self.tdsarray[button.tag].iszan=true
@@ -99,7 +99,7 @@ class My_TDSTableViewController: UITableViewController {
                 let alert = UIAlertView(title: "", message:loadLanguage("网络不稳定，点赞失败"), delegate: self, cancelButtonTitle: "ok")
                 alert.show()
             }
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            MBProgressHUD.hide(for: self.view, animated: true)
         })
         
         
@@ -109,40 +109,41 @@ class My_TDSTableViewController: UITableViewController {
         
         print("type="+deviceTypezb+"&usertoken="+get_UserToken())
         let werbservice = UserInfoActionWerbService()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werbservice.TdsFriendRank(deviceTypezb, returnBlock: { (data:AnyObject!, status:StatusManager!) -> Void in
-            if status.networkStatus == kSuccessStatus
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        werbservice.tdsFriendRank(deviceTypezb, return: { (data1, status) -> Void in
+            if status?.networkStatus == kSuccessStatus
             {
-                if data==nil
+                if data1==nil
                 {
                     return
                 }
-                let state=data.objectForKey("state") as! Int
+                let data = data1 as AnyObject
+                let state=data.object(forKey: "state") as! Int
                 if state>0
                 {
                     
-                    let rankcount=data.objectForKey("data") as! NSMutableArray
+                    let rankcount=data.object(forKey: "data") as! NSMutableArray
                     print(rankcount)
                     for i in 0...(rankcount.count-1)
                     {
                         var rankstrut=tdsRankstruct()
                         
                         let tmprankData=rankcount[i] as! NSMutableDictionary
-                        rankstrut.rank=String(tmprankData.objectForKey("rank"))
-                        rankstrut.volume=String(tmprankData.objectForKey("volume"))
-                        rankstrut.Nickname=tmprankData.objectForKey("Nickname")?.isKindOfClass(NSNull)==true ? "" : (tmprankData.objectForKey("Nickname") as! String)
-                        rankstrut.Icon=tmprankData.objectForKey("Icon")?.isKindOfClass(NSNull)==true ? "" : (tmprankData.objectForKey("Icon") as! String)
-                        rankstrut.userid=String(tmprankData.objectForKey("userid"))
+                        rankstrut.rank=String(describing: tmprankData.object(forKey: "rank"))
+                        rankstrut.volume=String(describing: tmprankData.object(forKey: "volume"))
+                        rankstrut.Nickname=tmprankData.object(forKey: "Nickname")==nil ? "" : (tmprankData.object(forKey: "Nickname") as! String)
+                        rankstrut.Icon=tmprankData.object(forKey: "Icon")==nil ? "" : (tmprankData.object(forKey: "Icon") as! String)
+                        rankstrut.userid=String(describing: tmprankData.object(forKey: "userid"))
                         
-                        rankstrut.zanCount=String(tmprankData.objectForKey("LikeCount"))
-                        rankstrut.iszan=String(tmprankData.objectForKey("isLike"))=="1" ? true:false
+                        rankstrut.zanCount=String(describing: tmprankData.object(forKey: "LikeCount"))
+                        rankstrut.iszan=String(describing: tmprankData.object(forKey: "isLike"))=="1" ? true:false
                         
                         self.tdsarray.append(rankstrut)
                     }
                 }
                 
             }
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            MBProgressHUD.hide(for: self.view, animated: true)
 
             })
         

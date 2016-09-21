@@ -26,7 +26,7 @@ class WaterPurTDSDetailCell1_EN: UITableViewCell {
     @IBOutlet var suggestion: UILabel!
     
     //更新视图数据
-    func updateCell(tdsBefore:Int,tdsAfter:Int,friendsRank:Int)
+    func updateCell(_ tdsBefore:Int,tdsAfter:Int,friendsRank:Int)
     {
         
         //
@@ -75,14 +75,14 @@ class WaterPurTDSDetailCell1_EN: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        chatView.layer.borderColor=UIColor(red: 64/255, green: 140/255, blue: 246/255, alpha: 1).CGColor
-        chatView.hidden = !IsLoginByPhone()
+        chatView.layer.borderColor=UIColor(red: 64/255, green: 140/255, blue: 246/255, alpha: 1).cgColor
+        chatView.isHidden = !IsLoginByPhone()
        
        // rankContainer.hidden = !IsLoginByPhone()
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

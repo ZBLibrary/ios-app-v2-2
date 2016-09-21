@@ -11,19 +11,19 @@ import UIKit
 class MySuggestViewController: UIViewController,UITextViewDelegate {
 
     @IBOutlet var messCount: UILabel!
-    @IBAction func BackClick(sender: AnyObject) {
+    @IBAction func BackClick(_ sender: AnyObject) {
     
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     @IBOutlet var MessTV: UITextView!
     @IBOutlet var TiaShiButton: UIButton!
     
-    @IBAction func TiShiClick(sender: AnyObject) {
-        TiaShiButton.hidden=true
+    @IBAction func TiShiClick(_ sender: AnyObject) {
+        TiaShiButton.isHidden=true
         MessTV.becomeFirstResponder()
     }
     
-    @IBAction func OKClick(sender: AnyObject) {
+    @IBAction func OKClick(_ sender: AnyObject) {
         sendsuggest(MessTV.text)
         
     }
@@ -31,7 +31,7 @@ class MySuggestViewController: UIViewController,UITextViewDelegate {
     @IBOutlet var OKButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-      OKButton.setTitle(loadLanguage("提交"), forState: .Normal)
+      OKButton.setTitle(loadLanguage("提交"), for: UIControlState())
         MessTV.delegate=self
         self.automaticallyAdjustsScrollViewInsets = false
     
@@ -42,7 +42,7 @@ class MySuggestViewController: UIViewController,UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text=="\n" {
             //sendsuggest(MessTV.text)
             textView.resignFirstResponder()
@@ -56,26 +56,26 @@ class MySuggestViewController: UIViewController,UITextViewDelegate {
         
         return true
     }
-    func sendsuggest(msg:String)
+    func sendsuggest(_ msg:String)
     {
         if msg==""
         {return}
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let manager = AFHTTPRequestOperationManager()
         let url = StarURL_New+"/OznerServer/SubmitOpinion"
         let params:NSDictionary = ["usertoken":get_UserToken(),"message":msg]
-        manager.POST(url,
+        manager.post(url,
             parameters: params,
-            success: { (operation: AFHTTPRequestOperation!,
-                responseObject: AnyObject!) in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
+            success: { (operation,
+                responseObject) in
+                MBProgressHUD.hide(for: self.view, animated: true)
                 print(responseObject)
-                let isSuccess=responseObject.objectForKey("state") as! Int
+                let isSuccess=(responseObject as AnyObject).object(forKey: "state") as! Int
                 if isSuccess > 0
                 {
                     let successalert = UIAlertView(title: "", message:loadLanguage("意见提交成功"), delegate: self, cancelButtonTitle: "ok")
                     successalert.show()
-                    self.navigationController?.popViewControllerAnimated(true)
+                    _ = self.navigationController?.popViewController(animated: true)
                 }
                 else
                 {
@@ -84,33 +84,18 @@ class MySuggestViewController: UIViewController,UITextViewDelegate {
                 }
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
+            failure: { (operation,
+                error) in
+                MBProgressHUD.hide(for: self.view, animated: true)
                 
         })
-//        let werbservice = UserInfoActionWerbService()
-//        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//        werbservice.submitOpition(msg, returnBlock:{ (state:StatusManager!) -> Void in
-//            MBProgressHUD.hideHUDForView(self.view, animated: true)
-//            if state.networkStatus == kSuccessStatus
-//            {
-//                let successalert = UIAlertView(title: "提示", message: "意见提交成功", delegate: self, cancelButtonTitle: "ok")
-//                successalert.show()
-//                self.navigationController?.popViewControllerAnimated(true)
-//            }
-//            else
-//            {
-//                let successalert = UIAlertView(title: "提示", message: "意见提交失败，请检查网络", delegate: self, cancelButtonTitle: "ok")
-//                successalert.show()
-//            }
-//        })
+
        
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.title=loadLanguage("我要提意见")
-        self.navigationController?.navigationBarHidden=false
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        self.navigationController?.isNavigationBarHidden=false
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
         //self.tabBarController?.tabBar.hidden=true
     }
 

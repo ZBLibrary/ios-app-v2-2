@@ -9,7 +9,7 @@
 import UIKit
 
 class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAlertViewDelegate {
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -22,9 +22,9 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     var noticeName=""
     var dataPlist:NSDictionary!
     @IBOutlet var NameText: UITextField!
-    @IBAction func setNameClick(sender: AnyObject) {
-        NameText.enabled=true
-        NameText.backgroundColor=UIColor.whiteColor()
+    @IBAction func setNameClick(_ sender: AnyObject) {
+        NameText.isEnabled=true
+        NameText.backgroundColor=UIColor.white
         NameText.becomeFirstResponder()
     }
     
@@ -33,13 +33,13 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     @IBOutlet var setAdressImage1: UIImageView!
     @IBOutlet var setAdressImage2: UIImageView!
     
-    @IBAction func setAdressButton1(sender: AnyObject) {
-        setAdressImage1.hidden=false
-        setAdressImage2.hidden=true
+    @IBAction func setAdressButton1(_ sender: AnyObject) {
+        setAdressImage1.isHidden=false
+        setAdressImage2.isHidden=true
     }
-    @IBAction func setAdressButton2(sender: AnyObject) {
-        setAdressImage1.hidden=true
-        setAdressImage2.hidden=false
+    @IBAction func setAdressButton2(_ sender: AnyObject) {
+        setAdressImage1.isHidden=true
+        setAdressImage2.isHidden=false
     }
     
     @IBOutlet var Place: UILabel!
@@ -49,12 +49,12 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
         Place.text=loadLanguage("使用地点")
         //初始化控件
         initCustomView()
-        NameText.text=dataPlist.objectForKey("deviceName") as? String
+        NameText.text=dataPlist.object(forKey: "deviceName") as? String
         NameText.delegate=self
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         // Do any additional setup after loading the view.
@@ -99,27 +99,27 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
         default:
             break
         }
-        let tmpstring=dataPlist.objectForKey("deviceAttrib") as! String
-        setAdressImage1.hidden=tmpstring==textDic.objectAtIndex(0).objectAtIndex(get_CurrSelectEquip()-2) as! String ? false:true
-        setAdressImage2.hidden=tmpstring==textDic.objectAtIndex(0).objectAtIndex(get_CurrSelectEquip()-2) as! String ? true:false
+        let tmpstring=dataPlist.object(forKey: "deviceAttrib") as! String
+        setAdressImage1.isHidden=tmpstring==(textDic.object(at: 0) as AnyObject).object(at: get_CurrSelectEquip()-2) as! String ? false:true
+        setAdressImage2.isHidden=tmpstring==(textDic.object(at: 0) as AnyObject).object(at: get_CurrSelectEquip()-2) as! String ? true:false
     }
     //返回
     func back(){
-        if (dataPlist.objectForKey("deviceName") as? String) != NameText.text!+"("+(setAdressImage1.hidden==false ? textDic.objectAtIndex(0).objectAtIndex(get_CurrSelectEquip()-2) as! String:textDic.objectAtIndex(1).objectAtIndex(get_CurrSelectEquip()-2) as! String)+")"
+        if (dataPlist.object(forKey: "deviceName") as? String) != NameText.text!+"("+(setAdressImage1.isHidden==false ? (textDic.object(at: 0) as AnyObject).object(at: get_CurrSelectEquip()-2) as! String:(textDic.object(at: 1) as AnyObject).object(at: get_CurrSelectEquip()-2) as! String)+")"
         {
             let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
             alert.show()
         }
         else
         {
-            self.navigationController?.popViewControllerAnimated(true)
+            _=self.navigationController?.popViewController(animated: true)
         }
     }
     //alert 点击事件
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if buttonIndex==0
         {
-            self.navigationController?.popViewControllerAnimated(true)
+            _=self.navigationController?.popViewController(animated: true)
         }
         else
         {
@@ -129,17 +129,17 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     //保存
     func SaveClick()
     {
-        let attrtmp=setAdressImage1.hidden==false ? (textDic.objectAtIndex(0).objectAtIndex(get_CurrSelectEquip()-2) as! String):(textDic.objectAtIndex(1).objectAtIndex(get_CurrSelectEquip()-2) as! String)
-        NSNotificationCenter.defaultCenter().postNotificationName(noticeName, object: nil, userInfo: ["name":NameText.text!,"attr":attrtmp])
-        self.navigationController?.popViewControllerAnimated(true)
+        let attrtmp=setAdressImage1.isHidden==false ? ((textDic.object(at: 0) as AnyObject).object(at: get_CurrSelectEquip()-2) as! String):((textDic.object(at: 1) as AnyObject).object(at: get_CurrSelectEquip()-2) as! String)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: noticeName), object: nil, userInfo: ["name":NameText.text!,"attr":attrtmp])
+        _=self.navigationController?.popViewController(animated: true)
     }
     
     
     //系统委托方法
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        textField.backgroundColor=UIColor.clearColor()
-        textField.enabled=false
+        textField.backgroundColor=UIColor.clear
+        textField.isEnabled=false
         return true
     }
     
@@ -149,11 +149,11 @@ class setDeviceNameViewController_EN: UIViewController,UITextFieldDelegate,UIAle
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden=false
+        self.navigationController?.isNavigationBarHidden=false
         self.navigationController?.navigationBar.barTintColor=UIColor(red: 248/255, green: 249/255, blue: 250/255, alpha: 1)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     /*
      // MARK: - Navigation

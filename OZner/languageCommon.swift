@@ -8,12 +8,12 @@
 
 import Foundation
 
-func loadLanguage(text:String)->String
+func loadLanguage(_ text:String)->String
 {
     return NSLocalizedString(text, comment: "")
 }
 //是否是手机号登录
 func IsLoginByPhone() -> Bool {
-    return (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone)
+    return (UserDefaults.standard.object(forKey: CURRENT_LOGIN_STYLE) as! NSString).isEqual(to: LoginByPhone)
 }
         

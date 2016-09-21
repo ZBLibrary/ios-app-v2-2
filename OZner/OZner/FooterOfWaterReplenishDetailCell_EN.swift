@@ -13,7 +13,7 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
     @IBOutlet weak var organLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var chartContainerView: UIView!
-    @IBAction func segmentValueChanged(sender: UISegmentedControl) {
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         drawChartView(sender.selectedSegmentIndex)
     }
     @IBOutlet weak var toWhatWater: UIButton!
@@ -35,10 +35,10 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
      - parameter organ: 当前器官
      */
     
-    func setCurrentOrgan(organ: Int) {
+    func setCurrentOrgan(_ organ: Int) {
         currentOrgan=organ
     }
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
@@ -56,7 +56,7 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
 //    {
 //        currentOrgan=Organ
 //    }
-    private var currentOrgan = -1 {
+    fileprivate var currentOrgan = -1 {
         didSet{
             
             if currentOrgan==oldValue||currentOrgan<0||currentOrgan>3
@@ -70,8 +70,8 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
         }
     }
     //key:"0",脸，key:"1",眼，key:"2",手，key:"3",颈
-    private var weekArray=NSMutableDictionary()
-    private var monthArray=NSMutableDictionary()
+    fileprivate var weekArray=NSMutableDictionary()
+    fileprivate var monthArray=NSMutableDictionary()
     /**
      初始化时，传入器官和周月数据
      
@@ -79,7 +79,7 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
      - parameter monthArr: 月数据
      - parameter Organ:    器官对应得数字
      */
-    func updateCellData(weekArr:NSMutableDictionary,monthArr:NSMutableDictionary,Organ:Int)
+    func updateCellData(_ weekArr:NSMutableDictionary,monthArr:NSMutableDictionary,Organ:Int)
     {
         weekArray=weekArr
         monthArray=monthArr
@@ -91,14 +91,14 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
      绘制折线图
      - parameter dateType: 0 周，1 月
      */
-    private func drawChartView(dateType:Int)
+    fileprivate func drawChartView(_ dateType:Int)
     {
         for view in chartContainerView.subviews
         {
             view.removeFromSuperview()
         }
-        let tmpWeek = weekArray.objectForKey("\(currentOrgan)") ?? [AnyObject]()
-        let tmpMonth = monthArray.objectForKey("\(currentOrgan)") ?? [AnyObject]()
+        let tmpWeek = weekArray.object(forKey: "\(currentOrgan)") ?? [AnyObject]()
+        let tmpMonth = monthArray.object(forKey: "\(currentOrgan)") ?? [AnyObject]()
         let tmpArr =  dateType==0 ? tmpWeek:tmpMonth
         
         let lineView=waterReplenishChartView_EN()

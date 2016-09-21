@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "空气质量灯光提醒"; ObjectID = "NdC-4V-0Sq"; */
+"NdC-4V-0Sq.text" = "空气质量灯光提醒";
+
+/* Class = "UILabel"; text = "污染严重"; ObjectID = "PXJ-vy-nCW"; */
+"PXJ-vy-nCW.text" = "污染严重";
+
+/* Class = "UILabel"; text = "污染较少"; ObjectID = "cOg-QH-SbF"; */
+"cOg-QH-SbF.text" = "污染较少";
+
+/* Class = "UIButton"; normalTitle = "删除此设备"; ObjectID = "dhx-g0-kQN"; */
+"dhx-g0-kQN.normalTitle" = "删除此设备";
+
+/* Class = "UILabel"; text = "立式空气净化器(客厅)"; ObjectID = "eZK-YO-WXb"; */
+"eZK-YO-WXb.text" = "立式空气净化器(客厅)";
+
+/* Class = "UILabel"; text = "立式空气净化器"; ObjectID = "fhM-vj-wCd"; */
+"fhM-vj-wCd.text" = "立式空气净化器";
+
+/* Class = "UILabel"; text = "显示灯带颜色"; ObjectID = "ogK-zg-cA8"; */
+"ogK-zg-cA8.text" = "显示灯带颜色";
+
+/* Class = "UILabel"; text = "优"; ObjectID = "p6L-jJ-Bqg"; */
+"p6L-jJ-Bqg.text" = "优";
+
+/* Class = "UILabel"; text = "常见问题"; ObjectID = "pIF-3N-zwb"; */
+"pIF-3N-zwb.text" = "常见问题";
+
+/* Class = "UILabel"; text = "空气净化器使用说明"; ObjectID = "vZI-pg-WX1"; */
+"vZI-pg-WX1.text" = "空气净化器使用说明";

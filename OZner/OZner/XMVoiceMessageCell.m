@@ -123,7 +123,7 @@
 - (void)setMessage:(XMMessage *)message{
     XMVoiceMessage *voiceMessage = (XMVoiceMessage *)message;
     
-    [self.voiceSecondsLabel setText:[NSString stringWithFormat:@"%ld''",voiceMessage.voiceSeconds]];
+    [self.voiceSecondsLabel setText:[NSString stringWithFormat:@"%ld''",(unsigned long)voiceMessage.voiceSeconds]];
     if (voiceMessage.messageOwner == XMMessageOwnerTypeOther) {
         [self.voiceStateImageView setImage:[UIImage imageNamed:@"message_voice_receiver_normal"]];
     }else if (voiceMessage.messageOwner == XMMessageOwnerTypeSelf){
@@ -151,10 +151,10 @@
                         currentFrame = 1;
                     }
                     if (wself.message.messageOwner == XMMessageOwnerTypeSelf) {
-                        wself.voiceStateImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"message_voice_sender_playing_%ld",currentFrame]];
+                        wself.voiceStateImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"message_voice_sender_playing_%ld",(unsigned long)currentFrame]];
                     }
                     else if (wself.message.messageOwner == XMMessageOwnerTypeOther) {
-                        wself.voiceStateImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"message_voice_receiver_playing_%ld",currentFrame]];
+                        wself.voiceStateImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"message_voice_receiver_playing_%ld",(unsigned long)currentFrame]];
                     }
                     currentFrame++;
                 }

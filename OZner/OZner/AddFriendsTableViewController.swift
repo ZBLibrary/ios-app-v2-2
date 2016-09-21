@@ -9,6 +9,35 @@
 import UIKit
 import AddressBook
 import AddressBookUI
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 //添加好友
 struct myFriend {
     var isExist=false
@@ -31,18 +60,18 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         super.viewDidLoad()
         self.title=loadLanguage("添加好友")
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.tableView.rowHeight = 44
         //headerview
         //self.tableView.sectionHeaderHeight=49
         
-        tabelHeaderView = NSBundle.mainBundle().loadNibNamed("FriendSearch", owner: self, options: nil).last as! FriendSearch
-        tabelHeaderView.searchButton.addTarget(self, action: #selector(SearchPhone), forControlEvents: .TouchUpInside)
+        tabelHeaderView = Bundle.main.loadNibNamed("FriendSearch", owner: self, options: nil)?.last as! FriendSearch
+        tabelHeaderView.searchButton.addTarget(self, action: #selector(SearchPhone), for: .touchUpInside)
         tabelHeaderView.SearchTextFD.delegate=self
         self.tableView.tableHeaderView=tabelHeaderView
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addfriendSuccess), name: "sendAddFriendMesSuccess", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addfriendSuccess), name: NSNotification.Name(rawValue: "sendAddFriendMesSuccess"), object: nil)
         
         Tongxunlu()
     }
@@ -57,17 +86,17 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         Tongxunlu()
 
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     func back()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,29 +105,29 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionview=UIView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: 49))
         sectionview.backgroundColor=UIColor(red: 240/255, green: 241/255, blue: 242/255, alpha: 1)
         let sectionlabel=UILabel(frame: CGRect(x: 15, y: 24, width: 100, height: 12))
-        sectionlabel.textAlignment=NSTextAlignment.Left
+        sectionlabel.textAlignment=NSTextAlignment.left
         sectionlabel.text=section==0 ? loadLanguage("搜索结果" ):loadLanguage("通讯录好友")
-        sectionlabel.font=UIFont.systemFontOfSize(12)
+        sectionlabel.font=UIFont.systemFont(ofSize: 12)
         sectionlabel.textColor=UIColor(red: 135/255, green: 136/255, blue: 137/255, alpha: 1)
         sectionview.addSubview(sectionlabel)
         return sectionview
     }
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section==0&&self.seachResult.isExist==false
         {
             return 0
         }
         return 49
     }
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section==0&&self.seachResult.isExist==false
         {
@@ -117,41 +146,41 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = NSBundle.mainBundle().loadNibNamed("AddFriendTableViewCell", owner: self, options: nil).last as! AddFriendTableViewCell
-        cell.AddFriendButton.addTarget(self, action: #selector(toAddFriend), forControlEvents: .TouchUpInside)
+        let cell = Bundle.main.loadNibNamed("AddFriendTableViewCell", owner: self, options: nil)?.last as! AddFriendTableViewCell
+        cell.AddFriendButton.addTarget(self, action: #selector(toAddFriend), for: .touchUpInside)
         // Configure the cell...
-        cell.selectionStyle=UITableViewCellSelectionStyle.None
-        cell.AddFriendButton.tag=indexPath.section+indexPath.row
-        if indexPath.section==0
+        cell.selectionStyle=UITableViewCellSelectionStyle.none
+        cell.AddFriendButton.tag=(indexPath as NSIndexPath).section+(indexPath as NSIndexPath).row
+        if (indexPath as NSIndexPath).section==0
         {
             if seachResult.isExist==true
             {
                 switch (seachResult.status)
                 {
                 case 0:
-                    cell.AddFriendButton.enabled=true
-                    cell.AddFriendButton.setTitle(loadLanguage("添加"), forState: .Normal)
+                    cell.AddFriendButton.isEnabled=true
+                    cell.AddFriendButton.setTitle(loadLanguage("添加"), for: UIControlState())
                     break
                 case 1:
-                    cell.AddFriendButton.enabled=false
-                    cell.AddFriendButton.setTitle(loadLanguage("已发送"), forState: .Normal)
-                    cell.AddFriendButton.backgroundColor=UIColor.clearColor()
-                    cell.AddFriendButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+                    cell.AddFriendButton.isEnabled=false
+                    cell.AddFriendButton.setTitle(loadLanguage("已发送"), for: UIControlState())
+                    cell.AddFriendButton.backgroundColor=UIColor.clear
+                    cell.AddFriendButton.setTitleColor(UIColor.gray, for: UIControlState())
                     break
                 case 2:
-                    cell.AddFriendButton.enabled=false
-                    cell.AddFriendButton.setTitle(loadLanguage("已添加"), forState: .Normal)
-                    cell.AddFriendButton.backgroundColor=UIColor.clearColor()
-                    cell.AddFriendButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+                    cell.AddFriendButton.isEnabled=false
+                    cell.AddFriendButton.setTitle(loadLanguage("已添加"), for: UIControlState())
+                    cell.AddFriendButton.backgroundColor=UIColor.clear
+                    cell.AddFriendButton.setTitleColor(UIColor.gray, for: UIControlState())
                     break
                 default:
                     break
                     
                 }
                 
-                cell.headImage.image=seachResult.imgUrl=="" ? UIImage(named: "DefaultHeadImage") : UIImage(data: NSData(contentsOfURL: NSURL(string: seachResult.imgUrl)!)!)
+                cell.headImage.image=seachResult.imgUrl=="" ? UIImage(named: "DefaultHeadImage") : UIImage(data: try! Data(contentsOf: URL(string: seachResult.imgUrl)!))
                 cell.Name.text=seachResult.Name
             }
             
@@ -159,36 +188,36 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         }
         else
         {
-            switch (bookPhone[indexPath.row].status)
+            switch (bookPhone[(indexPath as NSIndexPath).row].status)
             {
             case 0:
-                cell.AddFriendButton.enabled=true
-                cell.AddFriendButton.setTitle(loadLanguage("添加"), forState: .Normal)
+                cell.AddFriendButton.isEnabled=true
+                cell.AddFriendButton.setTitle(loadLanguage("添加"), for: UIControlState())
                 break
             case 1:
-                cell.AddFriendButton.enabled=false
-                cell.AddFriendButton.setTitle(loadLanguage("已发送"), forState: .Normal)
-                cell.AddFriendButton.backgroundColor=UIColor.clearColor()
-                cell.AddFriendButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+                cell.AddFriendButton.isEnabled=false
+                cell.AddFriendButton.setTitle(loadLanguage("已发送"), for: UIControlState())
+                cell.AddFriendButton.backgroundColor=UIColor.clear
+                cell.AddFriendButton.setTitleColor(UIColor.gray, for: UIControlState())
                 break
             case 2:
-                cell.AddFriendButton.enabled=false
-                cell.AddFriendButton.setTitle(loadLanguage("已添加"), forState: .Normal)
-                cell.AddFriendButton.backgroundColor=UIColor.clearColor()
-                cell.AddFriendButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+                cell.AddFriendButton.isEnabled=false
+                cell.AddFriendButton.setTitle(loadLanguage("已添加"), for: UIControlState())
+                cell.AddFriendButton.backgroundColor=UIColor.clear
+                cell.AddFriendButton.setTitleColor(UIColor.gray, for: UIControlState())
                 break
             default:
                 break
                 
             }
             
-            cell.headImage.image=bookPhone[indexPath.row].imgUrl=="" ? UIImage(named: "DefaultHeadImage") : UIImage(data: NSData(contentsOfURL: NSURL(string: bookPhone[indexPath.row].imgUrl)!)!)
-            cell.Name.text=bookPhone[indexPath.row].Name
+            cell.headImage.image=bookPhone[(indexPath as NSIndexPath).row].imgUrl=="" ? UIImage(named: "DefaultHeadImage") : UIImage(data: try! Data(contentsOf: URL(string: bookPhone[(indexPath as NSIndexPath).row].imgUrl)!))
+            cell.Name.text=bookPhone[(indexPath as NSIndexPath).row].Name
         }
         return cell
     }
     
-    func toAddFriend(button:UIButton)
+    func toAddFriend(_ button:UIButton)
     {
         if button.tag==0
         {
@@ -197,7 +226,7 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         else{
             sendPhone=bookPhone[button.tag-1].phone
         }
-        self.performSegueWithIdentifier("showSendYanZH", sender: self)
+        self.performSegue(withIdentifier: "showSendYanZH", sender: self)
     }
     
     /*
@@ -239,10 +268,10 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier=="showSendYanZH"
         {
-            let page=segue.destinationViewController as! SendYanZHViewController
+            let page=segue.destination as! SendYanZHViewController
             page.sendphone=sendPhone
         }
         // Get the new view controller using segue.destinationViewController.
@@ -262,20 +291,20 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
             return
         }
         let werbservice = MyInfoWerbservice()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werbservice.getUserNickImage([phonestr], returnBlock: { (responseObject:NSMutableDictionary!,statusManager: StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        werbservice.getUserNickImage([phonestr], return: { (responseObject,statusManager) -> Void in
+            MBProgressHUD.hide(for: self.view, animated: true)
                 self.seachResult.phone=phonestr
-                if statusManager.networkStatus==kSuccessStatus
+                if statusManager?.networkStatus==kSuccessStatus
                 {
-                        let state=responseObject.objectForKey("state") as? Int
+                        let state=responseObject?.object(forKey: "state") as? Int
                     print(responseObject)
                         if state>0
                         {
                             
-                            let friend=responseObject.objectForKey("data")?.objectAtIndex(0)
+                            let friend=(responseObject?.object(forKey: "data") as AnyObject).object(at: 0) as AnyObject
                             self.seachResult.isExist=true
-                            self.seachResult.status=friend?.objectForKey("Status") as! Int
+                            self.seachResult.status=friend.object(forKey: "Status") as! Int
                             if self.seachResult.status == -10013
                             {
                                 self.seachResult.isExist=false
@@ -283,10 +312,10 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
                             }
                             else
                             {
-                                self.seachResult.phone=friend?.objectForKey("mobile") as! String
+                                self.seachResult.phone=friend.object(forKey: "mobile") as! String
                                 
-                                self.seachResult.imgUrl=friend?.objectForKey("headimg") as! String
-                            self.seachResult.Name=friend?.objectForKey("nickname") as! String
+                                self.seachResult.imgUrl=friend.object(forKey: "headimg") as! String
+                            self.seachResult.Name=friend.object(forKey: "nickname") as! String
                                 self.seachResult.Name=self.seachResult.Name.characters.count==0 ? self.seachResult.phone: self.seachResult.Name
                             }
                             self.tableView.reloadData()
@@ -323,37 +352,38 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
            getTXFriends(friendsString)
         }
     }
-    func getTXFriends(TXLfriends:String){
+    func getTXFriends(_ TXLfriends:String){
         if TXLfriends==""
         {
             return
         }
         let werbservice = MyInfoWerbservice()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        werbservice.getUserNickImage([TXLfriends], returnBlock: { [weak self](responseObject:NSMutableDictionary!,statusManager: StatusManager!) -> Void in
+        werbservice.getUserNickImage([TXLfriends], return: { [weak self](responseObject,statusManager) -> Void in
             
             if let strongSelf=self{
-                MBProgressHUD.hideHUDForView(strongSelf.view, animated: true)
-                if statusManager.networkStatus==kSuccessStatus
+                MBProgressHUD.hide(for: strongSelf.view, animated: true)
+                if statusManager?.networkStatus==kSuccessStatus
                 {
-                    let state=responseObject.objectForKey("state") as! Int
+                    let state=responseObject?.object(forKey: "state") as! Int
                     if state>0
                     {
                         
-                        let friends=responseObject.objectForKey("data") as! NSMutableArray
+                        let friends=responseObject?.object(forKey: "data") as! NSMutableArray
                         for i in 0...(friends.count-1)
                         {
                             var friendtmp=myFriend()
                             friendtmp.isExist=true
-                            friendtmp.status=friends[i].objectForKey("Status") as! Int
+                            let friendData=friends[i] as AnyObject
+                            friendtmp.status=friendData.object(forKey: "Status") as! Int
                             if (friendtmp.status+10014)==0
                             {
                                 continue
                             }
-                            friendtmp.imgUrl=friends[i].objectForKey("headimg") as! String
-                            friendtmp.Name=friends[i].objectForKey("nickname") as! String
-                            friendtmp.phone=friends[i].objectForKey("mobile") as! String
+                            friendtmp.imgUrl=friendData.object(forKey: "headimg") as! String
+                            friendtmp.Name=friendData.object(forKey: "nickname") as! String
+                            friendtmp.phone=friendData.object(forKey: "mobile") as! String
                             
                             friendtmp.Name=friendtmp.Name.characters.count==0 ? friendtmp.phone: friendtmp.Name
                             
@@ -373,16 +403,16 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
     //查找联系人
     
     func getSysContacts() -> [String] {
-        enum MyError: ErrorType {
-            case NotExist
-            case OutOfRange
+        enum MyError: Error {
+            case notExist
+            case outOfRange
         }
-        var addressBook: ABAddressBookRef?
+        var addressBook: ABAddressBook?
         var error:Unmanaged<CFError>?
         let tmpaddress =  ABAddressBookCreateWithOptions(nil, &error)
         if tmpaddress != nil
         {
-            addressBook=tmpaddress.takeRetainedValue()
+            addressBook=tmpaddress?.takeRetainedValue()
         }
         else
         {
@@ -395,31 +425,31 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         
         let sysAddressBookStatus = ABAddressBookGetAuthorizationStatus()
         
-        if sysAddressBookStatus == .Denied || sysAddressBookStatus == .NotDetermined {
+        if sysAddressBookStatus == .denied || sysAddressBookStatus == .notDetermined {
             // Need to ask for authorization
-            let authorizedSingal:dispatch_semaphore_t = dispatch_semaphore_create(0)
+            let authorizedSingal:DispatchSemaphore = DispatchSemaphore(value: 0)
             let askAuthorization:ABAddressBookRequestAccessCompletionHandler = { success, error in
                 if success {
-                    ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue() as NSArray
-                    dispatch_semaphore_signal(authorizedSingal)
+                    _=ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
+                    _=authorizedSingal.signal()
                 }
             }
             ABAddressBookRequestAccessWithCompletion(addressBook, askAuthorization)
-            dispatch_semaphore_wait(authorizedSingal, DISPATCH_TIME_FOREVER)
+            _=authorizedSingal.wait(timeout: DispatchTime.distantFuture)
         }
         
         return analyzeSysContacts( ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue() as NSArray )
     }
     
-    func analyzeSysContacts(sysContacts:NSArray) -> [String] {
+    func analyzeSysContacts(_ sysContacts:NSArray) -> [String] {
         var allContacts:Array = [String]()
         for contact in sysContacts {
-            for (_, value) in analyzeContactProperty(contact, property: kABPersonPhoneProperty,keySuffix: "Phone") ?? ["":""] {
+            for (_, value) in analyzeContactProperty(contact as ABRecord, property: kABPersonPhoneProperty,keySuffix: "Phone") ?? ["":""] {
                 //print(value)
-                var tmpvalue=value.stringByReplacingOccurrencesOfString("-", withString: "")
-                tmpvalue=tmpvalue.stringByReplacingOccurrencesOfString(" ", withString: "")
+                var tmpvalue=value.replacingOccurrences(of: "-", with: "")
+                tmpvalue=tmpvalue.replacingOccurrences(of: " ", with: "")
                 
-                if checkTel(tmpvalue)
+                if checkTel(tmpvalue as NSString)
                 {
                     allContacts.append(tmpvalue)
                 }
@@ -428,8 +458,8 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
         return allContacts
     }
     
-    func analyzeContactProperty(contact:ABRecordRef, property:ABPropertyID, keySuffix:String) -> [String:String]? {
-        let propertyValues:ABMultiValueRef? = ABRecordCopyValue(contact, property)?.takeRetainedValue()
+    func analyzeContactProperty(_ contact:ABRecord, property:ABPropertyID, keySuffix:String) -> [String:String]? {
+        let propertyValues:ABMultiValue? = ABRecordCopyValue(contact, property)?.takeRetainedValue()
         if propertyValues != nil {
             //var values:NSMutableArray = NSMutableArray()
             var valueDictionary:Dictionary = [String:String]()
@@ -444,7 +474,7 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
                 switch property {
                     
                 default :
-                    valueDictionary[label] = value.takeRetainedValue() as? String ?? ""
+                    valueDictionary[label] = value?.takeRetainedValue() as? String ?? ""
                 }
             }
             return valueDictionary

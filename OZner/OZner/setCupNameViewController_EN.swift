@@ -10,7 +10,7 @@ import UIKit
 
 class setCupNameViewController_EN: UIViewController,UITextFieldDelegate {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -23,46 +23,46 @@ class setCupNameViewController_EN: UIViewController,UITextFieldDelegate {
     }
     var currentSelected:Int!
     @IBOutlet var CupName: UITextField!
-    @IBAction func EditName(sender: UIButton) {
-        CupName.enabled=true
-        CupName.backgroundColor=UIColor.whiteColor()
+    @IBAction func EditName(_ sender: UIButton) {
+        CupName.isEnabled=true
+        CupName.backgroundColor=UIColor.white
     }
     @IBOutlet var mycupimage: UIImageView!
     @IBOutlet var familycupimage: UIImageView!
     @IBOutlet var friendcupimage: UIImageView!
-    @IBAction func mycupclick(sender: AnyObject) {
+    @IBAction func mycupclick(_ sender: AnyObject) {
         currentSelected=0
         selectWhitch()
     }
     
-    @IBAction func familycupclick(sender: AnyObject) {
+    @IBAction func familycupclick(_ sender: AnyObject) {
         currentSelected=1
         selectWhitch()
     }
-    @IBAction func friendcupclick(sender: AnyObject) {
+    @IBAction func friendcupclick(_ sender: AnyObject) {
         currentSelected=2
         selectWhitch()
     }
     func selectWhitch()
     {
-        mycupimage.hidden=currentSelected==0 ? false:true
-        familycupimage.hidden=currentSelected==1 ? false:true
-        friendcupimage.hidden=currentSelected==2 ? false:true
+        mycupimage.isHidden=currentSelected==0 ? false:true
+        familycupimage.isHidden=currentSelected==1 ? false:true
+        friendcupimage.isHidden=currentSelected==2 ? false:true
     }
     
     @IBOutlet var Attribute: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
        Attribute.text=loadLanguage("属性")
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
     
         CupName.delegate=self
-        CupName.enabled=false
+        CupName.isEnabled=false
         CupName.text=setCupStructdata["cup_name"] as? String
         if (setCupStructdata["cup_Attrib"] as? String)=="我的水杯"
         {
@@ -81,7 +81,7 @@ class setCupNameViewController_EN: UIViewController,UITextFieldDelegate {
 
     //返回
     func back(){
-        self.navigationController?.popViewControllerAnimated(true)
+        _=self.navigationController?.popViewController(animated: true)
     }
     func SaveClick()
     {
@@ -97,7 +97,7 @@ class setCupNameViewController_EN: UIViewController,UITextFieldDelegate {
         {
             setCupStructdata["cup_Attrib"] = "朋友水杯"
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        _=self.navigationController?.popViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -105,9 +105,9 @@ class setCupNameViewController_EN: UIViewController,UITextFieldDelegate {
     }
     
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        textField.enabled=false
+        textField.isEnabled=false
         textField.backgroundColor=UIColor(red: 234/255, green: 234/255, blue: 243/255, alpha: 1)
         return true
     }
@@ -120,11 +120,11 @@ class setCupNameViewController_EN: UIViewController,UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title=loadLanguage("设备名称")
         self.navigationController?.navigationBar.barTintColor=UIColor(red: 248/255, green: 249/255, blue: 250/255, alpha: 1)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
 
 }

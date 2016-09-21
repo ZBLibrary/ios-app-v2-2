@@ -23,7 +23,7 @@ class My_MainView_EN: UIView {
     
     @IBOutlet weak var SetLable: UILabel!
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         MyEquidsLable .text=loadLanguage("我的设备")
         

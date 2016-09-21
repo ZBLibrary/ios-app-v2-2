@@ -12,12 +12,12 @@ class SetMeterViewController: UIViewController {
 
     var Temperature=0
     var WaterMeter=0
-    @IBAction func Back(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func Back(_ sender: AnyObject) {
+        _=self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func Save(sender: AnyObject) {
+    @IBAction func Save(_ sender: AnyObject) {
         set_MyInfoSet(Temperature, WaterMeter: WaterMeter)
-        self.navigationController?.popViewControllerAnimated(true)
+        _=self.navigationController?.popViewController(animated: true)
     }
    
     
@@ -27,32 +27,32 @@ class SetMeterViewController: UIViewController {
     @IBOutlet var DanWei4: UIImageView!
     @IBOutlet var DanWei5: UIImageView!
     
-    @IBAction func DanWeiClick(sender: AnyObject) {
-        DanWe1.hidden=false
-        DanWei2.hidden=true
+    @IBAction func DanWeiClick(_ sender: AnyObject) {
+        DanWe1.isHidden=false
+        DanWei2.isHidden=true
         Temperature=0
     }
-    @IBAction func DanWei2Click(sender: AnyObject) {
-        DanWe1.hidden=true
-        DanWei2.hidden=false
+    @IBAction func DanWei2Click(_ sender: AnyObject) {
+        DanWe1.isHidden=true
+        DanWei2.isHidden=false
         Temperature=1
     }
-    @IBAction func DanWei3Click(sender: AnyObject) {
-        DanWei3.hidden=false
-        DanWei4.hidden=true
-        DanWei5.hidden=true
+    @IBAction func DanWei3Click(_ sender: AnyObject) {
+        DanWei3.isHidden=false
+        DanWei4.isHidden=true
+        DanWei5.isHidden=true
         WaterMeter=0
     }
-    @IBAction func DanWei4Click(sender: AnyObject) {
-        DanWei3.hidden=true
-        DanWei4.hidden=false
-        DanWei5.hidden=true
+    @IBAction func DanWei4Click(_ sender: AnyObject) {
+        DanWei3.isHidden=true
+        DanWei4.isHidden=false
+        DanWei5.isHidden=true
         WaterMeter=1
     }
-    @IBAction func DanWei5Click(sender: AnyObject) {
-        DanWei3.hidden=true
-        DanWei4.hidden=true
-        DanWei5.hidden=false
+    @IBAction func DanWei5Click(_ sender: AnyObject) {
+        DanWei3.isHidden=true
+        DanWei4.isHidden=true
+        DanWei5.isHidden=false
         WaterMeter=2
     }
     
@@ -75,31 +75,31 @@ class SetMeterViewController: UIViewController {
       DLLable.text=loadLanguage("分升")
       OZLable.text=loadLanguage("盅司" )
         
-        DanWe1.hidden=true
-        DanWei2.hidden=true
-        DanWei3.hidden=true
-        DanWei4.hidden=true
-        DanWei5.hidden=true
+        DanWe1.isHidden=true
+        DanWei2.isHidden=true
+        DanWei3.isHidden=true
+        DanWei4.isHidden=true
+        DanWei5.isHidden=true
         (Temperature,WaterMeter)=get_MyInfoSet()
         if Temperature==0
         {
-            DanWe1.hidden=false
+            DanWe1.isHidden=false
         }
         else
         {
-            DanWei2.hidden=false
+            DanWei2.isHidden=false
         }
         if WaterMeter==0
         {
-            DanWei3.hidden=false
+            DanWei3.isHidden=false
         }
         else if WaterMeter==1
         {
-            DanWei4.hidden=false
+            DanWei4.isHidden=false
         }
         else
         {
-            DanWei5.hidden=false
+            DanWei5.isHidden=false
         }
         // Do any additional setup after loading the view.
     }
@@ -111,9 +111,9 @@ class SetMeterViewController: UIViewController {
     }
     
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     
     /*

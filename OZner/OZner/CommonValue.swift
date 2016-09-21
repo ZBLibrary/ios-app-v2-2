@@ -20,7 +20,7 @@ let color_black=UIColor(red: 98/255, green: 98/255, blue: 98/255, alpha: 1)
 
 //RGB
 let color_BT_bg_ed=UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
-func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat)->UIColor {
+func RGBA (_ r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat)->UIColor {
     return UIColor (red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
 }
 //颜色转化
@@ -40,9 +40,9 @@ func UIColorFromRGB(rgbValue: UInt) -> UIColor {
 //maxWater:Int
 class getshareImageClass:NSObject
 {
-    func getshareImagezb(rank:Int,type:Int,value:Int,beat:Int,maxWater:Int)->UIImage
+    func getshareImagezb(_ rank:Int,type:Int,value:Int,beat:Int,maxWater:Int)->UIImage
     {
-        let shareView=NSBundle.mainBundle().loadNibNamed("ShareView_zb_EN", owner: nil, options: nil).last as! ShareView_zb_EN
+        let shareView=Bundle.main.loadNibNamed("ShareView_zb_EN", owner: nil, options: nil)?.last as! ShareView_zb_EN
         shareView.share_rank.text="\(loadLanguage("排名"))\(rank==0 ? 1:rank)"
         shareView.share_title.text=type==0 ? loadLanguage("当前饮水量为"):loadLanguage("当前水质纯净值为")
         shareView.share_value.text="\(value)"+(type==0 ? "ml":"")
@@ -89,9 +89,9 @@ class getshareImageClass:NSObject
         if myinfo.count>0
         {
             
-            let  imgUrl=myinfo.objectForKey("headimg") as! String
-            shareView.share_OwnerImage.image=imgUrl=="" ? UIImage(named: "shareOwnerimg"):UIImage(data: NSData(contentsOfURL: NSURL(string: imgUrl)!)!)
-            shareView.share_OwnerName.text=myinfo.objectForKey("nickname") as? String
+            let  imgUrl=myinfo.object(forKey: "headimg") as! String
+            shareView.share_OwnerImage.image=imgUrl=="" ? UIImage(named: "shareOwnerimg"):UIImage(data: try! Data(contentsOf: URL(string: imgUrl)!))
+            shareView.share_OwnerName.text=myinfo.object(forKey: "nickname") as? String
             if shareView.share_OwnerName.text==""
             {
                 shareView.share_OwnerName.text=loadLanguage("浩小泽")
@@ -103,10 +103,10 @@ class getshareImageClass:NSObject
             shareView.share_OwnerName.text = loadLanguage("浩小泽")
         }
         UIGraphicsBeginImageContext(shareView.bounds.size)//  (myView.bounds.size);
-        shareView.layer.renderInContext(UIGraphicsGetCurrentContext()!) //[myView.layer renderInContext:UIGraphicsGetCurrentContext()];
+        shareView.layer.render(in: UIGraphicsGetCurrentContext()!) //[myView.layer renderInContext:UIGraphicsGetCurrentContext()];
         let viewImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return viewImage
+        return viewImage!
     }
 
 }
@@ -123,52 +123,54 @@ let NavigationBar_HEIGHT=64
 let TabBar_HEIGHT=49
 
 //获取屏幕 宽度、高度
-let SCREEN_WIDTH:CGFloat=(UIScreen.mainScreen().bounds.size.width)
-let SCREEN_HEIGHT:CGFloat=(UIScreen.mainScreen().bounds.size.height)
+let SCREEN_WIDTH:CGFloat=(UIScreen.main.bounds.size.width)
+let SCREEN_HEIGHT:CGFloat=(UIScreen.main.bounds.size.height)
 
-func dateStampToString(timeStamp:NSString,format:String)->NSString {
+func dateStampToString(_ timeStamp:String,format:String)->NSString {
     //print(timeStamp)
-    var tmpstr1=(timeStamp).substringFromIndex(6) as NSString
-    tmpstr1=NSString(string: tmpstr1.substringToIndex(tmpstr1.length-2))
-    let date:NSDate = NSDate(timeIntervalSince1970: tmpstr1.doubleValue/1000)
-    //print(date)
-    let dfmatter = NSDateFormatter()
-    //let timeZone = NSTimeZone.localTimeZone() //timeZoneWithName:@"Asia/Shanghai"];
-    dfmatter.dateFormat=format
-    //dfmatter.timeZone=timeZone
-    print(dfmatter.stringFromDate(date))
-    return dfmatter.stringFromDate(date)
+    let i1 = timeStamp.unicodeScalars.index(after: timeStamp.unicodeScalars.index(of: "(")!)
+    let i2 = timeStamp.unicodeScalars.index(of: ")")!
+    
+    let substring = timeStamp.unicodeScalars[i1..<i2]
+    let tmpstr=String(describing: substring.description)
+    //有问题
+    let date:Date = Date(timeIntervalSince1970: Double(tmpstr)!/1000)
+    let dfmatter = DateFormatter()
+        dfmatter.dateFormat=format
+    
+    print(dfmatter.string(from: date))
+    return dfmatter.string(from: date) as NSString
 }
-func dateFromString(dateStr:NSString,format:String)->NSDate {
-    let dfmatter = NSDateFormatter()
+func dateFromString(_ dateStr:NSString,format:String)->Date {
+    let dfmatter = DateFormatter()
     dfmatter.dateFormat=format
-    var tmpDate=dfmatter.dateFromString(dateStr as String)!
-    tmpDate=NSDate(timeIntervalSince1970: tmpDate.timeIntervalSince1970+8*3600)
+    var tmpDate=dfmatter.date(from: dateStr as String)!
+    tmpDate=Date(timeIntervalSince1970: tmpDate.timeIntervalSince1970+8*3600)
     print(tmpDate)
     return tmpDate
 }
-func stringFromDate(date:NSDate,format:String)->NSString {
-    let dfmatter = NSDateFormatter()
+func stringFromDate(_ date:Date,format:String)->NSString {
+    let dfmatter = DateFormatter()
     dfmatter.dateFormat=format
-    return dfmatter.stringFromDate(date)
+    return dfmatter.string(from: date) as NSString
 }
 //---------------------读取文件--------------------------
 
 //获取和保存本地TDS_Rank
-func get_localTDSRank(dataArray:NSMutableArray)->NSMutableDictionary
+func get_localTDSRank(_ dataArray:NSMutableArray)->NSMutableDictionary
 {
-    let documentpaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+    let documentpaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
     //获取完整路径
     let documentsDirectory=documentpaths[0] as NSString
-    let plistPath = documentsDirectory.stringByAppendingPathComponent("localTDSRank.plist")
+    let plistPath = documentsDirectory.appendingPathComponent("localTDSRank.plist")
     let tmpData=NSMutableDictionary(contentsOfFile: plistPath)
     let Count=tmpData?.count
     for i in 0...dataArray.count
     {
-        tmpData?.setValue(dataArray[i], forKey: String(Count))
+        tmpData?.setValue(dataArray[i], forKey: String(describing: Count))
     }
     print(tmpData)
-    tmpData?.writeToFile(plistPath, atomically: false)
+    tmpData?.write(toFile: plistPath, atomically: false)
     return tmpData==nil ? NSMutableDictionary():tmpData!
 }
 //---------------------设置--------------------------
@@ -186,20 +188,20 @@ func get_localTDSRank(dataArray:NSMutableArray)->NSMutableDictionary
 //}
 
 //-------------------是否登录-------------------------
-func set_islogin(userToken:Bool)
+func set_islogin(_ userToken:Bool)
 {
-    NSUserDefaults.standardUserDefaults().setValue(userToken, forKey: "islogin")
+    UserDefaults.standard.setValue(userToken, forKey: "islogin")
 }
 func get_islogin()->Bool
 {
-    let tmpuserToken=NSUserDefaults.standardUserDefaults().objectForKey("islogin")
+    let tmpuserToken=UserDefaults.standard.object(forKey: "islogin")
     let userToken=tmpuserToken==nil ? false : tmpuserToken
     
     return (userToken as! Bool)
 }
 
 //-------------------检查手机号格式-------------------------
-func checkTel(str:NSString)->Bool
+func checkTel(_ str:NSString)->Bool
 {
     if (str.length != 11) {
         
@@ -210,7 +212,7 @@ func checkTel(str:NSString)->Bool
     let regex = "^\\d{11}$"
     let pred = NSPredicate(format: "SELF MATCHES %@",regex)
     
-    let isMatch = pred.evaluateWithObject(str)
+    let isMatch = pred.evaluate(with: str)
     if (!isMatch) {
         return false
     }
@@ -220,41 +222,41 @@ func checkTel(str:NSString)->Bool
 }
 
 //--------------------多语言加载文字------------------------
-func TextLoad(text:String) -> String
+func TextLoad(_ text:String) -> String
 {
     return NSLocalizedString(text, comment: "")
 }
-func set_Phone(userToken:String)
+func set_Phone(_ userToken:String)
 {
-    NSUserDefaults.standardUserDefaults().setValue(userToken, forKey: "Phone")
+    UserDefaults.standard.setValue(userToken, forKey: "Phone")
 }
 func get_Phone()->String
 {
-    let tmpuserToken=NSUserDefaults.standardUserDefaults().objectForKey("Phone")
+    let tmpuserToken=UserDefaults.standard.object(forKey: "Phone")
     let userToken=tmpuserToken==nil ? "null" : tmpuserToken
     
     return (userToken as! String)
 }
 
-func set_headimg(userToken:String)
+func set_headimg(_ userToken:String)
 {
-    NSUserDefaults.standardUserDefaults().setValue(userToken, forKey: "headimg")
+    UserDefaults.standard.setValue(userToken, forKey: "headimg")
 }
 func get_headimg()->String
 {
-    let tmpuserToken=NSUserDefaults.standardUserDefaults().objectForKey("headimg")
+    let tmpuserToken=UserDefaults.standard.object(forKey: "headimg")
     let userToken=tmpuserToken==nil ? "" : tmpuserToken
     return (userToken as! String)
 }
 
 //--------------------访问接口凭证 UserToken set/get----------
-func set_UserToken(userToken:String)
+func set_UserToken(_ userToken:String)
 {
-    NSUserDefaults.standardUserDefaults().setValue(userToken, forKey: "UserToken")
+    UserDefaults.standard.setValue(userToken, forKey: "UserToken")
 }
 func get_UserToken()->String
 {
-    let tmpuserToken=NSUserDefaults.standardUserDefaults().objectForKey("UserToken")
+    let tmpuserToken=UserDefaults.standard.object(forKey: "UserToken")
     let userToken=tmpuserToken==nil ? "null" : tmpuserToken
     
     return (userToken as! String)
@@ -265,26 +267,26 @@ func get_UserToken()->String
 
 //－－－－－－－－－－－－－－－－－个人中心－>设置－－－－－－－－－－－－－－－－
 //温度
-func set_MyInfoSet(Temperature:Int,WaterMeter:Int)
+func set_MyInfoSet(_ Temperature:Int,WaterMeter:Int)
 {
-    NSUserDefaults.standardUserDefaults().setInteger(Temperature, forKey: "MyInfo_Temperature")
-    NSUserDefaults.standardUserDefaults().setInteger(WaterMeter, forKey: "MyInfo_WaterMeter")
+    UserDefaults.standard.set(Temperature, forKey: "MyInfo_Temperature")
+    UserDefaults.standard.set(WaterMeter, forKey: "MyInfo_WaterMeter")
 }
 func get_MyInfoSet()->(Int,Int)
 {
-    let tmpTemperature=NSUserDefaults.standardUserDefaults().objectForKey("MyInfo_Temperature")
+    let tmpTemperature=UserDefaults.standard.object(forKey: "MyInfo_Temperature")
     let Temperature=tmpTemperature==nil ? 0 : tmpTemperature
-    let tmpWaterMeter=NSUserDefaults.standardUserDefaults().objectForKey("MyInfo_WaterMeter")
+    let tmpWaterMeter=UserDefaults.standard.object(forKey: "MyInfo_WaterMeter")
     let WaterMeter=tmpWaterMeter==nil ? 0 : tmpWaterMeter
     return ((Temperature as! Int),(WaterMeter as! Int))
 }
 
-let Screen_Width=UIScreen.mainScreen().bounds.size.width
-let Screen_Hight=UIScreen.mainScreen().bounds.size.height
+let Screen_Width=UIScreen.main.bounds.size.width
+let Screen_Hight=UIScreen.main.bounds.size.height
 //let K_Width=Screen_Width/375
 //let K_Hight=Screen_Hight/667
 
-func stateSwitch(state:Int)->String
+func stateSwitch(_ state:Int)->String
 {
     var errorstring=""
     switch(state)

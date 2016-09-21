@@ -13,19 +13,20 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
     var myCurrentDevice:OznerDevice?
     let plistName:String=get_CurrSelectEquip()==4 ? "setSmallAir_EN":"setBigAir_EN"
     var plistData:NSMutableDictionary!
-    var mainView:setSmallAirView!
+    var mainView:SetSmallAirViewXib!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title=loadLanguage("台式空气净化器")
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: plistName+"Name", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setNameChange), name: NSNotification.Name(rawValue: "\(plistName)Name"), object: nil)
         initMainView()
+       
         // Do any additional setup after loading the view.
     }
 
@@ -36,20 +37,23 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
         plistData=getPlistData(plistName)
         let ScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight))
         ScrollView.backgroundColor=UIColor(red: 238/255, green: 239/255, blue: 240/255, alpha: 1)
-        mainView=NSBundle.mainBundle().loadNibNamed("setSmallAirViewXib", owner: nil, options: nil).last as! setSmallAirView
+        
+         mainView=Bundle.main.loadNibNamed("SetSmallAirViewXib", owner: self, options: nil)?.last as! SetSmallAirViewXib//.loadNibNamed("setSmallAirViewXib", owner: nil, options: nil)?.last as! setSmallAirView
         mainView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: mainView.bounds.size.height)
         //loadDeviceData加载设备里面数据
         loadDeviceData()
-        mainView.nameValue.text=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
-        mainView.toSetNameButton.addTarget(self, action: #selector(toSetDvName), forControlEvents: .TouchUpInside)
-        mainView.operatingIntroducButton.addTarget(self, action: #selector(toOperatingIntroduc), forControlEvents: .TouchUpInside)
+        let name1 = plistData.object(forKey: "deviceName") as! String?
+        let name2 = plistData.object(forKey: "deviceAttrib") as! String?
+        mainView.nameValue.text=name1!+"("+name2!+")"
+        mainView.toSetNameButton.addTarget(self, action: #selector(toSetDvName), for: .touchUpInside)
+        mainView.operatingIntroducButton.addTarget(self, action: #selector(toOperatingIntroduc), for: .touchUpInside)
         //mainView.operatingDemoButton.addTarget(self, action: #selector(toOperatingDemo"), forControlEvents: .TouchUpInside)
-        mainView.commonQestion.addTarget(self, action: #selector(tocommonQestion), forControlEvents: .TouchUpInside)
-        mainView.clearButton.addTarget(self, action: #selector(ClearClick), forControlEvents: .TouchUpInside)
+        mainView.commonQestion.addTarget(self, action: #selector(tocommonQestion), for: .touchUpInside)
+        mainView.clearButton.addTarget(self, action: #selector(ClearClick), for: .touchUpInside)
         mainView.clearButton.layer.borderWidth=1
         mainView.clearButton.layer.cornerRadius=20
         mainView.clearButton.layer.masksToBounds=true
-        mainView.clearButton.layer.borderColor=UIColor(red: 247/255, green: 188/255, blue: 196/255, alpha: 1).CGColor
+        mainView.clearButton.layer.borderColor=UIColor(red: 247/255, green: 188/255, blue: 196/255, alpha: 1).cgColor
         if get_CurrSelectEquip()==4
         {
             self.title=loadLanguage("台式空气净化器")
@@ -73,28 +77,36 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
             let airBlue = self.myCurrentDevice as! AirPurifier_Bluetooth
             //名称体重饮水量
             var nameStr=airBlue.settings.name
-            if nameStr.characters.contains("(")==false
+            if nameStr?.characters.contains("(")==false
             {
-                nameStr=nameStr+"(客厅)"
+                nameStr=nameStr!+"(客厅)"
             }
-            plistData.setValue(nameStr.substringToIndex(nameStr.characters.indexOf("(")!) as String, forKey: "deviceName")
-            let tmpname=plistData.objectForKey("deviceName") as! String
-            let nameStr2=(nameStr as NSString).substringWithRange(NSMakeRange(tmpname.characters.count+1, nameStr.characters.count-tmpname.characters.count-2))
-            plistData.setValue(nameStr2, forKey: "deviceAttrib")
+            plistData.setValue((nameStr?.substring(to: (nameStr?.characters.index(of: "(")!)!))! as String, forKey: "deviceName")
+            
+            let i1 = nameStr?.unicodeScalars.index(after: (nameStr?.unicodeScalars.index(of: "(")!)!)
+            let i2 = nameStr?.unicodeScalars.index(of: ")")!
+            
+            let substring = nameStr?.unicodeScalars[i1!..<i2!]
+            
+            plistData.setValue(substring?.description, forKey: "deviceAttrib")
         }
         else
         {
             let airMx = self.myCurrentDevice as! AirPurifier_MxChip
             //名称体重饮水量
-            var nameStr=airMx.settings.name
+            var nameStr=airMx.settings.name as String
             if nameStr.characters.contains("(")==false
             {
                 nameStr=nameStr+"(家)"
             }
-            plistData.setValue(nameStr.substringToIndex(nameStr.characters.indexOf("(")!) as String, forKey: "deviceName")
-            let tmpname=plistData.objectForKey("deviceName") as! String
-            let nameStr2=(nameStr as NSString).substringWithRange(NSMakeRange(tmpname.characters.count+1, nameStr.characters.count-tmpname.characters.count-2))
-            plistData.setValue(nameStr2, forKey: "deviceAttrib")
+            plistData.setValue((nameStr.substring(to: (nameStr.characters.index(of: "(")!))) as String, forKey: "deviceName")
+            
+            let i1 = nameStr.unicodeScalars.index(after: nameStr.unicodeScalars.index(of: "(")!)
+            let i2 = nameStr.unicodeScalars.index(of: ")")!
+            
+            let substring = nameStr.unicodeScalars[i1..<i2]
+            
+            plistData.setValue(substring.description, forKey: "deviceAttrib")
         }
         
         
@@ -109,12 +121,12 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
     }
     
     //alert 点击事件
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if alertView.message==loadLanguage("是否保存？")
         {
              if buttonIndex==0
              {
-                self.navigationController?.popViewControllerAnimated(true)
+                _=self.navigationController?.popViewController(animated: true)
              }
              else
              {
@@ -137,11 +149,11 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
         setnamecontroller.dataPlist=plistData
         self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
-    func setNameChange(text:NSNotification){
-        plistData.setValue(text.userInfo!["name"], forKey: "deviceName")
-        plistData.setValue(text.userInfo!["attr"], forKey: "deviceAttrib")
-        var tmpstring=(text.userInfo!["name"] as! String)+"("
-        tmpstring+=(text.userInfo!["attr"] as! String)+")"
+    func setNameChange(_ text:Notification){
+        plistData.setValue((text as NSNotification).userInfo!["name"], forKey: "deviceName")
+        plistData.setValue((text as NSNotification).userInfo!["attr"], forKey: "deviceAttrib")
+        var tmpstring=((text as NSNotification).userInfo!["name"] as! String)+"("
+        tmpstring+=((text as NSNotification).userInfo!["attr"] as! String)+")"
         mainView.nameValue.text=tmpstring
         
     }
@@ -154,20 +166,19 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
             let airBlue = self.myCurrentDevice as! AirPurifier_Bluetooth
             //名称体重饮水量
             
-         airBlue.settings.name=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
+         airBlue.settings.name=(plistData.object(forKey: "deviceName") as! String)+"("+(plistData.object(forKey: "deviceAttrib") as! String)+")"
             OznerManager.instance().save(airBlue)
         }
         else
         {
             let airMx = self.myCurrentDevice as! AirPurifier_MxChip
-            airMx.settings.name=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
+            airMx.settings.name=(plistData.object(forKey: "deviceName") as! String)+"("+(plistData.object(forKey: "deviceAttrib") as! String)+")"
             OznerManager.instance().save(airMx)
             
         }
     //侧边栏更新
-        NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "updateDeviceInfo"), object: nil)
+        _ = navigationController?.popViewController(animated: true)    }
     
     func toOperatingIntroduc()
     {
@@ -200,8 +211,8 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
         print("－－－－－－删除后－－－－－－")
         print(OznerManager.instance().getDevices().count)
         //发出通知
-        NSNotificationCenter.defaultCenter().postNotificationName("removDeviceByZB", object: nil)
-        self.navigationController?.popViewControllerAnimated(true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "removDeviceByZB"), object: nil)
+        _=self.navigationController?.popViewController(animated: true)
     }
     
   
@@ -209,12 +220,12 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden=false
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.isNavigationBarHidden=false
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), for: UIBarMetrics.default)
         self.navigationController!.navigationBar.shadowImage =  UIImage(named: "bg_clear_black")
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     
 

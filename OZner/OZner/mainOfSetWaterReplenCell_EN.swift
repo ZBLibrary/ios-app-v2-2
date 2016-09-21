@@ -21,14 +21,14 @@ class mainOfSetWaterReplenCell_EN: UITableViewCell {
     @IBOutlet var clearButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        clearButton.layer.borderColor=UIColor.redColor().CGColor
+        clearButton.layer.borderColor=UIColor.red.cgColor
         clearButton.layer.borderWidth=1
         clearButton.layer.cornerRadius=20
         clearButton.layer.masksToBounds=true
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

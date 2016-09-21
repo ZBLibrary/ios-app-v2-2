@@ -18,7 +18,7 @@ class SkinCenterTableViewCell_EN: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -29,7 +29,7 @@ class SkinCenterTableViewCell_EN: UITableViewCell {
      - parameter times: 检测次数
      - parameter Date:  统计时间
      */
-    func updateData(times:Int,Date:String)
+    func updateData(_ times:Int,Date:String)
     {
         print(times)
         timesOfTest.text = times<45 ? "\(times)/45":"\(times)"

@@ -18,18 +18,18 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         super.viewDidLoad()
 
         self.title=loadLanguage("智能补水仪")
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         tableView.backgroundColor=UIColor(red: 239.0/255.0, green: 239.0/255.0, blue: 246.0/255.0, alpha: 1)
         //去掉cell下面的黑色线条
-        tableView.separatorStyle=UITableViewCellSeparatorStyle.None
+        tableView.separatorStyle=UITableViewCellSeparatorStyle.none
         //名称改变通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:
-            #selector(setNameChange), name: "setWaterReplenishName", object: nil)
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(setNameChange), name: NSNotification.Name(rawValue: "setWaterReplenishName"), object: nil)
         //初始化设置数组
         if myCurrentDevice != nil
         {
@@ -43,11 +43,11 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         }
     }
     //修改设备名称通知
-    func setNameChange(text:NSNotification){
-        settingDic!.setValue(text.userInfo!["name"], forKey: "deviceName")
-        settingDic!.setValue(text.userInfo!["attr"], forKey: "deviceAttrib")
-        var tmpstring=(text.userInfo!["name"] as! String)+"("
-        tmpstring+=(text.userInfo!["attr"] as! String)+")"
+    func setNameChange(_ text:Notification){
+        settingDic!.setValue((text as NSNotification).userInfo!["name"], forKey: "deviceName")
+        settingDic!.setValue((text as NSNotification).userInfo!["attr"], forKey: "deviceAttrib")
+        var tmpstring=((text as NSNotification).userInfo!["name"] as! String)+"("
+        tmpstring+=((text as NSNotification).userInfo!["attr"] as! String)+")"
         MainViewCell.NameAndAdress.text=tmpstring
         
     }
@@ -61,68 +61,68 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
     {
         if myCurrentDevice==nil
         {
-            self.navigationController?.popViewControllerAnimated(true)
+            _ = navigationController?.popViewController(animated: true)
             return
         }
 
-       myCurrentDevice?.settings.name=settingDic?.objectForKey("deviceName") as! String
-        myCurrentDevice?.settings.put("deviceAttrib", value: settingDic?.objectForKey("deviceAttrib"))
-        myCurrentDevice?.settings.put("checktime1", value: settingDic?.objectForKey("checktime1"))
-        myCurrentDevice?.settings.put("checktime2", value: settingDic?.objectForKey("checktime2"))
-        myCurrentDevice?.settings.put("checktime3", value: settingDic?.objectForKey("checktime3"))
-        myCurrentDevice?.settings.put("sex", value: settingDic?.objectForKey("sex"))
+       myCurrentDevice?.settings.name=settingDic?.object(forKey: "deviceName") as! String
+        myCurrentDevice?.settings.put("deviceAttrib", value: settingDic?.object(forKey: "deviceAttrib"))
+        myCurrentDevice?.settings.put("checktime1", value: settingDic?.object(forKey: "checktime1"))
+        myCurrentDevice?.settings.put("checktime2", value: settingDic?.object(forKey: "checktime2"))
+        myCurrentDevice?.settings.put("checktime3", value: settingDic?.object(forKey: "checktime3"))
+        myCurrentDevice?.settings.put("sex", value: settingDic?.object(forKey: "sex"))
         OznerManager.instance().save(myCurrentDevice)
         //设置手机补水提醒通知
-        setPhoneVoice([(settingDic?.objectForKey("checktime1"))!, (settingDic?.objectForKey("checktime2"))!,(settingDic?.objectForKey("checktime3"))!])
-        NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
-        self.navigationController?.popViewControllerAnimated(true)
+        setPhoneVoice([(settingDic?.object(forKey: "checktime1"))!, (settingDic?.object(forKey: "checktime2"))!,(settingDic?.object(forKey: "checktime3"))!])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "updateDeviceInfo"), object: nil)
+        _ = navigationController?.popViewController(animated: true)
     }
     
-    func setPhoneVoice(checkTime:NSArray)
+    func setPhoneVoice(_ checkTime:NSArray)
     {
    
         for itemTime in checkTime
         {
-            let tmpCheckTime = (itemTime as! NSNumber).unsignedIntValue
+            let tmpCheckTime = (itemTime as! NSNumber).uint32Value
             
-            let formatter = NSDateFormatter()
+            let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm"
             let tmptime=tmpCheckTime/60
             var timeStr=(tmptime/60<10 ? "0\(tmptime/60)":"\(tmptime/60)")
             timeStr+=(":"+(tmptime%60<10 ? "0\(tmptime%60)":"\(tmptime%60)"))
-            let date = formatter.dateFromString(timeStr) //触发通知的时间
+            let date = formatter.date(from: timeStr) //触发通知的时间
             let noti = UILocalNotification()
-            if (noti.isKindOfClass(NSNull)==false)
+            if (noti.isKind(of: NSNull.self)==false)
             {
                 //设置推送时间
                 
                 noti.fireDate = date//=now
                 //设置时区
-                noti.timeZone = NSTimeZone.defaultTimeZone()
+                //noti.timeZone = TimeZone.local
                 //设置重复间隔
-                noti.repeatInterval = NSCalendarUnit.Day
+                noti.repeatInterval = NSCalendar.Unit.day
                 //推送声音
                 noti.soundName = UILocalNotificationDefaultSoundName
                 //内容
                 noti.alertBody = loadLanguage("该补水了,亲");
                 //显示在icon上的红色圈中的数子
                 noti.applicationIconBadgeNumber = 1;
-                UIApplication.sharedApplication().scheduleLocalNotification(noti)
+                UIApplication.shared.scheduleLocalNotification(noti)
             }
         }
         
     }
     func cancelPhoneVoice()
     {
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        UIApplication.shared.cancelAllLocalNotifications()
     }
     //alert 点击事件
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if alertView.message==loadLanguage("是否保存？")
         {
             if buttonIndex==0
             {
-                self.navigationController?.popViewControllerAnimated(true)
+                _ = navigationController?.popViewController(animated: true)
             }
             else
             {
@@ -147,15 +147,15 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         print("－－－－－－删除后－－－－－－")
         print(OznerManager.instance().getDevices().count)
         //发出通知
-        NSNotificationCenter.defaultCenter().postNotificationName("removDeviceByZB", object: nil)
-        self.navigationController?.popViewControllerAnimated(true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "removDeviceByZB"), object: nil)
+        _ = navigationController?.popViewController(animated: true)
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), for: UIBarMetrics.default)
         self.navigationController!.navigationBar.shadowImage =  UIImage(named: "bg_clear_black")
-        self.navigationController?.navigationBarHidden=false
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        self.navigationController?.isNavigationBarHidden=false
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -164,32 +164,32 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
     }
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 602
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        MainViewCell = NSBundle.mainBundle().loadNibNamed("mainOfSetWaterReplenCell_EN", owner: self, options: nil).last as! mainOfSetWaterReplenCell_EN
-        MainViewCell.toSetNameAndDressButton.addTarget(self, action: #selector(toSetNameAndDressButton), forControlEvents: .TouchUpInside)
-        MainViewCell.toSetSexButton.addTarget(self, action: #selector(toSetSexButton), forControlEvents: .TouchUpInside)
-        MainViewCell.toSetTimeRemind.addTarget(self, action: #selector(toSetTimeRemind), forControlEvents: .TouchUpInside)
-        MainViewCell.toBugEssence.addTarget(self, action: #selector(toBugEssence), forControlEvents: .TouchUpInside)
-        MainViewCell.toInstructions.addTarget(self, action: #selector(toInstructions), forControlEvents: .TouchUpInside)
-        MainViewCell.toOperation.addTarget(self, action: #selector(toOperation), forControlEvents: .TouchUpInside)
-        MainViewCell.clearButton.addTarget(self, action: #selector(clearButton), forControlEvents: .TouchUpInside)
-        MainViewCell.selectionStyle=UITableViewCellSelectionStyle.None
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        MainViewCell = Bundle.main.loadNibNamed("mainOfSetWaterReplenCell_EN", owner: self, options: nil)?.last as! mainOfSetWaterReplenCell_EN
+        MainViewCell.toSetNameAndDressButton.addTarget(self, action: #selector(toSetNameAndDressButton), for: .touchUpInside)
+        MainViewCell.toSetSexButton.addTarget(self, action: #selector(toSetSexButton), for: .touchUpInside)
+        MainViewCell.toSetTimeRemind.addTarget(self, action: #selector(toSetTimeRemind), for: .touchUpInside)
+        MainViewCell.toBugEssence.addTarget(self, action: #selector(toBugEssence), for: .touchUpInside)
+        MainViewCell.toInstructions.addTarget(self, action: #selector(toInstructions), for: .touchUpInside)
+        MainViewCell.toOperation.addTarget(self, action: #selector(toOperation), for: .touchUpInside)
+        MainViewCell.clearButton.addTarget(self, action: #selector(clearButton), for: .touchUpInside)
+        MainViewCell.selectionStyle=UITableViewCellSelectionStyle.none
         //数据初始化
-        MainViewCell.NameAndAdress.text=(settingDic?.objectForKey("deviceName") as? String)!+"("+(settingDic?.objectForKey("deviceAttrib") as? String)!+")"
-        MainViewCell.Sex.text=settingDic?.objectForKey("sex") as? String
+        MainViewCell.NameAndAdress.text=(settingDic?.object(forKey: "deviceName") as? String)!+"("+(settingDic?.object(forKey: "deviceAttrib") as? String)!+")"
+        MainViewCell.Sex.text=settingDic?.object(forKey: "sex") as? String
 
         return MainViewCell
     }
@@ -202,8 +202,8 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
     func toSetSexButton()
     {
         let setSexController=SetSexViewController_EN(nibName: "SetSexViewController_EN", bundle: nil)
-        setSexController.tmpSex=settingDic?.objectForKey("sex") as? String
-        print(settingDic?.objectForKey("sex"))
+        setSexController.tmpSex=settingDic?.object(forKey: "sex") as? String
+        print(settingDic?.object(forKey: "sex"))
         setSexController.backClosure={ (inputText:String) -> Void in
             self.MainViewCell.Sex.text=inputText
             self.settingDic?.setValue(inputText, forKey: "sex")
@@ -227,7 +227,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         let weiXinUrl=weiXinUrlNamezb()
         let tmpURLController=WeiXinURLViewController_EN(nibName: "WeiXinURLViewController_EN", bundle: nil)
         tmpURLController.title=weiXinUrl.WaterReplenishOperation
-        self.presentViewController(tmpURLController, animated: true, completion: nil)
+        self.present(tmpURLController, animated: true, completion: nil)
         
     }
     func toOperation()

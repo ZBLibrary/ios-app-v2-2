@@ -9,7 +9,7 @@
 import UIKit
 protocol HeadOfWaterReplenishDetailCell_ENDelegate
 {
-    func setCurrentOrgan(organ:Int)
+    func setCurrentOrgan(_ organ:Int)
 }
 struct HeadOfWaterReplenishStruct {
     var skinValueOfToday:Double=0
@@ -27,16 +27,16 @@ class HeadOfWaterReplenishDetailCell_EN: UITableViewCell {
     @IBOutlet weak var organImg4: UIImageView!
     
     
-    @IBAction func organButton1(sender: UIButton) {
+    @IBAction func organButton1(_ sender: UIButton) {
         currentOrgan=0
     }
-    @IBAction func organButton2(sender: UIButton) {
+    @IBAction func organButton2(_ sender: UIButton) {
         currentOrgan=1
     }
-    @IBAction func organButton3(sender: UIButton) {
+    @IBAction func organButton3(_ sender: UIButton) {
         currentOrgan=2
     }
-    @IBAction func organButton4(sender: UIButton) {
+    @IBAction func organButton4(_ sender: UIButton) {
         currentOrgan=3
     }
    
@@ -49,7 +49,7 @@ class HeadOfWaterReplenishDetailCell_EN: UITableViewCell {
     // delege
     var delegate:HeadOfWaterReplenishDetailCell_ENDelegate?
     //当前选中器官
-    private var isFistLoad=true
+    fileprivate var isFistLoad=true
     var currentOrgan = -1{
         didSet{
             
@@ -105,12 +105,12 @@ class HeadOfWaterReplenishDetailCell_EN: UITableViewCell {
         super.awakeFromNib()
         
     }
-    private let WaterTypeValue=[BodyParts.Face:[32,42],
+    fileprivate let WaterTypeValue=[BodyParts.Face:[32,42],
                                 BodyParts.Eyes:[35,45],
                                 BodyParts.Hands:[30,38],
                                 BodyParts.Neck:[35,45]
     ]
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

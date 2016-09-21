@@ -20,9 +20,9 @@ class ShareView_zb_EN: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         share_OwnerImage.layer.cornerRadius=38
-        share_OwnerImage.layer.borderColor=UIColor.whiteColor().CGColor
+        share_OwnerImage.layer.borderColor=UIColor.white.cgColor
         share_OwnerImage.layer.borderWidth=1
         // Drawing code
     }

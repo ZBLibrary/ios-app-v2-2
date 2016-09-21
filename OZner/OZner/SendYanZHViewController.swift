@@ -11,12 +11,12 @@ import UIKit
 class SendYanZHViewController: UIViewController,UITextFieldDelegate {
 
     var sendphone=""
-    @IBAction func CancelClick(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func CancelClick(_ sender: AnyObject) {
+        _ = navigationController?.popViewController(animated: true)
     }
-    @IBAction func SendClick(sender: AnyObject) {
+    @IBAction func SendClick(_ sender: AnyObject) {
         SendMess(MessTF.text!)
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     @IBOutlet var MessTF: UITextField!
     
@@ -28,7 +28,7 @@ class SendYanZHViewController: UIViewController,UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         SendMess(textField.text!)
         
@@ -40,8 +40,8 @@ class SendYanZHViewController: UIViewController,UITextFieldDelegate {
     }
     
 
-    override func viewWillAppear(animated: Bool) {
-        self.tabBarController?.tabBar.hidden=true
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden=true
     }
     /*
     // MARK: - Navigation
@@ -53,7 +53,7 @@ class SendYanZHViewController: UIViewController,UITextFieldDelegate {
     }
     */
 
-    func SendMess(messstring:String)
+    func SendMess(_ messstring:String)
     {
         /*
         usertoken
@@ -65,18 +65,18 @@ class SendYanZHViewController: UIViewController,UITextFieldDelegate {
         let manager = AFHTTPRequestOperationManager()
         let url = StarURL_New+"/OznerServer/AddFriend"
         let params:NSDictionary = ["usertoken":get_UserToken(),"content":messstring,"mobile":sendphone]
-        manager.POST(url,
+        manager.post(url,
             parameters: params,
-            success: { (operation: AFHTTPRequestOperation!,
-                responseObject: AnyObject!) in
+            success: { (operation,
+                responseObject) in
                 print(responseObject)
-                let isSuccess=responseObject.objectForKey("state") as! Int
+                let isSuccess=(responseObject as AnyObject).object(forKey: "state") as! Int
                 if isSuccess > 0
                 {
                     let successalert = UIAlertView(title: "", message:loadLanguage("发送成功"), delegate: self, cancelButtonTitle: "ok")
-                    NSNotificationCenter.defaultCenter().postNotificationName("sendAddFriendMesSuccess", object: nil)
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "sendAddFriendMesSuccess"), object: nil)
                     successalert.show()
-                    self.navigationController?.popViewControllerAnimated(true)
+                    _=self.navigationController?.popViewController(animated: true)
                 }
                 else if isSuccess == -10017
                 {
@@ -85,8 +85,8 @@ class SendYanZHViewController: UIViewController,UITextFieldDelegate {
                 }
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
+            failure: { (operation,
+                error) in
                 
                 //print("Error: " + error.localizedDescription)
                 

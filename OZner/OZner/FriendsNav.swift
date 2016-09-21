@@ -22,8 +22,8 @@ class FriendsNav: UIView {
 
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        friendBadge.hidden=true
+    override func draw(_ rect: CGRect) {
+        friendBadge.isHidden=true
 
         MyRankButton.titleLabel?.text = loadLanguage("我的排名");
         

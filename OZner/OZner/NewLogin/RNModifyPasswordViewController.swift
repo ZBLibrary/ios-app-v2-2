@@ -18,13 +18,13 @@ class RNModifyPasswordViewController: UIViewController {
         
         init(_ pattern: String) throws {
             
-            try regex = NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.CaseInsensitive)
+            try regex = NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
             
         }
         
-        func match(input: String) -> Bool {
+        func match(_ input: String) -> Bool {
             
-            let matches = regex.matchesInString(input, options: [], range: NSMakeRange(0, input.characters.count))
+            let matches = regex.matches(in: input, options: [], range: NSMakeRange(0, input.characters.count))
             
             return matches.count > 0
         }
@@ -48,17 +48,17 @@ class RNModifyPasswordViewController: UIViewController {
     @IBOutlet weak var getCodeBtn: UIButton! // 获取验证码
     
     
-    var countDownTimer: NSTimer? // 计时器
+    var countDownTimer: Timer? // 计时器
     
     var remainingSeconds = 0{ // 倒计时剩余多少秒
         
         willSet{
             
-            getCodeBtn.setTitle("\(newValue)s", forState: UIControlState.Normal)
+            getCodeBtn.setTitle("\(newValue)s", for: UIControlState())
             
             if newValue <= 0 {
                 
-                getCodeBtn.setTitle("重新获取", forState: UIControlState.Normal)
+                getCodeBtn.setTitle("重新获取", for: UIControlState())
                 
                 isCounting = false
             }
@@ -70,7 +70,7 @@ class RNModifyPasswordViewController: UIViewController {
         willSet{
             
             if  newValue {
-                countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+                countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
                 
                 // getCodeBtn.backgroundColor = UIColor.grayColor()
             }else {
@@ -81,7 +81,7 @@ class RNModifyPasswordViewController: UIViewController {
                 //  getCodeBtn.backgroundColor = UIColor.brownColor()
             }
             
-            getCodeBtn.enabled = !newValue
+            getCodeBtn.isEnabled = !newValue
         }
     }
     
@@ -102,31 +102,31 @@ class RNModifyPasswordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
     }
     
     deinit{
         
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
     }
     
@@ -158,8 +158,8 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
         guard !(emailTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle:  "Email cannot be empty")
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle:  "Email cannot be empty")
             
             return false
         }
@@ -167,8 +167,8 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
         guard isValidateEmail(emailTextField.text!) else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle:  "Email address format is not correct")
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle:  "Email address format is not correct")
             
             return false
         }
@@ -182,8 +182,8 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
         guard !(codeTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle:  " Security code cannot be empty")
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle:  " Security code cannot be empty")
             
             return false
         }
@@ -191,8 +191,8 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
         guard !(pswTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle:  "New Password connot be empty")
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle:  "New Password connot be empty")
             
             return false
         }
@@ -200,18 +200,18 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
         guard !(cPswTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle: "Confirm Password connot be empty")
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle: "Confirm Password connot be empty")
             
             return false
         }
         
         
-        guard (pswTextField.text! as NSString).isEqualToString(cPswTextField.text!) else {
+        guard (pswTextField.text! as NSString).isEqual(to: cPswTextField.text!) else {
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle:  "Two different passwords")
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle:  "Two different passwords")
             
             return false
         }
@@ -222,7 +222,7 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
     
     
     // 邮箱格式
-    func isValidateEmail(email: String) -> Bool{
+    func isValidateEmail(_ email: String) -> Bool{
         
         let emailRegex = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
         let matcher: RNRegexHelper
@@ -236,15 +236,15 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
     // 键盘监听
     func keyBoardObserve() {
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     
     // 添加手势
     func addTap() {
         
-        contrainerView.userInteractionEnabled = true
+        contrainerView.isUserInteractionEnabled = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(keyHidden))
         contrainerView.addGestureRecognizer(tap)
@@ -259,24 +259,24 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
         let manager = AFHTTPRequestOperationManager()
         let url = StarURL_New+"/OznerServer/ResetPassword"
         let params:NSDictionary = ["username":email,"password":password,"code":code]
-        manager.POST(url,
+        manager.post(url,
                      parameters: params,
-                     success: { (operation: AFHTTPRequestOperation!,
-                        responseObject: AnyObject!) in
+                     success: { (operation,
+                        responseObject) in
                         
                         let alertView=SCLAlertView()
-                        alertView.addButton("OK", action: { [weak self] in
+                        _=alertView.addButton("OK", action: { [weak self] in
                             
-                            self!.navigationController?.popViewControllerAnimated(true)
+                            _=self!.navigationController?.popViewController(animated: true)
                             })
-                        alertView.showSuccess("Tips", subTitle: "Modify success, return to login")
+                        _=alertView.showSuccess("Tips", subTitle: "Modify success, return to login")
             },
-                     failure: { (operation: AFHTTPRequestOperation!,
-                        error: NSError!) in
+                     failure: { (operation,
+                        error) in
                         
                         let alertView=SCLAlertView()
-                        alertView.addButton("OK", action: {})
-                        alertView.showError("Error Tips", subTitle: error.localizedDescription)
+                        _=alertView.addButton("OK", action: {})
+                        _=alertView.showError("Error Tips", subTitle: error.localizedDescription)
         })
         
         
@@ -290,7 +290,7 @@ extension  RNModifyPasswordViewController: UITextFieldDelegate{
 extension  RNModifyPasswordViewController{
     
     // 获取验证码
-    @IBAction func getCodeAction(sender: UIButton) {
+    @IBAction func getCodeAction(_ sender: UIButton) {
         
         // 先校验邮箱格式
         
@@ -303,33 +303,33 @@ extension  RNModifyPasswordViewController{
         let params:NSDictionary = ["email":email]
         
        // weak var weakSelf = self
-        manager.POST(url,
+        manager.post(url,
                      parameters: params,
-                     success: { (operation: AFHTTPRequestOperation!,
-                        responseObject: AnyObject!) in
+                     success: { (operation,
+                        responseObject) in
                         
                         let alertView=SCLAlertView()
-                        alertView.addButton("OK", action: { [weak self] in
+                        _=alertView.addButton("OK", action: { [weak self] in
                             
                             self!.remainingSeconds = 60
                             self!.isCounting = true
                             
                         })
-                        alertView.showSuccess("Tips", subTitle: "Get verification code is successful, open the mailbox access security code")
+                        _=alertView.showSuccess("Tips", subTitle: "Get verification code is successful, open the mailbox access security code")
             },
-                     failure: { (operation: AFHTTPRequestOperation!,
-                        error: NSError!) in
+                     failure: { (operation,
+                        error) in
                         
                         let alertView=SCLAlertView()
-                        alertView.addButton("OK", action: {})
-                        alertView.showError("Error Tips", subTitle: error.localizedDescription)
+                        _=alertView.addButton("OK", action: {})
+                        _=alertView.showError("Error Tips", subTitle: error.localizedDescription)
         })
         
     }
 
     
     // 注册
-    @IBAction func modifyAction(sender: UIButton) {
+    @IBAction func modifyAction(_ sender: UIButton) {
         
         guard checkout01() else{ return }
         
@@ -340,9 +340,9 @@ extension  RNModifyPasswordViewController{
     }
     
     // 返回
-    @IBAction func backAction(sender: UIButton) {
+    @IBAction func backAction(_ sender: UIButton) {
         
-        navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
 
     //计时器事件
@@ -352,20 +352,20 @@ extension  RNModifyPasswordViewController{
     }
     
     // 键盘显示
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: Notification) {
         
         // 获取键盘高度
-        let height = notification.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().height
+        let height = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.height
         
         // 设置 contentInset 的值,默认为(0,0,0,0)
-        let e = UIEdgeInsetsMake(0, 0, height!, 0)
+        let e = UIEdgeInsetsMake(0, 0, height, 0)
         
         scrollView.contentInset = e
         
     }
     
     // 键盘隐藏
-    func keyboardWillHidden(notification: NSNotification) {
+    func keyboardWillHidden(_ notification: Notification) {
         
         // 将 contentInset 的值设回默认值(0,0,0,0)
         let e = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -389,7 +389,7 @@ extension  RNModifyPasswordViewController{
 
 extension RNModifyPasswordViewController{
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField.tag < 3 {
             let tf = contrainerView.viewWithTag(textField.tag + 1) as! UITextField

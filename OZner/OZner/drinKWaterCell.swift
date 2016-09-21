@@ -108,37 +108,37 @@ class drinKWaterCell: UITableViewCell {
             if celltype==loadLanguage("饮水量")
             {
                 waterValueTitle.text=loadLanguage("今日已完成")
-                TempValue.hidden=true
-                waterValue.hidden=false
-                symbolLabel.hidden=false
-                rankView.hidden=false
-                shareImg.hidden = !IsLoginByPhone()
-                share.enabled=true
+                TempValue.isHidden=true
+                waterValue.isHidden=false
+                symbolLabel.isHidden=false
+                rankView.isHidden=false
+                shareImg.isHidden = !IsLoginByPhone()
+                share.isEnabled=true
             }
             else
             {
               //水温
                 waterValueTitle.text=loadLanguage("水温")
-                TempValue.hidden=false
-                waterValue.hidden=true
-                symbolLabel.hidden=true
-                rankView.hidden=true
+                TempValue.isHidden=false
+                waterValue.isHidden=true
+                symbolLabel.isHidden=true
+                rankView.isHidden=true
                 //true
-                shareImg.hidden = !IsLoginByPhone()
-                share.enabled=false
+                shareImg.isHidden = !IsLoginByPhone()
+                share.isEnabled=false
             }
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        zixunView.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).CGColor
-        zixunView.hidden = !IsLoginByPhone();
-        shareImg.hidden = !IsLoginByPhone();
-        share.hidden = !IsLoginByPhone();
+        zixunView.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).cgColor
+        zixunView.isHidden = !IsLoginByPhone();
+        shareImg.isHidden = !IsLoginByPhone();
+        share.isHidden = !IsLoginByPhone();
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

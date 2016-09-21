@@ -10,8 +10,8 @@ import UIKit
 
 class AboutUSViewController: UIViewController {
 
-    @IBAction func BackClick(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func BackClick(_ sender: AnyObject) {
+        _ = navigationController?.popViewController(animated: true)
     }
     @IBOutlet var ScoreLable: UILabel!
     
@@ -26,9 +26,9 @@ class AboutUSViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     //评个分吧
-    @IBAction func GiveScore(sender: AnyObject) {
+    @IBAction func GiveScore(_ sender: AnyObject) {
         let str = "itms-apps://itunes.apple.com/app/id955305764"
-        UIApplication.sharedApplication().openURL(NSURL(string: str)!)
+        UIApplication.shared.openURL(URL(string: str)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +36,9 @@ class AboutUSViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     /*
     // MARK: - Navigation

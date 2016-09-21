@@ -23,47 +23,52 @@ class CupMatchFinishedView_EN: UIView,UITextFieldDelegate,UIScrollViewDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let width = UIScreen.mainScreen().bounds.width
-        let height = UIScreen.mainScreen().bounds.height
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
         
         let sanjiaoImg = UIImage(named: "match_finish_sanjiao.png")
-        let sanjiaoImgView = UIImageView(frame: CGRectMake(width/2.0, 0, (sanjiaoImg?.size.width)!, (sanjiaoImg?.size.height)!))
+        let sanjiaoImgView = UIImageView(frame: CGRect(x: width/2.0, y: 0, width: (sanjiaoImg?.size.width)!, height: (sanjiaoImg?.size.height)!))
         sanjiaoImgView.image = UIImage(named: "match_finish_sanjiao.png")
         self .addSubview(sanjiaoImgView)
-        sanjiaoImgView.backgroundColor = UIColor.clearColor()
+        sanjiaoImgView.backgroundColor = UIColor.clear
         
-        let bgView = UIView(frame: CGRectMake(0,sanjiaoImgView.frame.size.height-2,width,self.frame.size.height-sanjiaoImgView.frame.size.height+2))
-        bgView.backgroundColor = UIColor.whiteColor()
+        let bgView = UIView(frame: CGRect(x: 0,y: sanjiaoImgView.frame.size.height-2,width: width,height: self.frame.size.height-sanjiaoImgView.frame.size.height+2))
+        bgView.backgroundColor = UIColor.white
         self .addSubview(bgView)
         
-        let scrollView = UIScrollView(frame: CGRectMake(0,sanjiaoImgView.frame.size.height,bgView.frame.size.width,bgView.frame.size.height))
+        let scrollView = UIScrollView(frame: CGRect(x: 0,y: sanjiaoImgView.frame.size.height,width: bgView.frame.size.width,height: bgView.frame.size.height))
         self.addSubview(scrollView)
         scrollView.delegate = self
-        scrollView.backgroundColor = UIColor.clearColor()
+        scrollView.backgroundColor = UIColor.clear
         
         self.backgroundColor = UIColor(red: 110.0, green: 206.0, blue: 250.0, alpha: 1.0)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         
-        let cupNameTextField = UITextField(frame: CGRectMake(30*(width/375.0),40*(height/667.0),150*(width/375.0),17*(height/667.0)))
+        let cupNameTextField = UITextField(frame: CGRect(x: 30*(width/375.0),y: 40*(height/667.0),width: 150*(width/375.0),height: 17*(height/667.0)))
         cupNameTextField.placeholder = loadLanguage("输入智能杯名称")
         cupNameTextField.delegate = self
-        cupNameTextField.font = UIFont.systemFontOfSize(14*(height/667.0))
+        cupNameTextField.font = UIFont.systemFont(ofSize: 14*(height/667.0))
         cupNameTextField.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-        cupNameTextField.textAlignment = NSTextAlignment.Center
+        cupNameTextField.textAlignment = NSTextAlignment.center
         self.myCupNameTextField = cupNameTextField
         scrollView.addSubview(cupNameTextField)
         
-        let leftSeparatorView = UIView(frame: CGRectMake(30*(width/375.0),cupNameTextField.frame.size.height+cupNameTextField.frame.origin.y+10*(height/667.0),150*(width/375.0),1))
+        let leftSeparatorView = UIView(frame: CGRect(x: 30*(width/375.0),y: cupNameTextField.frame.size.height+cupNameTextField.frame.origin.y+10*(height/667.0),width: 150*(width/375.0),height: 1))
         leftSeparatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         scrollView.addSubview(leftSeparatorView)
         
         let contentStr:String = loadLanguage("我的水杯")
-        let contentDic = [NSFontAttributeName:UIFont.systemFontOfSize(17*(height/667.0))];
-        let contentSize = contentStr.boundingRectWithSize(CGSizeMake(width, 17*(height/667.0)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: contentDic, context: nil).size;
-        let label:UILabel = UILabel(frame: CGRectMake(leftSeparatorView.frame.size.width+leftSeparatorView.frame.origin.x+23*(width/375.0)+16*(width/375.0),cupNameTextField.frame.origin.y,contentSize.width,18*(height/667.0)))
+        let contentDic = [NSFontAttributeName:UIFont.systemFont(ofSize: 17*(height/667.0))];
+        let contentSize = contentStr.boundingRect(with: CGSize(width: width, height: 17*(height/667.0)), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: contentDic, context: nil).size
+        
+        var orginx=leftSeparatorView.frame.size.width+leftSeparatorView.frame.origin.x
+        orginx+=23*(width/375.0)+16*(width/375.0)
+      
+        let label = UILabel(frame: CGRect(x: orginx,y: cupNameTextField.frame.origin.y,width: contentSize.width,height: 18*(height/667.0)))
+        
         label.text = loadLanguage("我的水杯")
-        label.textAlignment = NSTextAlignment.Center
-        label.font = UIFont.systemFontOfSize(17*(height/667.0))
+        label.textAlignment = NSTextAlignment.center
+        label.font = UIFont.systemFont(ofSize: 17*(height/667.0))
         label.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
         scrollView.addSubview(label)
         
@@ -73,52 +78,52 @@ class CupMatchFinishedView_EN: UIView,UITextFieldDelegate,UIScrollViewDelegate {
         //pullDownImgView.image = UIImage(named: "pull_down_row.png")
         //scrollView .addSubview(pullDownImgView)
         
-        let rightSeparatorView = UIView(frame: CGRectMake(leftSeparatorView.frame.size.width+leftSeparatorView.frame.origin.x+23*(width/375.0),leftSeparatorView.frame.origin.y,150*(width/375.0),1))
+        let rightSeparatorView = UIView(frame: CGRect(x: leftSeparatorView.frame.size.width+leftSeparatorView.frame.origin.x+23*(width/375.0),y: leftSeparatorView.frame.origin.y,width: 150*(width/375.0),height: 1))
         rightSeparatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         scrollView.addSubview(rightSeparatorView)
         
-        let weightTextField = UITextField(frame: CGRectMake((width-150*(width/375.0))/2,29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y,150*(width/375.0),17*(height/667.0)))
+        let weightTextField = UITextField(frame: CGRect(x: (width-150*(width/375.0))/2,y: 29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y,width: 150*(width/375.0),height: 17*(height/667.0)))
         weightTextField.placeholder = loadLanguage("输入体重")
         weightTextField.delegate = self
         self.myWeightTextField = weightTextField
-        weightTextField.keyboardType = UIKeyboardType.NumberPad
-        weightTextField.font = UIFont.systemFontOfSize(14*(height/667.0))
+        weightTextField.keyboardType = UIKeyboardType.numberPad
+        weightTextField.font = UIFont.systemFont(ofSize: 14*(height/667.0))
         weightTextField.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-        weightTextField.textAlignment = NSTextAlignment.Center
+        weightTextField.textAlignment = NSTextAlignment.center
         scrollView.addSubview(weightTextField)
         
         let weightStr:String = "KG"
-        let weightDic = [NSFontAttributeName:UIFont.systemFontOfSize(17*(height/667.0))];
-        let weightSize = weightStr.boundingRectWithSize(CGSizeMake(width, 17*(height/667.0)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: weightDic, context: nil).size;
-        let weightLabel:UILabel = UILabel(frame: CGRectMake(weightTextField.frame.size.width+weightTextField.frame.origin.x+5,weightTextField.frame.origin.y,weightSize.width,17*(height/667.0)))
+        let weightDic = [NSFontAttributeName:UIFont.systemFont(ofSize: 17*(height/667.0))];
+        let weightSize = weightStr.boundingRect(with: CGSize(width: width, height: 17*(height/667.0)), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: weightDic, context: nil).size;
+        let weightLabel:UILabel = UILabel(frame: CGRect(x: weightTextField.frame.size.width+weightTextField.frame.origin.x+5,y: weightTextField.frame.origin.y,width: weightSize.width,height: 17*(height/667.0)))
         weightLabel.text = "KG"
-        weightLabel.textAlignment = NSTextAlignment.Center
-        weightLabel.font = UIFont.systemFontOfSize(17*(height/667.0))
+        weightLabel.textAlignment = NSTextAlignment.center
+        weightLabel.font = UIFont.systemFont(ofSize: 17*(height/667.0))
         weightLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
         scrollView .addSubview(weightLabel)
         
-        let weightSeparatorView = UIView(frame: CGRectMake(weightTextField.frame.origin.x,weightTextField.frame.size.height+weightTextField.frame.origin.y+10*(height/667.0),150*(width/375.0) + weightSize.width+5,1))
+        let weightSeparatorView = UIView(frame: CGRect(x: weightTextField.frame.origin.x,y: weightTextField.frame.size.height+weightTextField.frame.origin.y+10*(height/667.0),width: 150*(width/375.0) + weightSize.width+5,height: 1))
         weightSeparatorView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         scrollView.addSubview(weightSeparatorView)
 
         
-        let tiplabel:UILabel = UILabel(frame: CGRectMake(0,weightSeparatorView.frame.origin.y+weightSeparatorView.frame.size.height+5*(height/667.0),width,15*(height/667.0)))
+        let tiplabel:UILabel = UILabel(frame: CGRect(x: 0,y: weightSeparatorView.frame.origin.y+weightSeparatorView.frame.size.height+5*(height/667.0),width: width,height: 15*(height/667.0)))
         tiplabel.text = loadLanguage("填写体重获得更健康的饮水量建议")
-        tiplabel.textAlignment = NSTextAlignment.Center
-        tiplabel.font = UIFont.systemFontOfSize(14*(height/667.0))
+        tiplabel.textAlignment = NSTextAlignment.center
+        tiplabel.font = UIFont.systemFont(ofSize: 14*(height/667.0))
         tiplabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
         scrollView .addSubview(tiplabel)
         
         //let button = UIButton(frame: CGRectMake(16*(width/375.0),tiplabel.frame.origin.y+tiplabel.frame.size.height+40*(height/667.0),width-16*(width/375.0)*2,40*(height/667.0)))
-        let button = UIButton(frame: CGRectMake(16*(width/375.0),180*(height/667.0),width-16*(width/375.0)*2,40*(height/667.0)))
+        let button = UIButton(frame: CGRect(x: 16*(width/375.0),y: 180*(height/667.0),width: width-16*(width/375.0)*2,height: 40*(height/667.0)))
         button.backgroundColor = UIColor(red: 60.0/255, green: 137.0/255, blue: 242.0/255, alpha: 1.0)
-        button.setTitle(loadLanguage("完成"), forState: UIControlState.Normal)
-        button.addTarget(self, action: #selector(finishedAction), forControlEvents: UIControlEvents.TouchUpInside)
+        button.setTitle(loadLanguage("完成"), for: UIControlState())
+        button.addTarget(self, action: #selector(finishedAction), for: UIControlEvents.touchUpInside)
         button.layer.masksToBounds = true;
         button.layer.cornerRadius = 20;
         scrollView .addSubview(button)
         
-        scrollView.contentSize = CGSizeMake(width, button.frame.size.height+button.frame.origin.y+40*(height/667.0)+20)
+        scrollView.contentSize = CGSize(width: width, height: button.frame.size.height+button.frame.origin.y+40*(height/667.0)+20)
         
         let gesture = UITapGestureRecognizer.init(target: self, action: #selector(handle))
         self.addGestureRecognizer(gesture)
@@ -130,16 +135,16 @@ class CupMatchFinishedView_EN: UIView,UITextFieldDelegate,UIScrollViewDelegate {
     }
     
     //UITextFieldDelegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self .endEditing(true);
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.endEditing(true)
     }
     

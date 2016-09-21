@@ -15,8 +15,8 @@ class Main_FooterView_zb_EN: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        toAddDeviceButton.layer.borderColor=UIColor(red: 56/255, green: 127/255, blue: 248/255, alpha: 1).CGColor
+    override func draw(_ rect: CGRect) {
+        toAddDeviceButton.layer.borderColor=UIColor(red: 56/255, green: 127/255, blue: 248/255, alpha: 1).cgColor
         toAddDeviceButton.layer.borderWidth=1
         toAddDeviceButton.layer.cornerRadius=20
         // Drawing code

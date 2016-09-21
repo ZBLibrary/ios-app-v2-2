@@ -7,10 +7,39 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSource,iCarouselDelegate,CupMatchFinishedView_ENDelegate,OtherMatchFinishdView_ENDelegate,JinShuiqiWIFIController_ENDelegate,UIAlertViewDelegate,UITextFieldDelegate,OznerManagerDelegate {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -21,7 +50,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         
         //考虑到xib文件可能不存在或被删，故加入判断
         
-        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+        if Bundle.main.path(forResource: nibNameOrNil, ofType: "xib") == nil
             
         {
             
@@ -49,7 +78,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     var deveiceDataList:NSArray?
     //30秒如果还没有配对成功提醒用户重现配对
     var mSecond = 30//设备容许最大配对时间：蓝牙30秒，WIFI设备90秒
-    var mTimer:NSTimer?
+    var mTimer:Timer?
     //0 水杯 1 水探头 2 净水器 3 air蓝牙 4 air wifi,5 补水仪
     var deviceCuttentType = 0
     
@@ -70,10 +99,10 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     var PeiduiFailed:peiDuiOutTimeCell_EN!
     override func viewDidLoad() {
         super.viewDidLoad()
-        PeiduiFailed=NSBundle.mainBundle().loadNibNamed("peiDuiOutTimeCell_EN", owner: self, options: nil).last as! peiDuiOutTimeCell_EN
+        PeiduiFailed=Bundle.main.loadNibNamed("peiDuiOutTimeCell_EN", owner: self, options: nil)?.last as! peiDuiOutTimeCell_EN
         PeiduiFailed.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight)
-        PeiduiFailed.Back.addTarget(self, action: #selector(BackAfterPeiDuiFailed), forControlEvents: .TouchUpInside)
-        PeiduiFailed.ReSetPeiDuiButton.addTarget(self, action: #selector(RePeiDuiAfterPeiDuiFailed), forControlEvents: .TouchUpInside)
+        PeiduiFailed.Back.addTarget(self, action: #selector(BackAfterPeiDuiFailed), for: .touchUpInside)
+        PeiduiFailed.ReSetPeiDuiButton.addTarget(self, action: #selector(RePeiDuiAfterPeiDuiFailed), for: .touchUpInside)
         PeiduiFailed.isBlueToothDevice=true
         // Do any additional setup after loading the view.
         self.createTimer()
@@ -92,15 +121,15 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     
     func BackAfterPeiDuiFailed()
     {
-        self.navigationController?.navigationBarHidden=false
+        self.navigationController?.isNavigationBarHidden=false
         PeiduiFailed.removeFromSuperview()
         self.endTimer()
         self.angle = 0
-        self.navigationController!.popViewControllerAnimated(true)
+        self.navigationController!.popViewController(animated: true)
     }
     func RePeiDuiAfterPeiDuiFailed()
     {
-        self.navigationController?.navigationBarHidden=false
+        self.navigationController?.isNavigationBarHidden=false
         PeiduiFailed.removeFromSuperview()
         self.startAnimation()
         self.createTimer()
@@ -112,7 +141,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         let muArr = NSMutableArray()
         for i in 0 ..< arr.count
         {
-            let deviceIo = arr.objectAtIndex(i) as! BaseDeviceIO
+            let deviceIo = arr.object(at: i) as! BaseDeviceIO
             if OznerManager.instance().checkisBindMode(deviceIo) == true
             {
                 if(deviceCuttentType == 0&&CupManager.isCup(deviceIo.type)) ||
@@ -123,7 +152,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                     (deviceCuttentType == 5&&TapManager.isTap(deviceIo.type)) ||
                 (deviceCuttentType == 6&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
                 {
-                        muArr .addObject(deviceIo)
+                        muArr .add(deviceIo)
                 }
             }
         }
@@ -132,55 +161,55 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     
     func layOUtView()
     {
-        let height = UIScreen.mainScreen().bounds.height
-        let width = UIScreen.mainScreen().bounds.width
-        self.circleBottomBgView.frame = CGRectMake((width-130*(width/375.0))/2, (122-64)*(height/667.0), 130*(width/375.0), 130*(width/375.0))
+        let height = UIScreen.main.bounds.height
+        let width = UIScreen.main.bounds.width
+        self.circleBottomBgView.frame = CGRect(x: (width-130*(width/375.0))/2, y: (122-64)*(height/667.0), width: 130*(width/375.0), height: 130*(width/375.0))
         self.circleBottomBgView.layer.masksToBounds = true;
         self.circleBottomBgView.layer.cornerRadius = self.circleBottomBgView.frame.size.width/2;
         self.circleBottomBgView.alpha = 0
         //circleBottomBgView.backgroundColor=UIColor.blackColor()
-        let animationTransForm = CGAffineTransformScale(self.circleBgVIew.transform,0.1, 0.1);
+        let animationTransForm = self.circleBgVIew.transform.scaledBy(x: 0.1, y: 0.1);
         self.animationImgView.transform = animationTransForm;
         let kSize = self.animationImgView.frame.size.width/self.animationImgView.frame.size.height
         
-        self.animationImgView.frame = CGRectMake((self.circleBottomBgView.frame.size.width-self.animationImgView.frame.size.width)/2-1*kSize, (self.circleBottomBgView.frame.size.height-self.animationImgView.frame.size.height)/2-1, self.animationImgView.frame.size.width+2*kSize, self.animationImgView.frame.size.height+2)
+        self.animationImgView.frame = CGRect(x: (self.circleBottomBgView.frame.size.width-self.animationImgView.frame.size.width)/2-1*kSize, y: (self.circleBottomBgView.frame.size.height-self.animationImgView.frame.size.height)/2-1, width: self.animationImgView.frame.size.width+2*kSize, height: self.animationImgView.frame.size.height+2)
         //animationImgView.backgroundColor=UIColor.redColor()
-        self.circleBgVIew.frame = CGRectMake((width-130*(width/375.0))/2, (122-64)*(height/667.0), 130*(width/375.0), 130*(width/375.0))
+        self.circleBgVIew.frame = CGRect(x: (width-130*(width/375.0))/2, y: (122-64)*(height/667.0), width: 130*(width/375.0), height: 130*(width/375.0))
         
-        let newTransForm = CGAffineTransformScale(self.circleBgVIew.transform,1.0, 1.0);
+        let newTransForm = self.circleBgVIew.transform.scaledBy(x: 1.0, y: 1.0);
         self.circleBgVIew.transform = newTransForm;
         
-        self.circleIconImgView.frame = CGRectMake((self.circleBottomBgView.frame.size.width-self.circleIconImgView.frame.size.width)/2, (self.circleBottomBgView.frame.size.height-self.circleIconImgView.frame.size.height)/2, self.circleIconImgView.frame.size.width, self.circleIconImgView.frame.size.height)
+        self.circleIconImgView.frame = CGRect(x: (self.circleBottomBgView.frame.size.width-self.circleIconImgView.frame.size.width)/2, y: (self.circleBottomBgView.frame.size.height-self.circleIconImgView.frame.size.height)/2, width: self.circleIconImgView.frame.size.width, height: self.circleIconImgView.frame.size.height)
         
-        self.firstLabel.frame = CGRectMake(0, self.circleBottomBgView.frame.size.height+self.circleBottomBgView.frame.origin.y+20, width, 60)
+        self.firstLabel.frame = CGRect(x: 0, y: self.circleBottomBgView.frame.size.height+self.circleBottomBgView.frame.origin.y+20, width: width, height: 60)
         self.firstLabel.numberOfLines = 0
-        self.secondLabel.frame = CGRectMake(0, self.firstLabel.frame.size.height+self.firstLabel.frame.origin.y+10, width, 20)
+        self.secondLabel.frame = CGRect(x: 0, y: self.firstLabel.frame.size.height+self.firstLabel.frame.origin.y+10, width: width, height: 20)
         
-        self.deviceBgView.hidden = true
+        self.deviceBgView.isHidden = true
         
 
-        let view = CupMatchFinishedView_EN(frame: CGRectMake(0,height,width,height-407*(height/667.0)))
+        let view = CupMatchFinishedView_EN(frame: CGRect(x: 0,y: height,width: width,height: height-407*(height/667.0)))
         self.cupFinishedBgView = view
         self.cupFinishedBgView?.delegate = self;
         self.view.addSubview(view)
         
         let view1 = OtherMatchFinishdView_EN()
-        view1.initView(CGRectMake(0,height,width,height-407*(height/667.0)), deviceType: deviceCuttentType)
+        view1.initView(CGRect(x: 0,y: height,width: width,height: height-407*(height/667.0)), deviceType: deviceCuttentType)
         self.otherDeviceFinishedView = view1
         self.otherDeviceFinishedView?.delegate = self
         self.view.addSubview(view1)
         
         //
-        cupFinishedBgView?.hidden = true
-        otherDeviceFinishedView?.hidden = false
+        cupFinishedBgView?.isHidden = true
+        otherDeviceFinishedView?.isHidden = false
         switch deviceCuttentType
         {
         case 0:
             self.firstLabel.text = loadLanguage("请将智能水杯倒置")
             self.circleIconImgView.image = UIImage(named: "icon_peidui_watting.png")
             animationImgView.image=UIImage(named: "yin_shui_liang_0.png")
-            self.cupFinishedBgView?.hidden = false
-            self.otherDeviceFinishedView?.hidden = true
+            self.cupFinishedBgView?.isHidden = false
+            self.otherDeviceFinishedView?.isHidden = true
         case 1:
             self.firstLabel.text = loadLanguage("长按下start按钮")
             self.circleIconImgView.image = UIImage(named: "icon_peidui_tantou_watting.png")
@@ -189,38 +218,38 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         case 2://如果是净水器弹出输入Wi-Fi密码的界面
             self.firstLabel.text = loadLanguage("请同时按下净水器加热与制冷两个按钮")
             self.secondLabel.text = loadLanguage("正在进行WIFI配对")
-            self.firstLabel.font=UIFont.systemFontOfSize(15)
+            self.firstLabel.font=UIFont.systemFont(ofSize: 15)
             self.circleIconImgView.image = UIImage(named: "icon_jingshuiqi_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_jingshuiqi.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入净水器名称")
             let controller = JingShuiWifiViewController_EN(nibName: "JingShuiWifiViewController_EN", bundle: nil)
             controller.delegate = self
-            self.presentViewController(controller, animated: true, completion: nil)
+            self.present(controller, animated: true, completion: nil)
         case 3:
-            self.secondLabel.hidden=true
+            self.secondLabel.isHidden=true
             self.firstLabel.text = loadLanguage("正在进行蓝牙配对")
             self.circleIconImgView.image = UIImage(named: "icon_smallair_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_smallair.png")
             
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("台式空净名称")
         case 4://如果是空气净化器，弹出输入Wi-Fi密码的界面
-            self.secondLabel.hidden=false
+            self.secondLabel.isHidden=false
             self.firstLabel.text = loadLanguage("同时按下电源和风速键，WIFI指示灯闪烁。")
-            self.firstLabel.font=UIFont.systemFontOfSize(15)
+            self.firstLabel.font=UIFont.systemFont(ofSize: 15)
             self.secondLabel.text=loadLanguage("正在进行WIFI配对")
             self.circleIconImgView.image = UIImage(named: "icon_bigair_peidui_waitting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_bigair.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("立式空净名称")
             let controller = JingShuiWifiViewController_EN(nibName: "JingShuiWifiViewController_EN", bundle: nil)
             controller.delegate = self
-            self.presentViewController(controller, animated: true, completion: nil)
+            self.present(controller, animated: true, completion: nil)
         case 5:
             self.firstLabel.text = loadLanguage("长按下start按钮")
             self.circleIconImgView.image = UIImage(named: "icon_peidui_TDSPAN_watting.png")
             animationImgView.image=UIImage(named: "icon_peidui_complete_TDSPAN.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入检测笔名称")
         case 6:
-            self.secondLabel.hidden=true
+            self.secondLabel.isHidden=true
             self.firstLabel.text = loadLanguage("正在进行蓝牙配对")
             self.circleIconImgView.image = UIImage(named: "WaterReplenish3")
             animationImgView.image=UIImage(named: "WaterReplenishComplete")
@@ -235,7 +264,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     {
         if(self.mTimer == nil)
         {
-            self.mTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+            self.mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
         }
         mSecond = 30//蓝牙设备容许最大配对时间
         if deviceCuttentType==2||deviceCuttentType==4
@@ -257,9 +286,9 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.03)
         UIView.setAnimationDelegate(self)
-        UIView.setAnimationDidStopSelector(#selector(endAnimation))
+        UIView.setAnimationDidStop(#selector(endAnimation))
         let roleAngle = self.angle * (M_PI/180.0)
-        self.circleImgView.transform = CGAffineTransformMakeRotation(CGFloat(roleAngle))
+        self.circleImgView.transform = CGAffineTransform(rotationAngle: CGFloat(roleAngle))
         UIView.commitAnimations()
     }
     
@@ -271,7 +300,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             switch deviceCuttentType
             {
             case 0,1,3,5://蓝牙设备
-                self.navigationController?.navigationBarHidden=true
+                self.navigationController?.isNavigationBarHidden=true
                 self.view.addSubview(PeiduiFailed)
                 break
             case 2,4://Wifi设备
@@ -285,7 +314,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     }
     
     //JinShuiqiWIFIControllerDelegate
-    func jinshuiqiConnectComplete(arr: [AnyObject]!)
+    private func jinshuiqiConnectComplete(_ arr: [AnyObject]!)
     {
         self.deveiceDataList = arr as NSArray
         if(self.myIcarousel != nil)
@@ -295,17 +324,17 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         
         if(self.deveiceDataList?.count == 1)
         {
-            self.leftRowImgView.hidden = true;
-            self.rightRowImgView.hidden = true;
-            self.leftBtn.hidden = true;
-            self.rightBtn.hidden = true;
+            self.leftRowImgView.isHidden = true;
+            self.rightRowImgView.isHidden = true;
+            self.leftBtn.isHidden = true;
+            self.rightBtn.isHidden = true;
         }
         else
         {
-            self.leftRowImgView.hidden = false;
-            self.rightRowImgView.hidden = false;
-            self.leftBtn.hidden = false;
-            self.rightBtn.hidden = false;
+            self.leftRowImgView.isHidden = false;
+            self.rightRowImgView.isHidden = false;
+            self.leftBtn.isHidden = false;
+            self.rightBtn.isHidden = false;
         }
     }
     
@@ -340,7 +369,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                         }
                         if(isEqual == false)
                         {
-                            muArr1 .addObject(io)
+                            muArr1 .add(io)
                         }
                     }
                 }
@@ -352,7 +381,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 let muArr1:NSMutableArray = NSMutableArray()
                 if(muArr.count > 0)
                 {
-                    muArr1.addObjectsFromArray(muArr as [AnyObject])
+                    muArr1.addObjects(from: muArr as [AnyObject])
                 }
                 self.deveiceDataList = muArr1
             }
@@ -365,17 +394,17 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 
                 if(self.deveiceDataList?.count == 1)
                 {
-                    self.leftRowImgView.hidden = true;
-                    self.rightRowImgView.hidden = true;
-                    self.leftBtn.hidden = true;
-                    self.rightBtn.hidden = true;
+                    self.leftRowImgView.isHidden = true;
+                    self.rightRowImgView.isHidden = true;
+                    self.leftBtn.isHidden = true;
+                    self.rightBtn.isHidden = true;
                 }
                 else
                 {
-                    self.leftRowImgView.hidden = false;
-                    self.rightRowImgView.hidden = false;
-                    self.leftBtn.hidden = false;
-                    self.rightBtn.hidden = false;
+                    self.leftRowImgView.isHidden = false;
+                    self.rightRowImgView.isHidden = false;
+                    self.leftBtn.isHidden = false;
+                    self.rightBtn.isHidden = false;
                 }
             }
             
@@ -383,38 +412,38 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         
     }
     
-    func OznerManagerDidAddDevice(device: OznerDevice!) {
+    func oznerManagerDidAdd(_ device: OznerDevice!) {
         self.update()
     }
     
-    func OznerManagerDidFoundDevice(io: BaseDeviceIO!) {
+    func oznerManagerDidFoundDevice(_ io: BaseDeviceIO!) {
         self.update()
     }
     
-    func OznerManagerDidOwnerChanged(owner: String!) {
+    func oznerManagerDidOwnerChanged(_ owner: String!) {
         self.update()
     }
     
-    func OznerManagerDidRemoveDevice(device: OznerDevice!) {
+    func oznerManagerDidRemove(_ device: OznerDevice!) {
         self.update()
     }
     
-    func OznerManagerDidUpdateDevice(device: OznerDevice!) {
+    func oznerManagerDidUpdate(_ device: OznerDevice!) {
         self.update()
     }
     
     
-    @IBAction func leftIcarouseBtnAction(sender: AnyObject){
+    @IBAction func leftIcarouseBtnAction(_ sender: AnyObject){
         if(self.mIndex > 0)
         {
-            self.myIcarousel!.scrollToItemAtIndex(self.mIndex-1, animated: true)
+            self.myIcarousel!.scrollToItem(at: self.mIndex-1, animated: true)
             self.mIndex = self.mIndex-1
         }
     }
-    @IBAction func rightIcarouseBtnAction(sender: AnyObject) {
+    @IBAction func rightIcarouseBtnAction(_ sender: AnyObject) {
         if(self.mIndex < (self.deveiceDataList!.count-1))
         {
-            self.myIcarousel!.scrollToItemAtIndex(self.mIndex+1, animated: true)
+            self.myIcarousel!.scrollToItem(at: self.mIndex+1, animated: true)
             self.mIndex = self.mIndex+1
         }
     }
@@ -424,8 +453,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         UIView.beginAnimations("ImageViewBlg", context: nil)
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationDelegate(self)
-        UIView.setAnimationDidStopSelector(#selector(transfromEndAnimation))
-        let newTransForm = CGAffineTransformMakeScale(0.1, 0.1);
+        UIView.setAnimationDidStop(#selector(transfromEndAnimation))
+        let newTransForm = CGAffineTransform(scaleX: 0.1, y: 0.1);
         self.circleBgVIew.transform = newTransForm
         self.circleBgVIew.alpha = 0;
         self.circleBottomBgView.alpha = 1.0
@@ -438,25 +467,25 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     {
         if ((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
         {
-            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写设备名称"), preferredStyle: UIAlertControllerStyle.Alert)
-            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
+            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写设备名称"), preferredStyle: UIAlertControllerStyle.alert)
+            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.destructive, handler: nil)
             alertControl.addAction(cancelAction)
-            self.presentViewController(alertControl, animated: true, completion: nil)
+            self.present(alertControl, animated: true, completion: nil)
             
             return
         }
         
-        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
-        let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
+        let deviceIo = self.deveiceDataList?.object(at: self.mIndex) as! BaseDeviceIO
+        let device = OznerManager.instance().getDeviceBy(deviceIo) as OznerDevice
         //添加到服务器
         //let strongSelf = self
         
-        let werservice = DeviceWerbservice()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if(status.networkStatus == kSuccessStatus)
-            {
+        //let werservice = DeviceWerbservice()
+        //MBProgressHUD.showAdded(to: self.view, animated: true)
+        //werservice.addDevice(device.identifier, name:otherDeviceFinishedView?.myTanTouNameTextField!.text!,deviceType: device.type,deviceAddress:"我的"+deviceNameArr[deviceCuttentType],weight:self.otherDeviceFinishedView?.myWeightTextField?.text ,return:{(status) -> Void in
+            //MBProgressHUD.hide(for: self.view, animated: true)
+            //if(status?.networkStatus == kSuccessStatus)
+            //{
                 device.settings.name = self.otherDeviceFinishedView?.myTanTouNameTextField?.text
                 device.settings.put("type", value: self.deviceNameArr[self.deviceCuttentType])
                 //智能笔和水探头区分
@@ -473,44 +502,44 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 }
                 OznerManager.instance().save(device)
                 
-                NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-                NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object:device)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "getDevices"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "currentSelectedDevice"), object:device)
                 self.navigationController!.view .removeFromSuperview()
-            }
-            else
-            {
-                let str:NSString = status.errDesc
-                if(str.length > 0)
-                {
-                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
-                }
-                else
-                {
-                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
-                }
-            }
-        })
+            //}
+            //else
+//            {
+//                let str:NSString = status!.errDesc as NSString
+//                if(str.length > 0)
+//                {
+//                    UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
+//                }
+//                else
+//                {
+//                    UITool.showSampleMsg(loadLanguage("错误"), message: loadLanguage("添加设备失败"))
+//                }
+//            }
+//        })
     }
     //水杯配完对后的回掉事件
     func cupFinishedAction() {
         if((self.cupFinishedBgView?.myCupNameTextField?.text?.isEmpty) == true || (self.cupFinishedBgView?.myWeightTextField?.text?.isEmpty) == true)
         {
-            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写智能杯名称或者体重"), preferredStyle: UIAlertControllerStyle.Alert)
-            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.Destructive, handler: nil)
+            let alertControl = UIAlertController(title: loadLanguage("温馨提示"), message: loadLanguage("请填写智能杯名称或者体重"), preferredStyle: UIAlertControllerStyle.alert)
+            let cancelAction = UIAlertAction(title: loadLanguage("确定"), style: UIAlertActionStyle.destructive, handler: nil)
             alertControl.addAction(cancelAction)
-            self.presentViewController(alertControl, animated: true, completion: nil)
+            self.present(alertControl, animated: true, completion: nil)
             
             return
         }
         
-        let deviceIo = self.deveiceDataList?.objectAtIndex(self.mIndex) as! BaseDeviceIO
-        let device = OznerManager.instance().getDeviceByIO(deviceIo) as OznerDevice
+        let deviceIo = self.deveiceDataList?.object(at: self.mIndex) as! BaseDeviceIO
+        let device = OznerManager.instance().getDeviceBy(deviceIo) as OznerDevice
         //添加到服务器
         let werservice = DeviceWerbservice()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的杯子",weight:self.cupFinishedBgView?.myWeightTextField?.text ,returnBlock:{(status:StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if(status.networkStatus == kSuccessStatus)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        werservice.addDevice(device.identifier, name:self.cupFinishedBgView?.myCupNameTextField?.text,deviceType: device.type,deviceAddress:"我的杯子",weight:self.cupFinishedBgView?.myWeightTextField?.text ,return:{(status) -> Void in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if(status?.networkStatus == kSuccessStatus)
             {
                 device.settings.name = self.cupFinishedBgView?.myCupNameTextField?.text
                 device.settings.put("type", value: "我的杯子")
@@ -518,13 +547,13 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 
                 OznerManager.instance().save(device)
                 
-                NSNotificationCenter.defaultCenter().postNotificationName("getDevices", object: nil)
-                NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object:device)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "getDevices"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "currentSelectedDevice"), object:device)
                 self.navigationController!.view .removeFromSuperview()
             }
             else
             {
-                let str:NSString = status.errDesc
+                let str:NSString = status!.errDesc as NSString
                 if(str.length > 0)
                 {
                     UITool.showSampleMsg(loadLanguage("错误"), message: str as String)
@@ -543,8 +572,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         UIView.beginAnimations("animationImageViewBlg", context: nil)
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationDelegate(self)
-        UIView.setAnimationDidStopSelector(#selector(animationEndCreateIcarouseView))
-        let newTransForm = CGAffineTransformMakeScale(1.0, 1.0);
+        UIView.setAnimationDidStop(#selector(animationEndCreateIcarouseView))
+        let newTransForm = CGAffineTransform(scaleX: 1.0, y: 1.0);
         self.animationImgView.transform = newTransForm
         UIView.commitAnimations()
     }
@@ -577,42 +606,42 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     
     func createLeftAndRight()
     {
-        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(leftMethod))
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(leftMethod))
         self.navigationItem.leftBarButtonItem = leftButton;
         self.navigationItem.title = loadLanguage("设备配对")
     }
     
     func leftMethod()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        _=self.navigationController?.popViewController(animated: true)
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view .endEditing(true)
     }
     
     //创建icarouseview
     func createIcarouseView()
     {
-        self.deviceBgView.hidden = false
-        let width = UIScreen.mainScreen().bounds.width
+        self.deviceBgView.isHidden = false
+        let width = UIScreen.main.bounds.width
         
-        self.firstLabel.hidden = true
-        self.secondLabel.hidden = true
-        self.deviceBgView.frame = CGRectMake(0, (405-64)*(width/375.0), width, 137)
-        self.thirdLabel.frame = CGRectMake(0, 0, width, 20)
+        self.firstLabel.isHidden = true
+        self.secondLabel.isHidden = true
+        self.deviceBgView.frame = CGRect(x: 0, y: (405-64)*(width/375.0), width: width, height: 137)
+        self.thirdLabel.frame = CGRect(x: 0, y: 0, width: width, height: 20)
         
-        self.leftRowImgView.frame = CGRectMake(30*(width/375.0), 39+(98-21)/2, 11, 21)
-        self.rightRowImgView.frame = CGRectMake(width-30*(width/375.0)-11, 39+(98-21)/2, 11, 21)
+        self.leftRowImgView.frame = CGRect(x: 30*(width/375.0), y: 39+(98-21)/2, width: 11, height: 21)
+        self.rightRowImgView.frame = CGRect(x: width-30*(width/375.0)-11, y: 39+(98-21)/2, width: 11, height: 21)
         
-        self.leftBtn.frame = CGRectMake(0,  19+(98-21)/2, 40*(width/375.0), 61)
-        self.rightBtn.frame = CGRectMake(width-40*(width/375.0), 19+(98-21)/2, 40*(width/375.0), 61)
+        self.leftBtn.frame = CGRect(x: 0,  y: 19+(98-21)/2, width: 40*(width/375.0), height: 61)
+        self.rightBtn.frame = CGRect(x: width-40*(width/375.0), y: 19+(98-21)/2, width: 40*(width/375.0), height: 61)
         
-        let icarousel = iCarousel.init(frame: CGRectMake(40*(width/375.0), self.thirdLabel.frame.size.height+self.thirdLabel.frame.origin.y+19, width-40*(width/375.0)*2, 98*(width/375.0)))
+        let icarousel = iCarousel.init(frame: CGRect(x: 40*(width/375.0), y: self.thirdLabel.frame.size.height+self.thirdLabel.frame.origin.y+19, width: width-40*(width/375.0)*2, height: 98*(width/375.0)))
         icarousel.delegate=self;
         icarousel.dataSource=self;
         icarousel.type = iCarouselTypeCoverFlow;
-        icarousel.backgroundColor=UIColor.clearColor();
+        icarousel.backgroundColor=UIColor.clear;
         self.deviceBgView.addSubview(icarousel)
         icarousel.clipsToBounds = true;
         self.myIcarousel = icarousel;
@@ -620,18 +649,18 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         if(self.deveiceDataList?.count >= 2)
         {
             self.mIndex = 1
-            icarousel.scrollToItemAtIndex(1, animated: true)
+            icarousel.scrollToItem(at: 1, animated: true)
         }
         else
         {
             self.mIndex = 0
-            icarousel.scrollToItemAtIndex(0, animated: true)
+            icarousel.scrollToItem(at: 0, animated: true)
         }
         
     }
     
     //设置每个cellview
-    func setDeviceMatchCellView(cellView:DeviceMatchCellView_EN, index:UInt)
+    func setDeviceMatchCellView(_ cellView:DeviceMatchCellView_EN, index:UInt)
     {
         let row = Int(index)
         var imageName=""
@@ -665,19 +694,19 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     }
     
 
-    func numberOfItemsInCarousel(carousel: iCarousel!) -> UInt {
+    func numberOfItems(in carousel: iCarousel!) -> UInt {
         
         //return UInt(self.dataSourceArr!.count);
         return UInt((self.deveiceDataList?.count)!)
     }
     
-    func carousel(carousel: iCarousel!, viewForItemAtIndex index: UInt, reusingView view: UIView!) -> UIView! {
+    func carousel(_ carousel: iCarousel!, viewForItemAt index: UInt, reusing view: UIView!) -> UIView! {
         
         if(view == nil)
         {
-            let width = UIScreen.mainScreen().bounds.width
+            let width = UIScreen.main.bounds.width
             //98*(width/375.0)
-            let wCellView = DeviceMatchCellView_EN.init(frame: CGRectMake(0, 0, width, 98*(width/375.0)))
+            let wCellView = DeviceMatchCellView_EN.init(frame: CGRect(x: 0, y: 0, width: width, height: 98*(width/375.0)))
             switch deviceCuttentType
             {
             case 0:
@@ -713,17 +742,17 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         return wCellView
     }
     
-    func carouselDidEndScrollingAnimation(carousel: iCarousel!) {
+    func carouselDidEndScrollingAnimation(_ carousel: iCarousel!) {
         self.mIndex = carousel.currentItemIndex
 
-        for var i = 0;i < self.deveiceDataList?.count;i += 1
+        for  i in 0..<(self.deveiceDataList?.count ?? 0)
         {
             if carousel==nil
             {
                 continue
             }
             
-            if let cellView1 = carousel.itemViewAtIndex(i) {
+            if let cellView1 = carousel.itemView(at: i) {
                 let cellView = cellView1 as! DeviceMatchCellView_EN
                 var imageName=""
                 switch deviceCuttentType
@@ -760,29 +789,30 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         if self.isShowFinishedView == false
         {
             self.isShowFinishedView = true;
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
                 
                 
                 if(self.deviceCuttentType == 0)//水杯
                 {
-                    self.deviceBgView.frame = CGRectMake(0, self.view.frame.size.height-self.cupFinishedBgView!.frame.size.height-self.deviceBgView.frame.size.height, self.deviceBgView.frame.size.width, self.deviceBgView.frame.size.height)
-                    self.cupFinishedBgView?.frame = CGRectMake(0, self.view.frame.size.height-self.cupFinishedBgView!.frame.size.height, self.cupFinishedBgView!.frame.size.width, self.cupFinishedBgView!.frame.size.height)
+                    self.deviceBgView.frame = CGRect(x: 0, y: self.view.frame.size.height-self.cupFinishedBgView!.frame.size.height-self.deviceBgView.frame.size.height, width: self.deviceBgView.frame.size.width, height: self.deviceBgView.frame.size.height)
+                    self.cupFinishedBgView?.frame = CGRect(x: 0, y: self.view.frame.size.height-self.cupFinishedBgView!.frame.size.height, width: self.cupFinishedBgView!.frame.size.width, height: self.cupFinishedBgView!.frame.size.height)
                 }
                 else
                 {
-                    self.deviceBgView.frame = CGRectMake(0, self.view.frame.size.height-self.otherDeviceFinishedView!.frame.size.height-self.deviceBgView.frame.size.height, self.deviceBgView.frame.size.width, self.deviceBgView.frame.size.height)
-                    self.otherDeviceFinishedView?.frame = CGRectMake(0, self.view.frame.size.height-self.otherDeviceFinishedView!.frame.size.height, self.otherDeviceFinishedView!.frame.size.width, self.otherDeviceFinishedView!.frame.size.height)
+                    self.deviceBgView.frame = CGRect(x: 0, y: self.view.frame.size.height-self.otherDeviceFinishedView!.frame.size.height-self.deviceBgView.frame.size.height, width: self.deviceBgView.frame.size.width, height: self.deviceBgView.frame.size.height)
+                    self.otherDeviceFinishedView?.frame = CGRect(x: 0, y: self.view.frame.size.height-self.otherDeviceFinishedView!.frame.size.height, width: self.otherDeviceFinishedView!.frame.size.width, height: self.otherDeviceFinishedView!.frame.size.height)
                 }
                 
             
-                let width = UIScreen.mainScreen().bounds.width
-                self.circleBottomBgView.frame = CGRectMake((width-130*(width/375.0))/2, self.deviceBgView.frame.origin.y - 15 * (UIScreen.mainScreen().bounds.height/667.0)-130*(width/375.0), 130*(width/375.0), 130*(width/375.0))
+                let width = UIScreen.main.bounds.width
+                let orginy = self.deviceBgView.frame.origin.y - 15 * (UIScreen.main.bounds.height/667.0)-130*(width/375.0)
+                self.circleBottomBgView.frame = CGRect(x: (width-130*(width/375.0))/2, y: orginy, width: 130*(width/375.0), height: 130*(width/375.0))
                 
             })
         }
     }
     
-    func carousel(carousel: iCarousel!, valueForOption option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
+    func carousel(_ carousel: iCarousel!, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
         switch option
         {
         case iCarouselOptionWrap:
@@ -804,7 +834,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         }
     }
     
-    func carouselDidScroll(carousel: iCarousel!) {
+    func carouselDidScroll(_ carousel: iCarousel!) {
         
     }
 

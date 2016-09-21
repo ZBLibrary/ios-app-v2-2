@@ -11,7 +11,7 @@ import UIKit
 class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
 
     @IBOutlet weak var aboutContainer: UIView!
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -28,12 +28,12 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
  
     @IBOutlet var DeviceName: UILabel!
  
-    @IBAction func toSetDvName(sender: AnyObject) {
+    @IBAction func toSetDvName(_ sender: AnyObject) {
         let setnamecontroller=setDeviceNameViewController_EN(nibName: "setDeviceNameViewController_EN", bundle: nil)
         setnamecontroller.dataPlist=plistData
         self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
-    @IBAction func toAboutDevice(sender: AnyObject) {
+    @IBAction func toAboutDevice(_ sender: AnyObject) {
         let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
         aboutDevice.title=loadLanguage("关于净水器")
         aboutDevice.urlstring="http://cup.ozner.net/app/gyysj/gyysj.html"
@@ -41,7 +41,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
     }
     
     @IBOutlet var deleteDeviceButton: UIButton!
-    @IBAction func deleteDeviceClick(sender: AnyObject) {
+    @IBAction func deleteDeviceClick(_ sender: AnyObject) {
         let alert=UIAlertView(title: "", message: loadLanguage("删除此设备"), delegate: self, cancelButtonTitle: loadLanguage("否"), otherButtonTitles: loadLanguage("是"))
         alert.show()
     }
@@ -53,32 +53,32 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         print("－－－－－－删除后－－－－－－")
         print(OznerManager.instance().getDevices().count)
         //发出通知
-        NSNotificationCenter.defaultCenter().postNotificationName("removDeviceByZB", object: nil)
-        self.navigationController?.popViewControllerAnimated(true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "removDeviceByZB"), object: nil)
+        _ = navigationController?.popViewController(animated: true)
     }
     @IBOutlet var DeviceNameLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         //aboutContainer.hidden = !IsLoginByPhone()
         DeviceNameLable.text=loadLanguage("我的净水器" )
-       deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
+       deleteDeviceButton.setTitle(loadLanguage("删除此设备"), for: UIControlState())
         self.title=loadLanguage("净水器")
-        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
+        let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
         
         deleteDeviceButton.layer.borderWidth=1
-        deleteDeviceButton.layer.borderColor=UIColor(red: 1, green: 92/255, blue: 102/255, alpha: 1).CGColor
+        deleteDeviceButton.layer.borderColor=UIColor(red: 1, green: 92/255, blue: 102/255, alpha: 1).cgColor
         deleteDeviceButton.layer.cornerRadius=20
         deleteDeviceButton.layer.masksToBounds=true
         //loadDeviceData加载设备里面数据
         loadDeviceData()
-        DeviceName.text=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
+        DeviceName.text=(plistData.object(forKey: "deviceName") as! String)+"("+(plistData.object(forKey: "deviceAttrib") as! String)+")"
         //
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: "setShuiJiName", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setNameChange), name: NSNotification.Name(rawValue: "setShuiJiName"), object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -88,14 +88,16 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
     {
         let water = self.myCurrentDevice as! WaterPurifier
         //名称体重饮水量
-        var nameStr=water.settings.name
+        var nameStr=water.settings.name as String
         if nameStr.characters.contains("(")==false
         {
             nameStr=nameStr+loadLanguage("(家)")
         }
-        plistData.setValue(nameStr.substringToIndex(nameStr.characters.indexOf("(")!) as String, forKey: "deviceName")
-        let tmpname=plistData.objectForKey("deviceName") as! String
-        let nameStr2=(nameStr as NSString).substringWithRange(NSMakeRange(tmpname.characters.count+1, nameStr.characters.count-tmpname.characters.count-2))
+        plistData.setValue((nameStr.substring(to: (nameStr.characters.index(of: "(")!))) as String, forKey: "deviceName")
+        //let tmpname=plistData.object(forKey: "deviceName") as! String
+        let nameStr1=nameStr.substring(from: nameStr.characters.index(of: Character("("))!)
+        let nameStr2=nameStr1.substring(to: nameStr.characters.index(of: Character(")"))!)
+        //(tmpname.characters.count+1, nameStr.characters.count-tmpname.characters.count-2))
         plistData.setValue(nameStr2, forKey: "deviceAttrib")
         
 
@@ -110,12 +112,12 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
     }
     
     //alert 点击事件
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if alertView.message==loadLanguage("是否保存？")
         {
             if buttonIndex==0
             {
-                self.navigationController?.popViewControllerAnimated(true)
+                _ = navigationController?.popViewController(animated: true)
             }
             else
             {
@@ -132,11 +134,11 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         }
     }
 
-    func setNameChange(text:NSNotification){
-        plistData.setValue(text.userInfo!["name"], forKey: "deviceName")
-        plistData.setValue(text.userInfo!["attr"], forKey: "deviceAttrib")
-        var tmpstring=(text.userInfo!["name"] as! String)+"("
-        tmpstring+=(text.userInfo!["attr"] as! String)+")"
+    func setNameChange(_ text:Notification){
+        plistData.setValue((text as NSNotification).userInfo!["name"], forKey: "deviceName")
+        plistData.setValue((text as NSNotification).userInfo!["attr"], forKey: "deviceAttrib")
+        var tmpstring=((text as NSNotification).userInfo!["name"] as! String)+"("
+        tmpstring+=((text as NSNotification).userInfo!["attr"] as! String)+")"
         DeviceName.text=tmpstring
         
     }
@@ -145,22 +147,22 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         setPlistData(plistData, fileName: "setShuiJi_EN")
             //写入设备
         let water = self.myCurrentDevice as! WaterPurifier
-        water.settings.name=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
+        water.settings.name=(plistData.object(forKey: "deviceName") as! String)+"("+(plistData.object(forKey: "deviceAttrib") as! String)+")"
         OznerManager.instance().save(water)
-        NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
-        self.navigationController?.popViewControllerAnimated(true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "updateDeviceInfo"), object: nil)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden=false
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.isNavigationBarHidden=false
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), for: UIBarMetrics.default)
         self.navigationController!.navigationBar.shadowImage =  UIImage(named: "bg_clear_black")
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     /*
     // MARK: - Navigation

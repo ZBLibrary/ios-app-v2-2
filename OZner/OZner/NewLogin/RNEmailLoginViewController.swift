@@ -19,13 +19,13 @@ class RNEmailLoginViewController: UIViewController {
         
         init(_ pattern: String) throws {
             
-            try regex = NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.CaseInsensitive)
+            try regex = NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
             
         }
         
-        func match(input: String) -> Bool {
+        func match(_ input: String) -> Bool {
             
-            let matches = regex.matchesInString(input, options: [], range: NSMakeRange(0, input.characters.count))
+            let matches = regex.matches(in: input, options: [], range: NSMakeRange(0, input.characters.count))
             
             return matches.count > 0
         }
@@ -46,7 +46,7 @@ class RNEmailLoginViewController: UIViewController {
     
     // MARK: -  Life cycle - 即生命周期
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -58,7 +58,7 @@ class RNEmailLoginViewController: UIViewController {
         
         //考虑到xib文件可能不存在或被删，故加入判断
         
-        if NSBundle.mainBundle().pathForResource(nibNameOrNil, ofType: "xib") == nil
+        if Bundle.main.path(forResource: nibNameOrNil, ofType: "xib") == nil
             
         {
             
@@ -79,7 +79,7 @@ class RNEmailLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        phoneLoginButton.hidden = true
+        phoneLoginButton.isHidden = true
         
         addDelegateForTextField()
         keyBoardObserve()
@@ -91,32 +91,32 @@ class RNEmailLoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         //
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
     }
     
     deinit{
         
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
     }
     
@@ -149,17 +149,16 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
         guard !(emailTextField.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle:  "Email cannot be empty")
-            
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle: "Email cannot be empty")
             return false
         }
         
         guard isValidateEmail(emailTextField.text!) else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle:  "Email address format is not correct")
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle:  "Email address format is not correct")
             
             return false
         }
@@ -167,8 +166,8 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
         guard !(passwordTextfield.text?.isEmpty)! else{
             
             let alertView=SCLAlertView()
-            alertView.addButton("OK", action: {})
-            alertView.showError("Error Tips", subTitle:  "Password connot be empty")
+            _=alertView.addButton("OK", action: {})
+            _=alertView.showError("Error Tips", subTitle:  "Password connot be empty")
             
             return false
         }
@@ -179,7 +178,7 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
     
     
     // 邮箱格式
-    func isValidateEmail(email: String) -> Bool{
+    func isValidateEmail(_ email: String) -> Bool{
         
         let emailRegex = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
         let matcher: RNRegexHelper
@@ -194,16 +193,16 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
     // 键盘监听
     func keyBoardObserve() {
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     
     // 添加手势
     func addTap() {
         
-        scrollView.userInteractionEnabled = true
-        contrainerView.userInteractionEnabled = true
+        scrollView.isUserInteractionEnabled = true
+        contrainerView.isUserInteractionEnabled = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(keyHidden))
         contrainerView.addGestureRecognizer(tap)
@@ -215,7 +214,7 @@ extension  RNEmailLoginViewController: UITextFieldDelegate{
 extension  RNEmailLoginViewController{
     
     // 邮箱登录
-    @IBAction func loginAction(sender: UIButton) {
+    @IBAction func loginAction(_ sender: UIButton) {
         
         guard checkout() else{
             
@@ -225,18 +224,18 @@ extension  RNEmailLoginViewController{
         // 登陆请求
         //loginRequeset()
         
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        LogInOut.loginInOutInstance().loginWithEmail(emailTextField.text!, password: passwordTextfield.text!, currentView: self.view)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        LogInOut.loginInOutInstance().login(withEmail: emailTextField.text!, password: passwordTextfield.text!, currentView: self.view)
     }
     
     // 忘记密码
-    @IBAction func forgetPassword(sender: UIButton) {
+    @IBAction func forgetPassword(_ sender: UIButton) {
         
         let modifyPassword = RNModifyPasswordViewController(nibName: "RNModifyPasswordViewController", bundle: nil)
         navigationController?.pushViewController(modifyPassword, animated: true)
     }
     // 注册账号(邮箱)
-    @IBAction func registerAction(sender: UIButton) {
+    @IBAction func registerAction(_ sender: UIButton) {
         
         let register = RNEmailRegisterViewController(nibName: "RNEmailRegisterViewController", bundle: nil)
         
@@ -245,33 +244,34 @@ extension  RNEmailLoginViewController{
     }
     
     // 验证码登录
-    @IBAction func loginWithVetificationCode(sender: UIButton) {
+    @IBAction func loginWithVetificationCode(_ sender: UIButton) {
         
         
 //        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //        mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginViewController")
+        let loginController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
         
         navigationController?.pushViewController(loginController, animated: true)
     }
     
     // 键盘显示
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: Notification) {
         
         // 获取键盘高度
-        let height = notification.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().height
+        let heightTmp = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey]) as AnyObject
+         let height = heightTmp.cgRectValue//.cgRectValue.height
         
         // 设置 contentInset 的值,默认为(0,0,0,0)
-        let e = UIEdgeInsetsMake(0, 0, height!, 0)
+        let e = UIEdgeInsetsMake(0, 0, (height?.height ?? 0)!, 0)
         
         scrollView.contentInset = e
         
     }
     
     // 键盘隐藏
-    func keyboardWillHidden(notification: NSNotification) {
+    func keyboardWillHidden(_ notification: Notification) {
         
         // 将 contentInset 的值设回默认值(0,0,0,0)
         let e = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -290,25 +290,25 @@ extension  RNEmailLoginViewController{
     func loginRequeset(){
         let phone = emailTextField.text!
         let password = passwordTextfield.text!
-        let miei = UIDevice.currentDevice().identifierForVendor!.UUIDString
-        let devicename = UIDevice.currentDevice().name
+        let miei = UIDevice.current.identifierForVendor!.uuidString
+        let devicename = UIDevice.current.name
         let manager = AFHTTPRequestOperationManager()
         let url = StarURL_New+"/OznerServer/MailLogin"
         let params:NSDictionary = ["username":phone,"password":password,"miei":miei,"devicename":devicename]
-        manager.POST(url,
+        manager.post(url,
                      parameters: params,
-                     success: { (operation: AFHTTPRequestOperation!,
-                        responseObject: AnyObject!) in
+                     success: { (operation,
+                        responseObject) in
                         
                         // 登陆成功
                         print("dengluchenggong")
             },
-                     failure: { (operation: AFHTTPRequestOperation!,
-                        error: NSError!) in
+                     failure: { (operation,
+                        error) in
                        
                         let alertView=SCLAlertView()
-                        alertView.addButton("OK", action: {})
-                        alertView.showError("Error Tips", subTitle: error.localizedDescription)
+                        _=alertView.addButton("OK", action: {})
+                        _=alertView.showError("Error Tips", subTitle: error.localizedDescription)
         })
         
         
@@ -322,7 +322,7 @@ extension  RNEmailLoginViewController{
 
 extension RNEmailLoginViewController{
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField.tag < 1 {
             let tf = contrainerView.viewWithTag(textField.tag + 1) as! UITextField

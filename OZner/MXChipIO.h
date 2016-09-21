@@ -13,7 +13,7 @@
 @class MXChipIO;
 @protocol MXChipIOStatusDelegate <NSObject>
 @required
--(void)IOClosed:(MXChipIO*)io;
+-(void)IOClosed:(nullable MXChipIO*)io;
 @end
 
 @interface MXChipIO : BaseDeviceIO
@@ -25,7 +25,7 @@
     NSThread* runThread;
 }
 @property (weak,nonatomic) id<MXChipIOStatusDelegate> statusDelegate;
--(void)setSecureCode:(NSString*)secureCode;
--(instancetype)init:(NSString *)identifier MQTT:(MQTTProxy*)proxy Type:(NSString *)type;
+-(void)setSecureCode:(nullable NSString*)secureCode;
+-(instancetype)init:(nullable NSString *)identifier MQTT:(MQTTProxy*)proxy Type:(nullable NSString *)type;
 -(BOOL)runJob:(nonnull SEL)aSelector withObject:(nullable id)arg waitUntilDone:(BOOL)wait;
 @end

@@ -22,7 +22,7 @@ class drawCircleView_EN: UIView {
     let color21=UIColor.init(red: 242/255, green: 134/255, blue: 82/255, alpha: 1)
     let color3=UIColor.init(red: 70/255, green: 143/255, blue: 241/255, alpha: 1)
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
        //setCircle()
         
@@ -73,14 +73,14 @@ class drawCircleView_EN: UIView {
             }
             let beierpath=UIBezierPath.init()
             
-            beierpath.addArcWithCenter(CGPoint(x: frame.height/2, y: frame.height/2), radius: radius, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(endAngle), clockwise: true)
-            beierpath.lineCapStyle=CGLineCap.Round
-            beierpath.lineJoinStyle=CGLineJoin.Round
+            beierpath.addArc(withCenter: CGPoint(x: frame.height/2, y: frame.height/2), radius: radius, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(endAngle), clockwise: true)
+            beierpath.lineCapStyle=CGLineCap.round
+            beierpath.lineJoinStyle=CGLineJoin.round
             beierpath.lineWidth=10.0
             
             let mcashapelayer=CAShapeLayer()
-            mcashapelayer.path=beierpath.CGPath
-            mcashapelayer.strokeColor=lineColor.CGColor
+            mcashapelayer.path=beierpath.cgPath
+            mcashapelayer.strokeColor=lineColor.cgColor
             mcashapelayer.fillColor=nil
             
             //mcashapelayer.opacity=0.5
@@ -100,13 +100,13 @@ class drawCircleView_EN: UIView {
                 anim.duration = 0.0
             }
             
-            anim.delegate=self
-            anim.removedOnCompletion=false
-            anim.additive=true
+            //anim.delegate=self
+            anim.isRemovedOnCompletion=false
+            anim.isAdditive=true
             anim.fillMode=kCAFillModeForwards
             anim.fromValue=0
             anim.toValue=1
-            mcashapelayer.addAnimation(anim, forKey: "strokeEnd")
+            mcashapelayer.add(anim, forKey: "strokeEnd")
 //            if i>3
 //            {
 //                drawJianbian(radius,endAngle: endAngle)
@@ -116,7 +116,7 @@ class drawCircleView_EN: UIView {
         
     }
     
-    func drawJianbian(radius:CGFloat,endAngle:Double){
+    func drawJianbian(_ radius:CGFloat,endAngle:Double){
         print(CGFloat(endAngle))
         let drawCount=Int((endAngle+M_PI/2)*180/M_PI)
         if drawCount<=0
@@ -129,15 +129,15 @@ class drawCircleView_EN: UIView {
             let beierpath=UIBezierPath.init()
             let starAng=CGFloat(i)*drawWidth-CGFloat(M_PI/2)
             let endAng=CGFloat(i+1)*drawWidth-CGFloat(M_PI/2)
-            beierpath.addArcWithCenter(CGPoint(x: frame.height/2, y: frame.height/2), radius: radius, startAngle: starAng, endAngle: endAng, clockwise: true)
-            beierpath.lineCapStyle=CGLineCap.Round
-            beierpath.lineJoinStyle=CGLineJoin.Round
+            beierpath.addArc(withCenter: CGPoint(x: frame.height/2, y: frame.height/2), radius: radius, startAngle: starAng, endAngle: endAng, clockwise: true)
+            beierpath.lineCapStyle=CGLineCap.round
+            beierpath.lineJoinStyle=CGLineJoin.round
             beierpath.lineWidth=10.0
             
             let mcashapelayer=CAShapeLayer()
-            mcashapelayer.path=beierpath.CGPath
+            mcashapelayer.path=beierpath.cgPath
             
-            mcashapelayer.strokeColor=UIColor.whiteColor().CGColor
+            mcashapelayer.strokeColor=UIColor.white.cgColor
             mcashapelayer.fillColor=nil
             mcashapelayer.opacity = Float(i)/Float(drawCount)
             

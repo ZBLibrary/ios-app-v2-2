@@ -22,8 +22,8 @@ class CenterChartCell_EN: UITableViewCell {
     var ChartType=0{
         didSet{
             
-            cicleChartView.hidden=ChartType==0 ? false:true
-            lineChartView.hidden=ChartType==1 ? false:true
+            cicleChartView.isHidden=ChartType==0 ? false:true
+            lineChartView.isHidden=ChartType==1 ? false:true
             segmentSelectIndex=segmentControl.selectedSegmentIndex
         }
     }
@@ -37,7 +37,7 @@ class CenterChartCell_EN: UITableViewCell {
     @IBOutlet var cellTitle: UILabel!
     //SegmentedControl
     @IBOutlet var segmentControl: UISegmentedControl!
-    @IBAction func segmentClick(sender: AnyObject) {
+    @IBAction func segmentClick(_ sender: AnyObject) {
         segmentSelectIndex=segmentControl.selectedSegmentIndex
     }
     
@@ -47,19 +47,19 @@ class CenterChartCell_EN: UITableViewCell {
     @IBOutlet var state3Label: UILabel!
     @IBOutlet var leftButton: UIButton!
     //圆环左按钮事件
-    @IBAction func circleLeftClick(sender: AnyObject) {
+    @IBAction func circleLeftClick(_ sender: AnyObject) {
         segmentSelectIndex=segmentControl.selectedSegmentIndex-1;
     }
     
     @IBOutlet var leftImg: UIImageView!
     @IBOutlet var chartButton: UIButton!
     //点击圆环事件
-    @IBAction func circleClick(sender: AnyObject) {
+    @IBAction func circleClick(_ sender: AnyObject) {
         ChartType=1
     }
     @IBOutlet var rightButton: UIButton!
     //圆环右边按钮事件
-    @IBAction func circleRightClick(sender: AnyObject) {
+    @IBAction func circleRightClick(_ sender: AnyObject) {
         
         segmentSelectIndex=segmentControl.selectedSegmentIndex+1;
     }
@@ -77,28 +77,28 @@ class CenterChartCell_EN: UITableViewCell {
             if ChartType==0
             {
                 
-                leftImg.hidden=false
-                leftButton.enabled=true
-                rightImg.hidden=false
-                rightButton.enabled=true
+                leftImg.isHidden=false
+                leftButton.isEnabled=true
+                rightImg.isHidden=false
+                rightButton.isEnabled=true
                 if segmentSelectIndex<=0
                 {
-                    leftImg.hidden=true
-                    leftButton.enabled=false
+                    leftImg.isHidden=true
+                    leftButton.isEnabled=false
                 }
                 if segmentSelectIndex>=2
                 {
-                    rightImg.hidden=true
-                    rightButton.enabled=false
+                    rightImg.isHidden=true
+                    rightButton.isEnabled=false
                 }
                 //重绘圆环
-                if rmpData.record.Count>0
+                if rmpData.record.count>0
                 {
-                    let totalCount=Float(rmpData.record.Count)
-                    let tmp1=cellType==0 ? Float(rmpData.record.TDS_Good)/totalCount:Float(rmpData.record.Temperature_Low)/totalCount
-                    var tmp2=cellType==0 ? Float(rmpData.record.TDS_Mid)/totalCount:Float(rmpData.record.Temperature_Mid)/totalCount
+                    let totalCount=Float(rmpData.record.count)
+                    let tmp1=cellType==0 ? Float(rmpData.record.tds_Good)/totalCount:Float(rmpData.record.temperature_Low)/totalCount
+                    var tmp2=cellType==0 ? Float(rmpData.record.tds_Mid)/totalCount:Float(rmpData.record.temperature_Mid)/totalCount
                     
-                    let tmp3=cellType==0 ? Float(rmpData.record.TDS_Bad)/totalCount:Float(rmpData.record.Temperature_High)/totalCount
+                    let tmp3=cellType==0 ? Float(rmpData.record.tds_Bad)/totalCount:Float(rmpData.record.temperature_High)/totalCount
                     var tmp3need=0
                     if (100-Int(tmp1*100)-Int(tmp2*100))==1&&tmp3==0
                     {
@@ -129,7 +129,7 @@ class CenterChartCell_EN: UITableViewCell {
         super.awakeFromNib()
         segmentControl.layer.cornerRadius=12.5
         segmentControl.layer.borderWidth=1
-        segmentControl.layer.borderColor=UIColor(red: 56/255, green: 127/255, blue: 247/255, alpha: 1).CGColor
+        segmentControl.layer.borderColor=UIColor(red: 56/255, green: 127/255, blue: 247/255, alpha: 1).cgColor
         segmentControl.layer.masksToBounds=true
         
         
@@ -150,7 +150,7 @@ class CenterChartCell_EN: UITableViewCell {
         ChartType=0
     }
     //圆环更新方法
-    func updateCircleView(state1:Int,state2:Int,state3:Int)
+    func updateCircleView(_ state1:Int,state2:Int,state3:Int)
     {//type 0 TDS,1 温度
         state1Label.text=cellType==0 ? "\(loadLanguage("较差")) \(state1)%":"\(loadLanguage("偏烫")) \(state1)%"
         state2Label.text=cellType==0 ? "\(loadLanguage("一般")) \(state2)%":"\(loadLanguage("适中")) \(state2)%"
@@ -165,7 +165,7 @@ class CenterChartCell_EN: UITableViewCell {
         circleBGViewzb.setCircle()
     }
     //折线更新方法 type:0 日,1 周,2 月
-    func updateLineView(type:Int,array:NSArray,Record:CupRecord)
+    func updateLineView(_ type:Int,array:NSArray,Record:CupRecord)
     {
         
         for view in lineChartView.subviews
@@ -177,67 +177,67 @@ class CenterChartCell_EN: UITableViewCell {
         lineChartView.addSubview(lineView)
     }
     //dateType：0天,1周,2月
-    func getDataSource(dateType:Int)->(arr:NSArray,record:CupRecord)
+    func getDataSource(_ dateType:Int)->(arr:NSArray,record:CupRecord)
     {
-        if(self.myCurrentDevice != nil&&(self.myCurrentDevice?.isKindOfClass(Cup.classForCoder())) != false)
+        if(self.myCurrentDevice != nil&&(self.myCurrentDevice?.isKind(of: Cup.classForCoder())) != false)
         {
             let cup = self.myCurrentDevice
             //取今天的零点
             //去今天的0点时间
-            let date1 = NSDate()
+            let date = Date().dateAtStartOfDay()
             
-            let zone = NSTimeZone.systemTimeZone()
+            //let zone = TimeZone.local
             
-            let interval = NSTimeInterval(zone.secondsFromGMTForDate(date1))
-            let localeDate = date1.dateByAddingTimeInterval(interval)
+            //let interval = TimeInterval(zone.secondsFromGMT(for: date1))
+            //let localeDate = date1.addingTimeInterval(interval)
             
-            let date=NSDate(timeIntervalSince1970: NSTimeInterval(Int(localeDate.timeIntervalSince1970)/86400*86400)) as NSDate
+            //let date=Date(timeIntervalSince1970: TimeInterval(Int(localeDate.timeIntervalSince1970)/86400*86400)) as Date
             
-             if cup.volumes.isKindOfClass(NSNull)||cup.volumes==nil
+             if (cup?.volumes.isKind(of: NSNull.self))!||cup?.volumes==nil
              {
                 return (NSArray(),CupRecord())
             }
                 if dateType==0
                 {
                     //取这个天的
-                    let dataArr = sortUpdateTime(cup.volumes.getRecordByDate(date, interval: Hour)) as NSArray
+                    let dataArr = sortUpdateTime(cup!.volumes.getRecordBy(date, interval: Hour) as NSArray) as NSArray
                     
-                    let todayRecord =   cup.volumes.getRecordByDate(date) //as CupRecord
+                    let todayRecord =   cup?.volumes.getRecordBy(date) //as CupRecord
                     if todayRecord==nil
                     {
                         return (NSArray(),CupRecord())
                     }
-                    return (dataArr,todayRecord)       
+                    return (dataArr,todayRecord!)       
                     
                 }
                 else if dateType==1
                 {
                     //取这个星期
-                    var weekFirstDay = UToolBox.dateStartOfWeek(NSDate()) as NSDate
+                    var weekFirstDay = UToolBox.dateStart(ofWeek: Date()) as Date
                     let dayZeor = (Int(weekFirstDay.timeIntervalSince1970))/86400*86400
-                    weekFirstDay = NSDate(timeIntervalSince1970: NSTimeInterval(dayZeor))
-                    let weekArr = sortUpdateTime(cup.volumes.getRecordByDate(weekFirstDay, interval: Day))
-                    let weekRecord = cup.volumes.getRecordByDate(weekFirstDay)
+                    weekFirstDay = Date(timeIntervalSince1970: TimeInterval(dayZeor))
+                    let weekArr = sortUpdateTime(cup!.volumes.getRecordBy(weekFirstDay, interval: Day) as NSArray)
+                    let weekRecord = cup?.volumes.getRecordBy(weekFirstDay)
 
                     if weekRecord==nil
                     {
                         return (NSArray(),CupRecord())
                     }
-                    return (weekArr,weekRecord)
+                    return (weekArr,weekRecord!)
                     
                 }else
                 {
                     //取这个月的
-                    var monthFirstDay = UToolBox.dateStartOfMonth(NSDate())  as NSDate
+                    var monthFirstDay = UToolBox.dateStart(ofMonth: Date())  as Date
                     let monthZeor = Int(monthFirstDay.timeIntervalSince1970)/86400*86400
-                    monthFirstDay = NSDate(timeIntervalSince1970: NSTimeInterval(monthZeor))
-                    let monthArr = sortUpdateTime(cup.volumes.getRecordByDate(monthFirstDay, interval: Day))
-                    let monthRecord = cup.volumes.getRecordByDate(monthFirstDay)
+                    monthFirstDay = Date(timeIntervalSince1970: TimeInterval(monthZeor))
+                    let monthArr = sortUpdateTime(cup!.volumes.getRecordBy(monthFirstDay, interval: Day) as NSArray)
+                    let monthRecord = cup?.volumes.getRecordBy(monthFirstDay)
                     if monthRecord==nil
                     {
                         return (NSArray(),CupRecord())
                     }
-                    return (monthArr,monthRecord)
+                    return (monthArr,monthRecord!)
                     
                 }
             
@@ -251,10 +251,10 @@ class CenterChartCell_EN: UITableViewCell {
     }
     
     //找出最大的updatetime
-    func sortUpdateTime(arr:NSArray)->NSArray
+    func sortUpdateTime(_ arr:NSArray)->NSArray
     {
         //NSComparator
-        let cmptr=(arr as! [CupRecord]).sort({ (obj1: CupRecord!, obj2: CupRecord!) -> Bool in
+        let cmptr=(arr as! [CupRecord]).sorted(by: { (obj1: CupRecord!, obj2: CupRecord!) -> Bool in
             return obj1.start.timeIntervalSince1970 < obj2.start.timeIntervalSince1970
         })
 //        let cmptr:NSComparator = {(obj1:CupRecord!,obj2:CupRecord!)->(NSComparisonResult!) in
@@ -272,11 +272,11 @@ class CenterChartCell_EN: UITableViewCell {
         
         //NSArray* muArr = [arr sortedArrayUsingComparator:cmptr];
         //return muArr;
-        return cmptr
+        return cmptr as NSArray
     
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

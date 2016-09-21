@@ -36,7 +36,7 @@ class outAirXib_EN: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
        
      city.text = loadLanguage("城市");
         
@@ -59,10 +59,10 @@ class outAirXib_EN: UIView {
     
     func initView()
     {
-        IKnowButton.backgroundColor=UIColor.whiteColor()
+        IKnowButton.backgroundColor=UIColor.white
         IKnowButton.layer.cornerRadius=20
         IKnowButton.layer.masksToBounds=true
-        IKnowButton.layer.borderColor=UIColor(red: 109/255, green: 156/255, blue: 246/255, alpha: 1).CGColor
+        IKnowButton.layer.borderColor=UIColor(red: 109/255, green: 156/255, blue: 246/255, alpha: 1).cgColor
         IKnowButton.layer.borderWidth=1
         
     }

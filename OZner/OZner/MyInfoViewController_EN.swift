@@ -18,14 +18,14 @@ class MyInfoViewController_EN: UIViewController {
         let ScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-49))
         ScrollView.backgroundColor=UIColor(red: 238/255, green: 239/255, blue: 240/255, alpha: 1)
         
-        mainView=NSBundle.mainBundle().loadNibNamed("My_MainView_EN", owner: nil, options: nil).last as! My_MainView_EN
+        mainView=Bundle.main.loadNibNamed("My_MainView_EN", owner: nil, options: nil)?.last as! My_MainView_EN
         //添加数据和事件
-        mainView.My_Equids_button.addTarget(self, action: #selector(EquidsClick), forControlEvents: .TouchUpInside)
+        mainView.My_Equids_button.addTarget(self, action: #selector(EquidsClick), for: .touchUpInside)
         //        mainView.My_Friends.addTarget(self, action: #selector(My_FriendsClick), forControlEvents: .TouchUpInside)
-        mainView.SuggestButton.addTarget(self, action: #selector(Suggest), forControlEvents: .TouchUpInside)
-        mainView.Set.addTarget(self, action: #selector(SetApp), forControlEvents: .TouchUpInside)
+        mainView.SuggestButton.addTarget(self, action: #selector(Suggest), for: .touchUpInside)
+        mainView.Set.addTarget(self, action: #selector(SetApp), for: .touchUpInside)
         
-        mainView.My_login.addTarget(self, action: #selector(toLogin), forControlEvents: .TouchUpInside)
+        mainView.My_login.addTarget(self, action: #selector(toLogin), for: .touchUpInside)
         
         mainView.frame=CGRect(x: 0, y: -20, width: Screen_Width, height: 602)
         //        ScrollView.contentSize=CGSize(width: 0, height: 602)
@@ -44,35 +44,35 @@ class MyInfoViewController_EN: UIViewController {
     {
         //get_Phone()
         let werbservice = MyInfoWerbservice()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        werbservice.getUserNickImage([get_Phone()]){ [weak self](userinfo:NSMutableDictionary!, state:StatusManager!) -> Void in
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        werbservice.getUserNickImage([get_Phone()]){ [weak self](userinfo, state) -> Void in
             if let StrongSelf=self
             {
-                MBProgressHUD.hideHUDForView(StrongSelf.view, animated: true)
-                if state.networkStatus != kSuccessStatus
+                MBProgressHUD.hide(for: StrongSelf.view, animated: true)
+                if state?.networkStatus != kSuccessStatus
                 {
                     return
                 }
-                if userinfo==nil||userinfo.count==0
+                if userinfo==nil||userinfo?.count==0
                 {
                     return
                 }
                 
-                let state=userinfo.objectForKey("state") as! Int
+                let state=userinfo?.object(forKey: "state") as! Int
                 if state >= 0
                 {
-                    let data=userinfo.objectForKey("data")?.objectAtIndex(0)
+                    let data=(userinfo?.object(forKey: "data") as AnyObject).object(at: 0) as AnyObject
                     print(data)
-                    let mobile=data?.objectForKey("mobile") as! String
-                    var name=data!.objectForKey("nickname") as! String
+                    let mobile=data.object(forKey: "mobile") as! String
+                    var name=data.object(forKey: "nickname") as! String
                     
                     name=name=="" ? mobile : name
                     
-                    StrongSelf.mainView.My_login.setTitle((name ?? "无名"), forState: .Normal)
-                    var Score=data!.objectForKey("Score") as! String
+                    StrongSelf.mainView.My_login.setTitle((name ), for: UIControlState())
+                    var Score=data.object(forKey: "Score") as! String
                     Score=Score=="" ? "0" : Score
                     //                    StrongSelf.mainView.My_Money.text=Score
-                    let headimg=data!.objectForKey("headimg") as! String
+                    let headimg=data.object(forKey: "headimg") as! String
                     //                    let gradeName=(data!.objectForKey("GradeName") as! String)=="" ? "":((data!.objectForKey("GradeName") as! String))
                     
                     //                    let tmpName=gradeName.stringByReplacingOccurrencesOfString("会员", withString: "代理会员")
@@ -83,10 +83,10 @@ class MyInfoViewController_EN: UIViewController {
                         StrongSelf.mainView.My_head.image=UIImage(named: "DefaultHeadImage")
                     }
                     else{
-                        StrongSelf.mainView.My_head.image=UIImage(data: NSData(contentsOfURL: NSURL(string: headimg)!)!)
+                        StrongSelf.mainView.My_head.image=UIImage(data: try! Data(contentsOf: URL(string: headimg)!))
                     }
                     
-                    StrongSelf.mainView.My_login.enabled=false
+                    StrongSelf.mainView.My_login.isEnabled=false
                     //self.loadDevices()
                     //self.getYZcount()
                 }
@@ -125,28 +125,28 @@ class MyInfoViewController_EN: UIViewController {
     //已有设备
     func EquidsClick()
     {
-        self.performSegueWithIdentifier("showEquids", sender: self)
+        self.performSegue(withIdentifier: "showEquids", sender: self)
     }
     
     //我要提意见
     func Suggest()
     {
-        self.performSegueWithIdentifier("showSuggest", sender: self)
+        self.performSegue(withIdentifier: "showSuggest", sender: self)
     }
     //设置
     func SetApp()
     {
-        self.performSegueWithIdentifier("showSet", sender: self)
+        self.performSegue(withIdentifier: "showSet", sender: self)
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //我的设备数量
         //        let devices=OznerManager.instance().getDevices() as [AnyObject!]
         //        mainView.My_EquipCount.text="\(devices.count)"
-        self.navigationController?.navigationBarHidden=false
+        self.navigationController?.isNavigationBarHidden=false
         self.title = loadLanguage("个人设置")
-        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back@2x"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(leftMethod))
-        leftButton.tintColor = UIColor.darkGrayColor()
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back@2x"), style: UIBarButtonItemStyle.done, target: self, action: #selector(leftMethod))
+        leftButton.tintColor = UIColor.darkGray
         self.navigationItem.leftBarButtonItem = leftButton;
         //        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
     }

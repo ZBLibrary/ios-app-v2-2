@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "CollectionCell"
 struct DevicesZB {
     var Name=""
-    var Type=""
+    var `Type`=""
     var isActivit=0//0我的设备，1活动，2促销
 }
 class EquidsCollectionViewController: UICollectionViewController {
@@ -22,36 +22,36 @@ class EquidsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
          self.title=loadLanguage("已有设备")
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
-        self.view.backgroundColor=UIColor.whiteColor()
+        self.view.backgroundColor=UIColor.white
         // Register cell classes
         //通过Nib生成cell，然后注册 Nib的view需要继承 UICollectionViewCell
-        self.collectionView?.registerNib(UINib(nibName: "EquidsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCell")
+        self.collectionView?.register(UINib(nibName: "EquidsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCell")
                 self.collectionView?.allowsMultipleSelection = false//默认为NO,是否可以多选
         loaddatazb()
     }
 
-    func cellClickFun(button:UIButton)
+    func cellClickFun(_ button:UIButton)
     {
         print(button.tag)
         //print(indexPath.row+indexPath.section*3)
         let tmpdevice=devices[button.tag] as! OznerDevice
-        NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: tmpdevice)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "currentSelectedDevice"), object: tmpdevice)
         
-        let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
-        let button=array.objectAtIndex(0) as! UIButton
-        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+        let array=(CustomTabBarView.sharedCustomTabBar() as AnyObject).btnMuArr as NSMutableArray
+        let button=array.object(at: 0) as! UIButton
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).touchDownAction(button)
     }
 //    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
 //        
 //        
 //    }
-    var devices:[AnyObject!]!
+    var devices:[AnyObject?]!
     func loaddatazb()
     {
-        devices=OznerManager.instance().getDevices() as [AnyObject!]
+        devices=OznerManager.instance().getDevices() as [AnyObject?]
         for i in 0..<devices.count
         {
             let tmpdevice=devices[i]  as! OznerDevice
@@ -66,16 +66,16 @@ class EquidsCollectionViewController: UICollectionViewController {
     }
     func back()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden=false
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden=false
 
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     /*
     // MARK: - Navigation
@@ -89,13 +89,13 @@ class EquidsCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return arraydata.count/3+(arraydata.count%3>0 ? 1:0)
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let lineNumber=(arraydata.count/3+(arraydata.count%3>0 ? 1:0))
         if lineNumber<=1
         {
@@ -118,14 +118,14 @@ class EquidsCollectionViewController: UICollectionViewController {
         
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EquidsCollectionViewCell
-        cell.equipNameLabel.text=arraydata[indexPath.row+indexPath.section*3].Name
-        print(indexPath.row+indexPath.section*3)
-        cell.cellClick.tag=indexPath.row+indexPath.section*3
-        cell.cellClick.addTarget(self, action: #selector(cellClickFun), forControlEvents: .TouchUpInside)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EquidsCollectionViewCell
+        cell.equipNameLabel.text=arraydata[(indexPath as NSIndexPath).row+(indexPath as NSIndexPath).section*3].Name
+        print((indexPath as NSIndexPath).row+(indexPath as NSIndexPath).section*3)
+        cell.cellClick.tag=(indexPath as NSIndexPath).row+(indexPath as NSIndexPath).section*3
+        cell.cellClick.addTarget(self, action: #selector(cellClickFun), for: .touchUpInside)
         var imgwhich=""
-        switch(arraydata[indexPath.row+indexPath.section*3].Type)
+        switch(arraydata[(indexPath as NSIndexPath).row+(indexPath as NSIndexPath).section*3].Type)
         {
             
         case "CP001":
@@ -145,14 +145,14 @@ class EquidsCollectionViewController: UICollectionViewController {
             //cell.equipImage.image=UIImage(named: "My_cup")
             break
         }
-        cell.right_up.hidden=true
-        switch(arraydata[indexPath.row+indexPath.section*3].isActivit)
+        cell.right_up.isHidden=true
+        switch(arraydata[(indexPath as NSIndexPath).row+(indexPath as NSIndexPath).section*3].isActivit)
         {
         case 0:
-            cell.right_up.hidden=true
+            cell.right_up.isHidden=true
             break
         case 1:
-            cell.right_up.hidden=true
+            cell.right_up.isHidden=true
             //cell.right_up.setTitle(loadLanguage("活动"), forState: .Normal)
             imgwhich+="_gray"
             break
@@ -174,7 +174,7 @@ class EquidsCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     //定义每个UICollectionViewCell 的大小
     //override func colle
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         return CGSize(width: Screen_Width/3-10, height: 108)
     }
     

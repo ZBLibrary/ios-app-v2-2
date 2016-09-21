@@ -42,16 +42,16 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     @IBOutlet weak var resultStateLabel: UILabel!
     @IBOutlet weak var toDetailButton: UIButton!
     
-    private let centerOfImg=CGPoint(x: Screen_Width/2, y: 446*kHightOfWaterReplensh/2)
+    fileprivate let centerOfImg=CGPoint(x: Screen_Width/2, y: 446*kHightOfWaterReplensh/2)
     //数组以 脸 眼 手 颈 的顺序 半径30范围内
-    private let locationOfImg=[
+    fileprivate let locationOfImg=[
         SexType.WoMan:[CGPoint(x: 142*kWidthOfWaterReplensh, y: 265*kHightOfWaterReplensh),CGPoint(x: 214*kWidthOfWaterReplensh, y: 243*kHightOfWaterReplensh),CGPoint(x: 142*kWidthOfWaterReplensh, y: 370*kHightOfWaterReplensh),CGPoint(x: 206*kWidthOfWaterReplensh, y: 328*kHightOfWaterReplensh)],
         SexType.Man:[CGPoint(x: 142*kWidthOfWaterReplensh, y: 262*kHightOfWaterReplensh),CGPoint(x: 214*kWidthOfWaterReplensh, y: 240*kHightOfWaterReplensh),CGPoint(x: 142*kWidthOfWaterReplensh, y: 370*kHightOfWaterReplensh),CGPoint(x: 206*kWidthOfWaterReplensh, y: 328*kHightOfWaterReplensh)]
     ]
     //设备
-    private var WaterReplenishDevice:WaterReplenishmentMeter?
-    func personImgTapClick(sender: UITapGestureRecognizer) {
-        let touchPoint=sender.locationInView(personBgImgView)
+    fileprivate var WaterReplenishDevice:WaterReplenishmentMeter?
+    func personImgTapClick(_ sender: UITapGestureRecognizer) {
+        let touchPoint=sender.location(in: personBgImgView)
         if stateOfView>0//当前页是局部器官图二级界面
         {
                 stateOfView=0
@@ -92,17 +92,17 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         
     }
     //返回是不是在点的30半径范围内
-    private var isInside={ (point1:CGPoint,point2:CGPoint)->Bool in
+    fileprivate var isInside={ (point1:CGPoint,point2:CGPoint)->Bool in
         
         return pow(point1.x-point2.x, 2)+pow(point1.y-point2.y, 2)<=30*30
     }
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         centerCircleView.layer.cornerRadius=60.0*Screen_Width/375.0
         centerCircleView.layer.masksToBounds=true
         skinButton.layer.cornerRadius=20
         skinButton.layer.borderWidth=0.5
-        skinButton.layer.borderColor=UIColor(red: 91/255, green: 152/255, blue: 240/255, alpha: 1).CGColor
+        skinButton.layer.borderColor=UIColor(red: 91/255, green: 152/255, blue: 240/255, alpha: 1).cgColor
         stateOfView=0
         //图片添加触摸事件
         let tapGesture=UITapGestureRecognizer(target: self, action: #selector(personImgTapClick))
@@ -114,35 +114,35 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     }
     
     //0初始页面,1点击某个部位进入的页面,2检测中,3检测结果出来显示的页面
-    private let color_blue=UIColor(red: 61/255.0, green: 127/255.0, blue: 250/255.0, alpha: 1)
-    private let color_yellow=UIColor(red: 251/255.0, green: 125/255.0, blue: 67/255.0, alpha: 1)
+    fileprivate let color_blue=UIColor(red: 61/255.0, green: 127/255.0, blue: 250/255.0, alpha: 1)
+    fileprivate let color_yellow=UIColor(red: 251/255.0, green: 125/255.0, blue: 67/255.0, alpha: 1)
     //当前选中部位
     var currentBodyPart:BodyParts=BodyParts.Face
-    private var stateOfView = -1{
+    fileprivate var stateOfView = -1{
         didSet{
-            ClickAlertLabel.hidden=true
-            centerCircleView.hidden=false
-            alertBeforeTest.hidden=true
-            resultValueContainView.hidden=true
-            resultOfFooterContainView.hidden=false
-            skinButton.hidden=true
-            TestingIcon.hidden=true
+            ClickAlertLabel.isHidden=true
+            centerCircleView.isHidden=false
+            alertBeforeTest.isHidden=true
+            resultValueContainView.isHidden=true
+            resultOfFooterContainView.isHidden=false
+            skinButton.isHidden=true
+            TestingIcon.isHidden=true
             isStopAnimation=true
             runTimeOfAnimations=0.0
             switch stateOfView
             {
             case 0:
-                ClickAlertLabel.hidden=false
-                centerCircleView.hidden=true
-                skinButton.hidden=false
+                ClickAlertLabel.isHidden=false
+                centerCircleView.isHidden=true
+                skinButton.isHidden=false
                 
-                resultOfFooterContainView.hidden=true
+                resultOfFooterContainView.isHidden=true
                 personBgImgView.image=UIImage(named: personImgArray[currentSex]![0])
                
             case 1:
-                alertBeforeTest.hidden=false
+                alertBeforeTest.isHidden=false
                 centerCircleView.backgroundColor=color_blue
-                alertBeforeTest.font=UIFont.systemFontOfSize(16)
+                alertBeforeTest.font=UIFont.systemFont(ofSize: 16)
                 resultStateLabel.text=""
                 
                 if avgAndTimesArr.count>0
@@ -152,10 +152,10 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                 }
             case 2:
                 centerCircleView.backgroundColor=color_blue
-                alertBeforeTest.hidden=false
-                TestingIcon.hidden=false
+                alertBeforeTest.isHidden=false
+                TestingIcon.isHidden=false
                 alertBeforeTest.text=loadLanguage("检测中")
-                alertBeforeTest.font=UIFont.systemFontOfSize(20)
+                alertBeforeTest.font=UIFont.systemFont(ofSize: 20)
                 resultStateLabel.text=""
                 //检测转圈动画
                 isStopAnimation=false
@@ -167,7 +167,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                     resultValueLabel.text = "\(loadLanguage("上一次检测")) \(Int(tmpStruct.lastSkinValue))%  |  \(loadLanguage("平均值")) \(Int(tmpStruct.averageSkinValue))%（\(tmpStruct.checkTimes)\(loadLanguage("次"))）"
                 }
             case 3:
-                resultValueContainView.hidden=false
+                resultValueContainView.isHidden=false
                 let testResult=getNeedOilAndWaterValue(WaterReplenishDevice!.status.oil,moisture: WaterReplenishDevice!.status.moisture)
                 valueOfTestLabel.text=testResult.moistureValue
                 stateOfTestLabel.text=WaterType[testResult.TypeIndex]
@@ -199,7 +199,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     }
 
     //水分类型描述
-    private let WaterStateArr=[
+    fileprivate let WaterStateArr=[
         BodyParts.Face:[loadLanguage("脸颊两边皮肤干燥起皮,T区油腻毛孔粗大痘痘横行,脸部亟需补水哦"),loadLanguage("皮肤不油也不干,脸部缺水问题暂时得到缓解"),loadLanguage("脸部细腻红润有光泽,补水到位,面色也不一样哦")],
         BodyParts.Eyes:[loadLanguage("眼部肌肤干燥，易出现皱纹及水肿。此处皮肤一旦松弛较难恢复原状态。补水是延缓衰老的根本保障"),loadLanguage("眼部现在的皮肤水分属于正常水平，但是略显疲惫，请注意保湿！"),loadLanguage("眼部现在的肌肤已经喝饱了水分！要继续保持哦！")],
         BodyParts.Hands:[loadLanguage("手部干燥细纹也跑出来啦,手指的肉刺也变多,需要赶快补充水分哦"),loadLanguage("手部现在的肌肤水份得到补充,果然光滑许多"),loadLanguage("手部润滑有弹性,喝饱水的肌肤果然让人爱不释手呢 ")],
@@ -207,17 +207,17 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     ]
 
 
-    private let SkinType=[loadLanguage("干性"),loadLanguage("中性"),loadLanguage("油性")]
-    private let WaterType=[loadLanguage("干燥"),loadLanguage("正常"),loadLanguage("水润")]
-    private let ColorType=[UIColor(red: 252/255, green: 128/255, blue: 65/255, alpha: 1),UIColor(red: 64/255, green: 125/255, blue: 250/255, alpha: 1),UIColor(red: 64/255, green: 125/255, blue: 250/255, alpha: 1)]
+    fileprivate let SkinType=[loadLanguage("干性"),loadLanguage("中性"),loadLanguage("油性")]
+    fileprivate let WaterType=[loadLanguage("干燥"),loadLanguage("正常"),loadLanguage("水润")]
+    fileprivate let ColorType=[UIColor(red: 252/255, green: 128/255, blue: 65/255, alpha: 1),UIColor(red: 64/255, green: 125/255, blue: 250/255, alpha: 1),UIColor(red: 64/255, green: 125/255, blue: 250/255, alpha: 1)]
     
     //water,取值范围
-    private let WaterTypeValue=[BodyParts.Face:[32,42],
+    fileprivate let WaterTypeValue=[BodyParts.Face:[32,42],
                            BodyParts.Eyes:[35,45],
                            BodyParts.Hands:[30,38],
                            BodyParts.Neck:[35,45]
     ]
-    private func getNeedOilAndWaterValue(oil:Float,moisture:Float)->(oilValue:String,moistureValue:String,TypeIndex:Int,skinTypeIndex:Int)
+    fileprivate func getNeedOilAndWaterValue(_ oil:Float,moisture:Float)->(oilValue:String,moistureValue:String,TypeIndex:Int,skinTypeIndex:Int)
     {
         
         var tmpOil=Int(oil)
@@ -248,13 +248,13 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     }
     //private getStateOf
     //检测中动画效果
-    private var isStopAnimation=false
-    private var runTimeOfAnimations:Double=0.0
-    private func startAnimations(angle:CGFloat)
+    fileprivate var isStopAnimation=false
+    fileprivate var runTimeOfAnimations:Double=0.0
+    fileprivate func startAnimations(_ angle:CGFloat)
     {
         runTimeOfAnimations+=0.1
-        let endAngle:CGAffineTransform = CGAffineTransformMakeRotation(angle*CGFloat(M_PI/180.0))
-        UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
+        let endAngle:CGAffineTransform = CGAffineTransform(rotationAngle: angle*CGFloat(M_PI/180.0))
+        UIView.animate(withDuration: 0.1, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
             self.TestingIcon.transform = endAngle
             }, completion: {[weak self](finished:Bool) in
                 
@@ -266,7 +266,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                     if self!.runTimeOfAnimations>=10.0
                     {
                         let alertView=SCLAlertView()
-                        alertView.showTitle("", subTitle: loadLanguage("您的检测时间未满5秒..."), duration: 2.0, completeText: loadLanguage("完成"), style: SCLAlertViewStyle.Notice)
+                        _=alertView.showTitle("", subTitle: loadLanguage("您的检测时间未满5秒..."), duration: 2.0, completeText: loadLanguage("完成"), style: SCLAlertViewStyle.notice)
                         self!.stateOfView=1
                         self!.alertBeforeTest.text=loadLanguage("检测失败,请重试")
                     }
@@ -279,13 +279,13 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         })
     }
 
-    private let personImgArray=[
+    fileprivate let personImgArray=[
         SexType.WoMan:["womanOfReplensh1","womanOfReplensh2","womanOfReplensh3","womanOfReplensh4","womanOfReplensh5"],
         SexType.Man:["manOfReplensh1","manOfReplensh2","manOfReplensh3","manOfReplensh4","manOfReplensh5"]
     ]
     
     //当前性别
-    private var currentSex:SexType=SexType.WoMan{
+    fileprivate var currentSex:SexType=SexType.WoMan{
         didSet{
             stateOfView=0
         }
@@ -310,7 +310,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                 let weakSelf=self
                 if WaterReplenishDevice!.status.oil==0 {
                     let alertView=SCLAlertView()
-                    alertView.showTitle("", subTitle: loadLanguage("您的检测时间未满5秒..."), duration: 2.0, completeText: loadLanguage("完成"), style: SCLAlertViewStyle.Notice)
+                    _=alertView.showTitle("", subTitle: loadLanguage("您的检测时间未满5秒..."), duration: 2.0, completeText: loadLanguage("完成"), style: SCLAlertViewStyle.notice)
                     weakSelf.stateOfView=1
                     weakSelf.alertBeforeTest.text=loadLanguage("检测失败,请重试")
                 }
@@ -346,7 +346,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         layoutIfNeeded()
     }
     //初始化视图
-    func initView(currentDevice:OznerDevice)
+    func initView(_ currentDevice:OznerDevice)
     {
         WaterReplenishDevice=currentDevice as? WaterReplenishmentMeter
         //设置电量
@@ -377,23 +377,23 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         dianLiangValueLabel.text = String(Int(dianliang)) + "%"
         updateViewzb()
         getAllWeakAndMonthData()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateViewzb), name: "updateDeviceInfo", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateViewzb), name: NSNotification.Name(rawValue: "updateDeviceInfo"), object: nil)
     }
     
     
     
     //上传检测数据
-    private func uploadSKinData(ynumber:String,snumber:String)
+    fileprivate func uploadSKinData(_ ynumber:String,snumber:String)
     {
         let deviceService=DeviceWerbservice()
-        deviceService.UpdateBuShuiYiNumber(WaterReplenishDevice?.identifier, ynumber: ynumber, snumber: snumber, action: currentBodyPart.rawValue, returnBlock: { (status) in
-            if(status.networkStatus == kSuccessStatus)
+        deviceService.updateBuShuiYiNumber(WaterReplenishDevice?.identifier, ynumber: ynumber, snumber: snumber, action: currentBodyPart.rawValue, return: { (status) in
+            if(status?.networkStatus == kSuccessStatus)
             {
                 print("上传检测肤质成功")
             }
         })
     }
-    private func removeAdressOfDeviceName(tmpName:String)->String
+    fileprivate func removeAdressOfDeviceName(_ tmpName:String)->String
     {
         if tmpName.characters.contains("(")==false
         {
@@ -401,8 +401,8 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         }
         else
         {
-            let NameStr:NSArray = tmpName.componentsSeparatedByString("(")
-            return (NameStr.objectAtIndex(0) as! String)
+            let NameStr = tmpName.components(separatedBy: "(") as AnyObject
+            return (NameStr.object(at: 0) as! String)
         }
     }
     
@@ -412,7 +412,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         didSet{
             if currentSkinTypeIndex>0&&currentSkinTypeIndex<3
             {
-                self.skinButton.setTitle("\(loadLanguage("您的肤质"))   "+self.SkinType[currentSkinTypeIndex], forState: .Normal)
+                self.skinButton.setTitle("\(loadLanguage("您的肤质"))   "+self.SkinType[currentSkinTypeIndex], for: UIControlState())
                 
             }
             
@@ -424,19 +424,20 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     {
         print(get_UserToken())
         //下载周月数据
-        MBProgressHUD.showHUDAddedTo(self, animated: true)
+        MBProgressHUD.showAdded(to: self, animated: true)
         let deviceService=DeviceWerbservice()
-        deviceService.GetBuShuiFenBu(WaterReplenishDevice?.identifier, action: currentBodyPart.rawValue) { [weak self](dataArr, Status) in
-            MBProgressHUD.hideHUDForView(self!, animated: true)
-            if Status.networkStatus==kSuccessStatus
+        deviceService.getBuShuiFenBu(WaterReplenishDevice?.identifier, action: currentBodyPart.rawValue) { [weak self](dataArr1, Status) in
+            MBProgressHUD.hide(for: self!, animated: true)
+            if Status?.networkStatus==kSuccessStatus
             {
                 let tmpKeyArr=["FaceSkinValue","EyesSkinValue","HandSkinValue","NeckSkinValue"]
-                let tmpData=dataArr.objectForKey("data")
+                let dataArr = dataArr1 as AnyObject
+                let tmpData=dataArr.object(forKey: "data")
                 
                 for i in 0...3
                 {
                     
-                    let tempBody=tmpData?.objectForKey(tmpKeyArr[i])
+                    let tempBody=(tmpData as AnyObject).object(forKey: tmpKeyArr[i]) as AnyObject
                     
                     //月数据
                     var maxTimes=0
@@ -444,32 +445,36 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                     var lastValue:Double=0
                     var totolValue:Double=0
                     var totolOilValue:Double=0
-                    for item in (tempBody?.objectForKey("monty") as! NSArray)
+                    for item1 in (tempBody.object(forKey: "monty") as! NSArray)
                     {
                         let record=CupRecord()
-                        record.TDS_Bad=(item.objectForKey("ynumber") as! NSNumber).intValue//油分
-                        record.TDS_Good=(item.objectForKey("snumber") as! NSNumber).intValue//水分
-                        totolOilValue+=Double(record.TDS_Bad)
-                        totolValue+=Double(record.TDS_Good)
-                        let dateStr=dateStampToString((item.objectForKey("updatetime") as! String), format: "yyyy-MM-dd")
+                        
+                        let item = item1 as AnyObject
+                        
+                        record.tds_Bad=(item.object(forKey: "ynumber") as! NSNumber).int32Value//油分
+                        record.tds_Good=(item.object(forKey: "snumber") as! NSNumber).int32Value//水分
+                        totolOilValue+=Double(record.tds_Bad)
+                        totolValue+=Double(record.tds_Good)
+                        
+                        let dateStr=dateStampToString((item.object(forKey: "updatetime") as! String), format: "yyyy-MM-dd")
                         record.start=dateFromString(dateStr, format: "yyyy-MM-dd")
-                        print(item.objectForKey("updatetime"))
+                        print(item.object(forKey: "updatetime"))
                         print(record.start)
-                        if stringFromDate(record.start, format: "yyyy-MM-dd")==stringFromDate(NSDate(), format: "yyyy-MM-dd")
+                        if stringFromDate(record.start, format: "yyyy-MM-dd")==stringFromDate(Date(), format: "yyyy-MM-dd")
                         {
-                            todayValue=Double(record.TDS_Good)
+                            todayValue=Double(record.tds_Good)
                         }
-                        maxTimes=max(maxTimes,item.objectForKey("times") as! Int)
+                        maxTimes=max(maxTimes,(item as AnyObject).object(forKey: "times") as! Int)
                     }
                     
-                    let tmpCount=(tempBody?.objectForKey("monty") as! NSArray).count
+                    let tmpCount=(tempBody.object(forKey: "monty") as! NSArray).count
                     if tmpCount<=1
                     {
                         lastValue=todayValue
                     }
                     else{
-                        let LastData=tempBody?.objectForKey("monty")?.objectAtIndex(tmpCount-2)
-                        lastValue=LastData?.objectForKey("snumber") as! Double
+                        let LastData=(tempBody.object(forKey: "monty") as AnyObject).object(at: tmpCount-2)
+                        lastValue=(LastData as AnyObject).object(forKey: "snumber") as! Double
                     }
                     let tmpAveValue=tmpCount==0 ? 0:(totolValue/Double(tmpCount))
                     let tmpAveOilValue=tmpCount==0 ? 0:(totolOilValue/Double(tmpCount))

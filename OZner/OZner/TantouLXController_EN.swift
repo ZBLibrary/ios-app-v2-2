@@ -20,21 +20,21 @@ class TantouLXController_EN: UIViewController {
 
         self.title=loadLanguage("当前滤芯状态")
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         let ScrollView=UIScrollView(frame: CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight-65))
-        ScrollView.backgroundColor=UIColor.whiteColor()
-        mainView=NSBundle.mainBundle().loadNibNamed("tantouLvXinView_EN", owner: nil, options: nil).last as! tantouLvXinView_EN
+        ScrollView.backgroundColor=UIColor.white
+        mainView=Bundle.main.loadNibNamed("tantouLvXinView_EN", owner: nil, options: nil)?.last as! tantouLvXinView_EN
         mainView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: mainView.bounds.size.height)
         //
-        mainView.zixunButton.addTarget(self, action: #selector(zixun), forControlEvents: .TouchUpInside)
-        mainView.buyLXButton.addTarget(self, action: #selector(buyLX), forControlEvents: .TouchUpInside)
-        mainView.saoMaButton.addTarget(self, action: #selector(saoMa), forControlEvents: .TouchUpInside)
+        mainView.zixunButton.addTarget(self, action: #selector(zixun), for: .touchUpInside)
+        mainView.buyLXButton.addTarget(self, action: #selector(buyLX), for: .touchUpInside)
+        mainView.saoMaButton.addTarget(self, action: #selector(saoMa), for: .touchUpInside)
         //更多产品
-        mainView.MoreDeviceButton1.addTarget(self, action: #selector(MoreDeviceClick), forControlEvents: .TouchUpInside)
-        mainView.MoreDeviceButton2.addTarget(self, action: #selector(MoreDeviceClick), forControlEvents: .TouchUpInside)
-        mainView.MoreDeviceButton3.addTarget(self, action: #selector(MoreDeviceClick), forControlEvents: .TouchUpInside)
+        mainView.MoreDeviceButton1.addTarget(self, action: #selector(MoreDeviceClick), for: .touchUpInside)
+        mainView.MoreDeviceButton2.addTarget(self, action: #selector(MoreDeviceClick), for: .touchUpInside)
+        mainView.MoreDeviceButton3.addTarget(self, action: #selector(MoreDeviceClick), for: .touchUpInside)
         //设置滤芯状态
         setLvXinState()
         if WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true
@@ -47,7 +47,7 @@ class TantouLXController_EN: UIViewController {
             
             mainView.maxUserDay=365
             
-            mainView.ErWeiMaContainView.hidden = !IsShowScanOfWater
+            mainView.ErWeiMaContainView.isHidden = !IsShowScanOfWater
             mainView.frame = CGRect(x: 0, y: 0, width: Screen_Width, height: IsShowScanOfWater ? mainView.bounds.size.height:(mainView.bounds.size.height-140))
             ScrollView.contentSize=CGSize(width: 0, height: mainView.bounds.size.height+(tmpImg?.size.height)!*Screen_Width/(tmpImg?.size.width)!)
         }else
@@ -58,11 +58,11 @@ class TantouLXController_EN: UIViewController {
         
         ScrollView.addSubview(mainView)
         self.view.addSubview(ScrollView)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setLvXinState), name: "updateLVXinTimeByScan", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setLvXinState), name: NSNotification.Name(rawValue: "updateLVXinTimeByScan"), object: nil)
         // Do any additional setup after loading the view.
     }
 
-    func MoreDeviceClick(button:UIButton)
+    func MoreDeviceClick(_ button:UIButton)
     {
         let weiXinUrl=weiXinUrlNamezb()
         let UrlControl=WeiXinURLViewController_EN(nibName: "WeiXinURLViewController_EN", bundle: nil)
@@ -78,17 +78,17 @@ class TantouLXController_EN: UIViewController {
             UrlControl.title=weiXinUrl.moreDevice_Cup
             break
         }
-        self.presentViewController(UrlControl, animated: true, completion: nil)
+        self.present(UrlControl, animated: true, completion: nil)
     }
     func back(){
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
         
     }
     func zixun()
     {
-        let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
-        let button=array.objectAtIndex(2) as! UIButton
-        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+        let array=(CustomTabBarView.sharedCustomTabBar() as AnyObject).btnMuArr as NSMutableArray
+        let button=array.object(at: 2) as! UIButton
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).touchDownAction(button)
     }
     func buyLX()
     {
@@ -108,7 +108,7 @@ class TantouLXController_EN: UIViewController {
             
         }
         
-        self.presentViewController(buyLX, animated: true, completion: nil)
+        self.present(buyLX, animated: true, completion: nil)
     }
     func saoMa()
     {
@@ -127,8 +127,8 @@ class TantouLXController_EN: UIViewController {
         
         let scan = SubLBXScanViewController()
         scan.style = style
-        scan.deviceMac=myCurrentDevice?.identifier
-        scan.deviceType=myCurrentDevice?.type
+        scan.deviceMac=myCurrentDevice?.identifier as NSString!
+        scan.deviceType=myCurrentDevice?.type as NSString!
         self.navigationController?.pushViewController(scan, animated: true)
         
     }
@@ -141,34 +141,34 @@ class TantouLXController_EN: UIViewController {
         let params:NSDictionary = ["usertoken":get_UserToken(),"mac":(myCurrentDevice?.identifier)!]
         print(url)
         print(params)
-        manager.POST(url,
+        manager.post(url,
             parameters: params,
-            success: { (operation: AFHTTPRequestOperation!,
-                responseObject: AnyObject!) in
-                print(responseObject)
-                let state=responseObject.objectForKey("state") as! Int
+            success: { (operation,
+                response) in
+                let responseObject = response as AnyObject
+                let state=responseObject.object(forKey: "state") as! Int
                 if(state>=0)
                 {
                     
-                    if (responseObject.objectForKey("time")!.isKindOfClass(NSNull) == false)&&(responseObject.objectForKey("nowtime")!.isKindOfClass(NSNull) == false)
+                    if (responseObject.object(forKey: "time") != nil)&&(responseObject.object(forKey: "nowtime") != nil)
                     {
-                        let format=NSDateFormatter()
+                        let format=DateFormatter()
                         format.dateFormat="yyyy/MM/dd HH:mm:ss"
                         
-                        let endDate=responseObject.objectForKey("time") as! String
-                        let nowDate=responseObject.objectForKey("nowtime") as! String
-                        let endTime=format.dateFromString(endDate)!.timeIntervalSince1970
-                        let nowTime=format.dateFromString(nowDate)!.timeIntervalSince1970
+                        let endDate=responseObject.object(forKey: "time") as! String
+                        let nowDate=responseObject.object(forKey: "nowtime") as! String
+                        let endTime=format.date(from: endDate)!.timeIntervalSince1970
+                        let nowTime=format.date(from: nowDate)!.timeIntervalSince1970
                         let value = Int((endTime-nowTime)/(24*3600))
                         format.dateFormat="yyyy-MM-dd HH:mm:ss"
-                        let stardate = NSDate(timeIntervalSince1970: (endTime-365*24*3600))
-                        self.mainView.starDate=format.stringFromDate(stardate)
+                        let stardate = Date(timeIntervalSince1970: (endTime-365*24*3600))
+                        self.mainView.starDate=format.string(from: stardate)
                         self.mainView.useDay=(value<0 ? 365:(365-value))
                     }
                 }
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
+            failure: { (operation,
+                error) in
                 print("Error: " + error.localizedDescription)
         })
         
@@ -196,17 +196,17 @@ class TantouLXController_EN: UIViewController {
     func setLvXinStateTap()
     {
         
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let werbservice = DeviceWerbservice()
-        werbservice.filterService(self.myCurrentDevice?.identifier) { (modifyTime:String!, userDay:NSNumber!, status:StatusManager!) -> Void in
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            if(status.networkStatus == kSuccessStatus)
+        werbservice.filterService(self.myCurrentDevice?.identifier) { (modifyTime, userDay, status) -> Void in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if(status?.networkStatus == kSuccessStatus)
             {
                 print(modifyTime)
                 print(userDay)
                 
-                self.mainView.starDate=modifyTime
-                self.mainView.useDay=Int(userDay.intValue)
+                self.mainView.starDate=modifyTime!
+                self.mainView.useDay=Int((userDay?.int32Value)!)
             }
             else
             {
@@ -215,12 +215,12 @@ class TantouLXController_EN: UIViewController {
             }
         }
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden=false
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.isNavigationBarHidden=false
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "bg_clear_gray"), for: UIBarMetrics.default)
         self.navigationController!.navigationBar.shadowImage =  UIImage(named: "bg_clear_black")
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

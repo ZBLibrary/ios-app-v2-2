@@ -19,22 +19,22 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
 
         self.automaticallyAdjustsScrollViewInsets=false
         
-        HeadView = NSBundle.mainBundle().loadNibNamed("HeadOfWaterReplenishDetailCell_EN", owner: self, options: nil).last as!  HeadOfWaterReplenishDetailCell_EN
-        HeadView.selectionStyle=UITableViewCellSelectionStyle.None
-        HeadView.backButton.addTarget(self, action: #selector(backClick), forControlEvents: .TouchUpInside)
-        HeadView.shareButton.addTarget(self, action: #selector(shareClick), forControlEvents: .TouchUpInside)
+        HeadView = Bundle.main.loadNibNamed("HeadOfWaterReplenishDetailCell_EN", owner: self, options: nil)?.last as!  HeadOfWaterReplenishDetailCell_EN
+        HeadView.selectionStyle=UITableViewCellSelectionStyle.none
+        HeadView.backButton.addTarget(self, action: #selector(backClick), for: .touchUpInside)
+        HeadView.shareButton.addTarget(self, action: #selector(shareClick), for: .touchUpInside)
         
-        FooterView = NSBundle.mainBundle().loadNibNamed("FooterOfWaterReplenishDetailCell_EN", owner: self, options: nil).last as!  FooterOfWaterReplenishDetailCell_EN
-        FooterView.toWhatYoufen.addTarget(self, action: #selector(toWhatOfYou), forControlEvents: .TouchUpInside)
-        FooterView.toWhatWater.addTarget(self, action: #selector(toWhatOfWater), forControlEvents: .TouchUpInside)
-        FooterView.toChatButton.addTarget(self, action: #selector(toChatButton), forControlEvents: .TouchUpInside)
-        FooterView.toBuyEssence.addTarget(self, action: #selector(toBuyEssence), forControlEvents: .TouchUpInside)
+        FooterView = Bundle.main.loadNibNamed("FooterOfWaterReplenishDetailCell_EN", owner: self, options: nil)?.last as!  FooterOfWaterReplenishDetailCell_EN
+        FooterView.toWhatYoufen.addTarget(self, action: #selector(toWhatOfYou), for: .touchUpInside)
+        FooterView.toWhatWater.addTarget(self, action: #selector(toWhatOfWater), for: .touchUpInside)
+        FooterView.toChatButton.addTarget(self, action: #selector(toChatButton), for: .touchUpInside)
+        FooterView.toBuyEssence.addTarget(self, action: #selector(toBuyEssence), for: .touchUpInside)
         HeadView.delegate=FooterView//头部视图器官切换代理
         
         
         //初始化数据
         getAllWeakAndMonthData()
-        FooterView.selectionStyle=UITableViewCellSelectionStyle.None
+        FooterView.selectionStyle=UITableViewCellSelectionStyle.none
         
     }
    
@@ -44,34 +44,38 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
         let tmpIndex=[BodyParts.Face:0,BodyParts.Eyes:1,BodyParts.Hands:2,BodyParts.Neck:3][currentBodyPart]!
         var dataDic=[String:HeadOfWaterReplenishStruct]()
         //下载周月数据
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let deviceService=DeviceWerbservice()
-        deviceService.GetBuShuiFenBu(WaterReplenishDevice?.identifier, action: currentBodyPart.rawValue) { [weak self](dataArr, Status) in
-            MBProgressHUD.hideHUDForView(self!.view, animated: true)
-            if Status.networkStatus==kSuccessStatus
+        deviceService.getBuShuiFenBu(WaterReplenishDevice?.identifier, action: currentBodyPart.rawValue) { [weak self](dataArr1, Status) in
+            MBProgressHUD.hide(for: self!.view, animated: true)
+            if Status?.networkStatus==kSuccessStatus
             {
                 
                 let tmpKeyArr=["FaceSkinValue","EyesSkinValue","HandSkinValue","NeckSkinValue"]
-                let tmpData=dataArr.objectForKey("data")
+                
+                let dataArr = dataArr1 as AnyObject
+                
+                let tmpData = dataArr.object(forKey: "data") as AnyObject
+                
                 let weekArray=NSMutableDictionary()
                 let monthArray=NSMutableDictionary()
                 for i in 0...3
                 {
                     let tmpWeek=NSMutableArray()
                     let tmpMonth=NSMutableArray()
-                    let tempBody=tmpData?.objectForKey(tmpKeyArr[i])
+                    let tempBody=tmpData.object(forKey: tmpKeyArr[i]) as AnyObject
                     
                     
                     
                     //周数据
-                    for item in (tempBody?.objectForKey("week") as! NSArray)
+                    for item in (tempBody.object(forKey: "week") as! NSArray)
                     {
                         let record=CupRecord()
-                        record.TDS_Bad=(item.objectForKey("ynumber") as! NSNumber).intValue//油分
-                        record.TDS_Good=(item.objectForKey("snumber") as! NSNumber).intValue//水分
-                        let dateStr=dateStampToString((item.objectForKey("updatetime") as! String), format: "yyyy-MM-dd")
+                        record.tds_Bad=((item as AnyObject).object(forKey: "ynumber") as! NSNumber).int32Value//油分
+                        record.tds_Good=((item as AnyObject).object(forKey: "snumber") as! NSNumber).int32Value//水分
+                        let dateStr=dateStampToString(((item as AnyObject).object(forKey: "updatetime") as! String), format: "yyyy-MM-dd")
                         record.start=dateFromString(dateStr, format: "yyyy-MM-dd")
-                        tmpWeek.addObject(record)
+                        tmpWeek.add(record)
                         //item.objectForKey("times")
                     }
                     //月数据
@@ -79,31 +83,32 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
                     var todayValue:Double=0
                     var lastValue:Double=0
                     var totolValue:Double=0
-                    for item in (tempBody?.objectForKey("monty") as! NSArray)
+                    for item1 in (tempBody.object(forKey: "monty") as! NSArray)
                     {
+                        let item=item1 as AnyObject
                         let record=CupRecord()
-                        record.TDS_Bad=(item.objectForKey("ynumber") as! NSNumber).intValue//油分
-                        record.TDS_Good=(item.objectForKey("snumber") as! NSNumber).intValue//水分
-                        totolValue+=Double(record.TDS_Good)
-                        let dateStr=dateStampToString((item.objectForKey("updatetime") as! String), format: "yyyy-MM-dd")
+                        record.tds_Bad=(item.object(forKey: "ynumber") as! NSNumber).int32Value//油分
+                        record.tds_Good=(item.object(forKey: "snumber") as! NSNumber).int32Value//水分
+                        totolValue+=Double(record.tds_Good)
+                        let dateStr=dateStampToString((item.object(forKey: "updatetime") as! String), format: "yyyy-MM-dd")
                         record.start=dateFromString(dateStr, format: "yyyy-MM-dd")
-                        tmpMonth.addObject(record)
-                        print(stringFromDate(NSDate(), format: "yyyy-MM-dd"))
-                        if stringFromDate(record.start, format: "yyyy-MM-dd")==stringFromDate(NSDate(), format: "yyyy-MM-dd")
+                        tmpMonth.add(record)
+                        print(stringFromDate(Date(), format: "yyyy-MM-dd"))
+                        if stringFromDate(record.start, format: "yyyy-MM-dd")==stringFromDate(Date(), format: "yyyy-MM-dd")
                         {
-                            todayValue=Double(record.TDS_Good)
+                            todayValue=Double(record.tds_Good)
                         }
-                        maxTimes=max(maxTimes,item.objectForKey("times") as! Int)
+                        maxTimes=max(maxTimes,item.object(forKey: "times") as! Int)
                     }
                     
-                    let tmpCount=(tempBody?.objectForKey("monty") as! NSArray).count
+                    let tmpCount=(tempBody.object(forKey: "monty") as! NSArray).count
                     if tmpCount<=1
                     {
                         lastValue=todayValue
                     }
                     else{
-                        let LastData=tempBody?.objectForKey("monty")?.objectAtIndex(tmpCount-2)
-                        lastValue=LastData?.objectForKey("snumber") as! Double
+                        let LastData=(tempBody.object(forKey: "monty") as AnyObject).object(at: tmpCount-2)
+                        lastValue=(LastData as AnyObject).object(forKey: "snumber") as! Double
                     }
                     let tmpAveValue=tmpCount==0 ? 0:(totolValue/Double(tmpCount))
                     let tmpStru=HeadOfWaterReplenishStruct(skinValueOfToday: todayValue, lastSkinValue: lastValue, averageSkinValue:tmpAveValue, checkTimes: maxTimes)
@@ -122,7 +127,7 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
     }
     func backClick()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     func shareClick()
     {
@@ -143,11 +148,15 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
     }
     func toChatButton()
     {
-        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(2) as! UIButton)
+        let button = ((CustomTabBarView.sharedCustomTabBar() as AnyObject).btnMuArr as AnyObject).object(at: 2) as! UIButton
+        
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).touchDownAction(button)
     }
     func toBuyEssence()
     {
-        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(1) as! UIButton)
+        let button = ((CustomTabBarView.sharedCustomTabBar() as AnyObject).btnMuArr as AnyObject).object(at: 1) as! UIButton
+        
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).touchDownAction(button)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -156,18 +165,18 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 2
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row==0
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath as NSIndexPath).row==0
         {
             return 332
         }
@@ -177,8 +186,8 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row==0
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath as NSIndexPath).row==0
         {
             return HeadView
         }else
@@ -188,9 +197,9 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
 
     /*

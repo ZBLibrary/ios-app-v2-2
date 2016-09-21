@@ -15,14 +15,14 @@ class DeviceMatchCellView_EN: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let width = UIScreen.mainScreen().bounds.width
-        iconImgView = UIImageView(frame: CGRectMake((frame.size.width-53*(width/375.0))/2, (frame.size.height-53*(width/375.0)-10-14)/2, 53*(width/375.0), 53*(width/375.0)))
-        iconImgView?.backgroundColor = UIColor.clearColor()
+        let width = UIScreen.main.bounds.width
+        iconImgView = UIImageView(frame: CGRect(x: (frame.size.width-53*(width/375.0))/2, y: (frame.size.height-53*(width/375.0)-10-14)/2, width: 53*(width/375.0), height: 53*(width/375.0)))
+        iconImgView?.backgroundColor = UIColor.clear
         self.addSubview(iconImgView!)
         
-        let label:UILabel = UILabel(frame: CGRectMake(0,(iconImgView?.frame.origin.y)!+(iconImgView?.frame.size.height)!+10,width,14))
-        label.textAlignment = NSTextAlignment.Center
-        label.font = UIFont.systemFontOfSize(14)
+        let label:UILabel = UILabel(frame: CGRect(x: 0,y: (iconImgView?.frame.origin.y)!+(iconImgView?.frame.size.height)!+10,width: width,height: 14))
+        label.textAlignment = NSTextAlignment.center
+        label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.5)
         //label.sizeToFit()
         self.addSubview(label)

@@ -19,11 +19,11 @@ class uiDatePickerView_EN: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
-        datePicker.backgroundColor=UIColor.whiteColor()
-        cancelButton.setTitle(loadLanguage("取消"), forState: .Normal)
-        OKButton.setTitle(loadLanguage("确定"), forState: .Normal)
+        datePicker.backgroundColor=UIColor.white
+        cancelButton.setTitle(loadLanguage("取消"), for: UIControlState())
+        OKButton.setTitle(loadLanguage("确定"), for: UIControlState())
         //
     }
     

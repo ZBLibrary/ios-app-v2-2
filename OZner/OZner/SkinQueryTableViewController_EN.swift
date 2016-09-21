@@ -25,27 +25,27 @@ class SkinQueryTableViewController_EN: UITableViewController {
         currentSex=SexType.WoMan
         self.automaticallyAdjustsScrollViewInsets=false
         //头部视图
-        headCell = NSBundle.mainBundle().loadNibNamed("SkinHeadTableViewCell_EN", owner: self, options: nil).last as!  SkinHeadTableViewCell_EN
-        headCell.selectionStyle=UITableViewCellSelectionStyle.None
-        headCell.backButton.addTarget(self, action: #selector(backClick), forControlEvents: .TouchUpInside)
+        headCell = Bundle.main.loadNibNamed("SkinHeadTableViewCell_EN", owner: self, options: nil)?.last as!  SkinHeadTableViewCell_EN
+        headCell.selectionStyle=UITableViewCellSelectionStyle.none
+        headCell.backButton.addTarget(self, action: #selector(backClick), for: .touchUpInside)
         headCell.updateCell(currentSkinTypeIndex, sex: currentSex)
         //中部视图
-        centerCell = NSBundle.mainBundle().loadNibNamed("SkinCenterTableViewCell_EN", owner: self, options: nil).last as!  SkinCenterTableViewCell_EN
-        centerCell.selectionStyle=UITableViewCellSelectionStyle.None
+        centerCell = Bundle.main.loadNibNamed("SkinCenterTableViewCell_EN", owner: self, options: nil)?.last as!  SkinCenterTableViewCell_EN
+        centerCell.selectionStyle=UITableViewCellSelectionStyle.none
         centerCell.updateData(totalTimes, Date: TimeString)
         //尾部视图
-        footerCell = NSBundle.mainBundle().loadNibNamed("SkinFooterTableViewCell_EN", owner: self, options: nil).last as!  SkinFooterTableViewCell_EN
-        footerCell.bugEssenceButton.addTarget(self, action: #selector(bugEssenceClick), forControlEvents: .TouchUpInside)
+        footerCell = Bundle.main.loadNibNamed("SkinFooterTableViewCell_EN", owner: self, options: nil)?.last as!  SkinFooterTableViewCell_EN
+        footerCell.bugEssenceButton.addTarget(self, action: #selector(bugEssenceClick), for: .touchUpInside)
         footerCell.MyCurrentFuZhi(currentSkinTypeIndex, sex: currentSex)
         //传入我当前的肤质
-        footerCell.selectionStyle=UITableViewCellSelectionStyle.None
+        footerCell.selectionStyle=UITableViewCellSelectionStyle.none
         
     }
 
     //返回
     func backClick()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        _=self.navigationController?.popViewController(animated: true)
         
     }
     //购买精华液
@@ -57,32 +57,32 @@ class SkinQueryTableViewController_EN: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     // MARK: - Table view data source
 
-    private let heightArr:[CGFloat]=[418,160,430]
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return heightArr[indexPath.row]
+    fileprivate let heightArr:[CGFloat]=[418,160,430]
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return heightArr[(indexPath as NSIndexPath).row]
     }
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 3
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row==0
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath as NSIndexPath).row==0
         {
             return headCell
             
-        }else if indexPath.row==1
+        }else if (indexPath as NSIndexPath).row==1
         {
             return centerCell
         }

@@ -8,17 +8,17 @@
 
 import Foundation
 import UIKit
-typealias sendValueClosure=(string:Bool)->Void
+typealias sendValueClosure=(_ string:Bool)->Void
 class updateUserInfozb: NSObject,UIAlertViewDelegate {
     
     //声明一个闭包
     var myClosure:sendValueClosure?
     //下面这个方法需要传入上个界面的someFunctionThatTakesAClosure函数指针
  
-    func bindBaiDu(closure:sendValueClosure?){
+    func bindBaiDu(_ closure:sendValueClosure?){
         //将函数指针赋值给myClosure闭包，该闭包中涵盖了someFunctionThatTakesAClosure函数中的局部变量等的引用
         myClosure = closure
-        BPush.bindChannelWithCompleteHandler { (result:AnyObject!, error:NSError!) -> Void in
+        BPush.bindChannel { (result, error) -> Void in
             self.updateUserInfozb()
         }
     }
@@ -27,28 +27,24 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
     func updateUserInfozb()
     {
         let webServer=MyInfoWerbservice()
-        webServer.updateUserInfo(["device_id"], valueArr: [BPush.getChannelId()], returnBlock: { (data:AnyObject!, status:StatusManager!) -> Void in
+        webServer.updateUserInfo(["device_id"], valueArr: [BPush.getChannelId()], return: { (data, status) -> Void in
             
-            if status.networkStatus == kSuccessStatus
+            if status?.networkStatus == kSuccessStatus
             {
                 
-                let state=data.objectForKey("state") as! Int
+                let state=(data as AnyObject).object(forKey: "state") as! Int
                 if state>0
                 {
-                    self.myClosure!(string: true)
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
-                        self.getWXUserInfo()
-                        self.getuserOtherInfo()
-                    })
-                    
-                   
+                    self.myClosure!(true)
+                    self.getWXUserInfo()
+                    self.getuserOtherInfo()
                 }
                 else
                 {
                     //判空
                     if (self.myClosure != nil){
                         //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-                        self.myClosure!(string: false)
+                        self.myClosure!(false)
                     }
                 }
                 
@@ -58,7 +54,7 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
                 //判空
                 if (self.myClosure != nil){
                     //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-                    self.myClosure!(string: false)
+                    self.myClosure!(false)
                 }
             }
         })
@@ -69,63 +65,34 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
     {
         //获取用户信息
         let webServer=MyInfoWerbservice()
-        webServer.getUserInfo { (userdata:AnyObject!, status:StatusManager!) -> Void in
-            if status.networkStatus == kSuccessStatus
+        webServer.getUserInfo { (userData, status) -> Void in
+            if status?.networkStatus == kSuccessStatus
             {
-            
-                let state=userdata.objectForKey("state") as! Int
+                let userdata = userData as AnyObject
+                let state=userdata.object(forKey: "state") as! Int
                 if state>0
                 {
-                    let data1=userdata.objectForKey("userinfo") as! NSDictionary
+                    let data1=userdata.object(forKey: "userinfo") as! NSDictionary
                     let tmpdic=NSMutableDictionary()
-                    print(data1)
-                    print(data1.allValues)
-                    print(data1.objectForKey("NickName"))
-                    var tmpTmp=((data1.objectForKey("NickName")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("NickName")
+                    
+                    var tmpTmp=(data1.object(forKey: "NickName") == nil) ? "":data1.object(forKey: "NickName")
                     tmpdic.setValue(tmpTmp, forKey: "NickName")
-                    tmpTmp=((data1.objectForKey("ImgPath")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("ImgPath")
+                    tmpTmp=(data1.object(forKey: "ImgPath") == nil) ? "":data1.object(forKey: "ImgPath")
                     tmpdic.setValue(tmpTmp, forKey: "ImgPath")
-                    tmpTmp=((data1.objectForKey("UserTalkCode")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("UserTalkCode")
+                    tmpTmp=(data1.object(forKey: "UserTalkCode") == nil) ? "":data1.object(forKey: "UserTalkCode")
                     tmpdic.setValue(tmpTmp, forKey: "UserTalkCode")
-                    tmpTmp=((data1.objectForKey("Language")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("Language")
+                    tmpTmp=(data1.object(forKey: "Language") == nil) ? "":data1.object(forKey: "Language")
                     tmpdic.setValue(tmpTmp, forKey: "Language")
-                    tmpTmp=((data1.objectForKey("Area")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("Area")
+                    tmpTmp=(data1.object(forKey: "Area") == nil) ? "":data1.object(forKey: "Area")
                     tmpdic.setValue(tmpTmp, forKey: "Area")
-                    tmpTmp=((data1.objectForKey("UserId")?.isKindOfClass(NSNull)) == true) ? "":data1.objectForKey("UserId")
+                    tmpTmp=(data1.object(forKey: "UserId") == nil) ? "":data1.object(forKey: "UserId")
                     tmpdic.setValue(tmpTmp, forKey: "UserId")
                     setPlistData(tmpdic, fileName: "userinfoURL")
-//                    //判空
-//                    if (self.myClosure != nil){
-//                        //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-//                        self.myClosure!(string: true)
-//                        //后台下载用户信息
-//                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
-//                            self.getuserOtherInfo()
-//                        })
-//                        
-//                        
-//                    }
-                    
-                }
-                else
-                {
-//                    //判空
-//                    if (self.myClosure != nil){
-//                        //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-//                        self.myClosure!(string: false)
-//                    }
+
                 }
                 
-                
             }
-            else
-            {
-//                //判空
-//                if (self.myClosure != nil){
-//                    //闭包隐式调用someFunctionThatTakesAClosure函数：回调。
-//                    self.myClosure!(string: false)
-//                }
-            }
+
             
         }
     }
@@ -133,15 +100,15 @@ class updateUserInfozb: NSObject,UIAlertViewDelegate {
     {
         let webServer=MyInfoWerbservice()
         print(get_Phone())
-        webServer.getUserNickImage([get_Phone()], returnBlock: { (data:NSMutableDictionary!, status:StatusManager!) -> Void in
-            if status.networkStatus == kSuccessStatus
+        webServer.getUserNickImage([get_Phone()], return: { (data, status) -> Void in
+            if status?.networkStatus == kSuccessStatus
             {
                 print(data)
-                let state=data.objectForKey("state") as! Int
+                let state=data?.object(forKey: "state") as! Int
                 if state>0
                 {
                     
-                    let data1=data.objectForKey("data")?.objectAtIndex(0) as! NSMutableDictionary
+                    let data1=(data?.object(forKey: "data") as AnyObject).object(at: 0) as! NSMutableDictionary
                     print(data)
                     setPlistData(data1, fileName: "userinfoImg")
                 }

@@ -24,16 +24,16 @@ class MyStoreViewController: UIViewController,UIWebViewDelegate {
         urlstr = GoUrlBefore("http://www.oznerwater.com/lktnew/wap/mall/mallHomePage.aspx")
         //加载失败
         button=UIButton(frame: CGRect(x: 0, y: Screen_Hight/2-40, width: SCREEN_WIDTH, height: 40))
-        button.addTarget(self, action: #selector(loadAgain), forControlEvents: .TouchUpInside)
-        button.setTitleColor(UIColor.grayColor(), forState: .Normal)
-        button.setTitle(loadLanguage("加载失败点击继续加载！"), forState: .Normal)
-        button.hidden=true
+        button.addTarget(self, action: #selector(loadAgain), for: .touchUpInside)
+        button.setTitleColor(UIColor.gray, for: UIControlState())
+        button.setTitle(loadLanguage("加载失败点击继续加载！"), for: UIControlState())
+        button.isHidden=true
         webView=UIWebView(frame: CGRect(x: 0, y: -20, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-25))
         
         webView.delegate=self
         webView.scalesPageToFit = true
         self.view.addSubview(webView)
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: urlstr!)!))
+        webView.loadRequest(URLRequest(url: URL(string: urlstr!)!))
         //webView = SMWebView.loadURL(NSURL(string: urlstr)!)
         
         webView.addSubview(button)
@@ -41,24 +41,24 @@ class MyStoreViewController: UIViewController,UIWebViewDelegate {
     }
    
     //继续加载
-    func loadAgain(button:UIButton)
+    func loadAgain(_ button:UIButton)
     {
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: urlstr!)!))
+        webView.loadRequest(URLRequest(url: URL(string: urlstr!)!))
         
     }
-    func webViewDidStartLoad(webView: UIWebView) {
-        button.hidden=true
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        button.isHidden=true
         //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     }
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         //MBProgressHUD.hideHUDForView(self.view, animated: true)
-        button.hidden=true
+        button.isHidden=true
     }
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         //MBProgressHUD.hideHUDForView(self.view, animated: true)
-        button.hidden=false
+        button.isHidden=false
     }
-    func GoUrlBefore(url:String)->String
+    func GoUrlBefore(_ url:String)->String
     {
         
         print("tttttttttt:\(UserTalkCode)")
@@ -69,16 +69,16 @@ class MyStoreViewController: UIViewController,UIWebViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden=true
-        CustomTabBarView.sharedCustomTabBar().showAllMyTabBar()
+        self.navigationController?.isNavigationBarHidden=true
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).showAllMyTabBar()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden=false
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        self.navigationController?.isNavigationBarHidden=false
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
     }
     /*
     // MARK: - Navigation

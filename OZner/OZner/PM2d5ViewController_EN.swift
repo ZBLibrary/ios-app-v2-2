@@ -10,7 +10,7 @@ import UIKit
 
 class PM2d5ViewController_EN: UIViewController {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -32,8 +32,8 @@ class PM2d5ViewController_EN: UIViewController {
         super.viewDidLoad()
         self.title=loadLanguage("什么是PM2.5")
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
-        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
-        leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
+        leftbutton.setBackgroundImage(UIImage(named: "fanhui"), for: UIControlState())
+        leftbutton.addTarget(self, action: #selector(back), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
        
         fineMatter.text = loadLanguage("细颗粒物");
@@ -51,19 +51,19 @@ class PM2d5ViewController_EN: UIViewController {
     }
     func back()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+       _ = navigationController?.popViewController(animated: true)
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
+        (CustomTabBarView.sharedCustomTabBar() as AnyObject).hideOverTabBar()
         self.navigationController?.navigationBar.barTintColor=UIColor(red: 248/255, green: 249/255, blue: 250/255, alpha: 1)
-        self.navigationController?.navigationBarHidden=false
+        self.navigationController?.isNavigationBarHidden=false
         //CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden=true
+        self.navigationController?.isNavigationBarHidden=true
     }
     /*
     // MARK: - Navigation

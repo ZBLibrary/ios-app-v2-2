@@ -48,7 +48,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
     @IBOutlet weak var aboutCupContainer: UIView!
     
     
-    @IBAction func clickstate1(sender: AnyObject) {
+    @IBAction func clickstate1(_ sender: AnyObject) {
         let tmpstate=setCupStructdata["my_state1"] as! Bool
         setCupStructdata["my_state1"] = !tmpstate
         let tmpstring = !tmpstate==true ? "c":""
@@ -57,7 +57,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         let  tmpInt=Int(my_drinkwater.text! as String)!+(!tmpstate==true ? 50:(-50))
         my_drinkwater.text="\(tmpInt)"
     }
-    @IBAction func clickstate2(sender: AnyObject) {
+    @IBAction func clickstate2(_ sender: AnyObject) {
         let tmpstate=setCupStructdata["my_state2"] as! Bool
         setCupStructdata["my_state2"] = !tmpstate
         let tmpstring = !tmpstate==true ? "c":""
@@ -66,7 +66,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         let  tmpInt=Int(my_drinkwater.text! as String)!+(!tmpstate==true ? 50:(-50))
         my_drinkwater.text="\(tmpInt)"
     }
-    @IBAction func clickstate3(sender: AnyObject) {
+    @IBAction func clickstate3(_ sender: AnyObject) {
         let tmpstate=setCupStructdata["my_state3"] as! Bool
         setCupStructdata["my_state3"] = !tmpstate
         let tmpstring = !tmpstate==true ? "c":""
@@ -75,7 +75,7 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         let  tmpInt=Int(my_drinkwater.text! as String)!+(!tmpstate==true ? 50:(-50))
         my_drinkwater.text="\(tmpInt)"
     }
-    @IBAction func clickstate4(sender: AnyObject) {
+    @IBAction func clickstate4(_ sender: AnyObject) {
         let tmpstate=setCupStructdata["my_state4"] as! Bool
         setCupStructdata["my_state4"] = !tmpstate
         let tmpstring = !tmpstate==true ? "c":""
@@ -85,11 +85,11 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         my_drinkwater.text="\(tmpInt)"
     }
     
-    @IBAction func cup_voiceclick(sender: AnyObject) {
-        setCupStructdata["cup_voice"]=cup_voice.on
+    @IBAction func cup_voiceclick(_ sender: AnyObject) {
+        setCupStructdata["cup_voice"]=cup_voice.isOn
     }
-    @IBAction func phone_voice(sender: AnyObject) {
-        setCupStructdata["phone_voice"]=phone_voice.on
+    @IBAction func phone_voice(_ sender: AnyObject) {
+        setCupStructdata["phone_voice"]=phone_voice.isOn
     }
     func color_explanclick()
     {
@@ -137,10 +137,10 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
         AboutLable.text=loadLanguage("关于智能杯")
-        ClearButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
+        ClearButton.setTitle(loadLanguage("删除此设备"), for: UIControlState())
         my_state1label.text=loadLanguage("感冒发烧")
         my_state2label.text=loadLanguage("运动出汗")
         my_state3label.text=loadLanguage("天气炎热")
@@ -166,11 +166,11 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         loadData()
         updateData()
         //cup_color.text=setCupStructdata["cup_color"] as? String
-        color_explan.addTarget(self, action: #selector(color_explanclick), forControlEvents: UIControlEvents.ValueChanged)
+        color_explan.addTarget(self, action: #selector(color_explanclick), for: UIControlEvents.valueChanged)
         ClearButton.layer.cornerRadius=20
         ClearButton.layer.masksToBounds=true
         ClearButton.layer.borderWidth=1
-        ClearButton.layer.borderColor=UIColor(red: 1, green: 64/255, blue: 82/255, alpha: 1).CGColor
+        ClearButton.layer.borderColor=UIColor(red: 1, green: 64/255, blue: 82/255, alpha: 1).cgColor
     }
     func updateData()
     {
@@ -215,8 +215,8 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         cup_remindtime.text=tmptext
         let tmptime=setCupStructdata["remindInterval"] as! Int
         cup_remindspace.text=(tmptime/60==0 ? "":"\(tmptime/60)\(loadLanguage("小时"))")+(tmptime%60==0 ? "":"\(tmptime%60)\(loadLanguage("分钟"))")
-        cup_voice.on=setCupStructdata["cup_voice"] as! Bool
-        phone_voice.on=setCupStructdata["phone_voice"] as! Bool
+        cup_voice.isOn=setCupStructdata["cup_voice"] as! Bool
+        phone_voice.isOn=setCupStructdata["phone_voice"] as! Bool
         //loadDeviceData()
         
     }
@@ -225,17 +225,21 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         
         let cup = self.myCurrentDevice as! Cup
         //名称体重饮水量
-        var nameStr=cup.settings.name
+        var nameStr=cup.settings.name as String
         if nameStr.characters.contains("(")==false
         {
             nameStr=nameStr+"(办公室)"
         }
-        setCupStructdata["cup_name"]=nameStr.substringToIndex(nameStr.characters.indexOf("(")!)
+        setCupStructdata["cup_name"]=nameStr.substring(to: (nameStr.characters.index(of: "(")!))
+        //let length = nameStr.characters.count as Int
         
+        let i1 = nameStr.unicodeScalars.index(after: (nameStr.unicodeScalars.index(of: "(")!))
+        let i2 = nameStr.unicodeScalars.index(of: ")")!
         
-        let nameStr2=(nameStr as NSString).substringWithRange(NSMakeRange(setCupStructdata["cup_name"]!.length+1, nameStr.characters.count-setCupStructdata["cup_name"]!.length-2))
-        print(nameStr2)
-        setCupStructdata["cup_Attrib"]=nameStr2
+        let substring = nameStr.unicodeScalars[i1..<i2]
+       // let nameStr2=nameStr.substring(with: NSMakeRange((setCupStructdata["cup_name"]! as! String).characters.count+1, length-(setCupStructdata["cup_name"]! as! String).characters.count-2))
+       
+        setCupStructdata["cup_Attrib"]=substring.description
         setCupStructdata["my_weight"]=cup.settings.get("weight", default: 56) as? String
         let tmpInt:String=(cup.settings.get("my_drinkwater", default: "2000") as! String)=="" ? "2000":(cup.settings.get("my_drinkwater", default: "2000") as! String)
         
@@ -250,31 +254,30 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         //setCupStructdata["remindStart"] = cup.settings.remindStart as? AnyObject
         //print(setCupStructdata["remindStart"])
         //灯带颜色
-        if (cup.settings.remindStart as? AnyObject) != nil
+        if cup.settings.remindStart != 0
         {
-            setCupStructdata["haloColor"]=cup.settings.haloColor as? AnyObject
-        }
+            setCupStructdata["haloColor"]=cup.settings.haloColor        }
         
         //提醒时间间隔
-        if (cup.settings.remindStart as? AnyObject) != nil
+        if cup.settings.remindStart != 0
         {
-            setCupStructdata["remindInterval"]=cup.settings.remindInterval as? AnyObject
+            setCupStructdata["remindInterval"]=cup.settings.remindInterval
         }
         
         //提醒开始时间
-        if (cup.settings.remindStart as? AnyObject) != nil
+        if cup.settings.remindStart != 0
         {
-            setCupStructdata["remindStart"]=cup.settings.remindStart as? AnyObject
+            setCupStructdata["remindStart"]=cup.settings.remindStart
         }
         
         
         //提醒结束时间
-        if (cup.settings.remindStart as? AnyObject) != nil
+        if cup.settings.remindStart != 0
         {
-            setCupStructdata["remindEnd"]=cup.settings.remindStart as? AnyObject
+            setCupStructdata["remindEnd"]=cup.settings.remindStart
         }
         //模式切换
-        print(cup.settings.haloMode)
+        
         if cup.settings.haloMode==3
         {
             color_explan.selectedSegmentIndex=1
@@ -294,17 +297,17 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
     
     func loadData()
     {
-        let documentpaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documentpaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         //获取完整路径
         let documentsDirectory=documentpaths[0] as NSString
-        let plistPath = documentsDirectory.stringByAppendingPathComponent("SetCup_EN.plist")
+        let plistPath = documentsDirectory.appendingPathComponent("SetCup_EN.plist")
         setCupStructdata=NSMutableDictionary(contentsOfFile: plistPath)
        // print(setCupStructdata)
         if setCupStructdata==nil
         {
-            let bundle=NSBundle.mainBundle()
+            let bundle=Bundle.main
             //读取plist文件路径
-            let path=bundle.pathForResource("SetCup_EN", ofType: "plist")
+            let path=bundle.path(forResource: "SetCup_EN", ofType: "plist")
             //读取数据到 NsDictionary字典中
             setCupStructdata=NSMutableDictionary(contentsOfFile: path!)
             print(path)
@@ -314,26 +317,26 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
     
     func SaveData()
     {
-        let documentpaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documentpaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         //获取完整路径
         let documentsDirectory=documentpaths[0] as NSString
-        let plistPath = documentsDirectory.stringByAppendingPathComponent("SetCup_EN.plist")
+        let plistPath = documentsDirectory.appendingPathComponent("SetCup_EN.plist")
         //let bundle=NSBundle.mainBundle()
         //读取plist文件路径
         //let path=bundle.pathForResource("SetCup_EN", ofType: "plist")
-        setCupStructdata.writeToFile(plistPath, atomically: true)
+        setCupStructdata.write(toFile: plistPath, atomically: true)
         
     }
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.backgroundColor=UIColor(red: 213/255, green: 230/255, blue: 254/255, alpha: 1)
         return true
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField.text != ""
         {
             textField.resignFirstResponder()
-            textField.backgroundColor=UIColor.whiteColor()
+            textField.backgroundColor=UIColor.white
             let tmpweight=Int(textField.text!)
             var tmpWater=tmpweight!*2000/56
             tmpWater+=(setCupStructdata["my_state1"] as! Bool)==true ? 50:0
@@ -362,10 +365,10 @@ class setDev_CupView_EN: UIView,UITextFieldDelegate {
         //textField.textColor=selectcolor
         return true
     }
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let cs:NSCharacterSet = NSCharacterSet(charactersInString: "0123456789").invertedSet// characterSetWithCharactersInString:kAlphaNum] invertedSet];
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let cs:CharacterSet = CharacterSet(charactersIn: "0123456789").inverted// characterSetWithCharactersInString:kAlphaNum] invertedSet];
         let filtered =
-            string.componentsSeparatedByCharactersInSet(cs).joinWithSeparator("") as String//componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+            string.components(separatedBy: cs).joined(separator: "") as String//componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
         let basic = (string==filtered)
         return basic;
     }

@@ -20,14 +20,14 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
         self.myTableView.rowHeight = 120
         self.createLeftAndRight()
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController!.navigationBar .setBackgroundImage(UIImage(named: "bg_clear_addDevice"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController!.navigationBar .setBackgroundImage(UIImage(named: "bg_clear_addDevice"), for: UIBarMetrics.default)
         self.navigationController!.navigationBar.shadowImage = UIImage(named: "bg_clear_addDevice")
     }
     func createLeftAndRight()
     {
-        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(leftMethod))
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_back"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(leftMethod))
         self.navigationItem.leftBarButtonItem = leftButton;
         self.navigationItem.title = loadLanguage("我的设备")
     }
@@ -37,16 +37,16 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
         self.navigationController!.view .removeFromSuperview()
     }
     //测试设备数
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return 6
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = NSBundle.mainBundle().loadNibNamed("AddDeviceCell_EN", owner: self, options: nil).last as! AddDeviceCell_EN
+        let cell = Bundle.main.loadNibNamed("AddDeviceCell_EN", owner: self, options: nil)?.last as! AddDeviceCell_EN
         
-        switch indexPath.row
+        switch (indexPath as NSIndexPath).row
         {
         case 0:
             cell.layOutAddDeviceCell("select_device_0", content: loadLanguage("智能水杯"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
@@ -79,12 +79,12 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let deviceMatchController = DeviceMatchedViewController_EN(nibName: "DeviceMatchedViewController_EN", bundle: nil)
-        print(indexPath.row)
-        deviceMatchController.deviceCuttentType = indexPath.row
+        print((indexPath as NSIndexPath).row)
+        deviceMatchController.deviceCuttentType = (indexPath as NSIndexPath).row
         self.navigationController!.pushViewController(deviceMatchController, animated: true)
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 

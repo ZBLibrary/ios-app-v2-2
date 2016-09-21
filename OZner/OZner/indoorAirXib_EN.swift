@@ -56,27 +56,28 @@ class indoorAirXib_EN: UIView {
         didSet{
             if starDatazb != ""
             {
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
-                let date = dateFormatter.dateFromString(starDatazb)! as NSDate
+                let date = dateFormatter.date(from: starDatazb)! as Date
                 //let tmpTime=date.timeIntervalSince1970+3600*24*90
-                let endDateTime = date+3.months//NSDate(timeIntervalSince1970: tmpTime)
+                
+                let endDateTime = date.dateByAddingMonths(3)//NSDate(timeIntervalSince1970: tmpTime)
                 dateFormatter.dateFormat="yyyy-MM-dd"
                 
-                let starStr=dateFormatter.stringFromDate(date)
-                var tmparray = starStr.componentsSeparatedByString("-") as NSArray
-                starYear.text=tmparray.objectAtIndex(0) as? String
-                starDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
-                let endDateStr = dateFormatter.stringFromDate(endDateTime)
+                let starStr=dateFormatter.string(from: date)
+                var tmparray = starStr.components(separatedBy: "-") as NSArray
+                starYear.text=tmparray.object(at: 0) as? String
+                starDate.text=(tmparray.object(at: 1) as? String)!+"-"+(tmparray.object(at: 2) as! String)
+                let endDateStr = dateFormatter.string(from: endDateTime)
                 
-                tmparray = endDateStr.componentsSeparatedByString("-") as NSArray
-                endYear.text=tmparray.objectAtIndex(0) as? String
-                endDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
+                tmparray = endDateStr.components(separatedBy: "-") as NSArray
+                endYear.text=tmparray.object(at: 0) as? String
+                endDate.text=(tmparray.object(at: 1) as? String)!+"-"+(tmparray.object(at: 2) as! String)
                 //当前日期
-                let nowStr=dateFormatter.stringFromDate(NSDate())
-                let tmpNowArray = nowStr.componentsSeparatedByString("-") as NSArray
-                curYear.text=tmpNowArray.objectAtIndex(0) as? String
-                curDate.text=(tmpNowArray.objectAtIndex(1) as? String)!+"-"+(tmpNowArray.objectAtIndex(2) as! String)
+                let nowStr=dateFormatter.string(from: Date())
+                let tmpNowArray = nowStr.components(separatedBy: "-") as NSArray
+                curYear.text=tmpNowArray.object(at: 0) as? String
+                curDate.text=(tmpNowArray.object(at: 1) as? String)!+"-"+(tmpNowArray.object(at: 2) as! String)
                 setNeedsLayout()
                 layoutIfNeeded()
                 
@@ -112,14 +113,14 @@ class indoorAirXib_EN: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         indoorAir.text = loadLanguage("室内空气质量详情");
         
         airpuifiler.text = loadLanguage("空气净化器当前总净化量");
         filter.text = loadLanguage("滤芯还剩");
         Tips.text = loadLanguage("温馨提示:及时更换滤芯,享纯净空气");
         
-        chatAndBuyContainer.hidden = !IsLoginByPhone()
+        chatAndBuyContainer.isHidden = !IsLoginByPhone()
     }
    
 

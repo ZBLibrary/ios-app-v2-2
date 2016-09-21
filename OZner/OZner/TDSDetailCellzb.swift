@@ -93,15 +93,15 @@ class TDSDetailCellzb: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        zixunViewzb.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).CGColor
-        hideImage.hidden = !IsLoginByPhone()
-        shareCick.enabled = IsLoginByPhone()
-        zixunViewzb.hidden = !IsLoginByPhone()
+        zixunViewzb.layer.borderColor=UIColor(red: 48/255, green: 127/255, blue: 245/255, alpha: 1).cgColor
+        hideImage.isHidden = !IsLoginByPhone()
+        shareCick.isEnabled = IsLoginByPhone()
+        zixunViewzb.isHidden = !IsLoginByPhone()
 
         // Initialization code
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state

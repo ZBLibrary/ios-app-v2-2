@@ -44,26 +44,26 @@ class tantouLvXinView_EN: UIView {
                 print(starDate)
                 //let tmp=starDate.characters.split(" ") as NSArray
                 //print(tmp.ob)
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
-                let date = dateFormatter.dateFromString(starDate)! as NSDate
+                let date = dateFormatter.date(from: starDate)! as Date
                 let tmpTime=date.timeIntervalSince1970+3600*24*Double(maxUserDay)
-                let endDate = NSDate(timeIntervalSince1970: tmpTime)
+                let endDate = Date(timeIntervalSince1970: tmpTime)
                 dateFormatter.dateFormat="yyyy-MM-dd"
-                let nowStr=dateFormatter.stringFromDate(NSDate())
-                var tmparray = nowStr.componentsSeparatedByString("-") as NSArray
-                curYear.text=tmparray.objectAtIndex(0) as? String
-                curMonDay.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
+                let nowStr=dateFormatter.string(from: Date())
+                var tmparray = nowStr.components(separatedBy: "-") as NSArray
+                curYear.text=tmparray.object(at: 0) as? String
+                curMonDay.text=(tmparray.object(at: 1) as? String)!+"-"+(tmparray.object(at: 2) as! String)
                 
-                let starStr=dateFormatter.stringFromDate(date)
-                tmparray = starStr.componentsSeparatedByString("-") as NSArray
-                starYear.text=tmparray.objectAtIndex(0) as? String
-                starMonDay.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
-                let endDateStr = dateFormatter.stringFromDate(endDate)
+                let starStr=dateFormatter.string(from: date)
+                tmparray = starStr.components(separatedBy: "-") as NSArray
+                starYear.text=tmparray.object(at: 0) as? String
+                starMonDay.text=(tmparray.object(at: 1) as? String)!+"-"+(tmparray.object(at: 2) as! String)
+                let endDateStr = dateFormatter.string(from: endDate)
        
-                tmparray = endDateStr.componentsSeparatedByString("-") as NSArray
-                endYear.text=tmparray.objectAtIndex(0) as? String
-                endMonDay.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
+                tmparray = endDateStr.components(separatedBy: "-") as NSArray
+                endYear.text=tmparray.object(at: 0) as? String
+                endMonDay.text=(tmparray.object(at: 1) as? String)!+"-"+(tmparray.object(at: 2) as! String)
                 
             }
         }
@@ -84,7 +84,7 @@ class tantouLvXinView_EN: UIView {
     }
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         MoreDeviceButton1.tag=1
         MoreDeviceButton2.tag=2
         MoreDeviceButton3.tag=3
@@ -92,18 +92,18 @@ class tantouLvXinView_EN: UIView {
         
         print("kkkkkkkkkkkk:\(IsLoginByPhone())")
        // chatAndBuyContainer.hidden = !IsLoginByPhone()
-        MoreDeviceButton1.enabled = IsLoginByPhone()
-        MoreDeviceButton2.enabled = IsLoginByPhone()
-        MoreDeviceButton3.enabled = IsLoginByPhone()
+        MoreDeviceButton1.isEnabled = IsLoginByPhone()
+        MoreDeviceButton2.isEnabled = IsLoginByPhone()
+        MoreDeviceButton3.isEnabled = IsLoginByPhone()
 
 
         zixunView.layer.borderWidth=0.5
-        zixunView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).CGColor
+        zixunView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).cgColor
         buyLXView.layer.cornerRadius=20
         buyLXView.layer.borderWidth=0.5
-        buyLXView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).CGColor
+        buyLXView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).cgColor
         saoMaView.layer.borderWidth=0.5
-        saoMaView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).CGColor
+        saoMaView.layer.borderColor=UIColor(red: 0, green: 119/255, blue: 247/255, alpha: 1).cgColor
         
     }
     
