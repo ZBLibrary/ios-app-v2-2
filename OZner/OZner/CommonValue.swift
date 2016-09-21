@@ -114,7 +114,7 @@ class getshareImageClass:NSObject
 
 
 //接口开头
-let StarURL_New="http://app.ozner.net:888"//"http://ozner.bynear.cn"
+let StarURL_New="http://app.joyro.com.cn:8282"//"http://ozner.bynear.cn"
 //let StarURL_Old=""
 
 //-------------------获取设备大小-------------------------

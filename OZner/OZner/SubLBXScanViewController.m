@@ -201,7 +201,7 @@
     params[@"mac"] = [self deviceMac];
     params[@"devicetype"] = [self deviceType];
     params[@"code"] = strResult.strScanned;
-    NSString *url = @"http://app.ozner.net:888/OznerDevice/RenewFilterTime";
+    NSString *url = @"http://app.joyro.com.cn:8282/OznerDevice/RenewFilterTime";
     [mgr POST:url parameters:params
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
           //[MBProgressHUD hideHUDForView:self.view animated:YES];
