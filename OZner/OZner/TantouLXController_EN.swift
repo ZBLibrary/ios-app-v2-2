@@ -28,6 +28,7 @@ class TantouLXController_EN: UIViewController {
         mainView=NSBundle.mainBundle().loadNibNamed("tantouLvXinView_EN", owner: nil, options: nil).last as! tantouLvXinView_EN
         mainView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: mainView.bounds.size.height)
         //
+        
         mainView.zixunButton.addTarget(self, action: #selector(zixun), forControlEvents: .TouchUpInside)
         mainView.buyLXButton.addTarget(self, action: #selector(buyLX), forControlEvents: .TouchUpInside)
         mainView.saoMaButton.addTarget(self, action: #selector(saoMa), forControlEvents: .TouchUpInside)
@@ -55,6 +56,7 @@ class TantouLXController_EN: UIViewController {
         {
             ScrollView.contentSize=CGSize(width: 0, height: mainView.bounds.size.height)
             mainView.maxUserDay=30
+            mainView.ErWeiMaContainView.hidden = false
         }
         
         ScrollView.addSubview(mainView)

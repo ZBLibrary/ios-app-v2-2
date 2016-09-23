@@ -76,7 +76,7 @@ class WaterPurTDSDetailCell1_EN: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         chatView.layer.borderColor=UIColor(red: 64/255, green: 140/255, blue: 246/255, alpha: 1).CGColor
-        chatView.hidden = !IsLoginByPhone()
+        chatView.hidden = IsLoginByPhone()
        
        // rankContainer.hidden = !IsLoginByPhone()
         // Initialization code

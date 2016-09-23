@@ -92,9 +92,18 @@ class indoorAirViewController_EN: UIViewController {
     }
     func toChat()
     {
-        let bttons=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
-        let button=bttons.objectAtIndex(2) as! UIButton
-        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+//        let bttons=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
+//        let button=bttons.objectAtIndex(2) as! UIButton
+//        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+        let phoneNum = NSMutableString.init(string: "tel:4008209667")
+        
+        let callWebView = UIWebView()
+        
+        callWebView.loadRequest(NSURLRequest(URL: NSURL.init(string: phoneNum as String)!))
+        
+        self.view.addSubview(callWebView)
+
+    
     }
     func bugLvXin()
     {

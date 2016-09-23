@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bPs-cQ-E9j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bPs-cQ-E9j">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1268,7 +1268,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Logo_My_Set" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-OY-1pm">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="logo3180" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-OY-1pm">
                                 <rect key="frame" x="268" y="64" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="2S4-Um-pNm"/>
@@ -1281,7 +1281,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浩泽净水家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXo-OF-Hjc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="浩泽净水家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXo-OF-Hjc">
                                 <rect key="frame" x="270" y="139" width="60" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="VAP-YK-fZ1"/>
@@ -1290,7 +1290,7 @@
                                 <color key="textColor" red="0.30980392159999998" green="0.31372549020000001" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hiO-vw-RcH">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiO-vw-RcH">
                                 <rect key="frame" x="0.0" y="201" width="600" height="96"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-Gy-dzT">
@@ -2400,7 +2400,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo_My_Set" width="65" height="65"/>
         <image name="My_cup" width="53" height="53"/>
         <image name="My_toright_icon" width="10" height="13"/>
         <image name="Rank_toright" width="8" height="17"/>
@@ -2409,7 +2408,8 @@
         <image name="agreeSelected" width="16" height="16"/>
         <image name="fanhui" width="10" height="21"/>
         <image name="liuyan" width="16" height="16"/>
-        <image name="loginLogo" width="93" height="93"/>
+        <image name="loginLogo" width="90" height="90"/>
+        <image name="logo3180" width="53" height="53"/>
         <image name="phone" width="14" height="20"/>
     </resources>
 </document>

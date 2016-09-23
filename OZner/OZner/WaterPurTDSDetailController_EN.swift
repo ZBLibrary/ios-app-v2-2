@@ -12,26 +12,26 @@ class WaterPurTDSDetailController_EN: UITableViewController {
     var myCurrentDevice:WaterPurifier?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.tableView.backgroundColor=UIColor(red: 162.0/255.0, green: 231.0/255.0, blue: 251.0/255.0, alpha: 1)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden=true
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -52,7 +52,7 @@ class WaterPurTDSDetailController_EN: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 3
     }
-
+    
     var secondCell:WaterPurTDSDetailCell2_EN!
     var fristCell:WaterPurTDSDetailCell1_EN!
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -74,11 +74,11 @@ class WaterPurTDSDetailController_EN: UITableViewController {
             return secondCell
         default:
             let wCell = NSBundle.mainBundle().loadNibNamed("TDSFooterCellzb", owner: self, options: nil).last as! TDSFooterCellzb
-            //wCell.waterKnowButton.addTarget(self, action: #selector(toWaterKnow), forControlEvents: .TouchUpInside)
+            wCell.waterKnowButton.addTarget(self, action: #selector(toWaterKnow), forControlEvents: .TouchUpInside)
             //wCell.toStoreButton.addTarget(self, action: #selector(toBuyClick), forControlEvents: .TouchUpInside)
             wCell.selectionStyle=UITableViewCellSelectionStyle.None
             return wCell
-
+            
         }
         
     }
@@ -91,21 +91,21 @@ class WaterPurTDSDetailController_EN: UITableViewController {
         let url = StarURL_New+"/OznerDevice/TdsFriendRank"
         let params:NSDictionary = ["usertoken":get_UserToken(),"type":(myCurrentDevice?.type)!]
         manager.POST(url,
-            parameters: params,
-            success: { (operation: AFHTTPRequestOperation!,
-                responseObject: AnyObject!) in
-                print(responseObject)
-                let state=responseObject.objectForKey("state") as! Int
-                if state > 0
-                {
-                    let needRank=responseObject.objectForKey("data")?.objectAtIndex(0).objectForKey("rank") as! Int
-                    self.fristCell.updateCell(Int(max((self.myCurrentDevice?.sensor.TDS1)!, (self.myCurrentDevice?.sensor.TDS2)!)), tdsAfter: Int(min((self.myCurrentDevice?.sensor.TDS1)!, (self.myCurrentDevice?.sensor.TDS2)!)), friendsRank: needRank)
-                }
-                
+                     parameters: params,
+                     success: { (operation: AFHTTPRequestOperation!,
+                        responseObject: AnyObject!) in
+                        print(responseObject)
+                        let state=responseObject.objectForKey("state") as! Int
+                        if state > 0
+                        {
+                            let needRank=responseObject.objectForKey("data")?.objectAtIndex(0).objectForKey("rank") as! Int
+                            self.fristCell.updateCell(Int(max((self.myCurrentDevice?.sensor.TDS1)!, (self.myCurrentDevice?.sensor.TDS2)!)), tdsAfter: Int(min((self.myCurrentDevice?.sensor.TDS1)!, (self.myCurrentDevice?.sensor.TDS2)!)), friendsRank: needRank)
+                        }
+                        
             },
-            failure: { (operation: AFHTTPRequestOperation!,
-                error: NSError!) in
-                print("Error: " + error.localizedDescription)
+                     failure: { (operation: AFHTTPRequestOperation!,
+                        error: NSError!) in
+                        print("Error: " + error.localizedDescription)
         })
         
         
@@ -161,7 +161,7 @@ class WaterPurTDSDetailController_EN: UITableViewController {
         
         
         return NSDate(timeIntervalSince1970: NSTimeInterval(tmpLong))
-  
+        
     }
     //返回
     func toBack()
@@ -184,14 +184,22 @@ class WaterPurTDSDetailController_EN: UITableViewController {
     //水质纯净值说明
     func toWhatIsTDS()
     {
-//        let tdsState=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
-//        tdsState.title="什么是TDS?"
-//        self.navigationController?.pushViewController(tdsState, animated: true)
+        //        let tdsState=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
+        //        tdsState.title="什么是TDS?"
+        //        self.navigationController?.pushViewController(tdsState, animated: true)
     }
     //咨询
     func toChat()
     {
-        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(2) as! UIButton)
+        //        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(2) as! UIButton)
+        let phoneNum = NSMutableString.init(string: "tel:4008209667")
+        
+        let callWebView = UIWebView()
+        
+        callWebView.loadRequest(NSURLRequest(URL: NSURL.init(string: phoneNum as String)!))
+        
+        self.view.addSubview(callWebView)
+        
     }
     //健康水知道
     func toWaterKnow()
@@ -206,48 +214,48 @@ class WaterPurTDSDetailController_EN: UITableViewController {
         CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(1) as! UIButton)
     }
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+     if editingStyle == .Delete {
+     // Delete the row from the data source
+     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+     } else if editingStyle == .Insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }    
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

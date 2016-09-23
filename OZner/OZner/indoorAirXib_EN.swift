@@ -119,7 +119,7 @@ class indoorAirXib_EN: UIView {
         filter.text = loadLanguage("滤芯还剩");
         Tips.text = loadLanguage("温馨提示:及时更换滤芯,享纯净空气");
         
-        chatAndBuyContainer.hidden = !IsLoginByPhone()
+        chatAndBuyContainer.hidden = IsLoginByPhone()
     }
    
 

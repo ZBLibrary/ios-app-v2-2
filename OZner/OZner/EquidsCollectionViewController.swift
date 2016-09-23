@@ -39,10 +39,11 @@ class EquidsCollectionViewController: UICollectionViewController {
         //print(indexPath.row+indexPath.section*3)
         let tmpdevice=devices[button.tag] as! OznerDevice
         NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: tmpdevice)
-        
-        let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
-        let button=array.objectAtIndex(0) as! UIButton
-        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
+
+        navigationController?.popToRootViewControllerAnimated(false)
+//        let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
+//        let button=array.objectAtIndex(0) as! UIButton
+//        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
     }
 //    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
 //        

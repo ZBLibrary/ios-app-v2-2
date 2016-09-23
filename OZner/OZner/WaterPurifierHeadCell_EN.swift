@@ -44,7 +44,7 @@ class WaterPurifierHeadCell_EN: UITableViewCell {
                 RedrawCicle(0, TDS:TdsBefore)
             }
             purifiedBefore.text=TdsBefore==0 ? "暂无":"\(TdsBefore)"
-            purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: (TdsBefore==0 ? 32:52)*Screen_Width/320)
+            purifiedBefore.font=UIFont(name: ".SFUIDisplay-Thin", size: (TdsBefore==0 ? 32:48)*Screen_Width/320)
             
         }
     }
