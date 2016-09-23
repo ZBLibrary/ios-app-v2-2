@@ -298,6 +298,8 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
     func btnClick()
     {
         delegate?.infomationClick!()
+//        [[NSNotificationCenter defaultCenter]postNotificationName:@"hideCustomViewFrame" object:nil];
+        NSNotificationCenter.defaultCenter().postNotificationName("hideCustomViewFrame", object: nil)
     }
     
 }

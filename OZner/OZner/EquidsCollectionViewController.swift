@@ -40,7 +40,8 @@ class EquidsCollectionViewController: UICollectionViewController {
         let tmpdevice=devices[button.tag] as! OznerDevice
         NSNotificationCenter.defaultCenter().postNotificationName("currentSelectedDevice", object: tmpdevice)
 
-        navigationController?.popToRootViewControllerAnimated(false)
+        self.navigationController?.view.removeFromSuperview()
+//        navigationController?.popToRootViewControllerAnimated(false)
 //        let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
 //        let button=array.objectAtIndex(0) as! UIButton
 //        CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
