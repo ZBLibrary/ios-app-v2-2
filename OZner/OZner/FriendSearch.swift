@@ -9,7 +9,7 @@
 import UIKit
 
 class FriendSearch: UIView {
-
+    
     
     @IBOutlet var SearchTextFD: UITextField!
     @IBOutlet var searchButton: UIButton!
@@ -18,12 +18,12 @@ class FriendSearch: UIView {
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         // Drawing code
-   
-    //SearchTextFD.placeholder = loadLanguage("请输入手机号");
-    
         
-    
+        //SearchTextFD.placeholder = loadLanguage("请输入手机号");
+        
+        SearchTextFD.placeholder = "请输入手机号"
+        
     }
     
-
+    
 }
