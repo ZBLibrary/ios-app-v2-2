@@ -1338,14 +1338,14 @@
                                         <rect key="frame" x="0.0" y="49" width="600" height="47"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rsh-Sx-xKK">
-                                                <rect key="frame" x="574" y="17.5" width="6" height="12"/>
+                                                <rect key="frame" x="574" y="17" width="6" height="12"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="GvI-Kb-IjW"/>
                                                     <constraint firstAttribute="width" constant="6" id="seA-PF-uXd"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评个分吧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rF-EH-Nyr">
-                                                <rect key="frame" x="20" y="16.5" width="80" height="14"/>
+                                                <rect key="frame" x="20" y="16" width="80" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="bfl-SX-Jgk"/>
                                                     <constraint firstAttribute="width" constant="80" id="eU0-eW-31B"/>
@@ -1410,6 +1410,16 @@
                                     <constraint firstAttribute="trailing" secondItem="gEb-hb-nAZ" secondAttribute="trailing" id="ynH-k6-JaH"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-JZ-nUr">
+                                <rect key="frame" x="255" y="545" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <state key="normal" title="伊泉免责条款">
+                                    <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="reliefAction:" destination="nB4-pB-9Fn" eventType="touchUpInside" id="2oh-u1-7Xx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1422,7 +1432,9 @@
                             <constraint firstItem="mHr-OY-1pm" firstAttribute="centerX" secondItem="weW-q2-vtn" secondAttribute="centerX" id="b9m-Lg-WjB"/>
                             <constraint firstItem="dXo-OF-Hjc" firstAttribute="top" secondItem="mHr-OY-1pm" secondAttribute="bottom" constant="10" id="bqL-Xs-LuN"/>
                             <constraint firstAttribute="trailing" secondItem="hiO-vw-RcH" secondAttribute="trailing" id="dja-mG-D09"/>
+                            <constraint firstItem="CBj-H5-Lqb" firstAttribute="top" secondItem="oMe-JZ-nUr" secondAttribute="bottom" constant="25" id="g0s-Gf-8hU"/>
                             <constraint firstItem="mHr-OY-1pm" firstAttribute="top" secondItem="zap-SL-Vce" secondAttribute="bottom" constant="44" id="rYH-dH-tU3"/>
+                            <constraint firstItem="oMe-JZ-nUr" firstAttribute="centerX" secondItem="weW-q2-vtn" secondAttribute="centerX" id="usn-je-318"/>
                             <constraint firstItem="dXo-OF-Hjc" firstAttribute="centerX" secondItem="weW-q2-vtn" secondAttribute="centerX" id="xGn-e7-WuC"/>
                         </constraints>
                         <variation key="default">

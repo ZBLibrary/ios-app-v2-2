@@ -31,6 +31,13 @@ class AboutUSViewController: UIViewController {
         UIApplication.sharedApplication().openURL(NSURL(string: str)!)
     }
     
+    
+    
+    @IBAction func reliefAction(sender: AnyObject) {
+        let agreeMentController=userAgreeMentsController(nibName: "userAgreeMentsController", bundle: nil)
+        self.presentViewController(agreeMentController, animated: true, completion: nil)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
