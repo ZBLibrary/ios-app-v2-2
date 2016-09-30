@@ -158,7 +158,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         self.circleBgVIew.transform = newTransForm;
         
         self.circleIconImgView.frame = CGRectMake((self.circleBottomBgView.frame.size.width-self.circleIconImgView.frame.size.width)/2, (self.circleBottomBgView.frame.size.height-self.circleIconImgView.frame.size.height)/2, self.circleIconImgView.frame.size.width, self.circleIconImgView.frame.size.height)
-        
+        self.circleIconImgView.contentMode = UIViewContentMode.ScaleAspectFit
         self.firstLabel.frame = CGRectMake(0, self.circleBottomBgView.frame.size.height+self.circleBottomBgView.frame.origin.y+20, width, 60)
         self.firstLabel.numberOfLines = 0
         self.secondLabel.frame = CGRectMake(0, self.firstLabel.frame.size.height+self.firstLabel.frame.origin.y+10, width, 20)
