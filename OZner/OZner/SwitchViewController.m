@@ -65,9 +65,9 @@
     [nav0.navigationBar loadNavigationBar];
     
     //商城
-//    MyStoreViewController* storeController = [[MyStoreViewController alloc] init];
-//    UINavigationController* nav1 = [[UINavigationController alloc] initWithRootViewController:storeController];
-//    [nav1.navigationBar loadNavigationBar];
+    //    MyStoreViewController* storeController = [[MyStoreViewController alloc] init];
+    //    UINavigationController* nav1 = [[UINavigationController alloc] initWithRootViewController:storeController];
+    //    [nav1.navigationBar loadNavigationBar];
     //聊天ChatViewController.h
     ChatViewController* communicationContr0ller = [[ChatViewController alloc] init];
     UINavigationController* nav2 = [[UINavigationController alloc] initWithRootViewController:communicationContr0ller];
@@ -246,10 +246,10 @@
     //NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
     //    if ([loginUserInfo.loginName containsString:@"@"] == false){
     // 中文-手机号登陆
-    [[NSUserDefaults standardUserDefaults]setObject:LoginByPhone forKey:CURRENT_LOGIN_STYLE] ;
+    //        [[NSUserDefaults standardUserDefaults]setObject:LoginByPhone forKey:CURRENT_LOGIN_STYLE] ;
     //    }else{
     // 英文-邮箱登陆
-    //        [[NSUserDefaults standardUserDefaults]setObject:LoginByEmail forKey:CURRENT_LOGIN_STYLE] ;
+    [[NSUserDefaults standardUserDefaults]setObject:LoginByEmail forKey:CURRENT_LOGIN_STYLE] ;
     
     //    }
     
