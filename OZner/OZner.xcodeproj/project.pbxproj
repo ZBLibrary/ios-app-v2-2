@@ -808,14 +808,12 @@
 		B7D8C1871D2374800089C241 /* setDev_CupView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1851D2374800089C241 /* setDev_CupView_EN.xib */; };
 		B7D8C18A1D2374BB0089C241 /* setCUPDeviceViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1891D2374BB0089C241 /* setCUPDeviceViewController_EN.swift */; };
 		B7D8C18C1D2375F40089C241 /* setCupNameViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C18B1D2375F40089C241 /* setCupNameViewController_EN.swift */; };
-		B7D8C19D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C18D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib */; };
 		B7D8C19E1D2376680089C241 /* setCuoTimeViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C18F1D2376680089C241 /* setCuoTimeViewController_EN.xib */; };
 		B7D8C19F1D2376680089C241 /* setCupNameViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1911D2376680089C241 /* setCupNameViewController_EN.xib */; };
 		B7D8C1A01D2376680089C241 /* SetRemindTimeController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1931D2376680089C241 /* SetRemindTimeController_EN.xib */; };
 		B7D8C1A11D2376680089C241 /* SetSexViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1951D2376680089C241 /* SetSexViewController_EN.xib */; };
 		B7D8C1A21D2376680089C241 /* setShuiJiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1971D2376680089C241 /* setShuiJiViewController_EN.xib */; };
 		B7D8C1A41D2376680089C241 /* setTanTouViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C19B1D2376680089C241 /* setTanTouViewController_EN.xib */; };
-		B7D8C1BD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1AD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift */; };
 		B7D8C1BE1D2376F60089C241 /* setAirViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1AE1D2376F60089C241 /* setAirViewController_EN.swift */; };
 		B7D8C1BF1D2376F60089C241 /* setBigAir_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1AF1D2376F60089C241 /* setBigAir_EN.plist */; };
 		B7D8C1C01D2376F60089C241 /* setCuoTimeViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1B01D2376F60089C241 /* setCuoTimeViewController_EN.swift */; };
@@ -856,6 +854,10 @@
 		B7F5B74E1D49D5FD00446670 /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7501D49D5FD00446670 /* CupView_Footer.xib */; };
 		B7F5B7541D49E9E000446670 /* TDSDetailCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7561D49E9E000446670 /* TDSDetailCellzb.xib */; };
 		B7FF5C9F1DAF38DF00A43B17 /* WaterReplenishMainView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9431D24BD0A00810566 /* WaterReplenishMainView_EN.xib */; };
+		B7FF5CA31DAF4E7600A43B17 /* SkinFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FF5CA11DAF4E7600A43B17 /* SkinFooterTableViewCell.swift */; };
+		B7FF5CA41DAF4E7600A43B17 /* SkinFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7FF5CA21DAF4E7600A43B17 /* SkinFooterTableViewCell.xib */; };
+		B7FF5CA71DAF51A900A43B17 /* mainOfSetWaterReplenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FF5CA51DAF51A900A43B17 /* mainOfSetWaterReplenCell.swift */; };
+		B7FF5CA81DAF51A900A43B17 /* mainOfSetWaterReplenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7FF5CA61DAF51A900A43B17 /* mainOfSetWaterReplenCell.xib */; };
 		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */; };
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */; };
@@ -2206,21 +2208,18 @@
 		B7D8C1881D23749A0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setDev_CupView_EN.xib; sourceTree = "<group>"; };
 		B7D8C1891D2374BB0089C241 /* setCUPDeviceViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCUPDeviceViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C18B1D2375F40089C241 /* setCupNameViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCupNameViewController_EN.swift; sourceTree = "<group>"; };
-		B7D8C18E1D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/mainOfSetWaterReplenCell_EN.xib; sourceTree = "<group>"; };
 		B7D8C1901D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCuoTimeViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1921D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCupNameViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1941D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1961D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetSexViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1981D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setShuiJiViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C19C1D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setTanTouViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C1A51D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/mainOfSetWaterReplenCell_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A61D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCuoTimeViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A71D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCupNameViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A81D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A91D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetSexViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1AA1D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setShuiJiViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1AC1D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setTanTouViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C1AD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell_EN.swift; sourceTree = "<group>"; };
 		B7D8C1AE1D2376F60089C241 /* setAirViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setAirViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C1AF1D2376F60089C241 /* setBigAir_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setBigAir_EN.plist; sourceTree = "<group>"; };
 		B7D8C1B01D2376F60089C241 /* setCuoTimeViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCuoTimeViewController_EN.swift; sourceTree = "<group>"; };
@@ -2276,6 +2275,10 @@
 		B7F5B75F1D49F74300446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/drinKWaterCell.xib"; sourceTree = "<group>"; };
 		B7F5B7621D49FC0A00446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/TDSFooterCellzb.xib"; sourceTree = "<group>"; };
 		B7FF5CA01DAF44CF00A43B17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
+		B7FF5CA11DAF4E7600A43B17 /* SkinFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinFooterTableViewCell.swift; sourceTree = "<group>"; };
+		B7FF5CA21DAF4E7600A43B17 /* SkinFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinFooterTableViewCell.xib; sourceTree = "<group>"; };
+		B7FF5CA51DAF51A900A43B17 /* mainOfSetWaterReplenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell.swift; sourceTree = "<group>"; };
+		B7FF5CA61DAF51A900A43B17 /* mainOfSetWaterReplenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainOfSetWaterReplenCell.xib; sourceTree = "<group>"; };
 		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
@@ -3916,6 +3919,8 @@
 		8D5F62161C83FC81000E0388 /* WaterReplenishmentView */ = {
 			isa = PBXGroup;
 			children = (
+				B7FF5CA11DAF4E7600A43B17 /* SkinFooterTableViewCell.swift */,
+				B7FF5CA21DAF4E7600A43B17 /* SkinFooterTableViewCell.xib */,
 				8DB044BE1CC8CDB500B60DAB /* WaterReplenishMainView_EN.swift */,
 				E066B9431D24BD0A00810566 /* WaterReplenishMainView_EN.xib */,
 				8DB044C01CC8CDB500B60DAB /* HeadOfWaterReplenishDetailCell_EN.swift */,
@@ -3975,12 +3980,12 @@
 		8D88804D1C8DC8DA007391E1 /* setWaterReplenish */ = {
 			isa = PBXGroup;
 			children = (
-				B7D8C1AD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift */,
+				B7FF5CA51DAF51A900A43B17 /* mainOfSetWaterReplenCell.swift */,
+				B7FF5CA61DAF51A900A43B17 /* mainOfSetWaterReplenCell.xib */,
 				B7D8C1B21D2376F60089C241 /* SetRemindTimeController_EN.swift */,
 				B7D8C1B31D2376F60089C241 /* SetSexViewController_EN.swift */,
 				B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */,
 				B7D8C1BB1D2376F60089C241 /* setWaterReplenishController_EN.swift */,
-				B7D8C18D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib */,
 				B7D8C1931D2376680089C241 /* SetRemindTimeController_EN.xib */,
 				B7D8C1951D2376680089C241 /* SetSexViewController_EN.xib */,
 			);
@@ -4810,6 +4815,7 @@
 				8DB044441CC8CD1700B60DAB /* icon_jiare@2x.png in Resources */,
 				8DB0445E1CC8CD2C00B60DAB /* icon_lvxin_more_1.png in Resources */,
 				8DB0444D1CC8CD1700B60DAB /* icon_zhileng_normal@3x.png in Resources */,
+				B7FF5CA81DAF51A900A43B17 /* mainOfSetWaterReplenCell.xib in Resources */,
 				8DB044821CC8CD4200B60DAB /* icon_peidui_complete_jingshuiqi.png in Resources */,
 				B7F5B7481D49D36D00446670 /* TDSFooterCellzb.xib in Resources */,
 				8DB043F21CC8CCE200B60DAB /* select_device_0.png in Resources */,
@@ -4901,6 +4907,7 @@
 				8DB044491CC8CD1700B60DAB /* icon_power_normal@2x.png in Resources */,
 				8DB043F41CC8CCE200B60DAB /* select_device_2.png in Resources */,
 				B7F5B74E1D49D5FD00446670 /* CupView_Footer.xib in Resources */,
+				B7FF5CA41DAF4E7600A43B17 /* SkinFooterTableViewCell.xib in Resources */,
 				B7F5B72F1D49B8AA00446670 /* TDSDetailHeadView.xib in Resources */,
 				4288C5281C0EEE3800446D3E /* AddDeviceViewController_EN.xib in Resources */,
 				8DB044B01CC8CD5500B60DAB /* device_jin_bigair_normal.png in Resources */,
@@ -4924,7 +4931,6 @@
 				423114551C4370E80062FFFF /* scanboarder.png in Resources */,
 				423114571C43711D0062FFFF /* scanline.png in Resources */,
 				4281414B1C0B15F0006FEDDE /* ic_menu_black_24dp@3x.png in Resources */,
-				B7D8C19D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib in Resources */,
 				B7D8C1A21D2376680089C241 /* setShuiJiViewController_EN.xib in Resources */,
 				B7D8C2371D24AFB10089C241 /* VOC_AirViewController_EN.xib in Resources */,
 				42CF4EA81C16F6D7000E22DC /* CustomPopViewSecondCell.xib in Resources */,
@@ -4991,6 +4997,7 @@
 				8D26136A1CFD3DF3002ADB0E /* Duration.swift in Sources */,
 				8DA405A21C8441B500AD5E5E /* ZXMathUtils.m in Sources */,
 				523DC2FC1C175DA800595099 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				B7FF5CA31DAF4E7600A43B17 /* SkinFooterTableViewCell.swift in Sources */,
 				8D09DBE21C5A69D400D0432B /* LoadingXib_EN.swift in Sources */,
 				8DA4060B1C8441B500AD5E5E /* ZXUPCEReader.m in Sources */,
 				8DA4054F1C8441B500AD5E5E /* ZXAztecEncoder.m in Sources */,
@@ -5127,6 +5134,7 @@
 				8DA405451C8441B500AD5E5E /* ZXAI013x0xDecoder.m in Sources */,
 				8DA405E91C8441B500AD5E5E /* ZXResultParser.m in Sources */,
 				8DA4056A1C8441B500AD5E5E /* ZXCode39Reader.m in Sources */,
+				B7FF5CA71DAF51A900A43B17 /* mainOfSetWaterReplenCell.swift in Sources */,
 				8DA405571C8441B500AD5E5E /* ZXBinaryBitmap.m in Sources */,
 				524337461C42A5BB0024133D /* BluetoothAirPurifierFilterStatus.m in Sources */,
 				8DE2CC8B1C8D85A4002FCB42 /* BluetoothAirPurifierSensor.m in Sources */,
@@ -5338,7 +5346,6 @@
 				42A7BB391C0C23BC008DB6E5 /* ASIHTTPRequest.m in Sources */,
 				8DA405AC1C8441B500AD5E5E /* ZXMultiFormatOneDReader.m in Sources */,
 				8DBD54B41C567F3800D04B12 /* EquidsCollectionViewController.swift in Sources */,
-				B7D8C1BD1D2376F60089C241 /* mainOfSetWaterReplenCell_EN.swift in Sources */,
 				8DA405E61C8441B500AD5E5E /* ZXReedSolomonDecoder.m in Sources */,
 				8DA4057C1C8441B500AD5E5E /* ZXDataMatrixSymbolInfo144.m in Sources */,
 				523DC33B1C175E1B00595099 /* XMSystemMessageCell.m in Sources */,
@@ -5691,15 +5698,6 @@
 				B7D8C1881D23749A0089C241 /* en */,
 			);
 			name = setDev_CupView_EN.xib;
-			sourceTree = "<group>";
-		};
-		B7D8C18D1D2376680089C241 /* mainOfSetWaterReplenCell_EN.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7D8C18E1D2376680089C241 /* en */,
-				B7D8C1A51D23769D0089C241 /* Base */,
-			);
-			name = mainOfSetWaterReplenCell_EN.xib;
 			sourceTree = "<group>";
 		};
 		B7D8C18F1D2376680089C241 /* setCuoTimeViewController_EN.xib */ = {

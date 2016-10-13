@@ -13,7 +13,7 @@ class SkinQueryTableViewController_EN: UITableViewController {
 
     var headCell:SkinHeadTableViewCell_EN!
     var centerCell:SkinCenterTableViewCell_EN!
-    var footerCell:SkinFooterTableViewCell_EN!
+    var footerCell:SkinFooterTableViewCell!
     var currentSkinTypeIndex=0//0：无，1油，2干,3中
     var totalTimes = 0
     var TimeString = ""
@@ -34,7 +34,7 @@ class SkinQueryTableViewController_EN: UITableViewController {
         centerCell.selectionStyle=UITableViewCellSelectionStyle.None
         centerCell.updateData(totalTimes, Date: TimeString)
         //尾部视图
-        footerCell = NSBundle.mainBundle().loadNibNamed("SkinFooterTableViewCell_EN", owner: self, options: nil).last as!  SkinFooterTableViewCell_EN
+        footerCell = NSBundle.mainBundle().loadNibNamed("SkinFooterTableViewCell", owner: self, options: nil).last as!  SkinFooterTableViewCell
         footerCell.bugEssenceButton.addTarget(self, action: #selector(bugEssenceClick), forControlEvents: .TouchUpInside)
         footerCell.MyCurrentFuZhi(currentSkinTypeIndex, sex: currentSex)
         //传入我当前的肤质

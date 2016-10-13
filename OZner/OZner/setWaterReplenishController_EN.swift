@@ -13,7 +13,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
     
     var settingDic:NSMutableDictionary?=getPlistData("setWaterReplenish_EN")
     var myCurrentDevice:WaterReplenishmentMeter?
-    var MainViewCell:mainOfSetWaterReplenCell_EN!
+    var MainViewCell:mainOfSetWaterReplenCell!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -178,7 +178,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        MainViewCell = NSBundle.mainBundle().loadNibNamed("mainOfSetWaterReplenCell_EN", owner: self, options: nil).last as! mainOfSetWaterReplenCell_EN
+        MainViewCell = NSBundle.mainBundle().loadNibNamed("mainOfSetWaterReplenCell", owner: self, options: nil).last as! mainOfSetWaterReplenCell
         MainViewCell.toSetNameAndDressButton.addTarget(self, action: #selector(toSetNameAndDressButton), forControlEvents: .TouchUpInside)
         MainViewCell.toSetSexButton.addTarget(self, action: #selector(toSetSexButton), forControlEvents: .TouchUpInside)
         MainViewCell.toSetTimeRemind.addTarget(self, action: #selector(toSetTimeRemind), forControlEvents: .TouchUpInside)

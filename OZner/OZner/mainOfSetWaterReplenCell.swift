@@ -1,5 +1,5 @@
 //
-//  mainOfSetWaterReplenCell_EN.swift
+//  mainOfSetWaterReplenCell.swift
 //  OZner
 //
 //  Created by 赵兵 on 16/3/7.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class mainOfSetWaterReplenCell_EN: UITableViewCell {
+class mainOfSetWaterReplenCell: UITableViewCell {
 
     @IBOutlet var NameAndAdress: UILabel!
     @IBOutlet var Sex: UILabel!
