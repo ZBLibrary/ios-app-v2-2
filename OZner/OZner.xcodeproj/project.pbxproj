@@ -855,6 +855,7 @@
 		B7F5B7481D49D36D00446670 /* TDSFooterCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B74A1D49D36D00446670 /* TDSFooterCellzb.xib */; };
 		B7F5B74E1D49D5FD00446670 /* CupView_Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7501D49D5FD00446670 /* CupView_Footer.xib */; };
 		B7F5B7541D49E9E000446670 /* TDSDetailCellzb.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B7561D49E9E000446670 /* TDSDetailCellzb.xib */; };
+		B7FF5C9F1DAF38DF00A43B17 /* WaterReplenishMainView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066B9431D24BD0A00810566 /* WaterReplenishMainView_EN.xib */; };
 		E00264F81D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */; };
 		E00264FC1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */; };
 		E00265001D07F97900E31C79 /* JingShuiWifiViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */; };
@@ -2274,6 +2275,7 @@
 		B7F5B7591D49E9E900446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
 		B7F5B75F1D49F74300446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/drinKWaterCell.xib"; sourceTree = "<group>"; };
 		B7F5B7621D49FC0A00446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/TDSFooterCellzb.xib"; sourceTree = "<group>"; };
+		B7FF5CA01DAF44CF00A43B17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
@@ -2282,7 +2284,6 @@
 		E00265031D07F97B00E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JingShuiWifiViewController_EN.xib; sourceTree = "<group>"; };
 		E00265051D08098500E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/tantouLvXinView_EN.xib; sourceTree = "<group>"; };
 		E00265071D08098700E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/tantouLvXinView_EN.xib; sourceTree = "<group>"; };
-		E066B9421D24BD0A00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterReplenishMainView_EN.xib; sourceTree = "<group>"; };
 		E066B9441D24BD0C00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterReplenishMainView_EN.xib; sourceTree = "<group>"; };
 		E066B9461D24BDB400810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HeadOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
 		E066B9481D24BDB500810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HeadOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
@@ -4679,6 +4680,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7FF5C9F1DAF38DF00A43B17 /* WaterReplenishMainView_EN.xib in Resources */,
 				8DB044BB1CC8CD5500B60DAB /* yiban.png in Resources */,
 				B7D8C1A01D2376680089C241 /* SetRemindTimeController_EN.xib in Resources */,
 				8DB044651CC8CD2C00B60DAB /* icon_lvxin_service_3.png in Resources */,
@@ -5820,6 +5822,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B7D8C23E1D24C13D0089C241 /* en */,
+				B7FF5CA01DAF44CF00A43B17 /* Base */,
 			);
 			name = SkinFooterTableViewCell_EN.xib;
 			sourceTree = "<group>";
@@ -5910,7 +5913,6 @@
 		E066B9431D24BD0A00810566 /* WaterReplenishMainView_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E066B9421D24BD0A00810566 /* en */,
 				E066B9441D24BD0C00810566 /* Base */,
 			);
 			name = WaterReplenishMainView_EN.xib;
