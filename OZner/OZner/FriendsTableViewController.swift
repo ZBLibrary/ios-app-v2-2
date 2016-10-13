@@ -70,7 +70,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title=loadLanguage("我的好友")
-        
+//         creatBgView()
         //添加导航视图
         NavTitleView.bottomLeft.hidden=true
         NavTitleView.bottomRight.hidden=false
@@ -276,6 +276,8 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
+        print(myfriendarray.count)
+        
         return myfriendCellArray.count
     }
     
@@ -335,6 +337,11 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         werbservice.getFriendList { (data:AnyObject!, state:StatusManager!) -> Void in
             
+            if state.networkStatus == kHeadStError {
+                self.creatBgView()
+                return
+            }
+            
             if state.networkStatus == kSuccessStatus
             {
                 let state=data.objectForKey("state") as! Int
@@ -342,7 +349,10 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                 {
                     
                     let friendcount=data.objectForKey("friendlist") as! NSMutableArray
-                    
+                    if friendcount.count == 0 {
+                        self.creatBgView()
+                        return
+                    }
                     for i in 0...(friendcount.count-1)
                     {
                         var friendstrut=myFriend()
@@ -611,6 +621,17 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
         
         TdsRankcell.selectionStyle=UITableViewCellSelectionStyle.None
         return TdsRankcell
+    }
+    
+    private func creatBgView() {
+        
+        let bgView = NSBundle.mainBundle().loadNibNamed("FriendZeroBgView", owner: nil, options: nil).last as! FriendZeroBgView
+        bgView.frame = CGRect(x: 0, y:0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64)
+        
+        tableView.insertSubview(bgView, atIndex: 0)
+//        tableView.backgroundView = bgView
+        
+        
     }
     
     

@@ -797,6 +797,10 @@
 		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
 		B7A045231D8FBCF7002A00ED /* icon_no_device_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */; };
 		B7A045251D8FBD04002A00ED /* icon_no_device_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */; };
+		B7C8A0961DAF76C8009E5715 /* FriendZeroBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8A0951DAF76C8009E5715 /* FriendZeroBgView.swift */; };
+		B7C8A0981DAF76E5009E5715 /* FriendZeroBgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C8A0971DAF76E5009E5715 /* FriendZeroBgView.xib */; };
+		B7C8A09E1DAF78A7009E5715 /* no_friends_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C8A09D1DAF78A7009E5715 /* no_friends_bg@2x.png */; };
+		B7C8A0A01DAF78B6009E5715 /* no_friends_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C8A09F1DAF78B6009E5715 /* no_friends_bg@3x.png */; };
 		B7D8C1791D2373AB0089C241 /* AboutDeviceViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */; };
 		B7D8C17A1D2373AB0089C241 /* AboutDeviceViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */; };
 		B7D8C17B1D2373AB0089C241 /* setCommon_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1751D2373AB0089C241 /* setCommon_EN.swift */; };
@@ -2195,6 +2199,10 @@
 		B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@2x.png"; sourceTree = "<group>"; };
 		B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@3x.png"; sourceTree = "<group>"; };
 		B7B199A51D5036E000DAA771 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/smallFooterViewXib_EN.xib"; sourceTree = "<group>"; };
+		B7C8A0951DAF76C8009E5715 /* FriendZeroBgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendZeroBgView.swift; sourceTree = "<group>"; };
+		B7C8A0971DAF76E5009E5715 /* FriendZeroBgView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendZeroBgView.xib; sourceTree = "<group>"; };
+		B7C8A09D1DAF78A7009E5715 /* no_friends_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_friends_bg@2x.png"; sourceTree = "<group>"; };
+		B7C8A09F1DAF78B6009E5715 /* no_friends_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_friends_bg@3x.png"; sourceTree = "<group>"; };
 		B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDeviceViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutDeviceViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1751D2373AB0089C241 /* setCommon_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCommon_EN.swift; sourceTree = "<group>"; };
@@ -2707,6 +2715,8 @@
 		4248B2BD1C0D832A00181CA0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B7C8A09D1DAF78A7009E5715 /* no_friends_bg@2x.png */,
+				B7C8A09F1DAF78B6009E5715 /* no_friends_bg@3x.png */,
 				B72BDB761D7D011A00C05E40 /* new_help_0@2x.png */,
 				B72BDB771D7D011A00C05E40 /* new_help_0@3x.png */,
 				B72BDB781D7D011A00C05E40 /* new_help_1@2x.png */,
@@ -3518,6 +3528,8 @@
 				B71121731D45FD510098C31C /* My_MainView_EN.xib */,
 				8D39A6E61D6C57A8000D1D44 /* ShareMoneyToWeChat.xib */,
 				8D39A6E41D6C5795000D1D44 /* ShareMoneyToWeChat.swift */,
+				B7C8A0951DAF76C8009E5715 /* FriendZeroBgView.swift */,
+				B7C8A0971DAF76E5009E5715 /* FriendZeroBgView.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -4754,6 +4766,7 @@
 				8D08BD681D5C61EA00E10F0F /* SetTdsPanViewController.xib in Resources */,
 				8DB044B81CC8CD5500B60DAB /* device_icon_wifi.png in Resources */,
 				8DB044801CC8CD4200B60DAB /* icon_peidui_complete_smallair.png in Resources */,
+				B7C8A09E1DAF78A7009E5715 /* no_friends_bg@2x.png in Resources */,
 				528D773D1C27094000243986 /* indoorHead_SmallXib_EN.xib in Resources */,
 				8DB044921CC8CD4200B60DAB /* icon_peidui_normal_smallair@2x.png in Resources */,
 				8DB044871CC8CD4200B60DAB /* icon_peidui_normal_tan_tou@3x.png in Resources */,
@@ -4904,6 +4917,7 @@
 				B7D8C1C41D2376F60089C241 /* setShuiJi_EN.plist in Resources */,
 				E0EFFEE51D05944E00E43C20 /* CenterChartCell_EN.xib in Resources */,
 				E0EFFEE91D05954700E43C20 /* Main_FooterView_zb_EN.xib in Resources */,
+				B7C8A0A01DAF78B6009E5715 /* no_friends_bg@3x.png in Resources */,
 				8DB044491CC8CD1700B60DAB /* icon_power_normal@2x.png in Resources */,
 				8DB043F41CC8CCE200B60DAB /* select_device_2.png in Resources */,
 				B7F5B74E1D49D5FD00446670 /* CupView_Footer.xib in Resources */,
@@ -4940,6 +4954,7 @@
 				349F0CD11C158EB900E46253 /* CustomPopViewFirstCell.xib in Resources */,
 				8DB043FA1CC8CCE200B60DAB /* mydevice_bg@3x.png in Resources */,
 				8DB043A91CC8CC6B00B60DAB /* Assets.xcassets in Resources */,
+				B7C8A0981DAF76E5009E5715 /* FriendZeroBgView.xib in Resources */,
 				8DB0443D1CC8CD1700B60DAB /* icon_mima.png in Resources */,
 				B7D8C23A1D24B3E20089C241 /* smallFooterViewXib_EN.xib in Resources */,
 				8DB044661CC8CD2C00B60DAB /* icon_lvxin_service_4.png in Resources */,
@@ -5531,6 +5546,7 @@
 				E0F32A311D4749B500D78EE5 /* RNModifyPasswordViewController.swift in Sources */,
 				8DA405ED1C8441B500AD5E5E /* ZXRSSDataCharacter.m in Sources */,
 				52F465F81C2D482A0052D7C8 /* smallStateXib_EN.swift in Sources */,
+				B7C8A0961DAF76C8009E5715 /* FriendZeroBgView.swift in Sources */,
 				4231145A1C437C640062FFFF /* DrawPathView.m in Sources */,
 				8DBD54BA1C567F3800D04B12 /* ZanMeTableViewController.swift in Sources */,
 				8D2613701CFD3DF3002ADB0E /* NSCalendarUnit+Timepiece.swift in Sources */,
