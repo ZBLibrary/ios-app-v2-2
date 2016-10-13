@@ -38,12 +38,12 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
     }
     //测试设备数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 6
+        return 7
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.row {
-        case 0,5,6:
+        case 0,3,5:
             return 0
         default:
             return 120
@@ -70,8 +70,8 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
             
         case 3:
             
-            cell.layOutAddDeviceCell("select_device_3zb", content: loadLanguage("台式空净专用"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-            
+//            cell.layOutAddDeviceCell("select_device_3zb", content: loadLanguage("台式空净专用"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+            return UITableViewCell()
         case 4:
             
             cell.layOutAddDeviceCell("select_device_4zb", content: loadLanguage("立式空净专用"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
@@ -81,8 +81,8 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
             return UITableViewCell()
         case 6:
             
-            //            cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-            return UITableViewCell()
+            cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+//            return UITableViewCell()
         default :
             break
         }

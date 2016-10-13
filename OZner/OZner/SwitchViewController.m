@@ -149,16 +149,16 @@
     [mNewUserHelpNavController.view removeFromSuperview];
     mNewUserHelpNavController = nil;
     
-    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
+//    NSString* currentLanguage = RNGetSystemInfo.sharedManager.getCurrentSystemLanguage ;
     
-    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
+//    if ([currentLanguage  isEqualToString:@"zh-Hans-CN"]){
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         mLoginController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
         mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:mLoginController];
-    }else{
-        emailLoginViewController = [[RNEmailLoginViewController alloc] initWithNibName:@"RNEmailLoginViewController" bundle:nil] ;
-        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
-    }
+//    }else{
+//        emailLoginViewController = [[RNEmailLoginViewController alloc] initWithNibName:@"RNEmailLoginViewController" bundle:nil] ;
+//        mLoginNavController = [[JMNavigationController alloc] initWithRootViewController:emailLoginViewController];
+//    }
     
     mLoginNavController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [mLoginNavController.navigationBar loadNavigationBar];
