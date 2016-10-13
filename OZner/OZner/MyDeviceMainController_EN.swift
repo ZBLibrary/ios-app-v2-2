@@ -901,11 +901,12 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         else
         {
             deviceStateViewBG.hidden=false
+            //修改顶部title名称
+            //            CupManager.isCup(self.myCurrentDevice?.type)
             if ((self.myCurrentDevice?.isKindOfClass(Cup.classForCoder())) == true)
             {
                 let cup = self.myCurrentDevice as! Cup
                 self.titleLabel.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
-                
                 if(cup.sensor.powerPer() == 0)
                 {
                     self.dianliangImg.image = UIImage(named: "dian_liang_0.png")
