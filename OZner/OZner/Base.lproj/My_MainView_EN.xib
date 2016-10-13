@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -116,18 +116,18 @@
                         </mask>
                     </variation>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyT-fg-wjR">
-                    <rect key="frame" x="0.0" y="305" width="384" height="44"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyT-fg-wjR">
+                    <rect key="frame" x="0.0" y="305" width="384" height="0.0"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My_suggest" translatesAutoresizingMaskIntoConstraints="NO" id="agl-8V-7RK">
-                            <rect key="frame" x="13" y="13" width="18" height="18"/>
+                            <rect key="frame" x="13" y="-9" width="18" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="18" id="BdD-of-mkb"/>
                                 <constraint firstAttribute="width" constant="18" id="XtF-Jq-cEn"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我要提意见" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KrN-m9-CG2">
-                            <rect key="frame" x="49" y="11" width="119" height="21"/>
+                            <rect key="frame" x="49" y="-11" width="119" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="Lms-1B-fpD"/>
                                 <constraint firstAttribute="width" constant="119" id="i2e-P6-X8K"/>
@@ -137,21 +137,21 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Khl-iB-f2M">
-                            <rect key="frame" x="355" y="14" width="12" height="16"/>
+                            <rect key="frame" x="355" y="-8" width="12" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="12" id="PMm-Qy-BOY"/>
                                 <constraint firstAttribute="height" constant="16" id="olO-Jl-iHK"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ici-0J-fba">
-                            <rect key="frame" x="49" y="43" width="335" height="1"/>
+                            <rect key="frame" x="49" y="-1" width="335" height="1"/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="CzJ-vt-dPT"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkk-vh-LEt">
-                            <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="0.0"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,7 +161,7 @@
                         <constraint firstItem="bkk-vh-LEt" firstAttribute="leading" secondItem="eyT-fg-wjR" secondAttribute="leading" id="6Q5-sl-pFZ"/>
                         <constraint firstItem="Khl-iB-f2M" firstAttribute="centerY" secondItem="eyT-fg-wjR" secondAttribute="centerY" id="AmA-LF-LfV"/>
                         <constraint firstAttribute="bottom" secondItem="bkk-vh-LEt" secondAttribute="bottom" id="Faj-DM-RSZ"/>
-                        <constraint firstAttribute="height" constant="44" id="PzE-Ye-ogg"/>
+                        <constraint firstAttribute="height" id="PzE-Ye-ogg"/>
                         <constraint firstItem="agl-8V-7RK" firstAttribute="leading" secondItem="eyT-fg-wjR" secondAttribute="leading" constant="13" id="UZc-WM-0Y2"/>
                         <constraint firstAttribute="trailing" secondItem="Khl-iB-f2M" secondAttribute="trailing" constant="17" id="Wsx-CX-cPg"/>
                         <constraint firstItem="bkk-vh-LEt" firstAttribute="top" secondItem="eyT-fg-wjR" secondAttribute="top" id="cTj-zK-nlK"/>
@@ -173,7 +173,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBJ-5G-OpQ">
-                    <rect key="frame" x="0.0" y="349" width="384" height="44"/>
+                    <rect key="frame" x="0.0" y="305" width="384" height="44"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9T-ha-x4h">
                             <rect key="frame" x="0.0" y="43" width="384" height="1"/>

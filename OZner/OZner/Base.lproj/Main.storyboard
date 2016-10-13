@@ -1411,9 +1411,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-JZ-nUr">
-                                <rect key="frame" x="255" y="545" width="90" height="30"/>
+                                <rect key="frame" x="240" y="545" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="伊泉免责条款">
+                                <state key="normal" title="君融科技免责条款">
                                     <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -1455,6 +1455,7 @@
                     <connections>
                         <outlet property="HaozeLable" destination="dXo-OF-Hjc" id="VEa-ku-Nai"/>
                         <outlet property="ScoreLable" destination="0rF-EH-Nyr" id="TZl-9I-AsF"/>
+                        <outlet property="versionlB" destination="Kca-Fp-5tA" id="Yji-uq-MjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8k-D9-23i" userLabel="First Responder" sceneMemberID="firstResponder"/>

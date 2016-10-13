@@ -21,7 +21,7 @@
         [self addSubview:label];
         
         label = [[UILabel alloc]initWithFrame:CGRectMake(0, label.frame.origin.y+label.frame.size.height+8*(SCREEN_HEIGHT/667.0), SCREEN_WIDTH, 17*(SCREEN_HEIGHT/667.0))];
-        label.text= loadLanguage(@"开启伊泉智能生活");
+        label.text= loadLanguage(@"开启伊泉智慧生活");
         label.textColor = [UToolBox colorFromHexRGB:@"3b536e"];
         label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:label];

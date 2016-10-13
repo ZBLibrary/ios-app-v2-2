@@ -90,7 +90,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         let YZM:String=YZMTextField.text!
         if !isAgree
         {
-            errorLabel.text=loadLanguage("请阅读《伊泉净水免责条款》并勾选")
+            errorLabel.text=loadLanguage("请阅读《君融科技免责条款》并勾选")
             return
         }
         if !checkTel(phone)
@@ -217,7 +217,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginFailed), name: "networkFailedInfoNotice", object: nil)
        loginButton.setTitle(loadLanguage("登录"), forState: .Normal)
         getYYbutton.setTitle(loadLanguage("获取语音验证码"), forState: .Normal)
-        agreeButton.setTitle(loadLanguage("我已阅读并同意《伊泉净水免责条款》"), forState: .Normal)
+        agreeButton.setTitle(loadLanguage("我已阅读并同意《君融科技免责条款》"), forState: .Normal)
         phoneTextField.placeholder=loadLanguage("请输入手机号")
         YZMTextField.placeholder=loadLanguage("输入验证码")
         TishiLabel.text=loadLanguage("未收到短信验证码？")

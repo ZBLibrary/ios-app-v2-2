@@ -44,7 +44,7 @@ class MySetViewController: UIViewController,UIAlertViewDelegate {
         super.viewDidLoad()
         self.title=loadLanguage("设置")
          AllowedpushLable.text=loadLanguage("允许推送消息")
-        AboutLable.text=loadLanguage("关于伊泉净品")
+        AboutLable.text=loadLanguage("关于君融科技")
         UnitLable.text=loadLanguage("计量单位")
         let userDef=NSUserDefaults.standardUserDefaults().objectForKey("IsAlowTuiSong")
         allowTS.on=userDef==nil ? true:(userDef as! Bool)

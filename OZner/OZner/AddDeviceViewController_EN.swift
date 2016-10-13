@@ -62,11 +62,11 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
             return UITableViewCell()
         case 1:
             
-            cell.layOutAddDeviceCell("select_device_1", content: loadLanguage("水探头"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+            cell.layOutAddDeviceCell("select_device_1", content: loadLanguage("智能水探头"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
             
         case 2:
             
-            cell.layOutAddDeviceCell("select_device_2", content: loadLanguage("净水器"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
+            cell.layOutAddDeviceCell("select_device_2", content: loadLanguage("免安装净水器"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
             
         case 3:
             
@@ -74,14 +74,14 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
             return UITableViewCell()
         case 4:
             
-            cell.layOutAddDeviceCell("select_device_4zb", content: loadLanguage("立式空净专用"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
+            cell.layOutAddDeviceCell("select_device_4zb", content: loadLanguage("智能空气净化器"), iconImgName: "select_device_4.png", funcContent: loadLanguage("Wifi连接"))
         case 5:
             
             //            cell.layOutAddDeviceCell("TDSPAN_ICON", content: loadLanguage("水质检测笔"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
             return UITableViewCell()
         case 6:
             
-            cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+            cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("智能补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
 //            return UITableViewCell()
         default :
             break

@@ -16,13 +16,15 @@ class AboutUSViewController: UIViewController {
     @IBOutlet var ScoreLable: UILabel!
     
     
+    @IBOutlet weak var versionlB: UILabel!
     @IBOutlet var HaozeLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title=loadLanguage("关于伊泉净品" )
+        self.title=loadLanguage("关于君融科技" )
+        versionlB.text =  NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as? String
         //UpdateLable.text=loadLanguage("检查更新版本" )
         ScoreLable.text=loadLanguage("评个分吧")
-        HaozeLable.text=loadLanguage("伊泉净品")
+        HaozeLable.text=loadLanguage("君融科技")
         // Do any additional setup after loading the view.
     }
     //评个分吧
