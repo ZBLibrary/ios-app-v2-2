@@ -792,13 +792,18 @@
 		B72BDB7B1D7D011A00C05E40 /* new_help_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB771D7D011A00C05E40 /* new_help_0@3x.png */; };
 		B72BDB7C1D7D011A00C05E40 /* new_help_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB781D7D011A00C05E40 /* new_help_1@2x.png */; };
 		B72BDB7D1D7D011A00C05E40 /* new_help_1@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB791D7D011A00C05E40 /* new_help_1@3x.jpg */; };
+		B7679CA91DB9A36500B61A22 /* WaterRefreshIntrounVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7679CA81DB9A36500B61A22 /* WaterRefreshIntrounVC.swift */; };
+		B7679CB01DB9A49E00B61A22 /* water.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7679CAB1DB9A49E00B61A22 /* water.jpg */; };
+		B7679CB11DB9A49E00B61A22 /* waterair.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7679CAC1DB9A49E00B61A22 /* waterair.jpg */; };
+		B7679CB21DB9A49E00B61A22 /* lishi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7679CAD1DB9A49E00B61A22 /* lishi.jpg */; };
+		B7679CB31DB9A49E00B61A22 /* tap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7679CAE1DB9A49E00B61A22 /* tap.jpg */; };
+		B7679CB41DB9A49E00B61A22 /* taishi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7679CAF1DB9A49E00B61A22 /* taishi.jpg */; };
 		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
 		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
 		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
 		B7A045231D8FBCF7002A00ED /* icon_no_device_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */; };
 		B7A045251D8FBD04002A00ED /* icon_no_device_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */; };
 		B7C8A0961DAF76C8009E5715 /* FriendZeroBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8A0951DAF76C8009E5715 /* FriendZeroBgView.swift */; };
-		B7C8A0981DAF76E5009E5715 /* FriendZeroBgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C8A0971DAF76E5009E5715 /* FriendZeroBgView.xib */; };
 		B7C8A09E1DAF78A7009E5715 /* no_friends_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C8A09D1DAF78A7009E5715 /* no_friends_bg@2x.png */; };
 		B7C8A0A01DAF78B6009E5715 /* no_friends_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C8A09F1DAF78B6009E5715 /* no_friends_bg@3x.png */; };
 		B7D8C1791D2373AB0089C241 /* AboutDeviceViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */; };
@@ -839,6 +844,7 @@
 		B7D8C2371D24AFB10089C241 /* VOC_AirViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C2391D24AFB10089C241 /* VOC_AirViewController_EN.xib */; };
 		B7D8C23A1D24B3E20089C241 /* smallFooterViewXib_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C23C1D24B3E20089C241 /* smallFooterViewXib_EN.xib */; };
 		B7D8C23D1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C23F1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib */; };
+		B7DC9B1F1DBA023200B3466C /* FriendZeroBgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC9B1E1DBA023200B3466C /* FriendZeroBgView.xib */; };
 		B7F5B7171D499E6800446670 /* setSmallAirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B7161D499E6800446670 /* setSmallAirView.swift */; };
 		B7F5B71A1D499F1B00446670 /* setSmallAirViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F5B71C1D499F1B00446670 /* setSmallAirViewXib.xib */; };
 		B7F5B72C1D49B8AA00446670 /* CustomThreeCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F5B71F1D49B8AA00446670 /* CustomThreeCircleView.m */; };
@@ -2189,6 +2195,12 @@
 		B72BDB771D7D011A00C05E40 /* new_help_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_0@3x.png"; sourceTree = "<group>"; };
 		B72BDB781D7D011A00C05E40 /* new_help_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_1@2x.png"; sourceTree = "<group>"; };
 		B72BDB791D7D011A00C05E40 /* new_help_1@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "new_help_1@3x.jpg"; sourceTree = "<group>"; };
+		B7679CA81DB9A36500B61A22 /* WaterRefreshIntrounVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterRefreshIntrounVC.swift; sourceTree = "<group>"; };
+		B7679CAB1DB9A49E00B61A22 /* water.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = water.jpg; sourceTree = "<group>"; };
+		B7679CAC1DB9A49E00B61A22 /* waterair.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterair.jpg; sourceTree = "<group>"; };
+		B7679CAD1DB9A49E00B61A22 /* lishi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lishi.jpg; sourceTree = "<group>"; };
+		B7679CAE1DB9A49E00B61A22 /* tap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tap.jpg; sourceTree = "<group>"; };
+		B7679CAF1DB9A49E00B61A22 /* taishi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = taishi.jpg; sourceTree = "<group>"; };
 		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
 		B76E77891D066BE3008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FriendsNav.xib; sourceTree = "<group>"; };
 		B76E778A1D066E94008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -2200,7 +2212,6 @@
 		B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@3x.png"; sourceTree = "<group>"; };
 		B7B199A51D5036E000DAA771 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/smallFooterViewXib_EN.xib"; sourceTree = "<group>"; };
 		B7C8A0951DAF76C8009E5715 /* FriendZeroBgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendZeroBgView.swift; sourceTree = "<group>"; };
-		B7C8A0971DAF76E5009E5715 /* FriendZeroBgView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendZeroBgView.xib; sourceTree = "<group>"; };
 		B7C8A09D1DAF78A7009E5715 /* no_friends_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_friends_bg@2x.png"; sourceTree = "<group>"; };
 		B7C8A09F1DAF78B6009E5715 /* no_friends_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_friends_bg@3x.png"; sourceTree = "<group>"; };
 		B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDeviceViewController_EN.swift; sourceTree = "<group>"; };
@@ -2253,6 +2264,7 @@
 		B7D8C2381D24AFB10089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VOC_AirViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C23B1D24B3E20089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/smallFooterViewXib_EN.xib; sourceTree = "<group>"; };
 		B7D8C23E1D24C13D0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
+		B7DC9B1E1DBA023200B3466C /* FriendZeroBgView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendZeroBgView.xib; sourceTree = "<group>"; };
 		B7F5B7161D499E6800446670 /* setSmallAirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView.swift; sourceTree = "<group>"; };
 		B7F5B71B1D499F1B00446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setSmallAirViewXib.xib; sourceTree = "<group>"; };
 		B7F5B71D1D499F2100446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setSmallAirViewXib.xib; sourceTree = "<group>"; };
@@ -2911,6 +2923,7 @@
 		428141031C0B072C006FEDDE /* OZner */ = {
 			isa = PBXGroup;
 			children = (
+				B7679CAA1DB9A48100B61A22 /* Instructionimage */,
 				428141041C0B072C006FEDDE /* AppDelegate.swift */,
 				E0F32A1C1D45E25000D78EE5 /* NewLogin */,
 				52ECBEA91C0C6B6000A962E4 /* MyDevice */,
@@ -3529,7 +3542,7 @@
 				8D39A6E61D6C57A8000D1D44 /* ShareMoneyToWeChat.xib */,
 				8D39A6E41D6C5795000D1D44 /* ShareMoneyToWeChat.swift */,
 				B7C8A0951DAF76C8009E5715 /* FriendZeroBgView.swift */,
-				B7C8A0971DAF76E5009E5715 /* FriendZeroBgView.xib */,
+				B7DC9B1E1DBA023200B3466C /* FriendZeroBgView.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -3958,6 +3971,7 @@
 			children = (
 				8DB044DC1CC8CDC600B60DAB /* WaterReplenishDetailTableViewController_EN.swift */,
 				8DB044DD1CC8CDC600B60DAB /* SkinQueryTableViewController_EN.swift */,
+				B7679CA81DB9A36500B61A22 /* WaterRefreshIntrounVC.swift */,
 			);
 			name = WaterReplenishmentController;
 			sourceTree = "<group>";
@@ -4561,6 +4575,18 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		B7679CAA1DB9A48100B61A22 /* Instructionimage */ = {
+			isa = PBXGroup;
+			children = (
+				B7679CAB1DB9A49E00B61A22 /* water.jpg */,
+				B7679CAC1DB9A49E00B61A22 /* waterair.jpg */,
+				B7679CAD1DB9A49E00B61A22 /* lishi.jpg */,
+				B7679CAE1DB9A49E00B61A22 /* tap.jpg */,
+				B7679CAF1DB9A49E00B61A22 /* taishi.jpg */,
+			);
+			path = Instructionimage;
+			sourceTree = "<group>";
+		};
 		E0F32A1C1D45E25000D78EE5 /* NewLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -4700,6 +4726,7 @@
 				B7FF5C9F1DAF38DF00A43B17 /* WaterReplenishMainView_EN.xib in Resources */,
 				8DB044BB1CC8CD5500B60DAB /* yiban.png in Resources */,
 				B7D8C1A01D2376680089C241 /* SetRemindTimeController_EN.xib in Resources */,
+				B7679CB11DB9A49E00B61A22 /* waterair.jpg in Resources */,
 				8DB044651CC8CD2C00B60DAB /* icon_lvxin_service_3.png in Resources */,
 				E066B9511D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib in Resources */,
 				428FC6D11C2ECFF2001D4ACF /* db_ozner_pub.db in Resources */,
@@ -4814,6 +4841,7 @@
 				8DB044B11CC8CD5500B60DAB /* deveice_cup_select_state.png in Resources */,
 				8DB044621CC8CD2C00B60DAB /* icon_lvxin_service_1.png in Resources */,
 				8DB043EC1CC8CCE200B60DAB /* yin_shui_liang_2.png in Resources */,
+				B7679CB01DB9A49E00B61A22 /* water.jpg in Resources */,
 				8DB0443B1CC8CD1700B60DAB /* icon_jingshuiqi_peidui_waitting.png in Resources */,
 				8DB044AD1CC8CD5500B60DAB /* device_jin_bigair_select.png in Resources */,
 				8DB044371CC8CD1700B60DAB /* icon_agree_select.png in Resources */,
@@ -4863,6 +4891,7 @@
 				8DB044861CC8CD4200B60DAB /* icon_peidui_select_tan_tou@3x.png in Resources */,
 				8DB043F01CC8CCE200B60DAB /* icon_add_device_btn@3x.png in Resources */,
 				8DB044911CC8CD4200B60DAB /* match_finish_sanjiao@3x.png in Resources */,
+				B7679CB31DB9A49E00B61A22 /* tap.jpg in Resources */,
 				B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */,
 				42CB9EC21C353CF3006D95CD /* icon_bubble_right.png in Resources */,
 				52A4EF631C285E58005F282D /* smallStateXib_EN.xib in Resources */,
@@ -4890,6 +4919,7 @@
 				8DB044451CC8CD1700B60DAB /* icon_jiare_normal@2x.png in Resources */,
 				8DB044031CC8CCE200B60DAB /* device_puucashe@2x.png in Resources */,
 				8DB044831CC8CD4200B60DAB /* icon_peidui_complete_tan_tou.png in Resources */,
+				B7679CB21DB9A49E00B61A22 /* lishi.jpg in Resources */,
 				8DB0440A1CC8CCE200B60DAB /* device_zixun@2x.png in Resources */,
 				52461F031C26970B00834CC2 /* bigFooterViewXib_EN.xib in Resources */,
 				8DB044081CC8CCE200B60DAB /* device_cup@3x.png in Resources */,
@@ -4908,6 +4938,7 @@
 				8DB044BA1CC8CD5500B60DAB /* baobiao.png in Resources */,
 				8DB0448B1CC8CD4200B60DAB /* icon_peidui_watting.png in Resources */,
 				8DB043FF1CC8CCE200B60DAB /* device_share@2x.png in Resources */,
+				B7DC9B1F1DBA023200B3466C /* FriendZeroBgView.xib in Resources */,
 				8DB044B71CC8CD5500B60DAB /* device_icon_blutooth.png in Resources */,
 				526643D51C2A8F6E007D7A28 /* Airgif_blue.gif in Resources */,
 				8D2D68461D6B002A00CAAE8E /* device_tdspan_select_state.png in Resources */,
@@ -4922,6 +4953,7 @@
 				8DB043F41CC8CCE200B60DAB /* select_device_2.png in Resources */,
 				B7F5B74E1D49D5FD00446670 /* CupView_Footer.xib in Resources */,
 				B7FF5CA41DAF4E7600A43B17 /* SkinFooterTableViewCell.xib in Resources */,
+				B7679CB41DB9A49E00B61A22 /* taishi.jpg in Resources */,
 				B7F5B72F1D49B8AA00446670 /* TDSDetailHeadView.xib in Resources */,
 				4288C5281C0EEE3800446D3E /* AddDeviceViewController_EN.xib in Resources */,
 				8DB044B01CC8CD5500B60DAB /* device_jin_bigair_normal.png in Resources */,
@@ -4954,7 +4986,6 @@
 				349F0CD11C158EB900E46253 /* CustomPopViewFirstCell.xib in Resources */,
 				8DB043FA1CC8CCE200B60DAB /* mydevice_bg@3x.png in Resources */,
 				8DB043A91CC8CC6B00B60DAB /* Assets.xcassets in Resources */,
-				B7C8A0981DAF76E5009E5715 /* FriendZeroBgView.xib in Resources */,
 				8DB0443D1CC8CD1700B60DAB /* icon_mima.png in Resources */,
 				B7D8C23A1D24B3E20089C241 /* smallFooterViewXib_EN.xib in Resources */,
 				8DB044661CC8CD2C00B60DAB /* icon_lvxin_service_4.png in Resources */,
@@ -5524,6 +5555,7 @@
 				523DC2F71C175DA800595099 /* MASConstraintMaker.m in Sources */,
 				4253813F1C1482E3005FF2F3 /* UIView+Frame.m in Sources */,
 				523DC36A1C175E9B00595099 /* AFHTTPRequestOperationManager.m in Sources */,
+				B7679CA91DB9A36500B61A22 /* WaterRefreshIntrounVC.swift in Sources */,
 				B7D8C1BE1D2376F60089C241 /* setAirViewController_EN.swift in Sources */,
 				8DA405F01C8441B500AD5E5E /* ZXRSSExpandedDecodedChar.m in Sources */,
 				8DBD54B51C567F3800D04B12 /* AboutUSViewController.swift in Sources */,

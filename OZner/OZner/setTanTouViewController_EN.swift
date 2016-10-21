@@ -52,9 +52,11 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         datePickerView.datePicker.date=curLabelTime(checkValue2.text!)
     }
     @IBAction func toAboutDevice(sender: AnyObject) {
-        let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
+//        let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
+        let aboutDevice = WaterRefreshIntrounVC()
         aboutDevice.title=loadLanguage("关于水探头")
-        aboutDevice.urlstring="http://cup.ozner.net/app/gystt/gystt.html"
+//        aboutDevice.urlstring="http://cup.ozner.net/app/gystt/gystt.html"
+        aboutDevice.deviceType = "tap"
         self.navigationController?.pushViewController(aboutDevice, animated: true)
     }
     @IBOutlet var deleteDeviceButton: UIButton!

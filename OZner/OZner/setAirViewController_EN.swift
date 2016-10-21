@@ -171,9 +171,13 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
     
     func toOperatingIntroduc()
     {
-        let lonImage=LongImageViewController_EN(nibName: "LongImageViewController_EN", bundle: nil)
-        lonImage.iswhitch=0
-        self.navigationController?.pushViewController(lonImage, animated: true)
+//        let lonImage=LongImageViewController_EN(nibName: "LongImageViewController_EN", bundle: nil)
+//        lonImage.iswhitch=0
+        let insu = WaterRefreshIntrounVC()
+        insu.deviceType="waterair"
+        insu.title = "关于空气净化器"
+        
+        self.navigationController?.pushViewController(insu, animated: true)
     }
 //    func toOperatingDemo()
 //    {

@@ -34,9 +34,11 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
     @IBAction func toAboutDevice(sender: AnyObject) {
-        let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
+//        let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
+        let aboutDevice = WaterRefreshIntrounVC()
+        aboutDevice.deviceType = "taishi"
         aboutDevice.title=loadLanguage("关于净水器")
-        aboutDevice.urlstring="http://cup.ozner.net/app/gyysj/gyysj.html"
+//        aboutDevice.urlstring="http://cup.ozner.net/app/gyysj/gyysj.html"
         self.navigationController?.pushViewController(aboutDevice, animated: true)
     }
     
