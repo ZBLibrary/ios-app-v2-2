@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -120,7 +120,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0e-Av-V2m">
-                            <rect key="frame" x="168" y="0.0" width="66" height="60"/>
+                            <rect key="frame" x="167.5" y="0.0" width="66" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好友排名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hn-od-oiU">
                                     <rect key="frame" x="0.0" y="0.0" width="66" height="16"/>
@@ -162,7 +162,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wm6-6N-28r">
-                            <rect key="frame" x="131" y="0.0" width="37" height="60"/>
+                            <rect key="frame" x="131" y="0.0" width="36.5" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="24" id="Q0W-bd-tmY"/>
@@ -174,7 +174,7 @@
                             </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkz-aA-cQ4">
-                            <rect key="frame" x="234" y="0.0" width="36" height="60"/>
+                            <rect key="frame" x="233.5" y="0.0" width="36.5" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="24" id="jvl-E8-U2h"/>
@@ -189,9 +189,9 @@
                             <rect key="frame" x="25" y="0.0" width="106" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水质纯净值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYr-2r-jmF">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="16"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="16"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="cQw-ee-tRs"/>
+                                        <constraint firstAttribute="width" constant="90" id="cQw-ee-tRs"/>
                                         <constraint firstAttribute="height" constant="16" id="lr8-kI-whB"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
@@ -247,10 +247,10 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="咨询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-qD-Snk">
-                            <rect key="frame" x="306" y="22" width="34" height="17"/>
+                            <rect key="frame" x="306" y="22" width="44" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="4sC-AA-ofj"/>
-                                <constraint firstAttribute="width" constant="34" id="JDb-pM-ncc"/>
+                                <constraint firstAttribute="width" constant="44" id="JDb-pM-ncc"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                             <color key="textColor" red="0.1803921568627451" green="0.34509803921568627" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
@@ -265,7 +265,7 @@
                         <constraint firstItem="VDg-4R-D12" firstAttribute="width" secondItem="gPD-7q-dnU" secondAttribute="width" multiplier="25:375" id="9Kr-pS-jhX"/>
                         <constraint firstItem="P5c-Jl-wlq" firstAttribute="top" secondItem="gPD-7q-dnU" secondAttribute="top" id="FM4-tg-IaP"/>
                         <constraint firstItem="VDg-4R-D12" firstAttribute="leading" secondItem="oyj-LH-KuH" secondAttribute="trailing" id="MDF-Ff-YPe"/>
-                        <constraint firstItem="VDg-4R-D12" firstAttribute="leading" secondItem="Xj3-qD-Snk" secondAttribute="trailing" constant="10" id="MDV-pd-EyW"/>
+                        <constraint firstItem="VDg-4R-D12" firstAttribute="leading" secondItem="Xj3-qD-Snk" secondAttribute="trailing" id="MDV-pd-EyW"/>
                         <constraint firstAttribute="bottom" secondItem="w0e-Av-V2m" secondAttribute="bottom" id="NN8-6Z-rru"/>
                         <constraint firstItem="wm6-6N-28r" firstAttribute="top" secondItem="gPD-7q-dnU" secondAttribute="top" id="OC3-IS-JQv"/>
                         <constraint firstItem="wkz-aA-cQ4" firstAttribute="width" secondItem="wm6-6N-28r" secondAttribute="width" id="OGx-R0-5hg"/>

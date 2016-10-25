@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -41,15 +42,15 @@
                                                 <rect key="frame" x="29" y="0.0" width="144" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="健康水知道" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66j-5r-Rjt">
-                                                        <rect key="frame" x="49" y="0.0" width="85" height="40"/>
+                                                        <rect key="frame" x="39" y="0.0" width="95" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="85" id="6i5-KB-Ib6"/>
+                                                            <constraint firstAttribute="width" constant="95" id="6i5-KB-Ib6"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                         <color key="textColor" red="0.12156862745098039" green="0.43529411764705883" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="device_konwzb" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-ss-afN">
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="device_konwzb" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-ss-afN">
                                                         <rect key="frame" x="10" y="10" width="15" height="20"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p75-79-cWZ">
@@ -94,9 +95,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="40"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买净水器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-fX-qfO">
-                                                        <rect key="frame" x="49" y="0.0" width="85" height="40"/>
+                                                        <rect key="frame" x="39" y="0.0" width="95" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="85" id="9cP-IU-IqQ"/>
+                                                            <constraint firstAttribute="width" constant="95" id="9cP-IU-IqQ"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                         <color key="textColor" red="0.1215686275" green="0.43529411759999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
