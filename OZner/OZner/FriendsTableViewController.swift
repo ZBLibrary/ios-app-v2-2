@@ -348,7 +348,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                 if state>0
                 {
                     
-                    let friendcount=data.objectForKey("friendlist") as! NSMutableArray
+                    let friendcount=data.objectForKey("friendlist")  as! NSArray
                     if friendcount.count == 0 {
                         self.creatBgView()
                         return
@@ -461,7 +461,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                 let state=data.objectForKey("state") as! Int
                 if state>0
                 {
-                    let liuyanArray=data.objectForKey("data")  as! NSMutableArray
+                    let liuyanArray=data.objectForKey("data")  as! NSArray
                     print(liuyanArray)
                     let tmpliuyanView=UIView()
                     tmpliuyanView.backgroundColor=UIColor(red: 240/255, green: 241/255, blue: 242/255, alpha: 1)
@@ -540,7 +540,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                         //var rankcount:NSMutableArray!
                         if state>0
                         {
-                            let rankcount=responseObject.objectForKey("data") as! NSMutableArray
+                            let rankcount=responseObject.objectForKey("data") as! NSArray
                             for i in 0..<rankcount.count
                             {
                                 var rankstrut=myRankstruct()

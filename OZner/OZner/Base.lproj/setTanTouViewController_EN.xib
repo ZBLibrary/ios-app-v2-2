@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -29,9 +30,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的水探头" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTy-ly-cVi">
-                            <rect key="frame" x="15" y="13" width="70" height="21"/>
+                            <rect key="frame" x="15" y="13" width="90" height="21"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="70" id="EzH-3Y-bxW"/>
+                                <constraint firstAttribute="width" constant="90" id="EzH-3Y-bxW"/>
                                 <constraint firstAttribute="height" constant="21" id="rE0-xt-RZN"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
@@ -82,7 +83,7 @@
                         <constraint firstItem="6ZC-gi-Jjb" firstAttribute="centerY" secondItem="4xF-9v-BML" secondAttribute="centerY" id="PYI-T8-xaG"/>
                         <constraint firstItem="df4-5V-Cvg" firstAttribute="leading" secondItem="4xF-9v-BML" secondAttribute="leading" id="PoW-yu-BLE"/>
                         <constraint firstAttribute="trailing" secondItem="df4-5V-Cvg" secondAttribute="trailing" id="XN6-Lk-Qzp"/>
-                        <constraint firstItem="6ZC-gi-Jjb" firstAttribute="leading" secondItem="nTy-ly-cVi" secondAttribute="trailing" constant="20" id="ZW7-TU-mZQ"/>
+                        <constraint firstItem="6ZC-gi-Jjb" firstAttribute="leading" secondItem="nTy-ly-cVi" secondAttribute="trailing" id="ZW7-TU-mZQ"/>
                         <constraint firstAttribute="height" constant="48" id="bnk-TO-O3d"/>
                         <constraint firstItem="df4-5V-Cvg" firstAttribute="top" secondItem="4xF-9v-BML" secondAttribute="top" id="cTO-H2-qHZ"/>
                         <constraint firstItem="nTy-ly-cVi" firstAttribute="leading" secondItem="4xF-9v-BML" secondAttribute="leading" constant="15" id="dnI-1h-u5e"/>
@@ -302,7 +303,7 @@
                                 <action selector="toAboutDevice:" destination="-1" eventType="touchUpInside" id="iM3-yz-KAe"/>
                             </connections>
                         </button>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="M0b-3b-6zY">
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="M0b-3b-6zY">
                             <rect key="frame" x="350" y="17" width="10" height="13"/>
                         </imageView>
                     </subviews>

@@ -190,7 +190,7 @@ class YZNewsTableViewController: UITableViewController {
                 print(responseObject)
                 if state>0
                 {
-                    let YZmsg=responseObject.objectForKey("msglist") as! NSMutableArray
+                    let YZmsg=responseObject.objectForKey("msglist") as! NSArray
                     for i in 0...(YZmsg.count-1)
                     {
                         var myYZNewss = myYZNews()

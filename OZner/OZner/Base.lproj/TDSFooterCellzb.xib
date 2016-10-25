@@ -42,9 +42,9 @@
                                                 <rect key="frame" x="29" y="0.0" width="144" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="健康水知道" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66j-5r-Rjt">
-                                                        <rect key="frame" x="49" y="0.0" width="85" height="40"/>
+                                                        <rect key="frame" x="42" y="0.0" width="92" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="85" id="6i5-KB-Ib6"/>
+                                                            <constraint firstAttribute="width" constant="92" id="6i5-KB-Ib6"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                         <color key="textColor" red="0.12156862745098039" green="0.43529411764705883" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>

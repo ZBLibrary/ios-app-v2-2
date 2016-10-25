@@ -151,19 +151,19 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zf-Uy-dzh">
-                                                        <rect key="frame" x="132" y="71.5" width="50" height="15"/>
+                                                        <rect key="frame" x="117" y="61.5" width="80" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="健康" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UP-Ex-0Ns">
-                                                                <rect key="frame" x="20" y="0.0" width="30" height="15"/>
+                                                                <rect key="frame" x="30" y="0.0" width="50" height="25"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="MNL-8H-E33"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="MNL-8H-E33"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                                 <color key="textColor" red="0.18431372549019609" green="0.34901960784313724" blue="0.87450980392156863" alpha="0.693040780141844" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="baobiao.png" translatesAutoresizingMaskIntoConstraints="NO" id="GWK-HI-jFM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="GWK-HI-jFM" secondAttribute="height" multiplier="1:1" id="gbA-TG-Tsz"/>
                                                                 </constraints>
@@ -172,9 +172,9 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="8UP-Ex-0Ns" secondAttribute="bottom" id="1sK-Dh-s3x"/>
-                                                            <constraint firstAttribute="width" constant="50" id="2af-hT-ded"/>
+                                                            <constraint firstAttribute="width" constant="80" id="2af-hT-ded"/>
                                                             <constraint firstAttribute="bottom" secondItem="GWK-HI-jFM" secondAttribute="bottom" id="GNW-qz-ftp"/>
-                                                            <constraint firstAttribute="height" constant="15" id="QXD-Ww-8x3"/>
+                                                            <constraint firstAttribute="height" constant="25" id="QXD-Ww-8x3"/>
                                                             <constraint firstItem="8UP-Ex-0Ns" firstAttribute="leading" secondItem="GWK-HI-jFM" secondAttribute="trailing" id="R3Z-bM-sK4"/>
                                                             <constraint firstItem="8UP-Ex-0Ns" firstAttribute="top" secondItem="5zf-Uy-dzh" secondAttribute="top" id="aq3-Bo-tf4"/>
                                                             <constraint firstItem="GWK-HI-jFM" firstAttribute="leading" secondItem="5zf-Uy-dzh" secondAttribute="leading" id="bLo-iL-rVL"/>

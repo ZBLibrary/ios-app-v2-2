@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -128,7 +128,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="咨询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svT-NW-hkv">
-                                                        <rect key="frame" x="36" y="12" width="34" height="17"/>
+                                                        <rect key="frame" x="46" y="12" width="34" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="34" id="W3u-vb-b1X"/>
                                                             <constraint firstAttribute="height" constant="17" id="zrU-EN-awD"/>
@@ -149,7 +149,7 @@
                                                     <constraint firstItem="8DS-o1-QNV" firstAttribute="centerY" secondItem="5zL-oY-I7i" secondAttribute="centerY" id="Cbh-c4-RBM"/>
                                                     <constraint firstItem="8DS-o1-QNV" firstAttribute="leading" secondItem="5zL-oY-I7i" secondAttribute="leading" constant="10" id="OPG-tu-hSR"/>
                                                     <constraint firstItem="1Hq-Sb-A8A" firstAttribute="leading" secondItem="5zL-oY-I7i" secondAttribute="leading" id="aFE-MC-KD3"/>
-                                                    <constraint firstAttribute="trailing" secondItem="svT-NW-hkv" secondAttribute="trailing" constant="10" id="n1X-pJ-AL9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="svT-NW-hkv" secondAttribute="trailing" id="n1X-pJ-AL9"/>
                                                     <constraint firstAttribute="height" constant="40" id="tKb-KH-bW9"/>
                                                     <constraint firstItem="1Hq-Sb-A8A" firstAttribute="top" secondItem="5zL-oY-I7i" secondAttribute="top" id="vKA-KX-dkn"/>
                                                     <constraint firstAttribute="bottom" secondItem="1Hq-Sb-A8A" secondAttribute="bottom" id="wgG-od-lok"/>
@@ -165,7 +165,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hi8-RI-tiL">
-                                                <rect key="frame" x="168" y="0.0" width="66" height="60"/>
+                                                <rect key="frame" x="167.5" y="0.0" width="66" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好友排名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd7-wb-nUE">
                                                         <rect key="frame" x="0.0" y="0.0" width="66" height="16"/>
@@ -207,7 +207,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bwa-Hp-Ii5">
-                                                <rect key="frame" x="131" y="0.0" width="37" height="60"/>
+                                                <rect key="frame" x="131" y="0.0" width="36.5" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="Xzi-X1-I4J"/>
@@ -219,7 +219,7 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuk-4Q-v8N">
-                                                <rect key="frame" x="234" y="0.0" width="36" height="60"/>
+                                                <rect key="frame" x="233.5" y="0.0" width="36.5" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="DlE-Pg-ZVe"/>
@@ -234,9 +234,9 @@
                                                 <rect key="frame" x="25" y="0.0" width="106" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日已完成" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIO-uN-gbG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="16"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="80" id="RSM-62-ZN7"/>
+                                                            <constraint firstAttribute="width" constant="100" id="RSM-62-ZN7"/>
                                                             <constraint firstAttribute="height" constant="16" id="aa5-7B-BQk"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>

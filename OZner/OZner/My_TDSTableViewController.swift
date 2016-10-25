@@ -121,7 +121,7 @@ class My_TDSTableViewController: UITableViewController {
                 if state>0
                 {
                     
-                    let rankcount=data.objectForKey("data") as! NSMutableArray
+                    let rankcount=data.objectForKey("data") as! NSArray
                     print(rankcount)
                     for i in 0...(rankcount.count-1)
                     {

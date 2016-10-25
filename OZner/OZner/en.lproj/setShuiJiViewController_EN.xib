@@ -23,9 +23,9 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My water purifier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hds-se-gbt">
-                            <rect key="frame" x="15" y="13" width="120" height="21"/>
+                            <rect key="frame" x="15" y="13" width="200" height="21"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="120" id="mZv-oe-G9M"/>
+                                <constraint firstAttribute="width" constant="200" id="1rp-Xk-VYN"/>
                                 <constraint firstAttribute="height" constant="21" id="yJw-bO-9Qt"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
@@ -33,7 +33,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的净水器 (洗手间)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJT-aT-um9">
-                            <rect key="frame" x="155" y="13" width="187" height="21"/>
+                            <rect key="frame" x="215" y="13" width="127" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="2kd-qu-WJa"/>
                                 <constraint firstAttribute="width" constant="107" id="jTU-Z7-6ii"/>
@@ -76,7 +76,7 @@
                         <constraint firstItem="hQ9-hU-e6J" firstAttribute="top" secondItem="GYB-5x-JRG" secondAttribute="top" id="0V4-mC-AGW"/>
                         <constraint firstItem="aJT-aT-um9" firstAttribute="centerY" secondItem="GYB-5x-JRG" secondAttribute="centerY" id="0p4-UR-pXA"/>
                         <constraint firstAttribute="trailing" secondItem="AUi-XI-680" secondAttribute="trailing" constant="15" id="50s-aj-dP0"/>
-                        <constraint firstItem="aJT-aT-um9" firstAttribute="leading" secondItem="Hds-se-gbt" secondAttribute="trailing" constant="20" id="7kU-N1-Uhz"/>
+                        <constraint firstItem="aJT-aT-um9" firstAttribute="leading" secondItem="Hds-se-gbt" secondAttribute="trailing" id="7kU-N1-Uhz"/>
                         <constraint firstAttribute="height" constant="48" id="7ti-4z-hiq"/>
                         <constraint firstItem="AUi-XI-680" firstAttribute="leading" secondItem="aJT-aT-um9" secondAttribute="trailing" constant="8" id="OZE-aW-xkA"/>
                         <constraint firstAttribute="bottom" secondItem="hQ9-hU-e6J" secondAttribute="bottom" id="QOv-kE-zQq"/>
@@ -133,7 +133,7 @@
                                 <action selector="toAboutDevice:" destination="-1" eventType="touchUpInside" id="3na-pd-NBN"/>
                             </connections>
                         </button>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RL7-fN-SOS">
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RL7-fN-SOS">
                             <rect key="frame" x="350" y="17" width="10" height="13"/>
                         </imageView>
                     </subviews>

@@ -341,7 +341,7 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
                     if state>0
                     {
                         
-                        let friends=responseObject.objectForKey("data") as! NSMutableArray
+                        let friends=responseObject.objectForKey("data") as! NSArray
                         for i in 0...(friends.count-1)
                         {
                             var friendtmp=myFriend()

@@ -63,7 +63,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMf-Np-82S">
-                                            <rect key="frame" x="80" y="0.0" width="80" height="40"/>
+                                            <rect key="frame" x="70" y="0.0" width="100" height="40"/>
                                             <subviews>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="zixunIconzb" translatesAutoresizingMaskIntoConstraints="NO" id="3AF-MX-KY2">
                                                     <rect key="frame" x="10" y="11" width="23" height="18"/>
@@ -73,9 +73,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="咨询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxb-8D-QUY">
-                                                    <rect key="frame" x="36" y="12" width="34" height="17"/>
+                                                    <rect key="frame" x="40" y="12" width="50" height="17"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="34" id="P1I-t2-7j3"/>
+                                                        <constraint firstAttribute="width" constant="50" id="P1I-t2-7j3"/>
                                                         <constraint firstAttribute="height" constant="17" id="pBL-sg-vtZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -83,7 +83,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6B-ka-TdZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -97,7 +97,7 @@
                                                 <constraint firstItem="Jxb-8D-QUY" firstAttribute="centerY" secondItem="jMf-Np-82S" secondAttribute="centerY" id="aSJ-3c-9NV"/>
                                                 <constraint firstItem="L6B-ka-TdZ" firstAttribute="top" secondItem="jMf-Np-82S" secondAttribute="top" id="d8f-OM-8Fj"/>
                                                 <constraint firstItem="3AF-MX-KY2" firstAttribute="centerY" secondItem="jMf-Np-82S" secondAttribute="centerY" id="rSs-zn-AWu"/>
-                                                <constraint firstAttribute="width" constant="80" id="vwk-1u-1h6"/>
+                                                <constraint firstAttribute="width" constant="100" id="vwk-1u-1h6"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -165,7 +165,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3L-TQ-phg">
-                                    <rect key="frame" x="115" y="25" width="144" height="40"/>
+                                    <rect key="frame" x="112" y="25" width="150" height="40"/>
                                     <subviews>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="zixunIconzb" translatesAutoresizingMaskIntoConstraints="NO" id="FaD-ab-JR0">
                                             <rect key="frame" x="10" y="11" width="23" height="18"/>
@@ -175,17 +175,17 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lw4-Lu-0pN">
-                                            <rect key="frame" x="49" y="12" width="85" height="17"/>
+                                            <rect key="frame" x="45" y="12" width="95" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="10i-Ec-NyU"/>
-                                                <constraint firstAttribute="width" constant="85" id="7Ic-BD-dff"/>
+                                                <constraint firstAttribute="width" constant="95" id="7Ic-BD-dff"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <color key="textColor" red="0.22352941179999999" green="0.53333333329999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gc-i3-lF1">
-                                            <rect key="frame" x="0.0" y="0.0" width="144" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -200,7 +200,7 @@
                                         <constraint firstItem="FaD-ab-JR0" firstAttribute="leading" secondItem="w3L-TQ-phg" secondAttribute="leading" constant="10" id="hrG-do-2y6"/>
                                         <constraint firstAttribute="height" constant="40" id="iXL-a9-cIn"/>
                                         <constraint firstAttribute="bottom" secondItem="1Gc-i3-lF1" secondAttribute="bottom" id="tXU-Pt-nGt"/>
-                                        <constraint firstAttribute="width" constant="144" id="wQz-6A-oQs"/>
+                                        <constraint firstAttribute="width" constant="150" id="wQz-6A-oQs"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
