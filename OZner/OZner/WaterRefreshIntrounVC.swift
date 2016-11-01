@@ -11,7 +11,8 @@ import UIKit
 class WaterRefreshIntrounVC: UIViewController {
     
     var deviceType:String!
-    var str:String!
+//    var str:String!
+    var url:NSURLRequest!
     override func viewDidLoad() {
         super.viewDidLoad()
         //        
@@ -24,17 +25,22 @@ class WaterRefreshIntrounVC: UIViewController {
         switch deviceType {
             //补水仪
         case "WaterRefresh":
-             str = htmlforJPGImage(UIImage(named: "water.jpg" )!)
+//             str = htmlforJPGImage(UIImage(named: "water.jpg" )!)
+            url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/BeautyInstrument.html")!)
             //空净
         case "waterair":
-            str = htmlforJPGImage(UIImage(named: "waterair.jpg" )!)
+//            str = htmlforJPGImage(UIImage(named: "waterair.jpg" )!)
+             url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/AirPurifier.html")!)
         case "lishi":
-            str = htmlforJPGImage(UIImage(named: "lishi.jpg" )!)
+//            str = htmlforJPGImage(UIImage(named: "lishi.jpg" )!)
+             url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/VerticalWaterPurifier.html")!)
         case "taishi":
-            str = htmlforJPGImage(UIImage(named: "taishi.jpg" )!)
+//            str = htmlforJPGImage(UIImage(named: "taishi.jpg" )!)
+             url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/DesktopWaterPurifier.html")!)
             //水潭头
         case "tap" :
-            str = htmlforJPGImage(UIImage(named: "tap.jpg" )!)
+//            str = htmlforJPGImage(UIImage(named: "tap.jpg" )!)
+             url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/SmartWaterTester.html")!)
             
         default:
             break
@@ -44,7 +50,8 @@ class WaterRefreshIntrounVC: UIViewController {
         webView.scalesPageToFit = true
         webView.dataDetectorTypes = .PhoneNumber
         view.addSubview(webView)
-        webView.loadHTMLString(str, baseURL: nil)
+//        webView.loadHTMLString(str, baseURL: nil)
+        webView.loadRequest(url)
         //        webView.loadRequest(NSURLRequest(URL: url))
         
         
