@@ -9,7 +9,7 @@
 import UIKit
 
 class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
-
+    
     @IBOutlet weak var aboutContainer: UIView!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
         
@@ -23,25 +23,34 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         
     }
     var plistData:NSMutableDictionary=getPlistData("setShuiJi_EN")
-   
+    
     var myCurrentDevice:OznerDevice?
- 
+    
     @IBOutlet var DeviceName: UILabel!
- 
+    
     @IBAction func toSetDvName(sender: AnyObject) {
         let setnamecontroller=setDeviceNameViewController_EN(nibName: "setDeviceNameViewController_EN", bundle: nil)
         setnamecontroller.dataPlist=plistData
         self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
     @IBAction func toAboutDevice(sender: AnyObject) {
-//        let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
+        //        let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
         let aboutDevice = WaterRefreshIntrounVC()
         aboutDevice.deviceType = "taishi"
-        aboutDevice.title=loadLanguage("关于净水器")
-//        aboutDevice.urlstring="http://cup.ozner.net/app/gyysj/gyysj.html"
+        aboutDevice.title=loadLanguage("关于净水器(台式)")
+        //        aboutDevice.urlstring="http://cup.ozner.net/app/gyysj/gyysj.html"
         self.navigationController?.pushViewController(aboutDevice, animated: true)
     }
     
+    @IBAction func toAboutLishi(sender: AnyObject) {
+        
+        let aboutDevice = WaterRefreshIntrounVC()
+        aboutDevice.deviceType = "lishi"
+        aboutDevice.title=loadLanguage("关于净水器(立式)")
+        //        aboutDevice.urlstring="http://cup.ozner.net/app/gyysj/gyysj.html"
+        self.navigationController?.pushViewController(aboutDevice, animated: true)
+        
+    }
     @IBOutlet var deleteDeviceButton: UIButton!
     @IBAction func deleteDeviceClick(sender: AnyObject) {
         let alert=UIAlertView(title: "", message: loadLanguage("删除此设备"), delegate: self, cancelButtonTitle: loadLanguage("否"), otherButtonTitles: loadLanguage("是"))
@@ -63,7 +72,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         super.viewDidLoad()
         //aboutContainer.hidden = !IsLoginByPhone()
         DeviceNameLable.text=loadLanguage("我的净水器" )
-       deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
+        deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
         self.title=loadLanguage("净水器")
         let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
@@ -83,7 +92,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: "setShuiJiName", object: nil)
         // Do any additional setup after loading the view.
     }
-
+    
     
     //加载设备里面数据
     func loadDeviceData()
@@ -100,15 +109,15 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         let nameStr2=(nameStr as NSString).substringWithRange(NSMakeRange(tmpname.characters.count+1, nameStr.characters.count-tmpname.characters.count-2))
         plistData.setValue(nameStr2, forKey: "deviceAttrib")
         
-
+        
         
     }
     //返回
     func back(){
- 
+        
         let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
         alert.show()
-       
+        
     }
     
     //alert 点击事件
@@ -133,7 +142,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
             }
         }
     }
-
+    
     func setNameChange(text:NSNotification){
         plistData.setValue(text.userInfo!["name"], forKey: "deviceName")
         plistData.setValue(text.userInfo!["attr"], forKey: "deviceAttrib")
@@ -145,7 +154,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
     func SaveClick(){
         //写入本地
         setPlistData(plistData, fileName: "setShuiJi_EN")
-            //写入设备
+        //写入设备
         let water = self.myCurrentDevice as! WaterPurifier
         water.settings.name=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
         OznerManager.instance().save(water)
@@ -165,13 +174,13 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
