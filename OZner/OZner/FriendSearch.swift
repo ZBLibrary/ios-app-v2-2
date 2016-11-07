@@ -16,10 +16,16 @@ class FriendSearch: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        SearchTextFD.placeholder = loadLanguage("请输入手机号");
+
+        
+    }
     override func drawRect(rect: CGRect) {
         // Drawing code
    
-    //SearchTextFD.placeholder = loadLanguage("请输入手机号");
     
         
     
