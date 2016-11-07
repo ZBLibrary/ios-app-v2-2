@@ -934,7 +934,8 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             }
             else if ((self.myCurrentDevice?.isKindOfClass(Tap.classForCoder())) == true)
             {
-                self.titleLabel.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                //                self.titleLabel.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                self.titleLabel.text = "智能水探头"
                 let tap = self.myCurrentDevice as! Tap
                 if(tap.sensor.powerPer() == 0)
                 {
@@ -964,26 +965,30 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 
             else if WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true
             {
-                self.titleLabel.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                //                self.titleLabel.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                self.titleLabel.text = "免安装净水器(台式/立式)"
             }
             else if AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type) == true
             {
                 if AirHeadView != nil
                 {
-                    AirHeadView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                    //                    AirHeadView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                    AirHeadView.headTitle.text = "智能空气净化器"
                 }
             }
             else if AirPurifierManager.isMXChipAirPurifier(self.myCurrentDevice?.type) == true
             {
                 if AirHeadView != nil
                 {
-                    AirHeadView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                    //                    AirHeadView.headTitle.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                    AirHeadView.headTitle.text = "智能空气净化器"
                 }
             }else if WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(self.myCurrentDevice?.type) == true
             {
                 if waterReplenishMainView != nil
                 {
-                    waterReplenishMainView?.TitleOfReplensh.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                    //                    waterReplenishMainView?.TitleOfReplensh.text = removeAdressOfDeviceName(self.myCurrentDevice!.settings.name)
+                    waterReplenishMainView?.TitleOfReplensh.text = "智能补水仪"
                 }
             }
         }

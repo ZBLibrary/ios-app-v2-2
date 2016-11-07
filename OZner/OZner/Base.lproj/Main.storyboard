@@ -1414,7 +1414,7 @@
                                 <rect key="frame" x="240" y="545" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <state key="normal" title="君融科技免责条款">
-                                    <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="reliefAction:" destination="nB4-pB-9Fn" eventType="touchUpInside" id="2oh-u1-7Xx"/>
