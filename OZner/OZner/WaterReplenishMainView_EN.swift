@@ -489,7 +489,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
                         if tmpAveOilValue<12
                         {
                             self!.currentSkinTypeIndex=0
-                        }else if tmpAveOilValue<12
+                        }else if tmpAveOilValue>20
                         {
                             self!.currentSkinTypeIndex=2
                         }else
