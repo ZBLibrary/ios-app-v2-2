@@ -7,6 +7,17 @@
 //
 
 import UIKit
+
+public enum UpdateType:String {
+    
+    //可选
+    case OptionalType = "optional"
+    
+    //强制
+    case forceType = "force"
+    
+}
+
 var appDelegate: AppDelegate {
     return UIApplication.sharedApplication().delegate as! AppDelegate
 }
@@ -15,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     
     var window: UIWindow?
     
+    var currentUpdateType: UpdateType?
     /// 网络状态
     var reachOfNetwork:Reachability?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -31,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         self.window?.makeKeyAndVisible()
         
         
-        
+        updateApp()
         
         //注册微信//
         WXApi.registerApp("wx45a8cc642a2295b5", withDescription: "haoze")
@@ -266,6 +278,98 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     }
     
     
+    func updateApp() {
+        
+        
+        let session = NSURLSession.sharedSession()
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://api.github.com/repos/ozner-app-ios-org/updateApi/contents/InesUpdateFile/inse.json")!)
+        
+        request.HTTPMethod = "GET"
+        request.timeoutInterval = 10
+        
+        let task = session.dataTaskWithRequest(request) { (data, resopnse, error) in
+            
+            if error == nil {
+                
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                    
+                    let str = ((json as! [String:AnyObject])["content"] as! String).stringByReplacingOccurrencesOfString("\n", withString: "")
+                    
+                    //解码
+                    let edcodeData = NSData(base64EncodedString: str, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                    let decodedString = NSString(data: edcodeData!, encoding: NSUTF8StringEncoding)
+                    
+                    let data2 = decodedString?.dataUsingEncoding(NSUTF8StringEncoding)
+                    
+                    let dic = try? NSJSONSerialization.JSONObjectWithData(data2!, options: NSJSONReadingOptions.AllowFragments) as! [String:AnyObject]
+                    let serviecVersion = dic!["result"]!["version"] as! String
+                    
+                    let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+                    
+                    if currentVersion.compare(serviecVersion) == NSComparisonResult.OrderedAscending {
+                        self.currentUpdateType = UpdateType(rawValue:(dic!["result"]!["updateType"] as! String))
+                        switch self.currentUpdateType! {
+                            
+                        case .OptionalType:
+                            
+                            dispatch_async(dispatch_get_main_queue(), { 
+                                let alert = UIAlertView(title: "温馨提示", message: "发现新的版本", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+                                alert.show()
+                            })
+                            
+                            break
+                            
+                        case .forceType:
+                            dispatch_async(dispatch_get_main_queue(), { 
+                                let alert = UIAlertView(title: "温馨提示", message: "发现新的版本", delegate: self, cancelButtonTitle: "确定")
+                                alert.show()
+                            })
+                            
+                            break
+                            
+                        }
+                    }
+                    
+                    
+                } catch {
+                    print(error)
+                }
+                
+            }
+            
+        }
+        
+        task.resume()
+        
+        
+        
+        
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        
+        if currentUpdateType == nil {
+            return
+        }
+        
+        switch currentUpdateType! {
+        case .OptionalType:
+            if buttonIndex == 1 {
+                
+                UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/cn/app/fm-lu-xing-jie-ban-lu-xing/id1153485553?mt=8")!)
+                
+            }
+            
+            break
+        case .forceType:
+            UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/cn/app/fm-lu-xing-jie-ban-lu-xing/id1153485553?mt=8")!)
+            break
+        }
+        
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -292,4 +396,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     
     
 }
+
+
 
