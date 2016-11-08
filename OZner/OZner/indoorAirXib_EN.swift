@@ -60,7 +60,7 @@ class indoorAirXib_EN: UIView {
                 dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
                 let date = dateFormatter.dateFromString(starDatazb)! as NSDate
                 //let tmpTime=date.timeIntervalSince1970+3600*24*90
-                let endDateTime = date+3.months//NSDate(timeIntervalSince1970: tmpTime)
+                let endDateTime = date+1.year//NSDate(timeIntervalSince1970: tmpTime)
                 dateFormatter.dateFormat="yyyy-MM-dd"
                 
                 let starStr=dateFormatter.stringFromDate(date)
