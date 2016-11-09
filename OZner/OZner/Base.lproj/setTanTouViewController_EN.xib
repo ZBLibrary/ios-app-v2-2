@@ -303,7 +303,7 @@
                                 <action selector="toAboutDevice:" destination="-1" eventType="touchUpInside" id="iM3-yz-KAe"/>
                             </connections>
                         </button>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="M0b-3b-6zY">
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="M0b-3b-6zY">
                             <rect key="frame" x="350" y="17" width="10" height="13"/>
                         </imageView>
                     </subviews>

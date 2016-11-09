@@ -1407,7 +1407,6 @@
 		52FF7E041C1A043A005635F8 /* UIColor+Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Convert.m"; sourceTree = "<group>"; };
 		8D05EEC81CA10FB70095CF32 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		8D08BD641D5C58C400E10F0F /* SetTdsPanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTdsPanViewController.swift; sourceTree = "<group>"; };
-		8D08BD691D5C61EA00E10F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetTdsPanViewController.xib; sourceTree = "<group>"; };
 		8D08BD6D1D5C621300E10F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetTdsPanViewController.xib; sourceTree = "<group>"; };
 		8D09DBDF1C5A698800D0432B /* loadFailedXib_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadFailedXib_EN.swift; sourceTree = "<group>"; };
 		8D09DBE11C5A69D400D0432B /* LoadingXib_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingXib_EN.swift; sourceTree = "<group>"; };
@@ -2201,11 +2200,10 @@
 		B7679CAF1DB9A49E00B61A22 /* taishi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = taishi.jpg; sourceTree = "<group>"; };
 		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
 		B76E778C1D069B1F008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
-		B76E77901D069B3F008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
 		B76E77921D06A236008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendSearch.xib; sourceTree = "<group>"; };
-		B76E77951D06A23A008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FriendSearch.strings; sourceTree = "<group>"; };
 		B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@2x.png"; sourceTree = "<group>"; };
 		B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@3x.png"; sourceTree = "<group>"; };
+		B7B000CB1DD3112D003F7340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/smallFooterViewXib_EN.xib; sourceTree = "<group>"; };
 		B7B199A51D5036E000DAA771 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/smallFooterViewXib_EN.xib"; sourceTree = "<group>"; };
 		B7C8A0951DAF76C8009E5715 /* FriendZeroBgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendZeroBgView.swift; sourceTree = "<group>"; };
 		B7C8A09D1DAF78A7009E5715 /* no_friends_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_friends_bg@2x.png"; sourceTree = "<group>"; };
@@ -2217,18 +2215,11 @@
 		B7D8C1771D2373AB0089C241 /* setDeviceNameViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = setDeviceNameViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1781D2373AB0089C241 /* uiDatePickerView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uiDatePickerView_EN.swift; sourceTree = "<group>"; };
 		B7D8C1801D2373C30089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/uiDatePickerView_EN.xib; sourceTree = "<group>"; };
-		B7D8C1821D2374010089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/uiDatePickerView_EN.xib; sourceTree = "<group>"; };
 		B7D8C1831D2374670089C241 /* setDev_CupView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setDev_CupView_EN.swift; sourceTree = "<group>"; };
 		B7D8C1861D2374800089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setDev_CupView_EN.xib; sourceTree = "<group>"; };
 		B7D8C1881D23749A0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setDev_CupView_EN.xib; sourceTree = "<group>"; };
 		B7D8C1891D2374BB0089C241 /* setCUPDeviceViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCUPDeviceViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C18B1D2375F40089C241 /* setCupNameViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCupNameViewController_EN.swift; sourceTree = "<group>"; };
-		B7D8C1901D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCuoTimeViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C1921D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setCupNameViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C1941D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
-		B7D8C1961D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetSexViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C1981D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setShuiJiViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C19C1D2376680089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setTanTouViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A61D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCuoTimeViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A71D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setCupNameViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1A81D23769D0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetRemindTimeController_EN.xib; sourceTree = "<group>"; };
@@ -2248,21 +2239,13 @@
 		B7D8C1B91D2376F60089C241 /* setTanTouViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setTanTouViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C1BA1D2376F60089C241 /* setWaterReplenish_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setWaterReplenish_EN.plist; sourceTree = "<group>"; };
 		B7D8C1BB1D2376F60089C241 /* setWaterReplenishController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setWaterReplenishController_EN.swift; sourceTree = "<group>"; };
-		B7D8C1CE1D23A1F40089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterPurifierHeadCell_EN.xib; sourceTree = "<group>"; };
 		B7D8C1D01D23A1F60089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterPurifierHeadCell_EN.xib; sourceTree = "<group>"; };
 		B7D8C1D21D23A5C70089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterPurFooterCell_EN.xib; sourceTree = "<group>"; };
-		B7D8C1D61D23A5D90089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterPurFooterCell_EN.xib; sourceTree = "<group>"; };
-		B7D8C1D81D23A76D0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterPurTDSDetailCell1_EN.xib; sourceTree = "<group>"; };
 		B7D8C1DA1D23A77A0089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterPurTDSDetailCell1_EN.xib; sourceTree = "<group>"; };
 		B7D8C1DC1D23AEA30089C241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterPurTDSDetailCell2_EN.xib; sourceTree = "<group>"; };
-		B7D8C1E01D23AEA90089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WaterPurTDSDetailCell2_EN.xib; sourceTree = "<group>"; };
-		B7D8C2351D24A8E30089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/indoorAirXib_EN.xib; sourceTree = "<group>"; };
 		B7D8C2381D24AFB10089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VOC_AirViewController_EN.xib; sourceTree = "<group>"; };
-		B7D8C23B1D24B3E20089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/smallFooterViewXib_EN.xib; sourceTree = "<group>"; };
-		B7D8C23E1D24C13D0089C241 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		B7DC9B1E1DBA023200B3466C /* FriendZeroBgView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendZeroBgView.xib; sourceTree = "<group>"; };
 		B7F5B7161D499E6800446670 /* setSmallAirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setSmallAirView.swift; sourceTree = "<group>"; };
-		B7F5B71B1D499F1B00446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/setSmallAirViewXib.xib; sourceTree = "<group>"; };
 		B7F5B71D1D499F2100446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/setSmallAirViewXib.xib; sourceTree = "<group>"; };
 		B7F5B71E1D49B8AA00446670 /* CustomThreeCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomThreeCircleView.h; sourceTree = "<group>"; };
 		B7F5B71F1D49B8AA00446670 /* CustomThreeCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomThreeCircleView.m; sourceTree = "<group>"; };
@@ -2281,51 +2264,34 @@
 		B7F5B73C1D49BAF500446670 /* AmountOfDrinkingWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountOfDrinkingWaterViewController.m; sourceTree = "<group>"; };
 		B7F5B73D1D49BAF500446670 /* AmountOfDrinkingWaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountOfDrinkingWaterViewController.xib; sourceTree = "<group>"; };
 		B7F5B7431D49CF9A00446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/drinKWaterCell.xib; sourceTree = "<group>"; };
-		B7F5B7471D49D0C700446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/drinKWaterCell.xib; sourceTree = "<group>"; };
 		B7F5B7491D49D36D00446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TDSFooterCellzb.xib; sourceTree = "<group>"; };
-		B7F5B74D1D49D43900446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSFooterCellzb.xib; sourceTree = "<group>"; };
 		B7F5B74F1D49D5FD00446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CupView_Footer.xib; sourceTree = "<group>"; };
 		B7F5B7531D49D60E00446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CupView_Footer.xib; sourceTree = "<group>"; };
 		B7F5B7551D49E9E000446670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
-		B7F5B7591D49E9E900446670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TDSDetailCellzb.xib; sourceTree = "<group>"; };
-		B7F5B75F1D49F74300446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/drinKWaterCell.xib"; sourceTree = "<group>"; };
-		B7F5B7621D49FC0A00446670 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/TDSFooterCellzb.xib"; sourceTree = "<group>"; };
 		B7FF5CA01DAF44CF00A43B17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinFooterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		B7FF5CA11DAF4E7600A43B17 /* SkinFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinFooterTableViewCell.swift; sourceTree = "<group>"; };
 		B7FF5CA21DAF4E7600A43B17 /* SkinFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkinFooterTableViewCell.xib; sourceTree = "<group>"; };
 		B7FF5CA51DAF51A900A43B17 /* mainOfSetWaterReplenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainOfSetWaterReplenCell.swift; sourceTree = "<group>"; };
 		B7FF5CA61DAF51A900A43B17 /* mainOfSetWaterReplenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainOfSetWaterReplenCell.xib; sourceTree = "<group>"; };
-		E00264F91D07E82600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
 		E00264FB1D07E82800E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/peiDuiOutTimeCell_EN.xib; sourceTree = "<group>"; };
-		E00264FD1D07F34600E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
 		E00264FF1D07F34900E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DeviceMatchedViewController_EN.xib; sourceTree = "<group>"; };
-		E00265011D07F97900E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JingShuiWifiViewController_EN.xib; sourceTree = "<group>"; };
 		E00265031D07F97B00E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JingShuiWifiViewController_EN.xib; sourceTree = "<group>"; };
-		E00265051D08098500E31C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/tantouLvXinView_EN.xib; sourceTree = "<group>"; };
 		E00265071D08098700E31C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/tantouLvXinView_EN.xib; sourceTree = "<group>"; };
 		E066B9441D24BD0C00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaterReplenishMainView_EN.xib; sourceTree = "<group>"; };
-		E066B9461D24BDB400810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HeadOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
 		E066B9481D24BDB500810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HeadOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
-		E066B94A1D24BE8D00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FooterOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
 		E066B94C1D24BE8E00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FooterOfWaterReplenishDetailCell_EN.xib; sourceTree = "<group>"; };
-		E066B94E1D24C28500810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinHeadTableViewCell_EN.xib; sourceTree = "<group>"; };
 		E066B9501D24C28700810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinHeadTableViewCell_EN.xib; sourceTree = "<group>"; };
-		E066B9521D24C4CA00810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SkinCenterTableViewCell_EN.xib; sourceTree = "<group>"; };
 		E066B9541D24C4CC00810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SkinCenterTableViewCell_EN.xib; sourceTree = "<group>"; };
-		E066B9561D2A016200810566 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/outAirXib_EN.xib; sourceTree = "<group>"; };
 		E066B9581D2A016400810566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/outAirXib_EN.xib; sourceTree = "<group>"; };
 		E0EFFEDA1D05576400E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyDeviceMainController_EN.xib; sourceTree = "<group>"; };
 		E0EFFEE21D056D1F00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/headViewView_EN.xib; sourceTree = "<group>"; };
-		E0EFFEE41D0570E500E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/headViewView_EN.xib; sourceTree = "<group>"; };
 		E0EFFEE61D05944E00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CenterChartCell_EN.xib; sourceTree = "<group>"; };
 		E0EFFEE81D05945200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CenterChartCell_EN.xib; sourceTree = "<group>"; };
-		E0EFFEEA1D05954700E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Main_FooterView_zb_EN.xib; sourceTree = "<group>"; };
 		E0EFFEEC1D05954A00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Main_FooterView_zb_EN.xib; sourceTree = "<group>"; };
 		E0EFFEEE1D059BB800E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ShareView_zb_EN.xib; sourceTree = "<group>"; };
 		E0EFFEF01D059BBA00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareView_zb_EN.xib; sourceTree = "<group>"; };
 		E0EFFEF21D06604000E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WeiXinURLViewController_EN.xib; sourceTree = "<group>"; };
 		E0EFFEF41D06604200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WeiXinURLViewController_EN.xib; sourceTree = "<group>"; };
-		E0EFFEF61D06607E00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OffLineSuggestView_EN.xib; sourceTree = "<group>"; };
 		E0EFFEF81D06608000E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OffLineSuggestView_EN.xib; sourceTree = "<group>"; };
 		E0EFFEFA1D0666FF00E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/indoorAirWarn_Air_EN.xib; sourceTree = "<group>"; };
 		E0EFFEFC1D06670100E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/indoorAirWarn_Air_EN.xib; sourceTree = "<group>"; };
@@ -5663,7 +5629,6 @@
 		8D08BD6A1D5C61EA00E10F0F /* SetTdsPanViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8D08BD691D5C61EA00E10F0F /* en */,
 				8D08BD6D1D5C621300E10F0F /* Base */,
 			);
 			name = SetTdsPanViewController.xib;
@@ -5708,7 +5673,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B76E778C1D069B1F008476A6 /* Base */,
-				B76E77901D069B3F008476A6 /* en */,
 			);
 			name = YanZhengCell.xib;
 			sourceTree = "<group>";
@@ -5717,7 +5681,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B76E77921D06A236008476A6 /* Base */,
-				B76E77951D06A23A008476A6 /* en */,
 			);
 			name = FriendSearch.xib;
 			sourceTree = "<group>";
@@ -5726,7 +5689,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B7D8C1801D2373C30089C241 /* Base */,
-				B7D8C1821D2374010089C241 /* en */,
 			);
 			name = uiDatePickerView_EN.xib;
 			sourceTree = "<group>";
@@ -5743,7 +5705,6 @@
 		B7D8C18F1D2376680089C241 /* setCuoTimeViewController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C1901D2376680089C241 /* en */,
 				B7D8C1A61D23769D0089C241 /* Base */,
 			);
 			name = setCuoTimeViewController_EN.xib;
@@ -5752,7 +5713,6 @@
 		B7D8C1911D2376680089C241 /* setCupNameViewController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C1921D2376680089C241 /* en */,
 				B7D8C1A71D23769D0089C241 /* Base */,
 			);
 			name = setCupNameViewController_EN.xib;
@@ -5761,7 +5721,6 @@
 		B7D8C1931D2376680089C241 /* SetRemindTimeController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C1941D2376680089C241 /* en */,
 				B7D8C1A81D23769D0089C241 /* Base */,
 			);
 			name = SetRemindTimeController_EN.xib;
@@ -5770,7 +5729,6 @@
 		B7D8C1951D2376680089C241 /* SetSexViewController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C1961D2376680089C241 /* en */,
 				B7D8C1A91D23769D0089C241 /* Base */,
 			);
 			name = SetSexViewController_EN.xib;
@@ -5779,7 +5737,6 @@
 		B7D8C1971D2376680089C241 /* setShuiJiViewController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C1981D2376680089C241 /* en */,
 				B7D8C1AA1D23769D0089C241 /* Base */,
 			);
 			name = setShuiJiViewController_EN.xib;
@@ -5788,7 +5745,6 @@
 		B7D8C19B1D2376680089C241 /* setTanTouViewController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C19C1D2376680089C241 /* en */,
 				B7D8C1AC1D23769D0089C241 /* Base */,
 			);
 			name = setTanTouViewController_EN.xib;
@@ -5797,7 +5753,6 @@
 		B7D8C1CF1D23A1F40089C241 /* WaterPurifierHeadCell_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C1CE1D23A1F40089C241 /* en */,
 				B7D8C1D01D23A1F60089C241 /* Base */,
 			);
 			name = WaterPurifierHeadCell_EN.xib;
@@ -5807,7 +5762,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B7D8C1D21D23A5C70089C241 /* Base */,
-				B7D8C1D61D23A5D90089C241 /* en */,
 			);
 			name = WaterPurFooterCell_EN.xib;
 			sourceTree = "<group>";
@@ -5815,7 +5769,6 @@
 		B7D8C1D91D23A76D0089C241 /* WaterPurTDSDetailCell1_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C1D81D23A76D0089C241 /* en */,
 				B7D8C1DA1D23A77A0089C241 /* Base */,
 			);
 			name = WaterPurTDSDetailCell1_EN.xib;
@@ -5825,7 +5778,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B7D8C1DC1D23AEA30089C241 /* Base */,
-				B7D8C1E01D23AEA90089C241 /* en */,
 			);
 			name = WaterPurTDSDetailCell2_EN.xib;
 			sourceTree = "<group>";
@@ -5833,7 +5785,6 @@
 		B7D8C2361D24A8E30089C241 /* indoorAirXib_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C2351D24A8E30089C241 /* en */,
 				E0F32A411D49EC3600D78EE5 /* Base */,
 			);
 			name = indoorAirXib_EN.xib;
@@ -5850,8 +5801,8 @@
 		B7D8C23C1D24B3E20089C241 /* smallFooterViewXib_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C23B1D24B3E20089C241 /* en */,
 				B7B199A51D5036E000DAA771 /* zh-Hans */,
+				B7B000CB1DD3112D003F7340 /* Base */,
 			);
 			name = smallFooterViewXib_EN.xib;
 			sourceTree = "<group>";
@@ -5859,7 +5810,6 @@
 		B7D8C23F1D24C13D0089C241 /* SkinFooterTableViewCell_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7D8C23E1D24C13D0089C241 /* en */,
 				B7FF5CA01DAF44CF00A43B17 /* Base */,
 			);
 			name = SkinFooterTableViewCell_EN.xib;
@@ -5868,7 +5818,6 @@
 		B7F5B71C1D499F1B00446670 /* setSmallAirViewXib.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B7F5B71B1D499F1B00446670 /* en */,
 				B7F5B71D1D499F2100446670 /* Base */,
 			);
 			name = setSmallAirViewXib.xib;
@@ -5878,8 +5827,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B7F5B7431D49CF9A00446670 /* Base */,
-				B7F5B7471D49D0C700446670 /* en */,
-				B7F5B75F1D49F74300446670 /* zh-Hans */,
 			);
 			name = drinKWaterCell.xib;
 			sourceTree = "<group>";
@@ -5888,8 +5835,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B7F5B7491D49D36D00446670 /* Base */,
-				B7F5B74D1D49D43900446670 /* en */,
-				B7F5B7621D49FC0A00446670 /* zh-Hans */,
 			);
 			name = TDSFooterCellzb.xib;
 			sourceTree = "<group>";
@@ -5907,7 +5852,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B7F5B7551D49E9E000446670 /* Base */,
-				B7F5B7591D49E9E900446670 /* en */,
 			);
 			name = TDSDetailCellzb.xib;
 			sourceTree = "<group>";
@@ -5915,7 +5859,6 @@
 		E00264FA1D07E82600E31C79 /* peiDuiOutTimeCell_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E00264F91D07E82600E31C79 /* en */,
 				E00264FB1D07E82800E31C79 /* Base */,
 			);
 			name = peiDuiOutTimeCell_EN.xib;
@@ -5924,7 +5867,6 @@
 		E00264FE1D07F34600E31C79 /* DeviceMatchedViewController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E00264FD1D07F34600E31C79 /* en */,
 				E00264FF1D07F34900E31C79 /* Base */,
 			);
 			name = DeviceMatchedViewController_EN.xib;
@@ -5933,7 +5875,6 @@
 		E00265021D07F97900E31C79 /* JingShuiWifiViewController_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E00265011D07F97900E31C79 /* en */,
 				E00265031D07F97B00E31C79 /* Base */,
 			);
 			name = JingShuiWifiViewController_EN.xib;
@@ -5942,7 +5883,6 @@
 		E00265061D08098500E31C79 /* tantouLvXinView_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E00265051D08098500E31C79 /* en */,
 				E00265071D08098700E31C79 /* Base */,
 			);
 			name = tantouLvXinView_EN.xib;
@@ -5959,7 +5899,6 @@
 		E066B9471D24BDB400810566 /* HeadOfWaterReplenishDetailCell_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E066B9461D24BDB400810566 /* en */,
 				E066B9481D24BDB500810566 /* Base */,
 			);
 			name = HeadOfWaterReplenishDetailCell_EN.xib;
@@ -5968,7 +5907,6 @@
 		E066B94B1D24BE8D00810566 /* FooterOfWaterReplenishDetailCell_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E066B94A1D24BE8D00810566 /* en */,
 				E066B94C1D24BE8E00810566 /* Base */,
 			);
 			name = FooterOfWaterReplenishDetailCell_EN.xib;
@@ -5977,7 +5915,6 @@
 		E066B94F1D24C28500810566 /* SkinHeadTableViewCell_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E066B94E1D24C28500810566 /* en */,
 				E066B9501D24C28700810566 /* Base */,
 			);
 			name = SkinHeadTableViewCell_EN.xib;
@@ -5986,7 +5923,6 @@
 		E066B9531D24C4CA00810566 /* SkinCenterTableViewCell_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E066B9521D24C4CA00810566 /* en */,
 				E066B9541D24C4CC00810566 /* Base */,
 			);
 			name = SkinCenterTableViewCell_EN.xib;
@@ -5995,7 +5931,6 @@
 		E066B9571D2A016200810566 /* outAirXib_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E066B9561D2A016200810566 /* en */,
 				E066B9581D2A016400810566 /* Base */,
 			);
 			name = outAirXib_EN.xib;
@@ -6013,7 +5948,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E0EFFEE21D056D1F00E43C20 /* Base */,
-				E0EFFEE41D0570E500E43C20 /* en */,
 			);
 			name = headViewView_EN.xib;
 			sourceTree = "<group>";
@@ -6030,7 +5964,6 @@
 		E0EFFEEB1D05954700E43C20 /* Main_FooterView_zb_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E0EFFEEA1D05954700E43C20 /* en */,
 				E0EFFEEC1D05954A00E43C20 /* Base */,
 			);
 			name = Main_FooterView_zb_EN.xib;
@@ -6057,7 +5990,6 @@
 		E0EFFEF71D06607E00E43C20 /* OffLineSuggestView_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E0EFFEF61D06607E00E43C20 /* en */,
 				E0EFFEF81D06608000E43C20 /* Base */,
 			);
 			name = OffLineSuggestView_EN.xib;

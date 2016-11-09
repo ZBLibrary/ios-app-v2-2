@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2i-fH-yLk">
                                 <rect key="frame" x="0.0" y="15" width="375" height="236"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="womanSkinOfChaXun1" translatesAutoresizingMaskIntoConstraints="NO" id="cua-1Q-ASZ">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="womanSkinOfChaXun1" translatesAutoresizingMaskIntoConstraints="NO" id="cua-1Q-ASZ">
                                         <rect key="frame" x="15" y="82" width="344" height="154"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他肤质类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-N4-hlm">

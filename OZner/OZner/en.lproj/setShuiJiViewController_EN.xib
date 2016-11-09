@@ -133,7 +133,7 @@
                                 <action selector="toAboutDevice:" destination="-1" eventType="touchUpInside" id="3na-pd-NBN"/>
                             </connections>
                         </button>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RL7-fN-SOS">
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="My_toright_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RL7-fN-SOS">
                             <rect key="frame" x="350" y="17" width="10" height="13"/>
                         </imageView>
                     </subviews>
