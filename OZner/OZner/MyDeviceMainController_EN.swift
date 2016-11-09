@@ -704,18 +704,6 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         if TapManager.isTap(myCurrentDevice?.type)==true
         {
             
-            let manger = AFHTTPSessionManager()
-            
-            print(self.myCurrentDevice!.identifier)
-            print(get_UserToken())
-            manger.POST("http://app.joyro.com.cn:8282/OznerDevice/FilterService", parameters: ["usertoken":get_UserToken(),"mac":(self.myCurrentDevice!.identifier)!], success: { (data, obj) in
-                
-                print("obj"+"\(obj)")
-                
-                }, failure: { (data, error) in
-                    print(error)
-            })
-            
             werbservice.filterService(self.myCurrentDevice?.identifier) { (modifyTime:String!, userDay:NSNumber!, status:StatusManager!) -> Void in
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
                 print(status.networkStatus)
