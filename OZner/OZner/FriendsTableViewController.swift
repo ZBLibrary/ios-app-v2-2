@@ -276,7 +276,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        print(myfriendarray.count)
+//        print(myfriendarray.count)
         
         return myfriendCellArray.count
     }
