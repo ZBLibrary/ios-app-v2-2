@@ -278,7 +278,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         {
             switch deviceCuttentType
             {
-            case 0,1,3,5://蓝牙设备
+            case 0,1,3,5,6://蓝牙设备
                 self.navigationController?.navigationBarHidden=true
                 self.view.addSubview(PeiduiFailed)
                 break
