@@ -1809,16 +1809,16 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             {
                     if weakSelf!.outAirView != nil
                     {
-                        weakSelf!.outAirView.cityname.text = cityname ?? ""
-                        weakSelf!.outAirView.PM25.text=PM25+"ug/m3"
-                        weakSelf!.outAirView.AQI.text=AQI
-                        weakSelf!.outAirView.teampret.text=temperature+"℃"
-                        weakSelf!.outAirView.hubit.text=humidity+"%"
-                        weakSelf!.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
+                        weakSelf?.outAirView.cityname.text = cityname ?? ""
+                        weakSelf?.outAirView.PM25.text=PM25+"ug/m3" //nil
+                        weakSelf?.outAirView.AQI.text=AQI
+                        weakSelf?.outAirView.teampret.text=temperature+"℃"
+                        weakSelf?.outAirView.hubit.text=humidity+"%"
+                        weakSelf?.outAirView.datafrom.text=loadLanguage("数据来源:")+dataFrom
                     }
-                    weakSelf!.AirHeadView.cityName.text = cityname ?? ""
-                    weakSelf!.AirHeadView.polution.text=loadLanguage(pollution)
-                    weakSelf!.AirHeadView.PM25.text=PM25
+                    weakSelf?.AirHeadView.cityName.text = cityname ?? ""
+                    weakSelf?.AirHeadView.polution.text=loadLanguage(pollution) ?? "我失败了" //nil
+                    weakSelf?.AirHeadView.PM25.text=PM25
                 
             }
         }
