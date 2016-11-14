@@ -530,7 +530,7 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                         //var rankcount:NSMutableArray!
                         if state>0
                         {
-                            let rankcount=responseObject.objectForKey("data") as! NSMutableArray
+                            let rankcount=responseObject.objectForKey("data") as! NSArray
                             for i in 0..<rankcount.count
                             {
                                 var rankstrut=myRankstruct()
