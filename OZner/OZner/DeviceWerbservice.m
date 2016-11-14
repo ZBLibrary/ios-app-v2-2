@@ -235,7 +235,7 @@
                 handle(pollution,cityname,PM25,AQI,temperature,humidity,dataFrom,status);
             } else {
                 
-                handle(@"",@"",@"",@"",@"",@"",@"",status);
+                handle(@"暂无",@"暂无",@"暂无",@"0",@"0",@"0",@"暂无",status);
             }
             
             
