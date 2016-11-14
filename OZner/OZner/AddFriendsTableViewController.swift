@@ -311,17 +311,24 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
     
     func Tongxunlu()
     {
-        let friends:[String]=getSysContacts()
-        var friendsString=""
-        if friends.count>=2
-        {
-           for i in 0...(friends.count-2)
-           {
-               friendsString+=friends[i]+","
-           }
-           friendsString+=friends[friends.count-1]
-           getTXFriends(friendsString)
-        }
+        let gyConact = GYConactBook();
+        
+        let friends:String=gyConact.getAllPerson()!
+//        var friendsString=""
+//        if friends.count>=2
+//        {
+//           for i in 0...(friends.count-2)
+//           {
+//            let model:GYPersonModel = friends[i] as! GYPersonModel
+//            
+//               friendsString+=model.phoneNumber1+","
+//           }
+//            
+//            let model2:GYPersonModel = friends[friends.count-1] as! GYPersonModel
+//            
+//           friendsString+=model2.phoneNumber1
+           getTXFriends(friends)
+//        }
     }
     func getTXFriends(TXLfriends:String){
         if TXLfriends==""
@@ -335,6 +342,7 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
             
             if let strongSelf=self{
                 MBProgressHUD.hideHUDForView(strongSelf.view, animated: true)
+                print(statusManager.networkStatus)
                 if statusManager.networkStatus==kSuccessStatus
                 {
                     let state=responseObject.objectForKey("state") as! Int
@@ -347,11 +355,18 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
                             var friendtmp=myFriend()
                             friendtmp.isExist=true
                             friendtmp.status=friends[i].objectForKey("Status") as! Int
-                            if (friendtmp.status+10014)==0
+                            if (friendtmp.status+10013)==0
                             {
                                 continue
                             }
-                            friendtmp.imgUrl=friends[i].objectForKey("headimg") as! String
+                            
+                            if (friends[i].objectForKey("headimg") != nil) {
+                               friendtmp.imgUrl=friends[i].objectForKey("headimg") as! String
+                            } else {
+                                friendtmp.imgUrl = ""
+                            }
+                            
+                            
                             friendtmp.Name=friends[i].objectForKey("nickname") as! String
                             friendtmp.phone=friends[i].objectForKey("mobile") as! String
                             

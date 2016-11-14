@@ -805,6 +805,7 @@
 		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
 		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
 		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
+		B79E06291DD9D6F200A8FE7B /* GYConactBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E06281DD9D6F200A8FE7B /* GYConactBook.swift */; };
 		B7A045231D8FBCF7002A00ED /* icon_no_device_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */; };
 		B7A045251D8FBD04002A00ED /* icon_no_device_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */; };
 		B7C8A0961DAF76C8009E5715 /* FriendZeroBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8A0951DAF76C8009E5715 /* FriendZeroBgView.swift */; };
@@ -2213,6 +2214,7 @@
 		B76E77831D066BC7008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendsNav.xib; sourceTree = "<group>"; };
 		B76E778C1D069B1F008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/YanZhengCell.xib; sourceTree = "<group>"; };
 		B76E77921D06A236008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendSearch.xib; sourceTree = "<group>"; };
+		B79E06281DD9D6F200A8FE7B /* GYConactBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYConactBook.swift; sourceTree = "<group>"; };
 		B7A045221D8FBCF7002A00ED /* icon_no_device_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@2x.png"; sourceTree = "<group>"; };
 		B7A045241D8FBD04002A00ED /* icon_no_device_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_no_device_logo@3x.png"; sourceTree = "<group>"; };
 		B7B000CB1DD3112D003F7340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/smallFooterViewXib_EN.xib; sourceTree = "<group>"; };
@@ -3533,6 +3535,7 @@
 			isa = PBXGroup;
 			children = (
 				B70CC6481D057E3B002AE9A3 /* Main.storyboard */,
+				B79E06281DD9D6F200A8FE7B /* GYConactBook.swift */,
 				8DBD54A21C567F3800D04B12 /* AddFriendsTableViewController.swift */,
 				8DBD54A31C567F3800D04B12 /* SendYanZHViewController.swift */,
 				8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */,
@@ -5346,6 +5349,7 @@
 				52FF7E051C1A043A005635F8 /* YJHColorPickerHSWheel.m in Sources */,
 				8DA405A31C8441B500AD5E5E /* ZXMaxiCodeBitMatrixParser.m in Sources */,
 				42A7BB3F1C0C23FC008DB6E5 /* Reachability.m in Sources */,
+				B79E06291DD9D6F200A8FE7B /* GYConactBook.swift in Sources */,
 				42A7BB341C0C23BC008DB6E5 /* ASIAuthenticationDialog.m in Sources */,
 				8DA405721C8441B500AD5E5E /* ZXDataMatrixDecodedBitStreamParser.m in Sources */,
 				8DA405711C8441B500AD5E5E /* ZXDataMatrixDataBlock.m in Sources */,

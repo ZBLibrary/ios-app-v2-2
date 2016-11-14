@@ -83,5 +83,69 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OZner/AddFriendsTableViewController.swift"
+            timestampString = "500816616.447203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "341"
+            endingLineNumber = "341"
+            landmarkName = "getTXFriends(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OZner.AddFriendsTableViewController.getTXFriends (Swift.String) -&gt; ()"
+                  moduleName = "OZner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/AddFriendsTableViewController.swift"
+                  timestampString = "500819063.402168"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "341"
+                  endingLineNumber = "341"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OZner.AddFriendsTableViewController.(getTXFriends (Swift.String) -&gt; ()).(closure #1)"
+                  moduleName = "OZner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/AddFriendsTableViewController.swift"
+                  timestampString = "500819063.402294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "341"
+                  endingLineNumber = "341"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OZner/AddFriendsTableViewController.swift"
+            timestampString = "500818629.881984"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "Tongxunlu()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
