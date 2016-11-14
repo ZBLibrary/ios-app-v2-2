@@ -46,4 +46,6 @@
 @property (nonatomic,strong) NSMutableArray* iconArrs;
 @property (nonatomic,assign) id<JinShuiqiWIFIController_ENDelegate>delegate;
 
+@property (nonatomic,strong) NSString *currenType;
+
 @end

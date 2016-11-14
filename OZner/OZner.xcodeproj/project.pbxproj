@@ -788,6 +788,10 @@
 		B711216C1D45E2020098C31C /* My_MainView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B711216B1D45E2020098C31C /* My_MainView_EN.swift */; };
 		B71121701D45F5900098C31C /* MyInfoViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B711216F1D45F5900098C31C /* MyInfoViewController_EN.swift */; };
 		B71121711D45FD510098C31C /* My_MainView_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B71121731D45FD510098C31C /* My_MainView_EN.xib */; };
+		B72A401B1DD961000018BB73 /* RO_FilterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A401A1DD961000018BB73 /* RO_FilterInfo.m */; };
+		B72A401E1DD9613F0018BB73 /* RO_WaterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A401D1DD9613F0018BB73 /* RO_WaterInfo.m */; };
+		B72A40211DD961720018BB73 /* ROWaterSettingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A40201DD961720018BB73 /* ROWaterSettingInfo.m */; };
+		B72A40241DD962650018BB73 /* ROWaterPurufier.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A40231DD962650018BB73 /* ROWaterPurufier.m */; };
 		B72BDB7A1D7D011A00C05E40 /* new_help_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB761D7D011A00C05E40 /* new_help_0@2x.png */; };
 		B72BDB7B1D7D011A00C05E40 /* new_help_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB771D7D011A00C05E40 /* new_help_0@3x.png */; };
 		B72BDB7C1D7D011A00C05E40 /* new_help_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB781D7D011A00C05E40 /* new_help_1@2x.png */; };
@@ -2188,6 +2192,14 @@
 		B711216B1D45E2020098C31C /* My_MainView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_MainView_EN.swift; sourceTree = "<group>"; };
 		B711216F1D45F5900098C31C /* MyInfoViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewController_EN.swift; sourceTree = "<group>"; };
 		B71121741D45FD5A0098C31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/My_MainView_EN.xib; sourceTree = "<group>"; };
+		B72A40191DD961000018BB73 /* RO_FilterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RO_FilterInfo.h; sourceTree = "<group>"; };
+		B72A401A1DD961000018BB73 /* RO_FilterInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RO_FilterInfo.m; sourceTree = "<group>"; };
+		B72A401C1DD9613F0018BB73 /* RO_WaterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RO_WaterInfo.h; sourceTree = "<group>"; };
+		B72A401D1DD9613F0018BB73 /* RO_WaterInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RO_WaterInfo.m; sourceTree = "<group>"; };
+		B72A401F1DD961720018BB73 /* ROWaterSettingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROWaterSettingInfo.h; sourceTree = "<group>"; };
+		B72A40201DD961720018BB73 /* ROWaterSettingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROWaterSettingInfo.m; sourceTree = "<group>"; };
+		B72A40221DD962650018BB73 /* ROWaterPurufier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROWaterPurufier.h; sourceTree = "<group>"; };
+		B72A40231DD962650018BB73 /* ROWaterPurufier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROWaterPurufier.m; sourceTree = "<group>"; };
 		B72BDB761D7D011A00C05E40 /* new_help_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_0@2x.png"; sourceTree = "<group>"; };
 		B72BDB771D7D011A00C05E40 /* new_help_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_0@3x.png"; sourceTree = "<group>"; };
 		B72BDB781D7D011A00C05E40 /* new_help_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_1@2x.png"; sourceTree = "<group>"; };
@@ -2524,6 +2536,10 @@
 		349F0C5C1C15855B00E46253 /* Tap */ = {
 			isa = PBXGroup;
 			children = (
+				B72A401C1DD9613F0018BB73 /* RO_WaterInfo.h */,
+				B72A401D1DD9613F0018BB73 /* RO_WaterInfo.m */,
+				B72A40191DD961000018BB73 /* RO_FilterInfo.h */,
+				B72A401A1DD961000018BB73 /* RO_FilterInfo.m */,
 				524337A61C42A8D70024133D /* Tap.h */,
 				524337A71C42A8D70024133D /* Tap.m */,
 				524337A81C42A8D70024133D /* TapFirmware.h */,
@@ -3144,6 +3160,10 @@
 		42C9A9D51C18211700EAB8CF /* WaterPurifier */ = {
 			isa = PBXGroup;
 			children = (
+				B72A40221DD962650018BB73 /* ROWaterPurufier.h */,
+				B72A40231DD962650018BB73 /* ROWaterPurufier.m */,
+				B72A401F1DD961720018BB73 /* ROWaterSettingInfo.h */,
+				B72A40201DD961720018BB73 /* ROWaterSettingInfo.m */,
 				8D4F4E831CDADD9900BE1E77 /* WaterPurifier.h */,
 				8D4F4E841CDADD9900BE1E77 /* WaterPurifier.m */,
 				524337C01C42A8E50024133D /* WaterPurifierInfo.h */,
@@ -5000,6 +5020,7 @@
 				8DA405691C8441B500AD5E5E /* ZXCode128Writer.m in Sources */,
 				8DA403691C843F8600AD5E5E /* LBXScanNative.m in Sources */,
 				8DA4056F1C8441B500AD5E5E /* ZXDataMatrixBitMatrixParser.m in Sources */,
+				B72A40241DD962650018BB73 /* ROWaterPurufier.m in Sources */,
 				8DA405C41C8441B500AD5E5E /* ZXPDF417ErrorCorrection.m in Sources */,
 				B7D8C1C51D2376F60089C241 /* setShuiJiViewController_EN.swift in Sources */,
 				8D26136A1CFD3DF3002ADB0E /* Duration.swift in Sources */,
@@ -5058,12 +5079,14 @@
 				8DF060A61CC90F6100EC05D9 /* ConstraintAttributes.swift in Sources */,
 				5243379E1C42A63F0024133D /* IOManagerList.m in Sources */,
 				424C155E1C1047B70001C36E /* DeviceMatchCellView_EN.swift in Sources */,
+				B72A401B1DD961000018BB73 /* RO_FilterInfo.m in Sources */,
 				523DC3491C175E1B00595099 /* XMMessage.m in Sources */,
 				B71121701D45F5900098C31C /* MyInfoViewController_EN.swift in Sources */,
 				8DA4058E1C8441B500AD5E5E /* ZXEncodeHints.m in Sources */,
 				B7D8C17E1D2373AB0089C241 /* uiDatePickerView_EN.swift in Sources */,
 				B7D8C1CB1D2376F60089C241 /* setWaterReplenishController_EN.swift in Sources */,
 				8DA406181C84451900AD5E5E /* SubLBXScanViewController.m in Sources */,
+				B72A401E1DD9613F0018BB73 /* RO_WaterInfo.m in Sources */,
 				8DA405481C8441B500AD5E5E /* ZXAI01weightDecoder.m in Sources */,
 				52A4EF6D1C28B0F2005F282D /* indoorAirViewController_EN.swift in Sources */,
 				8D4F4E821CDADD6D00BE1E77 /* AirPurifier_MxChip.m in Sources */,
@@ -5365,6 +5388,7 @@
 				8DBD54B01C567F3800D04B12 /* SendYanZHViewController.swift in Sources */,
 				522D666B1C31166C00BCA750 /* languageCommon.swift in Sources */,
 				8DA405AF1C8441B500AD5E5E /* ZXMultiFormatWriter.m in Sources */,
+				B72A40211DD961720018BB73 /* ROWaterSettingInfo.m in Sources */,
 				524337591C42A5C30024133D /* PowerTimer.m in Sources */,
 				8D9C63561CA2456200543353 /* MXChipPair.m in Sources */,
 				B7F5B7301D49B8AA00446670 /* TDSDetailCellzb.swift in Sources */,

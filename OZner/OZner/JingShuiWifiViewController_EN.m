@@ -71,7 +71,7 @@
             
         }
     }
-
+    
     VersionSettingDBManager* dbManager = [[VersionSettingDBManager alloc]init];
     UNDWORD value = [dbManager querySettingValueBySettingId:SET_ID_REMERB_PSW];
     if(value == 0)
@@ -266,6 +266,22 @@
 //配网完成
 -(void)mxChipComplete:(MXChipIO*)io
 {
+    if ([self.currenType  isEqualToString: @"水机"]) {
+        
+        if (!([io.type isEqualToString:@"MXCHIP_HAOZE_Water"] || [io.type isEqualToString:@"16a21bd6"] || [io.type isEqualToString:@"Ozner RO"])) {
+            return;
+        }
+        
+       
+    }
+    
+    if ([self.currenType isEqualToString:@"空净"]) {
+        
+        if (!([io.type isEqualToString:@"FOG_HAOZE_AIR"] || [io.type isEqualToString:@"580c2783"])) {
+            return;
+        }
+        
+    }
     [self endTimer];
     if(m_bIsAgree)
     {
@@ -273,20 +289,20 @@
         [dbManager addWifi:self.accountTF.text psw:self.pswTF.text];
     }
     //dispatch_async(dispatch_get_main_queue(), ^{
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if([self.delegate respondsToSelector:@selector(jinshuiqiConnectComplete:)])
-            {
-                NSMutableArray* muArr = [[NSMutableArray alloc]init];
-                [muArr addObject:io];
-                
-                
-                [self dismissViewControllerAnimated:YES completion:^{
-                    [self.delegate jinshuiqiConnectComplete:muArr];
-                }];
-            }
-        });
-        
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if([self.delegate respondsToSelector:@selector(jinshuiqiConnectComplete:)])
+        {
+            NSMutableArray* muArr = [[NSMutableArray alloc]init];
+            [muArr addObject:io];
+            
+            
+            [self dismissViewControllerAnimated:YES completion:^{
+                [self.delegate jinshuiqiConnectComplete:muArr];
+            }];
+        }
+    });
+    
     //});
 }
 
