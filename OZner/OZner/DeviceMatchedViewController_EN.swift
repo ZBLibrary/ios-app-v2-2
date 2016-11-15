@@ -173,6 +173,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         //
         cupFinishedBgView?.hidden = true
         otherDeviceFinishedView?.hidden = false
+         self.otherDeviceFinishedView?.myTanTouNameTextField?.keyboardType = UIKeyboardType.Default
+         self.otherDeviceFinishedView?.myTanTouNameTextField?.returnKeyType = .Done
         switch deviceCuttentType
         {
         case 0:
