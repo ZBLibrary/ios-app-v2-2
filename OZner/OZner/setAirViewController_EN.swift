@@ -17,14 +17,14 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title=loadLanguage("台式空气净化器")
+        self.title=loadLanguage("智能空气净化器")
         let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
         leftbutton.addTarget(self, action: #selector(back), forControlEvents: .TouchUpInside)
         self.navigationItem.leftBarButtonItem=UIBarButtonItem(customView: leftbutton)
         self.navigationItem.rightBarButtonItem=savebutton
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: plistName+"Name", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: "setBigAirName", object: nil)
         initMainView()
         // Do any additional setup after loading the view.
     }
@@ -52,13 +52,14 @@ class setAirViewController_EN: UIViewController,UIAlertViewDelegate {
         mainView.clearButton.layer.borderColor=UIColor(red: 247/255, green: 188/255, blue: 196/255, alpha: 1).CGColor
         if get_CurrSelectEquip()==4
         {
-            self.title=loadLanguage("台式空气净化器")
-            mainView.nameLabel.text=loadLanguage("台式空气净化器")
+            self.title=loadLanguage("智能空气净化器")
+            mainView.nameLabel.text=loadLanguage("智能空气净化器")
         }
         else
         {
-            self.title=loadLanguage("立式空气净化器")
-            mainView.nameLabel.text=loadLanguage("立式空气净化器")
+            //立式
+            self.title=loadLanguage("智能空气净化器")
+            mainView.nameLabel.text=loadLanguage("智能空气净化器")
         }
         ScrollView.contentSize=CGSize(width: 0, height: (mainView.bounds.size.height<self.view.height ? self.view.height:mainView.bounds.size.height))
         ScrollView.addSubview(mainView)

@@ -52,46 +52,46 @@ class indoorAirXib_EN: UIView {
     @IBOutlet var toChat: UIButton!
     @IBOutlet weak var chatAndBuyContainer: UIView!
     
-    var starDatazb=""{
-        didSet{
-            if starDatazb != ""
-            {
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
-                let date = dateFormatter.dateFromString(starDatazb)! as NSDate
-                //let tmpTime=date.timeIntervalSince1970+3600*24*90
-                let endDateTime = date+1.year//NSDate(timeIntervalSince1970: tmpTime)
-                dateFormatter.dateFormat="yyyy-MM-dd"
-                
-                let starStr=dateFormatter.stringFromDate(date)
-                var tmparray = starStr.componentsSeparatedByString("-") as NSArray
-                starYear.text=tmparray.objectAtIndex(0) as? String
-                starDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
-                let endDateStr = dateFormatter.stringFromDate(endDateTime)
-                
-                tmparray = endDateStr.componentsSeparatedByString("-") as NSArray
-                endYear.text=tmparray.objectAtIndex(0) as? String
-                endDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
-                //当前日期
-                let nowStr=dateFormatter.stringFromDate(NSDate())
-                let tmpNowArray = nowStr.componentsSeparatedByString("-") as NSArray
-                curYear.text=tmpNowArray.objectAtIndex(0) as? String
-                curDate.text=(tmpNowArray.objectAtIndex(1) as? String)!+"-"+(tmpNowArray.objectAtIndex(2) as! String)
-                setNeedsLayout()
-                layoutIfNeeded()
-                
-            }
-            else
-            {
-                starYear.text=""
-                starDate.text=""
-                endYear.text=""
-                endDate.text=""
-                curYear.text=""
-                curDate.text=""
-            }
-        }
-    }
+//    var starDatazb=""{
+//        didSet{
+////            if starDatazb != ""
+////            {
+////                let dateFormatter = NSDateFormatter()
+////                dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
+////                let date = dateFormatter.dateFromString(starDatazb)! as NSDate
+////                //let tmpTime=date.timeIntervalSince1970+3600*24*90
+////                let endDateTime = date+1.year//NSDate(timeIntervalSince1970: tmpTime)
+////                dateFormatter.dateFormat="yyyy-MM-dd"
+////                
+////                let starStr=dateFormatter.stringFromDate(date)
+////                var tmparray = starStr.componentsSeparatedByString("-") as NSArray
+////                starYear.text=tmparray.objectAtIndex(0) as? String
+////                starDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
+////                let endDateStr = dateFormatter.stringFromDate(endDateTime)
+////                
+////                tmparray = endDateStr.componentsSeparatedByString("-") as NSArray
+////                endYear.text=tmparray.objectAtIndex(0) as? String
+////                endDate.text=(tmparray.objectAtIndex(1) as? String)!+"-"+(tmparray.objectAtIndex(2) as! String)
+////                //当前日期
+////                let nowStr=dateFormatter.stringFromDate(NSDate())
+////                let tmpNowArray = nowStr.componentsSeparatedByString("-") as NSArray
+////                curYear.text=tmpNowArray.objectAtIndex(0) as? String
+////                curDate.text=(tmpNowArray.objectAtIndex(1) as? String)!+"-"+(tmpNowArray.objectAtIndex(2) as! String)
+////                setNeedsLayout()
+////                layoutIfNeeded()
+////                
+////            }
+////            else
+////            {
+//                starYear.text=""
+//                starDate.text=""
+//                endYear.text=""
+//                endDate.text=""
+//                curYear.text=""
+//                curDate.text=""
+////            }
+//        }
+//    }
 
 
     var state=0 {
@@ -120,6 +120,13 @@ class indoorAirXib_EN: UIView {
         Tips.text = loadLanguage("温馨提示:及时更换滤芯,享纯净空气");
         
         chatAndBuyContainer.hidden = IsLoginByPhone()
+        
+        starYear.text=""
+        starDate.text=""
+        endYear.text=""
+        endDate.text=""
+        curYear.text=""
+        curDate.text=""
     }
    
 

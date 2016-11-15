@@ -1323,10 +1323,12 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     {
                         isNeedDownLXDate = true
                         //滤芯状态
-                        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                        let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
-                        AirHeadView.lvxinState.text=(stopTime-nowTime)>=0 ? "\(Int(ceil((stopTime-nowTime)/(365*24*3600)*100)))%":"0%"
-                        switch ceil((stopTime-nowTime)/(365*24*3600)*100)
+                        let tmpTime = min(100, 100-airPurifier_MxChip.status.filterStatus.workTime/1296)
+                        let remindTime = max(tmpTime, 0)
+//                        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+//                        let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
+                        AirHeadView.lvxinState.text="\(Int(remindTime))%"
+                        switch remindTime
                         {
                         case 0:
                             AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState0")
@@ -1344,7 +1346,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                             AirHeadView.LvXinStateImage.image=UIImage(named: "airLvxinState4")
                             break
                         }
-                        if isNeedDownLXDate==false&&((stopTime-nowTime)<=0)
+                        if isNeedDownLXDate==false&&(remindTime==0)
                         {
                             isNeedDownLXDate=true
                             let alert=UIAlertView(title: loadLanguage("温馨提示"), message:  loadLanguage("你的滤芯即将到期，请及时更换滤芯，以免耽误您的使用"), delegate: self, cancelButtonTitle:loadLanguage("确定"))
