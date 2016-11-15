@@ -797,6 +797,7 @@
 		B76E77821D066BC7008476A6 /* FriendsNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77841D066BC7008476A6 /* FriendsNav.xib */; };
 		B76E778B1D069B1F008476A6 /* YanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E778D1D069B1F008476A6 /* YanZhengCell.xib */; };
 		B76E77911D06A236008476A6 /* FriendSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E77931D06A236008476A6 /* FriendSearch.xib */; };
+		B7B7484E1DDAA80C00A546CB /* GYConactBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7484D1DDAA80C00A546CB /* GYConactBook.swift */; };
 		B7D8C1791D2373AB0089C241 /* AboutDeviceViewController_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */; };
 		B7D8C17A1D2373AB0089C241 /* AboutDeviceViewController_EN.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */; };
 		B7D8C17B1D2373AB0089C241 /* setCommon_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8C1751D2373AB0089C241 /* setCommon_EN.swift */; };
@@ -2193,6 +2194,7 @@
 		B76E77921D06A236008476A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FriendSearch.xib; sourceTree = "<group>"; };
 		B76E77951D06A23A008476A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FriendSearch.strings; sourceTree = "<group>"; };
 		B7B199A51D5036E000DAA771 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/smallFooterViewXib_EN.xib"; sourceTree = "<group>"; };
+		B7B7484D1DDAA80C00A546CB /* GYConactBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYConactBook.swift; sourceTree = "<group>"; };
 		B7D8C1731D2373AB0089C241 /* AboutDeviceViewController_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutDeviceViewController_EN.swift; sourceTree = "<group>"; };
 		B7D8C1741D2373AB0089C241 /* AboutDeviceViewController_EN.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutDeviceViewController_EN.xib; sourceTree = "<group>"; };
 		B7D8C1751D2373AB0089C241 /* setCommon_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setCommon_EN.swift; sourceTree = "<group>"; };
@@ -3523,6 +3525,7 @@
 			isa = PBXGroup;
 			children = (
 				B70CC6481D057E3B002AE9A3 /* Main.storyboard */,
+				B7B7484D1DDAA80C00A546CB /* GYConactBook.swift */,
 				8DBD54A21C567F3800D04B12 /* AddFriendsTableViewController.swift */,
 				8DBD54A31C567F3800D04B12 /* SendYanZHViewController.swift */,
 				8DBD54A41C567F3800D04B12 /* YZNewsTableViewController.swift */,
@@ -4994,6 +4997,7 @@
 				8DA4060B1C8441B500AD5E5E /* ZXUPCEReader.m in Sources */,
 				8DA4054F1C8441B500AD5E5E /* ZXAztecEncoder.m in Sources */,
 				8DBD54DB1C567F4500D04B12 /* ZanMeTableViewCell.swift in Sources */,
+				B7B7484E1DDAA80C00A546CB /* GYConactBook.swift in Sources */,
 				8DA405B21C8441B500AD5E5E /* ZXParsedResult.m in Sources */,
 				42907EB51C2E83B700430BB9 /* UserActionDBManager.m in Sources */,
 				523DC2FA1C175DA800595099 /* MASViewConstraint.m in Sources */,
