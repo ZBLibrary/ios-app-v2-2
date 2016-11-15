@@ -73,7 +73,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         //aboutContainer.hidden = !IsLoginByPhone()
         DeviceNameLable.text=loadLanguage("我的净水器" )
         deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
-        self.title=loadLanguage("净水器")
+        self.title=loadLanguage("免安装净水器(台式/立式)")
         let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)

@@ -9,7 +9,7 @@
 import UIKit
 
 class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
-
+    
     @IBOutlet weak var aboutContainer: UIView!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
         
@@ -29,9 +29,9 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
     var myCurrentDevice:OznerDevice?
     @IBOutlet var DeviceName: UILabel!
     @IBAction func setTanTouName(sender: AnyObject) {
-       let setnamecontroller=setDeviceNameViewController_EN(nibName: "setDeviceNameViewController_EN", bundle: nil)
+        let setnamecontroller=setDeviceNameViewController_EN(nibName: "setDeviceNameViewController_EN", bundle: nil)
         setnamecontroller.dataPlist=plistData
-       self.navigationController?.pushViewController(setnamecontroller, animated: true)
+        self.navigationController?.pushViewController(setnamecontroller, animated: true)
     }
     @IBOutlet var checkImage1: UIImageView!
     @IBOutlet var checkLabel1: UILabel!
@@ -52,10 +52,10 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         datePickerView.datePicker.date=curLabelTime(checkValue2.text!)
     }
     @IBAction func toAboutDevice(sender: AnyObject) {
-//        let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
+        //        let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
         let aboutDevice = WaterRefreshIntrounVC()
         aboutDevice.title=loadLanguage("关于水探头")
-//        aboutDevice.urlstring="http://cup.ozner.net/app/gystt/gystt.html"
+        //        aboutDevice.urlstring="http://cup.ozner.net/app/gystt/gystt.html"
         aboutDevice.deviceType = "tap"
         self.navigationController?.pushViewController(aboutDevice, animated: true)
     }
@@ -79,7 +79,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         AccordingLable.text=loadLanguage("滤芯不足10天会显示提醒")
         deleteDeviceButton.setTitle(loadLanguage("删除此设备"), forState: .Normal)
         
-        self.title=loadLanguage("水探头")
+        self.title=loadLanguage("智能水探头")
         let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
         leftbutton.setBackgroundImage(UIImage(named: "fanhui"), forState: .Normal)
@@ -115,7 +115,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: "setTanTouName", object: nil)
         //
         //pickerview
-       datePickerView=NSBundle.mainBundle().loadNibNamed("uiDatePickerView_EN", owner: nil, options: nil).last as! uiDatePickerView_EN
+        datePickerView=NSBundle.mainBundle().loadNibNamed("uiDatePickerView_EN", owner: nil, options: nil).last as! uiDatePickerView_EN
         //取消
         datePickerView.frame=CGRect(x: 0, y: 0, width: Screen_Width, height: Screen_Hight)
         datePickerView.cancelButton.addTarget(self, action: #selector(PickerCancel), forControlEvents: .TouchUpInside)
@@ -124,7 +124,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         
         // Do any additional setup after loading the view.
     }
-
+    
     //加载设备里面数据
     func loadDeviceData()
     {
@@ -139,12 +139,12 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         let tmpname=plistData.objectForKey("deviceName") as! String
         let nameStr2=(nameStr as NSString).substringWithRange(NSMakeRange(tmpname.characters.count+1, nameStr.characters.count-tmpname.characters.count-2))
         plistData.setValue(nameStr2, forKey: "deviceAttrib")
-
+        
         print(tap.settings.DetectTime1)
         print(tap.settings.DetectTime2)
         plistData.setValue(tap.settings.DetectTime1, forKey: "checktime1")
         plistData.setValue(tap.settings.DetectTime2, forKey: "checktime2")
-
+        
     }
     //自定义方法
     //设置时间
@@ -154,7 +154,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         dateFormatter.dateFormat="YYYY-MM-dd"
         var nowStr:String=dateFormatter.stringFromDate(NSDate())
         nowStr=nowStr+" "+timeStr+":00"
-//        let value = "2016-07-27 18:00:00"
+        //        let value = "2016-07-27 18:00:00"
         dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
         let tmpDate=dateFormatter.dateFromString(nowStr)! as NSDate
         print(tmpDate)
@@ -165,7 +165,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
     func back(){
         let alert=UIAlertView(title: "", message: loadLanguage("是否保存？"), delegate: self, cancelButtonTitle: loadLanguage("取消"), otherButtonTitles: loadLanguage("保存"))
         alert.show()
-
+        
     }
     
     //alert 点击事件
@@ -190,7 +190,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
             }
         }
     }
-
+    
     func ClearClick_OK()
     {
         print("－－－－－－删除前－－－－－－")
@@ -222,7 +222,7 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         {
             checkValue1.text=dateAndTime
             let tmpstring=dateAndTime as NSString
-          plistData.setValue((Int(tmpstring.substringToIndex(2))!*3600+Int(tmpstring.substringFromIndex(3))!*60), forKey: "checktime1")
+            plistData.setValue((Int(tmpstring.substringToIndex(2))!*3600+Int(tmpstring.substringFromIndex(3))!*60), forKey: "checktime1")
             
         }
         else
@@ -279,13 +279,13 @@ class setTanTouViewController_EN: UIViewController ,UIAlertViewDelegate{
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
