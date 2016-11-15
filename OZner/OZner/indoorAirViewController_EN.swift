@@ -150,7 +150,7 @@ class indoorAirViewController_EN: UIViewController {
                 let tmpTime = min(100, 100-airPurifier_Bluetooth.status.filterStatus.workTime/600)
                 let remindTime = max(tmpTime, 0)
  
-                mainview.starDatazb=""
+//                mainview.starDatazb=""
                
                 mainview.state = Int(remindTime)
             }
@@ -165,14 +165,17 @@ class indoorAirViewController_EN: UIViewController {
             //滤芯状态
             if airPurifier_MxChip.status.filterStatus != nil
             {
-                
-                let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-                let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
-                let starDateStr=dateFormatter.stringFromDate(airPurifier_MxChip.status.filterStatus.lastTime)
-                mainview.starDatazb=starDateStr
-                mainview.state=(stopTime-nowTime)>=0 ? Int(ceil((stopTime-nowTime)/(365*24*3600)*100)):0
+                let tmpTime = min(100, 100-airPurifier_MxChip.status.filterStatus.workTime/1296)
+                let remindTime = max(tmpTime, 0)
+                 mainview.state = Int(remindTime)
+//                
+//                let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+//                let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
+//                let dateFormatter = NSDateFormatter()
+//                dateFormatter.dateFormat="yyyy-MM-dd HH:mm:ss"
+//                let starDateStr=dateFormatter.stringFromDate(airPurifier_MxChip.status.filterStatus.lastTime)
+////                mainview.starDatazb=starDateStr
+//                mainview.state=(stopTime-nowTime)>=0 ? Int(ceil((stopTime-nowTime)/(365*24*3600)*100)):0
             }
             else
             {
