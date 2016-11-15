@@ -177,7 +177,9 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         self.otherDeviceFinishedView?.delegate = self
         self.view.addSubview(view1)
         
-        //
+        self.otherDeviceFinishedView?.myTanTouNameTextField?.keyboardType = UIKeyboardType.Default
+        self.otherDeviceFinishedView?.myTanTouNameTextField?.returnKeyType = .Done
+
         cupFinishedBgView?.hidden = true
         otherDeviceFinishedView?.hidden = false
         switch deviceCuttentType

@@ -219,27 +219,43 @@
             
             id tmpdictionary = [[jsonObject objectForKey:@"HeWeather data service 3.0"] objectAtIndex:0];
             id tmpdic=[[tmpdictionary objectForKey:@"aqi"] objectForKey:@"city"];
-            NSString* pollution=(NSString*)[tmpdic objectForKey:@"qlty"];//中度污染
-            NSString* AQI=(NSString*)[tmpdic objectForKey:@"aqi"];
-            NSString* PM25=(NSString*)[tmpdic objectForKey:@"pm25"];
-            NSString* cityname=(NSString*)[[tmpdictionary objectForKey:@"basic"] objectForKey:@"city"];//上海
-            NSString* tmptime=(NSString*)[[[tmpdictionary objectForKey:@"basic"] objectForKey:@"update"]
-                      objectForKey:@"loc"];//"2015-12-25 02:54"
-            dataFrom=[dataFrom stringByAppendingString:@"   "];
-            dataFrom=[dataFrom stringByAppendingString:tmptime];
-            dataFrom=[dataFrom stringByAppendingString:@"发布"];
-            NSString* humidity=(NSString*)[[tmpdictionary objectForKey:@"now"] objectForKey:@"hum"];
-            NSString* temperature=(NSString*)[[tmpdictionary objectForKey:@"now"] objectForKey:@"tmp"];
-           
-            handle(pollution,cityname,PM25,AQI,temperature,humidity,dataFrom,status);
+//            NSString* pollution=(NSString*)[tmpdic objectForKey:@"qlty"];//中度污染
+//            NSString* AQI=(NSString*)[tmpdic objectForKey:@"aqi"];
+//            NSString* PM25=(NSString*)[tmpdic objectForKey:@"pm25"];
+//            NSString* cityname=(NSString*)[[tmpdictionary objectForKey:@"basic"] objectForKey:@"city"];//上海
+//            NSString* tmptime=(NSString*)[[[tmpdictionary objectForKey:@"basic"] objectForKey:@"update"]
+//                      objectForKey:@"loc"];//"2015-12-25 02:54"
+//            dataFrom=[dataFrom stringByAppendingString:@"   "];
+//            dataFrom=[dataFrom stringByAppendingString:tmptime];
+//            dataFrom=[dataFrom stringByAppendingString:@"发布"];
+//            NSString* humidity=(NSString*)[[tmpdictionary objectForKey:@"now"] objectForKey:@"hum"];
+//            NSString* temperature=(NSString*)[[tmpdictionary objectForKey:@"now"] objectForKey:@"tmp"];
+            
+            if (tmpdic != nil) {
+                NSString* pollution=(NSString*)[tmpdic objectForKey:@"qlty"];//中度污染
+                NSString* AQI=(NSString*)[tmpdic objectForKey:@"aqi"];
+                NSString* PM25=(NSString*)[tmpdic objectForKey:@"pm25"];
+                NSString* cityname=(NSString*)[[tmpdictionary objectForKey:@"basic"] objectForKey:@"city"];//上海
+                NSString* tmptime=(NSString*)[[[tmpdictionary objectForKey:@"basic"] objectForKey:@"update"]
+                                              objectForKey:@"loc"];//"2015-12-25 02:54"
+                dataFrom=[dataFrom stringByAppendingString:@"   "];
+                dataFrom=[dataFrom stringByAppendingString:tmptime];
+                dataFrom=[dataFrom stringByAppendingString:@"发布"];
+                NSString* humidity=(NSString*)[[tmpdictionary objectForKey:@"now"] objectForKey:@"hum"];
+                NSString* temperature=(NSString*)[[tmpdictionary objectForKey:@"now"] objectForKey:@"tmp"];
+                
+                handle(pollution,cityname,PM25,AQI,temperature,humidity,dataFrom,status);
+
+            } else {
+                handle(@"暂无",@"暂无",@"暂无",@"0",@"0",@"0",@"暂无",status);
+            }
             
         }else {
             
             handle(@"",@"",@"",@"",@"",@"",@"",status);
             
         }
-        
-        
+ 
         
     } failedBlock:^(StatusManager *status) {
         handle(@"",@"",@"",@"",@"",@"",@"",status);
