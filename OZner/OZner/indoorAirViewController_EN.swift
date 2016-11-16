@@ -191,7 +191,7 @@ class indoorAirViewController_EN: UIViewController {
             vocStr=loadLanguage("差")
             break
         default:
-            vocStr=loadLanguage("检测")
+//            vocStr=loadLanguage("检测")
             break
             
         }
