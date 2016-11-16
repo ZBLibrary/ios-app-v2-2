@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -251,7 +251,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CzX-55-dCj">
                                 <rect key="frame" x="61" y="397" width="252" height="40"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs2-st-X3t">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs2-st-X3t">
                                         <rect key="frame" x="108" y="0.0" width="144" height="40"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="device_puucashezb" translatesAutoresizingMaskIntoConstraints="NO" id="28S-Ij-8fI">
@@ -297,7 +297,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGb-x1-k6U">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <rect key="frame" x="86" y="0.0" width="80" height="40"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="zixunIconzb" translatesAutoresizingMaskIntoConstraints="NO" id="D0V-h0-tJ0">
                                                 <rect key="frame" x="10" y="11" width="23" height="18"/>
@@ -307,10 +307,10 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="咨询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6W-L9-UBC">
-                                                <rect key="frame" x="36" y="12" width="34" height="17"/>
+                                                <rect key="frame" x="36" y="12" width="44" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="Jr1-5t-BSp"/>
-                                                    <constraint firstAttribute="width" constant="34" id="xi7-JS-l4q"/>
+                                                    <constraint firstAttribute="width" constant="44" id="xi7-JS-l4q"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <color key="textColor" red="0.22352941179999999" green="0.53333333329999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -331,7 +331,7 @@
                                             <constraint firstItem="bLe-Fm-Jcd" firstAttribute="top" secondItem="LGb-x1-k6U" secondAttribute="top" id="T81-Lg-tME"/>
                                             <constraint firstItem="l6W-L9-UBC" firstAttribute="centerY" secondItem="LGb-x1-k6U" secondAttribute="centerY" id="a64-yC-IXa"/>
                                             <constraint firstItem="D0V-h0-tJ0" firstAttribute="centerY" secondItem="LGb-x1-k6U" secondAttribute="centerY" id="hMc-XE-Xes"/>
-                                            <constraint firstAttribute="trailing" secondItem="l6W-L9-UBC" secondAttribute="trailing" constant="10" id="knG-uz-PHH"/>
+                                            <constraint firstAttribute="trailing" secondItem="l6W-L9-UBC" secondAttribute="trailing" id="knG-uz-PHH"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -359,10 +359,16 @@
                                     <constraint firstItem="fs2-st-X3t" firstAttribute="top" secondItem="CzX-55-dCj" secondAttribute="top" id="EMK-rD-CEg"/>
                                     <constraint firstAttribute="trailing" secondItem="fs2-st-X3t" secondAttribute="trailing" id="FWV-wS-fbV"/>
                                     <constraint firstAttribute="height" constant="40" id="lPo-7e-kQu"/>
+                                    <constraint firstItem="LGb-x1-k6U" firstAttribute="centerX" secondItem="CzX-55-dCj" secondAttribute="centerX" id="pad-mW-kAJ"/>
                                     <constraint firstItem="LGb-x1-k6U" firstAttribute="leading" secondItem="CzX-55-dCj" secondAttribute="leading" id="qTr-qg-6gT"/>
                                     <constraint firstAttribute="width" constant="252" id="wIH-Cx-UTP"/>
                                     <constraint firstAttribute="bottom" secondItem="fs2-st-X3t" secondAttribute="bottom" id="xop-CI-lWt"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qTr-qg-6gT"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>

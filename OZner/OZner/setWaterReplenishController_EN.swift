@@ -65,7 +65,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
             return
         }
         
-        myCurrentDevice?.settings.name=settingDic?.objectForKey("deviceName") as! String + "(" + (settingDic?.objectForKey("deviceAttrib") as! String) + ")"
+        myCurrentDevice?.settings.name=settingDic?.objectForKey("deviceName") as! String 
         myCurrentDevice?.settings.put("deviceAttrib", value: settingDic?.objectForKey("deviceAttrib"))
         myCurrentDevice?.settings.put("checktime1", value: settingDic?.objectForKey("checktime1"))
         myCurrentDevice?.settings.put("checktime2", value: settingDic?.objectForKey("checktime2"))

@@ -14,9 +14,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "BackAfterPeiDuiFailed()"
-            landmarkType = "5">
+            endingLineNumber = "93">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,9 +28,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "RePeiDuiAfterPeiDuiFailed()"
-            landmarkType = "5">
+            endingLineNumber = "101">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,9 +42,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
+            endingLineNumber = "73">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,7 +100,7 @@
                   moduleName = "OZner"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/AddFriendsTableViewController.swift"
-                  timestampString = "500893515.995521"
+                  timestampString = "500955012.911343"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "341"
@@ -121,7 +115,7 @@
                   moduleName = "OZner"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/AddFriendsTableViewController.swift"
-                  timestampString = "500893515.995661"
+                  timestampString = "500955012.911483"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "341"

@@ -44,7 +44,7 @@
                                 <constraint firstAttribute="height" constant="18" id="wpo-oa-Ecz"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立式空气净化器" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-vj-wCd">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智能空气净化器" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-vj-wCd">
                             <rect key="frame" x="15" y="11" width="100" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="5rT-gg-x76"/>
