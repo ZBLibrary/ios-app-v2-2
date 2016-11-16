@@ -14,7 +14,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
-            endingLineNumber = "93">
+            endingLineNumber = "93"
+            landmarkName = "BackAfterPeiDuiFailed()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -28,21 +30,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
-            endingLineNumber = "101">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OZner/DeviceMatchedViewController_EN.swift"
-            timestampString = "500539851.427113"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73">
+            endingLineNumber = "101"
+            landmarkName = "RePeiDuiAfterPeiDuiFailed()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -100,7 +90,7 @@
                   moduleName = "OZner"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/AddFriendsTableViewController.swift"
-                  timestampString = "500955012.911343"
+                  timestampString = "500966211.222598"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "341"
@@ -115,7 +105,7 @@
                   moduleName = "OZner"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/AddFriendsTableViewController.swift"
-                  timestampString = "500955012.911483"
+                  timestampString = "500966211.222722"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "341"
