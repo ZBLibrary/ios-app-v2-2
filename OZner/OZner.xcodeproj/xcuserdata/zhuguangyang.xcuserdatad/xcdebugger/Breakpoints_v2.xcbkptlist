@@ -90,7 +90,7 @@
                   moduleName = "OZner"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/AddFriendsTableViewController.swift"
-                  timestampString = "500969215.187347"
+                  timestampString = "500983489.065503"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "341"
@@ -105,7 +105,7 @@
                   moduleName = "OZner"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/AddFriendsTableViewController.swift"
-                  timestampString = "500969215.187494"
+                  timestampString = "500983489.065675"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "341"
@@ -144,6 +144,70 @@
             startingLineNumber = "159"
             endingLineNumber = "159"
             landmarkName = "upDateData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OZner/TDSDetailCellzb.swift"
+            timestampString = "500978120.122695"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "TDSDetailCellzb"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OZner.TDSDetailCellzb.init (style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; OZner.TDSDetailCellzb"
+                  moduleName = "OZner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/TDSDetailCellzb.swift"
+                  timestampString = "500983489.06683"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "480">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OZner.TDSDetailCellzb.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;OZner.TDSDetailCellzb&gt;"
+                  moduleName = "OZner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/TDSDetailCellzb.swift"
+                  timestampString = "500983489.066951"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OZner/GYTDSViewController.swift"
+            timestampString = "500983360.677998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

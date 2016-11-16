@@ -796,6 +796,7 @@
 		B72BDB7B1D7D011A00C05E40 /* new_help_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB771D7D011A00C05E40 /* new_help_0@3x.png */; };
 		B72BDB7C1D7D011A00C05E40 /* new_help_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB781D7D011A00C05E40 /* new_help_1@2x.png */; };
 		B72BDB7D1D7D011A00C05E40 /* new_help_1@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B72BDB791D7D011A00C05E40 /* new_help_1@3x.jpg */; };
+		B75BA35C1DDC63FE00F32A53 /* GYTDSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75BA35B1DDC63FE00F32A53 /* GYTDSViewController.swift */; };
 		B7679CA91DB9A36500B61A22 /* WaterRefreshIntrounVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7679CA81DB9A36500B61A22 /* WaterRefreshIntrounVC.swift */; };
 		B7679CB01DB9A49E00B61A22 /* water.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7679CAB1DB9A49E00B61A22 /* water.jpg */; };
 		B7679CB11DB9A49E00B61A22 /* waterair.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7679CAC1DB9A49E00B61A22 /* waterair.jpg */; };
@@ -2205,6 +2206,7 @@
 		B72BDB771D7D011A00C05E40 /* new_help_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_0@3x.png"; sourceTree = "<group>"; };
 		B72BDB781D7D011A00C05E40 /* new_help_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_help_1@2x.png"; sourceTree = "<group>"; };
 		B72BDB791D7D011A00C05E40 /* new_help_1@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "new_help_1@3x.jpg"; sourceTree = "<group>"; };
+		B75BA35B1DDC63FE00F32A53 /* GYTDSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYTDSViewController.swift; sourceTree = "<group>"; };
 		B7679CA81DB9A36500B61A22 /* WaterRefreshIntrounVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterRefreshIntrounVC.swift; sourceTree = "<group>"; };
 		B7679CAB1DB9A49E00B61A22 /* water.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = water.jpg; sourceTree = "<group>"; };
 		B7679CAC1DB9A49E00B61A22 /* waterair.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterair.jpg; sourceTree = "<group>"; };
@@ -3778,6 +3780,7 @@
 				8D5F62181C84009C000E0388 /* WaterReplenishmentController */,
 				892284491C21636500EE97BC /* SettingOfDevices */,
 				52F1C4FF1C4D6A5B0008B8E5 /* otherSupport */,
+				B75BA35B1DDC63FE00F32A53 /* GYTDSViewController.swift */,
 			);
 			name = MyDevice;
 			sourceTree = "<group>";
@@ -5422,6 +5425,7 @@
 				8D438E971C9AB44F0060896D /* WaterReplenishmentMeter.m in Sources */,
 				8DB044D61CC8CDB500B60DAB /* SkinCenterTableViewCell_EN.swift in Sources */,
 				8DA405821C8441B500AD5E5E /* ZXDecoderResult.m in Sources */,
+				B75BA35C1DDC63FE00F32A53 /* GYTDSViewController.swift in Sources */,
 				8D4354FD1C760AC0007F83DA /* WaterPurTDSDetailCell1_EN.swift in Sources */,
 				8DA4054B1C8441B500AD5E5E /* ZXAztecCode.m in Sources */,
 				B7D8C1C91D2376F60089C241 /* setTanTouViewController_EN.swift in Sources */,

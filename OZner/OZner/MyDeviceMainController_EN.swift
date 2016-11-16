@@ -19,6 +19,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     
     @IBOutlet var mainBottomEn: NSLayoutConstraint!
     @IBOutlet var bgBottomEn: NSLayoutConstraint!
+    var currentState:Bool = true
     //
     //---------------airCleaner------------
     //主滚动视图
@@ -595,8 +596,14 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             {
                 return
             }
-            if waterPurFooter.ishaveCoolAblity==false
+            if waterPurFooter.ishaveCoolAblity==false || currentState == false
             {
+                if currentState == false {
+                    let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("获取此型号失败!"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
+                    alert.show()
+                    return
+                }
+                
                 let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("抱歉，该净水器型号没有提供此项功能！"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
                 alert.show()
                 return
@@ -612,8 +619,13 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             {
                 return
             }
-            if waterPurFooter.ishaveHotAblity==false
+            if waterPurFooter.ishaveHotAblity==false ||  currentState == false
             {
+                if currentState == false {
+                    let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("获取此型号失败!"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
+                    alert.show()
+                    return
+                }
                 let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("抱歉，该净水器型号没有提供此项功能！"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
                 alert.show()
                 return
@@ -772,6 +784,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                         self.waterPurFooter.ishaveCoolAblity=hotandcoll.containsString("cool:true")
                         self.waterPurFooter.ishaveHotAblity=hotandcoll.containsString("hot:true")
                         
+                    } else {
+//                        MBProgressHUD.
+                        self.currentState=false
                     }
                 })
             })
