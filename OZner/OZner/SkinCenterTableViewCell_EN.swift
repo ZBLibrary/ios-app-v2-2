@@ -32,8 +32,8 @@ class SkinCenterTableViewCell_EN: UITableViewCell {
     func updateData(times:Int,Date:String)
     {
         print(times)
-        timesOfTest.text = times<45 ? "\(times)/45":"\(times)"
-        stateOfTest.text = times<45 ? loadLanguage("检测次数累计达45次才能给您相对精准的数据"):""
+        timesOfTest.text = times<45 ? "\(times)":"\(times)"
+        stateOfTest.text = loadLanguage("温馨提示：肤质评估仅供参考，涂抹化妆品及其他护理后会影响检测结果")
         dateOfTest.text="\("统计时间"):"+Date
     }
 }
