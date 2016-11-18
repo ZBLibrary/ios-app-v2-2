@@ -29,24 +29,51 @@ class SetRemindTimeController_EN: UIViewController,UIAlertViewDelegate {
     //-1没有选中，1表示选中时间一，2 。。。，3 。。。
     var currentSelected = -1{
         didSet{
-            timeTitleLabel1.textColor = currentSelected==1 ? colorOfSelected:colorOfBlack
-            timeTitleLabel2.textColor = currentSelected==2 ? colorOfSelected:colorOfBlack
-            timeTitleLabel3.textColor = currentSelected==3 ? colorOfSelected:colorOfBlack
-            timeLabel1.textColor = currentSelected==1 ? colorOfSelected:colorOfNormal
-            timeLabel2.textColor = currentSelected==2 ? colorOfSelected:colorOfNormal
-            timeLabel3.textColor = currentSelected==3 ? colorOfSelected:colorOfNormal
-            timeIcon1.hidden = !(currentSelected==1)
-            timeIcon2.hidden = !(currentSelected==2)
-            timeIcon3.hidden = !(currentSelected==3)
+//            timeTitleLabel1.textColor = currentSelected==1 ? colorOfSelected:colorOfBlack
+//            timeTitleLabel2.textColor = currentSelected==2 ? colorOfSelected:colorOfBlack
+//            timeTitleLabel3.textColor = currentSelected==3 ? colorOfSelected:colorOfBlack
+//            timeLabel1.textColor = currentSelected==1 ? colorOfSelected:colorOfNormal
+//            timeLabel2.textColor = currentSelected==2 ? colorOfSelected:colorOfNormal
+//            timeLabel3.textColor = currentSelected==3 ? colorOfSelected:colorOfNormal
+//            timeIcon1.hidden = !(currentSelected==1)
+//            timeIcon2.hidden = !(currentSelected==2)
+//            timeIcon3.hidden = !(currentSelected==3)
         }
     }
+    
+    var currentSelected1 = -1 {
+        didSet{
+            timeTitleLabel1.textColor = currentSelected1==1 ? colorOfSelected:colorOfBlack
+            timeLabel1.textColor = currentSelected1==1 ? colorOfSelected:colorOfNormal
+            timeIcon1.hidden = !(currentSelected1==1)
+        }
+    }
+    
+    var currentSelected2 = -2 {
+        didSet{
+            timeTitleLabel2.textColor = currentSelected2==2 ? colorOfSelected:colorOfBlack
+            timeLabel2.textColor = currentSelected2==2 ? colorOfSelected:colorOfNormal
+            timeIcon2.hidden = !(currentSelected2==2)
+        }
+    }
+    
+    var currentSelected3 = -3 {
+        didSet{
+            timeTitleLabel3.textColor = currentSelected3==3 ? colorOfSelected:colorOfBlack
+            timeLabel3.textColor = currentSelected3==3 ? colorOfSelected:colorOfNormal
+            timeIcon3.hidden = !(currentSelected3==3)
+        }
+    }
+    
     //时间一
     @IBOutlet weak var timeTitleLabel1: UILabel!
     @IBOutlet weak var timeLabel1: UILabel!
     @IBOutlet weak var timeIcon1: UIImageView!
     @IBAction func timeClick1(sender: AnyObject) {
         datePicker.hidden=false
-        currentSelected=1
+//        currentSelected=1
+        currentSelected = currentSelected == 1 ? -1 : 1
+        currentSelected1 = currentSelected1 == 1 ? -1 : 1
         datePicker.date=dateFromTimeString(timeLabel1.text!)
     }
     //时间二
@@ -55,7 +82,9 @@ class SetRemindTimeController_EN: UIViewController,UIAlertViewDelegate {
     @IBOutlet weak var timeIcon2: UIImageView!
     @IBAction func timeClick2(sender: AnyObject) {
         datePicker.hidden=false
-        currentSelected=2
+//        currentSelected=2
+        currentSelected = currentSelected == 2 ? -2 : 2
+        currentSelected2 = currentSelected2 == 2 ? -2 : 2
         datePicker.date=dateFromTimeString(timeLabel2.text!)
     }
     //时间三
@@ -64,7 +93,9 @@ class SetRemindTimeController_EN: UIViewController,UIAlertViewDelegate {
     @IBOutlet weak var timeIcon3: UIImageView!
     @IBAction func timeClick3(sender: AnyObject) {
         datePicker.hidden=false
-        currentSelected=3
+//        currentSelected=3
+        currentSelected = currentSelected == 3 ? -3 : 3
+        currentSelected3 = currentSelected3 == 3 ? -3 : 3
         datePicker.date=dateFromTimeString(timeLabel3.text!)
     }
     /**
@@ -130,10 +161,32 @@ class SetRemindTimeController_EN: UIViewController,UIAlertViewDelegate {
         self.navigationItem.rightBarButtonItem=savebutton
         datePicker.hidden=true
         currentSelected = -1
+        currentSelected1 = -1
+        currentSelected2 = -2
+        currentSelected3  = -3
         //初始化数据
-        timeLabel1.text = StringFromDateNumber(dicData?.objectForKey("checktime1") as! Int)
-        timeLabel2.text = StringFromDateNumber(dicData?.objectForKey("checktime2") as! Int)
-        timeLabel3.text = StringFromDateNumber(dicData?.objectForKey("checktime3") as! Int)
+        
+        if dicData?.objectForKey("checktime1") as! Int == 0 {
+            timeLabel1.text = "00:00"
+            
+        } else {
+            timeLabel1.text = StringFromDateNumber(dicData?.objectForKey("checktime1") as! Int)
+            currentSelected1 = 1
+        }
+        
+        if dicData?.objectForKey("checktime2") as! Int == 0  {
+            timeLabel2.text = "00:00"
+        } else {
+            timeLabel2.text = StringFromDateNumber(dicData?.objectForKey("checktime2") as! Int)
+            currentSelected2 = 2
+        }
+        if dicData?.objectForKey("checktime3") as! Int == 0  {
+            timeLabel3.text = "00:00"
+        } else {
+            timeLabel3.text = StringFromDateNumber(dicData?.objectForKey("checktime3") as! Int)
+            currentSelected3  = 3
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -161,6 +214,19 @@ class SetRemindTimeController_EN: UIViewController,UIAlertViewDelegate {
     {
         if backClosure != nil
         {
+            
+            if currentSelected1 != 1 {
+                dicData!.setValue(0, forKey: "checktime1")
+            }
+            
+            if currentSelected2 != 2 {
+                dicData!.setValue(0, forKey: "checktime2")
+            }
+            
+            if currentSelected3 != 3 {
+                dicData!.setValue(0, forKey: "checktime3")
+            }
+            
             backClosure!(dicData!)
         }
         self.navigationController?.popViewControllerAnimated(true)

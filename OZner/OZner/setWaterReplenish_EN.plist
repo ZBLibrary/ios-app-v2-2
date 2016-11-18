@@ -7,11 +7,11 @@
 	<key>deviceAttrib</key>
 	<string>办公室</string>
 	<key>checktime1</key>
-	<real>30600</real>
+	<integer>0</integer>
 	<key>checktime2</key>
-	<real>52200</real>
+	<integer>0</integer>
 	<key>checktime3</key>
-	<real>75600</real>
+	<integer>0</integer>
 	<key>sex</key>
 	<string>女</string>
 </dict>

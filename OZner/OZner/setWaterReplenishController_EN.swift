@@ -35,9 +35,13 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         {
             settingDic?.setValue(myCurrentDevice?.settings.name, forKey: "deviceName")
             settingDic?.setValue(myCurrentDevice?.settings.get("deviceAttrib", default: loadLanguage("办公室")), forKey: "deviceAttrib")
-            settingDic?.setValue(myCurrentDevice?.settings.get("checktime1", default: 30600), forKey: "checktime1")
-            settingDic?.setValue(myCurrentDevice?.settings.get("checktime2", default: 52200), forKey: "checktime2")
-            settingDic?.setValue(myCurrentDevice?.settings.get("checktime3", default: 75600), forKey: "checktime3")
+//            settingDic?.setValue(myCurrentDevice?.settings.get("checktime1", default: 30600), forKey: "checktime1")
+//            settingDic?.setValue(myCurrentDevice?.settings.get("checktime2", default: 52200), forKey: "checktime2")
+//            settingDic?.setValue(myCurrentDevice?.settings.get("checktime3", default: 75600), forKey: "checktime3")
+
+            settingDic?.setValue(myCurrentDevice?.settings.get("checktime1", default: 0), forKey: "checktime1")
+            settingDic?.setValue(myCurrentDevice?.settings.get("checktime2", default: 0), forKey: "checktime2")
+            settingDic?.setValue(myCurrentDevice?.settings.get("checktime3", default: 0), forKey: "checktime3")
             settingDic?.setValue(myCurrentDevice?.settings.get("sex", default: loadLanguage("女")), forKey: "sex")
             
         }
@@ -83,6 +87,11 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         
         for itemTime in checkTime
         {
+            
+            if itemTime as! Int == 0 {
+                continue
+            }
+            
             let tmpCheckTime = (itemTime as! NSNumber).unsignedIntValue
             
             let formatter = NSDateFormatter()
