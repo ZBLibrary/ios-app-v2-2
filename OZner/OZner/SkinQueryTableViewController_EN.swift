@@ -22,7 +22,7 @@ class SkinQueryTableViewController_EN: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //因为缺少男的图片，所以临时设置女的
-        currentSex=SexType.WoMan
+//        currentSex=SexType.WoMan
         self.automaticallyAdjustsScrollViewInsets=false
         //头部视图
         headCell = NSBundle.mainBundle().loadNibNamed("SkinHeadTableViewCell_EN", owner: self, options: nil).last as!  SkinHeadTableViewCell_EN
