@@ -196,7 +196,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             animationImgView.image=UIImage(named: "icon_peidui_complete_tan_tou.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入水探头名称")
         case 2://如果是净水器弹出输入Wi-Fi密码的界面
-            self.firstLabel.text = loadLanguage("请同时按下净水器加热与制冷两个按钮")
+            self.firstLabel.text = loadLanguage("请同时按下净水器加热与制冷/选择两个按钮")
             self.secondLabel.text = loadLanguage("正在进行WIFI配对")
             self.firstLabel.font=UIFont.systemFontOfSize(15)
             self.circleIconImgView.image = UIImage(named: "icon_jingshuiqi_peidui_waitting.png")
