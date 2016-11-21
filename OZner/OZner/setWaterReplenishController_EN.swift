@@ -77,6 +77,7 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         myCurrentDevice?.settings.put("sex", value: settingDic?.objectForKey("sex"))
         OznerManager.instance().save(myCurrentDevice)
         //设置手机补水提醒通知
+        
         setPhoneVoice([(settingDic?.objectForKey("checktime1"))!, (settingDic?.objectForKey("checktime2"))!,(settingDic?.objectForKey("checktime3"))!])
         NSNotificationCenter.defaultCenter().postNotificationName("updateDeviceInfo", object: nil)
         self.navigationController?.popViewControllerAnimated(true)
@@ -224,7 +225,9 @@ class setWaterReplenishController_EN: UITableViewController,UIAlertViewDelegate 
         let setTimeController=SetRemindTimeController_EN(nibName: "SetRemindTimeController_EN", bundle: nil)
         setTimeController.dicData=settingDic
         setTimeController.backClosure={ (BackData:NSMutableDictionary) -> Void in
+            self.cancelPhoneVoice()
             self.settingDic=BackData
+            
         }
         self.navigationController?.pushViewController(setTimeController, animated: true)
     }
