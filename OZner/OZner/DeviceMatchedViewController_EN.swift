@@ -222,6 +222,12 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             animationImgView.image=UIImage(named: "icon_peidui_complete_TDSPAN.png")
             self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入检测笔名称")
         case 6:
+            self.firstLabel.text = loadLanguage("正在进行蓝牙配对")
+            self.secondLabel.text = "";
+            self.circleIconImgView.image = UIImage(named: "icon_jingshuiqi_peidui_waitting.png")
+            animationImgView.image=UIImage(named: "icon_peidui_complete_jingshuiqi.png")
+//            self.otherDeviceFinishedView?.myTanTouNameTextField?.placeholder = loadLanguage("输入净水器名称")
+        case 7:
             self.secondLabel.hidden=true
             self.firstLabel.text = loadLanguage("正在进行蓝牙配对")
             self.circleIconImgView.image = UIImage(named: "WaterReplenish3")
