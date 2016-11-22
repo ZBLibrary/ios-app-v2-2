@@ -85,6 +85,7 @@
 }
 -(void)doStatusUpdate
 {
+    //TODO:
     [self performSelectorOnMainThread:@selector(statusUpdate) withObject:nil waitUntilDone:true];
 }
 -(void)statusUpdate

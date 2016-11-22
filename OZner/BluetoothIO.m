@@ -123,6 +123,7 @@
         return [self postSend:op];
     }else
     {
+        //TODO:崩溃
         [self performSelector:@selector(postSend:) onThread:runThread withObject:op waitUntilDone:true];
         return errorinfo==nil;
     }
