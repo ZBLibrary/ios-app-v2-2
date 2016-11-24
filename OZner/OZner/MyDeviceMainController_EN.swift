@@ -598,13 +598,13 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             }
             if waterPurFooter.ishaveCoolAblity==false || currentState == false
             {
-                if currentState == false {
-                    let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("获取此型号失败!"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
-                    alert.show()
-                    return
-                }
+                //                if currentState == false {
+                //                    let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("获取此型号失败!"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
+                //                    alert.show()
+                //                    return
+                //                }
                 
-                let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("抱歉，该净水器型号没有提供此项功能！"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
+                let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("该机器没有此功能！"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
                 alert.show()
                 return
             }
@@ -621,11 +621,11 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             }
             if waterPurFooter.ishaveHotAblity==false 
             {
-//                if currentState == false {
-//                    let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("无此功能"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
-//                    alert.show()
-//                    return
-//                }
+                //                if currentState == false {
+                //                    let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("无此功能"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
+                //                    alert.show()
+                //                    return
+                //                }
                 let alert=UIAlertView(title: loadLanguage("提示"), message: loadLanguage("抱歉，该净水器型号没有提供此项功能！"), delegate: self, cancelButtonTitle: loadLanguage("确定"))
                 alert.show()
                 return
@@ -786,7 +786,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                         self.currentState=false
                         
                     } else {
-//                        MBProgressHUD.
+                        //                        MBProgressHUD.
                         self.currentState=false
                     }
                 })
@@ -1341,8 +1341,8 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                         //滤芯状态
                         let tmpTime = min(100, 100-airPurifier_MxChip.status.filterStatus.workTime/1296)
                         let remindTime = max(tmpTime, 0)
-//                        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
-//                        let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
+                        //                        let nowTime:NSTimeInterval=NSDate().timeIntervalSince1970
+                        //                        let stopTime:NSTimeInterval=airPurifier_MxChip.status.filterStatus.lastTime.timeIntervalSince1970+365*24*3600
                         AirHeadView.lvxinState.text="\(Int(remindTime))%"
                         switch remindTime
                         {
