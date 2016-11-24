@@ -238,6 +238,8 @@
 		52FF7E071C1A043A005635F8 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7E021C1A043A005635F8 /* UIImage+ColorAtPixel.m */; };
 		52FF7E081C1A043A005635F8 /* UIColor+Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7E041C1A043A005635F8 /* UIColor+Convert.m */; };
 		8D05EEC91CA10FB70095CF32 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D05EEC81CA10FB70095CF32 /* Bugly.framework */; };
+		8D08615F1DE6DAFE0056E97E /* RoWaterPuefierLvXinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D08615D1DE6DAFE0056E97E /* RoWaterPuefierLvXinController.swift */; };
+		8D0861601DE6DAFE0056E97E /* RoWaterPuefierLvXinController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D08615E1DE6DAFE0056E97E /* RoWaterPuefierLvXinController.xib */; };
 		8D08BD661D5C58C400E10F0F /* SetTdsPanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D08BD641D5C58C400E10F0F /* SetTdsPanViewController.swift */; };
 		8D08BD681D5C61EA00E10F0F /* SetTdsPanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D08BD6A1D5C61EA00E10F0F /* SetTdsPanViewController.xib */; };
 		8D09DBE01C5A698800D0432B /* loadFailedXib_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBDF1C5A698800D0432B /* loadFailedXib_EN.swift */; };
@@ -1284,6 +1286,8 @@
 		52FF7E031C1A043A005635F8 /* UIColor+Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Convert.h"; sourceTree = "<group>"; };
 		52FF7E041C1A043A005635F8 /* UIColor+Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Convert.m"; sourceTree = "<group>"; };
 		8D05EEC81CA10FB70095CF32 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		8D08615D1DE6DAFE0056E97E /* RoWaterPuefierLvXinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoWaterPuefierLvXinController.swift; sourceTree = "<group>"; };
+		8D08615E1DE6DAFE0056E97E /* RoWaterPuefierLvXinController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoWaterPuefierLvXinController.xib; sourceTree = "<group>"; };
 		8D08BD641D5C58C400E10F0F /* SetTdsPanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTdsPanViewController.swift; sourceTree = "<group>"; };
 		8D08BD691D5C61EA00E10F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SetTdsPanViewController.xib; sourceTree = "<group>"; };
 		8D08BD6D1D5C621300E10F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetTdsPanViewController.xib; sourceTree = "<group>"; };
@@ -3991,6 +3995,8 @@
 			isa = PBXGroup;
 			children = (
 				8D4354F51C75A049007F83DA /* WaterPurTDSDetailController_EN.swift */,
+				8D08615D1DE6DAFE0056E97E /* RoWaterPuefierLvXinController.swift */,
+				8D08615E1DE6DAFE0056E97E /* RoWaterPuefierLvXinController.xib */,
 			);
 			name = WaterPurifierController;
 			sourceTree = "<group>";
@@ -4712,6 +4718,7 @@
 				8DB044941CC8CD4200B60DAB /* icon_peidui_select_bigair@2x.png in Resources */,
 				528D773F1C270D2800243986 /* indoorHead_BigXib_EN.xib in Resources */,
 				B7D8C1CA1D2376F60089C241 /* setWaterReplenish_EN.plist in Resources */,
+				8D0861601DE6DAFE0056E97E /* RoWaterPuefierLvXinController.xib in Resources */,
 				8DB044B91CC8CD5500B60DAB /* cha.png in Resources */,
 				8DB043EE1CC8CCE200B60DAB /* icon_no_device_logo@2x.png in Resources */,
 				8DB0440B1CC8CCE200B60DAB /* device_cup@2x.png in Resources */,
@@ -5089,6 +5096,7 @@
 				8DA405FC1C8441B500AD5E5E /* ZXSMSMMSResultParser.m in Sources */,
 				42A7BB541C0C248C008DB6E5 /* UserDatabase.m in Sources */,
 				B7D8C1C01D2376F60089C241 /* setCuoTimeViewController_EN.swift in Sources */,
+				8D08615F1DE6DAFE0056E97E /* RoWaterPuefierLvXinController.swift in Sources */,
 				523DC3391C175E1B00595099 /* XMImageMessageCell.m in Sources */,
 				B7F36F3A1DE40F1B0056AC96 /* CupManager.m in Sources */,
 				52FEC0431C35A99200B6D0F1 /* WeiXinURLViewController_EN.swift in Sources */,
@@ -6181,7 +6189,7 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cu;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";
@@ -6217,7 +6225,7 @@
 					"$(PROJECT_DIR)/OZner",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cu;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
 				PROVISIONING_PROFILE = "";

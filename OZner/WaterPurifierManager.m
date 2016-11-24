@@ -16,7 +16,7 @@
 -(OznerDevice *)createDevice:(NSString *)identifier Type:(NSString *)type Settings:(NSString *)json
 {
     OznerDevice* device=NULL;
-    if ([self isBluetoothDevice:type])
+    if ([WaterPurifierManager isBluetoothDevice:type])
     {
         device=[[ROWaterPurufier alloc] init:identifier Type:type Settings:json];
         
@@ -78,14 +78,14 @@
     return [WaterPurifierManager isWaterPurifier:type];
 }
 
--(BOOL)isBluetoothDevice:(NSString *)type
++(BOOL)isBluetoothDevice:(NSString *)type
 {
     return ([type isEqualToString:@"Ozner RO"]);
 }
 
 - (BOOL)checkBindMode:(BaseDeviceIO *)io
 {
-    if ([self isBluetoothDevice:io.type])
+    if ([WaterPurifierManager isBluetoothDevice:io.type])
     {
         return [ROWaterPurufier isBindMode:(BluetoothIO*)io];
     }else

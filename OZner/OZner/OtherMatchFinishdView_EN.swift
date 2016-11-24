@@ -70,11 +70,11 @@ class OtherMatchFinishdView_EN: UIView,UITextFieldDelegate {
         print(deviceType)
         switch deviceType
         {
-        case 0,1,2,4,5:
+        case 0,1,2,4,5,6:
             break
         case 3:
             label.text=loadLanguage("客厅")
-        case 6:
+        case 7:
             segmentControl=UISegmentedControl(items: [loadLanguage("女"),loadLanguage("男")])
             segmentControl?.frame=CGRect(x: (Screen_Width-126)/2, y: 29*(height/667.0)+leftSeparatorView.frame.size.height+leftSeparatorView.frame.origin.y, width: 126, height: 25)
             segmentControl?.layer.borderColor=UIColor(red: 64/255, green: 140/255, blue: 241/255, alpha: 1).CGColor

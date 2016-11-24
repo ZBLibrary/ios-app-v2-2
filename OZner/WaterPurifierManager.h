@@ -11,5 +11,5 @@
 
 @interface WaterPurifierManager : BaseDeviceManager
 +(BOOL)isWaterPurifier:(NSString*)type;
-
++(BOOL)isBluetoothDevice:(NSString *)type;
 @end

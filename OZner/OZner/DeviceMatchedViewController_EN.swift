@@ -121,9 +121,10 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 (deviceCuttentType == 3&&AirPurifierManager.isBluetoothAirPurifier(deviceIo.type)) ||
                 (deviceCuttentType == 4&&AirPurifierManager.isMXChipAirPurifier(deviceIo.type)) ||
                     (deviceCuttentType == 5&&TapManager.isTap(deviceIo.type)) ||
-                (deviceCuttentType == 6&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
+                (deviceCuttentType == 6&&WaterPurifierManager.isWaterPurifier(deviceIo.type)) ||
+                (deviceCuttentType == 7&&WaterReplenishmentMeterMgr.isWaterReplenishmentMeter(deviceIo.type))
                 {
-                        muArr .addObject(deviceIo)
+                    muArr.addObject(deviceIo)
                 }
             }
         }
@@ -278,7 +279,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
         {
             switch deviceCuttentType
             {
-            case 0,1,3,5://蓝牙设备
+            case 0,1,3,5,6://蓝牙设备
                 self.navigationController?.navigationBarHidden=true
                 self.view.addSubview(PeiduiFailed)
                 break
@@ -441,7 +442,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
     }
 
     //除了水杯的配对完成回掉事件
-    var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","水质检测笔","智能补水仪"]
+    var deviceNameArr=["智能水杯","水探头","净水机","台式空气净化器","立式空气净化器","水质检测笔","净水机","智能补水仪"]
     func otherFinishedAction()
     {
         if ((self.otherDeviceFinishedView?.myTanTouNameTextField?.text?.isEmpty) == true)
@@ -474,7 +475,7 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 {
                 case 1,5://智能笔或水探头
                     device.settings.put("istap", value: self.deviceCuttentType==1 ? 1:0)
-                case 6://补水仪
+                case 7://补水仪
                     device.settings.put("sex", value: self.otherDeviceFinishedView?.segmentControl?.selectedSegmentIndex==0 ? "女":"男")
                 default:
                     break
@@ -653,18 +654,20 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
             break
         case 2:
             imageName = mIndex == row ? "icon_peidui_select_jingshuiqi.png":"icon_peidui_normal_jingshuiqi.png"
-            break
+            
         case 3:
             imageName = mIndex == row ? "icon_peidui_select_smallair.png":"icon_peidui_normal_smallair.png"
-            break
+            
         case 4:
             imageName = mIndex == row ? "icon_peidui_select_bigair.png":"icon_peidui_normal_bigair.png"
-            break
+            
         case 5:
             imageName = mIndex == row ? "icon_peidui_select_TDSPan.png":"icon_peidui_select_TDSPan.png"
         case 6:
+            imageName = mIndex == row ? "icon_peidui_select_jingshuiqi.png":"icon_peidui_normal_jingshuiqi.png"
+        case 7:
             imageName = mIndex == row ? "WaterReplenish4":"WaterReplenish5"
-            break
+            
         default:
             break
         }
@@ -707,6 +710,9 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_TDSPan.png")
                 wCellView.titleLabel?.text = loadLanguage("水质检测笔")
             case 6:
+                wCellView.iconImgView?.image = UIImage(named: "icon_peidui_select_jingshuiqi.png")
+                wCellView.titleLabel?.text = loadLanguage("净水器")
+            case 7:
                 wCellView.iconImgView?.image = UIImage(named: "WaterReplenish4")
                 wCellView.titleLabel?.text = loadLanguage("补水仪")
             default:
@@ -754,6 +760,8 @@ class DeviceMatchedViewController_EN: SwiftFatherViewController,iCarouselDataSou
                 case 5:
                     imageName = mIndex == i ? "icon_peidui_select_TDSPan.png":"icon_peidui_select_TDSPan.png"
                 case 6:
+                    imageName = mIndex == i ? "icon_peidui_select_jingshuiqi.png":"icon_peidui_normal_jingshuiqi.png"
+                case 7:
                     imageName = mIndex == i ? "WaterReplenish4":"WaterReplenish5"
                     
                 default:

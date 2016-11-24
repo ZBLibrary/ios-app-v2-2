@@ -127,11 +127,18 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         }
         else if ( WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type) == true){
             //净水器滤芯详情页
-            let controller=TantouLXController_EN()
-            controller.buyWaterLVXinUrl=BuyWaterUrlString
-            controller.myCurrentDevice = self.myCurrentDevice as! WaterPurifier
-            controller.IsShowScanOfWater=IsShowScanOfWater
-            self.navigationController?.pushViewController(controller, animated: true)
+            if WaterPurifierManager.isBluetoothDevice(self.myCurrentDevice?.type) {
+                let controller=RoWaterPuefierLvXinController(nibName: "RoWaterPuefierLvXinController", bundle: nil)
+                controller.currentDevice=self.myCurrentDevice as! ROWaterPurufier
+                self.navigationController?.pushViewController(controller, animated: true)
+            }else{
+                let controller=TantouLXController_EN()
+                controller.buyWaterLVXinUrl=BuyWaterUrlString
+                controller.myCurrentDevice = self.myCurrentDevice as! WaterPurifier
+                controller.IsShowScanOfWater=IsShowScanOfWater
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+            
         }
     }
     
@@ -367,12 +374,12 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             //净水器视图
             self.currentTDS=65535
             dianliangContainView.hidden=true
-            lvxinContainView.hidden=true
+            lvxinContainView.hidden=false
             set_CurrSelectEquip(3)
             //头部视图
             WaterPurfHeadView=NSBundle.mainBundle().loadNibNamed("WaterPurifierHeadCell_EN", owner: self, options: nil).last as? WaterPurifierHeadCell_EN
             WaterPurfHeadView!.translatesAutoresizingMaskIntoConstraints = false
-            WaterPurfHeadView?.toTDSDetailButton.addTarget(self, action: #selector(TDSDetailOfWaterPurf), forControlEvents: .TouchUpInside)
+            
            
             deviceHeadView.addSubview(WaterPurfHeadView!)
             
@@ -384,18 +391,23 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             
             //尾部视图
             Height_DeviceFooter.constant=Screen_Hight*160/667
-            waterPurFooter=NSBundle.mainBundle().loadNibNamed("WaterPurFooterCell_EN", owner: self, options: nil).last as! WaterPurFooterCell_EN
-            waterPurFooter!.translatesAutoresizingMaskIntoConstraints = false
-            waterPurFooter.powerButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:0
-            waterPurFooter.coolButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:1
-            waterPurFooter.hotButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:2
-            deviceFooterView.addSubview(waterPurFooter)
-            deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
-            deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
+            if WaterPurifierManager.isBluetoothDevice(type)==false
+            {
+                WaterPurfHeadView?.toTDSDetailButton.addTarget(self, action: #selector(TDSDetailOfWaterPurf), forControlEvents: .TouchUpInside)
+                waterPurFooter=NSBundle.mainBundle().loadNibNamed("WaterPurFooterCell_EN", owner: self, options: nil).last as! WaterPurFooterCell_EN
+                waterPurFooter!.translatesAutoresizingMaskIntoConstraints = false
+                waterPurFooter.powerButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:0
+                waterPurFooter.coolButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:1
+                waterPurFooter.hotButton.addTarget(self, action: #selector(WaterPurSwitchClick), forControlEvents: .TouchUpInside)//tag:2
+                deviceFooterView.addSubview(waterPurFooter)
+                deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Trailing, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Trailing, multiplier: 1, constant: 0))
+                deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Leading, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Leading, multiplier: 1, constant: 0))
+                
+                deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Top, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Top, multiplier: 1, constant: 0))
+                deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Bottom, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Bottom, multiplier: 1, constant: 0))
+                waterPurFooter.waterDevice=myCurrentDevice as? WaterPurifier
+            }
             
-            deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Top, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Top, multiplier: 1, constant: 0))
-            deviceFooterView.addConstraint(NSLayoutConstraint(item: waterPurFooter, attribute: .Bottom, relatedBy: .Equal, toItem: deviceFooterView, attribute: .Bottom, multiplier: 1, constant: 0))
-            waterPurFooter.waterDevice=myCurrentDevice as? WaterPurifier
             
         case AirPurifierManager.isBluetoothAirPurifier(type):
             //台式空气净化器视图
@@ -1205,6 +1217,41 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     self.downLoadTDS(tds,tdsBefore: (WaterPurfHeadView?.TdsBefore)!)
                     self.currentTDS = tds
                 }
+            }
+            else if(self.myCurrentDevice?.isKindOfClass(ROWaterPurufier.classForCoder()) == true)
+            {
+                //净水器
+                let waterPurrifier=self.myCurrentDevice! as! ROWaterPurufier
+                
+                
+                    WaterPurfHeadView?.TdsBefore=Int(max(waterPurrifier.waterInfo.TDS1, waterPurrifier.waterInfo.TDS2))
+                    WaterPurfHeadView?.TdsAfter=Int(min(waterPurrifier.waterInfo.TDS1, waterPurrifier.waterInfo.TDS2))
+                    tds=(WaterPurfHeadView?.TdsAfter)!
+                
+                if(isNeedDownLXDate == false)
+                {
+                    isNeedDownLXDate = true
+                    
+                    
+                    var lvxinValue = min(waterPurrifier.filterInfo.Filter_A_Percentage, waterPurrifier.filterInfo.Filter_B_Percentage)
+                    lvxinValue = min(lvxinValue, waterPurrifier.filterInfo.Filter_C_Percentage)
+                    switch lvxinValue {
+                    case waterPurrifier.filterInfo.Filter_A_Percentage:
+                        self.lvxinValue.text = "\(lvxinValue)%(A)"
+                    case waterPurrifier.filterInfo.Filter_B_Percentage:
+                        self.lvxinValue.text = "\(lvxinValue)%(B)"
+                    case waterPurrifier.filterInfo.Filter_C_Percentage:
+                        self.lvxinValue.text = "\(lvxinValue)%(C)"
+                    default:
+                        break
+                    }
+                    self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
+                    
+                    self.lvxinState.text=lvxinValue<=30 ? loadLanguage("请及时更换滤芯"):loadLanguage("滤芯状态")
+                    
+                    //self.downLoadLvXinState()
+                }
+                
             }
             else if AirPurifierManager.isBluetoothAirPurifier(self.myCurrentDevice?.type)&&(IAW_TempView != nil)
             {

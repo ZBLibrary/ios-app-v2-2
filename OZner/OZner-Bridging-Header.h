@@ -79,7 +79,7 @@
 #import "LBXScanWrapper.h"
 #import "LBXScanView.h"
 #import "SubLBXScanViewController.h"
-
+#import "ROWaterPurufier.h"
 // 导航
 #import "JMNavigationController.h"
 
