@@ -58,7 +58,8 @@ class CustomPopViewFirstCell: UITableViewCell {
             
             self.connectImgView.image = UIImage(named: "device_icon_blutooth.png")
             self.connectImgView.frame = CGRectMake(self.deviceStateImgView.frame.size.width+self.deviceStateImgView.frame.origin.x+14, 21, 7.5, 12.5)
-        case WaterPurifierManager.isWaterPurifier(device.type)://净水器 wifi设备
+        case device.isKindOfClass(WaterPurifier.classForCoder())://净水器 wifi设备
+            //RO水机判断TODO
             self.connectStateLabel.text=(device  as! WaterPurifier).isOffline==true ? loadLanguage("已断开"):self.connectStateLabel.text
             self.deviceStateImgView.image = UIImage(named: "device_jin_shui_qi_normal.png")
             self.connectImgView.image = UIImage(named: "device_icon_wifi.png")
@@ -94,7 +95,7 @@ class CustomPopViewFirstCell: UITableViewCell {
             //device.settings.name = nameArr[0] + "(" + loadLanguage(nameArr[1])
             self.deviceNameLabel.text = nameArr[0] + "(" + loadLanguage(nameArr[1])
         } else {
-        self.deviceNameLabel.text = device.settings.name
+            self.deviceNameLabel.text = device.settings.name
         }
         self.deviceFromLabel.text = loadLanguage((device.settings.get("type", default:"type") as? String)!)
     }

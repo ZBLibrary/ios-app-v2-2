@@ -34,7 +34,6 @@ static LogInOut* g_LoginInOutManager = nil;
     LoginWerbService* werbservice = [[LoginWerbService alloc]init];
     
     [werbservice login:loginName psw:password returnBlock:^(LoginUserInfo *userInfo, StatusManager *status) {
-        
         if(status.networkStatus == kSuccessStatus)
         {
             //成功获取到用户信息，成功更新那个百度设备号，才算登录成功
