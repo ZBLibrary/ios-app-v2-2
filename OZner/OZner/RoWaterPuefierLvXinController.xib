@@ -46,6 +46,12 @@
                                             <state key="normal" title="复位">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="12.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="fuweiClick:" destination="-1" eventType="touchUpInside" id="A2H-mF-Ima"/>
                                             </connections>
@@ -173,6 +179,18 @@
                                                         <constraint firstAttribute="bottom" secondItem="Kvu-4t-CvA" secondAttribute="bottom" id="tX5-le-dxj"/>
                                                         <constraint firstAttribute="bottom" secondItem="0nv-8b-YRY" secondAttribute="bottom" id="trm-4J-uf6"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
+                                                            <color key="value" red="0.2356145977973938" green="0.53368312120437622" blue="0.98218125104904175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nej-vc-MmQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -221,7 +239,10 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                             <integer key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
+                                                            <color key="value" red="0.22232973575592041" green="0.53370189666748047" blue="0.98220616579055786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -256,8 +277,8 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="Mfb-Lb-Llk"/>
                                             <exclude reference="A6v-5x-Tbl"/>
+                                            <exclude reference="Mfb-Lb-Llk"/>
                                         </mask>
                                     </variation>
                                 </view>

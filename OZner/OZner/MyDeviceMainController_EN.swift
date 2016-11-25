@@ -1230,26 +1230,40 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 
                 if(isNeedDownLXDate == false)
                 {
+                    if waterPurrifier.connectStatus() != Connected {
+                        return
+                    }
                     isNeedDownLXDate = true
                     
                     
                     var lvxinValue = min(waterPurrifier.filterInfo.Filter_A_Percentage, waterPurrifier.filterInfo.Filter_B_Percentage)
                     lvxinValue = min(lvxinValue, waterPurrifier.filterInfo.Filter_C_Percentage)
+                    var currLvXinName=""
                     switch lvxinValue {
                     case waterPurrifier.filterInfo.Filter_A_Percentage:
-                        self.lvxinValue.text = "\(lvxinValue)%(A)"
+                        currLvXinName="A"
                     case waterPurrifier.filterInfo.Filter_B_Percentage:
-                        self.lvxinValue.text = "\(lvxinValue)%(B)"
+                        currLvXinName="B"
                     case waterPurrifier.filterInfo.Filter_C_Percentage:
-                        self.lvxinValue.text = "\(lvxinValue)%(C)"
+                        currLvXinName="C"
                     default:
                         break
                     }
+                    self.lvxinValue.text = "\(lvxinValue)%("+currLvXinName+")"
                     self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
                     
-                    self.lvxinState.text=lvxinValue<=30 ? loadLanguage("请及时更换滤芯"):loadLanguage("滤芯状态")
+                    self.lvxinState.text=lvxinValue<=10 ? loadLanguage("请及时更换滤芯"):loadLanguage("滤芯状态")
                     
-                    //self.downLoadLvXinState()
+                    if lvxinValue<=0 {
+                        let alertview=SCLAlertView()
+                        
+                        alertview.addButton(loadLanguage("稍后再说")) {
+                            
+                        }
+                        alertview.addButton(loadLanguage("购买滤芯")) {
+                        }
+                        alertview.showInfo("", subTitle: loadLanguage("您的\(currLvXinName)滤芯已到达使用期限，请及时购买滤芯更换。"))
+                    }
                 }
                 
             }
