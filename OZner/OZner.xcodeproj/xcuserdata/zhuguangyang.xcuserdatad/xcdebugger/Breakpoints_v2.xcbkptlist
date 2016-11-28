@@ -99,53 +99,5 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OZner/LogInOut.m"
-            timestampString = "501753421.890007"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-loginWithAccount:password:currentView:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__50-[LogInOut loginWithAccount:password:currentView:]_block_invoke"
-                  moduleName = "OZner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/LogInOut.m"
-                  timestampString = "501753423.203651"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "504">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__50-[LogInOut loginWithAccount:password:currentView:]_block_invoke_2"
-                  moduleName = "OZner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sh15bg0110/Desktop/workSpace%20/SourceTree/ios-app-v2-2/OZner/OZner/LogInOut.m"
-                  timestampString = "501753423.203744"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

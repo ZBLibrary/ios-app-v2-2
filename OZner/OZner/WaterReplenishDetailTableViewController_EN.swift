@@ -131,15 +131,15 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
     //
     func toWhatOfYou()
     {
-//        let toWhatControll=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
-//        toWhatControll.title="油分"
-//        self.navigationController?.pushViewController(toWhatControll, animated: true)
+        let toWhatControll=ToWhatViewController_EN(nibName: "ToWhatViewController_EN", bundle: nil)
+        toWhatControll.title="油分"
+        self.navigationController?.pushViewController(toWhatControll, animated: true)
     }
     func toWhatOfWater()
     {
-//        let toWhatControll=ToWhatViewController(nibName: "ToWhatViewController", bundle: nil)
-//        toWhatControll.title="水分"
-//        self.navigationController?.pushViewController(toWhatControll, animated: true)
+        let toWhatControll=ToWhatViewController_EN(nibName: "ToWhatViewController_EN", bundle: nil)
+        toWhatControll.title="水分"
+        self.navigationController?.pushViewController(toWhatControll, animated: true)
     }
     func toChatButton()
     {
