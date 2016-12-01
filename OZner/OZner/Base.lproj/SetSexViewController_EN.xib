@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetSexViewController" customModule="OZner" customModuleProvider="target">
@@ -18,40 +19,35 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZC-lK-yfy">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7X-Lm-Qoj">
-                            <rect key="frame" x="0.0" y="42" width="375" height="96"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHW-f1-6Dy">
-                                    <rect key="frame" x="15" y="47.5" width="360" height="1"/>
-                                    <color key="backgroundColor" red="0.83529411760000005" green="0.83921568629999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.83529411760000005" green="0.83921568629999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="052-Nl-iJS"/>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="0zi-wH-6rU"/>
                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="1yk-XU-N44"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPm-F1-Bb5">
-                                    <rect key="frame" x="15" y="0.0" width="100" height="47.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="xn8-KP-1kv"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                    <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmj-O6-E8C">
-                                    <rect key="frame" x="15" y="47.5" width="100" height="48.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="Ktj-ws-se1"/>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="wq0-d6-2Di"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                    <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -59,26 +55,20 @@
                                         </mask>
                                     </variation>
                                 </label>
-                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="Set_gou" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-Ja-DG5">
-                                    <rect key="frame" x="345" y="18.5" width="15" height="11"/>
-                                </imageView>
-                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="Set_gou" translatesAutoresizingMaskIntoConstraints="NO" id="2uK-S6-MMc">
-                                    <rect key="frame" x="345" y="67" width="15" height="11"/>
-                                </imageView>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Set_gou" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-Ja-DG5"/>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Set_gou" translatesAutoresizingMaskIntoConstraints="NO" id="2uK-S6-MMc"/>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdO-wT-lbI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                     <connections>
                                         <action selector="womenClick:" destination="-1" eventType="touchUpInside" id="XwU-MN-WFR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MZ-MH-Orq">
-                                    <rect key="frame" x="0.0" y="48.5" width="375" height="47.5"/>
                                     <connections>
                                         <action selector="manClick:" destination="-1" eventType="touchUpInside" id="Tsd-DB-QlX"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="2uK-S6-MMc" secondAttribute="trailing" constant="15" id="0Qt-eS-sCU"/>
                                 <constraint firstAttribute="height" constant="96" id="6Vv-JF-nDE"/>
@@ -105,7 +95,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.8980392157" green="0.89411764709999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.8980392157" green="0.89411764709999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="c7X-Lm-Qoj" secondAttribute="bottom" id="9Nd-cV-BfE"/>
                         <constraint firstItem="c7X-Lm-Qoj" firstAttribute="leading" secondItem="cZC-lK-yfy" secondAttribute="leading" id="IG6-Dl-uhP"/>
@@ -114,17 +104,16 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-Ju-hUg">
-                    <rect key="frame" x="16" y="22" width="48" height="11"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="9xK-em-n9H"/>
                         <constraint firstAttribute="height" constant="11" id="omb-95-s8g"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" red="0.57647058819999997" green="0.58039215690000001" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.57647058819999997" green="0.58039215690000001" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.89803921568627454" green="0.89411764705882357" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.89803921568627454" green="0.89411764705882357" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="tNP-Ju-hUg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Muc-H5-aZp"/>
                 <constraint firstAttribute="trailing" secondItem="cZC-lK-yfy" secondAttribute="trailing" id="c2j-q6-DYK"/>

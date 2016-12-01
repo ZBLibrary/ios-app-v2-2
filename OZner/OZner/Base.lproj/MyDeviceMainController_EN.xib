@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyDeviceMainController_EN">
@@ -30,17 +31,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="mydevice_bgzb" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-Ci-mWN">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
-                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="mydevice_bgzb" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-Ci-mWN"/>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iu8-eg-l2c">
-                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                     <subviews>
-                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="toLeftMenu" translatesAutoresizingMaskIntoConstraints="NO" id="q04-I5-4n5">
-                            <rect key="frame" x="10" y="13" width="20" height="18"/>
-                        </imageView>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="toLeftMenu" translatesAutoresizingMaskIntoConstraints="NO" id="q04-I5-4n5"/>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWe-GT-40Y">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="VwA-Dd-076"/>
                             </constraints>
@@ -49,13 +44,12 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gril's Cup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ses-Xu-rq1">
-                            <rect key="frame" x="50" y="0.0" width="275" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="4pT-g7-g2u"/>
                         <constraint firstItem="TWe-GT-40Y" firstAttribute="leading" secondItem="Iu8-eg-l2c" secondAttribute="leading" id="DtB-qF-8r8"/>
@@ -70,56 +64,48 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4I-7T-8DR">
-                    <rect key="frame" x="0.0" y="406" width="375" height="196"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiq-hO-oak">
-                            <rect key="frame" x="0.0" y="52" width="375" height="144"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="144" id="6Pd-Ds-G0f"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="700-Ay-nUV">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPu-IR-lA2">
-                                    <rect key="frame" x="135" y="0.0" width="105" height="37"/>
                                     <subviews>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="tantou_dianliang_0" translatesAutoresizingMaskIntoConstraints="NO" id="5dH-yy-y6C">
-                                            <rect key="frame" x="0.0" y="0.0" width="16" height="37"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="16" id="kZo-WV-neV"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滤芯状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQI-OZ-XCG">
-                                            <rect key="frame" x="21" y="25" width="84" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="SW3-PT-zyF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtn-yZ-p0e">
-                                            <rect key="frame" x="21" y="0.0" width="84" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="hjO-PZ-ILN"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCS-Um-wrX">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="37"/>
                                             <connections>
                                                 <action selector="lvxinClick:" destination="-1" eventType="touchUpInside" id="qFv-xX-9FA"/>
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="5dH-yy-y6C" firstAttribute="leading" secondItem="KPu-IR-lA2" secondAttribute="leading" id="9x4-Jh-v0r"/>
                                         <constraint firstItem="DCS-Um-wrX" firstAttribute="top" secondItem="KPu-IR-lA2" secondAttribute="top" id="JBX-Dt-dRs"/>
@@ -138,16 +124,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-cA-kfM">
-                                    <rect key="frame" x="20" y="0.0" width="60" height="37"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMO-bk-vIf">
-                                            <rect key="frame" x="20" y="27" width="40" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="Ds7-Rl-aH1"/>
                                                 <constraint firstAttribute="width" constant="35" id="dZV-vr-QlD"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -156,14 +140,13 @@
                                             </variation>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="dian_liang_0" translatesAutoresizingMaskIntoConstraints="NO" id="Kdk-0g-rJm">
-                                            <rect key="frame" x="0.0" y="27" width="20" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="E7d-xM-T7d"/>
                                                 <constraint firstAttribute="width" constant="20" id="JXi-gd-JYC"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="1ox-b1-t2H"/>
                                         <constraint firstAttribute="bottom" secondItem="Kdk-0g-rJm" secondAttribute="bottom" id="6Iy-AP-9Ka"/>
@@ -180,14 +163,12 @@
                                     </variation>
                                 </view>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="DeviceSetting" translatesAutoresizingMaskIntoConstraints="NO" id="Wcv-wM-d4s">
-                                    <rect key="frame" x="335" y="17" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="mml-se-2Fo"/>
                                         <constraint firstAttribute="height" constant="20" id="w0T-f0-UfS"/>
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vm-CV-wUd">
-                                    <rect key="frame" x="315" y="0.0" width="60" height="52"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="b1o-Vu-6cC"/>
                                     </constraints>
@@ -196,7 +177,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Wcv-wM-d4s" secondAttribute="bottom" id="58v-3X-PNs"/>
                                 <constraint firstAttribute="trailing" secondItem="Wcv-wM-d4s" secondAttribute="trailing" constant="20" id="6j8-Ba-fP9"/>
@@ -219,7 +200,7 @@
                             </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="eiq-hO-oak" secondAttribute="trailing" id="20f-Vm-Bj0"/>
                         <constraint firstItem="eiq-hO-oak" firstAttribute="leading" secondItem="u4I-7T-8DR" secondAttribute="leading" id="615-U5-qz0"/>
@@ -231,11 +212,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkH-mc-bek">
-                    <rect key="frame" x="0.0" y="64" width="375" height="342"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Iu8-eg-l2c" secondAttribute="trailing" id="75G-Cc-Z8c"/>
                 <constraint firstItem="gkH-mc-bek" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9R1-ml-Fos"/>

@@ -2282,7 +2282,6 @@
 		E0EFFEE81D05945200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CenterChartCell_EN.xib; sourceTree = "<group>"; };
 		E0EFFEEA1D05954700E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Main_FooterView_zb_EN.xib; sourceTree = "<group>"; };
 		E0EFFEEC1D05954A00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Main_FooterView_zb_EN.xib; sourceTree = "<group>"; };
-		E0EFFEEE1D059BB800E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ShareView_zb_EN.xib; sourceTree = "<group>"; };
 		E0EFFEF01D059BBA00E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareView_zb_EN.xib; sourceTree = "<group>"; };
 		E0EFFEF21D06604000E43C20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WeiXinURLViewController_EN.xib; sourceTree = "<group>"; };
 		E0EFFEF41D06604200E43C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WeiXinURLViewController_EN.xib; sourceTree = "<group>"; };
@@ -5952,7 +5951,6 @@
 		E0EFFEEF1D059BB800E43C20 /* ShareView_zb_EN.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E0EFFEEE1D059BB800E43C20 /* en */,
 				E0EFFEF01D059BBA00E43C20 /* Base */,
 			);
 			name = ShareView_zb_EN.xib;
@@ -6092,6 +6090,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = UZZG6NM74T;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6130,6 +6129,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = UZZG6NM74T;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

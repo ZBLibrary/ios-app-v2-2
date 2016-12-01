@@ -10,7 +10,7 @@ import UIKit
 
 class setCUPDeviceViewController_EN: UIViewController,UIPickerViewDelegate,UIAlertViewDelegate{
 
-    var colorWheel:YJHColorPickerHSWheel!
+    //var colorWheel:YJHColorPickerHSWheel!
     var colorWheel2:YJHColorPickerHSWheel2!
     var myCurrentDevice:OznerDevice?
     var _colorCenterView:UIView!

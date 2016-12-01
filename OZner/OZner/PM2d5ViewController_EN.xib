@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PM2d5ViewController_EN" customModule="OZner" customModuleProvider="target">
@@ -18,23 +19,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="细颗粒物(PM2.5)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URQ-7S-kst">
-                    <rect key="frame" x="0.0" y="80" width="375" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="Oi4-dN-1Fv"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                    <color key="textColor" red="0.21176470588235294" green="0.46666666666666667" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.21176470588235294" green="0.46666666666666667" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="        PM2.5是直径小于或等于2.5微米的颗粒物，也称为细颗粒物或可入肺颗粒物，可直接进入肺部。PM2.5沉淀进肺泡后无法排除，会对呼吸系统和心血管系统造成很大伤害，引起包括支气管炎，哮喘，冠心病等疾病。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H4-h7-kkr">
-                    <rect key="frame" x="11" y="100" width="353" height="547"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="textColor" red="0.47058823529411764" green="0.47450980392156861" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.47058823529411764" green="0.47450980392156861" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="URQ-7S-kst" secondAttribute="trailing" id="4ee-rq-s3c"/>
                 <constraint firstItem="URQ-7S-kst" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="690-fd-whB"/>

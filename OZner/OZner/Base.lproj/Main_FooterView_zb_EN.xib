@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,16 +14,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请添加设备" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60E-e1-6lk">
-                    <rect key="frame" x="0.0" y="40" width="508" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="sNj-c6-cAD"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                    <color key="textColor" red="0.16862745098039217" green="0.25882352941176473" blue="0.35294117647058826" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.16862745098039217" green="0.25882352941176473" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tc-Nc-BKf">
-                    <rect key="frame" x="182" y="122" width="144" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="144" id="Xg8-rV-plA"/>
                         <constraint firstAttribute="height" constant="40" id="ncc-i8-GAx"/>
@@ -31,24 +30,21 @@
                     <state key="normal" title="添加设备"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqy-Df-KP8">
-                    <rect key="frame" x="0.0" y="162" width="508" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFt-JW-2Ey">
-                    <rect key="frame" x="0.0" y="0.0" width="508" height="40"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启浩泽智能生活" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdK-kc-SiA">
-                    <rect key="frame" x="0.0" y="65" width="508" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="Ld8-tq-lxj"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                    <color key="textColor" red="0.16862745100000001" green="0.25882352939999997" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.16862745100000001" green="0.25882352939999997" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Bqy-Df-KP8" secondAttribute="bottom" id="7Cj-s7-Q0b"/>
                 <constraint firstAttribute="trailing" secondItem="CFt-JW-2Ey" secondAttribute="trailing" id="7eh-iM-hWk"/>

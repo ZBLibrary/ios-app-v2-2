@@ -209,7 +209,7 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
     func GoUrlBefore(_ url:String)->String
     {
         
-        return "http://www.oznerwater.com/lktnew/wap/app/Oauth2.aspx?mobile="+mobile+"&UserTalkCode="+UserTalkCode+"&Language="+Language+"&Area="+Area+"&goUrl="+url
+        return "http://www.oznerwater.com/lktnew/wap/app/Oauth2.aspx?mobile="+mobile+"&UserTalkCode="+UserTalkCode+"&Language=zh&Area=zh&goUrl="+url
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

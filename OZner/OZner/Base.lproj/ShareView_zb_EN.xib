@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,59 +13,51 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0TN-CU-iab">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
                     <subviews>
                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="shareHeadicon" translatesAutoresizingMaskIntoConstraints="NO" id="bzL-xD-B1k">
-                            <rect key="frame" x="127" y="0.0" width="122" height="122"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="122" id="ncZ-kM-8fO"/>
                                 <constraint firstAttribute="height" constant="122" id="zno-RT-v6w"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好友排名 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X57-A6-Ddj">
-                            <rect key="frame" x="127" y="80" width="122" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="18" id="pdL-5P-SQG"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="share_Water1" translatesAutoresizingMaskIntoConstraints="NO" id="Z8p-4q-PDc">
-                            <rect key="frame" x="0.0" y="258" width="375" height="235"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="235" id="CFL-n7-Iha"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6q-my-IeO">
-                            <rect key="frame" x="0.0" y="142" width="375" height="86"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前水量为" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hro-Vz-zjj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="GOx-4X-YVt"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="击败了35%的用户" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpG-xi-E3A">
-                                    <rect key="frame" x="0.0" y="70" width="375" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="za9-Yl-59f"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200ml" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tro-hy-E5h">
-                                    <rect key="frame" x="0.0" y="16" width="375" height="54"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="49"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="hro-Vz-zjj" firstAttribute="top" secondItem="L6q-my-IeO" secondAttribute="top" id="OnX-Sn-X5u"/>
                                 <constraint firstItem="tro-hy-E5h" firstAttribute="leading" secondItem="L6q-my-IeO" secondAttribute="leading" id="WRe-8m-llL"/>
@@ -80,7 +73,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.4823529411764706" green="0.7686274509803922" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.4823529411764706" green="0.7686274509803922" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="bzL-xD-B1k" firstAttribute="top" secondItem="0TN-CU-iab" secondAttribute="top" id="1qg-gL-qzj"/>
                         <constraint firstAttribute="trailing" secondItem="L6q-my-IeO" secondAttribute="trailing" id="35z-Vs-dId"/>
@@ -96,43 +89,38 @@
                     </constraints>
                 </view>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="shareOwnerimg" translatesAutoresizingMaskIntoConstraints="NO" id="7g9-vC-fKd">
-                    <rect key="frame" x="150" y="495" width="76" height="76"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="76" id="708-Ru-T1T"/>
                         <constraint firstAttribute="height" constant="76" id="m3C-Sv-Xg3"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好小泽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mi-eU-W4j">
-                    <rect key="frame" x="0.0" y="581" width="375" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="GPD-gM-Wl5"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                    <color key="textColor" red="0.18823529411764706" green="0.59215686274509804" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.18823529411764706" green="0.59215686274509804" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egs-VD-Wcf">
-                    <rect key="frame" x="126" y="601" width="124" height="66"/>
                     <subviews>
                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="shareAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iWC-m7-Fwx">
-                            <rect key="frame" x="0.0" y="19" width="27" height="27"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="27" id="QMB-CE-Qns"/>
                                 <constraint firstAttribute="width" constant="27" id="zN6-LJ-sPQ"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来自浩泽净水家" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZM-dS-zZv">
-                            <rect key="frame" x="30" y="26" width="94" height="13"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="13" id="FUT-Mg-mOl"/>
                                 <constraint firstAttribute="width" constant="94" id="rpE-va-W5H"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
-                            <color key="textColor" red="0.41176470588235292" green="0.41568627450980394" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.41176470588235292" green="0.41568627450980394" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="iWC-m7-Fwx" firstAttribute="leading" secondItem="egs-VD-Wcf" secondAttribute="leading" id="EAG-B5-dr4"/>
                         <constraint firstAttribute="width" constant="124" id="aNE-re-mx7"/>
@@ -142,7 +130,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="2Mi-eU-W4j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2aE-iC-xbb"/>
                 <constraint firstItem="egs-VD-Wcf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="78e-6r-WDE"/>

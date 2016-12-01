@@ -93,6 +93,7 @@ class MyInfoViewController_EN: UIViewController {
             }
         }
         
+        get_UserToken()
     }
     //设备信息
     //    func loadDevices()

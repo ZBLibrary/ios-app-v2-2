@@ -163,8 +163,6 @@ class WaterPurTDSDetailController_EN: UITableViewController {
         str=str.substring(from: 6) as NSString
         str=str.substring(to: str.length-2) as NSString
         let tmpLong = (str as NSString).longLongValue/1000+28800
-        
-        
         return Date(timeIntervalSince1970: TimeInterval(tmpLong))
   
     }
