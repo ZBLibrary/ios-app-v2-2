@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         self.window?.makeKeyAndVisible()
         
         
-        updateApp()
+       
         
         //注册微信//
         WXApi.registerApp("wx45a8cc642a2295b5", withDescription: "haoze")
@@ -308,7 +308,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
                     
                     let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
                     
-                    if currentVersion.compare(serviecVersion) == NSComparisonResult.OrderedAscending {
+                    if currentVersion.compare(serviecVersion) != NSComparisonResult.OrderedAscending {} else {
                         self.currentUpdateType = UpdateType(rawValue:(dic!["result"]!["updateType"] as! String))
                         switch self.currentUpdateType! {
                             
@@ -387,7 +387,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     
     func applicationDidBecomeActive(application: UIApplication) {
         UIApplication.sharedApplication().applicationIconBadgeNumber=0
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+       
+         updateApp()
     }
     
     func applicationWillTerminate(application: UIApplication) {
