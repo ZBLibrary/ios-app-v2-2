@@ -20,10 +20,10 @@ class TDSFooterCellzb: UITableViewCell {
         waterKnowView.layer.borderWidth=1
         waterKnowView.layer.cornerRadius=20
         waterKnowView.layer.masksToBounds=true
-        bugView.layer.borderColor=UIColor(red: 0/255, green:99/255, blue: 246/255, alpha: 1).CGColor
-        bugView.layer.borderWidth=1
-        bugView.layer.cornerRadius=20
-        bugView.layer.masksToBounds=true
+//        bugView.layer.borderColor=UIColor(red: 0/255, green:99/255, blue: 246/255, alpha: 1).CGColor
+//        bugView.layer.borderWidth=1
+//        bugView.layer.cornerRadius=20
+//        bugView.layer.masksToBounds=true
         // Initialization code
         
     }

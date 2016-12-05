@@ -190,7 +190,7 @@
         //wCell.delegate = self;
     }
     [wCell.waterKnowButton addTarget:self action:@selector(jianKangShuiAction) forControlEvents:UIControlEventTouchUpInside];
-    [wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
+//    [wCell.toStoreButton addTarget:self action:@selector(purchaseAction) forControlEvents:UIControlEventTouchUpInside];
     wCell.selectionStyle=UITableViewCellSelectionStyleNone;
     return wCell;
 }

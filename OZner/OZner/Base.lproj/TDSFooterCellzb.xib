@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="10" width="375" height="114"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="改善您的饮水健康" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSd-gp-hUc">
-                                        <rect key="frame" x="0.0" y="18.5" width="375" height="19"/>
+                                        <rect key="frame" x="0.0" y="19" width="375" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="3is-Hf-q3Q"/>
                                         </constraints>
@@ -32,14 +32,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adT-HG-L5f">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="40"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-e0-kNE">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-e0-kNE">
                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSZ-6j-UW0">
+                                                <rect key="frame" x="231" y="0.0" width="0.0" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVD-vc-MrL">
+                                                <rect key="frame" x="375" y="0.0" width="0.0" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDq-1J-Iv0">
-                                                <rect key="frame" x="115.5" y="0.0" width="144" height="40"/>
+                                                <rect key="frame" x="116" y="0.0" width="144" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="健康水知道" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66j-5r-Rjt">
                                                         <rect key="frame" x="42" y="0.0" width="92" height="40"/>
@@ -77,68 +85,25 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WSZ-6j-UW0">
-                                                <rect key="frame" x="231" y="0.0" width="0.0" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVD-vc-MrL">
-                                                <rect key="frame" x="375" y="0.0" width="0.0" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asj-fs-LYp">
-                                                <rect key="frame" x="231" y="0.0" width="144" height="40"/>
-                                                <subviews>
-                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" image="device_puucashezb" translatesAutoresizingMaskIntoConstraints="NO" id="0f0-pb-EuP">
-                                                        <rect key="frame" x="10" y="10" width="21" height="20"/>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82l-U2-Dct">
-                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="40"/>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="购买净水器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-fX-qfO">
-                                                        <rect key="frame" x="49" y="0.0" width="85" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="85" id="9cP-IU-IqQ"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                        <color key="textColor" red="0.1215686275" green="0.43529411759999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.8784313725490196" green="0.93725490196078431" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstItem="Omo-fX-qfO" firstAttribute="top" secondItem="asj-fs-LYp" secondAttribute="top" id="Beh-Ch-1td"/>
-                                                    <constraint firstItem="0f0-pb-EuP" firstAttribute="leading" secondItem="asj-fs-LYp" secondAttribute="leading" constant="10" id="EQJ-qD-ziv"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Omo-fX-qfO" secondAttribute="trailing" constant="10" id="Mw6-WM-LvE"/>
-                                                    <constraint firstItem="82l-U2-Dct" firstAttribute="top" secondItem="asj-fs-LYp" secondAttribute="top" id="bAV-sx-9aG"/>
-                                                    <constraint firstItem="82l-U2-Dct" firstAttribute="leading" secondItem="asj-fs-LYp" secondAttribute="leading" id="jH0-oU-UHI"/>
-                                                    <constraint firstItem="0f0-pb-EuP" firstAttribute="centerY" secondItem="asj-fs-LYp" secondAttribute="centerY" id="ml6-If-4uk"/>
-                                                    <constraint firstAttribute="bottom" secondItem="82l-U2-Dct" secondAttribute="bottom" id="tcz-Fc-uib"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Omo-fX-qfO" secondAttribute="bottom" id="wsC-B6-R38"/>
-                                                    <constraint firstAttribute="trailing" secondItem="82l-U2-Dct" secondAttribute="trailing" id="zmq-54-Twp"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="asj-fs-LYp" firstAttribute="top" secondItem="adT-HG-L5f" secondAttribute="top" id="6Qr-uj-FSU"/>
+                                            <constraint firstAttribute="trailing" secondItem="WSZ-6j-UW0" secondAttribute="trailing" constant="144" id="2CE-Y0-YBQ"/>
                                             <constraint firstItem="7kw-e0-kNE" firstAttribute="leading" secondItem="adT-HG-L5f" secondAttribute="leading" id="6it-8x-49f"/>
                                             <constraint firstItem="EDq-1J-Iv0" firstAttribute="centerX" secondItem="adT-HG-L5f" secondAttribute="centerX" id="CIq-1R-ifm"/>
                                             <constraint firstAttribute="bottom" secondItem="7kw-e0-kNE" secondAttribute="bottom" id="CtA-FV-4cI"/>
                                             <constraint firstItem="WSZ-6j-UW0" firstAttribute="leading" secondItem="EDq-1J-Iv0" secondAttribute="trailing" id="Ee5-LI-nSz"/>
                                             <constraint firstItem="7kw-e0-kNE" firstAttribute="top" secondItem="adT-HG-L5f" secondAttribute="top" id="Jqw-FG-E0r"/>
-                                            <constraint firstItem="oVD-vc-MrL" firstAttribute="leading" secondItem="asj-fs-LYp" secondAttribute="trailing" id="Q05-OY-jW5"/>
                                             <constraint firstAttribute="bottom" secondItem="EDq-1J-Iv0" secondAttribute="bottom" id="TXX-9J-quK"/>
                                             <constraint firstItem="oVD-vc-MrL" firstAttribute="top" secondItem="adT-HG-L5f" secondAttribute="top" id="UQA-gy-5cp"/>
                                             <constraint firstItem="oVD-vc-MrL" firstAttribute="width" secondItem="7kw-e0-kNE" secondAttribute="width" id="bg4-bH-kPU"/>
                                             <constraint firstItem="WSZ-6j-UW0" firstAttribute="width" secondItem="7kw-e0-kNE" secondAttribute="width" id="c0j-CE-WLP"/>
-                                            <constraint firstItem="asj-fs-LYp" firstAttribute="leading" secondItem="WSZ-6j-UW0" secondAttribute="trailing" id="cit-pY-edl"/>
                                             <constraint firstAttribute="trailing" secondItem="oVD-vc-MrL" secondAttribute="trailing" id="cmH-Vd-vYk"/>
                                             <constraint firstAttribute="bottom" secondItem="WSZ-6j-UW0" secondAttribute="bottom" id="enL-YQ-cNb"/>
-                                            <constraint firstItem="asj-fs-LYp" firstAttribute="width" secondItem="EDq-1J-Iv0" secondAttribute="width" id="mWz-VX-xgG"/>
                                             <constraint firstItem="EDq-1J-Iv0" firstAttribute="leading" secondItem="7kw-e0-kNE" secondAttribute="trailing" id="oTd-8r-Au1"/>
-                                            <constraint firstAttribute="bottom" secondItem="asj-fs-LYp" secondAttribute="bottom" id="sFG-ou-Cyp"/>
                                             <constraint firstItem="WSZ-6j-UW0" firstAttribute="top" secondItem="adT-HG-L5f" secondAttribute="top" id="sJX-F3-sLd"/>
                                             <constraint firstItem="EDq-1J-Iv0" firstAttribute="top" secondItem="adT-HG-L5f" secondAttribute="top" id="sbd-gw-hB8"/>
+                                            <constraint firstItem="WSZ-6j-UW0" firstAttribute="leading" secondItem="adT-HG-L5f" secondAttribute="leading" constant="231" id="stF-Zq-47J"/>
                                             <constraint firstAttribute="bottom" secondItem="oVD-vc-MrL" secondAttribute="bottom" id="ueX-Qs-6G2"/>
                                             <constraint firstAttribute="height" constant="40" id="yZF-50-3WH"/>
                                         </constraints>
@@ -150,15 +115,15 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiu-2w-Q48">
-                                        <rect key="frame" x="0.0" y="95.5" width="375" height="18.5"/>
+                                        <rect key="frame" x="0.0" y="96" width="375" height="19"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhu-bH-k6T">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="18.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="19"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHi-jV-CoX">
-                                        <rect key="frame" x="0.0" y="37.5" width="375" height="18"/>
+                                        <rect key="frame" x="0.0" y="38" width="375" height="18"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -222,8 +187,6 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="bugView" destination="asj-fs-LYp" id="liE-O4-bCd"/>
-                <outlet property="toStoreButton" destination="82l-U2-Dct" id="JeV-kH-NaW"/>
                 <outlet property="waterKnowButton" destination="p75-79-cWZ" id="01q-on-u2i"/>
                 <outlet property="waterKnowView" destination="EDq-1J-Iv0" id="f31-Nf-l8J"/>
             </connections>
@@ -232,6 +195,5 @@
     </objects>
     <resources>
         <image name="device_konwzb" width="15" height="20"/>
-        <image name="device_puucashezb" width="21" height="20"/>
     </resources>
 </document>
