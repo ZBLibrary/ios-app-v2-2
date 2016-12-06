@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
 @objc protocol MyDeviceMainController_ENDelegate
 {
     func leftActionCallBack()
 }
 
-class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,CustomOCCircleView_ENDelegate,OznerDeviceDelegate,UIScrollViewDelegate,UIAlertViewDelegate{
+class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,CustomOCCircleView_ENDelegate,OznerDeviceDelegate,UIScrollViewDelegate,UIAlertViewDelegate,CLLocationManagerDelegate{
     
     
     @IBOutlet var mainBottomEn: NSLayoutConstraint!
@@ -26,6 +27,10 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     //公共部分
     var AirHeadView:headViewView_EN!
     var outAirView:outAirXib_EN!
+    
+    var locateManage: CLLocationManager?
+    var currentCoordinate: CLLocationCoordinate2D?
+    
     //单机设备断网弹出的提示框
     lazy var offLineSuggestView: OffLineSuggestView_EN = {
         let tmpOffLine = NSBundle.mainBundle().loadNibNamed("OffLineSuggestView_EN", owner: nil, options: nil).last as? OffLineSuggestView_EN
@@ -210,6 +215,14 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        locateManage = CLLocationManager()
+        locateManage?.delegate = self
+        currentCoordinate = CLLocationCoordinate2D()
+        if ((locateManage?.respondsToSelector(#selector(CLLocationManager.requestWhenInUseAuthorization))) != nil) {
+            locateManage?.requestWhenInUseAuthorization()
+        }
+        locateManage?.desiredAccuracy = kCLLocationAccuracyBest
+        locateManage?.startUpdatingLocation()
         if ((NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE)?.isEqualToString(LoginByEmail)) == true) {
             mainBottomEn.constant=0
             bgBottomEn.constant=0
@@ -1865,7 +1878,8 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     {
         weak var weakSelf = self
         let werbservice = DeviceWerbservice()
-        werbservice.getWeather(""){(pollution:String!,cityname:String!,PM25:String!,AQI:String!,temperature:String!,humidity:String!,dataFrom:String!,status:StatusManager!) -> Void in
+        let city = NSUserDefaults.standardUserDefaults().valueForKey("GYCITY") as? String ?? ""
+        werbservice.getWeather(city){(pollution:String!,cityname:String!,PM25:String!,AQI:String!,temperature:String!,humidity:String!,dataFrom:String!,status:StatusManager!) -> Void in
             if(status.networkStatus == kSuccessStatus)
             {
                     if weakSelf!.outAirView != nil
@@ -2155,7 +2169,28 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     }
     
     
-    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let newLoca = locations.last {
+            CLGeocoder().reverseGeocodeLocation(newLoca, completionHandler: { (pms, err) -> Void in
+                if let newCoordinate = pms?.last?.location?.coordinate {
+                    manager.stopUpdatingLocation()//停止定位，节省电量，只获取一次定位
+                    
+                    self.currentCoordinate = newCoordinate//记录定位点经纬度
+                    
+                    //取得最后一个地标，地标中存储了详细的地址信息，注意：一个地名可能搜索出多个地址
+                    let placemark:CLPlacemark = (pms?.last)!
+                    let location = placemark.location;//位置
+                    
+                    let locality=placemark.locality ?? ""; // 城市
+                    print(locality)
+                    NSUserDefaults.standardUserDefaults().setValue(locality, forKey: "GYCITY")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                }
+            })
+        }
+        
+    }
     
     
     
