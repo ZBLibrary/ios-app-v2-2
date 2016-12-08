@@ -16,7 +16,7 @@ import UIKit
 
 class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,CustomOCCircleView_ENDelegate,OznerDeviceDelegate,UIScrollViewDelegate,UIAlertViewDelegate{
     
-    
+    var currenTGY:Int!
     @IBOutlet var mainBottomEn: NSLayoutConstraint!
     @IBOutlet var bgBottomEn: NSLayoutConstraint!
     var currentState:Bool = true
@@ -212,6 +212,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             mainBottomEn.constant=65
             bgBottomEn.constant=65
         }
+        currenTGY = 1;
         //加载默认主视图
         loadWhitchView("default")
         //设备切换通知
@@ -248,12 +249,13 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 LoadingView.state=2//手机网络不可用
                 phoneIsOffLine=true
                 OznerDeviceStatusUpdate(self.myCurrentDevice)
-                
             }
             else{
                 LoadingView.state = -1//手机网络可用
                 phoneIsOffLine=false
                 OznerDeviceStatusUpdate(self.myCurrentDevice)
+                
+                print("++++++++++++")
             }
         }
     }
@@ -1490,6 +1492,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                 }
                 else{
                     IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 45)
+                    
                     initBigClickButton()
                     
                 }
@@ -1952,15 +1955,22 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             bigFooterViews[1].switchImage.image=UIImage(named: imgOn_0_5_4["\(tmpSpeed)"]!)
         }
         let airPurifier_MxChip = self.myCurrentDevice as! AirPurifier_MxChip
+        if self.currenTGY > 1 {
+            return;
+        }
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+      
         airPurifier_MxChip.status.setSpeed(tmpSpeed, callback: {
             (error:NSError!) in
+           
             if error==nil
             {
+                self.currenTGY = 2;
                 self.performSelector(#selector(self.StopLoadAnimal), withObject: nil, afterDelay: 3);
-            }
+            }     
             else
             {
+                self.currenTGY = 2;
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
             }
         })
@@ -2036,6 +2046,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         case 2:
             //设置模式
             //0:0,5:1,4:2
+            self.currenTGY = 1;
             if airPurifier_MxChip.status.speed==5
             {
                 tmpbigmodel.setWhitchIsBottom(1)
