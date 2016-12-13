@@ -26,21 +26,21 @@ class WaterRefreshIntrounVC: UIViewController {
             //补水仪
         case "WaterRefresh":
 //             str = htmlforJPGImage(UIImage(named: "water.jpg" )!)
-            url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/BeautyInstrument.html")!)
+            url = NSURLRequest(URL: NSURL(string: "https://app.joyro.com.cn/BeautyInstrument.html")!)
             //空净
         case "waterair":
 //            str = htmlforJPGImage(UIImage(named: "waterair.jpg" )!)
-             url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/AirPurifier.html")!)
+             url = NSURLRequest(URL: NSURL(string: "https://app.joyro.com.cn/AirPurifier.html")!)
         case "lishi":
 //            str = htmlforJPGImage(UIImage(named: "lishi.jpg" )!)
-             url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/VerticalWaterPurifier.html")!)
+             url = NSURLRequest(URL: NSURL(string: "https://app.joyro.com.cn/VerticalWaterPurifier.html")!)
         case "taishi":
 //            str = htmlforJPGImage(UIImage(named: "taishi.jpg" )!)
-             url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/DesktopWaterPurifier.html")!)
+             url = NSURLRequest(URL: NSURL(string: "https://app.joyro.com.cn/DesktopWaterPurifier.html")!)
             //水潭头
         case "tap" :
 //            str = htmlforJPGImage(UIImage(named: "tap.jpg" )!)
-             url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/SmartWaterTester.html")!)
+             url = NSURLRequest(URL: NSURL(string: "https://app.joyro.com.cn/SmartWaterTester.html")!)
             
         default:
             break

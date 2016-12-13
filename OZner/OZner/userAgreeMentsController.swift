@@ -30,7 +30,7 @@ class userAgreeMentsController: UIViewController {
         super.viewDidLoad()
         
         //免费条款
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/jrAPPterm.html")!))
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: "https://app.joyro.com.cn/jrAPPterm.html")!))
         webView.scalesPageToFit = true
         // Do any additional setup after loading the view.
     }
