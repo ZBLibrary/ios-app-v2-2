@@ -187,22 +187,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OZner/MyDeviceMainController_EN.swift"
-            timestampString = "502872177.647595"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2049"
-            endingLineNumber = "2049"
-            landmarkName = "switchButtonClick(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ASIHTTPRequest.m"
             timestampString = "503290540.922615"
             startingColumnNumber = "9223372036854775807"

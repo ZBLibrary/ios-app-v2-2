@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         self.window?.rootViewController = switchController;
         self.window?.makeKeyAndVisible()
         
-        
+        print("userToken:\(get_UserToken())")
        
         
         //注册微信//

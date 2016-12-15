@@ -87,7 +87,7 @@ class HeadOfWaterReplenishDetailCell_EN: UITableViewCell {
             }
             
             lastCheckValue.text="\(loadLanguage("上次检测"))"+(NSString(format: "%.1f", (tmpStru?.lastSkinValue)!) as String)+"%"
-            averageCheckValue.text="\(loadLanguage("上次检测"))"+(NSString(format: "%.1f", (tmpStru?.averageSkinValue)!) as String)+"%("+(NSString(format: "%d", (tmpStru?.checkTimes)!) as String)+"\(loadLanguage("次")))"
+            averageCheckValue.text="\(loadLanguage("平均值"))"+(NSString(format: "%.1f", (tmpStru?.averageSkinValue)!) as String)+"%("+(NSString(format: "%d", (tmpStru?.checkTimes)!) as String)+"\(loadLanguage("次")))"
             if isFistLoad==false{
                 delegate?.setCurrentOrgan(currentOrgan)
             }
