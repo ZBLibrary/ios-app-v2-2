@@ -10,7 +10,7 @@
 
 /****************************************正式服务器*****************************************************/
 //外网服务器
-#define HTTP_ADDRESS       @"https://app.joyro.com.cn/"//"http://ozner.bynear.cn/"
+#define HTTP_ADDRESS       @"http://192.168.173.241/"//"http://ozner.bynear.cn/"
 
 //登录 - 手机号
 #define WERB_URL_LOGIN                          @"OznerServer/Login"

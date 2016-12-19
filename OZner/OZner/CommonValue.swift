@@ -108,13 +108,13 @@ class getshareImageClass:NSObject
         UIGraphicsEndImageContext()
         return viewImage
     }
-
+    
 }
 
 
 
 //接口开头
-let StarURL_New="https://app.joyro.com.cn"//"http://ozner.bynear.cn"
+let StarURL_New="http://192.168.173.241"//"http://ozner.bynear.cn"//https://app.joyro.com.cn
 //let StarURL_Old=""
 
 //-------------------获取设备大小-------------------------

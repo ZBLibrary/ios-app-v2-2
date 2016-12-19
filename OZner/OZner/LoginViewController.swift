@@ -63,35 +63,35 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     func yanzhengfunc(){
         let Phone:String=phoneTextField.text!
         
-        let WerbService=UserInfoActionWerbService()
-        
-        WerbService.GetMessageCode(Phone, returnBlock: { (respose:AnyObject!,status:StatusManager!) -> Void in
-            if  status.networkStatus == kSuccessStatus
-            {
-                
-                if (respose.objectForKey("state") as! Int)>0
-                {
-                    
-                }
-                else
-                {
-                    self.errorLabel.text=loadLanguage("请求失败,请检查网络。")
-                    self.getYYbutton.enabled=true
-                    self.getYYbutton.backgroundColor=UIColor.whiteColor()
-                    self.getYYbutton.layer.borderColor=color_main.CGColor
-                    self.getYYbutton.setTitleColor(color_main, forState: .Normal)
-                    
-                }
-            }
-            else
-            {
-                self.errorLabel.text=loadLanguage("请求失败,请检查网络。")
-                self.getYYbutton.enabled=true
-                self.getYYbutton.backgroundColor=UIColor.whiteColor()
-                self.getYYbutton.layer.borderColor=color_main.CGColor
-                self.getYYbutton.setTitleColor(color_main, forState: .Normal)
-            }
-        })
+//        let WerbService=UserInfoActionWerbService()
+//        
+//        WerbService.GetMessageCode(Phone, returnBlock: { (respose:AnyObject!,status:StatusManager!) -> Void in
+//            if  status.networkStatus == kSuccessStatus
+//            {
+//                
+//                if (respose.objectForKey("state") as! Int)>0
+//                {
+//                    
+//                }
+//                else
+//                {
+//                    self.errorLabel.text=loadLanguage("请求失败,请检查网络。")
+//                    self.getYYbutton.enabled=true
+//                    self.getYYbutton.backgroundColor=UIColor.whiteColor()
+//                    self.getYYbutton.layer.borderColor=color_main.CGColor
+//                    self.getYYbutton.setTitleColor(color_main, forState: .Normal)
+//                    
+//                }
+//            }
+//            else
+//            {
+//                self.errorLabel.text=loadLanguage("请求失败,请检查网络。")
+//                self.getYYbutton.enabled=true
+//                self.getYYbutton.backgroundColor=UIColor.whiteColor()
+//                self.getYYbutton.layer.borderColor=color_main.CGColor
+//                self.getYYbutton.setTitleColor(color_main, forState: .Normal)
+//            }
+//        })
 //        let cerPath = NSBundle.mainBundle().pathForResource("https", ofType: "cer")
 //        let certData = NSData.init(contentsOfFile: cerPath!)
 //        let certSet = NSSet.init(objects: certData!)
@@ -100,23 +100,27 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
 //        securityPolicy.allowInvalidCertificates = true
 //        securityPolicy.pinnedCertificates = [certData!]
 //        
-//        let manager = AFHTTPRequestOperationManager()
 //        manager.securityPolicy = securityPolicy;
 //        
-//        let url = StarURL_New+"/OznerServer/GetPhoneCode"
-//        let params:NSDictionary = ["phone":Phone]
-//        manager.POST(url,
-//            parameters: params,
-//            success: { (operation: AFHTTPRequestOperation!,
-//                responseObject: AnyObject!) in
-//                print("请求成功")
-//            },
-//            failure: { (operation: AFHTTPRequestOperation!,
-//                error: NSError!) in
-//                self.errorLabel.text=loadLanguage("网络连接失败,请重试。")
-//                print(error.description)
-//                self.shuttime=0
-//        })
+        
+        let manager = AFHTTPRequestOperationManager()
+
+        let url = StarURL_New+"/OznerServer/GetPhoneCode"
+        let params:NSDictionary = ["phone":Phone]
+//        manager.requestSerializer = AFJSONRequestSerializer.init(writingOptions: NSJSONWritingOptions.init(rawValue: 0))
+//        manager.responseSerializer.acceptableContentTypes = NSSet.init(objects: "text/html") as Set<NSObject>
+        manager.POST(url,
+            parameters: params,
+            success: { (operation: AFHTTPRequestOperation!,
+                responseObject: AnyObject!) in
+                print("请求成功")
+            },
+            failure: { (operation: AFHTTPRequestOperation!,
+                error: NSError!) in
+                self.errorLabel.text=loadLanguage("网络连接失败,请重试。")
+                print(error.description)
+                self.shuttime=0
+        })
         
         
     }
