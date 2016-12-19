@@ -434,6 +434,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         MBProgressHUD.showHUDAddedTo(self, animated: true)
         let deviceService=DeviceWerbservice()
         deviceService.GetBuShuiFenBu(WaterReplenishDevice?.identifier, action: currentBodyPart.rawValue) { [weak self](dataArr, Status) in
+            //TODO:
             MBProgressHUD.hideHUDForView(self!, animated: true)
             if Status.networkStatus==kSuccessStatus
             {
