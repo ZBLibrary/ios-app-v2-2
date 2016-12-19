@@ -183,6 +183,7 @@ class AddFriendsTableViewController: UITableViewController,UITextFieldDelegate {
             }
             
             cell.headImage.image=bookPhone[indexPath.row].imgUrl=="" ? UIImage(named: "DefaultHeadImage") : UIImage(data: NSData(contentsOfURL: NSURL(string: bookPhone[indexPath.row].imgUrl)!)!)
+//            cell.headimg
             cell.Name.text=bookPhone[indexPath.row].Name
         }
         return cell

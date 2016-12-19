@@ -48,6 +48,8 @@
 #define WERB_URL_UPDATE_USERINFO                @"OznerServer/UpdateUserInfo"
 //获取用户昵称图片信息
 #define WERB_URL_NICK_IMG_INFO                  @"OznerServer/GetUserNickImage"
+//获取短信验证码
+#define Get_Message_Phone_Code                  @"OznerServer/GetPhoneCode"
 //获取语音验证码
 #define Get_Voice_Phone_Code                    @"OznerServer/GetVoicePhoneCode"
 //百度推送

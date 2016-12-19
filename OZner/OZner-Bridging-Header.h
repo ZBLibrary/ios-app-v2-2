@@ -82,6 +82,7 @@
 
 // 导航
 #import "JMNavigationController.h"
+#import "UIImageView+WebCache.h"
 
 #define degreesToRadians(degrees) (M_PI * degrees / 180.0)
 

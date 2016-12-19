@@ -9,6 +9,8 @@
 import UIKit
 import AddressBook
 import AddressBookUI
+
+
 //排名结构体
 struct myRankstruct {
     var rank=""
@@ -375,7 +377,8 @@ class FriendsTableViewController: UITableViewController,UITextFieldDelegate,UITe
                         cell.Name.text=friendstrut.Name
                         if friendstrut.imgUrl != "" && friendstrut.imgUrl.containsString("http://")
                         {
-                            cell.headImg.image=UIImage(data: NSData(contentsOfURL: NSURL(string: friendstrut.imgUrl)!)!)
+//                            cell.headImg.image=UIImage(data: NSData(contentsOfURL: )!)
+                            cell.headImg.sd_setImageWithURL(NSURL(string: friendstrut.imgUrl)!)
                         }
                         else
                         {

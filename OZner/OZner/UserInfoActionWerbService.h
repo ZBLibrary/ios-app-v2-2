@@ -11,7 +11,8 @@
 #import "StatusManager.h"
 
 @interface UserInfoActionWerbService : NSObject
-
+//获取短信验证码
+- (ASIFormDataRequest*)GetMessageCode:(NSString*)mobile returnBlock:(void(^)(id data,StatusManager* status))handle;
 //获取语音验证码GetPost/OznerServer/GetVoicePhoneCode
 - (ASIFormDataRequest*)GetVoicePhoneCode:(NSString*)mobile returnBlock:(void(^)(id data,StatusManager* status))handle;
 //百度推送

@@ -10,6 +10,21 @@
 #import "WebAssistant.h"
 
 @implementation UserInfoActionWerbService
+
+- (ASIFormDataRequest *)GetMessageCode:(NSString *)mobile returnBlock:(void (^)(id, StatusManager *))handle
+{
+     NetworkEntrance* entrance = [[NetworkEntrance alloc]init];
+    
+    [entrance addObject:mobile forKey:@"phone"];
+    [entrance addURLString:Get_Message_Phone_Code];
+    return [WebAssistant execNormalkRequest:entrance bodyBlock:^(NSDictionary *dicBody, StatusManager *status) {
+        NSLog(@"%@",dicBody);
+        handle(dicBody,status);
+    } failedBlock:^(StatusManager *status) {
+        handle(nil,status);
+    }];
+}
+
 //获取语音验证码
 - (ASIFormDataRequest*)GetVoicePhoneCode:(NSString*)mobile returnBlock:(void(^)(id data,StatusManager* status))handle
 {
