@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bPs-cQ-E9j">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bPs-cQ-E9j">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1256,7 +1256,7 @@
             </objects>
             <point key="canvasLocation" x="1245" y="2391.75"/>
         </scene>
-        <!--关于浩泽净水家-->
+        <!--关于千野-->
         <scene sceneID="mJ8-Rw-iu4">
             <objects>
                 <viewController id="nB4-pB-9Fn" customClass="AboutUSViewController" customModule="OZner" customModuleProvider="target" sceneMemberID="viewController">
@@ -1268,11 +1268,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-OY-1pm">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="qy120X120" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-OY-1pm">
                                 <rect key="frame" x="268" y="64" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="2S4-Um-pNm"/>
                                     <constraint firstAttribute="width" constant="65" id="2XB-hQ-hNL"/>
+                                    <constraint firstAttribute="width" constant="65" id="g18-jq-K1d"/>
+                                    <constraint firstAttribute="height" constant="65" id="icn-Qq-DrC"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1281,7 +1283,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="浩泽净水家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXo-OF-Hjc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="千野" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXo-OF-Hjc">
                                 <rect key="frame" x="270" y="139" width="60" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="VAP-YK-fZ1"/>
@@ -1290,7 +1292,7 @@
                                 <color key="textColor" red="0.30980392159999998" green="0.31372549020000001" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiO-vw-RcH">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hiO-vw-RcH">
                                 <rect key="frame" x="0.0" y="201" width="600" height="96"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-Gy-dzT">
@@ -1410,10 +1412,10 @@
                                     <constraint firstAttribute="trailing" secondItem="gEb-hb-nAZ" secondAttribute="trailing" id="ynH-k6-JaH"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-JZ-nUr">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-JZ-nUr">
                                 <rect key="frame" x="240" y="545" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="君融科技免责条款">
+                                <state key="normal" title="千野免责条款">
                                     <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1444,7 +1446,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="关于浩泽净水家" id="Cfn-Zg-Lpw">
+                    <navigationItem key="navigationItem" title="关于千野" id="Cfn-Zg-Lpw">
                         <barButtonItem key="leftBarButtonItem" image="fanhui" id="me6-wP-TWa">
                             <color key="tintColor" red="0.1529411765" green="0.15686274510000001" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -2421,7 +2423,8 @@
         <image name="agreeSelected" width="16" height="16"/>
         <image name="fanhui" width="10" height="21"/>
         <image name="liuyan" width="16" height="16"/>
-        <image name="loginLogo" width="90" height="90"/>
+        <image name="loginLogo" width="60" height="60"/>
         <image name="phone" width="14" height="20"/>
+        <image name="qy120X120" width="60" height="60"/>
     </resources>
 </document>

@@ -34,6 +34,7 @@ class My_MainView_EN: UIView {
         
         SuggestLable .text=loadLanguage ("我要提意见")
         SetLable .text=loadLanguage ("设置")
+        My_login.setTitle(LoginManager.loginInstance().loginInfo.loginName, forState: UIControlState.Normal)
         
     }
     

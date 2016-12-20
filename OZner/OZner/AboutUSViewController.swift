@@ -20,16 +20,16 @@ class AboutUSViewController: UIViewController {
     @IBOutlet var HaozeLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title=loadLanguage("关于君融科技" )
+        self.title=loadLanguage("关于千野" )
         versionlB.text =  NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as? String
         //UpdateLable.text=loadLanguage("检查更新版本" )
         ScoreLable.text=loadLanguage("评个分吧")
-        HaozeLable.text=loadLanguage("君融科技")
+        HaozeLable.text=loadLanguage("千野")
         // Do any additional setup after loading the view.
     }
     //评个分吧
     @IBAction func GiveScore(sender: AnyObject) {
-        let str = "itms-apps://itunes.apple.com/app/id1153485553"
+        let str = "itms-apps://itunes.apple.com/app/id1188159734"
         UIApplication.sharedApplication().openURL(NSURL(string: str)!)
     }
     

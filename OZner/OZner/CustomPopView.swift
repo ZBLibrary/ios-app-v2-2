@@ -61,11 +61,12 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
             luangeHeight = 140
             let btn = UIButton(type: UIButtonType.Custom)
             btn.frame = CGRect(x: 0, y: 20, width: self.myView.frame.size.width, height: 90*(height/667.0))
-            btn.setTitle("Ines", forState: UIControlState.Normal)
+//            [LoginManager loginInstance].loginInfo.loginName
+            btn.setTitle(LoginManager.loginInstance().loginInfo.loginName, forState: UIControlState.Normal)
             btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             btn.setImage(UIImage(named:"My_Unlogin_head" ), forState: UIControlState.Normal)
             btn.titleEdgeInsets = UIEdgeInsetsMake(100, -70, 0, 0)
-            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0)
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 100, 0, 0)
             btn.addTarget(self, action: #selector(CustomPopView.btnClick), forControlEvents: UIControlEvents.TouchUpInside)
             self.clickBtn = btn
             self.myView.addSubview(btn)
@@ -75,7 +76,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         
         
         let stateLabel:UILabel = UILabel(frame: CGRectMake(0,luangeHeight!*(height/667.0),self.myView.frame.size.width,24))
-        stateLabel.text = loadLanguage("伊泉净品智慧生活体验")
+        stateLabel.text = loadLanguage("千野智能化生活服务")
         stateLabel.textAlignment = NSTextAlignment.Center
         stateLabel.font = UIFont.systemFontOfSize(24)
         stateLabel.textColor = UIColor(red: 96.0, green: 121.0, blue: 149.0, alpha: 1.0)
@@ -83,7 +84,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         self.myView .addSubview(stateLabel)
         
         let secondLabel:UILabel = UILabel(frame: CGRectMake(0,stateLabel.frame.origin.y+stateLabel.frame.size.height+10*(height/667.0),self.myView.frame.size.width,11))
-        secondLabel.text = loadLanguage("立即添加设备,开启您的智慧生活吧!")
+        secondLabel.text = loadLanguage("立即添加设备,开始体验千野智能化生活服务。")
         secondLabel.textAlignment = NSTextAlignment.Center
         secondLabel.font = UIFont.systemFontOfSize(11)
         secondLabel.textColor = UIColor(red: 96.0, green: 121.0, blue: 149.0, alpha: 1.0)
@@ -244,7 +245,7 @@ class CustomPopView: UIView,UITableViewDataSource,UITableViewDelegate {
         if (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByEmail) {
             let btn = UIButton(type: UIButtonType.Custom)
             btn.frame = CGRect(x: 0, y: 0, width: self.myView.frame.size.width, height: 90*(height/667.0))
-            btn.setTitle("Ines", forState: UIControlState.Normal)
+            btn.setTitle(LoginManager.loginInstance().loginInfo.loginName, forState: UIControlState.Normal)
             btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             btn.setImage(UIImage(named:"My_Unlogin_head" ), forState: UIControlState.Normal)
             btn.titleEdgeInsets = UIEdgeInsetsMake(100, -70, 0, 0)

@@ -356,15 +356,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         
         switch currentUpdateType! {
         case .OptionalType:
-            if buttonIndex == 1 {
-                
-                UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/cn/app/fm-lu-xing-jie-ban-lu-xing/id1153485553?mt=8")!)
+            if buttonIndex == 1 {                
+                UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/cn/app/fm-lu-xing-jie-ban-lu-xing/id1188159734?mt=8")!)
                 
             }
             
             break
         case .forceType:
-            UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/cn/app/fm-lu-xing-jie-ban-lu-xing/id1153485553?mt=8")!)
+            UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/cn/app/fm-lu-xing-jie-ban-lu-xing/id1188159734?mt=8")!)
             break
         }
         
