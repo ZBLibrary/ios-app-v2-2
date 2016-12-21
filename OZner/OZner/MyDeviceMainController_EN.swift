@@ -1878,7 +1878,12 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
     {
         weak var weakSelf = self
         let werbservice = DeviceWerbservice()
-        let city = NSUserDefaults.standardUserDefaults().valueForKey("GYCITY") as? String ?? ""
+        var city = NSUserDefaults.standardUserDefaults().valueForKey("GYCITY") as? String ?? ""
+        
+        if city.containsString("市") {
+          city = city.stringByReplacingOccurrencesOfString("市", withString: "");
+        }
+        
         werbservice.getWeather(city){(pollution:String!,cityname:String!,PM25:String!,AQI:String!,temperature:String!,humidity:String!,dataFrom:String!,status:StatusManager!) -> Void in
             if(status.networkStatus == kSuccessStatus)
             {

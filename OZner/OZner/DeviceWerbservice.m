@@ -197,7 +197,7 @@
 //ip定位天气信息
 - (ASIFormDataRequest*)getWeather:(NSString*)cityName returnBlock:(void(^)(NSString*pollution,NSString* cityname,NSString* PM25,NSString* AQI,NSString* temperature,NSString* humidity,NSString* dataFrom,StatusManager* status))handle
 {
-    NetworkEntrance* entrance = [NetworkEntrance alloc];
+    NetworkEntrance* entrance = [[NetworkEntrance alloc] init];
     if(cityName.length > 0)
     {
         [entrance addObject:cityName forKey:@"city"];
