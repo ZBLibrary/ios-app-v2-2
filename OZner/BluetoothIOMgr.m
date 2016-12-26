@@ -135,6 +135,9 @@
         
     }
     //    NSLog(@"found:%@",peripheral.name);
+    
+    
+    
     if (scanData==nil)
     {
         if ([advertisementData objectForKey:CBAdvertisementDataManufacturerDataKey])
@@ -150,17 +153,22 @@
     
     if (scanData)
     {
-//        BluetoothIO* io=(BluetoothIO*)[self getAvailableDevice:[self getIdentifier:peripheral]];
+        //        BluetoothIO* io=(BluetoothIO*)[self getAvailableDevice:[self getIdentifier:peripheral]];
         NSString* identifier=[self getIdentifier:peripheral];
-        if ([advertisementData objectForKey:CBAdvertisementDataManufacturerDataKey])
-        {
-            NSData* data=[advertisementData objectForKey:CBAdvertisementDataManufacturerDataKey];
+        //杯子不能重连问题
+        if (![name isEqualToString:@"Ozner Cup"]){
+            if ([advertisementData objectForKey:CBAdvertisementDataManufacturerDataKey])
+            {
+                NSData* data=[advertisementData objectForKey:CBAdvertisementDataManufacturerDataKey];
+                
+                BytePtr bytes=(BytePtr)[data bytes];
+                identifier =[NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
+                             bytes[7],bytes[6],bytes[5],bytes[4],bytes[3],bytes[2]];
+                //NSString* address=[
+            }
             
-            BytePtr bytes=(BytePtr)[data bytes];
-            identifier =[NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
-                         bytes[7],bytes[6],bytes[5],bytes[4],bytes[3],bytes[2]];
-            //NSString* address=[
         }
+        
         
         BluetoothIO* io=(BluetoothIO*)[self getAvailableDevice:identifier];
         if (!io)
