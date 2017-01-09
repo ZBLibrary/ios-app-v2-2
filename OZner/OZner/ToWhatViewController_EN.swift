@@ -29,7 +29,7 @@ class ToWhatViewController_EN: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text=loadLanguage(self.title!)
-        let filePath = NSBundle.mainBundle().pathForResource("WhatHtml", ofType: "plist")
+        let filePath = NSBundle.mainBundle().pathForResource("WhatHtml_EN", ofType: "plist")
         let tmpstr = NSDictionary(contentsOfFile: filePath!)
 
         let htmlString = tmpstr?.objectForKey((self.title)!) as! String
