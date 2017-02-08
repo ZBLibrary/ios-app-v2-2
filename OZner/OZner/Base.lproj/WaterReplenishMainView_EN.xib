@@ -360,9 +360,9 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="ClickAlertLabel" destination="UtW-UP-D68" id="YEa-bx-l21"/>
+                <outlet property="ClickAlertLabel" destination="UtW-UP-D68" id="uvV-49-Fzq"/>
                 <outlet property="TestingIcon" destination="s9Z-ES-hsY" id="2iG-m4-ctl"/>
-                <outlet property="TitleOfReplensh" destination="Qvz-k0-34e" id="Rfz-ui-lCK"/>
+                <outlet property="TitleOfReplensh" destination="Qvz-k0-34e" id="0zj-0c-XtG"/>
                 <outlet property="alertBeforeTest" destination="ciS-VF-ehq" id="rNa-O3-vwg"/>
                 <outlet property="centerCircleView" destination="HUe-zE-cc9" id="sZR-LI-JRh"/>
                 <outlet property="dianLiangImg" destination="zL1-9k-Oec" id="1vN-hv-dPv"/>
@@ -376,7 +376,7 @@
                 <outlet property="skinButton" destination="2zC-rN-dho" id="cgX-KO-mGK"/>
                 <outlet property="stateOfTestLabel" destination="ral-pm-M7J" id="dOG-lp-3Vk"/>
                 <outlet property="toDetailButton" destination="Y6Z-Bi-4vk" id="eiK-QT-CGe"/>
-                <outlet property="toLeftMenuButton" destination="Y9F-k6-3xH" id="D9i-GO-Qzs"/>
+                <outlet property="toLeftMenuButton" destination="Y9F-k6-3xH" id="3PX-OV-P4j"/>
                 <outlet property="valueOfTestLabel" destination="63R-xd-II3" id="3B8-Mg-MO5"/>
             </connections>
             <point key="canvasLocation" x="278.5" y="302"/>
