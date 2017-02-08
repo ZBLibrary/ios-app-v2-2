@@ -17,7 +17,7 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
         super.viewDidLoad()
         self.view.backgroundColor=UIColor(patternImage: UIImage(named: "bg_clear_addDevice")!)
         // Do any additional setup after loading the view.
-        self.myTableView.rowHeight = 120
+//        self.myTableView.rowHeight = 120
         self.createLeftAndRight()
     }
     override func viewWillAppear(animated: Bool) {
@@ -41,6 +41,15 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
         return 8
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        if indexPath.row == 6 {
+            return 0
+        } else {
+            return 120
+        }
+        
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
@@ -73,7 +82,8 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
             
             cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
         case 6:
-            cell.layOutAddDeviceCell("select_device_2", content: loadLanguage("净水器"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+//            cell.layOutAddDeviceCell("select_device_2", content: loadLanguage("净水器"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+            return UITableViewCell()
         default :
             break
         }
