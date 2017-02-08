@@ -38,7 +38,7 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
     }
     //测试设备数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 7
+        return 8
     }
     
     
@@ -69,10 +69,10 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
         case 5:
             
             cell.layOutAddDeviceCell("TDSPAN_ICON", content: loadLanguage("水质检测笔"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-        case 6:
+        case 7:
             
             cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-        case 7:
+        case 6:
             cell.layOutAddDeviceCell("select_device_2", content: loadLanguage("净水器"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
         default :
             break
