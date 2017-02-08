@@ -50,7 +50,7 @@
             startingLineNumber = "1812"
             endingLineNumber = "1812"
             landmarkName = "loadAirCleanerView()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -161,8 +161,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "415"
             endingLineNumber = "415"
-            landmarkName = "loadWhitchView(_:)"
-            landmarkType = "5">
+            landmarkName = "loadWhitchView(type:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -178,7 +178,7 @@
             startingLineNumber = "256"
             endingLineNumber = "256"
             landmarkName = "reachabilityChanged()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
