@@ -143,15 +143,15 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
     }
     func toChatButton()
     {
-//        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(2) as! UIButton)
-        
-        let phoneNum = NSMutableString.init(string: "tel:4008209667")
-        
-        let callWebView = UIWebView()
-        
-        callWebView.loadRequest(NSURLRequest(URL: NSURL.init(string: phoneNum as String)!))
-        
-        self.view.addSubview(callWebView)
+        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(2) as! UIButton)
+//        
+//        let phoneNum = NSMutableString.init(string: "tel:4008209667")
+//        
+//        let callWebView = UIWebView()
+//        
+//        callWebView.loadRequest(NSURLRequest(URL: NSURL.init(string: phoneNum as String)!))
+//        
+//        self.view.addSubview(callWebView)
 
         
     }
