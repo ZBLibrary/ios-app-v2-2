@@ -251,16 +251,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CzX-55-dCj">
                                 <rect key="frame" x="61" y="397" width="252" height="40"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs2-st-X3t">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs2-st-X3t">
                                         <rect key="frame" x="108" y="0.0" width="144" height="40"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="device_puucashezb" translatesAutoresizingMaskIntoConstraints="NO" id="28S-Ij-8fI">
                                                 <rect key="frame" x="10" y="10" width="21" height="20"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买精华水" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djj-wa-eu1">
-                                                <rect key="frame" x="48" y="0.0" width="96" height="40"/>
+                                                <rect key="frame" x="48" y="0.0" width="86" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="96" id="0I9-xo-fK6"/>
+                                                    <constraint firstAttribute="width" constant="86" id="0I9-xo-fK6"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <color key="textColor" red="0.1215686275" green="0.43529411759999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -272,7 +272,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.87843137250000003" green="0.93725490199999995" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="djj-wa-eu1" secondAttribute="trailing" id="1AZ-Aw-CVc"/>
+                                            <constraint firstAttribute="trailing" secondItem="djj-wa-eu1" secondAttribute="trailing" constant="10" id="1AZ-Aw-CVc"/>
                                             <constraint firstItem="djj-wa-eu1" firstAttribute="top" secondItem="fs2-st-X3t" secondAttribute="top" id="3n7-X0-Tox"/>
                                             <constraint firstItem="gvy-Ns-Ld4" firstAttribute="top" secondItem="fs2-st-X3t" secondAttribute="top" id="6hZ-xe-H4i"/>
                                             <constraint firstAttribute="width" constant="144" id="ANU-Q2-4eg"/>
@@ -297,7 +297,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGb-x1-k6U">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <rect key="frame" x="86" y="0.0" width="80" height="40"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="zixunIconzb" translatesAutoresizingMaskIntoConstraints="NO" id="D0V-h0-tJ0">
                                                 <rect key="frame" x="10" y="11" width="23" height="18"/>
@@ -359,10 +359,16 @@
                                     <constraint firstItem="fs2-st-X3t" firstAttribute="top" secondItem="CzX-55-dCj" secondAttribute="top" id="EMK-rD-CEg"/>
                                     <constraint firstAttribute="trailing" secondItem="fs2-st-X3t" secondAttribute="trailing" id="FWV-wS-fbV"/>
                                     <constraint firstAttribute="height" constant="40" id="lPo-7e-kQu"/>
+                                    <constraint firstItem="LGb-x1-k6U" firstAttribute="centerX" secondItem="CzX-55-dCj" secondAttribute="centerX" id="pad-mW-kAJ"/>
                                     <constraint firstItem="LGb-x1-k6U" firstAttribute="leading" secondItem="CzX-55-dCj" secondAttribute="leading" id="qTr-qg-6gT"/>
                                     <constraint firstAttribute="width" constant="252" id="wIH-Cx-UTP"/>
                                     <constraint firstAttribute="bottom" secondItem="fs2-st-X3t" secondAttribute="bottom" id="xop-CI-lWt"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qTr-qg-6gT"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>

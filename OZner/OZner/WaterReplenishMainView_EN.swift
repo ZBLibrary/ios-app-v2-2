@@ -21,13 +21,20 @@ enum BodyParts:String{
 }//Face ，Eyes ,Hands, Neck
 class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     //head视图控件
-    @IBOutlet weak var toLeftMenuButton: UIButton!
-    @IBOutlet weak var TitleOfReplensh: UILabel!
-    @IBOutlet weak var ClickAlertLabel: UILabel!
+    
     @IBOutlet weak var personBgImgView: UIImageView!
-    @IBOutlet weak var dianLiangImg: UIImageView!
+    
+    @IBOutlet weak var TitleOfReplensh: UILabel!
+    @IBOutlet weak var toLeftMenuButton: UIButton!
+    
+    
     @IBOutlet weak var dianLiangValueLabel: UILabel!
+    @IBOutlet weak var dianLiangImg: UIImageView!
+   
     @IBOutlet weak var setButton: UIButton!
+    
+    @IBOutlet weak var ClickAlertLabel: UILabel!
+
     //中部圆形视图
     @IBOutlet weak var centerCircleView: UIView!
     @IBOutlet weak var alertBeforeTest: UILabel!
@@ -427,6 +434,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         MBProgressHUD.showHUDAddedTo(self, animated: true)
         let deviceService=DeviceWerbservice()
         deviceService.GetBuShuiFenBu(WaterReplenishDevice?.identifier, action: currentBodyPart.rawValue) { [weak self](dataArr, Status) in
+            //TODO:
             MBProgressHUD.hideHUDForView(self!, animated: true)
             if Status.networkStatus==kSuccessStatus
             {

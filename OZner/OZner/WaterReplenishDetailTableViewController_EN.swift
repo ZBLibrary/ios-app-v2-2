@@ -9,14 +9,14 @@
 import UIKit
 
 class WaterReplenishDetailTableViewController_EN: UITableViewController {
-    
+
     var HeadView:HeadOfWaterReplenishDetailCell_EN!
     var FooterView:FooterOfWaterReplenishDetailCell_EN!
     var currentBodyPart=BodyParts.Face
     var WaterReplenishDevice:WaterReplenishmentMeter?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.automaticallyAdjustsScrollViewInsets=false
         
         HeadView = NSBundle.mainBundle().loadNibNamed("HeadOfWaterReplenishDetailCell_EN", owner: self, options: nil).last as!  HeadOfWaterReplenishDetailCell_EN
@@ -37,7 +37,7 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
         FooterView.selectionStyle=UITableViewCellSelectionStyle.None
         
     }
-    
+   
     func getAllWeakAndMonthData()
     {
         //测试数据
@@ -116,7 +116,7 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
                 self!.HeadView.currentOrgan=tmpIndex
                 //初始化传入数据
                 self!.FooterView.updateCellData(weekArray, monthArr: monthArray, Organ: tmpIndex)
-                
+            
             }
         }
     }
@@ -128,45 +128,54 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
     {
         
     }
-    //TODO: 油分
+    //
     func toWhatOfYou()
     {
-        //        let toWhatControll=ToWhatViewController_EN(nibName: "ToWhatViewController_EN", bundle: nil)
-        //        toWhatControll.title="油分"
-        //        self.navigationController?.pushViewController(toWhatControll, animated: true)
+        let toWhatControll=ToWhatViewController_EN(nibName: "ToWhatViewController_EN", bundle: nil)
+        toWhatControll.title="油分"
+        self.navigationController?.pushViewController(toWhatControll, animated: true)
     }
-    //TODO: 水分
     func toWhatOfWater()
     {
-        //        let toWhatControll=ToWhatViewController_EN(nibName: "ToWhatViewController_EN", bundle: nil)
-        //        toWhatControll.title="水分"
-        //        self.navigationController?.pushViewController(toWhatControll, animated: true)
+        let toWhatControll=ToWhatViewController_EN(nibName: "ToWhatViewController_EN", bundle: nil)
+        toWhatControll.title="水分"
+        self.navigationController?.pushViewController(toWhatControll, animated: true)
     }
     func toChatButton()
     {
-        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(2) as! UIButton)
+//        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(2) as! UIButton)
+        
+        let phoneNum = NSMutableString.init(string: "tel:4008209667")
+        
+        let callWebView = UIWebView()
+        
+        callWebView.loadRequest(NSURLRequest(URL: NSURL.init(string: phoneNum as String)!))
+        
+        self.view.addSubview(callWebView)
+
+        
     }
     func toBuyEssence()
     {
-        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(1) as! UIButton)
+//        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(1) as! UIButton)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Table view data source
-    
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 2
     }
-    
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row==0
         {
@@ -177,7 +186,7 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
             return 470
         }
     }
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row==0
         {
@@ -193,50 +202,50 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
         super.viewWillAppear(animated)
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }
-    
+
     /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
     /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }    
-     }
-     */
-    
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+
     /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+
+    }
+    */
+
     /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    */
+
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

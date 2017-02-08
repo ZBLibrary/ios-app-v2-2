@@ -8,7 +8,7 @@
 
 import UIKit
 
-class  SkinFooterTableViewCell_EN: UITableViewCell {
+class SkinFooterTableViewCell: UITableViewCell {
 
     //五个按钮背景view的宽度
     @IBOutlet weak var widthOfButtonBG1: NSLayoutConstraint!
@@ -41,9 +41,9 @@ class  SkinFooterTableViewCell_EN: UITableViewCell {
     private let selectColor=UIColor(red: 64/255.0, green: 140/255.0, blue: 241/255.0, alpha: 1)
     private var sexImgHeadStr="woman"
     private var skinStateArr=[
-       loadLanguage("干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱，定期使用适量精华补水也能改善您的干性特质哦！"),
-       loadLanguage("皮肤通道是先吸收水，再吸收油。当肌底极度缺水干燥的时候，为保护皮肤，油脂才会分泌过盛。水油已严重失衡啦，请注意控油补水！"),
-      loadLanguage("干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱！")
+        "干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱，定期使用适量精华补水也能改善您的干性特质哦！",
+        "皮肤通道是先吸收水，再吸收油。当肌底极度缺水干燥的时候，为保护皮肤，油脂才会分泌过盛。水油已严重失衡啦，请注意控油补水！",
+        "干性肌需要进行深层补水，另外，肌肤营养缺乏会加速保水能力衰弱！"
     ]
     func skinButtonClick(button:UIButton)
     {
