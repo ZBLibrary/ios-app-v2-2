@@ -148,5 +148,95 @@
 &lt;/body&gt;
 
 &lt;/html&gt;</string>
+	<key>Oil</key>
+	<string>&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;meta http-equiv=&quot;Content-Type&quot; content=“text/html; charset=UTF-8&quot; /&gt;
+
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;
+
+&lt;/head&gt;
+
+&lt;body style=&quot;padding:0;margin:0;background:#FFF;&quot;&gt;
+
+	&lt;style&gt;
+
+		p{padding:0;margin:0;text-align:center;color:rgb(46,129,245);}
+
+		.tit1{font-size:15px;font-weight:bold;margin:15px 15px 10px;}
+
+		.tit2{font-size:14px;margin:0 12px 15px;}
+
+		.content{font-size:14px;text-indent:28px;line-height:20px;color:rgb(128,129,131);margin:0 15px;}
+
+	&lt;/style&gt;
+        &lt;p &gt;  &lt;p&gt;
+	&lt;div class=&quot;content&quot;&gt;
+
+		Skin oils is due to human skin dry, causing damage to the skin, the body self-healing and protection system secrete oils to protect your skin!Most male skin is more oily skin, so in order to fundamentally solve the oil problem, you need to pay attention to moisturize the skin, so as to improve and protect damaged skin fundamentally.
+
+	&lt;/div&gt;
+        &lt;p class=&quot;tit1”&gt;(仅供参考)&lt;p&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</string>
+	<key>Moisture</key>
+	<string>&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;meta http-equiv=&quot;Content-Type&quot; content=“text/html; charset=UTF-8&quot; /&gt;
+
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;
+
+&lt;/head&gt;
+
+&lt;body style=&quot;padding:0;margin:0;background:#FFF;&quot;&gt;
+
+	&lt;style&gt;
+
+		p{padding:0;margin:0;text-align:center;color:rgb(46,129,245);}
+
+		.tit1{font-size:15px;font-weight:bold;margin:15px 15px 10px;}
+
+		.tit2{font-size:14px;margin:0 12px 15px;}
+
+		.content{font-size:14px;text-indent:28px;line-height:20px;color:rgb(128,129,131);margin:0 15px;}
+
+	&lt;/style&gt;
+
+	&lt;p class=&quot;tit1&quot;&gt;Normal body water rate&lt;p&gt;
+
+	&lt;p class=&quot;tit2&quot;&gt;Eye  35%—45%&lt;p&gt;
+        &lt;p class=&quot;tit2&quot;&gt;Face  32%—42%&lt;p&gt;
+        &lt;p class=&quot;tit2&quot;&gt;Neck  35%—45%&lt;p&gt;
+         &lt;p class=&quot;tit2&quot;&gt;Hand  30%—38%&lt;p&gt;
+        &lt;p class=&quot;tit1”&gt;(仅供参考)&lt;p&gt;
+
+&lt;div class=&quot;content&quot;&gt;
+&lt;/div&gt;
+
+	&lt;div class=&quot;content&quot;&gt;
+
+		Different seasons each part of the water value will vary.
+
+	&lt;/div&gt;
+
+	&lt;div class=&quot;content&quot;&gt;
+
+		Normal summer water rate difference%3, winter normal water rate difference%5
+
+	&lt;/div&gt;
+
+
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</string>
 </dict>
 </plist>
