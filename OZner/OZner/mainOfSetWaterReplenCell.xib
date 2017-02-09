@@ -21,17 +21,17 @@
                                 <rect key="frame" x="0.0" y="15" width="375" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智能补水仪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn0-nS-j96">
-                                        <rect key="frame" x="15" y="13" width="100" height="21"/>
+                                        <rect key="frame" x="15" y="13" width="180" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="0Wj-lk-QLf"/>
-                                            <constraint firstAttribute="width" constant="100" id="zsD-Ob-Mxs"/>
+                                            <constraint firstAttribute="width" constant="180" id="zsD-Ob-Mxs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智能补水仪 (办公室)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uz-kE-Caq">
-                                        <rect key="frame" x="115" y="13" width="227" height="21"/>
+                                        <rect key="frame" x="195" y="13" width="147" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="KY1-bp-Vwa"/>
                                             <constraint firstAttribute="width" constant="107" id="rgf-Si-Ywi"/>
@@ -448,12 +448,17 @@
                 <outlet property="NameAndAdress" destination="4uz-kE-Caq" id="f8J-j6-2MB"/>
                 <outlet property="Sex" destination="bSP-Pk-fpr" id="xgx-FU-HQu"/>
                 <outlet property="clearButton" destination="3is-9U-0or" id="2QR-G1-1Rq"/>
+                <outlet property="sexLb" destination="F6G-Yw-b6j" id="CrS-Y0-2MY"/>
+                <outlet property="sugesst" destination="DL9-Do-gJ9" id="sop-VH-8Zd"/>
+                <outlet property="timelb" destination="69s-iE-HJy" id="gAb-e0-zUl"/>
+                <outlet property="tixing" destination="6r2-iJ-vIR" id="Jlm-oi-ZuQ"/>
                 <outlet property="toBugEssence" destination="hZl-ln-GZG" id="HZ8-it-egT"/>
                 <outlet property="toInstructions" destination="pFi-bp-wUH" id="K0b-bA-Osc"/>
                 <outlet property="toOperation" destination="LIy-rH-iJU" id="Fbu-ir-Lmk"/>
                 <outlet property="toSetNameAndDressButton" destination="LSI-GZ-hTs" id="PLQ-ds-Mkb"/>
                 <outlet property="toSetSexButton" destination="6N0-Am-Knv" id="wuU-Ai-LPV"/>
                 <outlet property="toSetTimeRemind" destination="QmM-HA-A4h" id="cr2-aq-QGU"/>
+                <outlet property="water" destination="hn0-nS-j96" id="2d2-Tv-cE3"/>
             </connections>
             <point key="canvasLocation" x="349.5" y="335"/>
         </tableViewCell>

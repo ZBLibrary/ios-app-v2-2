@@ -31,6 +31,7 @@
 
 
 "我的设备" = "My Devices" ; // 仪器
+"补水仪" = "Water meter";
 "补水仪使用说明" = "Instruction for moisturizing device " ;
 "浩泽智能水探头" = "OZNER Smart Water Tester" ;
 "金色依泉系列" = "Golden Novowater Series" ;
@@ -60,6 +61,7 @@
 "正常" = "normal" ;
 "水润" = "watering" ;
 
+"长按开机键五秒至灯光闪烁" = "Long press the power button for five seconds to light flashing";
 "检测失败,请重试" = "Test failed, please try again" ;
 "您的检测时间未满5秒..." = "Your testing time less than 5 seconds..." ;
 "水分太低" = "Water is too low" ;
@@ -560,3 +562,7 @@
 "3.同时按下" = "3.Press the ";
 "和" = " and ";
 "，WIFI指示灯闪烁，重新配对" = "at the same time, the WIFI light flashing, match again";
+
+"请点击您想要检测的身体部位" = "Select the part you want to test";
+"您的肤质 暂无" = "Your skin none";
+"性别" = "Sex";

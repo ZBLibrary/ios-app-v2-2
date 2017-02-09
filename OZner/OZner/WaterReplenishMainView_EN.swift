@@ -104,7 +104,8 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         return pow(point1.x-point2.x, 2)+pow(point1.y-point2.y, 2)<=30*30
     }
     override func drawRect(rect: CGRect) {
-        
+        ClickAlertLabel.text = loadLanguage("请点击您想要检测的身体部位")
+        skinButton.setTitle(loadLanguage("您的肤质 暂无"), forState: UIControlState.Normal)
         centerCircleView.layer.cornerRadius=60.0*Screen_Width/375.0
         centerCircleView.layer.masksToBounds=true
         skinButton.layer.cornerRadius=20
