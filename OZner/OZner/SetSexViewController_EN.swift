@@ -21,8 +21,11 @@ class SetSexViewController_EN: UIViewController,UIAlertViewDelegate {
         
     }
     var backClosure:((String) -> Void)?           //接收上个页面穿过来的闭包块
+    @IBOutlet weak var sex1: UILabel!
     @IBOutlet weak var womenImg: UIImageView!
+    @IBOutlet weak var famale: UILabel!
     @IBOutlet weak var manImg: UIImageView!
+    @IBOutlet weak var male: UILabel!
     @IBAction func womenClick(sender: AnyObject) {
         sex=loadLanguage("女")
     }
@@ -40,6 +43,9 @@ class SetSexViewController_EN: UIViewController,UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(tmpSex)
+        famale.text = loadLanguage("女")
+        male.text = loadLanguage("男")
+        sex1.text = loadLanguage("性别")
         sex=tmpSex ?? loadLanguage("女")
         let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))

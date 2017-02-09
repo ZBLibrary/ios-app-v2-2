@@ -5,9 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetSexViewController" customModule="OZner" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetSexViewController_EN" customModule="OZner" customModuleProvider="target">
             <connections>
+                <outlet property="famale" destination="gPm-F1-Bb5" id="I3y-kB-7LF"/>
+                <outlet property="male" destination="lmj-O6-E8C" id="mvN-D9-aA1"/>
                 <outlet property="manImg" destination="2uK-S6-MMc" id="B86-oV-5e0"/>
+                <outlet property="sex1" destination="tNP-Ju-hUg" id="79u-DO-dfF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="womenImg" destination="r3m-Ja-DG5" id="3fm-GH-Epc"/>
             </connections>

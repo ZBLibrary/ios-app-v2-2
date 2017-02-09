@@ -16,6 +16,8 @@ class SetRemindTimeController_EN: UIViewController,UIAlertViewDelegate {
         
     }
     
+  
+    
     required init(coder aDecoder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
@@ -152,6 +154,9 @@ class SetRemindTimeController_EN: UIViewController,UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tmpDicData=dicData
+        timeTitleLabel1.text = loadLanguage("时间一")
+        timeTitleLabel2.text = loadLanguage("时间二")
+        timeTitleLabel3.text = loadLanguage("时间三")
         self.title=loadLanguage("智能补水仪")
         let savebutton=UIBarButtonItem(title: loadLanguage("保存"), style: .Plain, target: self, action: #selector(SaveClick))
         let leftbutton=UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 21))
