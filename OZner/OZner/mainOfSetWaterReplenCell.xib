@@ -148,10 +148,10 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="补水提醒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r2-iJ-vIR">
-                                <rect key="frame" x="20" y="134" width="45" height="20"/>
+                                <rect key="frame" x="20" y="134" width="100" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="EaF-dA-NvD"/>
-                                    <constraint firstAttribute="width" constant="45" id="Lio-iZ-bPF"/>
+                                    <constraint firstAttribute="width" constant="100" id="Lio-iZ-bPF"/>
                                     <constraint firstAttribute="height" constant="20" id="cPC-6y-2dU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -167,9 +167,9 @@
                                 <rect key="frame" x="0.0" y="160" width="375" height="47"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="补水提醒时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69s-iE-HJy">
-                                        <rect key="frame" x="15" y="14" width="90" height="19"/>
+                                        <rect key="frame" x="15" y="14" width="160" height="19"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="EDa-xP-oRe"/>
+                                            <constraint firstAttribute="width" constant="160" id="EDa-xP-oRe"/>
                                             <constraint firstAttribute="height" constant="19" id="vVK-2l-Qy4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
@@ -206,10 +206,10 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建议每天补水2-3次" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-Do-gJ9">
-                                <rect key="frame" x="41" y="217" width="150" height="16"/>
+                                <rect key="frame" x="41" y="217" width="200" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="WDa-B5-app"/>
-                                    <constraint firstAttribute="width" constant="150" id="XkX-RR-kD6"/>
+                                    <constraint firstAttribute="width" constant="200" id="XkX-RR-kD6"/>
                                     <constraint firstAttribute="height" constant="16" id="qjH-97-iMK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>

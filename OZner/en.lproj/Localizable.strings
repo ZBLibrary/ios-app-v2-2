@@ -184,7 +184,7 @@
 "(厨房)" = "(kitchen)" ;
 "厨房" = "kitchen";
 "(家)" = "(Home)" ;
-"请选择设定您的性别" = "Please select your gender" ;
+"请选择设定您的性别" = " select gender" ;
 
 "您可以检查WIFI连接状态后再进行配对" = "You can check the WiFi connection and try again" ;
 "您可以检查蓝牙连接状态后再进行配对" = "You can check the bluetooth connection and try again" ;
@@ -566,3 +566,6 @@
 "请点击您想要检测的身体部位" = "Select the part you want to test";
 "您的肤质 暂无" = "Your skin none";
 "性别" = "Sex";
+"补水提醒" = "Reminding";
+"补水提醒时间" = "Time for reminding";
+"建议每天补水2-3次" = "It is suggested 2-3 times a day";
