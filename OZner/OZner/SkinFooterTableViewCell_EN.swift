@@ -54,7 +54,7 @@ class  SkinFooterTableViewCell_EN: UITableViewCell {
         }
         button.backgroundColor=selectColor
         //设置选中按钮对应图片
-        skinImg.image=UIImage(named: sexImgHeadStr+"SkinOfChaXun\(button.tag)")
+        skinImg.image=UIImage(named:loadLanguage(sexImgHeadStr+"SkinOfChaXun\(button.tag)"))
         skinState.text=skinStateArr[button.tag-1]
         skinState.textColor=UIColor.whiteColor()
     }
