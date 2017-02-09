@@ -19,13 +19,18 @@ struct HeadOfWaterReplenishStruct {
 }
 class HeadOfWaterReplenishDetailCell_EN: UITableViewCell {
 
+    @IBOutlet weak var titleLb: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var organImg1: UIImageView!
     @IBOutlet weak var organImg2: UIImageView!
     @IBOutlet weak var organImg3: UIImageView!
     @IBOutlet weak var organImg4: UIImageView!
+    @IBOutlet weak var faceLb: UILabel!
+    @IBOutlet weak var jingLb: UILabel!
     
+    @IBOutlet weak var shouLb: UILabel!
+    @IBOutlet weak var eyseLb: UILabel!
     
     @IBAction func organButton1(sender: UIButton) {
         currentOrgan=0
@@ -103,6 +108,12 @@ class HeadOfWaterReplenishDetailCell_EN: UITableViewCell {
     var dataDic=[String:HeadOfWaterReplenishStruct]()
     override func awakeFromNib() {
         super.awakeFromNib()
+        faceLb.text = loadLanguage("脸")
+        eyseLb.text = loadLanguage("眼")
+        shouLb.text = loadLanguage("手")
+        jingLb.text = loadLanguage("颈")
+        lastCheckValue.text = loadLanguage("上次检测")
+        titleLb.text = loadLanguage("智能补水仪详情")
         
     }
     private let WaterTypeValue=[BodyParts.Face:[32,42],

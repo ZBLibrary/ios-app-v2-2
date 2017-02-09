@@ -29,6 +29,10 @@ struct weiXinUrlNamezb {
     //补水仪
     let WaterReplenishOperation=loadLanguage("补水仪使用说明")
     
+    //精华水
+    let WaterJingHua = "购买精华水"
+    
+    
 }
 class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
 
@@ -171,6 +175,12 @@ class WeiXinURLViewController_EN: UIViewController,UIWebViewDelegate {
             titleOfURL.text=loadLanguage("补水仪使用说明")
             tmpURL = "http://app.ozner.net:888//Public/Index"
             break
+        case weiXinUrl.WaterJingHua:
+            titleOfURL.text = "购买精华水"
+            var tmpUrl:String = goUrlOfOut ?? "http://www.oznerwater.com/lktnew/wap/mall/goodsDetail.aspx?gid=203"
+            let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
+            tmpUrl = tmpUrl.stringByTrimmingCharactersInSet(whitespace)
+            tmpURL = GoUrlBefore(tmpUrl)
             
         default:
             break

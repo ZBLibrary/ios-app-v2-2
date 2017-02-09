@@ -22,11 +22,13 @@ class SkinFooterTableViewCell: UITableViewCell {
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
  
+    @IBOutlet weak var goumaiLb: UILabel!
     @IBOutlet weak var tips: UILabel!
     //肤质图片及说明
     @IBOutlet weak var skinImg: UIImageView!
     @IBOutlet weak var skinState: UITextView!
     //购买精华液
+    @IBOutlet weak var hideView: UIView!
     @IBOutlet weak var bugEssenceButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +40,21 @@ class SkinFooterTableViewCell: UITableViewCell {
         button1.setTitle(loadLanguage("干性"), forState: UIControlState.Normal)
         button2.setTitle(loadLanguage("油性"), forState: UIControlState.Normal)
         button3.setTitle(loadLanguage("中性"), forState: UIControlState.Normal)
+        goumaiLb.text = loadLanguage("购买精华水")
+        
+        if  !(loadLanguage("CurrentLanguage") == "CN"){
+            goumaiLb.font = UIFont.systemFontOfSize(11)
+            goumaiLb.numberOfLines = 0
+        } else {
+            goumaiLb.font=UIFont.systemFontOfSize(17)
+        }
+        
+        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
+            hideView.hidden = false
+        } else {
+            hideView.hidden = true
+            
+        }
         for button in [button1,button2,button3]
         {
             button.addTarget(self, action: #selector(skinButtonClick), forControlEvents: .TouchUpInside)
@@ -64,6 +81,7 @@ class SkinFooterTableViewCell: UITableViewCell {
         skinState.textColor=UIColor.whiteColor()
     }
     
+
     /**
      传入我的肤质来设置其他皮肤有哪几种
      

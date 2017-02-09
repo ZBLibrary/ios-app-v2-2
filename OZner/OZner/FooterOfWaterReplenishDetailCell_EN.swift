@@ -22,10 +22,41 @@ class FooterOfWaterReplenishDetailCell_EN: UITableViewCell,HeadOfWaterReplenishD
     @IBOutlet weak var toChatButton: UIButton!
     @IBOutlet weak var toBuyEssence: UIButton!
     
+    @IBOutlet weak var tixingLb: UILabel!
+    @IBOutlet weak var biaozhunLb: UILabel!
+    @IBOutlet weak var shuifenlb: UILabel!
+    @IBOutlet weak var youfenLb: UILabel!
+    
+    @IBOutlet weak var goumaiLb: UILabel!
+    @IBOutlet weak var zixunlb: UILabel!
+    @IBOutlet weak var zixunHideView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        segmentControl.setTitle(loadLanguage("周"), forSegmentAtIndex: 0)
+        segmentControl.setTitle(loadLanguage("月"), forSegmentAtIndex: 1)
+        youfenLb.text = loadLanguage("油分")
+        shuifenlb.text = loadLanguage("水分")
+        biaozhunLb.text = loadLanguage("水润标准")
+        tixingLb.text = loadLanguage("您本周的皮肤水分偏离正常，请及时保湿补水。")
+        zixunlb.text = loadLanguage("咨询")
+        goumaiLb.text = loadLanguage("购买精华水")
         
+        if  !(loadLanguage("CurrentLanguage") == "CN"){
+            zixunlb.font = UIFont.systemFontOfSize(11)
+            goumaiLb.font = UIFont.systemFontOfSize(11)
+            goumaiLb.numberOfLines = 0
+        } else {
+            zixunlb.font=UIFont.systemFontOfSize(17)
+            goumaiLb.font=UIFont.systemFontOfSize(17)
+        }
+        
+        if  (NSUserDefaults.standardUserDefaults().objectForKey(CURRENT_LOGIN_STYLE) as! NSString).isEqualToString(LoginByPhone){
+            zixunHideView.hidden = false
+        } else {
+            zixunHideView.hidden = true
+
+        }
         
     }
     

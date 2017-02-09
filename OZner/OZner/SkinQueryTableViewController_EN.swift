@@ -9,8 +9,8 @@
 import UIKit
 
 class SkinQueryTableViewController_EN: UITableViewController {
- 
-
+    
+    
     var headCell:SkinHeadTableViewCell_EN!
     var centerCell:SkinCenterTableViewCell_EN!
     var footerCell:SkinFooterTableViewCell!
@@ -22,7 +22,7 @@ class SkinQueryTableViewController_EN: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //因为缺少男的图片，所以临时设置女的
-//        currentSex=SexType.WoMan
+        //        currentSex=SexType.WoMan
         self.automaticallyAdjustsScrollViewInsets=false
         //头部视图
         headCell = NSBundle.mainBundle().loadNibNamed("SkinHeadTableViewCell_EN", owner: self, options: nil).last as!  SkinHeadTableViewCell_EN
@@ -41,7 +41,7 @@ class SkinQueryTableViewController_EN: UITableViewController {
         footerCell.selectionStyle=UITableViewCellSelectionStyle.None
         
     }
-
+    
     //返回
     func backClick()
     {
@@ -51,18 +51,27 @@ class SkinQueryTableViewController_EN: UITableViewController {
     //购买精华液
     func bugEssenceClick()
     {
+        
+        let weiXinUrl=weiXinUrlNamezb()
+        let tmpURLController=WeiXinURLViewController_EN(nibName: "WeiXinURLViewController_EN", bundle: nil)
+        
+        tmpURLController.title=weiXinUrl.WaterJingHua
+        self.presentViewController(tmpURLController, animated: true, completion: nil)
+        
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         CustomTabBarView.sharedCustomTabBar().hideOverTabBar()
     }
     // MARK: - Table view data source
-
+    
     private let heightArr:[CGFloat]=[418,160,430]
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return heightArr[indexPath.row]
@@ -71,12 +80,12 @@ class SkinQueryTableViewController_EN: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 3
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row==0
         {
@@ -92,50 +101,50 @@ class SkinQueryTableViewController_EN: UITableViewController {
         }
     }
     
-
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+     if editingStyle == .Delete {
+     // Delete the row from the data source
+     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+     } else if editingStyle == .Insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }    
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -426,10 +426,11 @@
 "立即添加设备，体验浩泽智能化生活服务" = "Add new device,start Ozner smart life";
 
 // 补水仪
-"请将补水仪放置脸部" = "Place the moisturizing meter face" ;
-"请将补水仪放置眼部" = "Place the moisturizing meter eye" ;
-"请将补水仪放置手部" = "Place the moisturizing meter hand" ;
-"请将补水仪放置颈部" = "Place the moisturizing meter neck" ;
+"请将补水仪放置脸部" = "Place the face";
+//"Place the moisturizing meter face" ;
+"请将补水仪放置眼部" = "Place the eye" ;
+"请将补水仪放置手部" = "Place the hand" ;
+"请将补水仪放置颈部" = "Place the neck" ;
 "上一次检测" = "The last test" ;
 "平均值" = "The average" ;
 "次" = "time" ;
@@ -440,6 +441,11 @@
 "眼部" = "eye" ;
 "手部" = "hand" ;
 "颈部" = "neck" ;
+
+"脸" = "face" ;
+"眼" = "eye" ;
+"手" = "hand" ;
+"颈" = "neck" ;
 
 "干性皮肤" = "Dry skin" ;
 "油性皮肤" = "Oil skin" ;
@@ -578,3 +584,10 @@
 "累计检测次数" = "Cumulative number of tests";
 "温馨提示：肤质评估仅供参考，涂抹化妆品及其他护理后会影响检测结果" = "Warm Tip: skin assessment is for reference only, apply cosmetics and other care will affect the test results";
 "其他肤质类型" = "Other skin types";
+"油分" = "Oil";
+"水分" = "Moisture";
+"水润标准" = "Standards";
+"您本周的皮肤水分偏离正常，请及时保湿补水。" = "please timely moisture replenishment.";
+"上次检测" = "Last detected";
+"购买精华水" = "Buy essence water";
+"智能补水仪详情" = "Water meter details";

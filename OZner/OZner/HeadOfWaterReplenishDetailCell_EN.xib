@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bj-4U-fAu">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="fanhui" translatesAutoresizingMaskIntoConstraints="NO" id="pj9-tJ-AMy">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="fanhui" translatesAutoresizingMaskIntoConstraints="NO" id="pj9-tJ-AMy">
                                         <rect key="frame" x="15" y="11" width="10" height="21"/>
                                     </imageView>
                                     <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="shareiconzb" translatesAutoresizingMaskIntoConstraints="NO" id="QiZ-WP-yAD">
@@ -293,14 +293,14 @@
                                             <constraint firstAttribute="width" constant="1" id="dqe-M7-dKD"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上次检测42.6%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnl-o7-097">
-                                        <rect key="frame" x="0.0" y="0.5" width="177" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平均值33.3%(12次)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuR-nW-3Uj">
+                                        <rect key="frame" x="198" y="0.0" width="177" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.16862745100000001" green="0.41568627450000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平均值33.3%(12次)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuR-nW-3Uj">
-                                        <rect key="frame" x="198" y="0.0" width="177" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上次检测42.6%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnl-o7-097">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.16862745100000001" green="0.41568627450000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -405,13 +405,18 @@
                 <outlet property="averageCheckValue" destination="zuR-nW-3Uj" id="UQO-vG-lUL"/>
                 <outlet property="backButton" destination="t1I-RR-Xlq" id="6q9-99-2Qu"/>
                 <outlet property="descOfSkinState" destination="Y9F-HV-2tI" id="D1a-jY-MnH"/>
+                <outlet property="eyseLb" destination="Pfv-eN-lPg" id="CQt-hA-dMN"/>
+                <outlet property="faceLb" destination="DeY-au-pXO" id="rIu-0g-Wm7"/>
+                <outlet property="jingLb" destination="j6b-rF-8gw" id="aRb-D2-Phs"/>
                 <outlet property="lastCheckValue" destination="jnl-o7-097" id="pcU-tJ-HYj"/>
                 <outlet property="organImg1" destination="DBJ-qY-RL2" id="XjC-JP-6Wk"/>
                 <outlet property="organImg2" destination="CSk-vQ-K6R" id="h3d-Rj-shD"/>
                 <outlet property="organImg3" destination="dsq-S8-lKh" id="dxo-gK-hlp"/>
                 <outlet property="organImg4" destination="kk7-M5-jAy" id="zdz-o4-aA6"/>
                 <outlet property="shareButton" destination="nW0-w6-h7S" id="eUx-HS-caU"/>
+                <outlet property="shouLb" destination="WpB-FE-XZm" id="YNF-LI-hLB"/>
                 <outlet property="skinStateOfToday" destination="OFS-g1-TXP" id="haa-dR-mi4"/>
+                <outlet property="titleLb" destination="wJ1-up-l0c" id="zFV-r4-WbM"/>
             </connections>
             <point key="canvasLocation" x="298.5" y="303"/>
         </tableViewCell>

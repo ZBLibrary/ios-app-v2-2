@@ -158,6 +158,11 @@ class WaterReplenishDetailTableViewController_EN: UITableViewController {
     func toBuyEssence()
     {
 //        CustomTabBarView.sharedCustomTabBar().touchDownAction((CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray).objectAtIndex(1) as! UIButton)
+        let weiXinUrl=weiXinUrlNamezb()
+        let tmpURLController=WeiXinURLViewController_EN(nibName: "WeiXinURLViewController_EN", bundle: nil)
+        
+        tmpURLController.title=weiXinUrl.WaterJingHua
+        self.presentViewController(tmpURLController, animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

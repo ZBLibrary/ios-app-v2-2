@@ -66,6 +66,9 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         }
         else//当前页是主视图一级界面
         {
+            
+          
+            
             let locaArr=locationOfImg[currentSex]
             switch true
             {
@@ -150,7 +153,11 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
             case 1:
                 alertBeforeTest.hidden=false
                 centerCircleView.backgroundColor=color_blue
-                alertBeforeTest.font=UIFont.systemFontOfSize(16)
+                if  !(loadLanguage("CurrentLanguage") == "CN"){
+                    alertBeforeTest.font = UIFont.systemFontOfSize(14)
+                } else {
+                    alertBeforeTest.font=UIFont.systemFontOfSize(16)
+                }
                 resultStateLabel.text=""
                 
                 if avgAndTimesArr.count>0
