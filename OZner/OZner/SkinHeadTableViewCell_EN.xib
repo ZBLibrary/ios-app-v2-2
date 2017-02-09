@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5c-bS-uiK">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="fanhui" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-jZ-0hO">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="fanhui" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-jZ-0hO">
                                         <rect key="frame" x="15" y="11" width="10" height="21"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqN-EW-lSG">
@@ -162,10 +162,13 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="backButton" destination="gqN-EW-lSG" id="Sk1-Ea-qdk"/>
+                <outlet property="fuzhiLb" destination="pgh-cq-ZdE" id="qaV-bJ-nFK"/>
+                <outlet property="selfglb" destination="jch-GM-YQz" id="Kmu-gr-6C9"/>
                 <outlet property="skinDescripe" destination="9kK-il-LAw" id="SXp-nO-7yq"/>
                 <outlet property="skinImg" destination="v4Y-8g-k9W" id="61l-L1-hS2"/>
                 <outlet property="skinLabel" destination="BVW-qd-wYH" id="4LX-zE-itU"/>
                 <outlet property="skinStateLabel" destination="Rjc-aI-J0S" id="adi-hd-afI"/>
+                <outlet property="tishilb" destination="baG-Lb-XuN" id="TVh-Je-vVb"/>
             </connections>
             <point key="canvasLocation" x="321.5" y="398"/>
         </tableViewCell>

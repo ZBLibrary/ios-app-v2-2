@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -272,8 +272,10 @@
                 <outlet property="button1" destination="yNZ-6H-WR1" id="E90-dJ-1Bf"/>
                 <outlet property="button2" destination="3gX-SG-ECz" id="n4o-dP-y6X"/>
                 <outlet property="button3" destination="MWw-pI-ubo" id="x3C-yN-R0j"/>
+                <outlet property="elseLb" destination="cuH-N4-hlm" id="ZI8-XG-tQ1"/>
                 <outlet property="skinImg" destination="cua-1Q-ASZ" id="kSE-RZ-inK"/>
                 <outlet property="skinState" destination="KHE-g1-4an" id="bvW-9P-dpr"/>
+                <outlet property="tips" destination="n2W-Nb-tJa" id="sg9-Nu-bBt"/>
                 <outlet property="widthOfButtonBG1" destination="yZd-4t-WUI" id="8Pw-B9-ZjP"/>
                 <outlet property="widthOfButtonBG2" destination="w0m-9O-iKP" id="BKJ-B5-oXm"/>
                 <outlet property="widthOfButtonBG3" destination="txl-Nv-IQf" id="bIf-7k-Lu8"/>

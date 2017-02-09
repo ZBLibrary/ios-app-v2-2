@@ -10,12 +10,17 @@ import UIKit
 
 class SkinCenterTableViewCell_EN: UITableViewCell {
 
+    @IBOutlet weak var countLb: UILabel!
+    @IBOutlet weak var jianceLb: UILabel!
     @IBOutlet weak var timesOfTest: UILabel!
     @IBOutlet weak var stateOfTest: UILabel!
     @IBOutlet weak var dateOfTest: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        jianceLb.text = loadLanguage("累计检测次数")
+        stateOfTest.text = loadLanguage("温馨提示：肤质评估仅供参考，涂抹化妆品及其他护理后会影响检测结果")
+        countLb.text = loadLanguage("次")
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
