@@ -42,8 +42,7 @@ class WaterRefreshIntrounVC: UIViewController {
         case "tap" :
 //            str = htmlforJPGImage(UIImage(named: "tap.jpg" )!)
              url = NSURLRequest(URL: NSURL(string: "http://app.joyro.com.cn:8282/SmartWaterTester.html")!)
-             VC.setLoadContent(content: (NetworkManager.defaultManager?.URL?["AboutWaterReplenish"]?.stringValue)!, Type: 0)
-
+            
         default:
             break
         }
