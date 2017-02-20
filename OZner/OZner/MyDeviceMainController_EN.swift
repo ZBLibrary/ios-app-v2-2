@@ -1522,7 +1522,7 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             {
                 let airPurifier = self.myCurrentDevice as! AirPurifier_MxChip
                 if airPurifier.isOffline==true||phoneIsOffLine==true{
-                    IAW_TempView.PM25.text=loadLanguage("设备已断开")
+                    IAW_TempView.PM25.text=loadLanguage("设备云已断开")
                     IAW_TempView.PM25.font=UIFont(name: ".SFUIDisplay-Thin", size: 32*SCREEN_WIDTH/320)
                     //设备数据清空
                     AirHeadView.lvxinState.text = "-"
