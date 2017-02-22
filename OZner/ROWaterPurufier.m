@@ -17,6 +17,7 @@
 #define opCode_respone_setting 0x21
 #define opCode_respone_water 0x22
 #define opCode_respone_filter 0x23
+#define opCode_update_setting 0x40
 
 
 -(instancetype)init:(NSString *)identifier Type:(NSString *)type Settings:(NSString *)json
@@ -100,6 +101,32 @@ Byte calcSum(Byte* data,int size)
     
     [io send:data];
 }
+-(BOOL)updateSetting:(int)interval Ozone_WorkTime:(int)worktime ResteFilter:(BOOL)reset
+{
+    if (!io) return false;
+    NSMutableData* data=[[NSMutableData alloc] init];
+    Byte bytes[11];
+    bytes[0]=opCode_update_setting;
+    NSDate* time=[NSDate dateWithTimeIntervalSinceNow:0];
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *dateComps = [cal components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate:time];
+    
+    bytes[1]=[dateComps year]-2000;
+    bytes[2]=[dateComps month];
+    bytes[3]=[dateComps day];
+    bytes[4]=[dateComps hour];
+    bytes[5]=[dateComps minute];
+    bytes[6]=[dateComps second];
+    
+    bytes[7]=interval;
+    bytes[8]=worktime;
+    bytes[9]=reset?1:0;
+    bytes[10]=calcSum(bytes,10);
+    [data appendBytes:bytes length:11];
+    
+    return [io send:data];
+    
+}
 
 -(BOOL) reset
 {
@@ -130,21 +157,22 @@ Byte calcSum(Byte* data,int size)
     if (data==nil) return;
     if (data.length<1) return;
     BytePtr bytes=(BytePtr)[data bytes];
+    NSData* needData=[NSData dataWithBytes:bytes+1 length:data.length-1];
     Byte opCode=bytes[0];
     lastDataTime=[NSDate dateWithTimeIntervalSinceNow:0];
     switch (opCode) {
         case opCode_respone_setting:
-            [_settingInfo load:data];
+            [_settingInfo load:needData];
             [self doSensorUpdate];
             //settingInfo.fromBytes(data);
             break;
         case opCode_respone_water:
-            [_waterInfo load:data];
+            [_waterInfo load:needData];
             [self doSensorUpdate];
             //waterInfo.fromBytes(data);
             break;
         case opCode_respone_filter:
-            [_filterInfo load:data];
+            [_filterInfo load:needData];
             [self doSensorUpdate];
             
             //filterInfo.fromBytes(data);
@@ -194,7 +222,11 @@ Byte calcSum(Byte* data,int size)
 //重置滤芯时间
 -(BOOL) resetFilter
 {
-    return true;
+    if (_settingInfo.Ozone_Interval<=0) return false;
+    if (_settingInfo.Ozone_WorkTime<=0) return false;
+    
+    return [self updateSetting:_settingInfo.Ozone_Interval Ozone_WorkTime:_settingInfo.Ozone_WorkTime ResteFilter:true];
+    
 }
 //返回是否允许滤芯重置
 -(BOOL) isEnableFilterReset
@@ -204,6 +236,16 @@ Byte calcSum(Byte* data,int size)
 
 +(BOOL)isBindMode:(BluetoothIO*)io
 {
-    return true;
+    if (io)
+    {
+        if (io.scanResponseData)
+        {
+            Byte flag=((Byte*)[io.scanResponseData bytes])[0];
+            return flag;
+        }
+        return false;
+    }
+    else
+        return false;
 }
 @end

@@ -246,6 +246,7 @@
 		8D09DBE21C5A69D400D0432B /* LoadingXib_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09DBE11C5A69D400D0432B /* LoadingXib_EN.swift */; };
 		8D0C3E6A1C58E78C00EFBB22 /* tantouLvXinView_EN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E681C58E78C00EFBB22 /* tantouLvXinView_EN.swift */; };
 		8D0C3E6D1C58EE4000EFBB22 /* MyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */; };
+		8D10BAD01E5D41A2003D14FA /* ROWaterPurufier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D10BACF1E5D41A2003D14FA /* ROWaterPurufier.m */; };
 		8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */; };
 		8D26136A1CFD3DF3002ADB0E /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613621CFD3DF3002ADB0E /* Duration.swift */; };
 		8D26136B1CFD3DF3002ADB0E /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2613631CFD3DF3002ADB0E /* Int+Timepiece.swift */; };
@@ -822,7 +823,6 @@
 		B7F36F7B1DE40F560056AC96 /* TapRecordList.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F36F6F1DE40F560056AC96 /* TapRecordList.m */; };
 		B7F36F7C1DE40F560056AC96 /* TapSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F36F711DE40F560056AC96 /* TapSensor.m */; };
 		B7F36F7D1DE40F560056AC96 /* TapSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F36F731DE40F560056AC96 /* TapSettings.m */; };
-		B7F36F8C1DE40FD90056AC96 /* ROWaterPurufier.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F36F7F1DE40FD90056AC96 /* ROWaterPurufier.m */; };
 		B7F36F8D1DE40FD90056AC96 /* ROWaterSettingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F36F811DE40FD90056AC96 /* ROWaterSettingInfo.m */; };
 		B7F36F8E1DE40FD90056AC96 /* WaterPurifier.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F36F831DE40FD90056AC96 /* WaterPurifier.m */; };
 		B7F36F8F1DE40FD90056AC96 /* WaterPurifierInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F36F851DE40FD90056AC96 /* WaterPurifierInfo.m */; };
@@ -1299,6 +1299,7 @@
 		8D09DBE11C5A69D400D0432B /* LoadingXib_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingXib_EN.swift; sourceTree = "<group>"; };
 		8D0C3E681C58E78C00EFBB22 /* tantouLvXinView_EN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tantouLvXinView_EN.swift; sourceTree = "<group>"; };
 		8D0C3E6C1C58EE4000EFBB22 /* MyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStoreViewController.swift; sourceTree = "<group>"; };
+		8D10BACF1E5D41A2003D14FA /* ROWaterPurufier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROWaterPurufier.m; sourceTree = "<group>"; };
 		8D2613611CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
 		8D2613621CFD3DF3002ADB0E /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		8D2613631CFD3DF3002ADB0E /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
@@ -2214,7 +2215,6 @@
 		B7F36F721DE40F560056AC96 /* TapSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapSettings.h; sourceTree = "<group>"; };
 		B7F36F731DE40F560056AC96 /* TapSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapSettings.m; sourceTree = "<group>"; };
 		B7F36F7E1DE40FD90056AC96 /* ROWaterPurufier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROWaterPurufier.h; sourceTree = "<group>"; };
-		B7F36F7F1DE40FD90056AC96 /* ROWaterPurufier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROWaterPurufier.m; sourceTree = "<group>"; };
 		B7F36F801DE40FD90056AC96 /* ROWaterSettingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROWaterSettingInfo.h; sourceTree = "<group>"; };
 		B7F36F811DE40FD90056AC96 /* ROWaterSettingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROWaterSettingInfo.m; sourceTree = "<group>"; };
 		B7F36F821DE40FD90056AC96 /* WaterPurifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterPurifier.h; sourceTree = "<group>"; };
@@ -3178,7 +3178,7 @@
 			isa = PBXGroup;
 			children = (
 				B7F36F7E1DE40FD90056AC96 /* ROWaterPurufier.h */,
-				B7F36F7F1DE40FD90056AC96 /* ROWaterPurufier.m */,
+				8D10BACF1E5D41A2003D14FA /* ROWaterPurufier.m */,
 				B7F36F801DE40FD90056AC96 /* ROWaterSettingInfo.h */,
 				B7F36F811DE40FD90056AC96 /* ROWaterSettingInfo.m */,
 				B7F36F821DE40FD90056AC96 /* WaterPurifier.h */,
@@ -5009,6 +5009,7 @@
 				523DC3381C175E1B00595099 /* XMMessageCell.m in Sources */,
 				8DA405591C8441B500AD5E5E /* ZXBitArrayBuilder.m in Sources */,
 				8DF060A81CC90F6100EC05D9 /* ConstraintItem.swift in Sources */,
+				8D10BAD01E5D41A2003D14FA /* ROWaterPurufier.m in Sources */,
 				8DA405581C8441B500AD5E5E /* ZXBitArray.m in Sources */,
 				B7F5B7321D49B8AA00446670 /* TDSFooterCellzb.swift in Sources */,
 				8DA405CD1C8441B500AD5E5E /* ZXProductResultParser.m in Sources */,
@@ -5572,7 +5573,6 @@
 				8DBD54E51C567F4500D04B12 /* FriendsCell.swift in Sources */,
 				4288C53D1C0F06FF00446D3E /* AddDeviceCell_EN.swift in Sources */,
 				B7F36F921DE40FD90056AC96 /* WaterPurifierStatus.m in Sources */,
-				B7F36F8C1DE40FD90056AC96 /* ROWaterPurufier.m in Sources */,
 				B7F36F381DE40F1B0056AC96 /* CupFirmware.m in Sources */,
 				8D2613691CFD3DF3002ADB0E /* NSCalendar+Timepiece.swift in Sources */,
 				8DA405561C8441B500AD5E5E /* ZXBinarizer.m in Sources */,

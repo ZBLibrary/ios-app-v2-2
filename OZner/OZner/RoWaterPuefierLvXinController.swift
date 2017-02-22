@@ -13,11 +13,15 @@ class RoWaterPuefierLvXinController: UIViewController {
     var currentDevice:ROWaterPurufier!
     @IBOutlet var fuweiButton: UIButton!
     @IBAction func fuweiClick(sender: UIButton) {
-        currentDevice.resetFilter()
+        
         let alert = SCLAlertView()
         alert.addButton("我知道了") {
+            self.currentDevice.resetFilter()
         }
         alert.addButton("购买滤芯") {
+            let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
+            let button=array.objectAtIndex(1) as! UIButton
+            CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
         }
         alert.showInfo("", subTitle: "为了您和您家人的健康，请及时更换滤芯")
     }
