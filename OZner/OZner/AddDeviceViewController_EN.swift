@@ -44,7 +44,7 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if indexPath.row == 6 {
-            return 0
+            return 120
         } else {
             return 120
         }
@@ -82,8 +82,8 @@ class AddDeviceViewController_EN: SwiftFatherViewController,UITableViewDataSourc
             
             cell.layOutAddDeviceCell("WaterReplenish1_1", content: loadLanguage("补水仪"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
         case 6:
-//            cell.layOutAddDeviceCell("select_device_2", content: loadLanguage("净水器"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
-            return UITableViewCell()
+            cell.layOutAddDeviceCell("select_device_2", content: loadLanguage("净水器"), iconImgName: "select_device_3.png", funcContent: loadLanguage("蓝牙连接"))
+//            return UITableViewCell()
         default :
             break
         }
