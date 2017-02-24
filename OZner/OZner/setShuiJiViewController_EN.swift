@@ -37,6 +37,10 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         let aboutDevice=AboutDeviceViewController_EN(nibName: "AboutDeviceViewController_EN", bundle: nil)
         aboutDevice.title=loadLanguage("关于净水器")
         aboutDevice.urlstring="http://cup.ozner.net/app/gyysj/gyysj.html"
+        if myCurrentDevice?.type=="Ozner RO" {
+            aboutDevice.urlstring="http://app.ozner.net:888/RoWaterPurifier.html"
+        }
+        
         self.navigationController?.pushViewController(aboutDevice, animated: true)
     }
     

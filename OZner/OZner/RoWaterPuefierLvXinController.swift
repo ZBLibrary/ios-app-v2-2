@@ -82,7 +82,8 @@ class RoWaterPuefierLvXinController: UIViewController {
         lvxinValueLabelC.text="\(currentDevice.filterInfo.Filter_C_Percentage)%"
         
         timer=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(alertLabelShanShuo), userInfo: nil, repeats: true)
-        fuweiButton.hidden = !currentDevice.isEnableFilterReset()
+        let minFilter=min(currentDevice.filterInfo.Filter_A_Percentage, currentDevice.filterInfo.Filter_B_Percentage, currentDevice.filterInfo.Filter_C_Percentage)
+        fuweiButton.hidden = minFilter>0
         // Do any additional setup after loading the view.
     }
     var istrue = true
