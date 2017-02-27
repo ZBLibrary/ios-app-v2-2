@@ -71,7 +71,7 @@ class RoWaterPuefierLvXinController: UIViewController {
         fatalError("init(coder:) has not been implemented")
         
     }
-    var timer:NSTimer!
+    //var timer:NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,22 +81,23 @@ class RoWaterPuefierLvXinController: UIViewController {
         lvxinValueLabelB.text="\(currentDevice.filterInfo.Filter_B_Percentage)%"
         lvxinValueLabelC.text="\(currentDevice.filterInfo.Filter_C_Percentage)%"
         
-        timer=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(alertLabelShanShuo), userInfo: nil, repeats: true)
+        //timer=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(alertLabelShanShuo), userInfo: nil, repeats: true)
         let minFilter=min(currentDevice.filterInfo.Filter_A_Percentage, currentDevice.filterInfo.Filter_B_Percentage, currentDevice.filterInfo.Filter_C_Percentage)
         fuweiButton.hidden = minFilter>0
+        lvxinAlertLabel.text = ""
         // Do any additional setup after loading the view.
     }
     var istrue = true
     
-    func alertLabelShanShuo() {
-        istrue = !istrue
-        lvxinAlertLabel.text = istrue ? "清\n洗\n水\n路\n保\n护\n器":""
-        
-        if false {
-            timer.invalidate()
-            timer=nil
-        }
-    }
+//    func alertLabelShanShuo() {
+//        istrue = !istrue
+//        lvxinAlertLabel.text = istrue ? "清\n洗\n水\n路\n保\n护\n器":""
+//        
+//        if false {
+//            timer.invalidate()
+//            timer=nil
+//        }
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
