@@ -315,6 +315,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     //皮肤检测回掉方法
     func updateViewState()
     {
+        setBatery()
         switch stateOfView {
         case 1:
             if WaterReplenishDevice?.status.testing==true {
@@ -344,19 +345,6 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         default:
             return
         }
-//        if ((WaterReplenishDevice?.status.testing) == true)&&(stateOfView==1||stateOfView==3)
-//        {
-//            stateOfView=2//检测中
-//            
-//        }else if stateOfView==2&&WaterReplenishDevice!.status.oil>0&&WaterReplenishDevice!.status.moisture>0
-//        {
-//            //检测完成
-//            stateOfView=3
-//        }
-//        else
-//        {
-//            return
-//        }
         setNeedsLayout()
         layoutIfNeeded()
     }
@@ -364,10 +352,24 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
     func initView(currentDevice:OznerDevice)
     {
         WaterReplenishDevice=currentDevice as? WaterReplenishmentMeter
-        //设置电量
+        
         self.TitleOfReplensh.text = removeAdressOfDeviceName(WaterReplenishDevice!.settings.name)
+        //设置电量
+        setBatery()
+        updateViewzb()
+        getAllWeakAndMonthData()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateViewzb), name: "updateDeviceInfo", object: nil)
+    }
+    private var DianLiang = -1.0
+    
+    func setBatery() {
+        if WaterReplenishDevice==nil {
+            return
+        }
         var dianliang = Double((WaterReplenishDevice?.status.battery)!)
-        print(dianliang)
+        if dianliang == DianLiang {
+            return
+        }
         if(dianliang == 65535)
         {
             dianliang = 0
@@ -390,11 +392,7 @@ class WaterReplenishMainView_EN: UIView,UIAlertViewDelegate {
         }
         dianliang = dianliang * 100
         dianLiangValueLabel.text = String(Int(dianliang)) + "%"
-        updateViewzb()
-        getAllWeakAndMonthData()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateViewzb), name: "updateDeviceInfo", object: nil)
     }
-    
     
     
     //上传检测数据
