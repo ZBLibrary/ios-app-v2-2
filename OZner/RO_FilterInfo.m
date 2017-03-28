@@ -20,12 +20,12 @@
 }
 -(void)reset
 {
-    _Filter_A_Time=0;
-    _Filter_B_Time=0;
-    _Filter_C_Time=0;
-    _Filter_A_Percentage=0;
-    _Filter_B_Percentage=0;
-    _Filter_C_Percentage=0;
+    _Filter_A_Time=-1000;
+    _Filter_B_Time=-1000;
+    _Filter_C_Time=-1000;
+    _Filter_A_Percentage=-1000;
+    _Filter_B_Percentage=-1000;
+    _Filter_C_Percentage=-1000;
 }
 -(void)load:(NSData*)data
 {

@@ -33,9 +33,9 @@
 
 -(void)DeviceIODidDisconnected:(BaseDeviceIO *)io
 {
-    [_filterInfo reset];
+    //[_filterInfo reset];
     [_settingInfo reset];
-    [_filterInfo reset];
+    //[_filterInfo reset];
 }
 
 
@@ -183,7 +183,9 @@ Byte calcSum(Byte* data,int size)
 
 -(void)DeviceIODidReadly:(BaseDeviceIO *)io
 {
+    [ self requestSettingInfo];
     [self start_auto_update];
+    [ self requestFilterHisInfo];
 }
 
 -(void)stop_auto_update
@@ -201,7 +203,7 @@ Byte calcSum(Byte* data,int size)
         [self stop_auto_update];
     if (!updateTimer)
     {
-        updateTimer=[NSTimer scheduledTimerWithTimeInterval:3 target:self
+        updateTimer=[NSTimer scheduledTimerWithTimeInterval:2 target:self
                                                    selector:@selector(auto_update)
                                                    userInfo:nil repeats:YES];
         [updateTimer fire];
@@ -225,7 +227,12 @@ Byte calcSum(Byte* data,int size)
     if (_settingInfo.Ozone_Interval<=0) return false;
     if (_settingInfo.Ozone_WorkTime<=0) return false;
     
-    return [self updateSetting:_settingInfo.Ozone_Interval Ozone_WorkTime:_settingInfo.Ozone_WorkTime ResteFilter:true];
+    BOOL isSuccess = [self updateSetting:_settingInfo.Ozone_Interval Ozone_WorkTime:_settingInfo.Ozone_WorkTime ResteFilter:true];
+    if (isSuccess) {
+        [self requestFilterInfo];
+        sleep(5);
+    }
+    return isSuccess;
     
 }
 //返回是否允许滤芯重置

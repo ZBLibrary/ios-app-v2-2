@@ -281,6 +281,7 @@
     [runThread cancel];
     runThread=NULL;
     NSLog(@"close");
+    [centralManager cancelPeripheralConnection:peripheral];
 }
 
 @end

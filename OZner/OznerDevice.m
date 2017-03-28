@@ -50,8 +50,10 @@
     [self doSetDeviceIO:self->io NewIO:newio];
     if (self->io)
     {
+        [self->io close];
         self->io.delegate=nil;
         self->io=nil;
+        
     }
     self->io=newio;
     if (self->io)

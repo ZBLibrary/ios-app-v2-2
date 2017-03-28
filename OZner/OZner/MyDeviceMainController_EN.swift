@@ -209,7 +209,6 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
         }else{
             CustomTabBarView.sharedCustomTabBar().hideOverTabBar();
         }
-        
         setBartteryImg()
     }
 
@@ -1233,24 +1232,24 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
             }
             else if(self.myCurrentDevice?.isKindOfClass(ROWaterPurufier.classForCoder()) == true)
             {
+                
                 //净水器
                 let waterPurrifier=self.myCurrentDevice! as! ROWaterPurufier
-                
+                if waterPurrifier.connectStatus() != Connected {
+                    return
+                }
                 
                     WaterPurfHeadView?.TdsBefore=Int(max(waterPurrifier.waterInfo.TDS1, waterPurrifier.waterInfo.TDS2))
                     WaterPurfHeadView?.TdsAfter=Int(min(waterPurrifier.waterInfo.TDS1, waterPurrifier.waterInfo.TDS2))
                     tds=(WaterPurfHeadView?.TdsAfter)!
+                let lvxinValue = min(waterPurrifier.filterInfo.Filter_A_Percentage, waterPurrifier.filterInfo.Filter_B_Percentage,waterPurrifier.filterInfo.Filter_C_Percentage)
                 
-                if(isNeedDownLXDate == false)
+                if lvxinValue == -1000 {
+                    return
+                }
+                if(self.lvxinValue.text != "\(lvxinValue)%")
                 {
-                    if waterPurrifier.connectStatus() != Connected {
-                        return
-                    }
-                    isNeedDownLXDate = true
                     
-                    
-                    var lvxinValue = min(waterPurrifier.filterInfo.Filter_A_Percentage, waterPurrifier.filterInfo.Filter_B_Percentage)
-                    lvxinValue = min(lvxinValue, waterPurrifier.filterInfo.Filter_C_Percentage)
                     var currLvXinName=""
                     switch lvxinValue {
                     case waterPurrifier.filterInfo.Filter_A_Percentage:
@@ -1262,8 +1261,25 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                     default:
                         break
                     }
-                    self.lvxinValue.text = "\(lvxinValue)%("+currLvXinName+")"
-                    self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
+                    self.lvxinValue.text = "\(lvxinValue)%"//("+currLvXinName+")"
+                    switch lvxinValue
+                    {
+                    case 0:
+                        
+                        self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
+                        
+                    case 1...49:
+                        self.lvxinImg.image=UIImage(named: "tantou_dianliang_1")
+                        
+                    case 50..<100:
+                        self.lvxinImg.image=UIImage(named: "tantou_dianliang_2")
+                        
+                    case 100:
+                        self.lvxinImg.image=UIImage(named: "tantou_dianliang_2")
+                        
+                    default:
+                        self.lvxinImg.image=UIImage(named: "tantou_dianliang_0")
+                    }
                     
                     self.lvxinState.text=lvxinValue<=10 ? loadLanguage("请及时更换滤芯"):loadLanguage("滤芯状态")
                     
@@ -1274,6 +1290,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                             
                         }
                         alertview.addButton(loadLanguage("购买滤芯")) {
+                            let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
+                            let button=array.objectAtIndex(1) as! UIButton
+                            CustomTabBarView.sharedCustomTabBar().touchDownAction(button)
                         }
                         alertview.showInfo("", subTitle: loadLanguage("您的\(currLvXinName)滤芯已到达使用期限，请及时购买滤芯更换。"))
                     }

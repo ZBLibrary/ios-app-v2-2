@@ -14,9 +14,21 @@ class RoWaterPuefierLvXinController: UIViewController {
     @IBOutlet var fuweiButton: UIButton!
     @IBAction func fuweiClick(sender: UIButton) {
         
+        let weakSelf = self
+        
         let alert = SCLAlertView()
         alert.addButton("我知道了") {
-            self.currentDevice.resetFilter()
+            let concurrentQueue =
+                dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_async(concurrentQueue, {
+                dispatch_sync(concurrentQueue, {
+                    weakSelf.currentDevice.resetFilter()
+                })
+                dispatch_sync(dispatch_get_main_queue(), {
+                    weakSelf.resetFilterText()
+                    
+                })
+            })
         }
         alert.addButton("购买滤芯") {
             let array=CustomTabBarView.sharedCustomTabBar().btnMuArr as NSMutableArray
@@ -77,15 +89,23 @@ class RoWaterPuefierLvXinController: UIViewController {
         super.viewDidLoad()
 
         self.title="当前滤芯状态"
+        resetFilterText()
+        
+        //timer=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(alertLabelShanShuo), userInfo: nil, repeats: true)
+        
+        lvxinAlertLabel.text = ""
+        // Do any additional setup after loading the view.
+    }
+    func resetFilterText() {
+        let minFilter=min(currentDevice.filterInfo.Filter_A_Percentage, currentDevice.filterInfo.Filter_B_Percentage, currentDevice.filterInfo.Filter_C_Percentage)
+        if minFilter == -1000 {
+            return
+        }
         lvxinValueLabelA.text="\(currentDevice.filterInfo.Filter_A_Percentage)%"
         lvxinValueLabelB.text="\(currentDevice.filterInfo.Filter_B_Percentage)%"
         lvxinValueLabelC.text="\(currentDevice.filterInfo.Filter_C_Percentage)%"
         
-        //timer=NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(alertLabelShanShuo), userInfo: nil, repeats: true)
-        let minFilter=min(currentDevice.filterInfo.Filter_A_Percentage, currentDevice.filterInfo.Filter_B_Percentage, currentDevice.filterInfo.Filter_C_Percentage)
         fuweiButton.hidden = minFilter>0
-        lvxinAlertLabel.text = ""
-        // Do any additional setup after loading the view.
     }
     var istrue = true
     
