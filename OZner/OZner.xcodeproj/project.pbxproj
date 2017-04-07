@@ -6094,8 +6094,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEFINES_MODULE = NO;
 				ENABLE_BITCODE = NO;
@@ -6118,7 +6118,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "2f90c076-de37-4ffc-b606-91f83a79916e";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -6130,8 +6130,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ozner Water Purification Science and Technology Development Co., Ltd (UZZG6NM74T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEFINES_MODULE = NO;
 				ENABLE_BITCODE = NO;
@@ -6154,7 +6154,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozner.cup;
 				PRODUCT_MODULE_NAME = OZner;
 				PRODUCT_NAME = OZner;
-				PROVISIONING_PROFILE = "2f90c076-de37-4ffc-b606-91f83a79916e";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OZner-Bridging-Header.h";
 			};
 			name = Release;

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bPs-cQ-E9j">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bPs-cQ-E9j">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1296,6 +1296,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-Gy-dzT">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.0.7" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-Fp-5tA">
+                                                <rect key="frame" x="538" y="17" width="42" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="42" id="ATv-iu-vha"/>
+                                                    <constraint firstAttribute="height" constant="14" id="dkv-yF-qkt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTm-00-QUR">
                                                 <rect key="frame" x="20" y="17" width="98.5" height="14"/>
                                                 <constraints>
@@ -1312,16 +1322,6 @@
                                                         <exclude reference="dW8-h4-xDJ"/>
                                                     </mask>
                                                 </variation>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.0.7" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-Fp-5tA">
-                                                <rect key="frame" x="538" y="17" width="42" height="14"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="42" id="ATv-iu-vha"/>
-                                                    <constraint firstAttribute="height" constant="14" id="dkv-yF-qkt"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1443,6 +1443,7 @@
                     <connections>
                         <outlet property="HaozeLable" destination="dXo-OF-Hjc" id="VEa-ku-Nai"/>
                         <outlet property="ScoreLable" destination="0rF-EH-Nyr" id="TZl-9I-AsF"/>
+                        <outlet property="versionLb" destination="Kca-Fp-5tA" id="WaB-QC-4f6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8k-D9-23i" userLabel="First Responder" sceneMemberID="firstResponder"/>
