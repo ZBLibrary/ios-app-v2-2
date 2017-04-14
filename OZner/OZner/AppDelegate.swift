@@ -7,6 +7,17 @@
 //
 
 import UIKit
+
+public enum UpdateType:String {
+    
+    //可选
+    case OptionalType = "optional"
+    
+    //强制
+    case forceType = "force"
+    
+}
+
 var appDelegate: AppDelegate {
     return UIApplication.sharedApplication().delegate as! AppDelegate
 }
@@ -15,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     
     var window: UIWindow?
     
+    var currentUpdateType: UpdateType?
     /// 网络状态
     var reachOfNetwork:Reachability?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -58,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         //检查网络状况，无网络，wifi，普通网络三种情况实时变化通知
         reachOfNetwork = Reachability(hostName: "www.baidu.com")
         reachOfNetwork!.startNotifier()
-        
+        updateApp()
         return true
     }
     
@@ -248,6 +260,94 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
             }
             
         }
+        
+    }
+    
+    
+    func updateApp() {
+        
+        
+        let session = NSURLSession.sharedSession()
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://api.github.com/repos/ozner-app-ios-org/updateApi/contents/iFamily/iFamily.json")!)
+        
+        request.HTTPMethod = "GET"
+        request.timeoutInterval = 10
+        
+        let task = session.dataTaskWithRequest(request) { (data, resopnse, error) in
+            
+            if error == nil {
+                
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                    
+                    let str = ((json as! [String:AnyObject])["content"] as! String).stringByReplacingOccurrencesOfString("\n", withString: "")
+                    
+                    //解码
+                    let edcodeData = NSData(base64EncodedString: str, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                    let decodedString = NSString(data: edcodeData!, encoding: NSUTF8StringEncoding)
+                    
+                    let data2 = decodedString?.dataUsingEncoding(NSUTF8StringEncoding)
+                    
+                    let dic = try? NSJSONSerialization.JSONObjectWithData(data2!, options: NSJSONReadingOptions.AllowFragments) as! [String:AnyObject]
+                    let serviecVersion = dic!["result"]!["version"] as! String
+                    let desc = dic!["result"]!["updateDesc"]  as! String
+                    let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+                    
+                    if currentVersion.compare(serviecVersion) == NSComparisonResult.OrderedAscending {
+                        
+                        self.currentUpdateType = UpdateType(rawValue:(dic!["result"]!["updateType"] as! String))
+                        switch self.currentUpdateType! {
+                            
+                        case .OptionalType:
+                            
+                            dispatch_async(dispatch_get_main_queue(), {
+                                
+                                let alertView = SCLAlertView()
+                                
+                                alertView.addButton(loadLanguage("确定"), action: {
+                                    
+                                    UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/gb/app/yi-dong-cai-bian/id955305764?mt=8")!)
+                                    
+                                })
+                                alertView.addButton(loadLanguage("取消"), action:{})
+                                alertView.showInfo("发现新版本" + serviecVersion, subTitle: desc)
+                                
+                            })
+                            
+                            break
+                            
+                        case .forceType:
+                            dispatch_async(dispatch_get_main_queue(), {
+                                let alertView = SCLAlertView()
+                                alertView.addButton(loadLanguage("确定"), action: {
+                                    
+                                    UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/gb/app/yi-dong-cai-bian/id955305764?mt=8")!)
+                                    
+                                })
+                                alertView.showInfo("发现新版本" + serviecVersion, subTitle: desc)
+                            })
+                            
+                            break
+                            
+                        }
+                    } else {
+                        
+                    }
+                    
+                    
+                } catch {
+                    print(error)
+                }
+                
+            }
+            
+        }
+        
+        task.resume()
+        
+        
+        
         
     }
     
