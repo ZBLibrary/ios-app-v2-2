@@ -80,7 +80,7 @@ class setShuiJiViewController_EN: UIViewController,UIAlertViewDelegate {
         deleteDeviceButton.layer.masksToBounds=true
         //loadDeviceData加载设备里面数据
         loadDeviceData()
-        DeviceName.text=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"
+        DeviceName.text=(plistData.objectForKey("deviceName") as! String)+"("+(plistData.objectForKey("deviceAttrib") as! String)+")"//"\((myCurrentDevice?.identifier)!)"//
         //
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(setNameChange), name: "setShuiJiName", object: nil)
         // Do any additional setup after loading the view.

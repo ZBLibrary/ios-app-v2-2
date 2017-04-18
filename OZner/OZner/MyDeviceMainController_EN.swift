@@ -1563,6 +1563,9 @@ class MyDeviceMainController_EN: UIViewController,CustomNoDeviceView_ENDelegate,
                
             }else if waterPurFooter != nil&&(WaterPurifierManager.isWaterPurifier(self.myCurrentDevice?.type))
             {
+                if self.myCurrentDevice?.type=="Ozner RO" {
+                    return
+                }
                 let waterPurifier = self.myCurrentDevice as! WaterPurifier
                 WaterPurfHeadView?.deviceStateLabel.hidden = !waterPurifier.isOffline
                 WaterPurfHeadView?.deviceValueContainer.hidden=waterPurifier.isOffline
