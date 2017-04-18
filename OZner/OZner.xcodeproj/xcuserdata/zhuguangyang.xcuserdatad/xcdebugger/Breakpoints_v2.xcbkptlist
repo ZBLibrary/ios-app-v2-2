@@ -129,8 +129,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "442"
             endingLineNumber = "442"
-            landmarkName = "loadWhitchView(type:)"
-            landmarkType = "7">
+            landmarkName = "loadWhitchView(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -145,8 +145,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "441"
             endingLineNumber = "441"
-            landmarkName = "loadWhitchView(type:)"
-            landmarkType = "7">
+            landmarkName = "loadWhitchView(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
