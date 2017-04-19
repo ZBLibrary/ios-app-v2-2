@@ -152,7 +152,9 @@
     {
         //        BluetoothIO* io=(BluetoothIO*)[self getAvailableDevice:[self getIdentifier:peripheral]];
         NSString* identifier=[self getIdentifier:peripheral];
-        
+        if ([identifier isEqualToString:@"47:39:14:29:6C:A0"] ) {
+            NSLog(@"");
+        }
         //添加判断解决杯子不能重新连接问题
         if (![name isEqualToString:@"Ozner Cup"]) {
             

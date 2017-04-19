@@ -105,7 +105,7 @@ class RoWaterPuefierLvXinController: UIViewController {
         lvxinValueLabelB.text="\(currentDevice.filterInfo.Filter_B_Percentage)%"
         lvxinValueLabelC.text="\(currentDevice.filterInfo.Filter_C_Percentage)%"
         
-        fuweiButton.hidden = minFilter>0
+        fuweiButton.hidden = true//minFilter>0
     }
     var istrue = true
     
